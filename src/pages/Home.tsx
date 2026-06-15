@@ -126,7 +126,7 @@ export const Home: React.FC = () => {
             className="flex flex-col gap-5"
           >
             <h1 
-              className="font-serif text-balance text-[2.75rem] leading-[1.1] sm:text-[3.5rem] md:text-6xl lg:text-7xl font-bold leading-tight tracking-wide text-white max-w-3xl mx-auto drop-shadow-md py-1 uppercase"
+              className="font-serif text-balance text-[2rem] leading-[1.1] sm:text-[2.75rem] md:text-5xl lg:text-[3.5rem] font-bold leading-tight tracking-wide text-white max-w-4xl mx-auto drop-shadow-md py-1 uppercase"
               dangerouslySetInnerHTML={{ __html: t('home.heroTitle') }}
             />
           </motion.div>
@@ -135,7 +135,7 @@ export const Home: React.FC = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3, duration: 0.8 }}
-            className="text-sm md:text-xl max-w-3xl font-medium leading-relaxed drop-shadow-sm text-transparent bg-clip-text bg-gradient-to-r from-gold-champagne via-gold-warm to-gold-antique"
+            className="text-sm md:text-lg max-w-3xl font-medium leading-relaxed drop-shadow-sm text-transparent bg-clip-text bg-gradient-to-r from-gold-champagne via-gold-warm to-gold-antique"
           ><span dangerouslySetInnerHTML={{ __html: t('home.heroSub') }} /></motion.p>
 
           <motion.div
