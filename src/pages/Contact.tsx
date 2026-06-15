@@ -480,8 +480,8 @@ export const Contact: React.FC = () => {
                   stroke="#104D2E"
                   strokeOpacity={activeRoute === 'us' ? 1 : 0.4}
                   strokeWidth={activeRoute === 'us' ? '4' : '2'} 
-                  strokeDasharray={activeRoute === 'us' ? 'none' : '6,4'} 
-                  className="transition-all duration-300 cursor-pointer"
+                  strokeDasharray={activeRoute === 'us' ? '8,6' : '6,4'} 
+                  className={`transition-all duration-300 cursor-pointer ${activeRoute === 'us' ? 'animate-route-flow' : ''}`}
                   onClick={() => setActiveRoute('us')}
                 />
                 <circle 
@@ -500,8 +500,8 @@ export const Contact: React.FC = () => {
                   stroke="#104D2E"
                   strokeOpacity={activeRoute === 'eu' ? 1 : 0.4}
                   strokeWidth={activeRoute === 'eu' ? '4' : '2'} 
-                  strokeDasharray={activeRoute === 'eu' ? 'none' : '6,4'} 
-                  className="transition-all duration-300 cursor-pointer"
+                  strokeDasharray={activeRoute === 'eu' ? '8,6' : '6,4'} 
+                  className={`transition-all duration-300 cursor-pointer ${activeRoute === 'eu' ? 'animate-route-flow' : ''}`}
                   onClick={() => setActiveRoute('eu')}
                 />
                 <circle 
@@ -520,8 +520,8 @@ export const Contact: React.FC = () => {
                   stroke="#104D2E"
                   strokeOpacity={activeRoute === 'me' ? 1 : 0.4}
                   strokeWidth={activeRoute === 'me' ? '4' : '2'} 
-                  strokeDasharray={activeRoute === 'me' ? 'none' : '6,4'} 
-                  className="transition-all duration-300 cursor-pointer"
+                  strokeDasharray={activeRoute === 'me' ? '8,6' : '6,4'} 
+                  className={`transition-all duration-300 cursor-pointer ${activeRoute === 'me' ? 'animate-route-flow' : ''}`}
                   onClick={() => setActiveRoute('me')}
                 />
                 <circle 
@@ -540,8 +540,8 @@ export const Contact: React.FC = () => {
                   stroke="#104D2E"
                   strokeOpacity={activeRoute === 'asia' ? 1 : 0.4}
                   strokeWidth={activeRoute === 'asia' ? '4' : '2'} 
-                  strokeDasharray={activeRoute === 'asia' ? 'none' : '6,4'} 
-                  className="transition-all duration-300 cursor-pointer"
+                  strokeDasharray={activeRoute === 'asia' ? '8,6' : '6,4'} 
+                  className={`transition-all duration-300 cursor-pointer ${activeRoute === 'asia' ? 'animate-route-flow' : ''}`}
                   onClick={() => setActiveRoute('asia')}
                 />
                 <circle 

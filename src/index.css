@@ -80,3 +80,14 @@
   box-shadow: 0 20px 40px rgba(16, 77, 46, 0.08);
   border-color: rgba(216, 170, 109, 0.5);
 }
+
+@keyframes flow-dash {
+  to {
+    stroke-dashoffset: -28;
+  }
+}
+
+.animate-route-flow {
+  animation: flow-dash 1s linear infinite;
+}
+
