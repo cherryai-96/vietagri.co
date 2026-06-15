@@ -1,0 +1,82 @@
+@import "tailwindcss";
+
+@theme {
+  --color-forest: #104D2E;
+  --color-forest-leaf: #3F6531;
+  --color-forest-fresh: #6E8F3A;
+  --color-cream: #FAF7EF;
+  --color-ivory: #F8F2E6;
+  --color-wheat: #EFE2C7;
+  --color-carbon: #050403;
+  --color-gold-warm: #D8AA6D;
+  --color-gold-antique: #AB8B57;
+  --color-gold-champagne: #E8C58A;
+  --color-brown-soil: #24190D;
+  --color-brown-coffee: #432817;
+  --color-brown-clay: #673A27;
+
+  --font-serif: "Cormorant Garamond", serif;
+  --font-sans: "Inter", sans-serif;
+}
+
+@utility font-serif {
+  font-family: var(--font-serif);
+}
+
+@utility font-sans {
+  font-family: var(--font-sans);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: #FAF7EF; /* cream */
+    color: #050403; /* carbon */
+    font-family: "Inter", sans-serif;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "Cormorant Garamond", serif;
+  }
+}
+
+/* Glassmorphism utility */
+.glass-panel {
+  background: rgba(250, 247, 239, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(216, 170, 109, 0.2);
+}
+
+.glass-panel-dark {
+  background: rgba(16, 77, 46, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(216, 170, 109, 0.15);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #FAF7EF;
+}
+::-webkit-scrollbar-thumb {
+  background: #104D2E;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3F6531;
+}
+
+/* Modern bento card hover */
+.bento-card {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.bento-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(16, 77, 46, 0.08);
+  border-color: rgba(216, 170, 109, 0.5);
+}
