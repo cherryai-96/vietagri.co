@@ -57,7 +57,7 @@ export const Header: React.FC = () => {
               }}
             />
           <div className="flex flex-col whitespace-nowrap">
-            <span className="font-serif font-bold text-sm sm:text-base md:text-lg lg:text-[0.95rem] xl:text-[1rem] text-cream tracking-wide leading-none transition-colors duration-300 uppercase">
+            <span className="font-serif font-black text-sm sm:text-base md:text-lg lg:text-[0.95rem] xl:text-[1rem] text-cream tracking-wide leading-none transition-colors duration-300 uppercase">
               Vietnam Agriculture Center
             </span>
             <span className="font-sans text-[6px] sm:text-[6.5px] md:text-[7px] lg:text-[6.5px] xl:text-[7px] text-gold-warm uppercase tracking-[0.16em] mt-0.5 font-semibold transition-colors duration-300">

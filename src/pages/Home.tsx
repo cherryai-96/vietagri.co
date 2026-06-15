@@ -126,7 +126,7 @@ export const Home: React.FC = () => {
             className="flex flex-col gap-5"
           >
             <h1 
-              className="font-serif text-balance text-[2rem] leading-[1.1] sm:text-[2.75rem] md:text-5xl lg:text-[3.5rem] font-bold leading-tight tracking-wide text-white max-w-4xl mx-auto drop-shadow-md py-1 uppercase"
+              className="font-serif text-balance text-[2rem] leading-[1.1] sm:text-[2.75rem] md:text-5xl lg:text-[3.5rem] font-black leading-tight tracking-wide text-white max-w-4xl mx-auto drop-shadow-md py-1 uppercase"
               dangerouslySetInnerHTML={{ __html: t('home.heroTitle') }}
             />
           </motion.div>
