@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
 import { useTranslation } from '../i18n';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
@@ -18,6 +18,13 @@ import {
 
 export const Home: React.FC = () => {
   const { t } = useTranslation();
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.play().catch(e => console.log('Video play failed:', e));
+    }
+  }, []);
   const scrollRef = useRef<HTMLDivElement>(null);
 
   const scrollBy = (direction: 1 | -1) => {
@@ -78,7 +85,7 @@ export const Home: React.FC = () => {
       icon: <CheckCircle className="text-forest-fresh w-6 h-6" />,
       title: t('home.tech4Title'),
       desc: t('home.tech4Desc'),
-      image: '/images/ss3.4.jpg',
+      image: '/images/wolffia-lab.webp',
     },
   ];
 
@@ -87,24 +94,20 @@ export const Home: React.FC = () => {
       {/* Hero Section */}
       <section className="relative h-[100dvh] min-h-[100dvh] flex items-center justify-center bg-carbon text-cream pt-24 pb-16 px-4 md:px-8 overflow-hidden">
         {/* Background Video */}
-        <div
-          className="absolute inset-0 w-full h-full z-0 opacity-45"
-          dangerouslySetInnerHTML={{
-            __html: `
-              <video
-                autoplay
-                loop
-                muted
-                playsinline
-                poster="/hero_home.png"
-                class="w-full h-full object-cover"
-              >
-                <source src="/video/agriculture-hero-loop.mp4" type="video/mp4" />
-                <img src="/hero_home.png" alt="Vietnam Agriculture Center video fallback" class="w-full h-full object-cover" />
-              </video>
-            `
-          }}
-        />
+        <div className="absolute inset-0 w-full h-full z-0 opacity-45">
+          <video
+            ref={videoRef}
+            autoPlay
+            loop
+            muted
+            playsInline
+            poster="/hero_home.png"
+            className="w-full h-full object-cover"
+          >
+            <source src="/video/agriculture-hero-loop.mp4" type="video/mp4" />
+            <img src="/hero_home.png" alt="Vietnam Agriculture Center video fallback" className="w-full h-full object-cover" />
+          </video>
+        </div>
 
         {/* Cinematic Premium Overlay: Top-bottom gradient and dark vignette */}
         <div className="absolute inset-0 bg-gradient-to-b from-carbon/75 via-carbon/40 to-carbon z-5 pointer-events-none" />
