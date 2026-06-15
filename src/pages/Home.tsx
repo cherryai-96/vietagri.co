@@ -18,6 +18,8 @@ import {
 
 export const Home: React.FC = () => {
   const { t } = useTranslation();
+  const videoRef = React.useRef<HTMLVideoElement>(null);
+  React.useEffect(() => { if (videoRef.current) { videoRef.current.defaultMuted = true; videoRef.current.muted = true; videoRef.current.play().catch(e => {}); } }, []);
   const scrollRef = useRef<HTMLDivElement>(null);
 
   const scrollBy = (direction: 1 | -1) => {
@@ -87,7 +89,7 @@ export const Home: React.FC = () => {
       {/* Hero Section */}
       <section className="relative h-[100dvh] min-h-[100dvh] flex items-center justify-center bg-carbon text-cream pt-24 pb-16 px-4 md:px-8 overflow-hidden">
         {/* Background Video */}
-        <video defaultMuted
+        <video ref={videoRef}
           autoPlay
           muted
           loop
