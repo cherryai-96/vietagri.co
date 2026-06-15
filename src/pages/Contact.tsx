@@ -469,7 +469,7 @@ export const Contact: React.FC = () => {
 
                 {/* Pulsing Trade Routes from HCMC */}
                 {/* HCMC Hub Node */}
-                <circle cx="754" cy="275" r="10" className="fill-forest stroke-gold-warm stroke-2 animate-ping" />
+                <circle cx="754" cy="275" r="10" className="fill-forest stroke-gold-warm stroke-2 animate-ping" style={{ transformOrigin: '754px 275px' }} />
                 <circle cx="754" cy="275" r="6" className="fill-forest stroke-gold-champagne stroke-2" />
                 <text x="754" y="300" fontSize="13" fontWeight="800" fill="#104D2E" textAnchor="middle" className="pointer-events-none drop-shadow-sm" paintOrder="stroke" stroke="#F3E8D6" strokeWidth="4" strokeLinejoin="round">Vietnam</text>
                 
@@ -480,15 +480,15 @@ export const Contact: React.FC = () => {
                   stroke="#104D2E"
                   strokeOpacity={activeRoute === 'us' ? 1 : 0.4}
                   strokeWidth={activeRoute === 'us' ? '4' : '2'} 
-                  strokeDasharray={activeRoute === 'us' ? '8,6' : '6,4'} 
-                  className={`transition-all duration-300 cursor-pointer ${activeRoute === 'us' ? 'animate-route-flow' : ''}`}
+                  strokeDasharray={activeRoute === 'us' ? 'none' : '6,4'} 
+                  className={`transition-[opacity,stroke-width] duration-500 cursor-pointer ${activeRoute === 'us' ? 'animate-route-flow' : ''}`}
                   onClick={() => setActiveRoute('us')}
                 />
                 <circle 
                   cx="160" 
                   cy="190" 
-                  r="6" 
-                  className={`cursor-pointer transition-all duration-300 ${activeRoute === 'us' ? 'fill-forest scale-125' : 'fill-forest opacity-50'}`}
+                  r={activeRoute === 'us' ? 9 : 6} 
+                  className={`cursor-pointer transition-all duration-300 ${activeRoute === 'us' ? 'fill-forest' : 'fill-forest opacity-50'}`}
                   onClick={() => setActiveRoute('us')}
                 />
                 <text x="160" y="212" fontSize="12" fontWeight="800" fill="#104D2E" textAnchor="middle" className="pointer-events-none drop-shadow-sm" paintOrder="stroke" stroke="#F3E8D6" strokeWidth="4" strokeLinejoin="round">North America</text>
@@ -500,15 +500,15 @@ export const Contact: React.FC = () => {
                   stroke="#104D2E"
                   strokeOpacity={activeRoute === 'eu' ? 1 : 0.4}
                   strokeWidth={activeRoute === 'eu' ? '4' : '2'} 
-                  strokeDasharray={activeRoute === 'eu' ? '8,6' : '6,4'} 
-                  className={`transition-all duration-300 cursor-pointer ${activeRoute === 'eu' ? 'animate-route-flow' : ''}`}
+                  strokeDasharray={activeRoute === 'eu' ? 'none' : '6,4'} 
+                  className={`transition-[opacity,stroke-width] duration-500 cursor-pointer ${activeRoute === 'eu' ? 'animate-route-flow' : ''}`}
                   onClick={() => setActiveRoute('eu')}
                 />
                 <circle 
                   cx="485" 
                   cy="134" 
-                  r="6" 
-                  className={`cursor-pointer transition-all duration-300 ${activeRoute === 'eu' ? 'fill-forest scale-125' : 'fill-forest opacity-50'}`}
+                  r={activeRoute === 'eu' ? 9 : 6} 
+                  className={`cursor-pointer transition-all duration-300 ${activeRoute === 'eu' ? 'fill-forest' : 'fill-forest opacity-50'}`}
                   onClick={() => setActiveRoute('eu')}
                 />
                 <text x="485" y="116" fontSize="12" fontWeight="800" fill="#104D2E" textAnchor="middle" className="pointer-events-none drop-shadow-sm" paintOrder="stroke" stroke="#F3E8D6" strokeWidth="4" strokeLinejoin="round">Europe</text>
@@ -520,15 +520,15 @@ export const Contact: React.FC = () => {
                   stroke="#104D2E"
                   strokeOpacity={activeRoute === 'me' ? 1 : 0.4}
                   strokeWidth={activeRoute === 'me' ? '4' : '2'} 
-                  strokeDasharray={activeRoute === 'me' ? '8,6' : '6,4'} 
-                  className={`transition-all duration-300 cursor-pointer ${activeRoute === 'me' ? 'animate-route-flow' : ''}`}
+                  strokeDasharray={activeRoute === 'me' ? 'none' : '6,4'} 
+                  className={`transition-[opacity,stroke-width] duration-500 cursor-pointer ${activeRoute === 'me' ? 'animate-route-flow' : ''}`}
                   onClick={() => setActiveRoute('me')}
                 />
                 <circle 
                   cx="620" 
                   cy="223" 
-                  r="6" 
-                  className={`cursor-pointer transition-all duration-300 ${activeRoute === 'me' ? 'fill-forest scale-125' : 'fill-forest opacity-50'}`}
+                  r={activeRoute === 'me' ? 9 : 6} 
+                  className={`cursor-pointer transition-all duration-300 ${activeRoute === 'me' ? 'fill-forest' : 'fill-forest opacity-50'}`}
                   onClick={() => setActiveRoute('me')}
                 />
                 <text x="620" y="245" fontSize="12" fontWeight="800" fill="#104D2E" textAnchor="middle" className="pointer-events-none drop-shadow-sm" paintOrder="stroke" stroke="#F3E8D6" strokeWidth="4" strokeLinejoin="round">Middle East</text>
@@ -540,15 +540,15 @@ export const Contact: React.FC = () => {
                   stroke="#104D2E"
                   strokeOpacity={activeRoute === 'asia' ? 1 : 0.4}
                   strokeWidth={activeRoute === 'asia' ? '4' : '2'} 
-                  strokeDasharray={activeRoute === 'asia' ? '8,6' : '6,4'} 
-                  className={`transition-all duration-300 cursor-pointer ${activeRoute === 'asia' ? 'animate-route-flow' : ''}`}
+                  strokeDasharray={activeRoute === 'asia' ? 'none' : '6,4'} 
+                  className={`transition-[opacity,stroke-width] duration-500 cursor-pointer ${activeRoute === 'asia' ? 'animate-route-flow' : ''}`}
                   onClick={() => setActiveRoute('asia')}
                 />
                 <circle 
                   cx="840" 
                   cy="190" 
-                  r="6" 
-                  className={`cursor-pointer transition-all duration-300 ${activeRoute === 'asia' ? 'fill-forest scale-125' : 'fill-forest opacity-50'}`}
+                  r={activeRoute === 'asia' ? 9 : 6} 
+                  className={`cursor-pointer transition-all duration-300 ${activeRoute === 'asia' ? 'fill-forest' : 'fill-forest opacity-50'}`}
                   onClick={() => setActiveRoute('asia')}
                 />
                 <text x="840" y="173" fontSize="12" fontWeight="800" fill="#104D2E" textAnchor="middle" className="pointer-events-none drop-shadow-sm" paintOrder="stroke" stroke="#F3E8D6" strokeWidth="4" strokeLinejoin="round">East Asia</text>
