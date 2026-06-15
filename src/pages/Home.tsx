@@ -19,7 +19,7 @@ import {
 export const Home: React.FC = () => {
   const { t } = useTranslation();
   const videoRef = React.useRef<HTMLVideoElement>(null);
-  React.useEffect(() => { if (videoRef.current) { videoRef.current.defaultMuted = true; videoRef.current.muted = true; videoRef.current.play().catch(e => {}); } }, []);
+  React.useEffect(() => { if (videoRef.current) { videoRef.current.defaultMuted = true; videoRef.current.muted = true; videoRef.current.play().catch(() => {}); } }, []);
   const scrollRef = useRef<HTMLDivElement>(null);
 
   const scrollBy = (direction: 1 | -1) => {
