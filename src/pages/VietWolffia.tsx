@@ -9,24 +9,6 @@ export const VietWolffia: React.FC = () => {
 
   const galleryItems = [
     {
-      src: '/images/beverage-1.jpg',
-      title: 'Green Superfood Smoothie',
-      category: 'beverage',
-      desc: 'Nutrient-rich smoothie blended with fresh Wolffia.'
-    },
-    {
-      src: '/images/beverage-2.jpg',
-      title: 'Fresh Wolffia Pesto Drink',
-      category: 'beverage',
-      desc: 'Refreshing plant-based energy drink.'
-    },
-    {
-      src: '/images/beverage-3.jpg',
-      title: 'Matcha & Spirulina Wellness Drink',
-      category: 'beverage',
-      desc: 'A fusion of matcha and Wolffia for ultimate wellness.'
-    },
-    {
       src: '/Cuisine pictures/Green Shakshuka.webp',
       title: 'Green Shakshuka with Wolffia',
       category: 'culinary',
