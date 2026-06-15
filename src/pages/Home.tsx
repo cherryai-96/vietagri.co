@@ -18,8 +18,6 @@ import {
 
 export const Home: React.FC = () => {
   const { t } = useTranslation();
-  const videoRef = React.useRef<HTMLVideoElement>(null);
-  React.useEffect(() => { if (videoRef.current) { videoRef.current.defaultMuted = true; videoRef.current.muted = true; videoRef.current.play().catch(() => {}); } }, []);
   const scrollRef = useRef<HTMLDivElement>(null);
 
   const scrollBy = (direction: 1 | -1) => {
@@ -89,22 +87,24 @@ export const Home: React.FC = () => {
       {/* Hero Section */}
       <section className="relative h-[100dvh] min-h-[100dvh] flex items-center justify-center bg-carbon text-cream pt-24 pb-16 px-4 md:px-8 overflow-hidden">
         {/* Background Video */}
-        <video ref={videoRef}
-          autoPlay
-          muted
-          loop
-          playsInline
-          poster="/hero_home.png"
-          className="absolute inset-0 w-full h-full object-cover z-0 opacity-45"
-        >
-          <source src="/video/agriculture-hero-loop.mp4" type="video/mp4" />
-          {/* Fallback image */}
-          <img
-            src="/hero_home.png"
-            alt="Vietnam Agriculture Center video fallback"
-            className="absolute inset-0 w-full h-full object-cover"
-          />
-        </video>
+        <div
+          className="absolute inset-0 w-full h-full z-0 opacity-45"
+          dangerouslySetInnerHTML={{
+            __html: `
+              <video
+                autoplay
+                loop
+                muted
+                playsinline
+                poster="/hero_home.png"
+                class="w-full h-full object-cover"
+              >
+                <source src="/video/agriculture-hero-loop.mp4" type="video/mp4" />
+                <img src="/hero_home.png" alt="Vietnam Agriculture Center video fallback" class="w-full h-full object-cover" />
+              </video>
+            `
+          }}
+        />
 
         {/* Cinematic Premium Overlay: Top-bottom gradient and dark vignette */}
         <div className="absolute inset-0 bg-gradient-to-b from-carbon/75 via-carbon/40 to-carbon z-5 pointer-events-none" />
@@ -126,7 +126,7 @@ export const Home: React.FC = () => {
             className="flex flex-col gap-5"
           >
             <h1 
-              className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-wide text-white max-w-3xl mx-auto drop-shadow-md py-1"
+              className="font-serif text-[2.75rem] leading-[1.1] sm:text-[3.5rem] md:text-6xl lg:text-7xl font-bold leading-tight tracking-wide text-white max-w-3xl mx-auto drop-shadow-md py-1"
               dangerouslySetInnerHTML={{ __html: t('home.heroTitle') }}
             />
           </motion.div>
@@ -169,7 +169,7 @@ export const Home: React.FC = () => {
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-stretch">
           <div className="lg:col-span-5 flex flex-col gap-6">
             <div className="flex flex-col gap-4">
-              <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold tracking-wide text-forest leading-tight"><span dangerouslySetInnerHTML={{ __html: t('home.advantageTitle') }} /></h2>
+              <h2 className="font-serif text-[2.75rem] leading-[1.1] sm:text-[3.5rem] md:text-6xl lg:text-7xl font-bold tracking-wide text-forest leading-tight"><span dangerouslySetInnerHTML={{ __html: t('home.advantageTitle') }} /></h2>
               <p className="text-sm md:text-base text-carbon/75 font-light leading-relaxed"><span dangerouslySetInnerHTML={{ __html: t('home.advantageSub') }} /></p>
             </div>
             <div className="relative mt-2 min-h-[300px] flex-grow w-full rounded-2xl overflow-hidden shadow-xl border border-gold-warm/20 group">
@@ -217,7 +217,7 @@ export const Home: React.FC = () => {
           <div className="flex flex-col items-center text-center gap-4 mb-12">
             <span className="text-xs font-bold uppercase tracking-widest text-forest flex items-center gap-2">
               <Leaf size={14} /><span dangerouslySetInnerHTML={{ __html: t('home.spotlightSub') }} /></span>
-            <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold tracking-wide text-forest leading-tight max-w-3xl"><span dangerouslySetInnerHTML={{ __html: t('home.spotlightTitle') }} /></h2>
+            <h2 className="font-serif text-[2.75rem] leading-[1.1] sm:text-[3.5rem] md:text-6xl lg:text-7xl font-bold tracking-wide text-forest leading-tight max-w-3xl"><span dangerouslySetInnerHTML={{ __html: t('home.spotlightTitle') }} /></h2>
           </div>
 
           <div className="relative w-full flex items-center justify-center">
@@ -301,7 +301,7 @@ export const Home: React.FC = () => {
           <div className="absolute inset-0 bg-carbon/70" />
         </div>
         <div className="max-w-4xl mx-auto text-center flex flex-col gap-6 items-center relative z-10">
-          <h2 className="font-serif text-3xl md:text-5xl font-bold text-gold-champagne"><span dangerouslySetInnerHTML={{ __html: t('home.trustTitle') }} /></h2>
+          <h2 className="font-serif text-[2.5rem] leading-[1.1] sm:text-5xl md:text-6xl font-bold text-gold-champagne"><span dangerouslySetInnerHTML={{ __html: t('home.trustTitle') }} /></h2>
           <p className="text-sm md:text-base text-cream/80 leading-relaxed font-light max-w-2xl">
             {t('home.trustDesc')}
           </p>
@@ -316,7 +316,7 @@ export const Home: React.FC = () => {
       <section className="py-24 bg-brown-soil text-cream relative px-4 md:px-8">
         <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           <div className="lg:col-span-7 flex flex-col gap-6">
-            <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold tracking-wide text-gold-champagne leading-tight"><span dangerouslySetInnerHTML={{ __html: t('home.ctaTitle') }} /></h2>
+            <h2 className="font-serif text-[2.75rem] leading-[1.1] sm:text-[3.5rem] md:text-6xl lg:text-7xl font-bold tracking-wide text-gold-champagne leading-tight"><span dangerouslySetInnerHTML={{ __html: t('home.ctaTitle') }} /></h2>
             <p className="text-sm md:text-base text-cream/70 font-light leading-relaxed">
               {t('home.ctaText')}
             </p>
