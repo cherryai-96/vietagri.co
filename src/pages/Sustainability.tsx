@@ -39,7 +39,7 @@ export const Sustainability: React.FC = () => {
               <Sparkles size={14} className="text-gold-warm" />
               ESG & Sustainability
             </span>
-            <h1 className="font-serif text-[2.75rem] leading-[1.1] sm:text-[3.5rem] md:text-6xl lg:text-7xl font-bold leading-tight tracking-wide text-gold-champagne"><span dangerouslySetInnerHTML={{ __html: t('sustainability.heroTitle') }} /></h1>
+            <h1 className="font-serif text-balance text-[2.75rem] leading-[1.1] sm:text-[3.5rem] md:text-6xl lg:text-7xl font-bold leading-tight tracking-wide text-gold-champagne"><span dangerouslySetInnerHTML={{ __html: t('sustainability.heroTitle') }} /></h1>
           </motion.div>
 
           <motion.p
@@ -55,7 +55,7 @@ export const Sustainability: React.FC = () => {
       <section className="py-24 bg-cream px-4 md:px-8 relative">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div className="flex flex-col gap-6">
-            <h2 className="font-serif text-[2.75rem] leading-[1.1] sm:text-[3.5rem] md:text-6xl lg:text-7xl font-bold text-forest leading-tight"><span dangerouslySetInnerHTML={{ __html: t('sustainability.introTitle') }} /></h2>
+            <h2 className="font-serif text-balance text-[2.75rem] leading-[1.1] sm:text-[3.5rem] md:text-6xl lg:text-7xl font-bold text-forest leading-tight"><span dangerouslySetInnerHTML={{ __html: t('sustainability.introTitle') }} /></h2>
             <div className="h-1 w-20 bg-gold-warm rounded-full" />
             <p className="text-sm md:text-base text-carbon/80 leading-relaxed font-light mt-4">
               {t('sustainability.introDesc1')}
@@ -80,7 +80,7 @@ export const Sustainability: React.FC = () => {
                 <ShieldCheck size={16} className="text-gold-warm" />
                 Certification Consultancy
               </span>
-              <h2 className="font-serif text-[2.75rem] leading-[1.1] sm:text-[3.5rem] md:text-6xl lg:text-7xl font-bold text-forest leading-tight"><span dangerouslySetInnerHTML={{ __html: t('sustainability.certTitle') }} /></h2>
+              <h2 className="font-serif text-balance text-[2.75rem] leading-[1.1] sm:text-[3.5rem] md:text-6xl lg:text-7xl font-bold text-forest leading-tight"><span dangerouslySetInnerHTML={{ __html: t('sustainability.certTitle') }} /></h2>
               <p className="text-xs uppercase tracking-wider text-carbon/60 font-semibold"><span dangerouslySetInnerHTML={{ __html: t('sustainability.certSub') }} /></p>
               <p className="text-sm text-carbon/75 font-light leading-relaxed">
                 {t('sustainability.certText')}
@@ -140,7 +140,7 @@ export const Sustainability: React.FC = () => {
               <RotateCcw size={16} className="text-gold-warm" />
               Circular Economy
             </span>
-            <h2 className="font-serif text-[2.5rem] leading-[1.1] sm:text-5xl md:text-6xl font-bold text-forest"><span dangerouslySetInnerHTML={{ __html: t('sustainability.circularTitle') }} /></h2>
+            <h2 className="font-serif text-balance text-[2.5rem] leading-[1.1] sm:text-5xl md:text-6xl font-bold text-forest"><span dangerouslySetInnerHTML={{ __html: t('sustainability.circularTitle') }} /></h2>
             <p className="text-xs uppercase tracking-wider text-carbon/60 font-semibold"><span dangerouslySetInnerHTML={{ __html: t('sustainability.circularSub') }} /></p>
             <p className="text-sm text-carbon/75 font-light leading-relaxed mt-2">
               {t('sustainability.circularText')}
@@ -211,7 +211,7 @@ export const Sustainability: React.FC = () => {
                 <BarChart3 size={16} className="text-gold-warm" />
                 Impact Dashboard
               </span>
-              <h2 className="font-serif text-[2.5rem] leading-[1.1] sm:text-5xl md:text-6xl font-bold text-forest leading-tight"><span dangerouslySetInnerHTML={{ __html: t('sustainability.esgTitle') }} /></h2>
+              <h2 className="font-serif text-balance text-[2.5rem] leading-[1.1] sm:text-5xl md:text-6xl font-bold text-forest leading-tight"><span dangerouslySetInnerHTML={{ __html: t('sustainability.esgTitle') }} /></h2>
               <p className="text-xs uppercase tracking-wider text-carbon/60 font-semibold"><span dangerouslySetInnerHTML={{ __html: t('sustainability.esgSub') }} /></p>
               <p className="text-sm text-carbon/75 font-light leading-relaxed">
                 {t('sustainability.esgText')}
@@ -275,7 +275,7 @@ export const Sustainability: React.FC = () => {
       <section className="bg-forest text-cream py-24 px-4 md:px-8 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-forest-leaf/20 to-transparent pointer-events-none" />
         <div className="max-w-4xl mx-auto text-center relative z-10 flex flex-col items-center gap-8">
-          <h2 className="font-serif text-[2.5rem] leading-[1.1] sm:text-5xl md:text-6xl font-bold text-gold-champagne tracking-wide leading-tight"><span dangerouslySetInnerHTML={{ __html: t('sustainability.ctaTitle') }} /></h2>
+          <h2 className="font-serif text-balance text-[2.5rem] leading-[1.1] sm:text-5xl md:text-6xl font-bold text-gold-champagne tracking-wide leading-tight"><span dangerouslySetInnerHTML={{ __html: t('sustainability.ctaTitle') }} /></h2>
           <p className="text-sm md:text-base text-cream/80 max-w-2xl font-light leading-relaxed"><span dangerouslySetInnerHTML={{ __html: t('sustainability.ctaSub') }} /></p>
           <div className="flex flex-col sm:flex-row gap-4 mt-2">
             <Link
