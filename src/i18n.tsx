@@ -44,19 +44,19 @@ const resources: TranslationResources = {
   home: {
    heroTitle: 'Bridging the <span class="text-transparent bg-clip-text bg-gradient-to-r from-gold-champagne via-gold-warm to-gold-antique">Richness of Vietnamese Agriculture</span> to the World',
    heroSub: 'Your trusted on‑the‑ground partner for premium product sourcing, high‑tech contract farming, and seamless global export logistics.',
-   advantageTitle: 'An Integrated<br className="hidden md:block" />Agricultural Supply\u00A0Chain<br className="hidden md:block" />Ecosystem',
+   advantageTitle: 'An Integrated Agricultural<br class="hidden lg:block" /> Supply\u00A0Chain Ecosystem',
    advantageSub: 'At Vietnam Agriculture Center (VAC), we eliminate the friction of international trade. We offer end‑to‑end solutions for global corporations, ensuring food sustainability, security, and uncompromising quality from seed to shipment.',
    
    sourcingTitle: 'Global Sourcing Services',
    sourcingDesc: "Access Vietnam's finest raw and processed agricultural goods. We audit, negotiate, and procure premium bulk volumes—from high-demand fresh produce to processed value-adds like bulk lotus seed powder—ensuring reliable supply chains for international buyers.",
    
-   farmingTitle: 'Contract Farming & Investment',
+   farmingTitle: 'Contract Farming &<br class="hidden lg:block" /> Investment',
    farmingDesc: 'Secure your supply chain with dedicated cultivation. We manage scalable, high-yield operations for lucrative crops, offering transparent, fully managed farm setups with structured ROI and attractive trade partnership models.',
    
    qaTitle: 'Export Quality Assurance',
    qaDesc: 'We act as your quality gatekeeper. Our rigorous on‑the‑ground oversight ensures all operations align with the world’s strictest market standards, preparing facilities and harvests for GlobalG.A.P., EU Organic, and USDA Organic certifications.',
    
-   logisticsTitle: 'Logistics & Documentation',
+   logisticsTitle: 'Logistics &<br class="hidden lg:block" /> Documentation',
    logisticsDesc: 'Zero friction at the border. We navigate the complexities of international trade, managing phytosanitary certifications, customized bulk packaging solutions, and customs clearance for highly regulated markets.',
    
    spotlightTitle: 'Innovation in Action: The Viet Wolffia Model',
@@ -70,10 +70,10 @@ const resources: TranslationResources = {
    tech2Title: 'IoT-Integrated Smart Farming',
    tech2Desc: 'Precision agriculture requires precise data. We implement IoT (Internet of Things) sensor networks to continuously monitor crucial environmental metrics in real time—including water temperature, pH balance, and nutrient density—ensuring optimized, highly consistent growth cycles without the guesswork.',
    
-   tech3Title: 'Rigorous Bio-Security & Purity',
+   tech3Title: 'Rigorous Bio-Security &<br class="hidden lg:block" /> Purity',
    tech3Desc: 'Because Wolffia absorbs nutrients directly from its aquatic environment, bio-security is paramount. Our facility operates under strict access and cross-contamination controls. We guarantee a completely pathogen-free growing environment by utilizing industrial filtration systems paired with continuous, multi-stage UV sterilization.',
    
-   tech4Title: 'Global Food Safety & Export Compliance',
+   tech4Title: 'Global Food Safety &<br class="hidden lg:block" /> Export Compliance',
    tech4Desc: 'The entire operation is engineered from the ground up to exceed international trade requirements. From water input to final harvest, we maintain end‑to‑end traceability and stringent hygiene protocols. This ensures that the final product—whether fresh, dried, or roasted—is fully compliant with global food safety regulations and primed for seamless, zero‑friction export to any market in the world.',
    
    trustTitle: 'Built for the Global Standard',
@@ -107,13 +107,13 @@ const resources: TranslationResources = {
    introTitle: 'Your On‑the‑Ground Partner in Vietnam',
    introDesc: 'Navigating international agricultural procurement requires more than just a buyer; it requires a deeply embedded local partner. VAC’s core services are designed to protect international buyers and investors at every step of the supply chain, ensuring that what you order is exactly what arrives at your destination.',
    sourcingTitle: 'Global Agricultural Sourcing Services',
-   sourcingSub: 'Precision Procurement & Auditing',
+   sourcingSub: 'Precision Procurement &<br class="hidden lg:block" /> Auditing',
    sourcingText: 'We connect global food and agriculture corporations with Vietnam’s most reliable producers. VAC handles the entire sourcing lifecycle, ensuring reliable volume, consistent pricing, and exceptional quality for both raw and value-added processed goods.',
    sourcingBullet1: 'Supplier Auditing: Rigorous on-site vetting of local farms and processing facilities.',
    sourcingBullet2: 'Bulk Procurement: Capable of fulfilling high-volume industrial orders, from fresh produce to specialized processed botanicals like premium lotus seed powder.',
    sourcingBullet3: 'Targeted Market Matching: We tailor our sourcing to meet the specific import requirements and consumer preferences of your target market, whether in Europe, America, or specialized markets like South Korea and Japan.',
    
-   farmingTitle: 'High‑Tech Contract Farming & Investment',
+   farmingTitle: 'High‑Tech Contract Farming &<br class="hidden lg:block" /> Investment',
    farmingSub: 'Secure, Scalable Cultivation',
    farmingText: 'For corporations seeking absolute control over their supply chain, VAC offers turnkey contract farming services. We dedicate land, resources, and expert management to cultivate lucrative crops specifically for your global distribution.',
    farmingBullet1: 'Turnkey Farm Management: End‑to‑end operation, from land preparation and seed selection to harvest and post-harvest processing.',
@@ -127,7 +127,7 @@ const resources: TranslationResources = {
    qaBullet2: 'Residue & Purity Testing: Implementing rigorous testing protocols to guarantee zero chemical contamination and absolute product safety.',
    qaBullet3: 'Traceability: Full documentation tracking the product lifecycle, providing you and your consumers with complete transparency.',
    
-   logisticsTitle: 'Global Logistics & Trade Documentation',
+   logisticsTitle: 'Global Logistics &<br class="hidden lg:block" /> Trade Documentation',
    logisticsSub: 'Zero‑Friction Export Execution',
    logisticsText: 'Getting the crop out of the ground is only half the process; delivering it securely across borders is where VAC truly excels. We handle the complex bureaucracy and physical logistics of international freight.',
    logisticsBullet1: 'Customs & Documentation: Expert management of phytosanitary certificates, certificates of origin, and comprehensive customs clearance to prevent border delays.',
@@ -143,13 +143,13 @@ const resources: TranslationResources = {
    introTitle: 'The World’s Smallest, Most Nutrient-Dense Plant',
    introText1: 'Wolffia globosa (commonly known as Watermeal) is an aquatic marvel. As the smallest flowering plant on Earth, it packs an unprecedented nutritional profile, offering exceptional levels of plant-based protein, essential amino acids, and vital micronutrients.',
    introText2: 'At VAC, we recognized the transformative potential of Wolffia early on. Through our flagship Viet Wolffia farm, we have developed a scalable, commercially viable model to supply this revolutionary biomass to global markets, catering to both premium human superfood sectors and high-yield animal agriculture.',
-   cultTitle: 'Precision Agriculture in Clean & Controlled Environments',
+   cultTitle: 'Precision Agriculture in Clean &<br class="hidden lg:block" /> Controlled Environments',
    cultDesc: 'The Viet Wolffia operation is built on a foundation of rigorous water chemistry and optimized environmental controls. We have engineered a highly efficient, scalable farming model that maximizes natural resources while guaranteeing absolute purity.',
    
    feature1Title: 'Optimized Canvas Pond Architecture',
    feature1Desc: 'Our Wolffia is cultivated in standardized canvas raceway ponds. This specific dimension allows for optimal water flow, nutrient distribution, and highly efficient harvesting.',
    
-   feature2Title: 'Air & Light Management',
+   feature2Title: 'Air &<br class="hidden lg:block" /> Light Management',
    feature2Desc: 'Rather than utilizing restrictive enclosed greenhouses, our ponds are situated beneath air and light controlled specialized, simple netting structures. This strategic setup harnesses maximum natural Vietnamese sunlight—crucial for rapid Wolffia biomass replication—while protecting the crop from extreme weather and physical contaminants.',
    
    feature3Title: 'Uncompromising Water Purity',
@@ -172,7 +172,7 @@ const resources: TranslationResources = {
    
    ctaTitle: 'Procure Viet Wolffia for Your Operations',
    ctaSub: 'We are equipped to handle bulk industrial orders and custom bio-feed formulations. Contact our commercial team to request technical specification sheets, nutritional analyses, or to discuss bulk export logistics.',
-   galleryTitle: 'Viet Wolffia Recipe & Operations Gallery',
+   galleryTitle: 'Viet Wolffia Recipe &<br class="hidden lg:block" /> Operations Gallery',
   },
   sustainability: {
    heroTitle: 'Cultivating a Resilient Global Supply Chain',
@@ -182,7 +182,7 @@ const resources: TranslationResources = {
    introDesc2: 'We embed sustainability into every layer of our ecosystem. Whether we are managing a large-scale contract farm or consulting on a corporate supply chain, VAC provides the independent expertise required to secure resources, protect local environments, and achieve the world’s most stringent agricultural standards.',
    
    certTitle: 'Elevating Supply Chains to Premium Standards',
-   certSub: 'Clean‑Label & Organic Certification Services',
+   certSub: 'Clean‑Label &<br class="hidden lg:block" /> Organic Certification Services',
    certText: 'Consumer demand for clean, chemical-free, and transparently sourced food is absolute. Transitioning a conventional agricultural operation to meet premium global standards requires rigorous oversight, technical expertise, and independent validation. VAC provides dedicated Certification Consultancy and Management Services for agricultural corporations looking to upgrade their Vietnamese sourcing to verified premium status.',
    certBullet1: 'Organic Transition Management: We guide local farms and processing facilities through the complex, multi-year transition protocols required to achieve and maintain USDA Organic and EU Organic certifications.',
    certBullet2: 'GlobalG.A.P. Alignment: We implement the Good Agricultural Practices (GAP) required to secure GlobalG.A.P. certification, focusing on worker welfare, environmental impact mitigation, and absolute food safety.',
@@ -190,13 +190,13 @@ const resources: TranslationResources = {
    certBullet4: 'Independent Audit Representation: Our on‑the‑ground agronomists and compliance experts act as your independent representatives during official environmental and quality audits, ensuring documentation, soil health, and water management plans pass seamlessly.',
    
    circularTitle: 'Building Zero-Waste Agricultural Ecosystems',
-   circularSub: 'Circular Agriculture & Resource Optimization',
+   circularSub: 'Circular Agriculture &<br class="hidden lg:block" /> Resource Optimization',
    circularText: 'A truly sustainable supply chain is one that wastes nothing. VAC actively partners with local producers and processors to implement circular "zero-waste" initiatives that keep agricultural by-products in the economic loop.',
    circularBullet1: 'Biomass Upcycling: We design and manage systems to rescue high-nutrient agricultural by-products—such as processing waste from tropical fruits or crop harvests—diverting them from landfills.',
    circularBullet2: 'Creating Secondary Value Chains: We facilitate the transformation of these upcycled materials into secondary, high-value resources, such as specialized, highly digestible bio-feeds and animal nutrition. This circular approach supports the broader agricultural ecosystem without taxing additional land or water resources.',
    
    esgTitle: 'Measurable Impact for Corporate Reporting',
-   esgSub: 'Environmental Stewardship & ESG Alignment',
+   esgSub: 'Environmental Stewardship &<br class="hidden lg:block" /> ESG Alignment',
    esgText: 'Global corporations require measurable data to support their ESG initiatives. We enforce strict environmental resource protections across all our sourcing and contract farming networks, providing you with the transparency needed for corporate reporting.',
    esgBullet1: 'Precision Water Management: We mandate advanced filtration and water reclamation systems in high-density farming operations to eliminate harmful agricultural runoff and protect local water tables.',
    esgBullet2: 'Land Optimization: By championing tech-driven, high-density cultivation methods, we help maximize crop yields while significantly minimizing the physical footprint required by traditional farming models.',
@@ -272,19 +272,19 @@ const resources: TranslationResources = {
   home: {
    heroTitle: 'Mang <span class="text-transparent bg-clip-text bg-gradient-to-r from-gold-champagne via-gold-warm to-gold-antique">Tinh Hoa Nông Sản Việt</span> Vươn Tầm Thế Giới',
    heroSub: 'Đối tác bản địa đáng tin cậy của bạn trong cung ứng nông sản cao cấp, canh tác hợp đồng công nghệ cao và logistics xuất khẩu toàn cầu.',
-   advantageTitle: 'Hệ\u00A0Sinh\u00A0Thái<br className="hidden md:block" />Chuỗi\u00A0Cung\u00A0Ứng<br className="hidden md:block" />Nông\u00A0Nghiệp Tích\u00A0Hợp',
+   advantageTitle: 'Hệ Sinh Thái Chuỗi Cung Ứng<br class="hidden lg:block" /> Nông Nghiệp Tích Hợp',
    advantageSub: 'Tại Vietnam Agriculture Center (VAC), chúng tôi gỡ bỏ mọi rào cản trong thương mại quốc tế. Bằng việc cung cấp các giải pháp khép kín cho các tập đoàn đa quốc gia, VAC đảm bảo tính bền vững, an ninh lương thực và chất lượng tuyệt đối từ hạt giống đến khi giao hàng.',
    
    sourcingTitle: 'Dịch Vụ Cung Ứng Toàn Cầu',
    sourcingDesc: 'Tiếp cận nguồn nguyên liệu nông sản và sản phẩm chế biến thượng hạng của Việt Nam. Chúng tôi trực tiếp đánh giá, đàm phán và thu mua số lượng lớn — từ các mặt hàng nông sản tươi đang được săn đón đến các sản phẩm chế biến sâu giá trị cao như bột hạt sen — nhằm đảm bảo một chuỗi cung ứng vững chắc cho các nhà nhập khẩu quốc tế.',
    
-   farmingTitle: 'Canh Tác Hợp Đồng & Đầu Tư',
+   farmingTitle: 'Canh Tác Hợp Đồng &<br class="hidden lg:block" /> Đầu Tư',
    farmingDesc: 'Bảo đảm nguồn cung của bạn thông qua vùng trồng chuyên canh. Chúng tôi quản lý các mô hình canh tác quy mô lớn, năng suất cao đối với những loại cây trồng giá trị, mang lại giải pháp nông trại trọn gói, minh bạch cùng tỷ suất hoàn vốn (ROI) rõ ràng và mô hình hợp tác thương mại hấp dẫn.',
    
    qaTitle: 'Đảm Bảo Chất Lượng Xuất Khẩu',
    qaDesc: 'Chúng tôi đóng vai trò là "người gác cổng" chất lượng của bạn. Khâu giám sát thực địa gắt chuyên nghiệp của VAC đảm bảo mọi hoạt động đều tuân thủ các tiêu chuẩn khắt khe nhất thế giới, hỗ trợ các cơ sở và vụ mùa đáp ứng tiêu chuẩn GlobalG.A.P., EU Organic và USDA Organic.',
    
-   logisticsTitle: 'Logistics & Thủ Tục Chứng Từ',
+   logisticsTitle: 'Logistics &<br class="hidden lg:block" /> Thủ Tục Chứng Từ',
    logisticsDesc: 'Thông quan không trở ngại. Chúng tôi giải quyết mọi sự phức tạp của thương mại quốc tế, từ quản lý chứng thư kiểm dịch thực vật, giải pháp đóng gói chuyên dụng cho hàng rời, đến thủ tục thông quan cho những thị trường được quản lý chặt chẽ nhất.',
    
    spotlightTitle: 'Đổi Mới Khởi Trào: Mô Hình Viet Wolffia',
@@ -298,10 +298,10 @@ const resources: TranslationResources = {
    tech2Title: 'Nông Nghiệp Thông Minh Tích Hợp IoT',
    tech2Desc: 'Nông nghiệp chính xác đòi hỏi những dữ liệu chuẩn xác. Chúng tôi triển khai mạng lưới cảm biến IoT để liên tục theo dõi các chỉ số môi trường thiết yếu theo thời gian thực — từ nhiệt độ nước, độ pH đến mật độ dinh dưỡng — qua đó tối ưu hóa quy trình, đảm bảo chu kỳ sinh trưởng đồng đều mà không dựa vào phỏng đoán.',
    
-   tech3Title: 'An Ninh Sinh Học & Độ Tinh Khiết',
+   tech3Title: 'An Ninh Sinh Học &<br class="hidden lg:block" /> Độ Tinh Khiết',
    tech3Desc: 'Bởi Wolffia hấp thụ trực tiếp dưỡng chất từ môi trường nước, an ninh sinh học là yếu tố sống còn. Cơ sở của chúng tôi vận hành dưới hệ thống kiểm soát ra vào và chống lây nhiễm chéo cực kỳ nghiêm ngặt. Bằng cách kết hợp hệ thống lọc công nghiệp và công nghệ tiệt trùng UV liên tục, chúng tôi cam kết một môi trường sinh trưởng hoàn toàn vắng bóng mầm bệnh.',
    
-   tech4Title: 'An Toàn Thực Phẩm Toàn Cầu & Chuẩn Xuất Khẩu',
+   tech4Title: 'An Toàn Thực Phẩm Toàn Cầu &<br class="hidden lg:block" /> Chuẩn Xuất Khẩu',
    tech4Desc: 'Toàn bộ chu trình hoạt động được tinh chỉnh ngay từ bước đầu để vượt qua mọi yêu cầu thương mại quốc tế. Từ nguồn nước đầu vào đến khâu thu hoạch, chúng tôi duy trì khả năng truy xuất nguồn gốc xuyên suốt và những tiêu chuẩn vệ sinh gắt gao. Điều này đảm bảo thành phẩm — dù tươi, sấy khô hay rang — đều tuân thủ tuyệt đối quy định an toàn thực phẩm toàn cầu, sẵn sàng xuất khẩu thông suốt đến bất kỳ thị trường nào.',
    
    trustTitle: 'Được Xây Dựng Cho Tiêu Chuẩn Toàn Cầu',
@@ -335,13 +335,13 @@ const resources: TranslationResources = {
    introTitle: 'Đối Tác Bản Địa Của Bạn Tại Việt Nam',
    introDesc: 'Thu mua nông sản quốc tế không đơn thuần là hoạt động mua bán; nó đòi hỏi một đối tác bản địa đồng hành sâu sát. Các dịch vụ cốt lõi của VAC được thiết kế nhằm bảo vệ nhà mua hàng và nhà đầu tư quốc tế ở từng mắt xích của chuỗi cung ứng, đảm bảo sản phẩm bạn nhận được chính xác là những gì bạn yêu cầu.',
    sourcingTitle: 'Dịch Vụ Cung Ứng Nông Sản Toàn Cầu',
-   sourcingSub: 'Thu Mua & Thẩm Định Chuẩn Xác',
+   sourcingSub: 'Thu Mua &<br class="hidden lg:block" /> Thẩm Định Chuẩn Xác',
    sourcingText: 'Chúng tôi làm cầu nối giữa các tập đoàn thực phẩm toàn cầu với những nhà sản xuất uy tín nhất Việt Nam. VAC trực tiếp xử lý trọn vẹn vòng đời cung ứng, đảm bảo duy trì số lượng, giá cả nhất quán và chất lượng vượt trội cho cả nông sản thô và sản phẩm chế biến sâu.',
    sourcingBullet1: 'Đánh Giá Nhà Cung Cấp: Khảo sát và thẩm định khắt khe trực tiếp tại các nông trại và cơ sở chế biến nội địa.',
    sourcingBullet2: 'Thu Mua Số Lượng Lớn: Năng lực đáp ứng các đơn hàng công nghiệp quy mô lớn, từ nông sản tươi đến các mặt hàng thực vật chế biến như bột hạt sen cao cấp.',
    sourcingBullet3: 'Thích Ứng Mọi Thị Trường: Chúng tôi tùy chỉnh quy trình cung ứng để thỏa mãn yêu cầu nhập khẩu và thị hiếu tiêu dùng của thị trường mục tiêu, dù đó là Châu Âu, Mỹ, hay các thị trường đặc thù như Hàn Quốc và Nhật Bản.',
    
-   farmingTitle: 'Canh Tác Hợp Đồng Công Nghệ Cao & Đầu Tư',
+   farmingTitle: 'Canh Tác Hợp Đồng Công Nghệ Cao &<br class="hidden lg:block" /> Đầu Tư',
    farmingSub: 'Canh Tác An Toàn, Quy Mô Lớn',
    farmingText: 'Dành cho các tập đoàn khao khát kiểm soát tuyệt đối chuỗi cung ứng, VAC cung cấp các dịch vụ canh tác hợp đồng trọn gói. Chúng tôi phân bổ quỹ đất, tài nguyên và đội ngũ quản lý chuyên sâu để canh tác các loại cây trồng sinh lời, phục vụ riêng cho khâu phân phối toàn cầu của bạn.',
    farmingBullet1: 'Quản Lý Nông Trại Trọn Gói: Điều hành khép kín từ khâu cải tạo đất, chọn giống đến thu hoạch và sơ chế sau thu hoạch.',
@@ -355,7 +355,7 @@ const resources: TranslationResources = {
    qaBullet2: 'Kiểm Định Dư Lượng & Độ Tinh Khiết: Triển khai các quy trình kiểm nghiệm gắt gao để cam kết tuyệt đối không có dư lượng hóa chất và bảo đảm an toàn sản phẩm 100%.',
    qaBullet3: 'Truy Xuất Nguồn Gốc: Hệ thống hồ sơ hoàn chỉnh theo dõi toàn bộ vòng đời sản phẩm, mang đến cho bạn và người tiêu dùng sự minh bạch tối đa.',
    
-   logisticsTitle: 'Logistics Toàn Cầu & Chứng Từ Thương Mại',
+   logisticsTitle: 'Logistics Toàn Cầu &<br class="hidden lg:block" /> Chứng Từ Thương Mại',
    logisticsSub: 'Thực Thi Xuất Khẩu Xuyên Suốt',
    logisticsText: 'Đưa nông sản lên khỏi mặt đất mới chỉ là một nửa chặng đường; vận chuyển an toàn xuyên biên giới mới là nơi VAC thực sự chứng minh năng lực. Chúng tôi trực tiếp tháo gỡ mọi rào cản hành chính phức tạp và đảm nhiệm quy trình kho vận quốc tế.',
    logisticsBullet1: 'Hải Quan & Chứng Từ: Quản lý chuyên nghiệp các giấy chứng nhận kiểm dịch thực vật, chứng nhận xuất xứ (C/O) và thông quan toàn diện để ngăn chặn mọi rủi ro chậm trễ tại cửa khẩu.',
@@ -371,13 +371,13 @@ const resources: TranslationResources = {
    introTitle: 'Loài Thực Vật Có Hoa Nhỏ Nhất, Giàu Dưỡng Chất Nhất Thế Giới',
    introText1: 'Wolffia globosa (thường được biết đến với tên gọi Bèo Tấm hay Trứng Nước) là một kỳ quan thủy sinh. Dù là loài thực vật có hoa nhỏ nhất Trái Đất, nó mang trong mình một hồ sơ dinh dưỡng vô tiền khoáng hậu, cung cấp hàm lượng lớn protein thực vật, các axit amin thiết yếu và những vi chất quan trọng.',
    introText2: 'Tại VAC, chúng tôi sớm nhận ra tiềm năng đột phá của Wolffia. Qua mô hình trang trại tiêu điểm Viet Wolffia, chúng tôi đã phát triển thành công một hệ thống mang tính thương mại, có khả năng nhân rộng để cung ứng khối lượng sinh khối mang tính cách mạng này cho thị trường thế giới, đáp ứng cả mảng siêu thực phẩm cao cấp cho người và ngành thức ăn chăn nuôi năng suất cao.',
-   cultTitle: 'Nông Nghiệp Chính Xác Trong Môi Trường Sạch & Được Kiểm Soát',
+   cultTitle: 'Nông Nghiệp Chính Xác Trong Môi Trường Sạch &<br class="hidden lg:block" /> Được Kiểm Soát',
    cultDesc: 'Hoạt động của Viet Wolffia được xây dựng trên nền tảng kiểm soát nghiêm ngặt các thông số hóa học của nước và quản lý môi trường tối ưu. Chúng tôi đã thiết kế một mô hình canh tác đạt hiệu suất cao, có thể mở rộng, giúp phát huy tối đa các nguồn lực tự nhiên đồng thời bảo đảm độ tinh khiết tuyệt đối.',
    
    feature1Title: 'Hệ Thống Ao Nổi Lót Bạt Tối Ưu',
    feature1Desc: 'Wolffia của chúng tôi được nuôi trồng trong các ao nổi lót bạt đạt quy chuẩn. Tỷ lệ kích thước chuyên biệt này đảm bảo sự lưu thông nước tối ưu, phân bổ dưỡng chất đồng đều và cho phép quá trình thu hoạch diễn ra với hiệu suất cực cao.',
    
-   feature2Title: 'Kiểm Soát Ánh Sáng & Không Khí',
+   feature2Title: 'Kiểm Soát Ánh Sáng &<br class="hidden lg:block" /> Không Khí',
    feature2Desc: 'Thay vì sử dụng các nhà kính khép kín gò bó, ao nuôi của chúng tôi được đặt dưới hệ thống lưới che chuyên dụng giúp điều tiết không khí và ánh sáng. Cách bố trí chiến lược này giúp hấp thụ tối đa ánh sáng mặt trời tự nhiên — yếu tố then chốt để sinh khối Wolffia sinh sôi nhanh chóng — đồng thời che chắn cho cây trồng khỏi thời tiết khắc nghiệt và tạp chất vật lý.',
    
    feature3Title: 'Độ Tinh Khiết Nguồn Nước Tuyệt Đối',
@@ -395,12 +395,12 @@ const resources: TranslationResources = {
    feedDesc: 'Chúng tôi chủ động tận dụng (upcycle) các phụ phẩm nông nghiệp giá trị cao — chẳng hạn như chất thải giàu dinh dưỡng từ dứa và đu đủ — kết hợp với sinh khối Wolffia. Quy trình này tạo ra công thức thức ăn chăn nuôi "Bio‑Balance" độc quyền của chúng tôi.',
    feedTarget: 'Ngành Mục Tiêu: Các hỗn hợp thức ăn dễ tiêu hóa, được tối ưu hóa sinh học, chế tạo riêng cho nuôi trồng thủy sản thương mại, chăn nuôi gia súc năng suất cao, ngành nuôi chim cảnh, ốc thương phẩm và dinh dưỡng thú cưng đặc biệt.',
    
-   rdTitle: '3. Nghiên Cứu & Phát Triển (R&D) Liên Tục',
+   rdTitle: '3. Nghiên Cứu &<br class="hidden lg:block" /> Phát Triển (R&D) Liên Tục',
    rdDesc: 'Viet Wolffia là trung tâm đổi mới của VAC. Bằng việc áp dụng chính các hệ thống kiểm soát nước chính xác và chuẩn mực môi trường vô khuẩn, chúng tôi đang tích cực thử nghiệm thương mại các loại rau xanh giá trị cao, bảo đảm danh mục sản phẩm của VAC luôn bắt nhịp với xu hướng dinh dưỡng toàn cầu.',
    
    ctaTitle: 'Thu Mua Viet Wolffia Cho Hoạt Động Của Bạn',
    ctaSub: 'Chúng tôi sẵn sàng đáp ứng các đơn đặt hàng công nghiệp quy mô lớn và tùy chỉnh các công thức thức ăn sinh học. Hãy liên hệ với đội ngũ thương mại của chúng tôi để nhận bảng thông số kỹ thuật, hồ sơ phân tích dinh dưỡng, hoặc trao đổi về logistics xuất khẩu khối lượng lớn.',
-   galleryTitle: 'Thư Viện Ảnh Hoạt Động & Cảm Hứng Chế Biến',
+   galleryTitle: 'Thư Viện Ảnh Hoạt Động &<br class="hidden lg:block" /> Cảm Hứng Chế Biến',
   },
   sustainability: {
    heroTitle: 'Xây Dựng Một Chuỗi Cung Ứng Toàn Cầu Bền Bỉ',
@@ -410,7 +410,7 @@ const resources: TranslationResources = {
    introDesc2: 'Chúng tôi lồng ghép các yếu tố phát triển bền vững vào từng lớp của hệ sinh thái. Cho dù đang quản lý một nông trại hợp đồng quy mô lớn hay tư vấn cho chuỗi cung ứng của một doanh nghiệp, VAC luôn cung cấp kiến thức chuyên môn độc lập để đảm bảo tài nguyên, bảo vệ sinh thái địa phương và vươn tới những tiêu chuẩn nông nghiệp khắt khe nhất thế giới.',
    
    certTitle: 'Nâng Tầm Chuỗi Cung Ứng Lên Tiêu Chuẩn Cao Cấp',
-   certSub: 'Dịch Vụ Chứng Nhận Nhãn Sạch (Clean‑Label) & Hữu Cơ',
+   certSub: 'Dịch Vụ Chứng Nhận Nhãn Sạch (Clean‑Label) &<br class="hidden lg:block" /> Hữu Cơ',
    certText: 'Nhu cầu của người tiêu dùng về thực phẩm sạch, không hóa chất và có nguồn gốc minh bạch là tuyệt đối. Chuyển đổi một mô hình nông nghiệp truyền thống để đạt tiêu chuẩn cao cấp quốc tế đòi hỏi sự giám sát chặt chẽ, am hiểu kỹ thuật sâu rộng và sự xác minh độc lập. VAC mang đến Dịch Vụ Tư Vấn và Quản Lý Chứng Nhận chuyên biệt, hỗ trợ các tập đoàn nâng cấp nguồn hàng tại Việt Nam lên vị thế cao cấp được xác thực.',
    certBullet1: 'Quản Lý Chuyển Đổi Hữu Cơ: Chúng tôi đồng hành cùng các nông trại và cơ sở chế biến nội địa vượt qua quy trình chuyển đổi dài hạn để đạt và giữ vững chứng nhận USDA Organic và EU Organic.',
    certBullet2: 'Đồng Bộ Theo GlobalG.A.P.: Chúng tôi thực thi các Quy Trình Thực Hành Nông Nghiệp Tốt (GAP) cần thiết để giành lấy chứng nhận GlobalG.A.P., đặt trọng tâm vào an toàn thực phẩm, phúc lợi người lao động, và giảm thiểu tác động môi trường.',
@@ -418,13 +418,13 @@ const resources: TranslationResources = {
    certBullet4: 'Đại Diện Kiểm Định Độc Lập: Đội ngũ kỹ sư nông nghiệp và chuyên gia tuân thủ tại hiện trường của chúng tôi sẽ đóng vai trò là đại diện độc lập trong suốt các đợt thanh tra chất lượng và môi trường chính thức, đảm bảo các tài liệu, hồ sơ đất đai và kế hoạch quản lý nước được thông qua thuận lợi.',
    
    circularTitle: 'Kiến Tạo Hệ Sinh Thái Nông Nghiệp "Không Rác Thải"',
-   circularSub: 'Nông Nghiệp Tuần Hoàn & Tối Ưu Hóa Nguồn Lực',
+   circularSub: 'Nông Nghiệp Tuần Hoàn &<br class="hidden lg:block" /> Tối Ưu Hóa Nguồn Lực',
    circularText: 'Một chuỗi cung ứng thực sự bền vững là chuỗi cung ứng không bỏ phí bất kỳ thứ gì. VAC tích cực hợp tác với các nhà sản xuất và cơ sở sơ chế địa phương nhằm thực thi các sáng kiến "không rác thải", giữ cho phụ phẩm nông nghiệp tiếp tục lưu chuyển trong vòng lặp kinh tế.',
    circularBullet1: 'Nâng Cấp Sinh Khối: Chúng tôi thiết kế và vận hành các hệ thống thu gom phụ phẩm nông nghiệp giàu dinh dưỡng — chẳng hạn như phế phẩm sau sơ chế trái cây nhiệt đới hoặc tàn dư sau thu hoạch — ngăn chúng bị đưa ra bãi rác.',
    circularBullet2: 'Tạo Lập Chuỗi Giá Trị Thứ Cấp: Chúng tôi thúc đẩy quá trình chuyển đổi các vật liệu nâng cấp này thành tài nguyên thứ cấp giá trị cao, ví dụ như các dạng thức ăn sinh học dễ hấp thụ và dinh dưỡng động vật. Cách tiếp cận tuần hoàn này hỗ trợ toàn bộ hệ sinh thái nông nghiệp mà không tạo thêm áp lực lên tài nguyên đất đai hay nguồn nước.',
    
    esgTitle: 'Tác Động Cụ Thể Cho Các Báo Cáo Doanh Nghiệp',
-   esgSub: 'Trách Nhiệm Môi Trường & Tuân Thủ ESG',
+   esgSub: 'Trách Nhiệm Môi Trường &<br class="hidden lg:block" /> Tuân Thủ ESG',
    esgText: 'Các tập đoàn toàn cầu luôn cần những dữ liệu chuẩn xác để chứng minh cho các nỗ lực ESG của họ. Chúng tôi áp đặt các biện pháp bảo vệ tài nguyên sinh thái gắt gao lên toàn bộ mạng lưới thu mua và canh tác hợp đồng của mình, cung cấp cho bạn sự minh bạch cần thiết để lập báo cáo doanh nghiệp.',
    esgBullet1: 'Quản Lý Nước Chính Xác: Chúng tôi yêu cầu áp dụng các hệ thống lọc và thu hồi nước tiên tiến trong các khu canh tác mật độ cao, nhằm loại bỏ hiện tượng ô nhiễm dòng chảy nông nghiệp và bảo vệ nguồn nước ngầm của địa phương.',
    esgBullet2: 'Tối Ưu Hóa Đất Đai: Bằng cách thúc đẩy phương thức canh tác mật độ cao áp dụng công nghệ, chúng tôi giúp tối đa hóa năng suất cây trồng đồng thời thu hẹp đáng kể diện tích đất cần sử dụng so với các mô hình canh tác truyền thống.',
