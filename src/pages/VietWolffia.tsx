@@ -1,11 +1,23 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { useTranslation } from '../i18n';
 import { motion, AnimatePresence } from 'framer-motion';
-import { CheckCircle2, FlaskConical, Droplet, Sparkles, Scale } from 'lucide-react';
+import { CheckCircle2, FlaskConical, Droplet, Sparkles, Scale, ChevronRight, ChevronLeft } from 'lucide-react';
 
 export const VietWolffia: React.FC = () => {
   const { t } = useTranslation();
   const [activeCategory, setActiveCategory] = useState<'culinary' | 'beverage' | 'product'>('culinary');
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+
+  const scrollRight = () => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollBy({ left: 340, behavior: 'smooth' });
+    }
+  };
+  const scrollLeft = () => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollBy({ left: -340, behavior: 'smooth' });
+    }
+  };
 
   const galleryItems = [
     {
@@ -423,8 +435,22 @@ export const VietWolffia: React.FC = () => {
             </div>
           </div>
 
-          {/* Gallery Grid - Dynamic Rows Horizontal Slider */}
-          <div className={`grid ${filteredGallery.length > 4 ? 'grid-rows-2' : 'grid-rows-1'} grid-flow-col auto-cols-[280px] md:auto-cols-[320px] gap-6 pb-8 overflow-x-auto snap-x snap-mandatory scrollbar-thin scrollbar-thumb-gold-warm/40 scrollbar-track-transparent`}>
+          {/* Gallery Slider Wrapper */}
+          <div className="relative group">
+            {/* Left Scroll Button */}
+            <button 
+              onClick={scrollLeft}
+              className="absolute -left-4 top-1/2 -translate-y-1/2 z-10 bg-cream/90 hover:bg-white text-forest p-2 rounded-full shadow-md opacity-0 group-hover:opacity-100 transition-opacity hidden md:flex items-center justify-center cursor-pointer border border-gold-warm/20"
+              aria-label="Scroll left"
+            >
+              <ChevronLeft size={24} />
+            </button>
+
+            {/* Gallery Grid - Dynamic Rows Horizontal Slider */}
+            <div 
+              ref={scrollContainerRef}
+              className={`grid ${filteredGallery.length > 4 ? 'grid-rows-2' : 'grid-rows-1'} grid-flow-col auto-cols-[280px] md:auto-cols-[320px] gap-6 pb-8 overflow-x-auto snap-x snap-mandatory scrollbar-thin scrollbar-thumb-gold-warm/40 scrollbar-track-transparent`}
+            >
             <AnimatePresence mode="popLayout">
               {filteredGallery.map((item) => (
                 <motion.div
@@ -447,13 +473,20 @@ export const VietWolffia: React.FC = () => {
                     <span className="text-[10px] uppercase tracking-wider font-semibold text-gold-antique">
                       {item.category}
                     </span>
-                    <h4 className="font-serif font-bold text-sm md:text-base text-forest leading-snug">
-                      {item.title}
-                    </h4>
                   </div>
                 </motion.div>
               ))}
             </AnimatePresence>
+            </div>
+
+            {/* Right Scroll Button */}
+            <button 
+              onClick={scrollRight}
+              className="absolute right-4 md:-right-4 top-1/2 -translate-y-1/2 z-10 bg-cream/90 hover:bg-white text-forest p-2 rounded-full shadow-md transition-opacity opacity-90 hover:opacity-100 flex items-center justify-center cursor-pointer border border-gold-warm/20"
+              aria-label="Scroll right"
+            >
+              <ChevronRight size={24} />
+            </button>
           </div>
         </div>
       </section>
