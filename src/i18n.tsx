@@ -44,14 +44,14 @@ const resources: TranslationResources = {
   home: {
    heroTitle: 'Bridging the <span class="text-transparent bg-clip-text bg-gradient-to-r from-gold-champagne via-gold-warm to-gold-antique">Richness of Vietnamese Agriculture</span> to the World',
    heroSub: 'Your trusted on‑the‑ground partner for premium product sourcing, high‑tech contract farming, and seamless global export logistics.',
-   advantageTitle: 'An Integrated Agricultural Supply Chain Ecosystem',
+   advantageTitle: 'An Integrated<br className="hidden md:block" />Agricultural Supply\u00A0Chain<br className="hidden md:block" />Ecosystem',
    advantageSub: 'At Vietnam Agriculture Center (VAC), we eliminate the friction of international trade. We offer end‑to‑end solutions for global corporations, ensuring food sustainability, security, and uncompromising quality from seed to shipment.',
    
    sourcingTitle: 'Global Sourcing Services',
-   sourcingDesc: "Access Vietnam's finest raw and processed agricultural goods. We audit, negotiate, and procure premium bulk volumes—from high-demand fresh produce to processed value-adds like bulk lotus seed powder—ensuring reliable supply chains for international buyers.",
+   sourcingDesc: "Access Vietnam's finest raw and processed agricultural goods. We audit, negotiate, and procure premium bulk volumes—from high-demand fresh produce to processed value-adds like bulk lotus seed powder—ensuring reliable supply chains for international buyers.",
    
    farmingTitle: 'Contract Farming & Investment',
-   farmingDesc: 'Secure your supply chain with dedicated cultivation. We manage scalable, high-yield operations for lucrative crops, offering transparent, fully managed farm setups with structured ROI and attractive trade partnership models.',
+   farmingDesc: 'Secure your supply chain with dedicated cultivation. We manage scalable, high-yield operations for lucrative crops, offering transparent, fully managed farm setups with structured ROI and attractive trade partnership models.',
    
    qaTitle: 'Export Quality Assurance',
    qaDesc: 'We act as your quality gatekeeper. Our rigorous on‑the‑ground oversight ensures all operations align with the world’s strictest market standards, preparing facilities and harvests for GlobalG.A.P., EU Organic, and USDA Organic certifications.',
@@ -79,7 +79,7 @@ const resources: TranslationResources = {
    trustTitle: 'Built for the Global Standard',
    trustDesc: 'We understand that international buyers require absolute certainty. VAC ensures every export meets precise specifications, from specialized aluminum gusseted packaging designed for extended shelf life to meticulous residue testing. Whether shipping to Asia, Europe, or the Americas, our produce arrives on time and in perfect compliance.',
    
-   ctaTitle: 'Secure Your Supply Chain in Vietnam',
+   ctaTitle: 'Secure Your Supply Chain in Vietnam',
    ctaText: 'Are you looking to source premium Vietnamese agriculture, explore high-yield contract farming, or procure bulk Wolffia superfoods? Let\'s build a sustainable partnership.',
   },
   about: {
@@ -88,10 +88,10 @@ const resources: TranslationResources = {
    missionTitle: 'Our Mission',
    missionDesc: 'To bridge the richness of Vietnamese agriculture to the global market by delivering premium, sustainably farmed, and rigorously certified produce to tables in every corner of the globe.',
    visionTitle: 'Our Vision',
-   visionDesc: 'To be the world’s most trusted gateway to Vietnam’s agricultural wealth, setting the international standard for high‑tech contract farming, transparent supply chains, and zero‑friction export logistics.',
+   visionDesc: 'To be the world’s most trusted gateway to Vietnam’s agricultural wealth, setting the international standard for high‑tech contract farming, transparent supply chains, and zero‑friction export logistics.',
    footprintTitle: 'An Expansive On‑the‑Ground Network',
    footprintDesc1: 'Vietnam Agriculture Center (VAC) was built on a foundation of deep local expertise and a sophisticated understanding of international trade. We are not brokers sitting behind desks; we are operators embedded in the land.',
-   footprintDesc2: 'Our active operations and strategic partnerships span across Vietnam’s most fertile and agriculturally diverse regions—including the strategic agricultural hubs of the Highlands and Mekong Delta regions. This expansive footprint allows us to diversify our crop portfolio, mitigate supply chain risks, and guarantee consistent, year-round fulfillment for our global corporate partners.',
+   footprintDesc2: 'Our active operations and strategic partnerships span across Vietnam’s most fertile and agriculturally diverse regions—including the strategic agricultural hubs of the Highlands and Mekong Delta regions. This expansive footprint allows us to diversify our crop portfolio, mitigate supply chain risks, and guarantee consistent, year-round fulfillment for our global corporate partners.',
    whyTitle: 'Your Trusted Gatekeeper in Vietnam',
    whySub: 'Why Global Corporations Choose VAC',
    why1Title: 'Uncompromising Quality Assurance',
@@ -103,9 +103,9 @@ const resources: TranslationResources = {
   },
   services: {
    heroTitle: 'End‑to‑End Solutions for Global Agriculture',
-   heroSub: 'From seed to shipment, VAC provides an integrated suite of services designed to secure your supply chain, guarantee premium quality, and eliminate the friction of international trade.',
+   heroSub: 'From seed to shipment, VAC provides an integrated suite of services designed to secure your supply chain, guarantee premium quality, and eliminate the friction of international trade.',
    introTitle: 'Your On‑the‑Ground Partner in Vietnam',
-   introDesc: 'Navigating international agricultural procurement requires more than just a buyer; it requires a deeply embedded local partner. VAC’s core services are designed to protect international buyers and investors at every step of the supply chain, ensuring that what you order is exactly what arrives at your destination.',
+   introDesc: 'Navigating international agricultural procurement requires more than just a buyer; it requires a deeply embedded local partner. VAC’s core services are designed to protect international buyers and investors at every step of the supply chain, ensuring that what you order is exactly what arrives at your destination.',
    sourcingTitle: 'Global Agricultural Sourcing Services',
    sourcingSub: 'Precision Procurement & Auditing',
    sourcingText: 'We connect global food and agriculture corporations with Vietnam’s most reliable producers. VAC handles the entire sourcing lifecycle, ensuring reliable volume, consistent pricing, and exceptional quality for both raw and value-added processed goods.',
@@ -115,7 +115,7 @@ const resources: TranslationResources = {
    
    farmingTitle: 'High‑Tech Contract Farming & Investment',
    farmingSub: 'Secure, Scalable Cultivation',
-   farmingText: 'For corporations seeking absolute control over their supply chain, VAC offers turnkey contract farming services. We dedicate land, resources, and expert management to cultivate lucrative crops specifically for your global distribution.',
+   farmingText: 'For corporations seeking absolute control over their supply chain, VAC offers turnkey contract farming services. We dedicate land, resources, and expert management to cultivate lucrative crops specifically for your global distribution.',
    farmingBullet1: 'Turnkey Farm Management: End‑to‑end operation, from land preparation and seed selection to harvest and post-harvest processing.',
    farmingBullet2: 'Structured Investment Models: We offer highly transparent, standardized investment structures for each crop.',
    farmingBullet3: 'Lucrative Trade Partnerships: We actively build robust distribution networks by offering highly competitive structures, including standard commission rates for our dedicated trade agents and global partners.',
@@ -134,7 +134,7 @@ const resources: TranslationResources = {
    logisticsBullet2: 'Specialized Export Packaging: We engineer custom packaging solutions to protect product integrity during transit. Whether managing fresh cold-chain freight or utilizing 10kg aluminum gusseted bags to protect 500kg bulk powder shipments from moisture, our packaging is built for global transit.',
    logisticsBullet3: 'Freight Management: Strategic coordination of ocean and air freight to optimize shipping times and costs.',
    
-   ctaTitle: 'Ready to streamline your agricultural supply chain?',
+   ctaTitle: 'Ready to streamline your agricultural supply chain?',
    ctaSub: 'Whether you require specialized sourcing, a customized contract farming proposal, or expert logistics support, VAC is ready to deploy our resources for your success.',
   },
   wolffia: {
@@ -156,7 +156,7 @@ const resources: TranslationResources = {
    feature3Desc: 'Wolffia absorbs nutrients directly from its aquatic environment, meaning water quality is paramount. Viet Wolffia utilizes industrial-grade water filtration systems paired with continuous UV sterilization. This ensures a 100% clean, pathogen-free growing environment, meeting the strictest international food-grade standards.',
    
    appTitle: 'Versatile Nutrition for a Hungry World',
-   appSub: 'Viet Wolffia is processed to serve diverse global supply chains, from high-end health food brands to commercial aquaculture.',
+   appSub: 'Viet Wolffia is processed to serve diverse global supply chains, from high-end health food brands to commercial aquaculture.',
    
    humanTitle: '1. Premium Human Consumption',
    humanDesc: 'Cultivated under strict food-safe conditions, our Wolffia is an ideal ingredient for the plant-based protein market, nutritional supplements, and functional foods.',
@@ -175,13 +175,13 @@ const resources: TranslationResources = {
    galleryTitle: 'Viet Wolffia Recipe & Operations Gallery',
   },
   sustainability: {
-   heroTitle: 'Cultivating a Resilient Global Supply Chain',
+   heroTitle: 'Cultivating a Resilient Global Supply Chain',
    heroSub: 'Empowering agricultural corporations with circular farming initiatives, transparent ESG reporting, and premium clean‑label certification services.',
    introTitle: 'Sustainability is Our Standard',
    introDesc1: 'At Vietnam Agriculture Center (VAC), we recognize that long-term agricultural success relies on ecological responsibility. For global food corporations, ESG (Environmental, Social, and Governance) compliance is no longer a corporate initiative—it is a fundamental market requirement.',
-   introDesc2: 'We embed sustainability into every layer of our ecosystem. Whether we are managing a large-scale contract farm or consulting on a corporate supply chain, VAC provides the independent expertise required to secure resources, protect local environments, and achieve the world’s most stringent agricultural standards.',
+   introDesc2: 'We embed sustainability into every layer of our ecosystem. Whether we are managing a large-scale contract farm or consulting on a corporate supply chain, VAC provides the independent expertise required to secure resources, protect local environments, and achieve the world’s most stringent agricultural standards.',
    
-   certTitle: 'Elevating Supply Chains to Premium Standards',
+   certTitle: 'Elevating Supply Chains to Premium Standards',
    certSub: 'Clean‑Label & Organic Certification Services',
    certText: 'Consumer demand for clean, chemical-free, and transparently sourced food is absolute. Transitioning a conventional agricultural operation to meet premium global standards requires rigorous oversight, technical expertise, and independent validation. VAC provides dedicated Certification Consultancy and Management Services for agricultural corporations looking to upgrade their Vietnamese sourcing to verified premium status.',
    certBullet1: 'Organic Transition Management: We guide local farms and processing facilities through the complex, multi-year transition protocols required to achieve and maintain USDA Organic and EU Organic certifications.',
@@ -191,7 +191,7 @@ const resources: TranslationResources = {
    
    circularTitle: 'Building Zero-Waste Agricultural Ecosystems',
    circularSub: 'Circular Agriculture & Resource Optimization',
-   circularText: 'A truly sustainable supply chain is one that wastes nothing. VAC actively partners with local producers and processors to implement circular "zero-waste" initiatives that keep agricultural by-products in the economic loop.',
+   circularText: 'A truly sustainable supply chain is one that wastes nothing. VAC actively partners with local producers and processors to implement circular "zero-waste" initiatives that keep agricultural by-products in the economic loop.',
    circularBullet1: 'Biomass Upcycling: We design and manage systems to rescue high-nutrient agricultural by-products—such as processing waste from tropical fruits or crop harvests—diverting them from landfills.',
    circularBullet2: 'Creating Secondary Value Chains: We facilitate the transformation of these upcycled materials into secondary, high-value resources, such as specialized, highly digestible bio-feeds and animal nutrition. This circular approach supports the broader agricultural ecosystem without taxing additional land or water resources.',
    
@@ -200,13 +200,13 @@ const resources: TranslationResources = {
    esgText: 'Global corporations require measurable data to support their ESG initiatives. We enforce strict environmental resource protections across all our sourcing and contract farming networks, providing you with the transparency needed for corporate reporting.',
    esgBullet1: 'Precision Water Management: We mandate advanced filtration and water reclamation systems in high-density farming operations to eliminate harmful agricultural runoff and protect local water tables.',
    esgBullet2: 'Land Optimization: By championing tech-driven, high-density cultivation methods, we help maximize crop yields while significantly minimizing the physical footprint required by traditional farming models.',
-   esgBullet3: 'Social Empowerment: Our contract farming structures are designed to provide fair, standardized, and highly lucrative opportunities for local Vietnamese farmers. By bringing financial stability and modern agricultural education to rural communities, we ensure your supply chain is ethically sound from the ground up.',
+   esgBullet3: 'Social Empowerment: Our contract farming structures are designed to provide fair, standardized, and highly lucrative opportunities for local Vietnamese farmers. By bringing financial stability and modern agricultural education to rural communities, we ensure your supply chain is ethically sound from the ground up.',
    
-   ctaTitle: 'Ready to Certify Your Supply Chain?',
+   ctaTitle: 'Ready to Certify Your Supply Chain?',
    ctaSub: 'Whether you need an independent partner to manage your organic transition, secure GlobalG.A.P. compliance, or source sustainably farmed produce, VAC is ready to lead the way.',
   },
   contact: {
-   heroTitle: 'Let’s Build a Sustainable Supply Chain Together',
+   heroTitle: 'Let’s Build a Sustainable Supply Chain Together',
    heroSub: 'Connect with Vietnam Agriculture Center to discuss global sourcing, custom contract farming, or enterprise-level ESG consulting.',
    introTitle: 'Your On‑the‑Ground Partner in Vietnam',
    introDesc: 'International agricultural trade requires precision, trust, and local expertise. Whether you are looking to secure a reliable source of premium produce, transition a facility to organic standards, or structure a custom farming investment, our team is ready to facilitate your success. Reach out to us directly or fill out the inquiry form below, and an appropriate specialist will respond promptly.',
@@ -272,7 +272,7 @@ const resources: TranslationResources = {
   home: {
    heroTitle: 'Mang <span class="text-transparent bg-clip-text bg-gradient-to-r from-gold-champagne via-gold-warm to-gold-antique">Tinh Hoa Nông Sản Việt</span> Vươn Tầm Thế Giới',
    heroSub: 'Đối tác bản địa đáng tin cậy của bạn trong cung ứng nông sản cao cấp, canh tác hợp đồng công nghệ cao và logistics xuất khẩu toàn cầu.',
-   advantageTitle: 'Hệ Sinh Thái Chuỗi Cung Ứng Nông Nghiệp Tích Hợp',
+   advantageTitle: 'Hệ\u00A0Sinh\u00A0Thái<br className="hidden md:block" />Chuỗi\u00A0Cung\u00A0Ứng<br className="hidden md:block" />Nông\u00A0Nghiệp Tích\u00A0Hợp',
    advantageSub: 'Tại Vietnam Agriculture Center (VAC), chúng tôi gỡ bỏ mọi rào cản trong thương mại quốc tế. Bằng việc cung cấp các giải pháp khép kín cho các tập đoàn đa quốc gia, VAC đảm bảo tính bền vững, an ninh lương thực và chất lượng tuyệt đối từ hạt giống đến khi giao hàng.',
    
    sourcingTitle: 'Dịch Vụ Cung Ứng Toàn Cầu',

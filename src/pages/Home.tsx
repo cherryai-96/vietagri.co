@@ -169,7 +169,9 @@ export const Home: React.FC = () => {
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-stretch">
           <div className="lg:col-span-5 flex flex-col gap-6">
             <div className="flex flex-col gap-4">
-              <h2 className="font-serif text-balance text-[2.25rem] leading-[1.1] sm:text-[3rem] md:text-5xl lg:text-6xl font-bold tracking-wide text-forest leading-tight"><span dangerouslySetInnerHTML={{ __html: t('home.advantageTitle') }} /></h2>
+              <h2 className="font-serif text-[2rem] leading-[1.1] sm:text-[2.5rem] md:text-5xl lg:text-5xl xl:text-[3.25rem] font-bold tracking-wide text-forest leading-tight">
+                <span dangerouslySetInnerHTML={{ __html: t('home.advantageTitle') }} />
+              </h2>
               <p className="text-sm md:text-base text-carbon/75 font-light leading-relaxed"><span dangerouslySetInnerHTML={{ __html: t('home.advantageSub') }} /></p>
             </div>
             <div className="relative mt-2 min-h-[300px] flex-grow w-full rounded-2xl overflow-hidden shadow-xl border border-gold-warm/20 group">
