@@ -128,7 +128,7 @@ export const Services: React.FC = () => {
             <span className="text-xs md:text-sm font-bold uppercase tracking-widest text-gold-champagne bg-forest/40 border border-gold-warm/20 px-4 py-1.5 rounded-full self-center">
               Core Services
             </span>
-            <h1 className="font-serif text-balance text-[2.75rem] leading-[1.1] sm:text-[3.5rem] md:text-6xl lg:text-7xl font-bold leading-tight tracking-wide text-gold-champagne"><span dangerouslySetInnerHTML={{ __html: t('services.heroTitle') }} /></h1>
+            <h1 className="font-serif text-balance text-[2.25rem] leading-[1.1] sm:text-[3rem] md:text-5xl lg:text-6xl font-bold leading-tight tracking-wide text-gold-champagne"><span dangerouslySetInnerHTML={{ __html: t('services.heroTitle') }} /></h1>
           </motion.div>
 
           <motion.p
@@ -143,7 +143,7 @@ export const Services: React.FC = () => {
       {/* Intro Description */}
       <section className="py-16 bg-cream text-carbon px-4 md:px-8">
         <div className="max-w-4xl mx-auto text-center flex flex-col gap-6">
-          <h2 className="font-serif text-balance text-[2.5rem] leading-[1.1] sm:text-5xl md:text-6xl font-bold text-forest leading-tight"><span dangerouslySetInnerHTML={{ __html: t('services.introTitle') }} /></h2>
+          <h2 className="font-serif text-balance text-[2rem] leading-[1.1] sm:text-4xl md:text-5xl font-bold text-forest leading-tight"><span dangerouslySetInnerHTML={{ __html: t('services.introTitle') }} /></h2>
           <p className="text-sm md:text-base text-carbon/75 font-light leading-relaxed">
             {t('services.introDesc')}
           </p>
@@ -257,7 +257,7 @@ export const Services: React.FC = () => {
           <div className="absolute inset-0 bg-carbon/40" />
         </div>
         <div className="max-w-4xl mx-auto text-center flex flex-col gap-8 items-center relative z-10">
-          <h2 className="font-serif text-balance text-[2.75rem] leading-[1.1] sm:text-[3.5rem] md:text-6xl lg:text-7xl font-bold text-gold-champagne leading-tight"><span dangerouslySetInnerHTML={{ __html: t('services.ctaTitle') }} /></h2>
+          <h2 className="font-serif text-balance text-[2.25rem] leading-[1.1] sm:text-[3rem] md:text-5xl lg:text-6xl font-bold text-gold-champagne leading-tight"><span dangerouslySetInnerHTML={{ __html: t('services.ctaTitle') }} /></h2>
           <p className="text-sm md:text-base text-cream/80 font-light leading-relaxed max-w-2xl"><span dangerouslySetInnerHTML={{ __html: t('services.ctaSub') }} /></p>
           <div className="flex flex-wrap gap-4 justify-center">
             <Link

@@ -81,13 +81,17 @@
   border-color: rgba(216, 170, 109, 0.5);
 }
 
-@keyframes flow-dash {
+@keyframes draw-route {
+  from {
+    stroke-dashoffset: 1500;
+  }
   to {
-    stroke-dashoffset: -28;
+    stroke-dashoffset: 0;
   }
 }
 
 .animate-route-flow {
-  animation: flow-dash 1s linear infinite;
+  stroke-dasharray: 1500 !important;
+  animation: draw-route 2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 

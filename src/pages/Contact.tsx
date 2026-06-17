@@ -133,7 +133,7 @@ export const Contact: React.FC = () => {
               <Globe size={14} className="text-gold-warm animate-spin-slow" />
               B2B Portal & Sourcing Desk
             </span>
-            <h1 className="font-serif text-balance text-[2.75rem] leading-[1.1] sm:text-[3.5rem] md:text-6xl lg:text-7xl font-bold leading-tight tracking-wide text-gold-champagne"><span dangerouslySetInnerHTML={{ __html: t('contact.heroTitle') }} /></h1>
+            <h1 className="font-serif text-balance text-[2.25rem] leading-[1.1] sm:text-[3rem] md:text-5xl lg:text-6xl font-bold leading-tight tracking-wide text-gold-champagne"><span dangerouslySetInnerHTML={{ __html: t('contact.heroTitle') }} /></h1>
           </motion.div>
 
           <motion.p
@@ -155,7 +155,7 @@ export const Contact: React.FC = () => {
               <span className="text-xs font-bold text-gold-antique uppercase tracking-widest">
                 Global Operations
               </span>
-              <h2 className="font-serif text-balance text-[2.5rem] leading-[1.1] sm:text-5xl md:text-6xl font-bold text-forest"><span dangerouslySetInnerHTML={{ __html: t('contact.introTitle') }} /></h2>
+              <h2 className="font-serif text-balance text-[2rem] leading-[1.1] sm:text-4xl md:text-5xl font-bold text-forest"><span dangerouslySetInnerHTML={{ __html: t('contact.introTitle') }} /></h2>
               <p className="text-sm text-carbon/75 font-light leading-relaxed">
                 {t('contact.introDesc')}
               </p>
@@ -448,7 +448,7 @@ export const Contact: React.FC = () => {
               <Globe size={16} className="text-gold-warm" />
               Logistics Network
             </span>
-            <h2 className="font-serif text-balance text-[2.5rem] leading-[1.1] sm:text-5xl md:text-6xl font-bold text-forest">
+            <h2 className="font-serif text-balance text-[2rem] leading-[1.1] sm:text-4xl md:text-5xl font-bold text-forest">
               {t('contact.globalReady')}
             </h2>
             <p className="text-sm text-carbon/75 font-light leading-relaxed">

@@ -44,7 +44,7 @@ export const About: React.FC = () => {
             <span className="text-xs md:text-sm font-bold uppercase tracking-widest text-gold-champagne bg-forest/40 border border-gold-warm/20 px-4 py-1.5 rounded-full self-center">
               About Us
             </span>
-            <h1 className="font-serif text-balance text-[2.75rem] leading-[1.1] sm:text-[3.5rem] md:text-6xl lg:text-7xl font-bold leading-tight tracking-wide text-gold-champagne"><span dangerouslySetInnerHTML={{ __html: t('about.heroTitle') }} /></h1>
+            <h1 className="font-serif text-balance text-[2.25rem] leading-[1.1] sm:text-[3rem] md:text-5xl lg:text-6xl font-bold leading-tight tracking-wide text-gold-champagne"><span dangerouslySetInnerHTML={{ __html: t('about.heroTitle') }} /></h1>
           </motion.div>
 
           <motion.p
@@ -72,7 +72,7 @@ export const About: React.FC = () => {
               transition={{ duration: 0.8 }}
               className="bg-ivory border border-gold-warm/15 rounded-xl p-8 lg:p-12 flex flex-col gap-6 shadow-sm"
             >
-              <h2 className="font-serif text-balance text-[2.5rem] leading-[1.1] sm:text-5xl md:text-6xl font-bold text-forest border-b border-gold-warm/25 pb-4"><span dangerouslySetInnerHTML={{ __html: t('about.missionTitle') }} /></h2>
+              <h2 className="font-serif text-balance text-[2rem] leading-[1.1] sm:text-4xl md:text-5xl font-bold text-forest border-b border-gold-warm/25 pb-4"><span dangerouslySetInnerHTML={{ __html: t('about.missionTitle') }} /></h2>
               <p className="text-sm md:text-base text-carbon/75 font-light leading-relaxed">
                 {t('about.missionDesc')}
               </p>
@@ -85,7 +85,7 @@ export const About: React.FC = () => {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="bg-ivory border border-gold-warm/15 rounded-xl p-8 lg:p-12 flex flex-col gap-6 shadow-sm"
             >
-              <h2 className="font-serif text-balance text-[2.5rem] leading-[1.1] sm:text-5xl md:text-6xl font-bold text-forest border-b border-gold-warm/25 pb-4"><span dangerouslySetInnerHTML={{ __html: t('about.visionTitle') }} /></h2>
+              <h2 className="font-serif text-balance text-[2rem] leading-[1.1] sm:text-4xl md:text-5xl font-bold text-forest border-b border-gold-warm/25 pb-4"><span dangerouslySetInnerHTML={{ __html: t('about.visionTitle') }} /></h2>
               <p className="text-sm md:text-base text-carbon/75 font-light leading-relaxed">
                 {t('about.visionDesc')}
               </p>
@@ -101,7 +101,7 @@ export const About: React.FC = () => {
             <span className="text-xs font-bold uppercase tracking-widest text-gold-antique">
               National Footprint
             </span>
-            <h2 className="font-serif text-balance text-[2.5rem] leading-[1.1] sm:text-5xl md:text-6xl font-bold text-forest leading-tight"><span dangerouslySetInnerHTML={{ __html: t('about.footprintTitle') }} /></h2>
+            <h2 className="font-serif text-balance text-[2rem] leading-[1.1] sm:text-4xl md:text-5xl font-bold text-forest leading-tight"><span dangerouslySetInnerHTML={{ __html: t('about.footprintTitle') }} /></h2>
             <p className="text-sm md:text-base text-carbon/75 font-light leading-relaxed">
               {t('about.footprintDesc1')}
             </p>
@@ -144,7 +144,7 @@ export const About: React.FC = () => {
         <div className="max-w-7xl mx-auto flex flex-col gap-16">
           <div className="text-center max-w-3xl mx-auto flex flex-col gap-4">
             <span className="text-xs font-bold uppercase tracking-widest text-gold-antique"><span dangerouslySetInnerHTML={{ __html: t('about.whySub') }} /></span>
-            <h2 className="font-serif text-balance text-[2.75rem] leading-[1.1] sm:text-[3.5rem] md:text-6xl lg:text-7xl font-bold tracking-wide text-forest leading-tight"><span dangerouslySetInnerHTML={{ __html: t('about.whyTitle') }} /></h2>
+            <h2 className="font-serif text-balance text-[2.25rem] leading-[1.1] sm:text-[3rem] md:text-5xl lg:text-6xl font-bold tracking-wide text-forest leading-tight"><span dangerouslySetInnerHTML={{ __html: t('about.whyTitle') }} /></h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

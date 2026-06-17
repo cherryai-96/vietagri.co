@@ -204,7 +204,7 @@ export const VietWolffia: React.FC = () => {
             <span className="text-xs md:text-sm font-bold uppercase tracking-widest text-gold-champagne bg-forest/40 border border-gold-warm/20 px-4 py-1.5 rounded-full self-center">
               Flagship Innovation
             </span>
-            <h1 className="font-serif text-balance text-[2.75rem] leading-[1.1] sm:text-[3.5rem] md:text-6xl lg:text-7xl font-bold leading-tight tracking-wide text-gold-champagne"><span dangerouslySetInnerHTML={{ __html: t('wolffia.heroTitle') }} /></h1>
+            <h1 className="font-serif text-balance text-[2.25rem] leading-[1.1] sm:text-[3rem] md:text-5xl lg:text-6xl font-bold leading-tight tracking-wide text-gold-champagne"><span dangerouslySetInnerHTML={{ __html: t('wolffia.heroTitle') }} /></h1>
           </motion.div>
 
           <motion.p
@@ -220,7 +220,7 @@ export const VietWolffia: React.FC = () => {
       <section className="py-24 bg-cream text-carbon px-4 md:px-8">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           <div className="lg:col-span-7 flex flex-col gap-6">
-            <h2 className="font-serif text-balance text-[2.5rem] leading-[1.1] sm:text-5xl md:text-6xl font-bold text-forest leading-tight"><span dangerouslySetInnerHTML={{ __html: t('wolffia.introTitle') }} /></h2>
+            <h2 className="font-serif text-balance text-[2rem] leading-[1.1] sm:text-4xl md:text-5xl font-bold text-forest leading-tight"><span dangerouslySetInnerHTML={{ __html: t('wolffia.introTitle') }} /></h2>
             <p className="text-sm md:text-base text-carbon/75 font-light leading-relaxed">
               {t('wolffia.introText1')}
             </p>
@@ -262,7 +262,7 @@ export const VietWolffia: React.FC = () => {
             <span className="text-xs font-bold uppercase tracking-widest text-gold-antique">
               Production Standards
             </span>
-            <h2 className="font-serif text-balance text-[2.75rem] leading-[1.1] sm:text-[3.5rem] md:text-6xl lg:text-7xl font-bold tracking-wide text-forest leading-tight"><span dangerouslySetInnerHTML={{ __html: t('wolffia.cultTitle') }} /></h2>
+            <h2 className="font-serif text-balance text-[2.25rem] leading-[1.1] sm:text-[3rem] md:text-5xl lg:text-6xl font-bold tracking-wide text-forest leading-tight"><span dangerouslySetInnerHTML={{ __html: t('wolffia.cultTitle') }} /></h2>
             <p className="text-sm md:text-base text-carbon/75 font-light leading-relaxed">
               {t('wolffia.cultDesc')}
             </p>
@@ -318,7 +318,7 @@ export const VietWolffia: React.FC = () => {
             <span className="text-xs font-bold uppercase tracking-widest text-gold-antique">
               Versatile Outlets
             </span>
-            <h2 className="font-serif text-balance text-[2.75rem] leading-[1.1] sm:text-[3.5rem] md:text-6xl lg:text-7xl font-bold tracking-wide text-forest leading-tight"><span dangerouslySetInnerHTML={{ __html: t('wolffia.appTitle') }} /></h2>
+            <h2 className="font-serif text-balance text-[2.25rem] leading-[1.1] sm:text-[3rem] md:text-5xl lg:text-6xl font-bold tracking-wide text-forest leading-tight"><span dangerouslySetInnerHTML={{ __html: t('wolffia.appTitle') }} /></h2>
             <p className="text-sm md:text-base text-carbon/75 font-light leading-relaxed"><span dangerouslySetInnerHTML={{ __html: t('wolffia.appSub') }} /></p>
           </div>
 
@@ -414,7 +414,7 @@ export const VietWolffia: React.FC = () => {
               <span className="text-xs font-bold uppercase tracking-widest text-gold-antique">
                 Visual Showcase
               </span>
-              <h2 className="font-serif text-balance text-[2.5rem] leading-[1.1] sm:text-5xl md:text-6xl font-bold text-forest"><span dangerouslySetInnerHTML={{ __html: t('wolffia.galleryTitle') }} /></h2>
+              <h2 className="font-serif text-balance text-[2rem] leading-[1.1] sm:text-4xl md:text-5xl font-bold text-forest"><span dangerouslySetInnerHTML={{ __html: t('wolffia.galleryTitle') }} /></h2>
             </div>
             
             {/* Category Selectors */}
@@ -494,7 +494,7 @@ export const VietWolffia: React.FC = () => {
       {/* CTA Partner Section */}
       <section className="py-24 bg-brown-soil text-cream relative px-4 md:px-8 border-t border-gold-warm/25">
         <div className="max-w-4xl mx-auto text-center flex flex-col gap-8 items-center">
-          <h2 className="font-serif text-balance text-[2.75rem] leading-[1.1] sm:text-[3.5rem] md:text-6xl lg:text-7xl font-bold text-gold-champagne leading-tight"><span dangerouslySetInnerHTML={{ __html: t('wolffia.ctaTitle') }} /></h2>
+          <h2 className="font-serif text-balance text-[2.25rem] leading-[1.1] sm:text-[3rem] md:text-5xl lg:text-6xl font-bold text-gold-champagne leading-tight"><span dangerouslySetInnerHTML={{ __html: t('wolffia.ctaTitle') }} /></h2>
           <p className="text-sm md:text-base text-cream/70 font-light leading-relaxed max-w-2xl"><span dangerouslySetInnerHTML={{ __html: t('wolffia.ctaSub') }} /></p>
           <div className="flex flex-wrap gap-4 justify-center">
             <a
