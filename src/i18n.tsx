@@ -74,7 +74,7 @@ const resources: TranslationResources = {
    tech3Desc: 'Because Wolffia absorbs nutrients directly from its aquatic environment, bio-security is paramount. Our facility operates under strict access and cross-contamination controls. We guarantee a completely pathogen-free growing environment by utilizing industrial filtration systems paired with continuous, multi-stage UV sterilization.',
    
    tech4Title: 'Global Food Safety & Export Compliance',
-   tech4Desc: 'The entire operation is engineered from the ground up to exceed international trade requirements. From water input to final harvest, we maintain end‑to‑end traceability and stringent hygiene protocols. This ensures that the final product—whether fresh, dried, or roasted—is fully compliant with global food safety regulations and primed for seamless, zero-friction export to any market in the world.',
+   tech4Desc: 'The entire operation is engineered from the ground up to exceed international trade requirements. From water input to final harvest, we maintain end‑to‑end traceability and stringent hygiene protocols. This ensures that the final product—whether fresh, dried, or roasted—is fully compliant with global food safety regulations and primed for seamless, zero‑friction export to any market in the world.',
    
    trustTitle: 'Built for the Global Standard',
    trustDesc: 'We understand that international buyers require absolute certainty. VAC ensures every export meets precise specifications, from specialized aluminum gusseted packaging designed for extended shelf life to meticulous residue testing. Whether shipping to Asia, Europe, or the Americas, our produce arrives on time and in perfect compliance.',
@@ -88,8 +88,8 @@ const resources: TranslationResources = {
    missionTitle: 'Our Mission',
    missionDesc: 'To bridge the richness of Vietnamese agriculture to the global market by delivering premium, sustainably farmed, and rigorously certified produce to tables in every corner of the globe.',
    visionTitle: 'Our Vision',
-   visionDesc: 'To be the world’s most trusted gateway to Vietnam’s agricultural wealth, setting the international standard for high‑tech contract farming, transparent supply chains, and zero-friction export logistics.',
-   footprintTitle: 'An Expansive On-the-Ground Network',
+   visionDesc: 'To be the world’s most trusted gateway to Vietnam’s agricultural wealth, setting the international standard for high‑tech contract farming, transparent supply chains, and zero‑friction export logistics.',
+   footprintTitle: 'An Expansive On‑the‑Ground Network',
    footprintDesc1: 'Vietnam Agriculture Center (VAC) was built on a foundation of deep local expertise and a sophisticated understanding of international trade. We are not brokers sitting behind desks; we are operators embedded in the land.',
    footprintDesc2: 'Our active operations and strategic partnerships span across Vietnam’s most fertile and agriculturally diverse regions—including the strategic agricultural hubs of the Highlands and Mekong Delta regions. This expansive footprint allows us to diversify our crop portfolio, mitigate supply chain risks, and guarantee consistent, year-round fulfillment for our global corporate partners.',
    whyTitle: 'Your Trusted Gatekeeper in Vietnam',
@@ -104,7 +104,7 @@ const resources: TranslationResources = {
   services: {
    heroTitle: 'End‑to‑End Solutions for Global Agriculture',
    heroSub: 'From seed to shipment, VAC provides an integrated suite of services designed to secure your supply chain, guarantee premium quality, and eliminate the friction of international trade.',
-   introTitle: 'Your On-the-Ground Partner in Vietnam',
+   introTitle: 'Your On‑the‑Ground Partner in Vietnam',
    introDesc: 'Navigating international agricultural procurement requires more than just a buyer; it requires a deeply embedded local partner. VAC’s core services are designed to protect international buyers and investors at every step of the supply chain, ensuring that what you order is exactly what arrives at your destination.',
    sourcingTitle: 'Global Agricultural Sourcing Services',
    sourcingSub: 'Precision Procurement & Auditing',
@@ -116,7 +116,7 @@ const resources: TranslationResources = {
    farmingTitle: 'High‑Tech Contract Farming & Investment',
    farmingSub: 'Secure, Scalable Cultivation',
    farmingText: 'For corporations seeking absolute control over their supply chain, VAC offers turnkey contract farming services. We dedicate land, resources, and expert management to cultivate lucrative crops specifically for your global distribution.',
-   farmingBullet1: 'Turnkey Farm Management: End-to-end operation, from land preparation and seed selection to harvest and post-harvest processing.',
+   farmingBullet1: 'Turnkey Farm Management: End‑to‑end operation, from land preparation and seed selection to harvest and post-harvest processing.',
    farmingBullet2: 'Structured Investment Models: We offer highly transparent, standardized investment structures for each crop.',
    farmingBullet3: 'Lucrative Trade Partnerships: We actively build robust distribution networks by offering highly competitive structures, including standard commission rates for our dedicated trade agents and global partners.',
    
@@ -139,7 +139,7 @@ const resources: TranslationResources = {
   },
   wolffia: {
    heroTitle: 'Viet Wolffia Superfood',
-   heroSub: 'Cultivating the future of protein. High-tech, highly scalable Wolffia Globosa production for global human and animal nutrition.',
+   heroSub: 'Cultivating the future of protein. High‑tech, highly scalable Wolffia Globosa production for global human and animal nutrition.',
    introTitle: 'The World’s Smallest, Most Nutrient-Dense Plant',
    introText1: 'Wolffia globosa (commonly known as Watermeal) is an aquatic marvel. As the smallest flowering plant on Earth, it packs an unprecedented nutritional profile, offering exceptional levels of plant-based protein, essential amino acids, and vital micronutrients.',
    introText2: 'At VAC, we recognized the transformative potential of Wolffia early on. Through our flagship Viet Wolffia farm, we have developed a scalable, commercially viable model to supply this revolutionary biomass to global markets, catering to both premium human superfood sectors and high-yield animal agriculture.',
@@ -176,7 +176,7 @@ const resources: TranslationResources = {
   },
   sustainability: {
    heroTitle: 'Cultivating a Resilient Global Supply Chain',
-   heroSub: 'Empowering agricultural corporations with circular farming initiatives, transparent ESG reporting, and premium clean-label certification services.',
+   heroSub: 'Empowering agricultural corporations with circular farming initiatives, transparent ESG reporting, and premium clean‑label certification services.',
    introTitle: 'Sustainability is Our Standard',
    introDesc1: 'At Vietnam Agriculture Center (VAC), we recognize that long-term agricultural success relies on ecological responsibility. For global food corporations, ESG (Environmental, Social, and Governance) compliance is no longer a corporate initiative—it is a fundamental market requirement.',
    introDesc2: 'We embed sustainability into every layer of our ecosystem. Whether we are managing a large-scale contract farm or consulting on a corporate supply chain, VAC provides the independent expertise required to secure resources, protect local environments, and achieve the world’s most stringent agricultural standards.',
@@ -186,7 +186,7 @@ const resources: TranslationResources = {
    certText: 'Consumer demand for clean, chemical-free, and transparently sourced food is absolute. Transitioning a conventional agricultural operation to meet premium global standards requires rigorous oversight, technical expertise, and independent validation. VAC provides dedicated Certification Consultancy and Management Services for agricultural corporations looking to upgrade their Vietnamese sourcing to verified premium status.',
    certBullet1: 'Organic Transition Management: We guide local farms and processing facilities through the complex, multi-year transition protocols required to achieve and maintain USDA Organic and EU Organic certifications.',
    certBullet2: 'GlobalG.A.P. Alignment: We implement the Good Agricultural Practices (GAP) required to secure GlobalG.A.P. certification, focusing on worker welfare, environmental impact mitigation, and absolute food safety.',
-   certBullet3: 'Clean‑Label Protocols: We design and enforce zero-pesticide, residue-free cultivation and processing protocols, allowing your brand to confidently market clean-label products to highly regulated international markets.',
+   certBullet3: 'Clean‑Label Protocols: We design and enforce zero-pesticide, residue-free cultivation and processing protocols, allowing your brand to confidently market clean‑label products to highly regulated international markets.',
    certBullet4: 'Independent Audit Representation: Our on‑the‑ground agronomists and compliance experts act as your independent representatives during official environmental and quality audits, ensuring documentation, soil health, and water management plans pass seamlessly.',
    
    circularTitle: 'Building Zero-Waste Agricultural Ecosystems',
@@ -208,7 +208,7 @@ const resources: TranslationResources = {
   contact: {
    heroTitle: 'Let’s Build a Sustainable Supply Chain Together',
    heroSub: 'Connect with Vietnam Agriculture Center to discuss global sourcing, custom contract farming, or enterprise-level ESG consulting.',
-   introTitle: 'Your On-the-Ground Partner in Vietnam',
+   introTitle: 'Your On‑the‑Ground Partner in Vietnam',
    introDesc: 'International agricultural trade requires precision, trust, and local expertise. Whether you are looking to secure a reliable source of premium produce, transition a facility to organic standards, or structure a custom farming investment, our team is ready to facilitate your success. Reach out to us directly or fill out the inquiry form below, and an appropriate specialist will respond promptly.',
    
    headquarters: 'Corporate Headquarters',
