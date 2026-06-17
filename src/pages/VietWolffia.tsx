@@ -149,6 +149,9 @@ export const VietWolffia: React.FC = () => {
   ];
 
   const filteredGallery = galleryItems.filter(item => item.category === activeCategory);
+  if (activeCategory === 'culinary') {
+    filteredGallery.reverse();
+  }
 
   const features = [
     {
@@ -403,7 +406,7 @@ export const VietWolffia: React.FC = () => {
             </div>
             
             {/* Category Selectors */}
-            <div className="flex flex-wrap gap-2 text-xs font-bold text-forest">
+            <div className="flex flex-wrap gap-2 text-xs font-bold text-forest shrink-0">
               {(['culinary', 'beverage', 'product'] as const).map((cat) => (
                 <button
                   key={cat}
@@ -439,9 +442,6 @@ export const VietWolffia: React.FC = () => {
                       alt={item.title} 
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4 text-cream text-xs font-light">
-                      {item.desc}
-                    </div>
                   </div>
                   <div className="p-4 flex flex-col gap-1">
                     <span className="text-[10px] uppercase tracking-wider font-semibold text-gold-antique">
