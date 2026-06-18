@@ -95,10 +95,10 @@ export const Footer: React.FC = () => {
           
         </div>
 
-        {/* Column 4: Contact us */}
+        {/* Column 4: Follow us */}
         <div className="flex flex-col gap-5">
           <h3 className="font-serif font-bold text-lg text-gold-champagne tracking-wide border-b border-gold-warm/15 pb-2">
-            Contact us
+            Follow us
           </h3>
 
           <div className="flex items-center gap-3 mt-4">
