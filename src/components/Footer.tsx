@@ -1,22 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from '../i18n';
-import { Mail, MapPin, ArrowRight, CheckCircle2, Phone } from 'lucide-react';
+import { Mail, MapPin, Phone } from 'lucide-react';
 import vacLogo from '../assets/vac-logo-7.png';
 
 export const Footer: React.FC = () => {
   const { t } = useTranslation();
-  const [email, setEmail] = useState('');
-  const [subscribed, setSubscribed] = useState(false);
 
-  const handleSubscribe = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (email.trim()) {
-      setSubscribed(true);
-      setEmail('');
-      setTimeout(() => setSubscribed(false), 5000);
-    }
-  };
 
   return (
     <footer className="bg-brown-soil text-cream/80 pt-16 pb-8 border-t border-gold-warm/20 font-sans">
@@ -108,38 +98,7 @@ export const Footer: React.FC = () => {
 
         {/* Column 4: Newsletter & Resources */}
         <div className="flex flex-col gap-5">
-          <h3 className="font-serif font-bold text-lg text-gold-champagne tracking-wide border-b border-gold-warm/15 pb-2">
-            Market Intelligence
-          </h3>
-          <p className="text-xs text-cream/70 leading-relaxed font-light">
-            Subscribe to our Vietnam Agriculture Market Insights and receive regular reports on pricing, logistics, and supply conditions directly from the field.
-          </p>
-          
-          <form onSubmit={handleSubscribe} className="flex flex-col gap-2">
-            <div className="relative flex items-center">
-              <input
-                type="email"
-                required
-                placeholder="corporate@email.com"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="w-full bg-carbon/40 border border-gold-warm/30 rounded px-3 py-2 text-sm text-cream placeholder-cream/40 focus:outline-none focus:border-gold-warm/80 transition-colors pr-10"
-              />
-              <button
-                type="submit"
-                className="absolute right-1 p-1.5 text-gold-warm hover:text-gold-champagne transition-colors cursor-pointer"
-                aria-label="Subscribe"
-              >
-                <ArrowRight size={16} />
-              </button>
-            </div>
-            {subscribed && (
-              <p className="text-xs text-forest-fresh flex items-center gap-1 animate-pulse">
-                <CheckCircle2 size={12} />
-                <span>Subscription request received. Thank you.</span>
-              </p>
-            )}
-          </form>
+
 
           <div className="flex items-center gap-3 mt-4">
             <a href="#" className="w-[42px] h-[42px] bg-forest/40 border border-gold-warm/30 rounded hover:bg-gold-warm hover:text-brown-soil text-cream transition-all shadow-sm flex items-center justify-center" title="Zalo">
