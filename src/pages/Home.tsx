@@ -210,7 +210,7 @@ export const Home: React.FC = () => {
           <div className="relative w-full flex items-center justify-center">
             <button 
               onClick={() => scrollBy(-1)}
-              className="absolute left-2 md:-left-8 z-20 p-2 md:p-3 bg-white/90 backdrop-blur-sm border border-gold-warm/30 text-forest rounded-full shadow-lg hover:bg-gold-warm hover:text-white transition-all flex md:opacity-0 group-hover:opacity-100 disabled:opacity-0"
+              className="absolute -left-4 md:-left-8 z-20 p-3 bg-white border border-gold-warm/30 text-forest rounded-full shadow-lg hover:bg-gold-warm hover:text-white transition-all hidden md:flex opacity-0 group-hover:opacity-100 disabled:opacity-0"
               aria-label="Previous"
             >
               <ChevronLeft size={24} />
@@ -264,10 +264,28 @@ export const Home: React.FC = () => {
 
             <button 
               onClick={() => scrollBy(1)}
-              className="absolute right-2 md:-right-8 z-20 p-2 md:p-3 bg-white/90 backdrop-blur-sm border border-gold-warm/30 text-forest rounded-full shadow-lg hover:bg-gold-warm hover:text-white transition-all flex md:opacity-0 group-hover:opacity-100 disabled:opacity-0"
+              className="absolute -right-4 md:-right-8 z-20 p-3 bg-white border border-gold-warm/30 text-forest rounded-full shadow-lg hover:bg-gold-warm hover:text-white transition-all hidden md:flex opacity-0 group-hover:opacity-100 disabled:opacity-0"
               aria-label="Next"
             >
               <ChevronRight size={24} />
+            </button>
+          </div>
+
+          {/* Mobile Navigation Arrows */}
+          <div className="flex md:hidden items-center justify-center gap-4 mt-2 mb-6">
+            <button 
+              onClick={() => scrollBy(-1)}
+              className="p-3 bg-white border border-gold-warm/30 text-forest rounded-full shadow-sm hover:bg-gold-warm hover:text-white transition-all active:scale-95"
+              aria-label="Previous"
+            >
+              <ChevronLeft size={20} />
+            </button>
+            <button 
+              onClick={() => scrollBy(1)}
+              className="p-3 bg-white border border-gold-warm/30 text-forest rounded-full shadow-sm hover:bg-gold-warm hover:text-white transition-all active:scale-95"
+              aria-label="Next"
+            >
+              <ChevronRight size={20} />
             </button>
           </div>
           
