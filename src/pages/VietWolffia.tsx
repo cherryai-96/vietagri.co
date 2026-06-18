@@ -21,6 +21,42 @@ export const VietWolffia: React.FC = () => {
 
   const galleryItems = [
     {
+      src: '/images/v-food-1.jpg',
+      title: 'Vietnamese Wolffia Cuisine 1',
+      category: 'culinary',
+      desc: 'Traditional Vietnamese dish elevated with Wolffia.'
+    },
+    {
+      src: '/images/v-food-2.jpg',
+      title: 'Vietnamese Wolffia Cuisine 2',
+      category: 'culinary',
+      desc: 'Traditional Vietnamese dish elevated with Wolffia.'
+    },
+    {
+      src: '/images/v-food-3.jpg',
+      title: 'Vietnamese Wolffia Cuisine 3',
+      category: 'culinary',
+      desc: 'Traditional Vietnamese dish elevated with Wolffia.'
+    },
+    {
+      src: '/images/v-food-4.jpg',
+      title: 'Vietnamese Wolffia Cuisine 4',
+      category: 'culinary',
+      desc: 'Traditional Vietnamese dish elevated with Wolffia.'
+    },
+    {
+      src: '/images/v-food-5.jpg',
+      title: 'Vietnamese Wolffia Cuisine 5',
+      category: 'culinary',
+      desc: 'Traditional Vietnamese dish elevated with Wolffia.'
+    },
+    {
+      src: '/images/v-food-6.jpg',
+      title: 'Vietnamese Wolffia Cuisine 6',
+      category: 'culinary',
+      desc: 'Traditional Vietnamese dish elevated with Wolffia.'
+    },
+    {
       src: '/Cuisine pictures/Green Shakshuka.webp',
       title: 'Green Shakshuka with Wolffia',
       category: 'culinary',
@@ -31,12 +67,6 @@ export const VietWolffia: React.FC = () => {
       title: 'Premium Wolffia Product',
       category: 'product',
       desc: 'High-quality processed Wolffia for everyday nutrition.'
-    },
-    {
-      src: '/Cuisine pictures/Wolffia Shake.webp',
-      title: 'Classic Green Energy Shake',
-      category: 'beverage',
-      desc: 'Blending fresh banana, coconut water, and raw Wolffia.'
     },
     {
       src: '/images/wm-6.webp',
@@ -93,18 +123,6 @@ export const VietWolffia: React.FC = () => {
       desc: 'A delicious dessert with a healthy twist of Wolffia.'
     },
     {
-      src: '/images/wm-10.avif',
-      title: 'Signature Wolffia Dish',
-      category: 'culinary',
-      desc: 'Our special recipe highlighting the taste of fresh watermeal.'
-    },
-    {
-      src: '/images/f1.avif',
-      title: 'Wolffia Culinary Delight 1',
-      category: 'culinary',
-      desc: 'Exploring new flavors with aquatic microgreens.'
-    },
-    {
       src: '/images/f2.webp',
       title: 'Wolffia Culinary Delight 2',
       category: 'culinary',
@@ -157,13 +175,118 @@ export const VietWolffia: React.FC = () => {
       title: 'Wolffia Culinary Delight 10',
       category: 'culinary',
       desc: 'Exploring new flavors with aquatic microgreens.'
+    },
+    {
+      src: '/images/w-drink-1.jpg',
+      title: 'Wolffia Beverage 1',
+      category: 'beverage',
+      desc: 'Refreshing and nutritious Wolffia drink.'
+    },
+    {
+      src: '/images/w-drink-2.jpg',
+      title: 'Wolffia Beverage 2',
+      category: 'beverage',
+      desc: 'Refreshing and nutritious Wolffia drink.'
+    },
+    {
+      src: '/images/w-drink-3.jpg',
+      title: 'Wolffia Beverage 3',
+      category: 'beverage',
+      desc: 'Refreshing and nutritious Wolffia drink.'
+    },
+    {
+      src: '/images/w-drink-4.jpg',
+      title: 'Wolffia Beverage 4',
+      category: 'beverage',
+      desc: 'Refreshing and nutritious Wolffia drink.'
+    },
+    {
+      src: '/images/w-drink-5.jpg',
+      title: 'Wolffia Beverage 5',
+      category: 'beverage',
+      desc: 'Refreshing and nutritious Wolffia drink.'
+    },
+    {
+      src: '/images/w-drink-6.jpg',
+      title: 'Wolffia Beverage 6',
+      category: 'beverage',
+      desc: 'Refreshing and nutritious Wolffia drink.'
+    },
+    {
+      src: '/images/w-drink-7.jpg',
+      title: 'Wolffia Beverage 7',
+      category: 'beverage',
+      desc: 'Refreshing and nutritious Wolffia drink.'
+    },
+    {
+      src: '/images/w-drink-8.jpg',
+      title: 'Wolffia Beverage 8',
+      category: 'beverage',
+      desc: 'Refreshing and nutritious Wolffia drink.'
+    },
+    {
+      src: '/images/w-drink-9.jpg',
+      title: 'Wolffia Beverage 9',
+      category: 'beverage',
+      desc: 'Refreshing and nutritious Wolffia drink.'
+    },
+    {
+      src: '/images/w-drink-10.jpg',
+      title: 'Wolffia Beverage 10',
+      category: 'beverage',
+      desc: 'Refreshing and nutritious Wolffia drink.'
+    },
+    {
+      src: '/images/w-drink-11.jpg',
+      title: 'Wolffia Beverage 11',
+      category: 'beverage',
+      desc: 'Refreshing and nutritious Wolffia drink.'
+    },
+    {
+      src: '/images/w-drink-12.jpg',
+      title: 'Wolffia Beverage 12',
+      category: 'beverage',
+      desc: 'Refreshing and nutritious Wolffia drink.'
+    },
+    {
+      src: '/images/w-drink-13.jpg',
+      title: 'Wolffia Beverage 13',
+      category: 'beverage',
+      desc: 'Refreshing and nutritious Wolffia drink.'
+    },
+    {
+      src: '/images/w-drink-14.jpg',
+      title: 'Wolffia Beverage 14',
+      category: 'beverage',
+      desc: 'Refreshing and nutritious Wolffia drink.'
+    },
+    {
+      src: '/images/w-drink-15.jpg',
+      title: 'Wolffia Beverage 15',
+      category: 'beverage',
+      desc: 'Refreshing and nutritious Wolffia drink.'
+    },
+    {
+      src: '/images/w-drink-16.jpg',
+      title: 'Wolffia Beverage 16',
+      category: 'beverage',
+      desc: 'Refreshing and nutritious Wolffia drink.'
+    },
+    {
+      src: '/images/w-drink-17.jpg',
+      title: 'Wolffia Beverage 17',
+      category: 'beverage',
+      desc: 'Refreshing and nutritious Wolffia drink.'
+    },
+    {
+      src: '/images/w-drink-18.jpg',
+      title: 'Wolffia Beverage 18',
+      category: 'beverage',
+      desc: 'Refreshing and nutritious Wolffia drink.'
     }
   ];
 
   const filteredGallery = galleryItems.filter(item => item.category === activeCategory);
-  if (activeCategory === 'culinary') {
-    filteredGallery.reverse();
-  }
 
   const features = [
     {
