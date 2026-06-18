@@ -39,7 +39,7 @@ export const VietWolffia: React.FC = () => {
       desc: 'Traditional Vietnamese dish elevated with Wolffia.'
     },
     {
-      src: '/images/v-food-4.jpg',
+      src: '/images/v-food-4.webp',
       title: 'Vietnamese Wolffia Cuisine 4',
       category: 'culinary',
       desc: 'Traditional Vietnamese dish elevated with Wolffia.'
