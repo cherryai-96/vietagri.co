@@ -414,12 +414,12 @@ export const VietWolffia: React.FC = () => {
             </div>
             
             {/* Category Selectors */}
-            <div className="flex flex-wrap gap-2 text-xs font-bold text-forest shrink-0">
+            <div className="flex flex-wrap gap-3 md:gap-4 text-sm md:text-base font-bold text-forest shrink-0">
               {(['culinary', 'beverage', 'product'] as const).map((cat) => (
                 <button
                   key={cat}
                   onClick={() => setActiveCategory(cat)}
-                  className={`px-4 py-2 rounded-full border transition-all duration-300 cursor-pointer capitalize ${
+                  className={`px-6 py-2.5 md:px-8 md:py-3 rounded-full border transition-all duration-300 cursor-pointer capitalize ${
                     activeCategory === cat
                       ? 'bg-forest text-cream border-gold-warm shadow-sm'
                       : 'bg-cream text-forest border-gold-warm/15 hover:border-gold-warm/40'
