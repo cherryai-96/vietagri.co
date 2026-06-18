@@ -143,7 +143,7 @@ const resources: TranslationResources = {
    introTitle: 'The World’s Smallest,<br className="hidden lg:block" />Most Nutrient-Dense Plant',
    introText1: 'Wolffia globosa (commonly known as Watermeal) is an aquatic marvel. As the smallest flowering plant on Earth, it packs an unprecedented nutritional profile, offering exceptional levels of plant-based protein, essential amino acids, and vital micronutrients.',
    introText2: 'At VAC, we recognized the transformative potential of Wolffia early on. Through our flagship Viet Wolffia farm, we have developed a scalable, commercially viable model to supply this revolutionary biomass to global markets, catering to both premium human superfood sectors and high-yield animal agriculture.',
-   cultTitle: 'Precision Agriculture in Clean & Controlled Environments',
+   cultTitle: 'Precision Agriculture in<br />Clean & Controlled Environments',
    cultDesc: 'The Viet Wolffia operation is built on a foundation of rigorous water chemistry and optimized environmental controls. We have engineered a highly efficient, scalable farming model that maximizes natural resources while guaranteeing absolute purity.',
    
    feature1Title: 'Optimized Canvas Pond Architecture',
@@ -371,7 +371,7 @@ const resources: TranslationResources = {
    introTitle: 'Loài Thực Vật Có Hoa Nhỏ Nhất, Giàu Dưỡng Chất Nhất Thế Giới',
    introText1: 'Wolffia globosa (thường được biết đến với tên gọi Bèo Tấm hay Trứng Nước) là một kỳ quan thủy sinh. Dù là loài thực vật có hoa nhỏ nhất Trái Đất, nó mang trong mình một hồ sơ dinh dưỡng vô tiền khoáng hậu, cung cấp hàm lượng lớn protein thực vật, các axit amin thiết yếu và những vi chất quan trọng.',
    introText2: 'Tại VAC, chúng tôi sớm nhận ra tiềm năng đột phá của Wolffia. Qua mô hình trang trại tiêu điểm Viet Wolffia, chúng tôi đã phát triển thành công một hệ thống mang tính thương mại, có khả năng nhân rộng để cung ứng khối lượng sinh khối mang tính cách mạng này cho thị trường thế giới, đáp ứng cả mảng siêu thực phẩm cao cấp cho người và ngành thức ăn chăn nuôi năng suất cao.',
-   cultTitle: 'Nông Nghiệp Chính Xác Trong Môi Trường Sạch & Được Kiểm Soát',
+   cultTitle: 'Nông Nghiệp Chính Xác Trong<br />Môi Trường Sạch & Được Kiểm Soát',
    cultDesc: 'Hoạt động của Viet Wolffia được xây dựng trên nền tảng kiểm soát nghiêm ngặt các thông số hóa học của nước và quản lý môi trường tối ưu. Chúng tôi đã thiết kế một mô hình canh tác đạt hiệu suất cao, có thể mở rộng, giúp phát huy tối đa các nguồn lực tự nhiên đồng thời bảo đảm độ tinh khiết tuyệt đối.',
    
    feature1Title: 'Hệ Thống Ao Nổi Lót Bạt Tối Ưu',

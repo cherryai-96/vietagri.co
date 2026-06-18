@@ -219,8 +219,7 @@ export const Sustainability: React.FC = () => {
                 {
                   icon: <Droplets className="text-gold-warm w-8 h-8" />,
                   title: 'Precision Water',
-                  desc: t('sustainability.esgBullet1'),
-                  metric: '-45% Water Waste'
+                  desc: t('sustainability.esgBullet1')
                 },
                 {
                   icon: <Maximize2 className="text-gold-warm w-8 h-8" />,
