@@ -183,80 +183,8 @@ export const VietWolffia: React.FC = () => {
       desc: 'Refreshing and nutritious Wolffia drink.'
     },
     {
-      src: '/images/w-drink-2.jpg',
-      title: 'Wolffia Beverage 2',
-      category: 'beverage',
-      desc: 'Refreshing and nutritious Wolffia drink.'
-    },
-    {
-      src: '/images/w-drink-3.jpg',
-      title: 'Wolffia Beverage 3',
-      category: 'beverage',
-      desc: 'Refreshing and nutritious Wolffia drink.'
-    },
-    {
-      src: '/images/w-drink-4.jpg',
-      title: 'Wolffia Beverage 4',
-      category: 'beverage',
-      desc: 'Refreshing and nutritious Wolffia drink.'
-    },
-    {
-      src: '/images/w-drink-5.jpg',
-      title: 'Wolffia Beverage 5',
-      category: 'beverage',
-      desc: 'Refreshing and nutritious Wolffia drink.'
-    },
-    {
-      src: '/images/w-drink-6.jpg',
-      title: 'Wolffia Beverage 6',
-      category: 'beverage',
-      desc: 'Refreshing and nutritious Wolffia drink.'
-    },
-    {
-      src: '/images/w-drink-7.jpg',
-      title: 'Wolffia Beverage 7',
-      category: 'beverage',
-      desc: 'Refreshing and nutritious Wolffia drink.'
-    },
-    {
       src: '/images/w-drink-8.jpg',
       title: 'Wolffia Beverage 8',
-      category: 'beverage',
-      desc: 'Refreshing and nutritious Wolffia drink.'
-    },
-    {
-      src: '/images/w-drink-9.jpg',
-      title: 'Wolffia Beverage 9',
-      category: 'beverage',
-      desc: 'Refreshing and nutritious Wolffia drink.'
-    },
-    {
-      src: '/images/w-drink-10.jpg',
-      title: 'Wolffia Beverage 10',
-      category: 'beverage',
-      desc: 'Refreshing and nutritious Wolffia drink.'
-    },
-    {
-      src: '/images/w-drink-11.jpg',
-      title: 'Wolffia Beverage 11',
-      category: 'beverage',
-      desc: 'Refreshing and nutritious Wolffia drink.'
-    },
-    {
-      src: '/images/w-drink-12.jpg',
-      title: 'Wolffia Beverage 12',
-      category: 'beverage',
-      desc: 'Refreshing and nutritious Wolffia drink.'
-    },
-    {
-      src: '/images/w-drink-13.jpg',
-      title: 'Wolffia Beverage 13',
-      category: 'beverage',
-      desc: 'Refreshing and nutritious Wolffia drink.'
-    },
-    {
-      src: '/images/w-drink-14.jpg',
-      title: 'Wolffia Beverage 14',
       category: 'beverage',
       desc: 'Refreshing and nutritious Wolffia drink.'
     },
@@ -267,8 +195,44 @@ export const VietWolffia: React.FC = () => {
       desc: 'Refreshing and nutritious Wolffia drink.'
     },
     {
-      src: '/images/w-drink-16.jpg',
-      title: 'Wolffia Beverage 16',
+      src: '/images/w-drink-4.jpg',
+      title: 'Wolffia Beverage 4',
+      category: 'beverage',
+      desc: 'Refreshing and nutritious Wolffia drink.'
+    },
+    {
+      src: '/images/w-drink-11.jpg',
+      title: 'Wolffia Beverage 11',
+      category: 'beverage',
+      desc: 'Refreshing and nutritious Wolffia drink.'
+    },
+    {
+      src: '/images/w-drink-18.jpg',
+      title: 'Wolffia Beverage 18',
+      category: 'beverage',
+      desc: 'Refreshing and nutritious Wolffia drink.'
+    },
+    {
+      src: '/images/w-drink-7.jpg',
+      title: 'Wolffia Beverage 7',
+      category: 'beverage',
+      desc: 'Refreshing and nutritious Wolffia drink.'
+    },
+    {
+      src: '/images/w-drink-14.jpg',
+      title: 'Wolffia Beverage 14',
+      category: 'beverage',
+      desc: 'Refreshing and nutritious Wolffia drink.'
+    },
+    {
+      src: '/images/w-drink-3.jpg',
+      title: 'Wolffia Beverage 3',
+      category: 'beverage',
+      desc: 'Refreshing and nutritious Wolffia drink.'
+    },
+    {
+      src: '/images/w-drink-10.jpg',
+      title: 'Wolffia Beverage 10',
       category: 'beverage',
       desc: 'Refreshing and nutritious Wolffia drink.'
     },
@@ -279,8 +243,44 @@ export const VietWolffia: React.FC = () => {
       desc: 'Refreshing and nutritious Wolffia drink.'
     },
     {
-      src: '/images/w-drink-18.jpg',
-      title: 'Wolffia Beverage 18',
+      src: '/images/w-drink-6.jpg',
+      title: 'Wolffia Beverage 6',
+      category: 'beverage',
+      desc: 'Refreshing and nutritious Wolffia drink.'
+    },
+    {
+      src: '/images/w-drink-13.jpg',
+      title: 'Wolffia Beverage 13',
+      category: 'beverage',
+      desc: 'Refreshing and nutritious Wolffia drink.'
+    },
+    {
+      src: '/images/w-drink-2.jpg',
+      title: 'Wolffia Beverage 2',
+      category: 'beverage',
+      desc: 'Refreshing and nutritious Wolffia drink.'
+    },
+    {
+      src: '/images/w-drink-9.jpg',
+      title: 'Wolffia Beverage 9',
+      category: 'beverage',
+      desc: 'Refreshing and nutritious Wolffia drink.'
+    },
+    {
+      src: '/images/w-drink-16.jpg',
+      title: 'Wolffia Beverage 16',
+      category: 'beverage',
+      desc: 'Refreshing and nutritious Wolffia drink.'
+    },
+    {
+      src: '/images/w-drink-5.jpg',
+      title: 'Wolffia Beverage 5',
+      category: 'beverage',
+      desc: 'Refreshing and nutritious Wolffia drink.'
+    },
+    {
+      src: '/images/w-drink-12.jpg',
+      title: 'Wolffia Beverage 12',
       category: 'beverage',
       desc: 'Refreshing and nutritious Wolffia drink.'
     }
