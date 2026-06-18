@@ -44,7 +44,7 @@ export const About: React.FC = () => {
             <span className="text-xs md:text-sm font-bold uppercase tracking-widest text-gold-champagne bg-forest/40 border border-gold-warm/20 px-4 py-1.5 rounded-full self-center">
               About Us
             </span>
-            <h1 className="font-serif text-balance text-[2.25rem] leading-[1.1] sm:text-[3rem] md:text-5xl lg:text-6xl font-bold leading-tight tracking-wide text-gold-champagne"><span dangerouslySetInnerHTML={{ __html: t('about.heroTitle') }} /></h1>
+            <h1 className="font-serif text-[2.25rem] leading-[1.1] sm:text-[3rem] md:text-5xl lg:text-[3.5rem] font-bold leading-tight tracking-wide text-gold-champagne w-full xl:whitespace-nowrap"><span dangerouslySetInnerHTML={{ __html: t('about.heroTitle') }} /></h1>
           </motion.div>
 
           <motion.p
