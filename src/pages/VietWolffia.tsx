@@ -288,9 +288,7 @@ export const VietWolffia: React.FC = () => {
                     <span className="text-2xl md:text-3xl font-serif font-bold text-forest/40 group-hover:text-gold-champagne transition-colors duration-500">
                       0{idx + 1}.
                     </span>
-                    <h3 className="font-serif font-bold text-xl md:text-2xl text-forest group-hover:text-cream transition-colors duration-500">
-                      {feature.title}
-                    </h3>
+                    <h3 className="font-serif font-bold text-xl md:text-2xl text-forest group-hover:text-cream transition-colors duration-500" dangerouslySetInnerHTML={{ __html: feature.title }} />
                   </div>
                   
                   <div className="w-full md:w-1/3 flex justify-center relative mb-6 md:mb-0">

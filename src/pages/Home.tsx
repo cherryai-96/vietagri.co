@@ -182,9 +182,7 @@ export const Home: React.FC = () => {
                 <div className="p-3.5 bg-forest/5 rounded-lg w-fit border border-gold-warm/10">
                   {item.icon}
                 </div>
-                <h3 className="font-serif font-bold text-xl md:text-2xl text-forest">
-                  {item.title}
-                </h3>
+                <h3 className="font-serif font-bold text-xl md:text-2xl text-forest" dangerouslySetInnerHTML={{ __html: item.title }} />
                 <p className="text-xs md:text-sm text-carbon/70 font-light leading-relaxed flex-grow">
                   {item.desc}
                 </p>
@@ -241,7 +239,7 @@ export const Home: React.FC = () => {
                         <img src={tech.image} className="w-full h-full object-cover rounded-t-xl transition-transform duration-700 hover:scale-105" alt={tech.title} />
                       </div>
                       <div className="p-6 md:p-8 flex flex-col gap-4 flex-grow">
-                        <h3 className="font-serif font-bold text-xl text-forest">{tech.title}</h3>
+                        <h3 className="font-serif font-bold text-xl text-forest" dangerouslySetInnerHTML={{ __html: tech.title }} />
                         <p className="text-sm text-carbon/70 font-light leading-relaxed flex-grow">{tech.desc}</p>
                         <Link to="/viet-wolffia" className="text-xs font-bold text-forest hover:text-gold-antique uppercase tracking-wider flex items-center gap-1.5 mt-2 group-link">
                           <span>View Details</span> <ArrowRight size={13} className="group-link-hover:translate-x-1 transition-transform" />
@@ -251,7 +249,7 @@ export const Home: React.FC = () => {
                   ) : (
                     <>
                       <div className="p-6 md:p-8 flex flex-col gap-4 flex-grow">
-                        <h3 className="font-serif font-bold text-xl text-forest">{tech.title}</h3>
+                        <h3 className="font-serif font-bold text-xl text-forest" dangerouslySetInnerHTML={{ __html: tech.title }} />
                         <p className="text-sm text-carbon/70 font-light leading-relaxed flex-grow">{tech.desc}</p>
                         <Link to="/viet-wolffia" className="text-xs font-bold text-forest hover:text-gold-antique uppercase tracking-wider flex items-center gap-1.5 mt-2 group-link">
                           <span>View Details</span> <ArrowRight size={13} className="group-link-hover:translate-x-1 transition-transform" />

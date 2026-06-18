@@ -160,9 +160,7 @@ export const About: React.FC = () => {
                 <div className="p-3.5 bg-forest/5 rounded-lg w-fit border border-gold-warm/10">
                   {val.icon}
                 </div>
-                <h3 className="font-serif font-bold text-xl text-forest">
-                  {val.title}
-                </h3>
+                <h3 className="font-serif font-bold text-xl text-forest" dangerouslySetInnerHTML={{ __html: val.title }} />
                 <p className="text-xs md:text-sm text-carbon/70 font-light leading-relaxed flex-grow">
                   {val.desc}
                 </p>

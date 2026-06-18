@@ -172,9 +172,7 @@ export const Services: React.FC = () => {
                   {tab.icon}
                 </div>
                 <div className="flex flex-col gap-1.5">
-                  <span className={`font-serif text-lg font-bold ${activeTab === tab.id ? 'text-gold-champagne' : 'text-forest'}`}>
-                    {tab.title}
-                  </span>
+                  <span className={`font-serif text-lg font-bold ${activeTab === tab.id ? 'text-gold-champagne' : 'text-forest'}`} dangerouslySetInnerHTML={{ __html: tab.title }} />
                   <span className={`text-[10px] uppercase tracking-wider font-semibold ${activeTab === tab.id ? 'text-cream/70' : 'text-carbon/60'}`}>
                     {tab.subtitle}
                   </span>
@@ -201,9 +199,7 @@ export const Services: React.FC = () => {
                       <span className="text-xs font-bold uppercase tracking-widest text-gold-antique">
                         {pillars[activeTab].subtitle}
                       </span>
-                      <h3 className="font-serif text-2xl md:text-3xl font-bold text-forest">
-                        {pillars[activeTab].title}
-                      </h3>
+                      <h3 className="font-serif text-2xl md:text-3xl font-bold text-forest" dangerouslySetInnerHTML={{ __html: pillars[activeTab].title }} />
                     </div>
 
                     <p className="text-sm md:text-base text-carbon/75 font-light leading-relaxed">

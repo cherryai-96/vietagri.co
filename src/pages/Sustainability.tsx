@@ -117,9 +117,7 @@ export const Sustainability: React.FC = () => {
                   <div className="flex items-start gap-3">
                     <CheckCircle2 className="text-gold-warm shrink-0 mt-1" size={18} />
                     <div className="flex flex-col gap-2">
-                      <h3 className="font-serif text-lg font-bold text-forest">
-                        {item.title}
-                      </h3>
+                      <h3 className="font-serif font-bold text-xl text-forest" dangerouslySetInnerHTML={{ __html: item.title }} />
                       <p className="text-xs text-carbon/70 leading-relaxed font-light">
                         {item.desc}
                       </p>
@@ -188,7 +186,7 @@ export const Sustainability: React.FC = () => {
                     {step.icon}
                   </div>
                 </div>
-                <h3 className="font-serif text-xl font-bold tracking-wide mt-2">{step.title}</h3>
+                <h3 className="font-serif text-xl font-bold tracking-wide mt-2" dangerouslySetInnerHTML={{ __html: step.title }} />
                 <p className="text-xs md:text-sm leading-relaxed font-light opacity-90">{step.desc}</p>
               </motion.div>
             ))}
@@ -251,9 +249,7 @@ export const Sustainability: React.FC = () => {
                     <div className="bg-forest/5 p-3 rounded-lg w-fit">
                       {card.icon}
                     </div>
-                    <h3 className="font-serif text-lg font-bold text-forest">
-                      {card.title}
-                    </h3>
+                    <h3 className="font-serif font-bold text-lg md:text-xl text-forest leading-tight" dangerouslySetInnerHTML={{ __html: card.title }} />
                     <p className="text-xs text-carbon/75 leading-relaxed font-light">
                       {card.desc}
                     </p>
