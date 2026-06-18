@@ -7,7 +7,6 @@ import vacLogo from '../assets/vac-logo-7.png';
 export const Footer: React.FC = () => {
   const { t } = useTranslation();
 
-
   return (
     <footer className="bg-brown-soil text-cream/80 pt-16 pb-8 border-t border-gold-warm/20 font-sans">
       <div className="max-w-7xl mx-auto px-4 md:px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
@@ -96,9 +95,11 @@ export const Footer: React.FC = () => {
           
         </div>
 
-        {/* Column 4: Newsletter & Resources */}
+        {/* Column 4: Contact us */}
         <div className="flex flex-col gap-5">
-
+          <h3 className="font-serif font-bold text-lg text-gold-champagne tracking-wide border-b border-gold-warm/15 pb-2">
+            Contact us
+          </h3>
 
           <div className="flex items-center gap-3 mt-4">
             <a href="#" className="w-[42px] h-[42px] bg-forest/40 border border-gold-warm/30 rounded hover:bg-gold-warm hover:text-brown-soil text-cream transition-all shadow-sm flex items-center justify-center" title="Zalo">
