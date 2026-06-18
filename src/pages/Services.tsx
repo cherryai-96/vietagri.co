@@ -108,6 +108,60 @@ export const Services: React.FC = () => {
     }
   ];
 
+  const renderTabContent = (tabId: number) => {
+    const tabData = pillars.find(p => p.id === tabId) || pillars[0];
+    return (
+      <div className="flex flex-col gap-8 flex-grow justify-between w-full">
+        {/* Content block */}
+        <div className="flex flex-col lg:flex-row gap-8">
+          <div className="flex flex-col gap-6 lg:w-3/5">
+            <div className="flex flex-col gap-2">
+              <span className="text-xs font-bold uppercase tracking-widest text-gold-antique">
+                {tabData.subtitle}
+              </span>
+              <h3 className="font-serif text-2xl md:text-3xl font-bold text-forest" dangerouslySetInnerHTML={{ __html: tabData.title }} />
+            </div>
+
+            <p className="text-sm md:text-base text-carbon/75 font-light leading-relaxed">
+              {tabData.desc}
+            </p>
+
+            <div className="flex flex-col gap-3 pt-2">
+              {tabData.bullets.map((bullet, idx) => (
+                <div key={idx} className="flex items-start gap-2 text-sm font-light text-carbon/85">
+                  <Check size={16} className="text-gold-warm shrink-0 mt-0.5" />
+                  <span>{bullet}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+          
+          <div className="lg:w-2/5 shrink-0">
+            <div className="w-full h-48 lg:h-full min-h-[200px] rounded-xl overflow-hidden shadow-md border border-gold-warm/15 relative">
+              <img src={tabData.image} alt={tabData.title} className="absolute inset-0 w-full h-full object-cover" />
+            </div>
+          </div>
+        </div>
+
+        {/* Specification drawer info */}
+        <div className="mt-8 pt-8 border-t border-gold-warm/20 bg-cream/30 p-6 rounded-lg border border-gold-warm/10 flex flex-col gap-4">
+          <div className="flex items-center gap-2 font-serif font-bold text-forest text-base">
+            <Info size={16} className="text-gold-warm shrink-0" />
+            <span>{tabData.details.specTitle}</span>
+          </div>
+          <ul className="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs font-light text-carbon/75">
+            {tabData.details.specs.map((spec, sidx) => (
+              <li key={sidx} className="flex items-start gap-1.5 leading-normal">
+                <ChevronRight size={12} className="text-gold-antique shrink-0 mt-0.5" />
+                <span>{spec}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    );
+  };
+
   return (
     <div className="font-sans overflow-hidden">
       {/* Hero Section */}
@@ -154,33 +208,51 @@ export const Services: React.FC = () => {
       <section className="pb-24 bg-cream text-carbon px-4 md:px-8">
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-12 items-start">
           
-          {/* Left: Tab Selectors */}
+          {/* Left: Tab Selectors & Mobile Accordion Content */}
           <div className="w-full lg:w-1/3 flex flex-col gap-3">
             {pillars.map((tab) => (
-              <button
-                key={tab.id}
-                onClick={() => setActiveTab(tab.id)}
-                className={`w-full text-left p-6 rounded-xl border transition-all duration-300 flex items-start gap-4 cursor-pointer ${
-                  activeTab === tab.id
-                    ? 'bg-forest text-cream border-gold-warm shadow-md'
-                    : 'bg-ivory text-carbon border-gold-warm/15 hover:border-gold-warm/40 hover:bg-cream/80'
-                }`}
-              >
-                <div className={`p-2.5 rounded-lg shrink-0 ${
-                  activeTab === tab.id ? 'bg-gold-warm text-brown-soil' : 'bg-forest/5 text-forest'
-                }`}>
-                  {tab.icon}
-                </div>
-                <div className="flex flex-col gap-1.5">
-                  <span className={`font-serif text-lg font-bold ${activeTab === tab.id ? 'text-gold-champagne' : 'text-forest'}`} dangerouslySetInnerHTML={{ __html: tab.title }} />
-                  <span className={`text-[10px] uppercase tracking-wider font-semibold ${activeTab === tab.id ? 'text-cream/70' : 'text-carbon/60'}`}><span dangerouslySetInnerHTML={{ __html: tab.subtitle }} /></span>
-                </div>
-              </button>
+              <React.Fragment key={tab.id}>
+                <button
+                  onClick={() => setActiveTab(tab.id)}
+                  className={`w-full text-left p-6 rounded-xl border transition-all duration-300 flex items-start gap-4 cursor-pointer ${
+                    activeTab === tab.id
+                      ? 'bg-forest text-cream border-gold-warm shadow-md'
+                      : 'bg-ivory text-carbon border-gold-warm/15 hover:border-gold-warm/40 hover:bg-cream/80'
+                  }`}
+                >
+                  <div className={`p-2.5 rounded-lg shrink-0 ${
+                    activeTab === tab.id ? 'bg-gold-warm text-brown-soil' : 'bg-forest/5 text-forest'
+                  }`}>
+                    {tab.icon}
+                  </div>
+                  <div className="flex flex-col gap-1.5">
+                    <span className={`font-serif text-lg font-bold ${activeTab === tab.id ? 'text-gold-champagne' : 'text-forest'}`} dangerouslySetInnerHTML={{ __html: tab.title }} />
+                    <span className={`text-[10px] uppercase tracking-wider font-semibold ${activeTab === tab.id ? 'text-cream/70' : 'text-carbon/60'}`}><span dangerouslySetInnerHTML={{ __html: tab.subtitle }} /></span>
+                  </div>
+                </button>
+                
+                {/* Mobile Inline Content (Accordion) */}
+                <AnimatePresence>
+                  {activeTab === tab.id && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: 'auto', opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3 }}
+                      className="lg:hidden overflow-hidden"
+                    >
+                      <div className="bg-ivory border border-gold-warm/15 rounded-2xl p-6 shadow-sm mb-2 mt-1 flex flex-col justify-between">
+                        {renderTabContent(tab.id)}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </React.Fragment>
             ))}
           </div>
 
-          {/* Right: Tab Panel */}
-          <div className="w-full lg:w-2/3 bg-ivory border border-gold-warm/15 rounded-2xl p-8 lg:p-12 shadow-sm min-h-[500px] flex flex-col justify-between">
+          {/* Right: Tab Panel (Desktop Only) */}
+          <div className="hidden lg:flex w-full lg:w-2/3 bg-ivory border border-gold-warm/15 rounded-2xl p-8 lg:p-12 shadow-sm min-h-[500px] flex-col justify-between">
             <AnimatePresence mode="wait">
               <motion.div
                 key={activeTab}
@@ -188,54 +260,9 @@ export const Services: React.FC = () => {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -15 }}
                 transition={{ duration: 0.4 }}
-                className="flex flex-col gap-8 flex-grow justify-between"
+                className="flex flex-col gap-8 flex-grow justify-between w-full"
               >
-                {/* Content block */}
-                <div className="flex flex-col lg:flex-row gap-8">
-                  <div className="flex flex-col gap-6 lg:w-3/5">
-                    <div className="flex flex-col gap-2">
-                      <span className="text-xs font-bold uppercase tracking-widest text-gold-antique">
-                        {pillars[activeTab].subtitle}
-                      </span>
-                      <h3 className="font-serif text-2xl md:text-3xl font-bold text-forest" dangerouslySetInnerHTML={{ __html: pillars[activeTab].title }} />
-                    </div>
-
-                    <p className="text-sm md:text-base text-carbon/75 font-light leading-relaxed">
-                      {pillars[activeTab].desc}
-                    </p>
-
-                    <div className="flex flex-col gap-3 pt-2">
-                      {pillars[activeTab].bullets.map((bullet, idx) => (
-                        <div key={idx} className="flex items-start gap-2 text-sm font-light text-carbon/85">
-                          <Check size={16} className="text-gold-warm shrink-0 mt-0.5" />
-                          <span>{bullet}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                  
-                  <div className="lg:w-2/5 shrink-0">
-                    <div className="w-full h-48 lg:h-full min-h-[200px] rounded-xl overflow-hidden shadow-md border border-gold-warm/15 relative">
-                      <img src={pillars[activeTab].image} alt={pillars[activeTab].title} className="absolute inset-0 w-full h-full object-cover" />
-                    </div>
-                  </div>
-                </div>
-
-                {/* Specification drawer info */}
-                <div className="mt-8 pt-8 border-t border-gold-warm/20 bg-cream/30 p-6 rounded-lg border border-gold-warm/10 flex flex-col gap-4">
-                  <div className="flex items-center gap-2 font-serif font-bold text-forest text-base">
-                    <Info size={16} className="text-gold-warm shrink-0" />
-                    <span>{pillars[activeTab].details.specTitle}</span>
-                  </div>
-                  <ul className="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs font-light text-carbon/75">
-                    {pillars[activeTab].details.specs.map((spec, sidx) => (
-                      <li key={sidx} className="flex items-start gap-1.5 leading-normal">
-                        <ChevronRight size={12} className="text-gold-antique shrink-0 mt-0.5" />
-                        <span>{spec}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                {renderTabContent(activeTab)}
               </motion.div>
             </AnimatePresence>
           </div>
