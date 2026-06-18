@@ -204,7 +204,7 @@ export const Home: React.FC = () => {
           <div className="flex flex-col items-center text-center gap-4 mb-12">
             <span className="text-xs font-bold uppercase tracking-widest text-forest flex items-center gap-2">
               <Leaf size={14} /><span dangerouslySetInnerHTML={{ __html: t('home.spotlightSub') }} /></span>
-            <h2 className="font-serif text-balance text-[2.25rem] leading-[1.1] sm:text-[3rem] md:text-5xl lg:text-6xl font-bold tracking-wide text-forest leading-tight max-w-3xl"><span dangerouslySetInnerHTML={{ __html: t('home.spotlightTitle') }} /></h2>
+            <h2 className="font-serif text-balance text-[2rem] leading-[1.1] sm:text-3xl md:text-3xl lg:text-3xl xl:text-[2.5rem] font-bold tracking-wide text-forest leading-tight max-w-3xl"><span dangerouslySetInnerHTML={{ __html: t('home.spotlightTitle') }} /></h2>
           </div>
 
           <div className="relative w-full flex items-center justify-center">
