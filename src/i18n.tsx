@@ -50,7 +50,7 @@ const resources: TranslationResources = {
    sourcingTitle: 'Global Sourcing Services',
    sourcingDesc: "Access Vietnam's finest raw and processed agricultural goods. We audit, negotiate, and procure premium bulk volumes—from high-demand fresh produce to processed value-adds like bulk lotus seed powder—ensuring reliable supply chains for international buyers.",
    
-   farmingTitle: 'Contract Farming & Investment',
+   farmingTitle: 'Contract Farming<br className="hidden lg:block" />& Investment',
    farmingDesc: 'Secure your supply chain with dedicated cultivation. We manage scalable, high-yield operations for lucrative crops, offering transparent, fully managed farm setups with structured ROI and attractive trade partnership models.',
    
    qaTitle: 'Export Quality Assurance',
@@ -83,7 +83,7 @@ const resources: TranslationResources = {
    ctaText: 'Are you looking to source premium Vietnamese agriculture, explore high-yield contract farming, or procure bulk Wolffia superfoods? Let\'s build a sustainable partnership.',
   },
   about: {
-   heroTitle: 'Rooted in Vietnam. Reaching the World.',
+   heroTitle: 'Rooted in Vietnam • Reaching the World',
    heroSub: 'We are more than just a sourcing partner; we are an integrated agricultural ecosystem dedicated to global food security, sustainable cultivation, and uncompromising quality.',
    missionTitle: 'Our Mission',
    missionDesc: 'To bridge the richness of Vietnamese agriculture to the global market by delivering premium, sustainably farmed, and rigorously certified produce to tables in every corner of the globe.',
@@ -106,14 +106,14 @@ const resources: TranslationResources = {
    heroSub: 'From seed to shipment, VAC provides an integrated suite of services designed to secure your supply chain, guarantee premium quality, and eliminate the friction of international trade.',
    introTitle: 'Your On‑the‑Ground Partner in Vietnam',
    introDesc: 'Navigating international agricultural procurement requires more than just a buyer; it requires a deeply embedded local partner. VAC’s core services are designed to protect international buyers and investors at every step of the supply chain, ensuring that what you order is exactly what arrives at your destination.',
-   sourcingTitle: 'Global Agricultural Sourcing Services',
+   sourcingTitle: 'Global Agricultural<br className="hidden lg:block" />Sourcing Services',
    sourcingSub: 'Precision Procurement & Auditing',
    sourcingText: 'We connect global food and agriculture corporations with Vietnam’s most reliable producers. VAC handles the entire sourcing lifecycle, ensuring reliable volume, consistent pricing, and exceptional quality for both raw and value-added processed goods.',
    sourcingBullet1: 'Supplier Auditing: Rigorous on-site vetting of local farms and processing facilities.',
    sourcingBullet2: 'Bulk Procurement: Capable of fulfilling high-volume industrial orders, from fresh produce to specialized processed botanicals like premium lotus seed powder.',
    sourcingBullet3: 'Targeted Market Matching: We tailor our sourcing to meet the specific import requirements and consumer preferences of your target market, whether in Europe, America, or specialized markets like South Korea and Japan.',
    
-   farmingTitle: 'High‑Tech Contract Farming & Investment',
+   farmingTitle: 'High‑Tech Contract Farming<br className="hidden lg:block" />& Investment',
    farmingSub: 'Secure, Scalable Cultivation',
    farmingText: 'For corporations seeking absolute control over their supply chain, VAC offers turnkey contract farming services. We dedicate land, resources, and expert management to cultivate lucrative crops specifically for your global distribution.',
    farmingBullet1: 'Turnkey Farm Management: End‑to‑end operation, from land preparation and seed selection to harvest and post-harvest processing.',
@@ -140,7 +140,7 @@ const resources: TranslationResources = {
   wolffia: {
    heroTitle: 'Viet Wolffia Superfood',
    heroSub: 'Cultivating the future of protein. High‑tech, highly scalable Wolffia Globosa production for global human and animal nutrition.',
-   introTitle: 'The World’s Smallest, Most Nutrient-Dense Plant',
+   introTitle: 'The World’s Smallest,<br className="hidden lg:block" />Most Nutrient-Dense Plant',
    introText1: 'Wolffia globosa (commonly known as Watermeal) is an aquatic marvel. As the smallest flowering plant on Earth, it packs an unprecedented nutritional profile, offering exceptional levels of plant-based protein, essential amino acids, and vital micronutrients.',
    introText2: 'At VAC, we recognized the transformative potential of Wolffia early on. Through our flagship Viet Wolffia farm, we have developed a scalable, commercially viable model to supply this revolutionary biomass to global markets, catering to both premium human superfood sectors and high-yield animal agriculture.',
    cultTitle: 'Precision Agriculture in Clean & Controlled Environments',
@@ -177,7 +177,7 @@ const resources: TranslationResources = {
   sustainability: {
    heroTitle: 'Cultivating a Resilient Global Supply Chain',
    heroSub: 'Empowering agricultural corporations with circular farming initiatives, transparent ESG reporting, and premium clean‑label certification services.',
-   introTitle: 'Sustainability is Our Standard',
+   introTitle: 'Sustainability<br className="hidden lg:block" />is Our Standard',
    introDesc1: 'At Vietnam Agriculture Center (VAC), we recognize that long-term agricultural success relies on ecological responsibility. For global food corporations, ESG (Environmental, Social, and Governance) compliance is no longer a corporate initiative—it is a fundamental market requirement.',
    introDesc2: 'We embed sustainability into every layer of our ecosystem. Whether we are managing a large-scale contract farm or consulting on a corporate supply chain, VAC provides the independent expertise required to secure resources, protect local environments, and achieve the world’s most stringent agricultural standards.',
    
@@ -278,7 +278,7 @@ const resources: TranslationResources = {
    sourcingTitle: 'Dịch Vụ Cung Ứng Toàn Cầu',
    sourcingDesc: 'Tiếp cận nguồn nguyên liệu nông sản và sản phẩm chế biến thượng hạng của Việt Nam. Chúng tôi trực tiếp đánh giá, đàm phán và thu mua số lượng lớn — từ các mặt hàng nông sản tươi đang được săn đón đến các sản phẩm chế biến sâu giá trị cao như bột hạt sen — nhằm đảm bảo một chuỗi cung ứng vững chắc cho các nhà nhập khẩu quốc tế.',
    
-   farmingTitle: 'Canh Tác Hợp Đồng & Đầu Tư',
+   farmingTitle: 'Canh Tác Hợp Đồng<br className="hidden lg:block" />& Đầu Tư',
    farmingDesc: 'Bảo đảm nguồn cung của bạn thông qua vùng trồng chuyên canh. Chúng tôi quản lý các mô hình canh tác quy mô lớn, năng suất cao đối với những loại cây trồng giá trị, mang lại giải pháp nông trại trọn gói, minh bạch cùng tỷ suất hoàn vốn (ROI) rõ ràng và mô hình hợp tác thương mại hấp dẫn.',
    
    qaTitle: 'Đảm Bảo Chất Lượng Xuất Khẩu',
@@ -311,7 +311,7 @@ const resources: TranslationResources = {
    ctaText: 'Bạn đang tìm kiếm nguồn nông sản Việt Nam thượng hạng, muốn khám phá mô hình canh tác hợp đồng năng suất cao, hay thu mua siêu thực phẩm Wolffia số lượng lớn? Hãy cùng chúng tôi xây dựng một mối quan hệ hợp tác bền vững.',
   },
   about: {
-   heroTitle: 'Bám Rễ Tại Việt Nam. Vươn Nhánh Khắp Toàn Cầu.',
+   heroTitle: 'Bám Rễ Tại Việt Nam • Vươn Nhánh Khắp Toàn Cầu',
    heroSub: 'Chúng tôi không chỉ là một đối tác cung ứng; chúng tôi là một hệ sinh thái nông nghiệp khép kín tận tâm vì an ninh lương thực toàn cầu, canh tác bền vững và chất lượng không thỏa hiệp.',
    missionTitle: 'Sứ Mệnh Của Chúng Tôi',
    missionDesc: 'Đưa sự trù phú của nông nghiệp Việt Nam vươn ra thị trường toàn cầu thông qua việc cung cấp các sản phẩm thượng hạng, được canh tác bền vững và chứng nhận khắt khe đến mọi bàn ăn trên thế giới.',
@@ -341,7 +341,7 @@ const resources: TranslationResources = {
    sourcingBullet2: 'Thu Mua Số Lượng Lớn: Năng lực đáp ứng các đơn hàng công nghiệp quy mô lớn, từ nông sản tươi đến các mặt hàng thực vật chế biến như bột hạt sen cao cấp.',
    sourcingBullet3: 'Thích Ứng Mọi Thị Trường: Chúng tôi tùy chỉnh quy trình cung ứng để thỏa mãn yêu cầu nhập khẩu và thị hiếu tiêu dùng của thị trường mục tiêu, dù đó là Châu Âu, Mỹ, hay các thị trường đặc thù như Hàn Quốc và Nhật Bản.',
    
-   farmingTitle: 'Canh Tác Hợp Đồng Công Nghệ Cao & Đầu Tư',
+   farmingTitle: 'Canh Tác Hợp Đồng Công Nghệ Cao<br className="hidden lg:block" />& Đầu Tư',
    farmingSub: 'Canh Tác An Toàn, Quy Mô Lớn',
    farmingText: 'Dành cho các tập đoàn khao khát kiểm soát tuyệt đối chuỗi cung ứng, VAC cung cấp các dịch vụ canh tác hợp đồng trọn gói. Chúng tôi phân bổ quỹ đất, tài nguyên và đội ngũ quản lý chuyên sâu để canh tác các loại cây trồng sinh lời, phục vụ riêng cho khâu phân phối toàn cầu của bạn.',
    farmingBullet1: 'Quản Lý Nông Trại Trọn Gói: Điều hành khép kín từ khâu cải tạo đất, chọn giống đến thu hoạch và sơ chế sau thu hoạch.',
