@@ -16,18 +16,21 @@ import {
 export const Services: React.FC = () => {
   const { t } = useTranslation();
   const [activeTab, setActiveTab] = useState<number>(0);
+  const [expandedTabs, setExpandedTabs] = useState<number[]>([0]);
+
+  const isTabActive = (id: number) => {
+    if (typeof window !== 'undefined' && window.innerWidth < 1024) {
+      return expandedTabs.includes(id);
+    }
+    return activeTab === id;
+  };
 
   const handleTabClick = (id: number) => {
     setActiveTab(id);
-    // On mobile, scroll to the button to keep it at the top of the viewport
     if (window.innerWidth < 1024) {
-      setTimeout(() => {
-        const element = document.getElementById(`tab-button-${id}`);
-        if (element) {
-          const y = element.getBoundingClientRect().top + window.scrollY - 100; // 100px offset for fixed header
-          window.scrollTo({ top: y, behavior: 'smooth' });
-        }
-      }, 150); // slight delay to let the collapse/expand start
+      setExpandedTabs(prev => 
+        prev.includes(id) ? prev.filter(t => t !== id) : [...prev, id]
+      );
     }
   };
 
@@ -227,28 +230,27 @@ export const Services: React.FC = () => {
             {pillars.map((tab) => (
               <React.Fragment key={tab.id}>
                 <button
-                  id={`tab-button-${tab.id}`}
                   onClick={() => handleTabClick(tab.id)}
                   className={`w-full text-left p-6 rounded-xl border transition-all duration-300 flex items-start gap-4 cursor-pointer ${
-                    activeTab === tab.id
+                    isTabActive(tab.id)
                       ? 'bg-forest text-cream border-gold-warm shadow-md'
                       : 'bg-ivory text-carbon border-gold-warm/15 hover:border-gold-warm/40 hover:bg-cream/80'
                   }`}
                 >
                   <div className={`p-2.5 rounded-lg shrink-0 ${
-                    activeTab === tab.id ? 'bg-gold-warm text-brown-soil' : 'bg-forest/5 text-forest'
+                    isTabActive(tab.id) ? 'bg-gold-warm text-brown-soil' : 'bg-forest/5 text-forest'
                   }`}>
                     {tab.icon}
                   </div>
                   <div className="flex flex-col gap-1.5">
-                    <span className={`font-serif text-lg font-bold ${activeTab === tab.id ? 'text-gold-champagne' : 'text-forest'}`} dangerouslySetInnerHTML={{ __html: tab.title }} />
-                    <span className={`text-[10px] uppercase tracking-wider font-semibold ${activeTab === tab.id ? 'text-cream/70' : 'text-carbon/60'}`}><span dangerouslySetInnerHTML={{ __html: tab.subtitle }} /></span>
+                    <span className={`font-serif text-lg font-bold ${isTabActive(tab.id) ? 'text-gold-champagne' : 'text-forest'}`} dangerouslySetInnerHTML={{ __html: tab.title }} />
+                    <span className={`text-[10px] uppercase tracking-wider font-semibold ${isTabActive(tab.id) ? 'text-cream/70' : 'text-carbon/60'}`}><span dangerouslySetInnerHTML={{ __html: tab.subtitle }} /></span>
                   </div>
                 </button>
                 
                 {/* Mobile Inline Content (Accordion) */}
                 <AnimatePresence>
-                  {activeTab === tab.id && (
+                  {isTabActive(tab.id) && (
                     <motion.div
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ height: 'auto', opacity: 1 }}
