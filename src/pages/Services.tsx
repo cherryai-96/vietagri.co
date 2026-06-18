@@ -173,9 +173,7 @@ export const Services: React.FC = () => {
                 </div>
                 <div className="flex flex-col gap-1.5">
                   <span className={`font-serif text-lg font-bold ${activeTab === tab.id ? 'text-gold-champagne' : 'text-forest'}`} dangerouslySetInnerHTML={{ __html: tab.title }} />
-                  <span className={`text-[10px] uppercase tracking-wider font-semibold ${activeTab === tab.id ? 'text-cream/70' : 'text-carbon/60'}`}>
-                    {tab.subtitle}
-                  </span>
+                  <span className={`text-[10px] uppercase tracking-wider font-semibold ${activeTab === tab.id ? 'text-cream/70' : 'text-carbon/60'}`}><span dangerouslySetInnerHTML={{ __html: tab.subtitle }} /></span>
                 </div>
               </button>
             ))}

@@ -161,9 +161,7 @@ export const About: React.FC = () => {
                   {val.icon}
                 </div>
                 <h3 className="font-serif font-bold text-xl text-forest" dangerouslySetInnerHTML={{ __html: val.title }} />
-                <p className="text-xs md:text-sm text-carbon/70 font-light leading-relaxed flex-grow">
-                  {val.desc}
-                </p>
+                <p className="text-xs md:text-sm text-carbon/70 font-light leading-relaxed flex-grow"><span dangerouslySetInnerHTML={{ __html: val.desc }} /></p>
               </motion.div>
             ))}
           </div>

@@ -298,9 +298,7 @@ export const VietWolffia: React.FC = () => {
                   </div>
                   
                   <div className="w-full md:w-1/3 md:pl-8">
-                    <p className="text-sm md:text-base text-carbon/75 font-light leading-relaxed group-hover:text-cream/90 transition-colors duration-500">
-                      {feature.desc}
-                    </p>
+                    <p className="text-sm md:text-base text-carbon/75 font-light leading-relaxed group-hover:text-cream/90 transition-colors duration-500"><span dangerouslySetInnerHTML={{ __html: feature.desc }} /></p>
                   </div>
                 </motion.div>
               );

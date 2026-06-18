@@ -158,7 +158,7 @@ export const Home: React.FC = () => {
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-stretch">
           <div className="lg:col-span-5 flex flex-col gap-6">
             <div className="flex flex-col gap-4">
-              <h2 className="font-serif text-[2rem] leading-[1.1] sm:text-[2.5rem] md:text-5xl lg:text-4xl xl:text-5xl font-bold tracking-wide text-forest leading-tight">
+              <h2 className="font-serif text-[2rem] leading-[1.1] sm:text-[2.5rem] md:text-4xl lg:text-4xl xl:text-5xl font-bold tracking-wide text-forest leading-tight">
                 <span dangerouslySetInnerHTML={{ __html: t('home.advantageTitle') }} />
               </h2>
               <p className="text-sm md:text-base text-carbon/75 font-light leading-relaxed"><span dangerouslySetInnerHTML={{ __html: t('home.advantageSub') }} /></p>
@@ -183,9 +183,7 @@ export const Home: React.FC = () => {
                   {item.icon}
                 </div>
                 <h3 className="font-serif font-bold text-xl md:text-2xl text-forest" dangerouslySetInnerHTML={{ __html: item.title }} />
-                <p className="text-xs md:text-sm text-carbon/70 font-light leading-relaxed flex-grow">
-                  {item.desc}
-                </p>
+                <p className="text-xs md:text-sm text-carbon/70 font-light leading-relaxed flex-grow"><span dangerouslySetInnerHTML={{ __html: item.desc }} /></p>
                 <Link
                   to={item.link}
                   className="text-xs font-bold text-forest hover:text-gold-antique uppercase tracking-wider flex items-center gap-1.5 transition-colors self-start mt-2 group"
@@ -240,7 +238,7 @@ export const Home: React.FC = () => {
                       </div>
                       <div className="p-6 md:p-8 flex flex-col gap-4 flex-grow">
                         <h3 className="font-serif font-bold text-xl text-forest" dangerouslySetInnerHTML={{ __html: tech.title }} />
-                        <p className="text-sm text-carbon/70 font-light leading-relaxed flex-grow">{tech.desc}</p>
+                        <p className="text-sm text-carbon/70 font-light leading-relaxed flex-grow"><span dangerouslySetInnerHTML={{ __html: tech.desc }} /></p>
                         <Link to="/viet-wolffia" className="text-xs font-bold text-forest hover:text-gold-antique uppercase tracking-wider flex items-center gap-1.5 mt-2 group-link">
                           <span>View Details</span> <ArrowRight size={13} className="group-link-hover:translate-x-1 transition-transform" />
                         </Link>
@@ -250,7 +248,7 @@ export const Home: React.FC = () => {
                     <>
                       <div className="p-6 md:p-8 flex flex-col gap-4 flex-grow">
                         <h3 className="font-serif font-bold text-xl text-forest" dangerouslySetInnerHTML={{ __html: tech.title }} />
-                        <p className="text-sm text-carbon/70 font-light leading-relaxed flex-grow">{tech.desc}</p>
+                        <p className="text-sm text-carbon/70 font-light leading-relaxed flex-grow"><span dangerouslySetInnerHTML={{ __html: tech.desc }} /></p>
                         <Link to="/viet-wolffia" className="text-xs font-bold text-forest hover:text-gold-antique uppercase tracking-wider flex items-center gap-1.5 mt-2 group-link">
                           <span>View Details</span> <ArrowRight size={13} className="group-link-hover:translate-x-1 transition-transform" />
                         </Link>

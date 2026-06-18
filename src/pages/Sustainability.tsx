@@ -118,9 +118,7 @@ export const Sustainability: React.FC = () => {
                     <CheckCircle2 className="text-gold-warm shrink-0 mt-1" size={18} />
                     <div className="flex flex-col gap-2">
                       <h3 className="font-serif font-bold text-xl text-forest" dangerouslySetInnerHTML={{ __html: item.title }} />
-                      <p className="text-xs text-carbon/70 leading-relaxed font-light">
-                        {item.desc}
-                      </p>
+                      <p className="text-xs text-carbon/70 leading-relaxed font-light"><span dangerouslySetInnerHTML={{ __html: item.desc }} /></p>
                     </div>
                   </div>
                 </motion.div>
@@ -181,13 +179,13 @@ export const Sustainability: React.FC = () => {
                 className={`relative z-10 flex flex-col gap-4 p-8 rounded-xl shadow-sm ${step.color} min-h-[250px] hover:-translate-y-1 transition-transform`}
               >
                 <div className="flex justify-between items-center">
-                  <span className="text-3xl font-serif font-bold text-gold-warm opacity-80">{step.step}</span>
+                  <span className="text-3xl font-serif font-bold text-gold-warm opacity-80"><span dangerouslySetInnerHTML={{ __html: step.step }} /></span>
                   <div className="p-2 rounded-full bg-cream/10 border border-gold-warm/20 flex items-center justify-center">
                     {step.icon}
                   </div>
                 </div>
                 <h3 className="font-serif text-xl font-bold tracking-wide mt-2" dangerouslySetInnerHTML={{ __html: step.title }} />
-                <p className="text-xs md:text-sm leading-relaxed font-light opacity-90">{step.desc}</p>
+                <p className="text-xs md:text-sm leading-relaxed font-light opacity-90"><span dangerouslySetInnerHTML={{ __html: step.desc }} /></p>
               </motion.div>
             ))}
           </div>
@@ -250,9 +248,7 @@ export const Sustainability: React.FC = () => {
                       {card.icon}
                     </div>
                     <h3 className="font-serif font-bold text-lg md:text-xl text-forest leading-tight" dangerouslySetInnerHTML={{ __html: card.title }} />
-                    <p className="text-xs text-carbon/75 leading-relaxed font-light">
-                      {card.desc}
-                    </p>
+                    <p className="text-xs text-carbon/75 leading-relaxed font-light"><span dangerouslySetInnerHTML={{ __html: card.desc }} /></p>
                   </div>
                   <div className="border-t border-gold-warm/20 pt-4 mt-4 text-center">
                     <span className="text-sm font-semibold tracking-wider text-gold-antique uppercase font-mono block">
