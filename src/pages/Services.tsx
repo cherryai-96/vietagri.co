@@ -17,6 +17,20 @@ export const Services: React.FC = () => {
   const { t } = useTranslation();
   const [activeTab, setActiveTab] = useState<number>(0);
 
+  const handleTabClick = (id: number) => {
+    setActiveTab(id);
+    // On mobile, scroll to the button to keep it at the top of the viewport
+    if (window.innerWidth < 1024) {
+      setTimeout(() => {
+        const element = document.getElementById(`tab-button-${id}`);
+        if (element) {
+          const y = element.getBoundingClientRect().top + window.scrollY - 100; // 100px offset for fixed header
+          window.scrollTo({ top: y, behavior: 'smooth' });
+        }
+      }, 150); // slight delay to let the collapse/expand start
+    }
+  };
+
   const pillars = [
     {
       id: 0,
@@ -213,7 +227,8 @@ export const Services: React.FC = () => {
             {pillars.map((tab) => (
               <React.Fragment key={tab.id}>
                 <button
-                  onClick={() => setActiveTab(tab.id)}
+                  id={`tab-button-${tab.id}`}
+                  onClick={() => handleTabClick(tab.id)}
                   className={`w-full text-left p-6 rounded-xl border transition-all duration-300 flex items-start gap-4 cursor-pointer ${
                     activeTab === tab.id
                       ? 'bg-forest text-cream border-gold-warm shadow-md'
