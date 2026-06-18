@@ -250,11 +250,7 @@ export const Sustainability: React.FC = () => {
                     <h3 className="font-serif font-bold text-lg md:text-xl text-forest leading-tight" dangerouslySetInnerHTML={{ __html: card.title }} />
                     <p className="text-xs text-carbon/75 leading-relaxed font-light"><span dangerouslySetInnerHTML={{ __html: card.desc }} /></p>
                   </div>
-                  <div className="border-t border-gold-warm/20 pt-4 mt-4 text-center">
-                    <span className="text-sm font-semibold tracking-wider text-gold-antique uppercase font-mono block">
-                      {card.metric}
-                    </span>
-                  </div>
+
                 </motion.div>
               ))}
             </div>
