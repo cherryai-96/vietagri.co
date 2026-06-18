@@ -127,7 +127,7 @@ const resources: TranslationResources = {
    qaBullet2: 'Residue & Purity Testing: Implementing rigorous testing protocols to guarantee zero chemical contamination and absolute product safety.',
    qaBullet3: 'Traceability: Full documentation tracking the product lifecycle, providing you and your consumers with complete transparency.',
    
-   logisticsTitle: 'Global Logistics & Trade Documentation',
+   logisticsTitle: 'Global Logistics &<br />Trade Documentation',
    logisticsSub: 'Zero‑Friction Export Execution',
    logisticsText: 'Getting the crop out of the ground is only half the process; delivering it securely across borders is where VAC truly excels. We handle the complex bureaucracy and physical logistics of international freight.',
    logisticsBullet1: 'Customs & Documentation: Expert management of phytosanitary certificates, certificates of origin, and comprehensive customs clearance to prevent border delays.',
@@ -355,7 +355,7 @@ const resources: TranslationResources = {
    qaBullet2: 'Kiểm Định Dư Lượng & Độ Tinh Khiết: Triển khai các quy trình kiểm nghiệm gắt gao để cam kết tuyệt đối không có dư lượng hóa chất và bảo đảm an toàn sản phẩm 100%.',
    qaBullet3: 'Truy Xuất Nguồn Gốc: Hệ thống hồ sơ hoàn chỉnh theo dõi toàn bộ vòng đời sản phẩm, mang đến cho bạn và người tiêu dùng sự minh bạch tối đa.',
    
-   logisticsTitle: 'Logistics Toàn Cầu & Chứng Từ Thương Mại',
+   logisticsTitle: 'Logistics Toàn Cầu &<br />Chứng Từ Thương Mại',
    logisticsSub: 'Thực Thi Xuất Khẩu Xuyên Suốt',
    logisticsText: 'Đưa nông sản lên khỏi mặt đất mới chỉ là một nửa chặng đường; vận chuyển an toàn xuyên biên giới mới là nơi VAC thực sự chứng minh năng lực. Chúng tôi trực tiếp tháo gỡ mọi rào cản hành chính phức tạp và đảm nhiệm quy trình kho vận quốc tế.',
    logisticsBullet1: 'Hải Quan & Chứng Từ: Quản lý chuyên nghiệp các giấy chứng nhận kiểm dịch thực vật, chứng nhận xuất xứ (C/O) và thông quan toàn diện để ngăn chặn mọi rủi ro chậm trễ tại cửa khẩu.',
