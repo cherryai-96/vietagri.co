@@ -110,7 +110,7 @@ export const Contact: React.FC = () => {
       <section className="relative min-h-[50vh] flex items-center justify-center bg-carbon text-cream pt-32 pb-16 px-4 md:px-8">
         <div
           className="absolute inset-0 bg-cover bg-center opacity-50"
-          style={{ backgroundImage: `url('/images/a-hero.jpg')` }}
+          style={{ backgroundImage: `url('/images/contact-hero-bg.jpg')` }}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-carbon via-carbon/60 to-carbon/20" />
         
