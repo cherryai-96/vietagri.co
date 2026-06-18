@@ -63,6 +63,12 @@ export const VietWolffia: React.FC = () => {
       desc: 'Exploring new flavors with aquatic microgreens.'
     },
     {
+      src: '/images/f9.jpg',
+      title: 'Wolffia Culinary Delight 9',
+      category: 'culinary',
+      desc: 'Exploring new flavors with aquatic microgreens.'
+    },
+    {
       src: '/Cuisine pictures/Green Shakshuka.webp',
       title: 'Green Shakshuka with Wolffia',
       category: 'culinary',
@@ -167,12 +173,6 @@ export const VietWolffia: React.FC = () => {
     {
       src: '/images/f8.jpg',
       title: 'Wolffia Culinary Delight 8',
-      category: 'culinary',
-      desc: 'Exploring new flavors with aquatic microgreens.'
-    },
-    {
-      src: '/images/f9.jpg',
-      title: 'Wolffia Culinary Delight 9',
       category: 'culinary',
       desc: 'Exploring new flavors with aquatic microgreens.'
     },
