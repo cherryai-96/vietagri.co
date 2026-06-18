@@ -44,7 +44,7 @@ const resources: TranslationResources = {
   home: {
    heroTitle: 'Bridging the <span class="text-transparent bg-clip-text bg-gradient-to-r from-gold-champagne via-gold-warm to-gold-antique">Richness of Vietnamese Agriculture</span> to the World',
    heroSub: 'Your trusted on‑the‑ground partner for premium product sourcing, high‑tech contract farming, and seamless global export logistics.',
-   advantageTitle: 'An Integrated Agricultural<br className="hidden md:block" />Supply\u00A0Chain Ecosystem',
+   advantageTitle: 'An\u00A0Integrated\u00A0Agricultural<br className="hidden md:block" />Supply\u00A0Chain\u00A0Ecosystem',
    advantageSub: 'At Vietnam Agriculture Center (VAC), we eliminate the friction of international trade. We offer end‑to‑end solutions for global corporations, ensuring food sustainability, security, and uncompromising quality from seed to shipment.',
    
    sourcingTitle: 'Global Sourcing Services',
@@ -272,7 +272,7 @@ const resources: TranslationResources = {
   home: {
    heroTitle: 'Mang <span class="text-transparent bg-clip-text bg-gradient-to-r from-gold-champagne via-gold-warm to-gold-antique">Tinh Hoa Nông Sản Việt</span> Vươn Tầm Thế Giới',
    heroSub: 'Đối tác bản địa đáng tin cậy của bạn trong cung ứng nông sản cao cấp, canh tác hợp đồng công nghệ cao và logistics xuất khẩu toàn cầu.',
-   advantageTitle: 'Hệ\u00A0Sinh\u00A0Thái Chuỗi\u00A0Cung\u00A0Ứng<br className="hidden md:block" />Nông\u00A0Nghiệp Tích\u00A0Hợp',
+   advantageTitle: 'Hệ\u00A0Sinh\u00A0Thái\u00A0Chuỗi\u00A0Cung\u00A0Ứng<br className="hidden md:block" />Nông\u00A0Nghiệp\u00A0Tích\u00A0Hợp',
    advantageSub: 'Tại Vietnam Agriculture Center (VAC), chúng tôi gỡ bỏ mọi rào cản trong thương mại quốc tế. Bằng việc cung cấp các giải pháp khép kín cho các tập đoàn đa quốc gia, VAC đảm bảo tính bền vững, an ninh lương thực và chất lượng tuyệt đối từ hạt giống đến khi giao hàng.',
    
    sourcingTitle: 'Dịch Vụ Cung Ứng Toàn Cầu',
