@@ -135,63 +135,63 @@ export const VietWolffia: React.FC = () => {
     },
     {
       src: '/images/pastries/P1.jpg',
-      title: 'Wolffia Green Tea Cake',
+      title: 'Wolffia Pastry 1',
       category: 'pastry',
-      desc: 'A soft, fluffy cake infused with nutritious Wolffia.'
+      desc: 'Delicious Wolffia pastry.'
     },
     {
       src: '/images/pastries/P2.jpg',
-      title: 'Wolffia Tiramisu Dessert',
+      title: 'Wolffia Pastry 2',
       category: 'pastry',
-      desc: 'A beautiful layered dessert with Wolffia cream.'
+      desc: 'Delicious Wolffia pastry.'
     },
     {
       src: '/images/pastries/P3.jpg',
-      title: 'Wolffia Swiss Roll',
+      title: 'Wolffia Pastry 3',
       category: 'pastry',
-      desc: 'A delicious pastry roll enriched with Wolffia.'
+      desc: 'Delicious Wolffia pastry.'
+    },
+    {
+      src: '/images/pastries/P4.jpg',
+      title: 'Wolffia Pastry 4',
+      category: 'pastry',
+      desc: 'Delicious Wolffia pastry.'
     },
     {
       src: '/images/pastries/P5.jpg',
-      title: 'Wolffia Superfood Bread',
+      title: 'Wolffia Pastry 5',
       category: 'pastry',
-      desc: 'Healthy, fresh-baked bread infused with Wolffia.'
+      desc: 'Delicious Wolffia pastry.'
     },
     {
       src: '/images/pastries/P6.jpg',
-      title: 'Wolffia Artisan Bread',
+      title: 'Wolffia Pastry 6',
       category: 'pastry',
-      desc: 'Artisan bread featuring nutritious aquatic microgreens.'
+      desc: 'Delicious Wolffia pastry.'
     },
     {
       src: '/images/pastries/P7.jpg',
-      title: 'Wolffia Muffin',
+      title: 'Wolffia Pastry 7',
       category: 'pastry',
-      desc: 'A healthy and delicious muffin packed with Wolffia.'
+      desc: 'Delicious Wolffia pastry.'
     },
     {
       src: '/images/pastries/P8.jpg',
-      title: 'Wolffia Cake Delight',
+      title: 'Wolffia Pastry 8',
       category: 'pastry',
-      desc: 'A delightful pastry enriched with Wolffia protein.'
+      desc: 'Delicious Wolffia pastry.'
     },
     {
       src: '/images/pastries/P9.jpg',
-      title: 'Wolffia Green Dessert',
+      title: 'Wolffia Pastry 9',
       category: 'pastry',
-      desc: 'A light and healthy dessert featuring Wolffia.'
+      desc: 'Delicious Wolffia pastry.'
     },
     {
       src: '/images/pastries/P10.jpg',
-      title: 'Wolffia Cream Puff',
+      title: 'Wolffia Pastry 10',
       category: 'pastry',
-      desc: 'Sweet cream puffs with a nutritious Wolffia filling.'
-    },
-    {
-      src: '/images/pastries/P11.jpg',
-      title: 'Wolffia Cupcake',
-      category: 'pastry',
-      desc: 'A charming cupcake packed with aquatic microgreens.'
+      desc: 'Delicious Wolffia pastry.'
     },
     {
       src: '/images/snacks/S1.jpg',
