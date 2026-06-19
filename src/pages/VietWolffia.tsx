@@ -86,13 +86,13 @@ export const VietWolffia: React.FC = () => {
       desc: 'Infusing traditional breakfast with high-protein microgreens.'
     },
     {
-      src: '/images/w-product1.png',
-      title: 'Premium Wolffia Product',
+      src: '/images/supplements/Su1.jpg',
+      title: 'Premium Wolffia Supplement',
       category: 'supplement',
       desc: 'High-quality processed Wolffia for everyday nutrition.'
     },
     {
-      src: '/images/supplements/z7953259579627_515e5b5d744b7592d2599fea34e34ff9.jpg',
+      src: '/images/supplements/Su2.jpg',
       title: 'Wolffia Supplement Pack',
       category: 'supplement',
       desc: 'Nutritious Wolffia supplement for daily health.'
@@ -104,22 +104,10 @@ export const VietWolffia: React.FC = () => {
       desc: 'Fresh greens mixed with nutrient-dense Wolffia dressing.'
     },
     {
-      src: '/images/w-product2.png',
-      title: 'Wolffia Nutritional Supplement',
-      category: 'supplement',
-      desc: 'Pure, food-grade watermeal ready for daily consumption.'
-    },
-    {
       src: '/images/wm-7.avif',
       title: 'Wolffia Breakfast Bowl',
       category: 'culinary',
       desc: 'Nutritious breakfast packed with plant-based protein.'
-    },
-    {
-      src: '/images/w-product3.png',
-      title: 'Viet Wolffia Extract',
-      category: 'supplement',
-      desc: 'Concentrated plant-based protein and essential vitamins.'
     },
     {
       src: '/Cuisine pictures/Green Oat Tortilla.webp',
@@ -132,12 +120,6 @@ export const VietWolffia: React.FC = () => {
       title: 'Nutritious Wolffia Meal',
       category: 'culinary',
       desc: 'A complete protein meal featuring fresh Wolffia greens.'
-    },
-    {
-      src: '/images/w-product4.png',
-      title: 'Viet Wolffia Fresh Pack',
-      category: 'supplement',
-      desc: 'Carefully cultivated and packaged to preserve nutrients.'
     },
     {
       src: '/images/wm-8.avif',
@@ -168,12 +150,6 @@ export const VietWolffia: React.FC = () => {
       title: 'Wolffia Swiss Roll',
       category: 'pastry',
       desc: 'A delicious pastry roll enriched with Wolffia.'
-    },
-    {
-      src: '/images/pastries/P4.jpg',
-      title: 'Wolffia Ice Cream',
-      category: 'pastry',
-      desc: 'Refreshing ice cream packed with Wolffia nutrients.'
     },
     {
       src: '/images/pastries/P5.jpg',
@@ -238,6 +214,12 @@ export const VietWolffia: React.FC = () => {
     {
       src: '/images/snacks/S4.jpg',
       title: 'Wolffia Snack 4',
+      category: 'snack',
+      desc: 'A healthy and crispy Wolffia snack.'
+    },
+    {
+      src: '/images/snacks/S5.jpg',
+      title: 'Wolffia Snack 5',
       category: 'snack',
       desc: 'A healthy and crispy Wolffia snack.'
     },
