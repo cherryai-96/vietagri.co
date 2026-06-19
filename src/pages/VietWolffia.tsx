@@ -88,7 +88,7 @@ export const VietWolffia: React.FC = () => {
     {
       src: '/images/w-product1.png',
       title: 'Premium Wolffia Product',
-      category: 'product',
+      category: 'supplement',
       desc: 'High-quality processed Wolffia for everyday nutrition.'
     },
     {
@@ -100,7 +100,7 @@ export const VietWolffia: React.FC = () => {
     {
       src: '/images/w-product2.png',
       title: 'Wolffia Nutritional Supplement',
-      category: 'product',
+      category: 'supplement',
       desc: 'Pure, food-grade watermeal ready for daily consumption.'
     },
     {
@@ -112,7 +112,7 @@ export const VietWolffia: React.FC = () => {
     {
       src: '/images/w-product3.png',
       title: 'Viet Wolffia Extract',
-      category: 'product',
+      category: 'supplement',
       desc: 'Concentrated plant-based protein and essential vitamins.'
     },
     {
@@ -130,7 +130,7 @@ export const VietWolffia: React.FC = () => {
     {
       src: '/images/w-product4.png',
       title: 'Viet Wolffia Fresh Pack',
-      category: 'product',
+      category: 'supplement',
       desc: 'Carefully cultivated and packaged to preserve nutrients.'
     },
     {
@@ -148,43 +148,43 @@ export const VietWolffia: React.FC = () => {
     {
       src: '/images/f2.webp',
       title: 'Wolffia Culinary Delight 2',
-      category: 'culinary',
+      category: 'pastry',
       desc: 'Exploring new flavors with aquatic microgreens.'
     },
     {
       src: '/images/f3.jpg',
       title: 'Wolffia Culinary Delight 3',
-      category: 'culinary',
+      category: 'pastry',
       desc: 'Exploring new flavors with aquatic microgreens.'
     },
     {
       src: '/images/f4.webp',
       title: 'Wolffia Culinary Delight 4',
-      category: 'culinary',
+      category: 'snack',
       desc: 'Exploring new flavors with aquatic microgreens.'
     },
     {
       src: '/images/f5.jpg',
       title: 'Wolffia Culinary Delight 5',
-      category: 'culinary',
+      category: 'snack',
       desc: 'Exploring new flavors with aquatic microgreens.'
     },
     {
       src: '/images/f6.webp',
       title: 'Wolffia Culinary Delight 6',
-      category: 'culinary',
+      category: 'others',
       desc: 'Exploring new flavors with aquatic microgreens.'
     },
     {
       src: '/images/f7.webp',
       title: 'Wolffia Culinary Delight 7',
-      category: 'culinary',
+      category: 'others',
       desc: 'Exploring new flavors with aquatic microgreens.'
     },
     {
       src: '/images/f8.jpg',
       title: 'Wolffia Culinary Delight 8',
-      category: 'culinary',
+      category: 'others',
       desc: 'Exploring new flavors with aquatic microgreens.'
     },
     {
