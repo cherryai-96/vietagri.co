@@ -3,9 +3,20 @@ import { useTranslation } from '../i18n';
 import { motion, AnimatePresence } from 'framer-motion';
 import { CheckCircle2, FlaskConical, Droplet, Sparkles, Scale, ChevronRight, ChevronLeft } from 'lucide-react';
 
+const CATEGORIES = [
+  { id: 'culinary', label: 'Culinary' },
+  { id: 'beverage', label: 'Beverage' },
+  { id: 'pastry', label: 'Pastry' },
+  { id: 'snack', label: 'Snack' },
+  { id: 'product', label: 'Products' },
+  { id: 'supplement', label: 'Supplement & Others' }
+] as const;
+
+type CategoryType = typeof CATEGORIES[number]['id'];
+
 export const VietWolffia: React.FC = () => {
   const { t } = useTranslation();
-  const [activeCategory, setActiveCategory] = useState<'culinary' | 'beverage' | 'product'>('culinary');
+  const [activeCategory, setActiveCategory] = useState<CategoryType>('culinary');
   const scrollContainerRef = useRef<HTMLDivElement>(null);
 
   const scrollRight = () => {
@@ -537,18 +548,18 @@ export const VietWolffia: React.FC = () => {
             </div>
             
             {/* Category Selectors */}
-            <div className="flex flex-wrap gap-3 md:gap-4 text-sm md:text-base font-bold text-forest shrink-0">
-              {(['culinary', 'beverage', 'product'] as const).map((cat) => (
+            <div className="flex flex-wrap gap-2 md:gap-3 text-xs sm:text-sm font-bold text-forest shrink-0 xl:justify-end xl:max-w-xl">
+              {CATEGORIES.map((cat) => (
                 <button
-                  key={cat}
-                  onClick={() => setActiveCategory(cat)}
-                  className={`px-6 py-2.5 md:px-8 md:py-3 rounded-full border transition-all duration-300 cursor-pointer capitalize ${
-                    activeCategory === cat
+                  key={cat.id}
+                  onClick={() => setActiveCategory(cat.id)}
+                  className={`px-4 py-2 md:px-5 md:py-2.5 rounded-full border transition-all duration-300 cursor-pointer ${
+                    activeCategory === cat.id
                       ? 'bg-forest text-cream border-gold-warm shadow-sm'
                       : 'bg-cream text-forest border-gold-warm/15 hover:border-gold-warm/40'
                   }`}
                 >
-                  {cat}
+                  {cat.label}
                 </button>
               ))}
             </div>
