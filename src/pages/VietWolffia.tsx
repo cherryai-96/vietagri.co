@@ -4,12 +4,12 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { CheckCircle2, FlaskConical, Droplet, Sparkles, Scale, ChevronRight, ChevronLeft } from 'lucide-react';
 
 const CATEGORIES = [
-  { id: 'culinary', label: 'Culinary' },
-  { id: 'beverage', label: 'Beverage' },
-  { id: 'pastry', label: 'Pastry' },
-  { id: 'snack', label: 'Snack' },
+  { id: 'culinary', label: 'Culinaries' },
+  { id: 'beverage', label: 'Beverages' },
+  { id: 'pastry', label: 'Pastries' },
+  { id: 'snack', label: 'Snacks' },
   { id: 'product', label: 'Products' },
-  { id: 'supplement', label: 'Supplement' },
+  { id: 'supplement', label: 'Supplements' },
   { id: 'others', label: 'Others' }
 ] as const;
 
