@@ -242,7 +242,7 @@ const resources: TranslationResources = {
    home: 'Trang Chủ',
    about: 'Về Chúng Tôi',
    services: 'Dịch Vụ Cốt Lõi',
-   wolffia: 'Viet Wolffia',
+   wolffia: 'Việt Wolffia',
    sustainability: 'Phát Triển Bền Vững',
    contact: 'Liên Hệ',
   },
@@ -266,14 +266,14 @@ const resources: TranslationResources = {
    address: 'Số 59 Trương Đăng Quế, Phường 1, Quận Gò Vấp, TP. Hồ Chí Minh 71423, Việt Nam',
    phone: '+84 85 874 1968',
    email: 'inquiries@vietagri.com',
-   copyright: '© 2026 Vietnam Agriculture Center. Bảo lưu mọi quyền.',
+   copyright: '© 2026 Trung Tâm Nông Nghiệp Việt Nam. Bảo lưu mọi quyền.',
    connecting: 'Kết nối tiềm năng bản địa với nhu cầu toàn cầu.',
   },
   home: {
    heroTitle: 'Mang <span class="text-transparent bg-clip-text bg-gradient-to-r from-gold-champagne via-gold-warm to-gold-antique">Tinh Hoa Nông Sản Việt</span> Vươn Tầm Thế Giới',
    heroSub: 'Đối tác bản địa đáng tin cậy của bạn trong cung ứng nông sản cao cấp, canh tác hợp đồng công nghệ cao và logistics xuất khẩu toàn cầu.',
    advantageTitle: 'Hệ\u00A0Sinh\u00A0Thái\u00A0Chuỗi\u00A0Cung\u00A0Ứng<br className="hidden md:block" />Nông\u00A0Nghiệp\u00A0Tích\u00A0Hợp',
-   advantageSub: 'Tại Vietnam Agriculture Center (VAC), chúng tôi gỡ bỏ mọi rào cản trong thương mại quốc tế. Bằng việc cung cấp các giải pháp khép kín cho các tập đoàn đa quốc gia, VAC đảm bảo tính bền vững, an ninh lương thực và chất lượng tuyệt đối từ hạt giống đến khi giao hàng.',
+   advantageSub: 'Tại Trung Tâm Nông Nghiệp Việt Nam (VAC), chúng tôi gỡ bỏ mọi rào cản trong thương mại quốc tế. Bằng việc cung cấp các giải pháp khép kín cho các tập đoàn đa quốc gia, VAC đảm bảo tính bền vững, an ninh lương thực và chất lượng tuyệt đối từ hạt giống đến khi giao hàng.',
    
    sourcingTitle: 'Dịch Vụ Cung Ứng Toàn Cầu',
    sourcingDesc: 'Tiếp cận nguồn nguyên liệu nông sản và sản phẩm chế biến thượng hạng của Việt Nam. Chúng tôi trực tiếp đánh giá, đàm phán và thu mua số lượng lớn — từ các mặt hàng nông sản tươi đang được săn đón đến các sản phẩm chế biến sâu giá trị cao như bột hạt sen — nhằm đảm bảo một chuỗi cung ứng vững chắc cho các nhà nhập khẩu quốc tế.',
@@ -287,9 +287,9 @@ const resources: TranslationResources = {
    logisticsTitle: 'Logistics & Thủ Tục Chứng Từ',
    logisticsDesc: 'Thông quan không trở ngại. Chúng tôi giải quyết mọi sự phức tạp của thương mại quốc tế, từ quản lý chứng thư kiểm dịch thực vật, giải pháp đóng gói chuyên dụng cho hàng rời, đến thủ tục thông quan cho những thị trường được quản lý chặt chẽ nhất.',
    
-   spotlightTitle: 'Đổi Mới Khởi Trào: Mô Hình Viet Wolffia',
+   spotlightTitle: 'Đổi Mới Khởi Trào: Mô Hình Việt Wolffia',
    spotlightSub: 'Minh Chứng Cho Nền Canh Tác Công Nghệ Cao, Sẵn Sàng Xuất Khẩu',
-   spotlightDesc1: 'Là một đơn vị điều hành nông nghiệp tích hợp, chúng tôi luôn "nói đi đôi với làm". Trang trại Viet Wolffia là mô hình tiêu điểm của VAC về canh tác tiên tiến, khẳng định năng lực triển khai và quản lý công nghệ nông nghiệp bền vững và hiện đại.',
+   spotlightDesc1: 'Là một đơn vị điều hành nông nghiệp tích hợp, chúng tôi luôn "nói đi đôi với làm". Trang trại Việt Wolffia là mô hình tiêu điểm của VAC về canh tác tiên tiến, khẳng định năng lực triển khai và quản lý công nghệ nông nghiệp bền vững và hiện đại.',
    spotlightDesc2: 'Bằng việc nuôi trồng Wolffia Globosa (Bèo tấm/Trứng nước), chúng tôi tạo ra một nguồn protein thực vật mang tính cách mạng. Quan trọng hơn, mô hình này thể hiện chính xác các chuẩn mực vận hành cần thiết để đáp ứng nhu cầu khắt khe của thị trường tiêu dùng toàn cầu và mảng dinh dưỡng động vật chuyên biệt.',
    
    tech1Title: 'Canh Tác Kiểm Soát Môi Trường',
@@ -318,7 +318,7 @@ const resources: TranslationResources = {
    visionTitle: 'Tầm Nhìn Của Chúng Tôi',
    visionDesc: 'Trở thành cửa ngõ uy tín nhất thế giới tiếp cận tài nguyên nông nghiệp của Việt Nam, thiết lập nên những chuẩn mực quốc tế về canh tác hợp đồng công nghệ cao, chuỗi cung ứng minh bạch và logistics xuất khẩu thông suốt.',
    footprintTitle: 'Mạng Lưới Thực Địa Rộng Khắp',
-   footprintDesc1: 'Vietnam Agriculture Center (VAC) được xây dựng trên nền tảng chuyên môn sâu sắc về bản địa và sự am hiểu tường tận về thương mại quốc tế. Chúng tôi không phải là những nhà môi giới ngồi sau bàn làm việc; chúng tôi là những nhà điều hành gắn bó sâu sát với đồng ruộng.',
+   footprintDesc1: 'Trung Tâm Nông Nghiệp Việt Nam (VAC) được xây dựng trên nền tảng chuyên môn sâu sắc về bản địa và sự am hiểu tường tận về thương mại quốc tế. Chúng tôi không phải là những nhà môi giới ngồi sau bàn làm việc; chúng tôi là những nhà điều hành gắn bó sâu sát với đồng ruộng.',
    footprintDesc2: 'Hoạt động điều hành và các đối tác chiến lược của chúng tôi trải rộng khắp những vùng canh tác màu mỡ và đa dạng nhất Việt Nam — bao gồm các trung tâm nông nghiệp trọng điểm ở Tây Nguyên và Đồng bằng sông Cửu Long. Mạng lưới rộng lớn này giúp VAC linh hoạt đa dạng hóa danh mục cây trồng, giảm thiểu rủi ro chuỗi cung ứng và đảm bảo khả năng cung ứng liên tục, ổn định quanh năm cho các tập đoàn đối tác.',
    whyTitle: 'Người Gác Cổng Đáng Tin Cậy Tại Việt Nam',
    whySub: 'Vì Sao Các Tập Đoàn Toàn Cầu Chọn VAC',
@@ -366,13 +366,13 @@ const resources: TranslationResources = {
    ctaSub: 'Dù bạn cần các giải pháp cung ứng chuyên biệt, một đề xuất canh tác hợp đồng riêng biệt, hay sự hỗ trợ logistics chuyên môn sâu, VAC luôn sẵn sàng huy động nguồn lực cho thành công của bạn.',
   },
   wolffia: {
-   heroTitle: 'Siêu Thực Phẩm Viet Wolffia',
+   heroTitle: 'Siêu Thực Phẩm Việt Wolffia',
    heroSub: 'Nuôi trồng tương lai của protein. Sản xuất Wolffia Globosa công nghệ cao, quy mô lớn phục vụ dinh dưỡng con người và động vật toàn cầu.',
    introTitle: 'Loài Thực Vật Có Hoa Nhỏ Nhất, Giàu Dưỡng Chất Nhất Thế Giới',
    introText1: 'Wolffia globosa (thường được biết đến với tên gọi Bèo Tấm hay Trứng Nước) là một kỳ quan thủy sinh. Dù là loài thực vật có hoa nhỏ nhất Trái Đất, nó mang trong mình một hồ sơ dinh dưỡng vô tiền khoáng hậu, cung cấp hàm lượng lớn protein thực vật, các axit amin thiết yếu và những vi chất quan trọng.',
-   introText2: 'Tại VAC, chúng tôi sớm nhận ra tiềm năng đột phá của Wolffia. Qua mô hình trang trại tiêu điểm Viet Wolffia, chúng tôi đã phát triển thành công một hệ thống mang tính thương mại, có khả năng nhân rộng để cung ứng khối lượng sinh khối mang tính cách mạng này cho thị trường thế giới, đáp ứng cả mảng siêu thực phẩm cao cấp cho người và ngành thức ăn chăn nuôi năng suất cao.',
+   introText2: 'Tại VAC, chúng tôi sớm nhận ra tiềm năng đột phá của Wolffia. Qua mô hình trang trại tiêu điểm Việt Wolffia, chúng tôi đã phát triển thành công một hệ thống mang tính thương mại, có khả năng nhân rộng để cung ứng khối lượng sinh khối mang tính cách mạng này cho thị trường thế giới, đáp ứng cả mảng siêu thực phẩm cao cấp cho người và ngành thức ăn chăn nuôi năng suất cao.',
    cultTitle: 'Nông Nghiệp Chính Xác Trong<br />Môi Trường Sạch & Được Kiểm Soát',
-   cultDesc: 'Hoạt động của Viet Wolffia được xây dựng trên nền tảng kiểm soát nghiêm ngặt các thông số hóa học của nước và quản lý môi trường tối ưu. Chúng tôi đã thiết kế một mô hình canh tác đạt hiệu suất cao, có thể mở rộng, giúp phát huy tối đa các nguồn lực tự nhiên đồng thời bảo đảm độ tinh khiết tuyệt đối.',
+   cultDesc: 'Hoạt động của Việt Wolffia được xây dựng trên nền tảng kiểm soát nghiêm ngặt các thông số hóa học của nước và quản lý môi trường tối ưu. Chúng tôi đã thiết kế một mô hình canh tác đạt hiệu suất cao, có thể mở rộng, giúp phát huy tối đa các nguồn lực tự nhiên đồng thời bảo đảm độ tinh khiết tuyệt đối.',
    
    feature1Title: 'Hệ Thống Ao Nổi Lót Bạt Tối Ưu',
    feature1Desc: 'Wolffia của chúng tôi được nuôi trồng trong các ao nổi lót bạt đạt quy chuẩn. Tỷ lệ kích thước chuyên biệt này đảm bảo sự lưu thông nước tối ưu, phân bổ dưỡng chất đồng đều và cho phép quá trình thu hoạch diễn ra với hiệu suất cực cao.',
@@ -381,10 +381,10 @@ const resources: TranslationResources = {
    feature2Desc: 'Thay vì sử dụng các nhà kính khép kín gò bó, ao nuôi của chúng tôi được đặt dưới hệ thống lưới che chuyên dụng giúp điều tiết không khí và ánh sáng. Cách bố trí chiến lược này giúp hấp thụ tối đa ánh sáng mặt trời tự nhiên — yếu tố then chốt để sinh khối Wolffia sinh sôi nhanh chóng — đồng thời che chắn cho cây trồng khỏi thời tiết khắc nghiệt và tạp chất vật lý.',
    
    feature3Title: 'Độ Tinh Khiết Nguồn Nước Tuyệt Đối',
-   feature3Desc: 'Vì Wolffia hấp thụ chất dinh dưỡng trực tiếp từ môi trường thủy sinh, chất lượng nước là ưu tiên hàng đầu. Viet Wolffia ứng dụng các hệ thống lọc nước cấp độ công nghiệp song song với quá trình chiếu tia UV tiệt trùng liên tục. Điều này cam kết một môi trường sinh trưởng sạch 100%, vô trùng, đáp ứng trọn vẹn những tiêu chuẩn thực phẩm quốc tế khắt khe nhất.',
+   feature3Desc: 'Vì Wolffia hấp thụ chất dinh dưỡng trực tiếp từ môi trường thủy sinh, chất lượng nước là ưu tiên hàng đầu. Việt Wolffia ứng dụng các hệ thống lọc nước cấp độ công nghiệp song song với quá trình chiếu tia UV tiệt trùng liên tục. Điều này cam kết một môi trường sinh trưởng sạch 100%, vô trùng, đáp ứng trọn vẹn những tiêu chuẩn thực phẩm quốc tế khắt khe nhất.',
    
    appTitle: 'Nguồn Dinh Dưỡng Đa Năng Cho Một Thế Giới Đang Cần',
-   appSub: 'Viet Wolffia được chế biến để tương thích với đa dạng chuỗi cung ứng toàn cầu, từ các thương hiệu thực phẩm sức khỏe cao cấp đến ngành nuôi trồng thủy sản thương mại.',
+   appSub: 'Việt Wolffia được chế biến để tương thích với đa dạng chuỗi cung ứng toàn cầu, từ các thương hiệu thực phẩm sức khỏe cao cấp đến ngành nuôi trồng thủy sản thương mại.',
    
    humanTitle: '1. Dành Cho Tiêu Dùng Con Người',
    humanDesc: 'Được canh tác dưới các điều kiện an toàn thực phẩm khắt khe, Wolffia của chúng tôi là nguyên liệu lý tưởng cho thị trường protein gốc thực vật, thực phẩm bổ sung dinh dưỡng và thực phẩm chức năng.',
@@ -396,9 +396,9 @@ const resources: TranslationResources = {
    feedTarget: 'Ngành Mục Tiêu: Các hỗn hợp thức ăn dễ tiêu hóa, được tối ưu hóa sinh học, chế tạo riêng cho nuôi trồng thủy sản thương mại, chăn nuôi gia súc năng suất cao, ngành nuôi chim cảnh, ốc thương phẩm và dinh dưỡng thú cưng đặc biệt.',
    
    rdTitle: '3. Nghiên Cứu & Phát Triển (R&D) Liên Tục',
-   rdDesc: 'Viet Wolffia là trung tâm đổi mới của VAC. Bằng việc áp dụng chính các hệ thống kiểm soát nước chính xác và chuẩn mực môi trường vô khuẩn, chúng tôi đang tích cực thử nghiệm thương mại các loại rau xanh giá trị cao, bảo đảm danh mục sản phẩm của VAC luôn bắt nhịp với xu hướng dinh dưỡng toàn cầu.',
+   rdDesc: 'Việt Wolffia là trung tâm đổi mới của VAC. Bằng việc áp dụng chính các hệ thống kiểm soát nước chính xác và chuẩn mực môi trường vô khuẩn, chúng tôi đang tích cực thử nghiệm thương mại các loại rau xanh giá trị cao, bảo đảm danh mục sản phẩm của VAC luôn bắt nhịp với xu hướng dinh dưỡng toàn cầu.',
    
-   ctaTitle: 'Thu Mua Viet Wolffia Cho Hoạt Động Của Bạn',
+   ctaTitle: 'Thu Mua Việt Wolffia Cho Hoạt Động Của Bạn',
    ctaSub: 'Chúng tôi sẵn sàng đáp ứng các đơn đặt hàng công nghiệp quy mô lớn và tùy chỉnh các công thức thức ăn sinh học. Hãy liên hệ với đội ngũ thương mại của chúng tôi để nhận bảng thông số kỹ thuật, hồ sơ phân tích dinh dưỡng, hoặc trao đổi về logistics xuất khẩu khối lượng lớn.',
    galleryTitle: 'Thư Viện Ảnh Hoạt Động & Cảm Hứng Chế Biến',
   },
@@ -406,7 +406,7 @@ const resources: TranslationResources = {
    heroTitle: 'Xây Dựng Một Chuỗi Cung Ứng Toàn Cầu Bền Bỉ',
    heroSub: 'Tiếp sức cho các tập đoàn nông nghiệp bằng các mô hình canh tác tuần hoàn, báo cáo ESG minh bạch, và dịch vụ chứng nhận nhãn sạch uy tín.',
    introTitle: 'Phát Triển Bền Vững Là Tiêu Chuẩn Của Chúng Tôi',
-   introDesc1: 'Tại Vietnam Agriculture Center (VAC), chúng tôi hiểu rõ rằng thành công bền vững trong nông nghiệp gắn liền với trách nhiệm sinh thái. Đối với các tập đoàn thực phẩm toàn cầu, việc tuân thủ ESG (Môi trường, Xã hội, và Quản trị) không còn là một lựa chọn nội bộ — đó là yêu cầu sống còn của thị trường.',
+   introDesc1: 'Tại Trung Tâm Nông Nghiệp Việt Nam (VAC), chúng tôi hiểu rõ rằng thành công bền vững trong nông nghiệp gắn liền với trách nhiệm sinh thái. Đối với các tập đoàn thực phẩm toàn cầu, việc tuân thủ ESG (Môi trường, Xã hội, và Quản trị) không còn là một lựa chọn nội bộ — đó là yêu cầu sống còn của thị trường.',
    introDesc2: 'Chúng tôi lồng ghép các yếu tố phát triển bền vững vào từng lớp của hệ sinh thái. Cho dù đang quản lý một nông trại hợp đồng quy mô lớn hay tư vấn cho chuỗi cung ứng của một doanh nghiệp, VAC luôn cung cấp kiến thức chuyên môn độc lập để đảm bảo tài nguyên, bảo vệ sinh thái địa phương và vươn tới những tiêu chuẩn nông nghiệp khắt khe nhất thế giới.',
    
    certTitle: 'Nâng Tầm Chuỗi Cung Ứng Lên Tiêu Chuẩn Cao Cấp',
@@ -435,7 +435,7 @@ const resources: TranslationResources = {
   },
   contact: {
    heroTitle: 'Hãy Cùng Xây Dựng Một Chuỗi Cung Ứng Bền Vững',
-   heroSub: 'Kết nối với Vietnam Agriculture Center để thảo luận về cung ứng toàn cầu, canh tác hợp đồng theo yêu cầu, hay tham vấn ESG cấp độ doanh nghiệp.',
+   heroSub: 'Kết nối với Trung Tâm Nông Nghiệp Việt Nam để thảo luận về cung ứng toàn cầu, canh tác hợp đồng theo yêu cầu, hay tham vấn ESG cấp độ doanh nghiệp.',
    introTitle: 'Đối Tác Bản Địa Của Bạn Tại Việt Nam',
    introDesc: 'Giao thương nông nghiệp quốc tế đòi hỏi sự chuẩn xác, niềm tin, và sự am hiểu bản địa. Dù bạn đang muốn bảo đảm một nguồn cung nông sản thượng hạng ổn định, mong muốn nâng cấp cơ sở lên tiêu chuẩn hữu cơ, hay xây dựng cấu trúc đầu tư canh tác riêng biệt, đội ngũ của chúng tôi sẵn sàng hỗ trợ để đi đến thành công. Hãy liên hệ trực tiếp với chúng tôi hoặc điền vào biểu mẫu bên dưới, một chuyên gia chuyên trách sẽ phản hồi đến bạn ngay lập tức.',
    
@@ -452,7 +452,7 @@ const resources: TranslationResources = {
    interest1: 'Cung Ứng Nông Sản Toàn Cầu (Thô hoặc Đã Chế Biến)',
    interest2: 'Canh Tác Hợp Đồng / Đầu Tư Theo Yêu Cầu',
    interest3: 'Tư Vấn Chứng Nhận Hữu Cơ & Nhãn Sạch (Clean‑Label)',
-   interest4: 'Cung Cấp Siêu Thực Phẩm Viet Wolffia',
+   interest4: 'Cung Cấp Siêu Thực Phẩm Việt Wolffia',
    interest5: 'Cung Cấp Dinh Dưỡng Động Vật "Bio‑Balance"',
    interest6: 'Dịch Vụ Logistics Xuất Khẩu',
    interest7: 'Khác',
