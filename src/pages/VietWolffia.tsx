@@ -9,7 +9,8 @@ const CATEGORIES = [
   { id: 'pastry', label: 'Pastry' },
   { id: 'snack', label: 'Snack' },
   { id: 'product', label: 'Products' },
-  { id: 'supplement', label: 'Supplement & Others' }
+  { id: 'supplement', label: 'Supplement' },
+  { id: 'others', label: 'Others' }
 ] as const;
 
 type CategoryType = typeof CATEGORIES[number]['id'];
@@ -539,7 +540,7 @@ export const VietWolffia: React.FC = () => {
       {/* Culinary & Operations Gallery */}
       <section className="py-24 bg-ivory border-t border-gold-warm/15 px-4 md:px-8">
         <div className="max-w-7xl mx-auto flex flex-col gap-12">
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
+          <div className="flex flex-col xl:flex-row justify-between items-start xl:items-end gap-8">
             <div className="flex flex-col gap-3">
               <span className="text-xs font-bold uppercase tracking-widest text-gold-antique">
                 Visual Showcase
@@ -548,7 +549,7 @@ export const VietWolffia: React.FC = () => {
             </div>
             
             {/* Category Selectors */}
-            <div className="flex flex-wrap gap-2 md:gap-3 text-xs sm:text-sm font-bold text-forest shrink-0 xl:justify-end xl:max-w-xl">
+            <div className="flex flex-wrap gap-2 md:gap-3 text-xs sm:text-sm font-bold text-forest shrink-0 xl:justify-end xl:max-w-[580px]">
               {CATEGORIES.map((cat) => (
                 <button
                   key={cat.id}
