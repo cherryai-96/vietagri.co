@@ -639,7 +639,7 @@ export const VietWolffia: React.FC = () => {
             {/* Gallery Grid - Dynamic Rows Horizontal Slider */}
             <div 
               ref={scrollContainerRef}
-              className={`grid ${filteredGallery.length > 4 ? 'grid-rows-2' : 'grid-rows-1'} grid-flow-col auto-cols-[280px] md:auto-cols-[320px] gap-6 pb-8 overflow-x-auto snap-x snap-mandatory scrollbar-thin scrollbar-thumb-gold-warm/40 scrollbar-track-transparent`}
+              className={`grid ${activeCategory === 'snack' ? 'grid-rows-1' : (filteredGallery.length > 4 ? 'grid-rows-2' : 'grid-rows-1')} grid-flow-col auto-cols-[280px] md:auto-cols-[320px] gap-6 pb-8 overflow-x-auto snap-x snap-mandatory scrollbar-thin scrollbar-thumb-gold-warm/40 scrollbar-track-transparent`}
             >
             <AnimatePresence mode="popLayout">
               {filteredGallery.map((item) => (
