@@ -8,7 +8,6 @@ const CATEGORIES = [
   { id: 'beverage', label: 'Beverages' },
   { id: 'pastry', label: 'Pastries' },
   { id: 'snack', label: 'Snacks' },
-  { id: 'product', label: 'Products' },
   { id: 'supplement', label: 'Supplements' },
   { id: 'others', label: 'Others' }
 ] as const;
@@ -549,7 +548,7 @@ export const VietWolffia: React.FC = () => {
             </div>
             
             {/* Category Selectors */}
-            <div className="flex flex-wrap gap-2 md:gap-3 text-xs sm:text-sm font-bold text-forest shrink-0 xl:justify-end xl:max-w-[580px]">
+            <div className="flex flex-wrap gap-2 md:gap-3 text-xs sm:text-sm font-bold text-forest shrink-0 xl:justify-end">
               {CATEGORIES.map((cat) => (
                 <button
                   key={cat.id}
