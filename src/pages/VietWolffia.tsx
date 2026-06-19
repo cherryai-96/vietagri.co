@@ -21,38 +21,50 @@ export const VietWolffia: React.FC = () => {
 
   const galleryItems = [
     {
-      src: '/images/v-food-1.jpg',
+      src: '/images/v1.jpg',
       title: 'Vietnamese Wolffia Cuisine 1',
       category: 'culinary',
       desc: 'Traditional Vietnamese dish elevated with Wolffia.'
     },
     {
-      src: '/images/v-food-4.jpg',
-      title: 'Vietnamese Wolffia Cuisine 4',
-      category: 'culinary',
-      desc: 'Traditional Vietnamese dish elevated with Wolffia.'
-    },
-    {
-      src: '/images/v-food-2.jpg',
+      src: '/images/v2.jpg',
       title: 'Vietnamese Wolffia Cuisine 2',
       category: 'culinary',
       desc: 'Traditional Vietnamese dish elevated with Wolffia.'
     },
     {
-      src: '/images/v-food-5.jpg',
-      title: 'Vietnamese Wolffia Cuisine 5',
-      category: 'culinary',
-      desc: 'Traditional Vietnamese dish elevated with Wolffia.'
-    },
-    {
-      src: '/images/v-food-3.jpg',
+      src: '/images/v3.jpg',
       title: 'Vietnamese Wolffia Cuisine 3',
       category: 'culinary',
       desc: 'Traditional Vietnamese dish elevated with Wolffia.'
     },
     {
-      src: '/images/v-food-6.jpg',
+      src: '/images/v4.jpg',
+      title: 'Vietnamese Wolffia Cuisine 4',
+      category: 'culinary',
+      desc: 'Traditional Vietnamese dish elevated with Wolffia.'
+    },
+    {
+      src: '/images/v5.jpg',
+      title: 'Vietnamese Wolffia Cuisine 5',
+      category: 'culinary',
+      desc: 'Traditional Vietnamese dish elevated with Wolffia.'
+    },
+    {
+      src: '/images/v6.jpg',
       title: 'Vietnamese Wolffia Cuisine 6',
+      category: 'culinary',
+      desc: 'Traditional Vietnamese dish elevated with Wolffia.'
+    },
+    {
+      src: '/images/v7.jpg',
+      title: 'Vietnamese Wolffia Cuisine 7',
+      category: 'culinary',
+      desc: 'Traditional Vietnamese dish elevated with Wolffia.'
+    },
+    {
+      src: '/images/v8.jpg',
+      title: 'Vietnamese Wolffia Cuisine 8',
       category: 'culinary',
       desc: 'Traditional Vietnamese dish elevated with Wolffia.'
     },
