@@ -92,6 +92,12 @@ export const VietWolffia: React.FC = () => {
       desc: 'High-quality processed Wolffia for everyday nutrition.'
     },
     {
+      src: '/images/supplements/z7953259579627_515e5b5d744b7592d2599fea34e34ff9.jpg',
+      title: 'Wolffia Supplement Pack',
+      category: 'supplement',
+      desc: 'Nutritious Wolffia supplement for daily health.'
+    },
+    {
       src: '/images/wm-6.webp',
       title: 'Wolffia Garden Salad',
       category: 'culinary',
@@ -212,34 +218,52 @@ export const VietWolffia: React.FC = () => {
       desc: 'A charming cupcake packed with aquatic microgreens.'
     },
     {
-      src: '/images/f4.webp',
-      title: 'Wolffia Culinary Delight 4',
+      src: '/images/snacks/S1.jpg',
+      title: 'Wolffia Snack 1',
       category: 'snack',
-      desc: 'Exploring new flavors with aquatic microgreens.'
+      desc: 'A healthy and crispy Wolffia snack.'
     },
     {
-      src: '/images/f5.jpg',
-      title: 'Wolffia Culinary Delight 5',
+      src: '/images/snacks/S2.jpg',
+      title: 'Wolffia Snack 2',
       category: 'snack',
-      desc: 'Exploring new flavors with aquatic microgreens.'
+      desc: 'A healthy and crispy Wolffia snack.'
     },
     {
-      src: '/images/f6.webp',
-      title: 'Wolffia Culinary Delight 6',
-      category: 'others',
-      desc: 'Exploring new flavors with aquatic microgreens.'
+      src: '/images/snacks/S3.jpg',
+      title: 'Wolffia Snack 3',
+      category: 'snack',
+      desc: 'A healthy and crispy Wolffia snack.'
     },
     {
-      src: '/images/f7.webp',
-      title: 'Wolffia Culinary Delight 7',
-      category: 'others',
-      desc: 'Exploring new flavors with aquatic microgreens.'
+      src: '/images/snacks/S4.jpg',
+      title: 'Wolffia Snack 4',
+      category: 'snack',
+      desc: 'A healthy and crispy Wolffia snack.'
     },
     {
-      src: '/images/f8.jpg',
-      title: 'Wolffia Culinary Delight 8',
+      src: '/images/others/02.jpg',
+      title: 'Wolffia Creation 1',
       category: 'others',
-      desc: 'Exploring new flavors with aquatic microgreens.'
+      desc: 'Innovative Wolffia-based product.'
+    },
+    {
+      src: '/images/others/o1.jpg',
+      title: 'Wolffia Creation 2',
+      category: 'others',
+      desc: 'Innovative Wolffia-based product.'
+    },
+    {
+      src: '/images/others/o3.jpg',
+      title: 'Wolffia Creation 3',
+      category: 'others',
+      desc: 'Innovative Wolffia-based product.'
+    },
+    {
+      src: '/images/others/o4.jpg',
+      title: 'Wolffia Creation 4',
+      category: 'others',
+      desc: 'Innovative Wolffia-based product.'
     },
     {
       src: '/images/w-drink-1.jpg',
