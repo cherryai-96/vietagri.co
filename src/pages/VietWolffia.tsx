@@ -705,7 +705,7 @@ export const VietWolffia: React.FC = () => {
           </div>
 
           {/* Right Column (Scrolling Image Cards) */}
-          <div className="lg:col-span-8 xl:col-span-7 flex flex-col gap-8 lg:gap-16">
+          <div className="lg:col-span-8 xl:col-span-7 flex flex-col gap-12 pb-32">
             {productItems.map((item, index) => (
               <motion.div
                 key={index}
@@ -713,7 +713,8 @@ export const VietWolffia: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.6, delay: 0.1 }}
-                className="relative rounded-[2rem] overflow-hidden aspect-[4/3] md:aspect-[16/10] w-full group shadow-lg"
+                className="sticky top-32 lg:top-40 relative rounded-[2rem] overflow-hidden aspect-[4/3] md:aspect-[16/10] w-full group shadow-2xl"
+                style={{ zIndex: index + 10 }}
               >
                 <img 
                   src={item.src} 
