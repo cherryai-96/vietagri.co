@@ -710,10 +710,15 @@ export const VietWolffia: React.FC = () => {
                 Viet Wolffia<br/>Products
               </h2>
             </div>
-            <button className="self-start flex items-center gap-2 bg-[#d7ea44] hover:bg-[#c6db31] text-forest px-8 py-4 rounded-xl font-semibold transition-all duration-300">
+            <a 
+              href="https://vietwolffia.com/" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="self-start flex items-center gap-2 bg-[#d7ea44] hover:bg-[#c6db31] text-forest px-8 py-4 rounded-xl font-semibold transition-all duration-300 inline-flex"
+            >
               <Sparkles size={18} />
               View All Products
-            </button>
+            </a>
           </div>
 
           {/* Right Column (Scrolling Image Cards) */}
