@@ -707,7 +707,7 @@ export const VietWolffia: React.FC = () => {
                 Portfolio
               </span>
               <h2 className="font-serif text-[2.5rem] leading-[1.1] sm:text-5xl md:text-6xl font-bold text-carbon">
-                Viet Wolffia<br/>Products
+                Viet Wolffia Products
               </h2>
             </div>
             <a 
