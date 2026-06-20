@@ -60,7 +60,7 @@ export const Header: React.FC = () => {
             <span className="font-serif font-black text-sm sm:text-base md:text-lg lg:text-[0.95rem] xl:text-[1rem] text-cream tracking-wide leading-none transition-colors duration-300 uppercase">
               {language === 'vi' ? 'Trung Tâm Nông Nghiệp Việt Nam' : 'Vietnam Agriculture Center'}
             </span>
-            <span className="font-sans text-[6px] sm:text-[6.5px] md:text-[7px] lg:text-[6.5px] xl:text-[7px] text-gold-warm uppercase tracking-[0.16em] mt-0.5 font-semibold transition-colors duration-300 text-center">
+            <span className="font-sans text-[8px] sm:text-[9px] md:text-[10px] lg:text-[9px] xl:text-[10px] text-gold-warm uppercase tracking-[0.16em] mt-1 font-semibold transition-colors duration-300 text-center">
               {language === 'vi' ? 'Hội Tụ Tinh Hoa • Kết Nối Thế Giới' : 'Embracing Richness • Connecting Worlds'}
             </span>
           </div>
