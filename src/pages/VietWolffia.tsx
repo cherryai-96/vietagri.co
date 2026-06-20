@@ -696,17 +696,17 @@ export const VietWolffia: React.FC = () => {
       </section>
 
       {/* Products Portfolio Section */}
-      <section className="py-24 bg-white border-t border-gold-warm/15 px-4 md:px-8">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-start">
+      <section className="py-16 md:py-20 bg-white border-t border-gold-warm/15 px-4 md:px-8">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-start">
           
           {/* Left Column (Sticky) */}
-          <div className="lg:col-span-4 xl:col-span-5 flex flex-col gap-8 lg:sticky lg:top-32">
+          <div className="lg:col-span-5 flex flex-col gap-6 lg:sticky lg:top-32">
             <div className="flex flex-col gap-3">
               <span className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-forest">
                 <Sparkles size={16} />
                 Portfolio
               </span>
-              <h2 className="font-serif text-[2.5rem] leading-[1.1] sm:text-5xl md:text-6xl font-bold text-carbon">
+              <h2 className="font-serif text-[2rem] leading-[1.1] sm:text-4xl md:text-5xl font-bold text-carbon">
                 Viet Wolffia Products
               </h2>
             </div>
@@ -714,7 +714,7 @@ export const VietWolffia: React.FC = () => {
               href="https://vietwolffia.com/" 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="self-start flex items-center gap-2 bg-[#d7ea44] hover:bg-[#c6db31] text-forest px-8 py-4 rounded-xl font-semibold transition-all duration-300 inline-flex"
+              className="self-start flex items-center gap-2 bg-[#d7ea44] hover:bg-[#c6db31] text-forest px-6 py-3 rounded-xl font-semibold transition-all duration-300 inline-flex text-sm md:text-base"
             >
               <Sparkles size={18} />
               View All Products
@@ -722,7 +722,7 @@ export const VietWolffia: React.FC = () => {
           </div>
 
           {/* Right Column (Scrolling Image Cards) */}
-          <div className="lg:col-span-8 xl:col-span-7 flex flex-col gap-12 pb-32">
+          <div className="lg:col-span-7 flex flex-col gap-8 pb-20">
             {productItems.map((item, index) => (
               <motion.div
                 key={index}
@@ -730,7 +730,7 @@ export const VietWolffia: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.6, delay: 0.1 }}
-                className="sticky top-32 lg:top-40 relative rounded-[2rem] overflow-hidden aspect-[4/3] md:aspect-[16/10] w-full group shadow-2xl"
+                className="sticky top-32 lg:top-40 relative rounded-3xl overflow-hidden aspect-[4/3] md:aspect-[16/10] w-full group shadow-2xl"
                 style={{ zIndex: index + 10 }}
               >
                 <img 
@@ -740,8 +740,8 @@ export const VietWolffia: React.FC = () => {
                 />
                 
                 {/* Glassmorphism Card Overlay */}
-                <div className="absolute bottom-6 right-6 left-6 md:left-auto backdrop-blur-md bg-carbon/70 border border-white/20 px-8 py-4 rounded-full text-white shadow-xl transition-all duration-500 overflow-hidden text-center md:text-left inline-block w-auto max-w-[90%] md:max-w-max">
-                  <h3 className="font-serif text-xl md:text-2xl font-bold m-0 leading-none">
+                <div className="absolute bottom-5 right-5 left-5 md:left-auto backdrop-blur-md bg-carbon/70 border border-white/20 px-6 py-3 rounded-full text-white shadow-xl transition-all duration-500 overflow-hidden text-center md:text-left inline-block w-auto max-w-[90%] md:max-w-max">
+                  <h3 className="font-serif text-lg md:text-xl font-bold m-0 leading-none">
                     {item.title}
                   </h3>
                 </div>
