@@ -8,6 +8,7 @@ interface SEOProps {
   url?: string;
   image?: string;
   schema?: Record<string, any>;
+  preloadImage?: string;
 }
 
 export const SEO: React.FC<SEOProps> = ({
@@ -17,6 +18,7 @@ export const SEO: React.FC<SEOProps> = ({
   url = 'https://vietagri.co',
   image = 'https://vietagri.co/Logo/Vietgari/VAC%20logo4.png',
   schema,
+  preloadImage,
 }) => {
   return (
     <Helmet>
@@ -25,6 +27,11 @@ export const SEO: React.FC<SEOProps> = ({
       <meta name="description" content={description} />
       <meta name="keywords" content={keywords} />
       <meta name="author" content="Vietnam Agriculture Center" />
+
+      {/* Preload Critical Hero Image */}
+      {preloadImage && (
+        <link rel="preload" as="image" href={preloadImage} fetchPriority="high" />
+      )}
 
       {/* Open Graph / Social Media Meta Tags */}
       <meta property="og:type" content="website" />

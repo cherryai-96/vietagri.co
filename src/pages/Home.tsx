@@ -108,6 +108,7 @@ export const Home: React.FC = () => {
             "availableLanguage": ["English", "Vietnamese"]
           }
         }}
+        preloadImage="/hero_home.png"
       />
 
       {/* Hero Section */}
@@ -118,6 +119,7 @@ export const Home: React.FC = () => {
             src="/hero_home.png" 
             alt="Vietnam Agriculture Center" 
             className="w-full h-full object-cover" 
+            fetchPriority="high"
           />
         </div>
 

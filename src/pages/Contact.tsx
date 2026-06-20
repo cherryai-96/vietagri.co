@@ -118,6 +118,7 @@ export const Contact: React.FC = () => {
           "description": "Contact us for premium agricultural products and services.",
           "url": "https://vietagri.co/contact"
         }}
+        preloadImage="/images/contact-hero-bg.jpg"
       />
       
       {/* Hero Section */}

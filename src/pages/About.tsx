@@ -43,6 +43,7 @@ export const About: React.FC = () => {
             "foundingDate": "2024"
           }
         }}
+        preloadImage="/images/a-hero.jpg"
       />
       {/* Hero Section */}
       <section className="relative min-h-[60vh] flex items-center justify-center bg-carbon text-cream pt-32 pb-16 px-4 md:px-8">
