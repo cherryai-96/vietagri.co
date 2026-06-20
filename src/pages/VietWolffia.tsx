@@ -417,6 +417,33 @@ export const VietWolffia: React.FC = () => {
     }
   ];
 
+  const productItems = [
+    {
+      src: '/images/products/VW1.png',
+      category: 'INNOVATION',
+      title: 'Viet Wolffia Product 1',
+      desc: 'Nutritious and sustainable aquatic plant protein.'
+    },
+    {
+      src: '/images/products/VW2.png',
+      category: 'SUSTAINABILITY',
+      title: 'Viet Wolffia Product 2',
+      desc: 'Cultivated with organic farming expertise.'
+    },
+    {
+      src: '/images/products/VW3.png',
+      category: 'NUTRITION',
+      title: 'Viet Wolffia Product 3',
+      desc: 'Rich in essential vitamins and minerals.'
+    },
+    {
+      src: '/images/products/VW4.png',
+      category: 'FUTURE FOOD',
+      title: 'Viet Wolffia Product 4',
+      desc: 'The next generation of plant-based nutrition.'
+    }
+  ];
+
   const filteredGallery = galleryItems.filter(item => item.category === activeCategory);
 
   const features = [
@@ -653,6 +680,67 @@ export const VietWolffia: React.FC = () => {
               </div>
             </motion.div>
           </div>
+        </div>
+      </section>
+
+      {/* Products Portfolio Section */}
+      <section className="py-24 bg-white border-t border-gold-warm/15 px-4 md:px-8">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-start">
+          
+          {/* Left Column (Sticky) */}
+          <div className="lg:col-span-4 xl:col-span-5 flex flex-col gap-8 lg:sticky lg:top-32">
+            <div className="flex flex-col gap-3">
+              <span className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-forest">
+                <Sparkles size={16} />
+                Portfolio
+              </span>
+              <h2 className="font-serif text-[2.5rem] leading-[1.1] sm:text-5xl md:text-6xl font-bold text-carbon">
+                Viet Wolffia<br/>Products
+              </h2>
+            </div>
+            <button className="self-start flex items-center gap-2 bg-[#d7ea44] hover:bg-[#c6db31] text-forest px-8 py-4 rounded-xl font-semibold transition-all duration-300">
+              <Sparkles size={18} />
+              View All Products
+            </button>
+          </div>
+
+          {/* Right Column (Scrolling Image Cards) */}
+          <div className="lg:col-span-8 xl:col-span-7 flex flex-col gap-8 lg:gap-16">
+            {productItems.map((item, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                className="relative rounded-[2rem] overflow-hidden aspect-[4/3] md:aspect-[16/10] w-full group shadow-lg"
+              >
+                <img 
+                  src={item.src} 
+                  alt={item.title} 
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                />
+                
+                {/* Glassmorphism Card Overlay */}
+                <div className="absolute bottom-6 right-6 left-6 md:left-auto md:w-[26rem] backdrop-blur-xl bg-white/20 border border-white/30 p-8 rounded-3xl text-white shadow-2xl transition-all duration-500 group-hover:bg-white/30">
+                  <span className="text-xs font-bold tracking-[0.2em] uppercase opacity-90 mb-3 block">
+                    {item.category}
+                  </span>
+                  <h3 className="font-serif text-2xl md:text-3xl font-bold mb-3 leading-tight">
+                    {item.title}
+                  </h3>
+                  <p className="text-sm md:text-base font-light opacity-90 leading-relaxed mb-6">
+                    {item.desc}
+                  </p>
+                  <button className="flex items-center gap-2 text-sm font-semibold hover:gap-3 transition-all duration-300">
+                    View Details
+                    <ChevronRight size={16} />
+                  </button>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
         </div>
       </section>
 
