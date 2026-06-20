@@ -254,6 +254,12 @@ export const VietWolffia: React.FC = () => {
       desc: 'Delicious Wolffia pastry.'
     },
     {
+      src: '/images/pastries/P11.png',
+      title: 'Wolffia Pastry 11',
+      category: 'pastry',
+      desc: 'Delicious Wolffia pastry.'
+    },
+    {
       src: '/images/snacks/S1.jpg',
       title: 'Wolffia Snack 1',
       category: 'snack',
