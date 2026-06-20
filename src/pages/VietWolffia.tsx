@@ -722,20 +722,24 @@ export const VietWolffia: React.FC = () => {
                 />
                 
                 {/* Glassmorphism Card Overlay */}
-                <div className="absolute bottom-6 right-6 left-6 md:left-auto md:w-[26rem] backdrop-blur-xl bg-white/20 border border-white/30 p-8 rounded-3xl text-white shadow-2xl transition-all duration-500 group-hover:bg-white/30">
+                <div className="absolute bottom-6 right-6 left-6 md:left-auto md:w-[26rem] backdrop-blur-xl bg-white/20 border border-white/30 p-8 rounded-3xl text-white shadow-2xl transition-all duration-500 overflow-hidden">
                   <span className="text-xs font-bold tracking-[0.2em] uppercase opacity-90 mb-3 block">
                     {item.category}
                   </span>
                   <h3 className="font-serif text-2xl md:text-3xl font-bold mb-3 leading-tight">
                     {item.title}
                   </h3>
-                  <p className="text-sm md:text-base font-light opacity-90 leading-relaxed mb-6">
+                  <p className="text-sm md:text-base font-light opacity-90 leading-relaxed mb-2">
                     {item.desc}
                   </p>
-                  <button className="flex items-center gap-2 text-sm font-semibold hover:gap-3 transition-all duration-300">
-                    View Details
-                    <ChevronRight size={16} />
-                  </button>
+                  <div className="grid grid-rows-[0fr] opacity-0 transition-all duration-500 group-hover:grid-rows-[1fr] group-hover:opacity-100">
+                    <div className="overflow-hidden">
+                      <button className="flex items-center gap-2 text-sm font-semibold hover:gap-3 transition-all duration-300 pt-4">
+                        View Details
+                        <ChevronRight size={16} />
+                      </button>
+                    </div>
+                  </div>
                 </div>
               </motion.div>
             ))}
