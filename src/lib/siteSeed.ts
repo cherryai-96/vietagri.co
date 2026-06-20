@@ -1,5 +1,5 @@
-import type { EditablePage, Lead, SeoPageSetting } from '../admin/types';
-import { editablePages as fallbackEditablePages, seoSettings as fallbackSeoSettings } from '../admin/data/mockData';
+import type { EditablePage, Lead, SeoPageSetting, SiteSettings } from '../admin/types';
+import { editablePages as fallbackEditablePages, seoSettings as fallbackSeoSettings, siteSettings as fallbackSiteSettings } from '../admin/data/mockData';
 import type { TranslationResources } from '../i18n';
 
 export interface ContactLeadInput {
@@ -157,6 +157,57 @@ export function buildSeoSeed(): SeoPageSetting[] {
   return fallbackSeoSettings;
 }
 
+export function buildSiteSettingsSeed(): SiteSettings {
+  return fallbackSiteSettings;
+}
+
+export function buildCmsPageRow(page: EditablePage) {
+  return {
+    slug: page.slug,
+    title: page.title,
+    description: page.description,
+    status: page.status,
+    missing_vietnamese: page.missingVietnamese,
+    updated_at: page.updatedAt,
+    sections: page.sections,
+  };
+}
+
+export function buildSeoSettingRow(setting: SeoPageSetting) {
+  return {
+    page: setting.page,
+    title: setting.title,
+    description: setting.description,
+    slug: setting.slug,
+    focus_keywords: setting.focusKeywords,
+    indexed: setting.indexed,
+    sitemap: setting.sitemap,
+  };
+}
+
+export function buildSiteSettingsRow(settings: SiteSettings) {
+  return {
+    id: 'primary',
+    company_name: settings.companyName,
+    short_name: settings.shortName,
+    tagline: settings.tagline,
+    email: settings.email,
+    phone: settings.phone,
+    office_hours: settings.officeHours,
+    headquarters_address: settings.headquartersAddress,
+    linkedin: settings.linkedIn,
+    facebook: settings.facebook,
+    youtube: settings.youTube,
+    google_analytics_id: settings.googleAnalyticsId,
+    google_tag_manager_id: settings.googleTagManagerId,
+    linkedin_insight_tag_id: settings.linkedInInsightTagId,
+    maintenance_mode: settings.maintenanceMode,
+    default_language: settings.defaultLanguage,
+    timezone: settings.timezone,
+    admin_notification_email: settings.adminNotificationEmail,
+  };
+}
+
 export function buildLeadInsertPayload(input: ContactLeadInput): Omit<Lead, 'id'> {
   const today = new Date().toISOString().slice(0, 10);
 
@@ -174,5 +225,14 @@ export function buildLeadInsertPayload(input: ContactLeadInput): Omit<Lead, 'id'
     assignedTo: 'Sales Manager',
     lastUpdated: today,
     notes: input.jobTitle ? [`Job title: ${input.jobTitle}`] : [],
+  };
+}
+
+export function buildLeadUpdatePayload(input: Pick<Lead, 'status' | 'assignedTo' | 'notes'>) {
+  return {
+    status: input.status,
+    assigned_to: input.assignedTo,
+    notes: input.notes,
+    last_updated: new Date().toISOString().slice(0, 10),
   };
 }

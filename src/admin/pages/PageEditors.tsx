@@ -2,7 +2,7 @@ import { useMemo, useState } from 'react';
 import { Link, Navigate, useParams } from 'react-router-dom';
 import { AlertTriangle, ArrowRight, Eye, Save } from 'lucide-react';
 import { useEditablePagesData } from '../data/useAdminData';
-import type { PageSection, PageSlug } from '../types';
+import type { EditablePage, PageSection, PageSlug } from '../types';
 import {
   Button,
   FormField,
@@ -19,10 +19,9 @@ import {
   cardClass,
   LoadingState,
 } from '../components/ui';
+import { saveEditablePage } from '../../lib/dataSync';
 
-function SectionEditor({ section }: { section: PageSection }) {
-  const [body, setBody] = useState(section.body);
-
+function SectionEditor({ section, onChange }: { section: PageSection; onChange: (next: PageSection) => void }) {
   return (
     <div className={`${cardClass} p-4`}>
       <div className="mb-4 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
@@ -30,18 +29,23 @@ function SectionEditor({ section }: { section: PageSection }) {
           <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#D8AA6D]">Section {section.order}</p>
           <h3 className="font-serif text-2xl font-bold text-[#0B120C]">{section.label}</h3>
         </div>
-        <ToggleSwitch label="Show on website" checked={section.visible} />
+        <ToggleSwitch label="Show on website" checked={section.visible} onChange={(checked) => onChange({ ...section, visible: checked })} />
       </div>
       <div className="grid gap-4 lg:grid-cols-2">
-        <FormField label="Section label" value={section.label} />
-        <FormField label="Display order" value={String(section.order)} />
-        <FormField label="Heading" value={section.heading} required />
-        <FormField label="Sub-heading" value={section.subheading} />
-        <FormField label="Button text" value={section.buttonText} />
-        <FormField label="Button link" value={section.buttonLink} help="Use an internal page, external URL, form popup, or file download link." />
+        <FormField label="Section label" value={section.label} onChange={(value) => onChange({ ...section, label: value })} />
+        <FormField label="Display order" value={String(section.order)} onChange={(value) => onChange({ ...section, order: Number(value) || section.order })} />
+        <FormField label="Heading" value={section.heading} required onChange={(value) => onChange({ ...section, heading: value })} />
+        <FormField label="Sub-heading" value={section.subheading} onChange={(value) => onChange({ ...section, subheading: value })} />
+        <FormField label="Button text" value={section.buttonText} onChange={(value) => onChange({ ...section, buttonText: value })} />
+        <FormField
+          label="Button link"
+          value={section.buttonLink}
+          help="Use an internal page, external URL, form popup, or file download link."
+          onChange={(value) => onChange({ ...section, buttonLink: value })}
+        />
         <div className="lg:col-span-2">
           <p className="mb-1.5 text-sm font-semibold text-[#1D1D1D]">Body text</p>
-          <RichTextEditor value={body} onChange={setBody} />
+          <RichTextEditor value={section.body} onChange={(value) => onChange({ ...section, body: value })} />
         </div>
       </div>
     </div>
@@ -156,14 +160,43 @@ export function PageEditor() {
   const { slug } = useParams();
   const { pages, loading } = useEditablePagesData();
   const page = useMemo(() => pages.find((item) => item.slug === slug), [pages, slug]);
-  const [tab, setTab] = useState('English Content');
-  const [language, setLanguage] = useState('English');
-  const [toast, setToast] = useState(false);
 
   if (loading) return <LoadingState />;
   if (!page) return <Navigate to="/admin/pages" replace />;
 
+  return <PageEditorScreen key={page.slug} page={page} />;
+}
+
+function PageEditorScreen({ page }: { page: EditablePage }) {
+  const [tab, setTab] = useState('English Content');
+  const [language, setLanguage] = useState('English');
+  const [pageDraft, setPageDraft] = useState<EditablePage>(page);
+  const [toast, setToast] = useState(false);
+  const [saveError, setSaveError] = useState('');
+  const [isSaving, setIsSaving] = useState(false);
+
   const tabs = ['English Content', 'Vietnamese Content', 'Images & Media', 'SEO', 'Preview'];
+  const activePage = pageDraft;
+
+  async function handleSave() {
+    setIsSaving(true);
+    setSaveError('');
+    const nextDraft = {
+      ...activePage,
+      updatedAt: new Date().toISOString().slice(0, 10),
+      sections: [...activePage.sections].sort((a, b) => a.order - b.order),
+    };
+    const { error } = await saveEditablePage(nextDraft);
+    setIsSaving(false);
+
+    if (error) {
+      setSaveError(error.message);
+      return;
+    }
+
+    setPageDraft(nextDraft);
+    setToast(true);
+  }
 
   return (
     <div>
@@ -176,8 +209,8 @@ export function PageEditor() {
             <Button variant="secondary">
               <Eye size={16} /> Preview
             </Button>
-            <Button onClick={() => setToast(true)}>
-              <Save size={16} /> Save Changes
+            <Button onClick={handleSave}>
+              <Save size={16} /> {isSaving ? 'Saving...' : 'Save Changes'}
             </Button>
           </div>
         }
@@ -200,23 +233,35 @@ export function PageEditor() {
         {(tab === 'English Content' || tab === 'Vietnamese Content') && <LanguageTabs active={language} onChange={setLanguage} />}
       </div>
 
-      {page.missingVietnamese > 0 && (
+      {activePage.missingVietnamese > 0 && (
         <div className="mb-4 rounded-lg border border-amber-200 bg-amber-50 p-3 text-sm text-amber-800">
-          {page.missingVietnamese} Vietnamese translation item{page.missingVietnamese > 1 ? 's are' : ' is'} missing. You can still publish, but review translations before launch.
+          {activePage.missingVietnamese} Vietnamese translation item{activePage.missingVietnamese > 1 ? 's are' : ' is'} missing. You can still publish, but review translations before launch.
         </div>
+      )}
+
+      {saveError && (
+        <div className="mb-4 rounded-lg border border-red-200 bg-red-50 p-3 text-sm text-red-700">{saveError}</div>
       )}
 
       <div className="grid gap-4">
         {(tab === 'English Content' || tab === 'Vietnamese Content') && (
           <>
-            <PageSpecificPanel slug={page.slug} />
-            {page.sections.map((section) => (
-              <SectionEditor key={section.id} section={section} />
+            <PageSpecificPanel slug={activePage.slug} />
+            {activePage.sections.map((section) => (
+              <SectionEditor
+                key={section.id}
+                section={section}
+                onChange={(nextSection) =>
+                  setPageDraft((current) => current
+                    ? { ...current, sections: current.sections.map((item) => (item.id === nextSection.id ? nextSection : item)) }
+                    : current)
+                }
+              />
             ))}
             <div className="flex flex-col justify-end gap-2 sm:flex-row">
               <Button variant="secondary">Cancel</Button>
-              <Button onClick={() => setToast(true)}>
-                <Save size={16} /> Save Changes
+              <Button onClick={handleSave}>
+                <Save size={16} /> {isSaving ? 'Saving...' : 'Save Changes'}
               </Button>
             </div>
           </>
@@ -238,9 +283,9 @@ export function PageEditor() {
         {tab === 'Preview' && (
           <div className={`${cardClass} p-5`}>
             <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#D8AA6D]">Preview</p>
-            <h2 className="mt-1 font-serif text-3xl font-bold text-[#0B120C]">{page.sections[0]?.heading}</h2>
-            <p className="mt-3 max-w-3xl text-sm leading-6 text-[#6B7280]">{page.sections[0]?.body}</p>
-            <Button className="mt-5">{page.sections[0]?.buttonText}</Button>
+            <h2 className="mt-1 font-serif text-3xl font-bold text-[#0B120C]">{activePage.sections[0]?.heading}</h2>
+            <p className="mt-3 max-w-3xl text-sm leading-6 text-[#6B7280]">{activePage.sections[0]?.body}</p>
+            <Button className="mt-5">{activePage.sections[0]?.buttonText}</Button>
           </div>
         )}
       </div>

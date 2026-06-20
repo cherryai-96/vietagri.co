@@ -112,3 +112,23 @@ export interface SeoPageSetting {
   indexed: boolean;
   sitemap: boolean;
 }
+
+export interface SiteSettings {
+  companyName: string;
+  shortName: string;
+  tagline: string;
+  email: string;
+  phone: string;
+  officeHours: string;
+  headquartersAddress: string;
+  linkedIn: string;
+  facebook: string;
+  youTube: string;
+  googleAnalyticsId: string;
+  googleTagManagerId: string;
+  linkedInInsightTagId: string;
+  maintenanceMode: boolean;
+  defaultLanguage: 'English' | 'Vietnamese';
+  timezone: string;
+  adminNotificationEmail: string;
+}

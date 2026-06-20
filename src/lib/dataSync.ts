@@ -1,8 +1,42 @@
-import { documents, leads as fallbackLeads, mediaItems, seoSettings, users } from '../admin/data/mockData';
-import type { DocumentItem, EditablePage, Lead, MediaItem, SeoPageSetting, AdminUser } from '../admin/types';
+import { documents, leads as fallbackLeads, mediaItems, seoSettings, siteSettings as fallbackSiteSettings, users } from '../admin/data/mockData';
+import type { DocumentItem, EditablePage, Lead, MediaItem, SeoPageSetting, AdminUser, SiteSettings } from '../admin/types';
 import type { TranslationResources } from '../i18n';
 import { getSupabaseBrowserClient } from './supabase/browser';
-import { buildLeadInsertPayload, type ContactLeadInput } from './siteSeed';
+import { buildCmsPageRow, buildLeadInsertPayload, buildLeadUpdatePayload, buildSeoSettingRow, type ContactLeadInput } from './siteSeed';
+
+type SiteResourceContent = {
+  common?: Record<string, unknown>;
+  adminSettings?: Record<string, unknown>;
+};
+
+async function postAdminUpdate<T>(path: string, payload: unknown): Promise<{ data: T | null; error: { message: string } | null }> {
+  if (typeof window === 'undefined') {
+    return { data: null, error: { message: 'Admin update API is only available in the browser.' } };
+  }
+
+  try {
+    const supabase = getSupabaseBrowserClient();
+    const session = supabase ? (await supabase.auth.getSession()).data.session : null;
+    const response = await fetch(path, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        ...(session?.access_token ? { Authorization: `Bearer ${session.access_token}` } : {}),
+      },
+      body: JSON.stringify(payload),
+    });
+
+    if (!response.ok) {
+      const body = await response.json().catch(() => ({}));
+      return { data: null, error: { message: body.error ?? `Request failed with status ${response.status}` } };
+    }
+
+    const body = await response.json();
+    return { data: (body.data ?? null) as T | null, error: null };
+  } catch {
+    return { data: null, error: { message: 'Admin update API is unavailable.' } };
+  }
+}
 
 export async function loadSiteResources(): Promise<TranslationResources | null> {
   const supabase = getSupabaseBrowserClient();
@@ -43,6 +77,26 @@ export async function loadEditablePages(fallbackPages: EditablePage[]): Promise<
   })) as EditablePage[];
 }
 
+export async function saveEditablePage(page: EditablePage) {
+  const payload = buildCmsPageRow(page);
+  const apiResult = await postAdminUpdate('/api/admin/pages', payload);
+  if (!apiResult.error) {
+    return apiResult;
+  }
+
+  const supabase = getSupabaseBrowserClient();
+  if (!supabase) return { data: payload, error: apiResult.error };
+
+  const { data, error } = await supabase
+    .from('cms_pages')
+    .update(payload)
+    .eq('slug', page.slug)
+    .select()
+    .single();
+
+  return { data, error };
+}
+
 export async function loadLeads(): Promise<Lead[]> {
   const supabase = getSupabaseBrowserClient();
   if (!supabase) return fallbackLeads;
@@ -70,6 +124,26 @@ export async function loadLeads(): Promise<Lead[]> {
     lastUpdated: row.last_updated,
     notes: Array.isArray(row.notes) ? row.notes : [],
   })) as Lead[];
+}
+
+export async function updateLead(id: string, input: Pick<Lead, 'status' | 'assignedTo' | 'notes'>) {
+  const payload = buildLeadUpdatePayload(input);
+  const apiResult = await postAdminUpdate('/api/admin/leads', { id, ...payload });
+  if (!apiResult.error) {
+    return apiResult;
+  }
+
+  const supabase = getSupabaseBrowserClient();
+  if (!supabase) return { data: { id, ...payload }, error: apiResult.error };
+
+  const { data, error } = await supabase
+    .from('leads')
+    .update(payload)
+    .eq('id', id)
+    .select()
+    .single();
+
+  return { data, error };
 }
 
 export async function submitLead(input: ContactLeadInput) {
@@ -149,6 +223,66 @@ export async function loadSeoSettings(): Promise<SeoPageSetting[]> {
     indexed: row.indexed,
     sitemap: row.sitemap,
   })) as SeoPageSetting[];
+}
+
+export async function saveSeoSetting(setting: SeoPageSetting) {
+  const payload = buildSeoSettingRow(setting);
+  const apiResult = await postAdminUpdate('/api/admin/seo', payload);
+  if (!apiResult.error) {
+    return apiResult;
+  }
+
+  const supabase = getSupabaseBrowserClient();
+  if (!supabase) return { data: payload, error: apiResult.error };
+
+  const { data, error } = await supabase
+    .from('seo_settings')
+    .update(payload)
+    .eq('page', setting.page)
+    .select()
+    .single();
+
+  return { data, error };
+}
+
+export async function loadSiteSettings(): Promise<SiteSettings> {
+  const supabase = getSupabaseBrowserClient();
+  if (!supabase) return fallbackSiteSettings;
+
+  const { data, error } = await supabase
+    .from('site_resources')
+    .select('language, content');
+
+  if (error || !data?.length) return fallbackSiteSettings;
+
+  const englishRow = data.find((row) => row.language === 'en');
+  const englishContent = (englishRow?.content ?? {}) as SiteResourceContent;
+  const common = (englishContent.common ?? {}) as Record<string, unknown>;
+  const admin = (englishContent.adminSettings ?? {}) as Record<string, unknown>;
+
+  return {
+    companyName: admin.companyName ?? fallbackSiteSettings.companyName,
+    shortName: admin.shortName ?? fallbackSiteSettings.shortName,
+    tagline: admin.tagline ?? fallbackSiteSettings.tagline,
+    email: common.email ?? fallbackSiteSettings.email,
+    phone: common.phone ?? fallbackSiteSettings.phone,
+    officeHours: admin.officeHours ?? fallbackSiteSettings.officeHours,
+    headquartersAddress: common.address ?? fallbackSiteSettings.headquartersAddress,
+    linkedIn: admin.linkedIn ?? fallbackSiteSettings.linkedIn,
+    facebook: admin.facebook ?? fallbackSiteSettings.facebook,
+    youTube: admin.youTube ?? fallbackSiteSettings.youTube,
+    googleAnalyticsId: admin.googleAnalyticsId ?? fallbackSiteSettings.googleAnalyticsId,
+    googleTagManagerId: admin.googleTagManagerId ?? fallbackSiteSettings.googleTagManagerId,
+    linkedInInsightTagId: admin.linkedInInsightTagId ?? fallbackSiteSettings.linkedInInsightTagId,
+    maintenanceMode: admin.maintenanceMode ?? fallbackSiteSettings.maintenanceMode,
+    defaultLanguage: admin.defaultLanguage ?? fallbackSiteSettings.defaultLanguage,
+    timezone: admin.timezone ?? fallbackSiteSettings.timezone,
+    adminNotificationEmail: admin.adminNotificationEmail ?? fallbackSiteSettings.adminNotificationEmail,
+  } as SiteSettings;
+}
+
+export async function saveSiteSettings(settings: SiteSettings) {
+  return postAdminUpdate('/api/admin/settings', settings);
 }
 
 export async function loadAdminUsers(): Promise<AdminUser[]> {

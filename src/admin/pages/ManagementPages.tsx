@@ -16,7 +16,9 @@ import {
   LoadingState,
 } from '../components/ui';
 import { useAdminLanguage } from '../adminI18n';
-import { useAdminUsersData, useDocumentsData, useMediaItemsData, useSeoSettingsData } from '../data/useAdminData';
+import { useAdminUsersData, useDocumentsData, useMediaItemsData, useSeoSettingsData, useSiteSettingsData } from '../data/useAdminData';
+import type { SeoPageSetting } from '../types';
+import { saveSeoSetting, saveSiteSettings } from '../../lib/dataSync';
 
 export function MediaPage() {
   const { mediaItems, loading } = useMediaItemsData();
@@ -119,8 +121,23 @@ export function DocumentsPage() {
 
 export function SeoPage() {
   const { seoSettings, loading } = useSeoSettingsData();
+  const [drafts, setDrafts] = useState<SeoPageSetting[]>([]);
+  const [toast, setToast] = useState(false);
+  const [saveError, setSaveError] = useState('');
 
   if (loading) return <LoadingState />;
+
+  const activeDrafts = drafts.length > 0 ? drafts : seoSettings;
+
+  async function handleSave(setting: SeoPageSetting) {
+    setSaveError('');
+    const { error } = await saveSeoSetting(setting);
+    if (error) {
+      setSaveError(error.message);
+      return;
+    }
+    setToast(true);
+  }
 
   return (
     <div>
@@ -129,8 +146,9 @@ export function SeoPage() {
         title="SEO Settings"
         description="Manage search titles, descriptions, social sharing images, indexing, sitemap inclusion, and focus keywords."
       />
+      {saveError && <div className="mb-4 rounded-lg border border-red-200 bg-red-50 p-3 text-sm text-red-700">{saveError}</div>}
       <div className="grid gap-4">
-        {seoSettings.map((setting) => (
+        {activeDrafts.map((setting) => (
           <div key={setting.page} className={`${cardClass} p-5`}>
             <div className="flex flex-col gap-3 lg:flex-row lg:items-start lg:justify-between">
               <div>
@@ -143,23 +161,67 @@ export function SeoPage() {
               </div>
             </div>
             <div className="mt-4 grid gap-4 lg:grid-cols-2">
-              <FormField label="SEO title" value={setting.title} help={`${setting.title.length} characters`} />
-              <FormField label="URL slug" value={setting.slug} />
-              <TextareaField label="Meta description" value={setting.description} help={`${setting.description.length} characters`} />
-              <TextareaField label="Focus keywords" value={setting.focusKeywords} />
+              <FormField
+                label="SEO title"
+                value={setting.title}
+                help={`${setting.title.length} characters`}
+                onChange={(value) => setDrafts((current) => (current.length > 0 ? current : seoSettings).map((item) => item.page === setting.page ? { ...item, title: value } : item))}
+              />
+              <FormField
+                label="URL slug"
+                value={setting.slug}
+                onChange={(value) => setDrafts((current) => (current.length > 0 ? current : seoSettings).map((item) => item.page === setting.page ? { ...item, slug: value } : item))}
+              />
+              <TextareaField
+                label="Meta description"
+                value={setting.description}
+                help={`${setting.description.length} characters`}
+                onChange={(value) => setDrafts((current) => (current.length > 0 ? current : seoSettings).map((item) => item.page === setting.page ? { ...item, description: value } : item))}
+              />
+              <TextareaField
+                label="Focus keywords"
+                value={setting.focusKeywords}
+                onChange={(value) => setDrafts((current) => (current.length > 0 ? current : seoSettings).map((item) => item.page === setting.page ? { ...item, focusKeywords: value } : item))}
+              />
               <FormField label="Canonical URL" value="" help="Advanced SEO setting. Leave blank unless you know what this is." />
               <FormField label="Social Sharing Image" value="/images/export_quality.png" help="This image appears when the page is shared on LinkedIn, Facebook, or messaging apps." />
+            </div>
+            <div className="mt-4 flex justify-end">
+              <Button onClick={() => handleSave(setting)}>
+                <Save size={16} /> Save Changes
+              </Button>
             </div>
           </div>
         ))}
         <SEOEditorPlaceholder pageTitle="New page template" />
       </div>
+      {toast && <ToastNotification message="SEO saved successfully." onClose={() => setToast(false)} />}
     </div>
   );
 }
 
 export function SettingsPage() {
+  const { settings, loading } = useSiteSettingsData();
+
+  if (loading) return <LoadingState />;
+
+  return <SettingsEditor key={JSON.stringify(settings)} settings={settings} />;
+}
+
+function SettingsEditor({ settings }: { settings: import('../types').SiteSettings }) {
+  const [draft, setDraft] = useState(settings);
   const [toast, setToast] = useState(false);
+  const [saveError, setSaveError] = useState('');
+
+  async function handleSave() {
+    setSaveError('');
+    const { error } = await saveSiteSettings(draft);
+    if (error) {
+      setSaveError(error.message);
+      return;
+    }
+    setToast(true);
+  }
 
   return (
     <div>
@@ -168,24 +230,25 @@ export function SettingsPage() {
         title="Site Settings"
         description="Update company information, contact details, brand assets, social links, tracking IDs, language, and form settings."
         action={
-          <Button onClick={() => setToast(true)}>
+          <Button onClick={handleSave}>
             <Save size={16} /> Save Changes
           </Button>
         }
       />
+      {saveError && <div className="mb-4 rounded-lg border border-red-200 bg-red-50 p-3 text-sm text-red-700">{saveError}</div>}
       <div className="grid gap-4 xl:grid-cols-[1fr_380px]">
         <section className="grid gap-4">
           <div className={`${cardClass} p-5`}>
             <h2 className="font-serif text-2xl font-bold text-[#0B120C]">Company information</h2>
             <div className="mt-4 grid gap-4 lg:grid-cols-2">
-              <FormField label="Company name" value="Vietnam Agriculture Center (VAC)" required />
-              <FormField label="Short name" value="VAC" />
-              <FormField label="Tagline" value="Connecting local potential with global demand." />
-              <FormField label="Email" value="inquiries@vietagri.com" />
-              <FormField label="Phone / WhatsApp" value="+84 858741968" />
-              <FormField label="Office hours" value="Monday - Friday, 8:00 AM - 5:00 PM Indochina Time / UTC+7" />
+              <FormField label="Company name" value={draft.companyName} required onChange={(value) => setDraft({ ...draft, companyName: value })} />
+              <FormField label="Short name" value={draft.shortName} onChange={(value) => setDraft({ ...draft, shortName: value })} />
+              <FormField label="Tagline" value={draft.tagline} onChange={(value) => setDraft({ ...draft, tagline: value })} />
+              <FormField label="Email" value={draft.email} onChange={(value) => setDraft({ ...draft, email: value })} />
+              <FormField label="Phone / WhatsApp" value={draft.phone} onChange={(value) => setDraft({ ...draft, phone: value })} />
+              <FormField label="Office hours" value={draft.officeHours} onChange={(value) => setDraft({ ...draft, officeHours: value })} />
               <div className="lg:col-span-2">
-                <TextareaField label="Headquarters address" value="No 59, Truong Dang Que Street, Hanh Thong Ward, Ho Chi Minh City, Vietnam, 71423" />
+                <TextareaField label="Headquarters address" value={draft.headquartersAddress} onChange={(value) => setDraft({ ...draft, headquartersAddress: value })} />
               </div>
             </div>
           </div>
@@ -193,12 +256,12 @@ export function SettingsPage() {
           <div className={`${cardClass} p-5`}>
             <h2 className="font-serif text-2xl font-bold text-[#0B120C]">Tracking and social links</h2>
             <div className="mt-4 grid gap-4 lg:grid-cols-2">
-              <FormField label="LinkedIn" value="" />
-              <FormField label="Facebook" value="" />
-              <FormField label="YouTube" value="" />
-              <FormField label="Google Analytics ID" value="" />
-              <FormField label="Google Tag Manager ID" value="" />
-              <FormField label="LinkedIn Insight Tag ID" value="" />
+              <FormField label="LinkedIn" value={draft.linkedIn} onChange={(value) => setDraft({ ...draft, linkedIn: value })} />
+              <FormField label="Facebook" value={draft.facebook} onChange={(value) => setDraft({ ...draft, facebook: value })} />
+              <FormField label="YouTube" value={draft.youTube} onChange={(value) => setDraft({ ...draft, youTube: value })} />
+              <FormField label="Google Analytics ID" value={draft.googleAnalyticsId} onChange={(value) => setDraft({ ...draft, googleAnalyticsId: value })} />
+              <FormField label="Google Tag Manager ID" value={draft.googleTagManagerId} onChange={(value) => setDraft({ ...draft, googleTagManagerId: value })} />
+              <FormField label="LinkedIn Insight Tag ID" value={draft.linkedInInsightTagId} onChange={(value) => setDraft({ ...draft, linkedInInsightTagId: value })} />
             </div>
           </div>
         </section>
@@ -214,10 +277,10 @@ export function SettingsPage() {
           <div className={`${cardClass} p-5`}>
             <h2 className="font-serif text-2xl font-bold text-[#0B120C]">General</h2>
             <div className="mt-4 grid gap-3">
-              <ToggleSwitch label="Maintenance mode" checked={false} />
-              <SelectField label="Default language" value="English" options={['English', 'Vietnamese']} />
-              <SelectField label="Timezone" value="Asia/Ho_Chi_Minh" options={['Asia/Ho_Chi_Minh', 'UTC']} />
-              <FormField label="Admin notification email" value="inquiries@vietagri.com" />
+              <ToggleSwitch label="Maintenance mode" checked={draft.maintenanceMode} onChange={(checked) => setDraft({ ...draft, maintenanceMode: checked })} />
+              <SelectField label="Default language" value={draft.defaultLanguage} options={['English', 'Vietnamese']} onChange={(value) => setDraft({ ...draft, defaultLanguage: value as 'English' | 'Vietnamese' })} />
+              <SelectField label="Timezone" value={draft.timezone} options={['Asia/Ho_Chi_Minh', 'UTC']} onChange={(value) => setDraft({ ...draft, timezone: value })} />
+              <FormField label="Admin notification email" value={draft.adminNotificationEmail} onChange={(value) => setDraft({ ...draft, adminNotificationEmail: value })} />
             </div>
           </div>
         </aside>

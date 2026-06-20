@@ -4,10 +4,11 @@ import {
   leads as fallbackLeads,
   mediaItems as fallbackMediaItems,
   seoSettings as fallbackSeoSettings,
+  siteSettings as fallbackSiteSettings,
   users as fallbackUsers,
 } from './mockData';
-import type { AdminUser, DocumentItem, EditablePage, Lead, MediaItem, SeoPageSetting } from '../types';
-import { loadAdminUsers, loadDocuments, loadEditablePages, loadLeads, loadMediaItems, loadSeoSettings } from '../../lib/dataSync';
+import type { AdminUser, DocumentItem, EditablePage, Lead, MediaItem, SeoPageSetting, SiteSettings } from '../types';
+import { loadAdminUsers, loadDocuments, loadEditablePages, loadLeads, loadMediaItems, loadSeoSettings, loadSiteSettings } from '../../lib/dataSync';
 import { buildEditablePagesFromResources } from '../../lib/siteSeed';
 import { defaultResources } from '../../i18n';
 
@@ -137,4 +138,24 @@ export function useAdminUsersData() {
   }, []);
 
   return { users: items, loading };
+}
+
+export function useSiteSettingsData() {
+  const [settings, setSettings] = useState<SiteSettings>(fallbackSiteSettings);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    let active = true;
+    loadSiteSettings().then((data) => {
+      if (!active) return;
+      startTransition(() => setSettings(data));
+    }).finally(() => {
+      if (active) setLoading(false);
+    });
+    return () => {
+      active = false;
+    };
+  }, []);
+
+  return { settings, loading };
 }

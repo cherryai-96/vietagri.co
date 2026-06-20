@@ -2,7 +2,7 @@ import { createClient } from '@supabase/supabase-js';
 import { loadEnv } from 'vite';
 import { defaultResources } from '../src/i18n';
 import { documents, mediaItems, seoSettings, users } from '../src/admin/data/mockData';
-import { buildEditablePagesFromResources, buildSiteResourceRows } from '../src/lib/siteSeed';
+import { buildEditablePagesFromResources, buildCmsPageRow, buildSeoSettingRow, buildSiteResourceRows } from '../src/lib/siteSeed';
 
 const env = { ...process.env, ...loadEnv('production', process.cwd(), '') };
 const url = env.VITE_SUPABASE_URL;
@@ -19,15 +19,7 @@ async function main() {
   const pages = buildEditablePagesFromResources(defaultResources);
 
   const siteRows = buildSiteResourceRows(defaultResources);
-  const cmsRows = pages.map((page) => ({
-    slug: page.slug,
-    title: page.title,
-    description: page.description,
-    status: page.status,
-    missing_vietnamese: page.missingVietnamese,
-    updated_at: page.updatedAt,
-    sections: page.sections,
-  }));
+  const cmsRows = pages.map((page) => buildCmsPageRow(page));
   const docRows = documents.map((document) => ({
     id: document.id,
     title: document.title,
@@ -50,15 +42,7 @@ async function main() {
     size: item.size,
     updated_at: item.updatedAt,
   }));
-  const seoRows = seoSettings.map((setting) => ({
-    page: setting.page,
-    title: setting.title,
-    description: setting.description,
-    slug: setting.slug,
-    focus_keywords: setting.focusKeywords,
-    indexed: setting.indexed,
-    sitemap: setting.sitemap,
-  }));
+  const seoRows = seoSettings.map((setting) => buildSeoSettingRow(setting));
   const userRows = users.map((user) => ({
     id: user.id,
     name: user.name,

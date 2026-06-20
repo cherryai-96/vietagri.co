@@ -6,6 +6,7 @@ import type {
   Lead,
   MediaItem,
   SeoPageSetting,
+  SiteSettings,
 } from '../types';
 
 export const dashboardMetrics: DashboardMetric[] = [
@@ -404,6 +405,26 @@ export const seoSettings: SeoPageSetting[] = [
     sitemap: true,
   },
 ];
+
+export const siteSettings: SiteSettings = {
+  companyName: 'Vietnam Agriculture Center (VAC)',
+  shortName: 'VAC',
+  tagline: 'Connecting local potential with global demand.',
+  email: 'inquiries@vietagri.com',
+  phone: '+84 858741968',
+  officeHours: 'Monday - Friday, 8:00 AM - 5:00 PM Indochina Time / UTC+7',
+  headquartersAddress: 'No 59, Truong Dang Que Street, Hanh Thong Ward, Ho Chi Minh City, Vietnam, 71423',
+  linkedIn: '',
+  facebook: '',
+  youTube: '',
+  googleAnalyticsId: '',
+  googleTagManagerId: '',
+  linkedInInsightTagId: '',
+  maintenanceMode: false,
+  defaultLanguage: 'English',
+  timezone: 'Asia/Ho_Chi_Minh',
+  adminNotificationEmail: 'inquiries@vietagri.com',
+};
 
 export const activityItems = [
   'New Wolffia sample request from Seoul Natural Foods',

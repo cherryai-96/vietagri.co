@@ -7,7 +7,7 @@ interface SEOProps {
   keywords?: string;
   url?: string;
   image?: string;
-  schema?: Record<string, any>;
+  schema?: Record<string, unknown>;
   preloadImage?: string;
 }
 

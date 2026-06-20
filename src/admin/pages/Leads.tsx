@@ -1,9 +1,8 @@
 import { useMemo, useState } from 'react';
 import { Link, Navigate, useParams } from 'react-router-dom';
 import { Download, Mail, MessageCircle, Save, Trash2 } from 'lucide-react';
-import { users } from '../data/mockData';
 import type { LeadStatus } from '../types';
-import { useLeadsData } from '../data/useAdminData';
+import { useAdminUsersData, useLeadsData } from '../data/useAdminData';
 import {
   Button,
   ConfirmModal,
@@ -17,11 +16,13 @@ import {
   LoadingState,
   cardClass,
 } from '../components/ui';
+import { updateLead } from '../../lib/dataSync';
 
 const leadStatuses: LeadStatus[] = ['New', 'Contacted', 'Qualified', 'Proposal Sent', 'In Negotiation', 'Won', 'Lost', 'Spam'];
 
 export function LeadsPage() {
   const { leads, loading } = useLeadsData();
+  const { users } = useAdminUsersData();
 
   if (loading) return <LoadingState />;
 
@@ -75,11 +76,39 @@ export function LeadDetailPage() {
   const { id } = useParams();
   const { leads, loading } = useLeadsData();
   const lead = useMemo(() => leads.find((item) => item.id === id), [id, leads]);
-  const [toast, setToast] = useState(false);
-  const [confirmOpen, setConfirmOpen] = useState(false);
 
   if (loading) return <LoadingState />;
   if (!lead) return <Navigate to="/admin/leads" replace />;
+
+  return <LeadDetailEditor key={lead.id} lead={lead} />;
+}
+
+function LeadDetailEditor({ lead }: { lead: NonNullable<ReturnType<typeof useLeadsData>['leads'][number]> }) {
+  const { users } = useAdminUsersData();
+  const [toast, setToast] = useState(false);
+  const [confirmOpen, setConfirmOpen] = useState(false);
+  const [status, setStatus] = useState<LeadStatus>(lead.status);
+  const [assignedTo, setAssignedTo] = useState(lead.assignedTo);
+  const [newNote, setNewNote] = useState('');
+  const [notes, setNotes] = useState<string[]>(lead.notes);
+  const [saveError, setSaveError] = useState('');
+
+  async function handleSave() {
+    const nextNotes = newNote.trim() ? [...notes, newNote.trim()] : notes;
+    setSaveError('');
+    const { error } = await updateLead(lead.id, {
+      status,
+      assignedTo,
+      notes: nextNotes,
+    });
+    if (error) {
+      setSaveError(error.message);
+      return;
+    }
+    setNotes(nextNotes);
+    setNewNote('');
+    setToast(true);
+  }
 
   return (
     <div>
@@ -98,6 +127,8 @@ export function LeadDetailPage() {
           </div>
         }
       />
+
+      {saveError && <div className="mb-4 rounded-lg border border-red-200 bg-red-50 p-3 text-sm text-red-700">{saveError}</div>}
 
       <div className="grid gap-4 xl:grid-cols-[1fr_360px]">
         <section className="grid gap-4">
@@ -125,14 +156,14 @@ export function LeadDetailPage() {
           <div className={`${cardClass} p-5`}>
             <h2 className="font-serif text-2xl font-bold text-[#0B120C]">Internal notes</h2>
             <div className="mt-4 grid gap-3">
-              {lead.notes.map((note) => (
+              {notes.map((note) => (
                 <div key={note} className="rounded-lg border border-[#E5E0D5] bg-[#F8F2E6]/50 p-3 text-sm text-[#1D1D1D]">
                   {note}
                 </div>
               ))}
-              <TextareaField label="Add internal note" value="" rows={4} help="Notes are visible only to admin users." />
+              <TextareaField label="Add internal note" value={newNote} rows={4} help="Notes are visible only to admin users." onChange={setNewNote} />
               <div className="flex justify-end">
-                <Button onClick={() => setToast(true)}>
+                <Button onClick={handleSave}>
                   <Save size={16} /> Save Note
                 </Button>
               </div>
@@ -144,9 +175,9 @@ export function LeadDetailPage() {
           <div className={`${cardClass} p-5`}>
             <h2 className="font-serif text-2xl font-bold text-[#0B120C]">Lead workflow</h2>
             <div className="mt-4 grid gap-4">
-              <SelectField label="Lead status" value={lead.status} options={leadStatuses} />
-              <SelectField label="Assigned admin user" value={lead.assignedTo} options={users.map((user) => user.name)} />
-              <Button onClick={() => setToast(true)}>
+              <SelectField label="Lead status" value={status} options={leadStatuses} onChange={(value) => setStatus(value as LeadStatus)} />
+              <SelectField label="Assigned admin user" value={assignedTo} options={users.map((user) => user.name)} onChange={setAssignedTo} />
+              <Button onClick={handleSave}>
                 <Save size={16} /> Save Changes
               </Button>
               <Button variant="secondary">

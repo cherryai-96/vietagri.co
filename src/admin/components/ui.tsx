@@ -300,7 +300,17 @@ export function SelectField({
   );
 }
 
-export function ToggleSwitch({ label, checked, help }: { label: string; checked: boolean; help?: string }) {
+export function ToggleSwitch({
+  label,
+  checked,
+  help,
+  onChange,
+}: {
+  label: string;
+  checked: boolean;
+  help?: string;
+  onChange?: (checked: boolean) => void;
+}) {
   const { t } = useAdminLanguage();
 
   return (
@@ -309,7 +319,7 @@ export function ToggleSwitch({ label, checked, help }: { label: string; checked:
         <p className="text-sm font-semibold text-[#1D1D1D]">{t(label)}</p>
         {help && <p className="mt-1 text-xs leading-5 text-[#6B7280]">{t(help)}</p>}
       </div>
-      <button className={`h-6 w-11 rounded-full p-1 transition ${checked ? 'bg-[#104D2E]' : 'bg-gray-300'}`}>
+      <button type="button" onClick={() => onChange?.(!checked)} className={`h-6 w-11 rounded-full p-1 transition ${checked ? 'bg-[#104D2E]' : 'bg-gray-300'}`}>
         <span className={`block h-4 w-4 rounded-full bg-white transition ${checked ? 'translate-x-5' : ''}`} />
       </button>
     </div>
