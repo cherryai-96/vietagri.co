@@ -1,10 +1,12 @@
 import { createClient } from '@supabase/supabase-js';
+import { loadEnv } from 'vite';
 import { defaultResources } from '../src/i18n';
 import { documents, mediaItems, seoSettings, users } from '../src/admin/data/mockData';
 import { buildEditablePagesFromResources, buildSiteResourceRows } from '../src/lib/siteSeed';
 
-const url = process.env.VITE_SUPABASE_URL;
-const key = process.env.SUPABASE_SERVICE_ROLE_KEY;
+const env = { ...process.env, ...loadEnv('production', process.cwd(), '') };
+const url = env.VITE_SUPABASE_URL;
+const key = env.SUPABASE_SERVICE_ROLE_KEY;
 
 if (!url || !key) {
   console.error('Missing VITE_SUPABASE_URL or SUPABASE_SERVICE_ROLE_KEY.');
