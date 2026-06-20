@@ -1,17 +1,19 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable react-refresh/only-export-components */
 import React, { createContext, useContext, useState } from 'react';
+import { startTransition, useEffect } from 'react';
+import { loadSiteResources } from './lib/dataSync';
 
 
 type Language = 'en' | 'vi';
 
-interface TranslationResources {
+export interface TranslationResources {
  [key: string]: {
   [key: string]: string | string[] | any;
  };
 }
 
-const resources: TranslationResources = {
+export const defaultResources: TranslationResources = {
  en: {
   nav: {
    home: 'Home',
@@ -38,7 +40,7 @@ const resources: TranslationResources = {
    success: 'Thank you! Your request has been sent successfully.',
    error: 'Something went wrong. Please try again.',
    hours: 'Office Hours: Monday - Friday, 8:00 AM - 5:00 PM (UTC+7)',
-   address: 'No 59, Truong Dang Que Street, Hanh Thong Ward, Go Vap District, Ho Chi Minh City 71423, Vietnam',
+   address: 'No 59, Truong Dang Que Street, Hanh Thong Ward, Ho Chi Minh City, Vietnam, 71423',
    phone: '+84 858741968',
    email: 'inquiries@vietagri.com',
    copyright: '© 2026 Vietnam Agriculture Center. All Rights Reserved.',
@@ -266,7 +268,7 @@ const resources: TranslationResources = {
    success: 'Xin cảm ơn! Yêu cầu của bạn đã được gửi thành công.',
    error: 'Đã có lỗi xảy ra. Vui lòng thử lại sau.',
    hours: 'Giờ làm việc: Thứ Hai - Thứ Sáu, 8:00 - 17:00 (UTC+7)',
-   address: 'Số 59 Trương Đăng Quế, Phường 1, Quận Gò Vấp, TP. Hồ Chí Minh 71423, Việt Nam',
+   address: 'Số 59 Trương Đăng Quế, Phường Hạnh Thông, TP. Hồ Chí Minh, Việt Nam, 71423',
    phone: '+84 85 874 1968',
    email: 'inquiries@vietagri.com',
    copyright: '© 2026 Trung Tâm Nông Nghiệp Việt Nam. Bảo lưu mọi quyền.',
@@ -482,6 +484,21 @@ const LanguageContext = createContext<{
 
 export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
  const [language, setLanguage] = useState<Language>('en');
+ const [resources, setResources] = useState<TranslationResources>(defaultResources);
+
+ useEffect(() => {
+  let active = true;
+  loadSiteResources().then((remoteResources) => {
+   if (!active || !remoteResources) return;
+   startTransition(() => setResources(remoteResources));
+  }).catch(() => {
+   // Keep local fallback resources when Supabase is unavailable.
+  });
+
+  return () => {
+   active = false;
+  };
+ }, []);
 
  const t = (path: string) => {
   const keys = path.split('.');

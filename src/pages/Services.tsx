@@ -12,6 +12,7 @@ import {
   ArrowRight,
   Info
 } from 'lucide-react';
+import { SEO } from '../components/SEO';
 
 export const Services: React.FC = () => {
   const { t } = useTranslation();
@@ -181,6 +182,21 @@ export const Services: React.FC = () => {
 
   return (
     <div className="font-sans overflow-hidden">
+      <SEO 
+        title="Our Services | Vietnam Agriculture Center (VAC)"
+        description="Comprehensive agricultural services including strategic sourcing, contract farming, strict quality assurance, and end-to-end global logistics."
+        url="https://vietagri.co/services"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "name": "Agricultural Sourcing and Contract Farming",
+          "provider": {
+            "@type": "Organization",
+            "name": "Vietnam Agriculture Center"
+          },
+          "description": "We offer agricultural sourcing, high-tech contract farming, quality assurance, and global logistics for B2B buyers."
+        }}
+      />
       {/* Hero Section */}
       <section className="relative min-h-[60vh] flex items-center justify-center bg-carbon text-cream pt-32 pb-16 px-4 md:px-8">
         <div

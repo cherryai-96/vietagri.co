@@ -13,12 +13,28 @@ import {
   Users2, 
   Sparkles 
 } from 'lucide-react';
+import { SEO } from '../components/SEO';
 
 export const Sustainability: React.FC = () => {
   const { t } = useTranslation();
 
   return (
     <div className="font-sans overflow-hidden bg-cream text-carbon">
+      <SEO 
+        title="Sustainability & ESG | Vietnam Agriculture Center"
+        description="Our commitment to sustainable agriculture, circular economy, and fair trade. Discover how we empower local farmers and optimize resources."
+        url="https://vietagri.co/sustainability"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "name": "Sustainability & ESG",
+          "description": "Our commitment to sustainable agriculture, circular economy, and fair trade.",
+          "publisher": {
+            "@type": "Organization",
+            "name": "Vietnam Agriculture Center"
+          }
+        }}
+      />
       {/* Hero Section */}
       <section className="relative min-h-[60vh] flex items-center justify-center bg-carbon text-cream pt-32 pb-16 px-4 md:px-8">
         <div

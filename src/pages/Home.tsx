@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import { useTranslation } from '../i18n';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import { SEO } from '../components/SEO';
 import {
   Globe,
   TrendingUp,
@@ -84,6 +85,31 @@ export const Home: React.FC = () => {
 
   return (
     <div className="font-sans overflow-hidden">
+      <SEO 
+        title="Vietnam Agriculture Center (VAC) | Premium Sourcing & Contract Farming"
+        description="Vietnam Agriculture Center (VAC) is your trusted on-the-ground partner for premium product sourcing, high-tech contract farming, export quality assurance, and high-purity Viet Wolffia watermeal supply."
+        url="https://vietagri.co"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": "Vietnam Agriculture Center",
+          "alternateName": "VAC",
+          "url": "https://vietagri.co",
+          "logo": "https://vietagri.co/Logo/Vietgari/VAC%20logo4.png",
+          "description": "Premium B2B Agricultural Sourcing, Contract Farming, and exclusive supplier of Viet Wolffia.",
+          "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "VN"
+          },
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "customer service",
+            "email": "info@vietagri.co",
+            "availableLanguage": ["English", "Vietnamese"]
+          }
+        }}
+      />
+
       {/* Hero Section */}
       <section className="relative h-[100dvh] min-h-[100dvh] flex items-center justify-center bg-carbon text-cream pt-24 pb-16 px-4 md:px-8 overflow-hidden">
         {/* Background Image */}

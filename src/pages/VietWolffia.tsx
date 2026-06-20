@@ -2,6 +2,7 @@ import React, { useState, useRef } from 'react';
 import { useTranslation } from '../i18n';
 import { motion, AnimatePresence } from 'framer-motion';
 import { CheckCircle2, FlaskConical, Droplet, Sparkles, Scale, ChevronRight, ChevronLeft } from 'lucide-react';
+import { SEO } from '../components/SEO';
 
 const CATEGORIES = [
   { id: 'culinary', label: 'Culinaries' },
@@ -473,6 +474,27 @@ export const VietWolffia: React.FC = () => {
 
   return (
     <div className="font-sans">
+      <SEO 
+        title="Viet Wolffia | Premium Watermeal Superfood | Vietnam Agriculture Center"
+        description="Discover Viet Wolffia (Watermeal) - the world's smallest flowering plant packed with plant-based protein, vitamins, and minerals. Available in Fresh and Dried formats."
+        url="https://vietagri.co/viet-wolffia"
+        image="https://vietagri.co/images/products/VW1.png"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "Product",
+          "name": "Viet Wolffia",
+          "description": "Premium Watermeal Superfood",
+          "brand": {
+            "@type": "Brand",
+            "name": "Vietnam Agriculture Center"
+          },
+          "offers": {
+            "@type": "AggregateOffer",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock"
+          }
+        }}
+      />
       {/* Hero Section */}
       <section className="relative min-h-[60vh] flex items-center justify-center bg-carbon text-cream pt-32 pb-16 px-4 md:px-8">
         <div

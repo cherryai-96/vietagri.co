@@ -2,6 +2,7 @@ import React from 'react';
 import { useTranslation } from '../i18n';
 import { motion } from 'framer-motion';
 import { ShieldCheck, Eye, Compass, MapPin } from 'lucide-react';
+import { SEO } from '../components/SEO';
 
 export const About: React.FC = () => {
   const { t } = useTranslation();
@@ -26,6 +27,23 @@ export const About: React.FC = () => {
 
   return (
     <div className="font-sans overflow-hidden">
+      <SEO 
+        title="About Us | Vietnam Agriculture Center (VAC)"
+        description="Learn about Vietnam Agriculture Center (VAC), our mission, vision, and core values in bridging the gap between local Vietnamese farmers and global agricultural markets."
+        url="https://vietagri.co/about"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "AboutPage",
+          "name": "About Vietnam Agriculture Center",
+          "url": "https://vietagri.co/about",
+          "mainEntity": {
+            "@type": "Organization",
+            "name": "Vietnam Agriculture Center",
+            "description": "We specialize in premium agricultural sourcing, contract farming, and exporting.",
+            "foundingDate": "2024"
+          }
+        }}
+      />
       {/* Hero Section */}
       <section className="relative min-h-[60vh] flex items-center justify-center bg-carbon text-cream pt-32 pb-16 px-4 md:px-8">
         <div

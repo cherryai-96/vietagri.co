@@ -12,6 +12,8 @@ import {
   Building2, 
   Send
 } from 'lucide-react';
+import { SEO } from '../components/SEO';
+import { submitLead } from '../lib/dataSync';
 
 interface FormData {
   fullName: string;
@@ -82,8 +84,8 @@ export const Contact: React.FC = () => {
     setSubmitStatus('idle');
 
     try {
-      // Mock API post request
-      await new Promise(resolve => setTimeout(resolve, 1500));
+      const { error } = await submitLead(formData);
+      if (error) throw error;
       setSubmitStatus('success');
       setFormData({
         fullName: '',
@@ -105,6 +107,18 @@ export const Contact: React.FC = () => {
 
   return (
     <div className="font-sans overflow-hidden bg-cream text-carbon">
+      <SEO 
+        title="Contact Us | Vietnam Agriculture Center"
+        description="Get in touch with Vietnam Agriculture Center for B2B agricultural sourcing, contract farming inquiries, and Viet Wolffia supply. We are ready to assist you."
+        url="https://vietagri.co/contact"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "ContactPage",
+          "name": "Contact Vietnam Agriculture Center",
+          "description": "Contact us for premium agricultural products and services.",
+          "url": "https://vietagri.co/contact"
+        }}
+      />
       
       {/* Hero Section */}
       <section className="relative min-h-[50vh] flex items-center justify-center bg-carbon text-cream pt-32 pb-16 px-4 md:px-8">
@@ -163,7 +177,7 @@ export const Contact: React.FC = () => {
               <div className="flex flex-col gap-5 text-sm font-light text-carbon/80">
                 <div className="flex items-start gap-4">
                   <MapPin size={18} className="text-gold-warm shrink-0 mt-1" />
-                  <span>{t('common.address')}</span>
+                  <span>No 59, Truong Dang Que Street, Hanh Thong Ward, Ho Chi Minh City, Vietnam, 71423</span>
                 </div>
                 <div className="flex items-center gap-4">
                   <Phone size={18} className="text-gold-warm shrink-0" />
