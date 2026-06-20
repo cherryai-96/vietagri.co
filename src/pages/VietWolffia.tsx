@@ -732,7 +732,7 @@ export const VietWolffia: React.FC = () => {
                   src={item.src} 
                   alt={item.title} 
                   className={`absolute inset-0 w-full h-full transition-transform duration-1000 group-hover:scale-105 ${
-                    item.title === 'Dried Wolffia' ? 'object-contain bg-white mix-blend-multiply' : 'object-cover'
+                    item.title === 'Dried Wolffia' ? 'object-contain bg-white mix-blend-multiply p-4 md:p-12' : 'object-cover'
                   }`}
                 />
                 
