@@ -740,8 +740,8 @@ export const VietWolffia: React.FC = () => {
                 />
                 
                 {/* Glassmorphism Card Overlay */}
-                <div className="absolute bottom-5 right-5 left-5 md:left-auto backdrop-blur-md bg-carbon/70 border border-white/20 px-6 py-3 rounded-full text-white shadow-xl transition-all duration-500 overflow-hidden text-center md:text-left inline-block w-auto max-w-[90%] md:max-w-max">
-                  <h3 className="font-serif text-lg md:text-xl font-bold m-0 leading-none">
+                <div className="absolute bottom-4 right-4 md:bottom-5 md:right-5 backdrop-blur-md bg-carbon/70 border border-white/20 px-5 py-2.5 md:px-6 md:py-3 rounded-full text-white shadow-xl transition-all duration-500 overflow-hidden text-center md:text-left inline-block w-auto max-w-[90%] md:max-w-max">
+                  <h3 className="font-serif text-base md:text-xl font-bold m-0 leading-none">
                     {item.title}
                   </h3>
                 </div>
