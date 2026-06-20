@@ -731,7 +731,9 @@ export const VietWolffia: React.FC = () => {
                 <img 
                   src={item.src} 
                   alt={item.title} 
-                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                  className={`absolute inset-0 w-full h-full transition-transform duration-1000 group-hover:scale-105 ${
+                    item.title === 'Dried Wolffia' ? 'object-contain md:object-cover bg-white' : 'object-cover'
+                  }`}
                 />
                 
                 {/* Glassmorphism Card Overlay */}
