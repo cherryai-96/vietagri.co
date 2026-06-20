@@ -605,7 +605,7 @@ export const VietWolffia: React.FC = () => {
       {/* Culinary & Operations Gallery */}
       <section className="py-24 bg-ivory border-t border-gold-warm/15 px-4 md:px-8">
         <div className="max-w-7xl mx-auto flex flex-col gap-12">
-          <div className="flex flex-col xl:flex-row justify-between items-start xl:items-end gap-8">
+          <div className="flex flex-col xl:flex-row justify-between items-start xl:items-center gap-8">
             <div className="flex flex-col gap-3">
               <span className="text-xs font-bold uppercase tracking-widest text-gold-antique">
                 Visual Showcase
