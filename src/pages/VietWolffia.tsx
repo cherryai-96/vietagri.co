@@ -80,6 +80,60 @@ export const VietWolffia: React.FC = () => {
       desc: 'Traditional Vietnamese dish elevated with Wolffia.'
     },
     {
+      src: '/images/culinaries/f1.avif',
+      title: 'Wolffia Culinary 1',
+      category: 'culinary',
+      desc: 'Creative Wolffia dish.'
+    },
+    {
+      src: '/images/culinaries/f2.webp',
+      title: 'Wolffia Culinary 2',
+      category: 'culinary',
+      desc: 'Creative Wolffia dish.'
+    },
+    {
+      src: '/images/culinaries/f3.jpg',
+      title: 'Wolffia Culinary 3',
+      category: 'culinary',
+      desc: 'Creative Wolffia dish.'
+    },
+    {
+      src: '/images/culinaries/f4.webp',
+      title: 'Wolffia Culinary 4',
+      category: 'culinary',
+      desc: 'Creative Wolffia dish.'
+    },
+    {
+      src: '/images/culinaries/f5.jpg',
+      title: 'Wolffia Culinary 5',
+      category: 'culinary',
+      desc: 'Creative Wolffia dish.'
+    },
+    {
+      src: '/images/culinaries/f6.webp',
+      title: 'Wolffia Culinary 6',
+      category: 'culinary',
+      desc: 'Creative Wolffia dish.'
+    },
+    {
+      src: '/images/culinaries/f7.webp',
+      title: 'Wolffia Culinary 7',
+      category: 'culinary',
+      desc: 'Creative Wolffia dish.'
+    },
+    {
+      src: '/images/culinaries/f8.jpg',
+      title: 'Wolffia Culinary 8',
+      category: 'culinary',
+      desc: 'Creative Wolffia dish.'
+    },
+    {
+      src: '/images/culinaries/f9.jpg',
+      title: 'Wolffia Culinary 9',
+      category: 'culinary',
+      desc: 'Creative Wolffia dish.'
+    },
+    {
       src: '/Cuisine pictures/Green Shakshuka.webp',
       title: 'Green Shakshuka with Wolffia',
       category: 'culinary',
