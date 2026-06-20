@@ -819,10 +819,9 @@ export const VietWolffia: React.FC = () => {
               ref={scrollContainerRef}
               className={`grid ${activeCategory === 'snack' ? 'grid-rows-1' : (filteredGallery.length > 4 ? 'grid-rows-2' : 'grid-rows-1')} grid-flow-col auto-cols-[280px] md:auto-cols-[320px] gap-6 pb-8 overflow-x-auto snap-x snap-mandatory scrollbar-thin scrollbar-thumb-gold-warm/40 scrollbar-track-transparent`}
             >
-            <AnimatePresence mode="popLayout">
+            <AnimatePresence>
               {filteredGallery.map((item) => (
                 <motion.div
-                  layout
                   key={item.src}
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
