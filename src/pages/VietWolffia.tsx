@@ -725,8 +725,8 @@ export const VietWolffia: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.6, delay: 0.1 }}
-                className={`sticky top-32 lg:top-40 relative rounded-3xl overflow-hidden aspect-[4/3] md:aspect-[16/10] w-full group shadow-2xl ${
-                  item.title === 'Dried Wolffia' ? 'bg-white' : ''
+                className={`sticky top-32 lg:top-40 relative rounded-3xl overflow-hidden w-full group shadow-2xl ${
+                  item.title === 'Dried Wolffia' ? 'bg-white aspect-[4/5] md:aspect-[16/10]' : 'aspect-[4/3] md:aspect-[16/10]'
                 }`}
                 style={{ zIndex: index + 10 }}
               >
