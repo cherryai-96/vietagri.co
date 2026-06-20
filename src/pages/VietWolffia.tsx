@@ -725,14 +725,16 @@ export const VietWolffia: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.6, delay: 0.1 }}
-                className="sticky top-32 lg:top-40 relative rounded-3xl overflow-hidden aspect-[4/3] md:aspect-[16/10] w-full group shadow-2xl"
+                className={`sticky top-32 lg:top-40 relative rounded-3xl overflow-hidden aspect-[4/3] md:aspect-[16/10] w-full group shadow-2xl ${
+                  item.title === 'Dried Wolffia' ? 'bg-white' : ''
+                }`}
                 style={{ zIndex: index + 10 }}
               >
                 <img 
                   src={item.src} 
                   alt={item.title} 
                   className={`absolute inset-0 w-full h-full transition-transform duration-1000 group-hover:scale-105 ${
-                    item.title === 'Dried Wolffia' ? 'object-contain mix-blend-multiply p-2 md:p-4' : 'object-cover'
+                    item.title === 'Dried Wolffia' ? 'object-contain mix-blend-multiply' : 'object-cover'
                   }`}
                   style={item.title === 'Dried Wolffia' ? { filter: 'contrast(1.08) brightness(1.08)' } : {}}
                 />
