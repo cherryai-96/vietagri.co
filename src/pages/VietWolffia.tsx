@@ -188,6 +188,12 @@ export const VietWolffia: React.FC = () => {
       desc: 'A delicious dessert with a healthy twist of Wolffia.'
     },
     {
+      src: '/images/pastries/P12.jpg',
+      title: 'Wolffia Pastry 12',
+      category: 'pastry',
+      desc: 'Delicious Wolffia pastry.'
+    },
+    {
       src: '/images/pastries/P1.jpg',
       title: 'Wolffia Pastry 1',
       category: 'pastry',
