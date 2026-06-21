@@ -481,17 +481,12 @@ export const VietWolffia: React.FC = () => {
         image="https://vietagri.co/images/products/VW1.png"
         schema={{
           "@context": "https://schema.org",
-          "@type": "Product",
+          "@type": "WebPage",
           "name": "Viet Wolffia",
           "description": "Premium Watermeal Superfood",
-          "brand": {
-            "@type": "Brand",
+          "publisher": {
+            "@type": "Organization",
             "name": "Vietnam Agriculture Center"
-          },
-          "offers": {
-            "@type": "AggregateOffer",
-            "priceCurrency": "USD",
-            "availability": "https://schema.org/InStock"
           }
         }}
         preloadImage="/images/w-hero-new.jpg"
