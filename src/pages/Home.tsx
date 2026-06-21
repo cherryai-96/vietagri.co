@@ -169,8 +169,8 @@ export const Home: React.FC = () => {
               <ArrowRight size={16} className="group-hover:translate-x-1.5 transition-transform duration-300" />
             </Link>
             <a
-              href="/VAC_Corporate_Profile.pdf"
-              download
+              href="/VAC_Corporate_Slide_Deck.pdf"
+              download="VAC Corporate Slide Deck.pdf"
               className="border border-cream/40 hover:border-gold-champagne hover:bg-cream/10 text-cream px-8 py-4 rounded font-bold text-sm uppercase tracking-wider transition-all duration-300 cursor-pointer hover:scale-[1.03] backdrop-blur-sm"
             >
               {t('common.downloadBtn')}
