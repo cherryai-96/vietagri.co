@@ -1,14 +1,9 @@
 import { Link } from 'react-router-dom';
 import { Bot, Edit3, FileUp, Mail, SearchCheck, Settings, Upload } from 'lucide-react';
-import {
-  activityItems,
-  countryLeadData,
-  dashboardMetrics,
-  interestLeadData,
-} from '../data/mockData';
 import { Button, DashboardCard, DataTable, PageHeader, StatusBadge, cardClass } from '../components/ui';
 import { useAdminLanguage } from '../adminI18n';
-import { useLeadsData } from '../data/useAdminData';
+import { useDocumentsData, useEditablePagesData, useLeadsData } from '../data/useAdminData';
+import { LoadingState } from '../components/ui';
 
 function MiniBarChart({ data }: { data: Array<{ label: string; value: number }> }) {
   const { t } = useAdminLanguage();
@@ -32,7 +27,73 @@ function MiniBarChart({ data }: { data: Array<{ label: string; value: number }> 
 
 export function AdminDashboard() {
   const { t } = useAdminLanguage();
-  const { leads } = useLeadsData();
+  const { leads, loading: leadsLoading } = useLeadsData();
+  const { documents, loading: documentsLoading } = useDocumentsData();
+  const { pages, loading: pagesLoading } = useEditablePagesData();
+
+  if (leadsLoading || documentsLoading || pagesLoading) return <LoadingState />;
+
+  const now = new Date();
+  const currentMonth = now.toISOString().slice(0, 7);
+  const totalInquiries = leads.length;
+  const newLeads = leads.filter((lead) => lead.status === 'New').length;
+  const consultationRequests = leads.filter((lead) => lead.sourcePage === 'Request a Consultation').length;
+  const wolffiaSampleRequests = leads.filter((lead) => lead.sourcePage === 'Request Wolffia Samples & Specs').length;
+  const unreadMessages = newLeads;
+  const thisMonthInquiries = leads.filter((lead) => lead.date.startsWith(currentMonth)).length;
+  const hasLiveDownloadTracking = false;
+  const hasLiveVisitTracking = false;
+  const hasLiveConversionTracking = false;
+
+  const dashboardMetrics = [
+    { label: 'Total Inquiries', value: String(totalInquiries), change: `${thisMonthInquiries} this month`, tone: 'green' as const },
+    { label: 'New Leads', value: String(newLeads), change: `${newLeads} unread`, tone: 'blue' as const },
+    { label: 'Consultation Requests', value: consultationRequests > 0 ? String(consultationRequests) : '--', change: consultationRequests > 0 ? 'Form tracked' : 'No tracked consultation form yet', tone: 'gold' as const },
+    { label: 'Wolffia Sample Requests', value: wolffiaSampleRequests > 0 ? String(wolffiaSampleRequests) : '--', change: wolffiaSampleRequests > 0 ? 'Form tracked' : 'No tracked sample form yet', tone: 'green' as const },
+    { label: 'Corporate Profile Downloads', value: hasLiveDownloadTracking ? String(documents.reduce((sum, document) => sum + document.downloads, 0)) : '--', change: hasLiveDownloadTracking ? `${documents.length} live docs` : 'Download events not connected', tone: 'gray' as const },
+    { label: 'Unread Messages', value: String(unreadMessages), change: 'Needs follow-up', tone: 'blue' as const },
+    { label: 'This Month Website Visits', value: hasLiveVisitTracking ? '0' : '--', change: 'Analytics not connected', tone: 'gray' as const },
+    { label: 'Conversion Rate', value: hasLiveConversionTracking ? '0%' : '--', change: 'Conversion tracking not connected', tone: 'gold' as const },
+  ];
+
+  const weeklyTrend = Array.from({ length: 6 }, (_, index) => {
+    const start = new Date(now);
+    start.setDate(now.getDate() - (5 - index) * 7);
+    const end = new Date(start);
+    end.setDate(start.getDate() + 6);
+    const value = leads.filter((lead) => {
+      const leadDate = new Date(`${lead.date}T00:00:00`);
+      return leadDate >= start && leadDate <= end;
+    }).length;
+    return { label: `W${index + 1}`, value };
+  });
+
+  const maxTrend = Math.max(...weeklyTrend.map((item) => item.value), 1);
+
+  const interestTotals = new Map<string, number>();
+  for (const lead of leads) {
+    const key = lead.area.split(',')[0]?.trim() || 'Other';
+    interestTotals.set(key, (interestTotals.get(key) ?? 0) + 1);
+  }
+  const interestLeadData = [...interestTotals.entries()]
+    .map(([label, count]) => ({ label, value: Math.round((count / Math.max(totalInquiries, 1)) * 100) }))
+    .sort((a, b) => b.value - a.value)
+    .slice(0, 5);
+
+  const countryTotals = new Map<string, number>();
+  for (const lead of leads) {
+    const key = lead.country || 'Unknown';
+    countryTotals.set(key, (countryTotals.get(key) ?? 0) + 1);
+  }
+  const countryLeadData = [...countryTotals.entries()]
+    .map(([label, count]) => ({ label, value: Math.round((count / Math.max(totalInquiries, 1)) * 100) }))
+    .sort((a, b) => b.value - a.value)
+    .slice(0, 5);
+
+  const activityItems = [
+    ...leads.slice(0, 3).map((lead) => `${lead.name} from ${lead.company} submitted ${lead.area}`),
+    ...pages.slice(0, 2).map((page) => `${page.title} page record updated ${page.updatedAt}`),
+  ];
 
   return (
     <div>
@@ -68,10 +129,10 @@ export function AdminDashboard() {
             <span className="rounded-full bg-[#F8F2E6] px-3 py-1 text-xs font-bold text-[#104D2E]">{t('Month')}</span>
           </div>
           <div className="mt-6 flex h-64 items-end gap-3">
-            {[34, 48, 52, 71, 66, 89, 96, 76, 88, 104, 121, 132].map((height, index) => (
-              <div key={index} className="flex flex-1 flex-col items-center gap-2">
-                <div className="w-full rounded-t bg-[#104D2E]" style={{ height: `${height}%` }} />
-                <span className="text-[10px] font-semibold text-[#6B7280]">W{index + 1}</span>
+            {weeklyTrend.map((item) => (
+              <div key={item.label} className="flex flex-1 flex-col items-center gap-2">
+                <div className="w-full rounded-t bg-[#104D2E]" style={{ height: `${Math.max((item.value / maxTrend) * 100, item.value > 0 ? 10 : 2)}%` }} />
+                <span className="text-[10px] font-semibold text-[#6B7280]">{item.label}</span>
               </div>
             ))}
           </div>

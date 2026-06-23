@@ -107,7 +107,7 @@ function PageSpecificPanel({ slug }: { slug: PageSlug }) {
         <h3 className="font-serif text-2xl font-bold text-[#0B120C]">Official contact information</h3>
         <div className="mt-4 grid gap-4 lg:grid-cols-2">
           <FormField label="Company name" value="Vietnam Agriculture Center (VAC)" />
-          <FormField label="Email" value="inquiries@vietagri.com" />
+          <FormField label="Email" value="inquiries@vietagri.co" />
           <FormField label="Phone / WhatsApp" value="+84 858741968" />
           <FormField label="Office hours" value="Monday - Friday, 8:00 AM - 5:00 PM Indochina Time / UTC+7" />
           <div className="lg:col-span-2">

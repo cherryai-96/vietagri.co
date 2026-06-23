@@ -188,7 +188,7 @@ export const Contact: React.FC = () => {
                 </div>
                 <div className="flex items-center gap-4">
                   <Mail size={18} className="text-gold-warm shrink-0" />
-                  <a href="mailto:inquiries@vietagri.com" className="hover:text-gold-antique transition-colors">
+                  <a href="mailto:inquiries@vietagri.co" className="hover:text-gold-antique transition-colors">
                     {t('common.email')}
                   </a>
                 </div>

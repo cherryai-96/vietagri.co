@@ -201,7 +201,7 @@ export const users: AdminUser[] = [
   {
     id: 'user-001',
     name: 'Super Admin',
-    email: 'owner@vietagri.com',
+    email: 'owner@vietagri.co',
     role: 'Super Admin',
     status: 'Active',
     lastLogin: 'Today, 09:42',
@@ -210,7 +210,7 @@ export const users: AdminUser[] = [
   {
     id: 'user-002',
     name: 'Sales Manager',
-    email: 'sales@vietagri.com',
+    email: 'sales@vietagri.co',
     role: 'Sales Manager',
     status: 'Active',
     lastLogin: 'Yesterday, 16:10',
@@ -219,7 +219,7 @@ export const users: AdminUser[] = [
   {
     id: 'user-003',
     name: 'Content Editor',
-    email: 'content@vietagri.com',
+    email: 'content@vietagri.co',
     role: 'Content Editor',
     status: 'Active',
     lastLogin: 'Jun 18, 2026',
@@ -228,7 +228,7 @@ export const users: AdminUser[] = [
   {
     id: 'user-004',
     name: 'Marketing Editor',
-    email: 'marketing@vietagri.com',
+    email: 'marketing@vietagri.co',
     role: 'Marketing Editor',
     status: 'Active',
     lastLogin: 'Jun 17, 2026',
@@ -368,7 +368,7 @@ export const editablePages: EditablePage[] = [
         subheading: 'International B2B inquiries, sourcing requests, samples, and documentation.',
         body: 'No 59, Truong Dang Que Street, Hanh Thong Ward, Ho Chi Minh City, Vietnam, 71423',
         buttonText: 'Email VAC',
-        buttonLink: 'mailto:inquiries@vietagri.com',
+        buttonLink: 'mailto:inquiries@vietagri.co',
         visible: true,
         order: 1,
       },
@@ -410,7 +410,7 @@ export const siteSettings: SiteSettings = {
   companyName: 'Vietnam Agriculture Center (VAC)',
   shortName: 'VAC',
   tagline: 'Connecting local potential with global demand.',
-  email: 'inquiries@vietagri.com',
+  email: 'inquiries@vietagri.co',
   phone: '+84 858741968',
   officeHours: 'Monday - Friday, 8:00 AM - 5:00 PM Indochina Time / UTC+7',
   headquartersAddress: 'No 59, Truong Dang Que Street, Hanh Thong Ward, Ho Chi Minh City, Vietnam, 71423',
@@ -423,7 +423,7 @@ export const siteSettings: SiteSettings = {
   maintenanceMode: false,
   defaultLanguage: 'English',
   timezone: 'Asia/Ho_Chi_Minh',
-  adminNotificationEmail: 'inquiries@vietagri.com',
+  adminNotificationEmail: 'inquiries@vietagri.co',
 };
 
 export const activityItems = [

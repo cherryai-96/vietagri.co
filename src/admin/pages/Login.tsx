@@ -9,7 +9,7 @@ import { useAdminAuth } from '../adminAuth';
 export function AdminLogin() {
   const navigate = useNavigate();
   const location = useLocation();
-  const [email, setEmail] = useState('owner@vietagri.com');
+  const [email, setEmail] = useState('owner@vietagri.co');
   const [password, setPassword] = useState('vac-admin-demo');
   const [errorMessage, setErrorMessage] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
