@@ -297,7 +297,7 @@ export const VietWolffia: React.FC = () => {
       desc: 'Innovative Wolffia-based product.'
     },
     {
-      src: '/images/others/o1.jpg',
+      src: '/images/others/o5.jpg',
       title: 'Wolffia Creation 2',
       category: 'others',
       desc: 'Innovative Wolffia-based product.'
