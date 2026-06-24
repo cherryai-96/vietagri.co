@@ -638,7 +638,24 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
   let active = true;
   loadSiteResources().then((remoteResources) => {
    if (!active || !remoteResources) return;
-   startTransition(() => setResources(remoteResources));
+
+   const mergedResources: TranslationResources = {
+    en: { ...defaultResources.en },
+    vi: { ...defaultResources.vi }
+   };
+
+   for (const lang of ['en', 'vi']) {
+    if (remoteResources[lang]) {
+     for (const section in remoteResources[lang]) {
+      mergedResources[lang][section] = {
+       ...(defaultResources[lang]?.[section] || {}),
+       ...remoteResources[lang][section]
+      };
+     }
+    }
+   }
+
+   startTransition(() => setResources(mergedResources));
   }).catch(() => {
    // Keep local fallback resources when Supabase is unavailable.
   });
