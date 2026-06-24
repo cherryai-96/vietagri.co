@@ -30,6 +30,7 @@ export const Header: React.FC = () => {
     { path: '/', label: t('nav.home') },
     { path: '/about', label: t('nav.about') },
     { path: '/services', label: t('nav.services') },
+    { path: '/products', label: t('nav.products') },
     { path: '/viet-wolffia', label: t('nav.wolffia') },
     { path: '/sustainability', label: t('nav.sustainability') },
     { path: '/contact', label: t('nav.contact') },

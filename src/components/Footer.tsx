@@ -77,6 +77,11 @@ export const Footer: React.FC = () => {
               </Link>
             </li>
             <li>
+              <Link to="/products" className="hover:text-gold-champagne hover:underline transition-all duration-200">
+                {t('nav.products')}
+              </Link>
+            </li>
+            <li>
               <Link to="/viet-wolffia" className="hover:text-gold-champagne hover:underline transition-all duration-200">
                 {t('nav.wolffia')}
               </Link>
