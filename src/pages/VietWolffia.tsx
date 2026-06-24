@@ -141,7 +141,7 @@ export const VietWolffia: React.FC = () => {
       desc: 'Infusing traditional breakfast with high-protein microgreens.'
     },
     {
-      src: '/images/supplements/Su1.jpg',
+      src: '/images/supplements/Su3.jpg',
       title: 'Premium Wolffia Supplement',
       category: 'supplement',
       desc: 'High-quality processed Wolffia for everyday nutrition.'
