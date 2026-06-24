@@ -9,7 +9,7 @@ export const Footer: React.FC = () => {
 
   return (
     <footer className="bg-brown-soil text-cream/80 pt-16 pb-8 border-t border-gold-warm/20 font-sans">
-      <div className="max-w-7xl mx-auto px-4 md:px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+      <div className="max-w-7xl mx-auto px-4 md:px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-16">
         
         {/* Column 1: Brand Info */}
         <div className="flex flex-col gap-4 md:items-start items-center">
@@ -100,7 +100,46 @@ export const Footer: React.FC = () => {
           
         </div>
 
-        {/* Column 4: Follow us */}
+        {/* Column 4: Products */}
+        <div className="flex flex-col gap-5">
+          <h3 className="font-serif font-bold text-lg text-gold-champagne tracking-wide border-b border-gold-warm/15 pb-2">
+            {t('nav.products')}
+          </h3>
+          <ul className="flex flex-col gap-3 text-sm font-light">
+            <li>
+              <Link to="/products#beverages" className="hover:text-gold-champagne hover:underline transition-all duration-200">
+                {t('products.tabBeverages')}
+              </Link>
+            </li>
+            <li>
+              <Link to="/products#fruits" className="hover:text-gold-champagne hover:underline transition-all duration-200">
+                {t('products.tabFruits')}
+              </Link>
+            </li>
+            <li>
+              <Link to="/products#spices" className="hover:text-gold-champagne hover:underline transition-all duration-200">
+                {t('products.tabSpices')}
+              </Link>
+            </li>
+            <li>
+              <Link to="/products#grains" className="hover:text-gold-champagne hover:underline transition-all duration-200">
+                {t('products.tabGrains')}
+              </Link>
+            </li>
+            <li>
+              <Link to="/products#superfoods" className="hover:text-gold-champagne hover:underline transition-all duration-200">
+                {t('products.tabSuperfoods')}
+              </Link>
+            </li>
+            <li>
+              <Link to="/products#inputs" className="hover:text-gold-champagne hover:underline transition-all duration-200">
+                {t('products.tabInputs')}
+              </Link>
+            </li>
+          </ul>
+        </div>
+
+        {/* Column 5: Follow us */}
         <div className="flex flex-col gap-5">
           <h3 className="font-serif font-bold text-lg text-gold-champagne tracking-wide border-b border-gold-warm/15 pb-2">
             Follow us

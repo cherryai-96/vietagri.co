@@ -7,10 +7,10 @@ import { Footer } from './components/Footer';
 import { Home } from './pages/Home';
 import { About } from './pages/About';
 import { Services } from './pages/Services';
-import { Products } from './pages/Products';
 import { VietWolffia } from './pages/VietWolffia';
 import { Sustainability } from './pages/Sustainability';
 import { Contact } from './pages/Contact';
+import { Products } from './pages/Products';
 import { AdminRoutes } from './admin/AdminRoutes';
 
 // Scroll to top helper on route navigation
@@ -40,8 +40,8 @@ function App() {
                       <Route path="/" element={<Home />} />
                       <Route path="/about" element={<About />} />
                       <Route path="/services" element={<Services />} />
-                      <Route path="/products" element={<Products />} />
                       <Route path="/viet-wolffia" element={<VietWolffia />} />
+                      <Route path="/products" element={<Products />} />
                       <Route path="/sustainability" element={<Sustainability />} />
                       <Route path="/contact" element={<Contact />} />
                     </Routes>
