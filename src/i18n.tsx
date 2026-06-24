@@ -21,7 +21,6 @@ export const defaultResources: TranslationResources = {
    services: 'Core Services',
    wolffia: 'Viet Wolffia',
    sustainability: 'Sustainability',
-   products: 'Products & Solutions',
    contact: 'Contact Us',
   },
   common: {
@@ -241,14 +240,6 @@ export const defaultResources: TranslationResources = {
    followUs: 'Connect With Us',
    linkedin: 'Follow our corporate updates on LinkedIn',
    youtube: 'View our on‑the‑ground operations on YouTube',
-  },
-  products: {
-   heroTitle: 'Premium Export & Contract Farming',
-   heroSub: 'From the rich highlands to the fertile deltas, VAC provides high-yield, premium-grade agricultural products cultivated for global markets.',
-   coffeeCacaoTitle: 'Specialty Beverages: Coffee & Cacao',
-   coffeeCacaoDesc: 'Vietnam is a global powerhouse in beverage crops. VAC manages contract farming and direct sourcing for high-scoring Arabica and Robusta coffee beans, as well as premium Cacao. We ensure rigorous quality control, from soil nutrition and selective harvesting to specialized fermentation and roasting processes, meeting the exacting standards of international specialty roasters and chocolatiers.',
-   fruitsTitle: 'High-Value Tropical Fruits',
-   fruitsDesc: 'We supply the world with Vietnam’s finest fresh and processed tropical fruits. Our portfolio includes high-demand exports such as Yellow Passion Fruit, Golden Mangoes, Dragon Fruit, and Pomelo. VAC ensures absolute compliance with international phytosanitary requirements, utilizing advanced cold-chain logistics and protective export packaging to guarantee maximum freshness upon arrival.',
   }
  },
  vi: {
@@ -258,7 +249,6 @@ export const defaultResources: TranslationResources = {
    services: 'Dịch Vụ Cốt Lõi',
    wolffia: 'Việt Wolffia',
    sustainability: 'Phát Triển Bền Vững',
-   products: 'Sản Phẩm & Giải Pháp',
    contact: 'Liên Hệ',
   },
   common: {
@@ -478,14 +468,6 @@ export const defaultResources: TranslationResources = {
    followUs: 'Kết Nối Với Chúng Tôi',
    linkedin: 'Theo dõi các thông tin cập nhật trên LinkedIn',
    youtube: 'Khám phá các hoạt động thực địa trên YouTube',
-  },
-  products: {
-   heroTitle: 'Xuất Khẩu Cao Cấp & Canh Tác Hợp Đồng',
-   heroSub: 'Từ những vùng cao nguyên trù phú đến đồng bằng màu mỡ, VAC cung cấp các mặt hàng nông sản cao cấp, năng suất cao phục vụ thị trường toàn cầu.',
-   coffeeCacaoTitle: 'Thức Uống Đặc Sản: Cà Phê & Ca Cao',
-   coffeeCacaoDesc: 'Việt Nam là một cường quốc toàn cầu về cây công nghiệp thức uống. VAC quản lý canh tác hợp đồng và thu mua trực tiếp các loại hạt cà phê Arabica và Robusta điểm cao, cũng như Ca Cao cao cấp. Chúng tôi đảm bảo quy trình kiểm soát chất lượng khắt khe, từ dinh dưỡng đất và thu hoạch chọn lọc đến các quy trình lên men và rang xay chuyên biệt, đáp ứng tiêu chuẩn khắt khe của các nhà rang xay và sản xuất sô cô la quốc tế.',
-   fruitsTitle: 'Trái Cây Nhiệt Đới Giá Trị Cao',
-   fruitsDesc: 'Chúng tôi cung cấp cho thế giới những loại trái cây nhiệt đới tươi và chế biến ngon nhất của Việt Nam. Danh mục của chúng tôi bao gồm các mặt hàng xuất khẩu có nhu cầu cao như Chanh Dây Vàng, Xoài Cát, Thanh Long và Bưởi. VAC đảm bảo tuân thủ tuyệt đối các yêu cầu kiểm dịch thực vật quốc tế, sử dụng hệ thống kho vận lạnh tiên tiến và bao bì xuất khẩu bảo vệ để đảm bảo độ tươi ngon tối đa khi đến nơi.',
   }
  }
 };

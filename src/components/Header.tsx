@@ -29,7 +29,6 @@ export const Header: React.FC = () => {
   const navLinks = [
     { path: '/', label: t('nav.home') },
     { path: '/about', label: t('nav.about') },
-    { path: '/products', label: t('nav.products') },
     { path: '/services', label: t('nav.services') },
     { path: '/viet-wolffia', label: t('nav.wolffia') },
     { path: '/sustainability', label: t('nav.sustainability') },
