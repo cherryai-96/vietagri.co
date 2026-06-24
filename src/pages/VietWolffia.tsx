@@ -291,7 +291,7 @@ export const VietWolffia: React.FC = () => {
       desc: 'A healthy and crispy Wolffia snack.'
     },
     {
-      src: '/images/others/02.jpg',
+      src: '/images/others/o1.jpg',
       title: 'Wolffia Creation 1',
       category: 'others',
       desc: 'Innovative Wolffia-based product.'
