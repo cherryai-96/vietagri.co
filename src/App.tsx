@@ -18,6 +18,10 @@ const ScrollToTop: React.FC = () => {
   const { pathname } = useLocation();
   useEffect(() => {
     window.scrollTo(0, 0);
+    const timeoutId = setTimeout(() => {
+      window.scrollTo(0, 0);
+    }, 10);
+    return () => clearTimeout(timeoutId);
   }, [pathname]);
   return null;
 };
