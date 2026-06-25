@@ -26,7 +26,7 @@ export const Home: React.FC = () => {
   const introImages = [
     { src: '/images/intro_slide_1.png?v=2', alt: 'Agricultural Harvesting & Export Logistics' },
     { src: '/images/intro_slide_2.png?v=2', alt: 'High-tech Agriculture & Electroculture' },
-    { src: '/images/intro_slide_3.png?v=2', alt: 'Organic Consulting & Certification' },
+    { src: '/images/intro_slide_3.png?v=3', alt: 'Organic Consulting & Certification' },
   ];
 
   useEffect(() => {
