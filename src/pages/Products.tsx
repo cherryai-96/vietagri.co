@@ -6,7 +6,7 @@ import { ProductCategory } from '../components/products/ProductCategory';
 import { ProductInputCard } from '../components/products/ProductInputCard';
 import { ProductInquiryForm } from '../components/products/ProductInquiryForm';
 import { ProductCTA } from '../components/products/ProductCTA';
-import { Leaf } from 'lucide-react';
+
 import { motion } from 'framer-motion';
 
 export const Products: React.FC = () => {
