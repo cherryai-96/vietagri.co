@@ -49,16 +49,16 @@ export const ProductCategory: React.FC<ProductCategoryProps> = ({
     >
       {/* Image */}
       <div className={`relative h-72 lg:h-auto min-h-[320px] overflow-hidden group ${reversed ? 'lg:order-2' : 'lg:order-1'}`}>
-        <AnimatePresence initial={false}>
+        <AnimatePresence>
           {displayImages.length > 0 && (
             <motion.img
               key={currentSlide}
               src={displayImages[currentSlide]}
               alt={t(titleKey)}
-              initial={{ x: '100%' }}
-              animate={{ x: 0 }}
-              exit={{ x: '-100%' }}
-              transition={{ duration: 0.5, ease: 'easeInOut' }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.8, ease: 'easeInOut' }}
               className="absolute inset-0 w-full h-full object-cover transition-transform duration-[10000ms] group-hover:scale-105"
             />
           )}
