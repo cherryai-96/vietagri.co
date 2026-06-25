@@ -182,32 +182,37 @@ export const Home: React.FC = () => {
 
 
       {/* Introduction Section */}
-      <section className="py-24 bg-white text-carbon px-4 md:px-8">
+      <section className="py-24 bg-white text-carbon px-4 md:px-8 border-b border-gold-warm/15">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          <div className="flex flex-col gap-6">
-            <h2 className="font-serif text-[2.25rem] leading-[1.15] md:text-4xl lg:text-[2.75rem] font-bold tracking-wide text-forest">
-              The Complete Gateway to Vietnam’s Agricultural Wealth
+          <motion.div 
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: '-100px' }}
+            transition={{ duration: 0.6 }}
+            className="flex flex-col gap-6"
+          >
+            <h2 className="font-serif text-[2rem] leading-[1.1] sm:text-3xl md:text-4xl font-bold tracking-wide text-forest">
+              {t('home.introHeadline')}
             </h2>
-            <p className="text-lg md:text-xl font-medium text-gold-antique">
-              Scaling volume, engineering purity, and powering sustainable global supply chains.
+            <p className="text-lg md:text-xl text-gold-warm font-medium leading-relaxed">
+              {t('home.introSubtitle')}
             </p>
-            <div className="flex flex-col gap-4 text-carbon/80 font-light leading-relaxed">
-              <p>
-                The Vietnam Agriculture Center (VAC) is the definitive hub for large-scale enterprise procurement, premium contract farming, and advanced agritech innovation. Representing the full strength of Vietnam’s massive agricultural sector, we bridge the gap between high-volume commercial production and next-generation ecological science.
-              </p>
-              <p>
-                We do not just move commodities; we transform how they are grown. By integrating cutting-edge Electroculture systems and elite microbial inputs directly into our farming networks, we naturally supercharge crop vitality, maximize yields, and protect the soil. Backed by our independent Organic Consulting &amp; Certification services, VAC provides global corporate buyers with a resilient, transparent, and fully ESG-compliant supply chain from root to export.
-              </p>
+            <div className="w-16 h-0.5 bg-gold-warm/50 rounded-full"></div>
+            <div className="flex flex-col gap-4 text-sm md:text-base text-carbon/80 font-light leading-relaxed text-justify">
+              <p>{t('home.introPara1')}</p>
+              <p>{t('home.introPara2')}</p>
             </div>
-          </div>
-          <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-gold-warm/20 group h-[400px] lg:h-[500px]">
-            <img 
-              src="/images/hightech_farming.png" 
-              alt="Vietnam Agriculture Center Agritech" 
-              className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
-            />
-            <div className="absolute inset-0 bg-gradient-to-tr from-forest/40 to-transparent" />
-          </div>
+          </motion.div>
+          <motion.div 
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: '-100px' }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="relative w-full h-[400px] md:h-[500px] rounded-2xl overflow-hidden shadow-xl border border-gold-warm/20 group"
+          >
+            <img src="/images/hightech_farming.png" alt="High-tech farming in Vietnam" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+            <div className="absolute inset-0 bg-gradient-to-tr from-carbon/20 to-transparent" />
+          </motion.div>
         </div>
       </section>
 

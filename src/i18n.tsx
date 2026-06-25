@@ -50,6 +50,10 @@ export const defaultResources: TranslationResources = {
   home: {
    heroTitle: 'Bridging the <span class="text-transparent bg-clip-text bg-gradient-to-r from-gold-champagne via-gold-warm to-gold-antique">Richness of Vietnamese Agriculture</span> to the World',
    heroSub: 'Your trusted on‑the‑ground partner for premium product sourcing, high‑tech contract farming, and seamless global export logistics.',
+   introHeadline: 'The Complete Gateway to Vietnam’s Agricultural Wealth',
+   introSubtitle: 'Scaling volume, engineering purity, and powering sustainable global supply chains.',
+   introPara1: 'The Vietnam Agriculture Center (VAC) is the definitive hub for large-scale enterprise procurement, premium contract farming, and advanced agritech innovation. Representing the full strength of Vietnam’s massive agricultural sector, we bridge the gap between high-volume commercial production and next-generation ecological science.',
+   introPara2: 'We do not just move commodities; we transform how they are grown. By integrating cutting-edge Electroculture systems and elite microbial inputs directly into our farming networks, we naturally supercharge crop vitality, maximize yields, and protect the soil. Backed by our independent Organic Consulting & Certification services, VAC provides global corporate buyers with a resilient, transparent, and fully ESG-compliant supply chain from root to export.',
    advantageTitle: 'An\u00A0Integrated\u00A0Agricultural<br className="hidden md:block" />Supply\u00A0Chain\u00A0Ecosystem',
    advantageSub: 'At Vietnam Agriculture Center (VAC), we eliminate the friction of international trade. We offer end‑to‑end solutions for global corporations, ensuring food sustainability, security, and uncompromising quality from seed to shipment.',
    
@@ -352,6 +356,10 @@ export const defaultResources: TranslationResources = {
   home: {
    heroTitle: 'Mang <span class="text-transparent bg-clip-text bg-gradient-to-r from-gold-champagne via-gold-warm to-gold-antique">Tinh Hoa Nông Sản Việt</span> Vươn Tầm Thế Giới',
    heroSub: 'Đối tác bản địa đáng tin cậy của bạn trong cung ứng nông sản cao cấp, canh tác hợp đồng công nghệ cao và logistics xuất khẩu toàn cầu.',
+   introHeadline: 'Cửa Ngõ Toàn Diện Vào Sự Trù Phú Của Nông Nghiệp Việt Nam',
+   introSubtitle: 'Mở rộng quy mô, kiến tạo độ tinh khiết và vận hành chuỗi cung ứng toàn cầu bền vững.',
+   introPara1: 'Vietnam Agriculture Center (VAC) là trung tâm hàng đầu về thu mua quy mô lớn cho doanh nghiệp, nông nghiệp hợp đồng cao cấp và đổi mới công nghệ nông nghiệp tiên tiến. Đại diện cho toàn bộ sức mạnh của ngành nông nghiệp rộng lớn của Việt Nam, chúng tôi thu hẹp khoảng cách giữa sản xuất thương mại sản lượng cao và khoa học sinh thái thế hệ mới.',
+   introPara2: 'Chúng tôi không chỉ phân phối nông sản; chúng tôi thay đổi cách chúng được trồng. Bằng cách tích hợp các hệ thống Canh tác điện từ (Electroculture) tiên tiến và vi sinh vật ưu tú trực tiếp vào mạng lưới canh tác, chúng tôi tăng cường sức sống của cây trồng một cách tự nhiên, tối đa hóa năng suất và bảo vệ đất. Được hỗ trợ bởi các dịch vụ Tư vấn & Chứng nhận Hữu cơ độc lập, VAC cung cấp cho các khách hàng doanh nghiệp toàn cầu một chuỗi cung ứng linh hoạt, minh bạch và hoàn toàn tuân thủ ESG từ gốc đến khi xuất khẩu.',
    advantageTitle: 'Hệ\u00A0Sinh\u00A0Thái\u00A0Chuỗi\u00A0Cung\u00A0Ứng<br className="hidden md:block" />Nông\u00A0Nghiệp\u00A0Tích\u00A0Hợp',
    advantageSub: 'Tại Trung Tâm Nông Nghiệp Việt Nam (VAC), chúng tôi gỡ bỏ mọi rào cản trong thương mại quốc tế. Bằng việc cung cấp các giải pháp khép kín cho các tập đoàn đa quốc gia, VAC đảm bảo tính bền vững, an ninh lương thực và chất lượng tuyệt đối từ hạt giống đến khi giao hàng.',
    
