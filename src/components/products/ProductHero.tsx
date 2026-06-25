@@ -77,12 +77,12 @@ export const ProductHero: React.FC = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.7 }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-4 mt-8 border-t border-white/15 pt-8 w-full max-w-3xl"
+          className="flex flex-wrap justify-center md:flex-nowrap gap-x-6 md:gap-x-10 gap-y-4 mt-8 border-t border-white/15 pt-8 w-full max-w-5xl mx-auto"
         >
           {['badge1', 'badge2', 'badge3', 'badge4'].map((badge, idx) => (
             <div key={idx} className="flex items-center justify-center gap-2">
               <div className="w-1.5 h-1.5 rounded-full bg-gold-warm shrink-0" />
-              <span className="font-sans text-xs font-semibold tracking-wide text-cream/80">{t(`products.${badge}`)}</span>
+              <span className="font-sans text-sm whitespace-nowrap font-semibold tracking-wide text-cream/80">{t(`products.${badge}`)}</span>
             </div>
           ))}
         </motion.div>
