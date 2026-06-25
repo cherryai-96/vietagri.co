@@ -24,8 +24,9 @@ export const Products: React.FC = () => {
       id: 'fruits',
       images: [
         '/images/products/tropical_fruits.png',
-        '/images/products/coconut.png',
-        '/images/products/durian.png'
+        '/images/products/IMG_7958.JPG',
+        '/images/products/IMG_7960.JPG',
+        '/images/products/IMG_7961.JPG'
       ],
       titleKey: 'products.cat2Title',
       descKeys: ['products.cat2Desc1', 'products.cat2Desc2'],
