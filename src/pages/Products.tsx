@@ -18,7 +18,7 @@ export const Products: React.FC = () => {
       image: '/images/products/coffee_cacao.png',
       titleKey: 'products.cat1Title',
       descKeys: ['products.cat1Desc1', 'products.cat1Desc2'],
-      tags: ['Coffee', 'Cacao', 'Single-Origin', 'Traceable Supply'],
+      tags: ['Coffee', 'Cacao'],
     },
     {
       id: 'fruits',
@@ -95,13 +95,7 @@ export const Products: React.FC = () => {
             transition={{ duration: 0.7 }}
             className="flex flex-col gap-4 mb-16 md:mb-20"
           >
-            <div className="flex items-center gap-2">
-              <Leaf size={16} className="text-forest" />
-              <span className="font-sans font-bold text-xs uppercase tracking-widest text-forest">
-                {t('products.part1Label')}
-              </span>
-            </div>
-            <h2 className="font-serif font-bold text-[2rem] leading-[1.1] sm:text-3xl md:text-4xl lg:text-[2.75rem] tracking-wide text-forest max-w-2xl">
+            <h2 className="font-serif font-bold text-[2rem] leading-[1.1] sm:text-3xl md:text-4xl lg:text-[2.75rem] tracking-wide text-forest w-full xl:whitespace-nowrap">
               {t('products.part1Title')}
             </h2>
             <p className="font-sans font-light text-carbon/70 text-sm md:text-base leading-relaxed max-w-3xl">
@@ -158,13 +152,7 @@ export const Products: React.FC = () => {
             transition={{ duration: 0.7 }}
             className="flex flex-col gap-4 mb-16 md:mb-20"
           >
-            <div className="flex items-center gap-2">
-              <Leaf size={16} className="text-forest" />
-              <span className="font-sans font-bold text-xs uppercase tracking-widest text-forest">
-                {t('products.part2Label')}
-              </span>
-            </div>
-            <h2 className="font-serif font-bold text-[2rem] leading-[1.1] sm:text-3xl md:text-4xl lg:text-[2.75rem] tracking-wide text-forest max-w-2xl">
+            <h2 className="font-serif font-bold text-[2rem] leading-[1.1] sm:text-3xl md:text-4xl lg:text-[2.75rem] tracking-wide text-forest w-full xl:whitespace-nowrap">
               {t('products.part2Title')}
             </h2>
             <p className="font-sans font-light text-carbon/70 text-sm md:text-base leading-relaxed max-w-3xl">
