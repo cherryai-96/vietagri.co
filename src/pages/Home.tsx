@@ -210,7 +210,7 @@ export const Home: React.FC = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="relative w-full h-[400px] md:h-[500px] rounded-2xl overflow-hidden shadow-xl border border-gold-warm/20 group"
           >
-            <img src="/images/hightech_farming.png" alt="High-tech farming in Vietnam" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+            <img src="/images/intro_hightech_farm.png" alt="High-tech farming in Vietnam" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
             <div className="absolute inset-0 bg-gradient-to-tr from-carbon/20 to-transparent" />
           </motion.div>
         </div>
