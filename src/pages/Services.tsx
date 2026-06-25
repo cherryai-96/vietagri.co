@@ -30,9 +30,25 @@ export const Services: React.FC = () => {
       if (!isNaN(tabId)) {
         setActiveTab(tabId);
         setExpandedTabs(prev => prev.includes(tabId) ? prev : [...prev, tabId]);
-        // Scroll to top of the page smoothly when navigating to a tab
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        
+        // Scroll to the specific tab smoothly
+        setTimeout(() => {
+          const isMobile = window.innerWidth < 1024;
+          const elementId = isMobile ? `tab-button-${tabId}` : 'services-tabs';
+          const element = document.getElementById(elementId);
+          if (element) {
+            const headerOffset = 100;
+            const elementPosition = element.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.scrollY - headerOffset;
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: 'smooth'
+            });
+          }
+        }, 150);
       }
+    } else {
+      window.scrollTo(0, 0);
     }
   }, [location.search]);
 
@@ -300,7 +316,7 @@ export const Services: React.FC = () => {
       </section>
 
       {/* Interactive Tabs Section */}
-      <section className="pb-24 bg-cream text-carbon px-4 md:px-8">
+      <section id="services-tabs" className="pb-24 bg-cream text-carbon px-4 md:px-8">
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-12 items-start">
           
           {/* Left: Tab Selectors & Mobile Accordion Content */}
@@ -308,6 +324,7 @@ export const Services: React.FC = () => {
             {pillars.map((tab) => (
               <React.Fragment key={tab.id}>
                 <button
+                  id={`tab-button-${tab.id}`}
                   onClick={() => handleTabClick(tab.id)}
                   className={`w-full text-left p-6 rounded-xl border transition-all duration-300 flex items-start gap-4 cursor-pointer ${
                     isTabActive(tab.id)
