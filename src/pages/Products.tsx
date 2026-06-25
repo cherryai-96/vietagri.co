@@ -22,10 +22,14 @@ export const Products: React.FC = () => {
     },
     {
       id: 'fruits',
-      image: '/images/products/tropical_fruits.png',
+      images: [
+        '/images/products/tropical_fruits.png',
+        '/images/products/coconut.png',
+        '/images/products/durian.png'
+      ],
       titleKey: 'products.cat2Title',
       descKeys: ['products.cat2Desc1', 'products.cat2Desc2'],
-      tags: ['Passion Fruit', 'Mango', 'Banana', 'Frozen Pulp'],
+      tags: ['Passion Fruit', 'Mango', 'Banana', 'Coconut', 'Durian', 'Pineapple'],
     },
     {
       id: 'spices',
@@ -110,6 +114,7 @@ export const Products: React.FC = () => {
                 key={cat.id}
                 id={cat.id}
                 image={cat.image}
+                images={cat.images}
                 titleKey={cat.titleKey}
                 descKeys={cat.descKeys}
                 tags={cat.tags}

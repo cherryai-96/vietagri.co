@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useTranslation } from '../../i18n';
 import { ArrowRight } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 
 interface ProductCategoryProps {
   id: string;
-  image: string;
+  image?: string;
+  images?: string[];
   titleKey: string;
   descKeys: string[];
   tags: string[];
@@ -15,12 +16,24 @@ interface ProductCategoryProps {
 export const ProductCategory: React.FC<ProductCategoryProps> = ({
   id,
   image,
+  images,
   titleKey,
   descKeys,
   tags,
   reversed = false,
 }) => {
   const { t } = useTranslation();
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const displayImages = images || (image ? [image] : []);
+
+  useEffect(() => {
+    if (displayImages.length <= 1) return;
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % displayImages.length);
+    }, 4000);
+    return () => clearInterval(timer);
+  }, [displayImages.length]);
 
   return (
     <motion.div
@@ -33,11 +46,32 @@ export const ProductCategory: React.FC<ProductCategoryProps> = ({
     >
       {/* Image */}
       <div className={`relative h-72 lg:h-auto min-h-[320px] overflow-hidden group ${reversed ? 'lg:order-2' : 'lg:order-1'}`}>
-        <img
-          src={image}
-          alt={t(titleKey)}
-          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-        />
+        <AnimatePresence mode="wait">
+          {displayImages.length > 0 && (
+            <motion.img
+              key={currentSlide}
+              src={displayImages[currentSlide]}
+              alt={t(titleKey)}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 1 }}
+              className="absolute inset-0 w-full h-full object-cover transition-transform duration-[10000ms] group-hover:scale-105"
+            />
+          )}
+        </AnimatePresence>
+        {displayImages.length > 1 && (
+          <div className="absolute top-4 right-4 flex gap-1 z-20">
+            {displayImages.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => setCurrentSlide(i)}
+                className={`h-1.5 rounded-full transition-all duration-300 ${i === currentSlide ? 'bg-gold-warm w-4' : 'bg-white/50 w-1.5 hover:bg-white/80'}`}
+                aria-label={`Go to slide ${i + 1}`}
+              />
+            ))}
+          </div>
+        )}
         <div className="absolute inset-0 bg-gradient-to-t from-carbon/20 to-transparent" />
         {/* Tags overlay */}
         <div className="absolute bottom-4 left-4 right-4 flex gap-2 flex-wrap">
