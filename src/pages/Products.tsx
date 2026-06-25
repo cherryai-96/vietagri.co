@@ -57,7 +57,7 @@ export const Products: React.FC = () => {
   const inputProducts = [
     {
       id: 'soilz',
-      image: '/images/products/soil_activator.png',
+      image: '/images/products/bio_soilz_logo.png',
       titleKey: 'products.input1Title',
       descKey: 'products.input1Desc',
       benefitsKeys: ['products.input1Ben1', 'products.input1Ben2', 'products.input1Ben3', 'products.input1Ben4'],
