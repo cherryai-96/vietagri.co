@@ -36,7 +36,7 @@ export const Products: React.FC = () => {
       image: '/images/products/spices_nuts.png',
       titleKey: 'products.cat3Title',
       descKeys: ['products.cat3Desc1', 'products.cat3Desc2'],
-      tags: ['Black Pepper', 'Cinnamon', 'Cashews', 'Essential Oils'],
+      tags: ['Cashews', 'Black Pepper', 'Cinnamon'],
     },
     {
       id: 'grains',
