@@ -43,7 +43,7 @@ export const Products: React.FC = () => {
       image: '/images/products/premium_rice.png',
       titleKey: 'products.cat4Title',
       descKeys: ['products.cat4Desc1'],
-      tags: ['ST25 Rice', 'Organic Protocols', 'Award-Winning', 'Bulk Supply'],
+      tags: ['ST25 Rice'],
     },
     {
       id: 'superfoods',
