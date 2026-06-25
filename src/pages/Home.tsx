@@ -49,37 +49,37 @@ export const Home: React.FC = () => {
       icon: <Globe className="text-gold-warm w-8 h-8" />,
       title: t('home.sourcingTitle'),
       desc: t('home.sourcingDesc'),
-      link: '/services',
+      link: '/services?tab=0',
     },
     {
       icon: <TrendingUp className="text-gold-warm w-8 h-8" />,
       title: t('home.farmingTitle'),
       desc: t('home.farmingDesc'),
-      link: '/services',
+      link: '/services?tab=1',
     },
     {
       icon: <Award className="text-gold-warm w-8 h-8" />,
       title: t('home.organicTitle'),
       desc: t('home.organicDesc'),
-      link: '/services',
+      link: '/services?tab=2',
     },
     {
       icon: <Cpu className="text-gold-warm w-8 h-8" />,
       title: t('home.agritechTitle'),
       desc: t('home.agritechDesc'),
-      link: '/services',
+      link: '/services?tab=3',
     },
     {
       icon: <ShieldCheck className="text-gold-warm w-8 h-8" />,
       title: t('home.qaTitle'),
       desc: t('home.qaDesc'),
-      link: '/services',
+      link: '/services?tab=4',
     },
     {
       icon: <Truck className="text-gold-warm w-8 h-8" />,
       title: t('home.logisticsTitle'),
       desc: t('home.logisticsDesc'),
-      link: '/services',
+      link: '/services?tab=5',
     },
   ];
 

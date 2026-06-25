@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useTranslation } from '../i18n';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { 
   Globe, 
   TrendingUp, 
@@ -20,6 +20,21 @@ export const Services: React.FC = () => {
   const { t } = useTranslation();
   const [activeTab, setActiveTab] = useState<number>(0);
   const [expandedTabs, setExpandedTabs] = useState<number[]>([0]);
+  const location = useLocation();
+
+  React.useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const tabParam = params.get('tab');
+    if (tabParam !== null) {
+      const tabId = parseInt(tabParam, 10);
+      if (!isNaN(tabId)) {
+        setActiveTab(tabId);
+        setExpandedTabs(prev => prev.includes(tabId) ? prev : [...prev, tabId]);
+        // Scroll to top of the page smoothly when navigating to a tab
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }
+  }, [location.search]);
 
   const isTabActive = (id: number) => {
     if (typeof window !== 'undefined' && window.innerWidth < 1024) {
