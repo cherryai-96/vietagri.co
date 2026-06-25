@@ -87,7 +87,7 @@ export const Home: React.FC = () => {
     <div className="font-sans overflow-hidden">
       <SEO 
         title="Vietnam Agriculture Center (VAC) | Premium Sourcing & Contract Farming"
-        description="Vietnam Agriculture Center (VAC) is your trusted on-the-ground partner for premium product sourcing, high-tech contract farming, export quality assurance, and high-purity Viet Wolffia watermeal supply."
+        description="Vietnam Agriculture Center (VAC) is your trusted on-the-ground partner for premium product sourcing, high-tech contract farming, export quality assurance, and high-purity Việt Wolffia watermeal supply."
         url="https://vietagri.co"
         schema={{
           "@context": "https://schema.org",
@@ -96,7 +96,7 @@ export const Home: React.FC = () => {
           "alternateName": "VAC",
           "url": "https://vietagri.co",
           "logo": "https://vietagri.co/Logo/Vietgari/VAC%20logo4.png",
-          "description": "Premium B2B Agricultural Sourcing, Contract Farming, and exclusive supplier of Viet Wolffia.",
+          "description": "Premium B2B Agricultural Sourcing, Contract Farming, and exclusive supplier of Việt Wolffia.",
           "address": {
             "@type": "PostalAddress",
             "addressCountry": "VN"
@@ -225,7 +225,7 @@ export const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* Flagship Spotlight: Viet Wolffia - Slider Layout */}
+      {/* Flagship Spotlight: Việt Wolffia - Slider Layout */}
       <section className="py-24 bg-cream border-t border-gold-warm/15 px-4 md:px-8 overflow-hidden">
         <div className="max-w-7xl mx-auto flex flex-col items-center relative group">
           
@@ -398,7 +398,7 @@ export const Home: React.FC = () => {
                 <select className="bg-carbon/50 border border-gold-warm/25 rounded px-3 py-2 text-cream focus:outline-none focus:border-gold-warm/75">
                   <option value="sourcing" className="bg-brown-soil">Global Sourcing Services</option>
                   <option value="farming" className="bg-brown-soil">Contract Farming</option>
-                  <option value="wolffia" className="bg-brown-soil">Viet Wolffia Supply</option>
+                  <option value="wolffia" className="bg-brown-soil">Việt Wolffia Supply</option>
                   <option value="logistics" className="bg-brown-soil">Export Logistics & QC</option>
                 </select>
               </div>

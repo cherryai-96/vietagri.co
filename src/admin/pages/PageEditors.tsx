@@ -60,7 +60,7 @@ function PageSpecificPanel({ slug }: { slug: PageSlug }) {
         <div className="mt-4 grid gap-4 lg:grid-cols-2">
           <FormField label="Hero eyebrow" value="Vietnam Agriculture Center" />
           <FormField label="Overlay darkness slider" value="42%" help="Adjust readability of text over the hero image." />
-          <TextareaField label="Trust indicators" value="Export-ready supply • High-tech cultivation • B2B documentation • Viet Wolffia innovation" />
+          <TextareaField label="Trust indicators" value="Export-ready supply • High-tech cultivation • B2B documentation • Việt Wolffia innovation" />
           <UploadField type="image" />
         </div>
       </div>
@@ -70,7 +70,7 @@ function PageSpecificPanel({ slug }: { slug: PageSlug }) {
   if (slug === 'viet-wolffia') {
     return (
       <div className={`${cardClass} p-4`}>
-        <h3 className="font-serif text-2xl font-bold text-[#0B120C]">Viet Wolffia product manager</h3>
+        <h3 className="font-serif text-2xl font-bold text-[#0B120C]">Việt Wolffia product manager</h3>
         <div className="mt-4 grid gap-4 lg:grid-cols-2">
           {['Fresh Biomass', 'Dried Wolffia', 'Roasted Wolffia', 'Bio-Balance Animal Nutrition', 'Custom Bio-Feed Formulations'].map((product) => (
             <div key={product} className="rounded-lg border border-[#E5E0D5] bg-[#F8F2E6]/50 p-4">

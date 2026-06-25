@@ -46,7 +46,7 @@ export const Products: React.FC = () => {
       image: '/images/products/wolffia_superfood.png',
       titleKey: 'products.cat5Title',
       descKeys: ['products.cat5Desc1', 'products.cat5Desc2'],
-      tags: ['Viet Wolffia', 'Watermeal', 'Superfood Powder', 'Bio-Balance'],
+      tags: ['Việt Wolffia', 'Watermeal', 'Superfood Powder', 'Bio-Balance'],
     },
   ];
 

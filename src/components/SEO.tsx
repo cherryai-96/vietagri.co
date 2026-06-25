@@ -14,7 +14,7 @@ interface SEOProps {
 export const SEO: React.FC<SEOProps> = ({
   title,
   description,
-  keywords = 'Vietnam Agriculture Center, VAC, agricultural export, Viet Wolffia, contract farming Vietnam, global sourcing Vietnam',
+  keywords = 'Vietnam Agriculture Center, VAC, agricultural export, Việt Wolffia, contract farming Vietnam, global sourcing Vietnam',
   url = 'https://vietagri.co',
   image = 'https://vietagri.co/Logo/Vietgari/VAC%20logo4.png',
   schema,

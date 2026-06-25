@@ -28,7 +28,7 @@ const translations: Record<string, string> = {
   Home: 'Trang chủ',
   'About Us': 'Giới thiệu',
   'Core Services': 'Dịch vụ cốt lõi',
-  'Viet Wolffia': 'Việt Wolffia',
+  'Việt Wolffia': 'Việt Wolffia',
   Sustainability: 'Bền vững',
   'Contact Us': 'Liên hệ',
   Footer: 'Chân trang',

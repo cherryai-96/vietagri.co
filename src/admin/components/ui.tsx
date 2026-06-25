@@ -395,7 +395,7 @@ export function SEOEditorPlaceholder({ pageTitle }: { pageTitle: string }) {
       <div className="mt-5 grid gap-4 lg:grid-cols-2">
         <FormField label="SEO title" value={`${pageTitle} | Vietnam Agriculture Center`} help="Recommended length: 50-60 characters." />
         <FormField label="URL slug" value={pageTitle === 'Home' ? '/' : `/${pageTitle.toLowerCase().replace(/\s+/g, '-')}`} />
-        <TextareaField label="Meta description" value="Premium B2B agriculture sourcing, contract farming, export quality assurance, logistics, and Viet Wolffia innovation from Vietnam." help="Recommended length: 140-160 characters." />
+        <TextareaField label="Meta description" value="Premium B2B agriculture sourcing, contract farming, export quality assurance, logistics, and Việt Wolffia innovation from Vietnam." help="Recommended length: 140-160 characters." />
         <FormField label="Focus keywords" value="Vietnam agriculture sourcing, Wolffia superfood, contract farming Vietnam" />
         <UploadField type="image" />
         <div className="grid gap-3">

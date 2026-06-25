@@ -109,7 +109,7 @@ export const Contact: React.FC = () => {
     <div className="font-sans overflow-hidden bg-cream text-carbon">
       <SEO 
         title="Contact Us | Vietnam Agriculture Center"
-        description="Get in touch with Vietnam Agriculture Center for B2B agricultural sourcing, contract farming inquiries, and Viet Wolffia supply. We are ready to assist you."
+        description="Get in touch with Vietnam Agriculture Center for B2B agricultural sourcing, contract farming inquiries, and Việt Wolffia supply. We are ready to assist you."
         url="https://vietagri.co/contact"
         schema={{
           "@context": "https://schema.org",

@@ -24,7 +24,7 @@ test('buildLeadInsertPayload maps contact form data into lead row shape', () => 
     email: 'jane@example.com',
     phone: '+1 555 1000',
     destination: 'United States',
-    interests: ['Viet Wolffia', 'Export Logistics'],
+    interests: ['Việt Wolffia', 'Export Logistics'],
     department: 'sourcing',
     projectDetails: 'Need specs and sample lead time.',
   });
@@ -32,7 +32,7 @@ test('buildLeadInsertPayload maps contact form data into lead row shape', () => 
   assert.equal(payload.name, 'Jane Doe');
   assert.equal(payload.company, 'Global Foods');
   assert.equal(payload.country, 'United States');
-  assert.equal(payload.area, 'Viet Wolffia, Export Logistics');
+  assert.equal(payload.area, 'Việt Wolffia, Export Logistics');
   assert.equal(payload.status, 'New');
 });
 

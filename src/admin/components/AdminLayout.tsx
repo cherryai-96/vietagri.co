@@ -44,7 +44,7 @@ const sidebarItems: SidebarItem[] = [
       { label: 'Home', href: '/admin/pages/home' },
       { label: 'About Us', href: '/admin/pages/about' },
       { label: 'Core Services', href: '/admin/pages/core-services' },
-      { label: 'Viet Wolffia', href: '/admin/pages/viet-wolffia' },
+      { label: 'Việt Wolffia', href: '/admin/pages/viet-wolffia' },
       { label: 'Sustainability', href: '/admin/pages/sustainability' },
       { label: 'Contact Us', href: '/admin/pages/contact' },
       { label: 'Footer', href: '/admin/settings' },
@@ -73,7 +73,7 @@ const sidebarItems: SidebarItem[] = [
     ],
   },
   {
-    label: 'Viet Wolffia',
+    label: 'Việt Wolffia',
     href: '/admin/pages/viet-wolffia',
     icon: ShieldCheck,
     children: [

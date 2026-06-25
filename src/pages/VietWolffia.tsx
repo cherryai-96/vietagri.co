@@ -475,14 +475,14 @@ export const VietWolffia: React.FC = () => {
   return (
     <div className="font-sans">
       <SEO 
-        title="Viet Wolffia | Premium Watermeal Superfood | Vietnam Agriculture Center"
-        description="Discover Viet Wolffia (Watermeal) - the world's smallest flowering plant packed with plant-based protein, vitamins, and minerals. Available in Fresh and Dried formats."
+        title="Việt Wolffia | Premium Watermeal Superfood | Vietnam Agriculture Center"
+        description="Discover Việt Wolffia (Watermeal) - the world's smallest flowering plant packed with plant-based protein, vitamins, and minerals. Available in Fresh and Dried formats."
         url="https://vietagri.co/viet-wolffia"
         image="https://vietagri.co/images/products/VW1.png"
         schema={{
           "@context": "https://schema.org",
           "@type": "WebPage",
-          "name": "Viet Wolffia",
+          "name": "Việt Wolffia",
           "description": "Premium Watermeal Superfood",
           "publisher": {
             "@type": "Organization",
@@ -720,7 +720,7 @@ export const VietWolffia: React.FC = () => {
                 Portfolio
               </span>
               <h2 className="font-serif text-[2rem] leading-[1.1] sm:text-4xl md:text-5xl font-bold text-carbon">
-                Viet Wolffia Products
+                Việt Wolffia Products
               </h2>
             </div>
             <a 

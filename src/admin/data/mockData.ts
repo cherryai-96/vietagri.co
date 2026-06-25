@@ -31,7 +31,7 @@ export const leads: Lead[] = [
     country: 'South Korea',
     area: 'Wolffia samples and specifications',
     message: 'We are evaluating bulk Wolffia samples for a plant-based food line and need specs, lead time, and MOQ.',
-    sourcePage: 'Viet Wolffia',
+    sourcePage: 'Việt Wolffia',
     status: 'New',
     assignedTo: 'Sales Manager',
     lastUpdated: '2026-06-19',
@@ -118,9 +118,9 @@ export const documents: DocumentItem[] = [
   },
   {
     id: 'doc-002',
-    title: 'Viet Wolffia Technical Specification Sheet.pdf',
+    title: 'Việt Wolffia Technical Specification Sheet.pdf',
     description: 'Product specs, use cases, and sourcing details for Wolffia buyers.',
-    category: 'Viet Wolffia',
+    category: 'Việt Wolffia',
     language: 'English',
     status: 'Published',
     requireEmail: true,
@@ -249,7 +249,7 @@ export const editablePages: EditablePage[] = [
         id: 'home-hero',
         label: 'Hero Section',
         heading: 'Connecting local agricultural potential with global demand.',
-        subheading: 'Global sourcing, high-tech farming partnerships, export quality assurance, and Viet Wolffia innovation from Vietnam.',
+        subheading: 'Global sourcing, high-tech farming partnerships, export quality assurance, and Việt Wolffia innovation from Vietnam.',
         body: 'Position VAC as a trusted B2B gateway for international buyers, investors, and food innovation teams.',
         buttonText: 'Partner With Us',
         buttonLink: '/contact',
@@ -313,7 +313,7 @@ export const editablePages: EditablePage[] = [
   },
   {
     slug: 'viet-wolffia',
-    title: 'Viet Wolffia',
+    title: 'Việt Wolffia',
     description: 'Product lines, applications, technical documents, FAQ, and gallery.',
     status: 'Published',
     missingVietnamese: 3,
@@ -322,7 +322,7 @@ export const editablePages: EditablePage[] = [
       {
         id: 'wolffia-products',
         label: 'Product Lines & Applications',
-        heading: 'Viet Wolffia for superfood and bio-feed innovation.',
+        heading: 'Việt Wolffia for superfood and bio-feed innovation.',
         subheading: 'Fresh biomass, dried Wolffia, roasted Wolffia, and custom formulations.',
         body: 'Manage product descriptions, application sectors, technical PDFs, and sample request CTAs.',
         buttonText: 'Request Wolffia Samples & Specs',
@@ -380,15 +380,15 @@ export const seoSettings: SeoPageSetting[] = [
   {
     page: 'Home',
     title: 'Vietnam Agriculture Center | Global Agricultural Sourcing Vietnam',
-    description: 'Premium B2B agriculture sourcing, contract farming, export quality assurance, logistics, and Viet Wolffia innovation from Vietnam.',
+    description: 'Premium B2B agriculture sourcing, contract farming, export quality assurance, logistics, and Việt Wolffia innovation from Vietnam.',
     slug: '/',
     focusKeywords: 'Vietnam agriculture sourcing, Vietnam agricultural exporter, Wolffia superfood',
     indexed: true,
     sitemap: true,
   },
   {
-    page: 'Viet Wolffia',
-    title: 'Viet Wolffia Superfood Supplier | Vietnam Agriculture Center',
+    page: 'Việt Wolffia',
+    title: 'Việt Wolffia Superfood Supplier | Vietnam Agriculture Center',
     description: 'Wolffia Globosa product lines, applications, technical documents, and sample requests for international B2B buyers.',
     slug: '/viet-wolffia',
     focusKeywords: 'Wolffia Globosa supplier, Wolffia superfood, plant-based protein Vietnam',
@@ -431,7 +431,7 @@ export const activityItems = [
   'VAC Corporate Profile downloaded by a US buyer',
   'Home page Hero Section updated by Content Editor',
   'Sales Manager changed lead status to Qualified',
-  'Marketing Editor uploaded Viet Wolffia Technical Specification Sheet',
+  'Marketing Editor uploaded Việt Wolffia Technical Specification Sheet',
 ];
 
 export const countryLeadData = [

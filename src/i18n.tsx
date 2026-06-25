@@ -19,7 +19,7 @@ export const defaultResources: TranslationResources = {
    home: 'Home',
    about: 'About Us',
    services: 'Core Services',
-   wolffia: 'Viet Wolffia',
+   wolffia: 'Việt Wolffia',
    products: 'Products',
    sustainability: 'Sustainability',
    contact: 'Contact Us',
@@ -65,9 +65,9 @@ export const defaultResources: TranslationResources = {
    logisticsTitle: 'Logistics & Documentation',
    logisticsDesc: 'Zero friction at the border. We navigate the complexities of international trade, managing phytosanitary certifications, customized bulk packaging solutions, and customs clearance for highly regulated markets.',
    
-   spotlightTitle: 'Innovation in Action: The Viet Wolffia Model',
+   spotlightTitle: 'Innovation in Action: The Việt Wolffia Model',
    spotlightSub: 'Demonstrating High‑Tech, Export-Ready Cultivation',
-   spotlightDesc1: 'As integrated agricultural operators, we practice what we preach. The Viet Wolffia facility serves as VAC’s flagship model for advanced farming, demonstrating our capacity to deploy and manage highly sophisticated, sustainable agricultural technology.',
+   spotlightDesc1: 'As integrated agricultural operators, we practice what we preach. The Việt Wolffia facility serves as VAC’s flagship model for advanced farming, demonstrating our capacity to deploy and manage highly sophisticated, sustainable agricultural technology.',
    spotlightDesc2: 'By cultivating Wolffia Globosa (Watermeal), we produce a revolutionary plant-based protein source. More importantly, we showcase the exact operational standards required to meet the rigorous demands of global human consumption and specialized animal nutrition.',
    
    tech1Title: 'Environmentally Controlled Cultivation',
@@ -144,13 +144,13 @@ export const defaultResources: TranslationResources = {
    ctaSub: 'Whether you require specialized sourcing, a customized contract farming proposal, or expert logistics support, VAC is ready to deploy our resources for your success.',
   },
   wolffia: {
-   heroTitle: 'Viet Wolffia Superfood',
+   heroTitle: 'Việt Wolffia Superfood',
    heroSub: 'Cultivating the future of protein. High‑tech, highly scalable Wolffia Globosa production for global human and animal nutrition.',
    introTitle: 'The World’s Smallest,<br className="hidden lg:block" />Most Nutrient-Dense Plant',
    introText1: 'Wolffia globosa (commonly known as Watermeal) is an aquatic marvel. As the smallest flowering plant on Earth, it packs an unprecedented nutritional profile, offering exceptional levels of plant-based protein, essential amino acids, and vital micronutrients.',
-   introText2: 'At VAC, we recognized the transformative potential of Wolffia early on. Through our flagship Viet Wolffia farm, we have developed a scalable, commercially viable model to supply this revolutionary biomass to global markets, catering to both premium human superfood sectors and high-yield animal agriculture.',
+   introText2: 'At VAC, we recognized the transformative potential of Wolffia early on. Through our flagship Việt Wolffia farm, we have developed a scalable, commercially viable model to supply this revolutionary biomass to global markets, catering to both premium human superfood sectors and high-yield animal agriculture.',
    cultTitle: 'Precision Agriculture in<br />Clean & Controlled Environments',
-   cultDesc: 'The Viet Wolffia operation is built on a foundation of rigorous water chemistry and optimized environmental controls. We have engineered a highly efficient, scalable farming model that maximizes natural resources while guaranteeing absolute purity.',
+   cultDesc: 'The Việt Wolffia operation is built on a foundation of rigorous water chemistry and optimized environmental controls. We have engineered a highly efficient, scalable farming model that maximizes natural resources while guaranteeing absolute purity.',
    
    feature1Title: 'Optimized Canvas Pond Architecture',
    feature1Desc: 'Our Wolffia is cultivated in standardized canvas raceway ponds. This specific dimension allows for optimal water flow, nutrient distribution, and highly efficient harvesting.',
@@ -159,10 +159,10 @@ export const defaultResources: TranslationResources = {
    feature2Desc: 'Rather than utilizing restrictive enclosed greenhouses, our ponds are situated beneath air and light controlled specialized, simple netting structures. This strategic setup harnesses maximum natural Vietnamese sunlight—crucial for rapid Wolffia biomass replication—while protecting the crop from extreme weather and physical contaminants.',
    
    feature3Title: 'Uncompromising Water Purity',
-   feature3Desc: 'Wolffia absorbs nutrients directly from its aquatic environment, meaning water quality is paramount. Viet Wolffia utilizes industrial-grade water filtration systems paired with continuous UV sterilization. This ensures a 100% clean, pathogen-free growing environment, meeting the strictest international food-grade standards.',
+   feature3Desc: 'Wolffia absorbs nutrients directly from its aquatic environment, meaning water quality is paramount. Việt Wolffia utilizes industrial-grade water filtration systems paired with continuous UV sterilization. This ensures a 100% clean, pathogen-free growing environment, meeting the strictest international food-grade standards.',
    
    appTitle: 'Versatile Nutrition for a Hungry World',
-   appSub: 'Viet Wolffia is processed to serve diverse global supply chains, from high-end health food brands to commercial aquaculture.',
+   appSub: 'Việt Wolffia is processed to serve diverse global supply chains, from high-end health food brands to commercial aquaculture.',
    
    humanTitle: '1. Premium Human Consumption',
    humanDesc: 'Cultivated under strict food-safe conditions, our Wolffia is an ideal ingredient for the plant-based protein market, nutritional supplements, and functional foods.',
@@ -174,11 +174,11 @@ export const defaultResources: TranslationResources = {
    feedTarget: 'Target Sectors: Highly digestible, bio-optimized feed mixes engineered specifically for commercial aquaculture, high-yield livestock, aviary and bird sectors, commercial snail farming, and specialized pet nutrition.',
    
    rdTitle: '3. Continuous R&D',
-   rdDesc: 'Viet Wolffia serves as VAC’s innovation hub. Utilizing the exact same precision water controls and clean-environment standards, we are actively running commercial trial projects for high-value greens, ensuring our product catalog is always evolving alongside global dietary trends.',
+   rdDesc: 'Việt Wolffia serves as VAC’s innovation hub. Utilizing the exact same precision water controls and clean-environment standards, we are actively running commercial trial projects for high-value greens, ensuring our product catalog is always evolving alongside global dietary trends.',
    
-   ctaTitle: 'Procure Viet Wolffia for Your Operations',
+   ctaTitle: 'Procure Việt Wolffia for Your Operations',
    ctaSub: 'We are equipped to handle bulk industrial orders and custom bio-feed formulations. Contact our commercial team to request technical specification sheets, nutritional analyses, or to discuss bulk export logistics.',
-   galleryTitle: 'Viet Wolffia Recipe & Operations Gallery',
+   galleryTitle: 'Việt Wolffia Recipe & Operations Gallery',
   },
   sustainability: {
    heroTitle: 'Cultivating a Resilient Global Supply Chain',
@@ -303,7 +303,7 @@ export const defaultResources: TranslationResources = {
    interest1: 'Global Agricultural Sourcing (Raw or Processed)',
    interest2: 'Custom Contract Farming / Investment',
    interest3: 'Organic & Clean‑Label Certification Consulting',
-   interest4: 'Viet Wolffia Superfood Supply',
+   interest4: 'Việt Wolffia Superfood Supply',
    interest5: '“Bio‑Balance” & Animal Nutrition Supply',
    interest6: 'Export Logistics Services',
    interest7: 'Others',
