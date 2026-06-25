@@ -15,6 +15,7 @@ import {
   ChevronLeft,
   ChevronRight,
   CheckCircle,
+  Award,
 } from 'lucide-react';
 
 export const Home: React.FC = () => {
@@ -54,6 +55,18 @@ export const Home: React.FC = () => {
       icon: <TrendingUp className="text-gold-warm w-8 h-8" />,
       title: t('home.farmingTitle'),
       desc: t('home.farmingDesc'),
+      link: '/services',
+    },
+    {
+      icon: <Award className="text-gold-warm w-8 h-8" />,
+      title: t('home.organicTitle'),
+      desc: t('home.organicDesc'),
+      link: '/services',
+    },
+    {
+      icon: <Cpu className="text-gold-warm w-8 h-8" />,
+      title: t('home.agritechTitle'),
+      desc: t('home.agritechDesc'),
       link: '/services',
     },
     {
@@ -253,21 +266,23 @@ export const Home: React.FC = () => {
 
       {/* Advantage Section */}
       <section className="py-24 bg-ivory text-carbon px-4 md:px-8">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-stretch">
-          <div className="lg:col-span-5 flex flex-col gap-6">
-            <div className="flex flex-col gap-4">
-              <h2 className="font-serif text-[2rem] leading-[1.1] sm:text-3xl md:text-3xl lg:text-3xl xl:text-[2.5rem] font-bold tracking-wide text-forest leading-tight">
+        <div className="max-w-7xl mx-auto flex flex-col gap-12 lg:gap-16">
+          <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-center">
+            <div className="lg:w-1/2 flex flex-col gap-6">
+              <h2 className="font-serif text-[2rem] leading-[1.1] sm:text-3xl md:text-4xl lg:text-[2.5rem] font-bold tracking-wide text-forest leading-tight">
                 <span dangerouslySetInnerHTML={{ __html: t('home.advantageTitle') }} />
               </h2>
-              <p className="text-sm md:text-base text-carbon/75 font-light leading-relaxed"><span dangerouslySetInnerHTML={{ __html: t('home.advantageSub') }} /></p>
+              <p className="text-sm md:text-base lg:text-lg text-carbon/75 font-light leading-relaxed"><span dangerouslySetInnerHTML={{ __html: t('home.advantageSub') }} /></p>
             </div>
-            <div className="relative mt-2 min-h-[300px] flex-grow w-full rounded-2xl overflow-hidden shadow-xl border border-gold-warm/20 group">
-              <img src="/images/home2.png" alt="Vietnam Agriculture Advantage" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-              <div className="absolute inset-0 bg-gradient-to-t from-carbon/50 to-transparent" />
+            <div className="lg:w-1/2 w-full">
+              <div className="relative w-full h-64 md:h-80 rounded-2xl overflow-hidden shadow-xl border border-gold-warm/20 group">
+                <img src="/images/home2.png" alt="Vietnam Agriculture Advantage" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                <div className="absolute inset-0 bg-gradient-to-t from-carbon/50 to-transparent" />
+              </div>
             </div>
           </div>
 
-          <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6 content-start">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {advantages.map((item, idx) => (
               <motion.div
                 key={idx}

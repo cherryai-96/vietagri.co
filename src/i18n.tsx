@@ -63,6 +63,12 @@ export const defaultResources: TranslationResources = {
    farmingTitle: 'Contract Farming<br className="hidden lg:block" />& Investment',
    farmingDesc: 'Secure your supply chain with dedicated cultivation. We manage scalable, high-yield operations for lucrative crops, offering transparent, fully managed farm setups with structured ROI and attractive trade partnership models.',
    
+   organicTitle: 'Organic Consulting & Certification',
+   organicDesc: 'Elevate your agricultural operations to verified global standards. We provide end-to-end consulting for organic transitions and GlobalG.A.P. alignment, securing the premium clean-label certifications and ESG compliance demanded by top-tier international markets.',
+   
+   agritechTitle: 'Advanced Agritech & Electroculture',
+   agritechDesc: 'Deploy cutting-edge, chemical-free technologies to naturally supercharge crop vitality. We integrate atmospheric electroculture systems into scalable farming operations, maximizing yields and resource efficiency while protecting soil health and environmental purity.',
+   
    qaTitle: 'Export Quality Assurance',
    qaDesc: 'We act as your quality gatekeeper. Our rigorous on‑the‑ground oversight ensures all operations align with the world’s strictest market standards, preparing facilities and harvests for GlobalG.A.P., EU Organic, and USDA Organic certifications.',
    
@@ -129,6 +135,20 @@ export const defaultResources: TranslationResources = {
    farmingBullet1: 'Turnkey Farm Management: End‑to‑end operation, from land preparation and seed selection to harvest and post-harvest processing.',
    farmingBullet2: 'Structured Investment Models: We offer highly transparent, standardized investment structures for each crop.',
    farmingBullet3: 'Lucrative Trade Partnerships: We actively build robust distribution networks by offering highly competitive structures, including standard commission rates for our dedicated trade agents and global partners.',
+   
+   organicTitle: 'Organic Consulting<br className="hidden lg:block" />& Certification',
+   organicSub: 'Verified Global Standards',
+   organicText: 'Navigating the complex landscape of international clean-label compliance is one of the highest hurdles for modern agricultural enterprises. We provide comprehensive, hands-on consultancy to transition, manage, and verify agricultural projects according to the strict standards demanded by premium global markets.',
+   organicBullet1: 'Organic Transition Mapping: We design step-by-step technical blueprints to convert conventional farmland into certified organic acreage.',
+   organicBullet2: 'Audit Representation & Liaison: We manage the entire bureaucratic and administrative workload during third-party international certification audits.',
+   organicBullet3: 'Corporate ESG Data Structuring: We align farming data collection with global corporate Environmental, Social, and Governance (ESG) reporting metrics.',
+   
+   agritechTitle: 'Advanced Agritech<br className="hidden lg:block" />& Electroculture',
+   agritechSub: 'Next-Generation Agricultural Physics',
+   agritechText: 'The global agricultural sector faces a dual challenge: maximizing yields to meet rising commercial demand while drastically reducing reliance on synthetic chemical inputs. Through our advanced agritech division, we implement sustainable, non-chemical systems that leverage natural environmental forces to optimize crop production.',
+   agritechBullet1: 'Electroculture System Integration: We install specialized, chemical-free atmospheric antennas and grounding systems across broad-acre farms.',
+   agritechBullet2: 'Yield & Growth Acceleration: By optimizing the plant\'s natural bio-electric field, our systems accelerate metabolic rates, resulting in faster crop cycles.',
+   agritechBullet3: 'Natural Immunity Enhancement: Electroculture naturally reinforces a plant\'s systemic resistance to pests, diseases, and extreme weather stress.',
    
    qaTitle: 'Export Quality Assurance',
    qaSub: 'Uncompromising Compliance',
@@ -369,6 +389,12 @@ export const defaultResources: TranslationResources = {
    farmingTitle: 'Canh Tác Hợp Đồng<br className="hidden lg:block" />& Đầu Tư',
    farmingDesc: 'Bảo đảm nguồn cung của bạn thông qua vùng trồng chuyên canh. Chúng tôi quản lý các mô hình canh tác quy mô lớn, năng suất cao đối với những loại cây trồng giá trị, mang lại giải pháp nông trại trọn gói, minh bạch cùng tỷ suất hoàn vốn (ROI) rõ ràng và mô hình hợp tác thương mại hấp dẫn.',
    
+   organicTitle: 'Tư Vấn & Chứng Nhận Hữu Cơ',
+   organicDesc: 'Nâng tầm hoạt động nông nghiệp của bạn đạt chuẩn toàn cầu. Chúng tôi cung cấp dịch vụ tư vấn trọn gói cho quá trình chuyển đổi hữu cơ và chứng nhận GlobalG.A.P., đảm bảo tuân thủ các tiêu chuẩn quốc tế khắt khe nhất.',
+   
+   agritechTitle: 'Công Nghệ Nông Nghiệp Tiên Tiến',
+   agritechDesc: 'Triển khai công nghệ không hóa chất đột phá để tăng cường sinh lực cây trồng. Tối đa hóa năng suất và hiệu quả tài nguyên bằng hệ thống canh tác điện từ (Electroculture) trong khi vẫn bảo vệ môi trường.',
+   
    qaTitle: 'Đảm Bảo Chất Lượng Xuất Khẩu',
    qaDesc: 'Chúng tôi đóng vai trò là "người gác cổng" chất lượng của bạn. Khâu giám sát thực địa gắt chuyên nghiệp của VAC đảm bảo mọi hoạt động đều tuân thủ các tiêu chuẩn khắt khe nhất thế giới, hỗ trợ các cơ sở và vụ mùa đáp ứng tiêu chuẩn GlobalG.A.P., EU Organic và USDA Organic.',
    
@@ -435,6 +461,20 @@ export const defaultResources: TranslationResources = {
    farmingBullet1: 'Quản Lý Nông Trại Trọn Gói: Điều hành khép kín từ khâu cải tạo đất, chọn giống đến thu hoạch và sơ chế sau thu hoạch.',
    farmingBullet2: 'Mô Hình Đầu Tư Có Cấu Trúc: Chúng tôi mang đến các mô hình đầu tư chuẩn hóa, cực kỳ minh bạch cho từng loại cây trồng cụ thể.',
    farmingBullet3: 'Đối Tác Thương Mại Bền Vững: VAC chủ động kiến tạo mạng lưới phân phối vững chắc thông qua những cơ chế ưu đãi mang tính cạnh tranh cao, bao gồm tỷ lệ hoa hồng tiêu chuẩn dành cho đại lý và đối tác quốc tế.',
+   
+   organicTitle: 'Tư Vấn & Chứng Nhận<br className="hidden lg:block" />Hữu Cơ',
+   organicSub: 'Tiêu Chuẩn Toàn Cầu',
+   organicText: 'Vượt qua rào cản phức tạp về tuân thủ nhãn sạch quốc tế. Chúng tôi cung cấp dịch vụ tư vấn toàn diện, thực tế để chuyển đổi, quản lý và xác minh các dự án nông nghiệp theo tiêu chuẩn khắt khe của các thị trường cao cấp toàn cầu.',
+   organicBullet1: 'Lộ Trình Chuyển Đổi Hữu Cơ: Thiết kế các bản thiết kế kỹ thuật từng bước để chuyển đổi đất nông nghiệp thông thường thành diện tích hữu cơ được chứng nhận.',
+   organicBullet2: 'Đại Diện & Hỗ Trợ Đánh Giá: Chúng tôi quản lý toàn bộ khối lượng công việc hành chính và giấy tờ trong quá trình đánh giá chứng nhận quốc tế của bên thứ ba.',
+   organicBullet3: 'Cấu Trúc Dữ Liệu ESG Doanh Nghiệp: Chúng tôi điều chỉnh việc thu thập dữ liệu canh tác phù hợp với các số liệu báo cáo Môi trường, Xã hội và Quản trị (ESG) của doanh nghiệp toàn cầu.',
+   
+   agritechTitle: 'Công Nghệ Nông Nghiệp<br className="hidden lg:block" />& Electroculture',
+   agritechSub: 'Vật Lý Nông Nghiệp Thế Hệ Mới',
+   agritechText: 'Ngành nông nghiệp toàn cầu đang đối mặt với thách thức kép: tối đa hóa năng suất trong khi giảm thiểu sử dụng hóa chất tổng hợp. Thông qua bộ phận công nghệ tiên tiến, chúng tôi triển khai các hệ thống bền vững, không hóa chất tận dụng lực lượng môi trường tự nhiên để tối ưu hóa sản xuất cây trồng.',
+   agritechBullet1: 'Tích Hợp Hệ Thống Electroculture: Chúng tôi lắp đặt hệ thống ăng-ten khí quyển và tiếp địa chuyên dụng, không hóa chất trên khắp các trang trại quy mô lớn.',
+   agritechBullet2: 'Tăng Tốc Năng Suất & Tăng Trưởng: Tối ưu hóa trường sinh điện tự nhiên của cây trồng, hệ thống của chúng tôi đẩy nhanh quá trình chuyển hóa, dẫn đến chu kỳ thu hoạch nhanh hơn.',
+   agritechBullet3: 'Tăng Cường Miễn Dịch Tự Nhiên: Electroculture củng cố khả năng chống chịu bệnh tật và sâu bệnh một cách tự nhiên, giảm thiểu đáng kể nhu cầu sử dụng thuốc trừ sâu hóa học.',
    
    qaTitle: 'Đảm Bảo Chất Lượng Xuất Khẩu',
    qaSub: 'Tuân Thủ Không Nhượng Bộ',

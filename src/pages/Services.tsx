@@ -10,7 +10,9 @@ import {
   Check, 
   ChevronRight, 
   ArrowRight,
-  Info
+  Info,
+  Award,
+  Cpu
 } from 'lucide-react';
 import { SEO } from '../components/SEO';
 
@@ -82,6 +84,50 @@ export const Services: React.FC = () => {
     },
     {
       id: 2,
+      icon: <Award className="w-6 h-6" />,
+      title: t('services.organicTitle'),
+      subtitle: t('services.organicSub'),
+      desc: t('services.organicText'),
+      bullets: [
+        t('services.organicBullet1'),
+        t('services.organicBullet2'),
+        t('services.organicBullet3'),
+      ],
+      details: {
+        specTitle: 'Certification Capabilities & ESG Alignment',
+        specs: [
+          'Step-by-step transition mapping for conventional to organic farmland.',
+          'On-the-ground management for GlobalG.A.P., EU Organic, and USDA Organic compliance.',
+          'Full representation and liaison services during third-party international audits.',
+          'ESG data structuring for corporate reporting metrics.'
+        ]
+      },
+      image: '/images/organic_certification.png'
+    },
+    {
+      id: 3,
+      icon: <Cpu className="w-6 h-6" />,
+      title: t('services.agritechTitle'),
+      subtitle: t('services.agritechSub'),
+      desc: t('services.agritechText'),
+      bullets: [
+        t('services.agritechBullet1'),
+        t('services.agritechBullet2'),
+        t('services.agritechBullet3'),
+      ],
+      details: {
+        specTitle: 'Electroculture & Non-Chemical Yield Optimization',
+        specs: [
+          'Installation of atmospheric antennas and geomagnetic grounding systems.',
+          'Stimulation of plant cellular vitality and metabolic rates without synthetic chemicals.',
+          'Natural reinforcement of systemic resistance to pests and extreme weather.',
+          'Reduction in irrigation and fertilizer requirements while maintaining peak output.'
+        ]
+      },
+      image: '/images/advanced_agritech.png'
+    },
+    {
+      id: 4,
       icon: <ShieldCheck className="w-6 h-6" />,
       title: t('services.qaTitle'),
       subtitle: t('services.qaSub'),
@@ -103,7 +149,7 @@ export const Services: React.FC = () => {
       image: '/images/export_quality.png'
     },
     {
-      id: 3,
+      id: 5,
       icon: <Truck className="w-6 h-6" />,
       title: t('services.logisticsTitle'),
       subtitle: t('services.logisticsSub'),
