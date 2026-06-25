@@ -24,9 +24,9 @@ export const Home: React.FC = () => {
 
   const [introSlide, setIntroSlide] = useState(0);
   const introImages = [
-    { src: '/images/intro_slide_1.png', alt: 'Agricultural Harvesting & Export Logistics' },
-    { src: '/images/intro_slide_2.png', alt: 'High-tech Agriculture & Electroculture' },
-    { src: '/images/intro_slide_3.png', alt: 'Organic Consulting & Certification' },
+    { src: '/images/intro_slide_1.png?v=2', alt: 'Agricultural Harvesting & Export Logistics' },
+    { src: '/images/intro_slide_2.png?v=2', alt: 'High-tech Agriculture & Electroculture' },
+    { src: '/images/intro_slide_3.png?v=2', alt: 'Organic Consulting & Certification' },
   ];
 
   useEffect(() => {
