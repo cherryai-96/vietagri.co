@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useTranslation } from '../../i18n';
 import { ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -29,6 +29,14 @@ export const ProductCategory: React.FC<ProductCategoryProps> = ({
 
   const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % displayImages.length);
   const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + displayImages.length) % displayImages.length);
+
+  useEffect(() => {
+    if (displayImages.length <= 1) return;
+    const timer = setInterval(() => {
+      nextSlide();
+    }, 4000);
+    return () => clearInterval(timer);
+  }, [displayImages.length]);
 
   return (
     <motion.div
