@@ -124,7 +124,7 @@ export const Services: React.FC = () => {
           'Reduction in irrigation and fertilizer requirements while maintaining peak output.'
         ]
       },
-      image: '/images/advanced_agritech.png'
+      image: '/images/electroculture.png'
     },
     {
       id: 4,
