@@ -181,6 +181,36 @@ export const Home: React.FC = () => {
 
 
 
+      {/* Introduction Section */}
+      <section className="py-24 bg-white text-carbon px-4 md:px-8">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div className="flex flex-col gap-6">
+            <h2 className="font-serif text-[2.25rem] leading-[1.15] md:text-4xl lg:text-[2.75rem] font-bold tracking-wide text-forest">
+              The Complete Gateway to Vietnam’s Agricultural Wealth
+            </h2>
+            <p className="text-lg md:text-xl font-medium text-gold-antique">
+              Scaling volume, engineering purity, and powering sustainable global supply chains.
+            </p>
+            <div className="flex flex-col gap-4 text-carbon/80 font-light leading-relaxed">
+              <p>
+                The Vietnam Agriculture Center (VAC) is the definitive hub for large-scale enterprise procurement, premium contract farming, and advanced agritech innovation. Representing the full strength of Vietnam’s massive agricultural sector, we bridge the gap between high-volume commercial production and next-generation ecological science.
+              </p>
+              <p>
+                We do not just move commodities; we transform how they are grown. By integrating cutting-edge Electroculture systems and elite microbial inputs directly into our farming networks, we naturally supercharge crop vitality, maximize yields, and protect the soil. Backed by our independent Organic Consulting &amp; Certification services, VAC provides global corporate buyers with a resilient, transparent, and fully ESG-compliant supply chain from root to export.
+              </p>
+            </div>
+          </div>
+          <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-gold-warm/20 group h-[400px] lg:h-[500px]">
+            <img 
+              src="/images/hightech_farming.png" 
+              alt="Vietnam Agriculture Center Agritech" 
+              className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
+            />
+            <div className="absolute inset-0 bg-gradient-to-tr from-forest/40 to-transparent" />
+          </div>
+        </div>
+      </section>
+
       {/* Advantage Section */}
       <section className="py-24 bg-ivory text-carbon px-4 md:px-8">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-stretch">
