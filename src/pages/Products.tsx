@@ -23,7 +23,8 @@ export const Products: React.FC = () => {
     {
       id: 'fruits',
       images: [
-        '/images/products/tropical_fruits.png',
+        '/images/products/IMG_7967.JPG',
+        '/images/products/IMG_7966.PNG',
         '/images/products/IMG_7958.JPG',
         '/images/products/IMG_7960.JPG',
         '/images/products/IMG_7961.JPG'
