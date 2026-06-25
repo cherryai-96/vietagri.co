@@ -1,6 +1,6 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { useTranslation } from '../i18n';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { SEO } from '../components/SEO';
 import {
@@ -20,6 +20,20 @@ import {
 export const Home: React.FC = () => {
   const { t } = useTranslation();
   const scrollRef = useRef<HTMLDivElement>(null);
+
+  const [introSlide, setIntroSlide] = useState(0);
+  const introImages = [
+    { src: '/images/intro_slide_1.png', alt: 'Agricultural Harvesting & Export Logistics' },
+    { src: '/images/intro_slide_2.png', alt: 'High-tech Agriculture & Electroculture' },
+    { src: '/images/intro_slide_3.png', alt: 'Organic Consulting & Certification' },
+  ];
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setIntroSlide((prev) => (prev + 1) % introImages.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
 
   const scrollBy = (direction: 1 | -1) => {
     if (scrollRef.current) {
@@ -210,8 +224,29 @@ export const Home: React.FC = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="relative w-full h-[400px] md:h-[500px] rounded-2xl overflow-hidden shadow-xl border border-gold-warm/20 group"
           >
-            <img src="/images/intro_hightech_farm.png" alt="High-tech farming in Vietnam" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-            <div className="absolute inset-0 bg-gradient-to-tr from-carbon/20 to-transparent" />
+            <AnimatePresence mode="wait">
+              <motion.img
+                key={introSlide}
+                src={introImages[introSlide].src}
+                alt={introImages[introSlide].alt}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 1 }}
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-[10000ms] group-hover:scale-105"
+              />
+            </AnimatePresence>
+            <div className="absolute inset-0 bg-gradient-to-tr from-carbon/20 to-transparent z-10" />
+            <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 z-20">
+              {introImages.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => setIntroSlide(i)}
+                  className={`h-1.5 rounded-full transition-all duration-300 ${i === introSlide ? 'bg-gold-warm w-6' : 'bg-white/50 w-1.5 hover:bg-white/80'}`}
+                  aria-label={`Go to slide ${i + 1}`}
+                />
+              ))}
+            </div>
           </motion.div>
         </div>
       </section>
