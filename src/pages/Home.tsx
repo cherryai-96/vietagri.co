@@ -290,12 +290,12 @@ export const Home: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-100px' }}
                 transition={{ delay: idx * 0.1, duration: 0.6 }}
-                className="bg-cream border border-gold-warm/15 rounded-xl p-8 flex flex-col gap-6 bento-card shadow-sm hover:shadow-md transition-shadow"
+                className="bg-cream border border-gold-warm/15 rounded-xl p-6 lg:p-8 flex flex-col gap-6 bento-card shadow-sm hover:shadow-md transition-shadow overflow-hidden"
               >
                 <div className="p-3.5 bg-forest/5 rounded-lg w-fit border border-gold-warm/10">
                   {item.icon}
                 </div>
-                <h3 className="font-serif font-bold text-xl md:text-2xl text-forest" dangerouslySetInnerHTML={{ __html: item.title }} />
+                <h3 className="font-serif font-bold text-[1.05rem] sm:text-[1.1rem] lg:text-[1.05rem] xl:text-[1.15rem] 2xl:text-[1.25rem] text-forest whitespace-nowrap tracking-tight" dangerouslySetInnerHTML={{ __html: item.title.replace(/<br[^>]*>/g, ' ') }} />
                 <p className="text-xs md:text-sm text-carbon/70 font-light leading-relaxed flex-grow"><span dangerouslySetInnerHTML={{ __html: item.desc }} /></p>
                 <Link
                   to={item.link}
