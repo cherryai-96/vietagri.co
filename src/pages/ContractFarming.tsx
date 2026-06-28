@@ -53,9 +53,9 @@ export const ContractFarming: React.FC = () => {
 
           <div className="grid md:grid-cols-3 gap-8">
             {[
-              { title: t('contractFarming.for1Title'), desc: t('contractFarming.for1Desc'), img: '/images/v8.jpg' },
-              { title: t('contractFarming.for2Title'), desc: t('contractFarming.for2Desc'), img: '/images/electroculture.png' },
-              { title: t('contractFarming.for3Title'), desc: t('contractFarming.for3Desc'), img: '/images/advanced_agritech.png' },
+              { title: t('contractFarming.for1Title'), desc: t('contractFarming.for1Desc'), img: '/images/pr_investors.png' },
+              { title: t('contractFarming.for2Title'), desc: t('contractFarming.for2Desc'), img: '/images/pr_large_farm.png' },
+              { title: t('contractFarming.for3Title'), desc: t('contractFarming.for3Desc'), img: '/images/pr_buyers.png' },
             ].map((item, idx) => (
               <div key={idx} className="bg-carbon-light rounded-xl overflow-hidden shadow-2xl border border-white/5 group">
                 <div className="h-48 overflow-hidden">

@@ -36,7 +36,7 @@ export const Infrastructure: React.FC = () => {
               <div className="relative group">
                 <div className="absolute inset-0 bg-gold-warm/20 blur-2xl rounded-2xl transition-all duration-500 group-hover:bg-gold-warm/30"></div>
                 <img 
-                  src="/images/ai_mother_lab.png" 
+                  src="/images/pr_mother_lab.png" 
                   alt="Mother Lab" 
                   className="relative z-10 w-full h-auto object-cover rounded-2xl shadow-2xl border border-white/10"
                 />
@@ -77,7 +77,7 @@ export const Infrastructure: React.FC = () => {
               <div className="relative group">
                 <div className="absolute inset-0 bg-gold-warm/20 blur-2xl rounded-2xl transition-all duration-500 group-hover:bg-gold-warm/30"></div>
                 <img 
-                  src="/images/ai_infra_facility.png" 
+                  src="/images/pr_processing.png" 
                   alt="Processing Facility" 
                   className="relative z-10 w-full h-auto object-cover rounded-2xl shadow-2xl border border-white/10"
                 />
