@@ -81,7 +81,7 @@ export const OrganicConsulting: React.FC = () => {
         <div className="container mx-auto px-6">
           <div className="rounded-2xl overflow-hidden shadow-2xl border border-white/10 relative h-[400px]">
              <img 
-               src="/images/ai_cf_field.png" 
+               src="/images/tea_plantation.jpg" 
                alt="Sustainable Organic Consulting" 
                className="w-full h-full object-cover"
              />
