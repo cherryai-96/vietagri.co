@@ -81,14 +81,14 @@ export const OrganicConsulting: React.FC = () => {
         <div className="container mx-auto px-6">
           <div className="rounded-2xl overflow-hidden shadow-2xl border border-white/10 relative h-[400px]">
              <img 
-               src="/images/tea_plantation.jpg" 
+               src="/images/organic_export.jpg" 
                alt="Sustainable Organic Consulting" 
                className="w-full h-full object-cover"
              />
              <div className="absolute inset-0 bg-gradient-to-t from-carbon/90 via-carbon/40 to-transparent"></div>
              <div className="absolute bottom-0 left-0 p-12">
                <h3 className="text-3xl font-serif text-cream mb-4">Export Without Friction</h3>
-               <p className="text-cream/80 font-sans text-lg max-w-2xl">Ensure your products cross borders seamlessly with our verifiable compliance roadmaps.</p>
+               <p className="text-cream/80 font-sans text-lg max-w-4xl">Ensure your products cross borders seamlessly with our verifiable compliance roadmaps.</p>
              </div>
           </div>
         </div>
