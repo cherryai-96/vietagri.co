@@ -39,7 +39,7 @@ export const ContractFarming: React.FC = () => {
       <PageHero
         title={t('contractFarming.heroTitle')}
         subtitle={t('contractFarming.heroSub')}
-        image="/images/hightech_farming.png"
+        image="/images/ai_cf_hero.png"
       />
 
       {/* Who This Is For Section */}
@@ -95,7 +95,7 @@ export const ContractFarming: React.FC = () => {
             <div className="lg:w-1/2 relative">
               <div className="absolute inset-0 bg-gold-warm/20 blur-3xl rounded-full"></div>
               <img 
-                src="/images/intro_hightech_farm.png" 
+                src="/images/ai_cf_field.png" 
                 alt="High-Tech Farm" 
                 className="relative z-10 w-full h-auto object-cover rounded-xl shadow-2xl border border-white/10"
               />
@@ -106,7 +106,7 @@ export const ContractFarming: React.FC = () => {
 
       <CallToAction 
         title={t('contractFarming.ctaTitle')}
-        subtitle={t('contractFarming.ctaBtn')}
+        subtitle={t('common.connecting')}
         buttonText={t('contractFarming.ctaBtn')}
       />
     </div>

@@ -12,7 +12,7 @@ export const Infrastructure: React.FC = () => {
       <PageHero
         title={t('infra.heroTitle')}
         subtitle={t('infra.heroSub')}
-        image="/images/export_quality.png"
+        image="/images/ai_infra_hero.png"
       />
 
       {/* Certifications Strip */}
@@ -36,7 +36,7 @@ export const Infrastructure: React.FC = () => {
               <div className="relative group">
                 <div className="absolute inset-0 bg-gold-warm/20 blur-2xl rounded-2xl transition-all duration-500 group-hover:bg-gold-warm/30"></div>
                 <img 
-                  src="/images/wm-10.avif" 
+                  src="/images/ai_mother_lab.png" 
                   alt="Mother Lab" 
                   className="relative z-10 w-full h-auto object-cover rounded-2xl shadow-2xl border border-white/10"
                 />
@@ -77,7 +77,7 @@ export const Infrastructure: React.FC = () => {
               <div className="relative group">
                 <div className="absolute inset-0 bg-gold-warm/20 blur-2xl rounded-2xl transition-all duration-500 group-hover:bg-gold-warm/30"></div>
                 <img 
-                  src="/images/v8.jpg" 
+                  src="/images/ai_infra_facility.png" 
                   alt="Processing Facility" 
                   className="relative z-10 w-full h-auto object-cover rounded-2xl shadow-2xl border border-white/10"
                 />
@@ -89,7 +89,7 @@ export const Infrastructure: React.FC = () => {
 
       <CallToAction 
         title={t('infra.cta')}
-        subtitle={t('contact.contactBtn')}
+        subtitle={t('common.connecting')}
         buttonText={t('common.contactBtn')}
       />
     </div>

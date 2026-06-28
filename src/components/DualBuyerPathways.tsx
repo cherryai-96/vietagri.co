@@ -22,7 +22,7 @@ export const DualBuyerPathways: React.FC = () => {
           {/* Sourcing Pathway */}
           <div className="md:w-1/2 flex flex-col h-full group">
             <div className="h-64 rounded-t-2xl overflow-hidden relative">
-              <img src="/images/products/premium_rice.png" alt="Premium Sourcing" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+              <img src="/images/ai_premium_sourcing.png" alt="Premium Sourcing" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
               <div className="absolute inset-0 bg-gradient-to-t from-carbon via-transparent to-transparent"></div>
               <div className="absolute bottom-4 left-6">
                 <Box size={32} className="text-gold-champagne mb-2" />
@@ -40,7 +40,7 @@ export const DualBuyerPathways: React.FC = () => {
           {/* Farming Pathway */}
           <div className="md:w-1/2 flex flex-col h-full group">
             <div className="h-64 rounded-t-2xl overflow-hidden relative">
-              <img src="/images/hightech_farming.png" alt="Contract Farming" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+              <img src="/images/ai_contract_farming.png" alt="Contract Farming" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
               <div className="absolute inset-0 bg-gradient-to-t from-carbon via-transparent to-transparent"></div>
               <div className="absolute bottom-4 left-6">
                 <Leaf size={32} className="text-gold-champagne mb-2" />
