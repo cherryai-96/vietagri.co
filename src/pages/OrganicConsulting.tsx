@@ -28,7 +28,7 @@ export const OrganicConsulting: React.FC = () => {
       <PageHero
         title={t('organicRisk.title')}
         subtitle={t('organicRisk.sub')}
-        image="/images/ai_organic_hero.png"
+        image="/images/pr_large_farm.png"
       />
 
       <section className="py-24 bg-carbon relative">
@@ -81,7 +81,7 @@ export const OrganicConsulting: React.FC = () => {
         <div className="container mx-auto px-6">
           <div className="rounded-2xl overflow-hidden shadow-2xl border border-white/10 relative h-[400px]">
              <img 
-               src="/images/ai_organic_consulting.png" 
+               src="/images/ai_cf_field.png" 
                alt="Sustainable Organic Consulting" 
                className="w-full h-full object-cover"
              />

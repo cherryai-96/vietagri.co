@@ -12,7 +12,7 @@ export const Infrastructure: React.FC = () => {
       <PageHero
         title={t('infra.heroTitle')}
         subtitle={t('infra.heroSub')}
-        image="/images/ai_infra_hero.png"
+        image="/images/intro_hightech_farm.png"
       />
 
       {/* Certifications Strip */}
