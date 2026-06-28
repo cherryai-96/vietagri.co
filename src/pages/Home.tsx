@@ -4,7 +4,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { SEO } from '../components/SEO';
 import { DualBuyerPathways } from '../components/DualBuyerPathways';
-import { BioBalanceLoop } from '../components/BioBalanceLoop';
 import {
   Globe,
   TrendingUp,
@@ -51,25 +50,25 @@ export const Home: React.FC = () => {
       icon: <Globe className="text-gold-warm w-8 h-8" />,
       title: t('home.sourcingTitle'),
       desc: t('home.sourcingDesc'),
-      link: '/services?tab=0',
+      link: '/products',
     },
     {
       icon: <TrendingUp className="text-gold-warm w-8 h-8" />,
       title: t('home.farmingTitle'),
       desc: t('home.farmingDesc'),
-      link: '/services?tab=1',
+      link: '/contract-farming',
     },
     {
       icon: <Award className="text-gold-warm w-8 h-8" />,
       title: t('home.organicTitle'),
       desc: t('home.organicDesc'),
-      link: '/services?tab=2',
+      link: '/organic-consulting-certification',
     },
     {
       icon: <Cpu className="text-gold-warm w-8 h-8" />,
       title: t('home.agritechTitle'),
       desc: t('home.agritechDesc'),
-      link: '/services?tab=3',
+      link: '/contract-farming',
     },
     {
       icon: <ShieldCheck className="text-gold-warm w-8 h-8" />,
@@ -209,8 +208,6 @@ export const Home: React.FC = () => {
       </section>
 
       <DualBuyerPathways />
-      
-      <BioBalanceLoop />
 
       {/* Introduction Section */}
       <section className="py-24 bg-white text-carbon px-4 md:px-8 border-b border-gold-warm/15">

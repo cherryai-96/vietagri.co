@@ -14,6 +14,7 @@ import {
   Sparkles 
 } from 'lucide-react';
 import { SEO } from '../components/SEO';
+import { BioBalanceLoop } from '../components/BioBalanceLoop';
 
 export const Sustainability: React.FC = () => {
   const { t } = useTranslation();
@@ -144,6 +145,8 @@ export const Sustainability: React.FC = () => {
           </div>
         </div>
       </section>
+
+      <BioBalanceLoop />
 
       {/* Zero-Waste Circular Flow Section */}
       <section className="py-24 bg-cream px-4 md:px-8">
