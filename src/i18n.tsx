@@ -101,7 +101,7 @@ export const defaultResources: TranslationResources = {
   },
   contractFarming: {
     heroTitle: 'Enterprise Contract Farming & Agritech',
-    heroSub: 'Structured farming partnerships powered by premium organic inputs, Electroculture systems, technical field support, and export-oriented crop planning.',
+    heroSub: 'Structured farming partnerships powered by premium organic inputs, Electroculture systems, technical field support, and export-oriented crop\u00A0planning.',
     forWhoTitle: 'Who This Is For',
     for1Title: 'Regional Investors',
     for1Desc: 'For investors seeking scalable agricultural projects with structured operational support.',

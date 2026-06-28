@@ -15,7 +15,7 @@ export const PageHero: React.FC<PageHeroProps> = ({ title, subtitle, image }) =>
       </div>
       <div className="absolute inset-0 bg-gradient-to-t from-carbon via-carbon/80 to-carbon/30 z-[1]" />
       
-      <div className="max-w-4xl mx-auto text-center relative z-10 flex flex-col items-center gap-6">
+      <div className="max-w-5xl mx-auto text-center relative z-10 flex flex-col items-center gap-6">
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -28,7 +28,7 @@ export const PageHero: React.FC<PageHeroProps> = ({ title, subtitle, image }) =>
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.3, duration: 0.8 }}
-          className="text-lg md:text-xl text-cream/90 font-medium leading-relaxed drop-shadow-sm max-w-3xl"
+          className="text-lg md:text-xl text-cream/90 font-medium leading-relaxed drop-shadow-sm max-w-4xl px-4"
         >
           {subtitle}
         </motion.p>
