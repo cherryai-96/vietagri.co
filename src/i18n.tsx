@@ -100,7 +100,7 @@ export const defaultResources: TranslationResources = {
     cta: 'Explore Our Facilities →',
   },
   contractFarming: {
-    heroTitle: 'Enterprise Contract Farming & Agritech',
+    heroTitle: 'Enterprise Contract Farming\n& Agritech',
     heroSub: 'Structured farming partnerships powered by premium organic inputs, Electroculture systems, technical field support, and export-oriented crop\u00A0planning.',
     forWhoTitle: 'Who This Is For',
     for1Title: 'Regional Investors',

@@ -20,7 +20,7 @@ export const PageHero: React.FC<PageHeroProps> = ({ title, subtitle, image }) =>
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="font-serif text-3xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-wide text-gold-champagne drop-shadow-md"
+          className="font-serif text-3xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-wide text-gold-champagne drop-shadow-md whitespace-pre-line"
         >
           {title}
         </motion.h1>
