@@ -3,6 +3,8 @@ import { useTranslation } from '../i18n';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { SEO } from '../components/SEO';
+import { DualBuyerPathways } from '../components/DualBuyerPathways';
+import { BioBalanceLoop } from '../components/BioBalanceLoop';
 import {
   Globe,
   TrendingUp,
@@ -206,7 +208,9 @@ export const Home: React.FC = () => {
         </div>
       </section>
 
-
+      <DualBuyerPathways />
+      
+      <BioBalanceLoop />
 
       {/* Introduction Section */}
       <section className="py-24 bg-white text-carbon px-4 md:px-8 border-b border-gold-warm/15">

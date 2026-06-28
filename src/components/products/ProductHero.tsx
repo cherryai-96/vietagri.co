@@ -38,7 +38,7 @@ export const ProductHero: React.FC = () => {
           className="flex flex-col items-center gap-5"
         >
           <h1 className="font-serif text-balance text-[1.75rem] leading-[1.1] sm:text-[2.25rem] md:text-4xl lg:text-[3rem] font-black tracking-wide text-white max-w-4xl mx-auto drop-shadow-md py-1">
-            {t('products.heroTitle')}
+            {t('sourcing.heroTitle')}
           </h1>
         </motion.div>
 
@@ -48,7 +48,7 @@ export const ProductHero: React.FC = () => {
           transition={{ delay: 0.3, duration: 0.8 }}
           className="text-sm md:text-lg max-w-3xl font-medium leading-relaxed drop-shadow-sm text-transparent bg-clip-text bg-gradient-to-r from-gold-champagne via-gold-warm to-gold-antique"
         >
-          {t('products.heroSub')}
+          {t('sourcing.heroSub')}
         </motion.p>
 
         <motion.div

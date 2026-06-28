@@ -11,6 +11,9 @@ import { VietWolffia } from './pages/VietWolffia';
 import { Sustainability } from './pages/Sustainability';
 import { Contact } from './pages/Contact';
 import { Products } from './pages/Products';
+import { ContractFarming } from './pages/ContractFarming';
+import { Infrastructure } from './pages/Infrastructure';
+import { OrganicConsulting } from './pages/OrganicConsulting';
 import { AdminRoutes } from './admin/AdminRoutes';
 
 // Scroll to top helper on route navigation
@@ -47,6 +50,9 @@ function App() {
                       <Route path="/viet-wolffia" element={<VietWolffia />} />
                       <Route path="/products" element={<Products />} />
                       <Route path="/sustainability" element={<Sustainability />} />
+                      <Route path="/contract-farming" element={<ContractFarming />} />
+                      <Route path="/infrastructure-rd" element={<Infrastructure />} />
+                      <Route path="/organic-consulting-certification" element={<OrganicConsulting />} />
                       <Route path="/contact" element={<Contact />} />
                     </Routes>
                   </main>
