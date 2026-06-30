@@ -146,8 +146,6 @@ export const Sustainability: React.FC = () => {
         </div>
       </section>
 
-      <BioBalanceLoop />
-
       {/* Zero-Waste Circular Flow Section */}
       <section className="py-24 bg-cream px-4 md:px-8">
         <div className="max-w-7xl mx-auto">
@@ -210,12 +208,10 @@ export const Sustainability: React.FC = () => {
             ))}
           </div>
 
-          <div className="w-full mt-16 rounded-2xl overflow-hidden shadow-lg border border-gold-warm/20 relative group">
-              <img src="/images/sss3.png" alt="Circular Economy Agriculture" className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105" />
-              <div className="absolute inset-0 bg-carbon/20 mix-blend-overlay" />
-          </div>
         </div>
       </section>
+
+      <BioBalanceLoop />
 
       {/* Environmental Stewardship Dashboard Section */}
       <section className="py-24 bg-ivory border-t border-gold-warm/15 px-4 md:px-8">
