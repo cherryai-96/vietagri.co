@@ -878,24 +878,32 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
  }, []);
 
  const t = (path: string) => {
-  const keys = path.split('.');
-  let current: any = resources[language];
-  
-  for (const key of keys) {
-   if (current[key] === undefined) {
-    // Fallback to English
-    let fallback: any = resources['en'];
-    for (const k of keys) {
-     if (fallback[k] === undefined) return path;
-     fallback = fallback[k];
-    }
-    return fallback;
-   }
-   current = current[key];
-  }
-  
-  return current;
- };
+		const keys = path.split('.');
+		let current: any = resources[language];
+		
+		for (const key of keys) {
+			if (current[key] === undefined) {
+				let fallback: any = resources['en'];
+				for (const k of keys) {
+					if (fallback[k] === undefined) return path;
+					fallback = fallback[k];
+				}
+				current = fallback;
+				break;
+			}
+			current = current[key];
+		}
+		
+		if (typeof current === 'string') {
+			current = current.replace(/simple netting structures?/gi, 'greenhouse structures');
+			current = current.replace(/simple net structures?/gi, 'greenhouse structures');
+			current = current.replace(/specialized netting structures?/gi, 'specialized greenhouse structures');
+			current = current.replace(/cấu trúc lưới đơn giản/gi, 'cấu trúc nhà kính');
+			current = current.replace(/cấu trúc lưới che chuyên dụng/gi, 'cấu trúc nhà kính chuyên dụng');
+		}
+		
+		return current;
+	};
 
  return (
   <LanguageContext.Provider value={{ language, setLanguage, t }}>
