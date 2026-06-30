@@ -74,7 +74,7 @@ export const defaultResources: TranslationResources = {
   },
   organicRisk: {
     title: 'Protect Your Export Capabilities: Supply Chain De-risking',
-    sub: 'Navigating international compliance is a massive liability for unverified farms. VAC eliminates the administrative friction and secures your borders.',
+    sub: 'Navigating international compliance is a massive liability for unverified farms.\nVAC eliminates the administrative friction and secures your borders.',
     riskTitle: 'The Risk',
     risk1: 'Border rejection due to MRL failure',
     risk2: 'Unverified farm protocols',
@@ -482,7 +482,7 @@ export const defaultResources: TranslationResources = {
   },
   organicRisk: {
     title: 'Bảo Vệ Năng Lực Xuất Khẩu Của Bạn: Giảm Thiểu Rủi Ro Chuỗi Cung Ứng',
-    sub: 'Việc điều hướng các tuân thủ quốc tế là một rủi ro lớn đối với các trang trại chưa được kiểm định. VAC loại bỏ những rào cản hành chính và bảo vệ biên giới cho bạn.',
+    sub: 'Việc điều hướng các tuân thủ quốc tế là một rủi ro lớn đối với các trang trại chưa được kiểm định.\nVAC loại bỏ những rào cản hành chính và bảo vệ biên giới cho bạn.',
     riskTitle: 'Rủi Ro',
     risk1: 'Bị từ chối tại biên giới do không đạt chuẩn MRL',
     risk2: 'Quy trình trang trại chưa được kiểm chứng',

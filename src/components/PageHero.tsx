@@ -28,7 +28,7 @@ export const PageHero: React.FC<PageHeroProps> = ({ title, subtitle, image }) =>
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.3, duration: 0.8 }}
-          className="text-lg md:text-xl text-cream/90 font-medium leading-relaxed drop-shadow-sm max-w-4xl px-4"
+          className="text-lg md:text-xl text-cream/90 font-medium leading-relaxed drop-shadow-sm max-w-4xl px-4 whitespace-pre-line"
         >
           {subtitle}
         </motion.p>
