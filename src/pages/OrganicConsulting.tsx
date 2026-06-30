@@ -41,7 +41,7 @@ export const OrganicConsulting: React.FC = () => {
                 <ShieldAlert size={36} className="text-red-400" />
                 <h2 className="text-3xl font-serif text-white">{t('organicRisk.riskTitle')}</h2>
               </div>
-              <ul className="space-y-6">
+              <ul className="space-y-6 pl-[52px]">
                 {risks.map((risk, idx) => (
                   <li key={idx} className="flex items-start gap-4">
                     <span className="w-1.5 h-1.5 rounded-full bg-red-400 mt-2 shrink-0"></span>
@@ -61,7 +61,7 @@ export const OrganicConsulting: React.FC = () => {
                   <CheckCircle size={36} className="text-gold-champagne" />
                   <h2 className="text-3xl font-serif text-gold-champagne">{t('organicRisk.solutionTitle')}</h2>
                 </div>
-                <ul className="space-y-6">
+                <ul className="space-y-6 pl-[52px]">
                   {solutions.map((sol, idx) => (
                     <li key={idx} className="flex items-start gap-4">
                       <ArrowRight size={20} className="text-gold-warm shrink-0 mt-1" />
