@@ -67,7 +67,7 @@ export const defaultResources: TranslationResources = {
     step3Title: 'Strategic Upcycling',
     step3Desc: 'We rescue nutrient-dense processing waste, such as passion fruit, banana, and mango peels, preventing landfill accumulation.',
     step4Title: 'The Wolffia Engine',
-    step4Desc: 'We cultivate Wolffia globosa, also known as watermeal, in specialized open-air canvas ponds beneath simple netting structures, producing a massive volume of sustainable plant protein.',
+    step4Desc: 'We cultivate Wolffia globosa, also known as watermeal, in specialized open-air canvas ponds beneath greenhouse structures, producing a massive volume of sustainable plant protein.',
     step5Title: 'Bio-Balance Feed',
     step5Desc: 'The rescued fruit waste is expertly blended with Wolffia biomass to create proprietary, highly digestible feed for commercial aquaculture and livestock, completing the zero-waste cycle.',
     cta: 'See How Our Circular Model Works →',
@@ -163,7 +163,7 @@ export const defaultResources: TranslationResources = {
    spotlightDesc2: 'By cultivating Wolffia Globosa (Watermeal), we produce a revolutionary plant-based protein source. More importantly, we showcase the exact operational standards required to meet the rigorous demands of global human consumption and specialized animal nutrition.',
    
    tech1Title: 'Environmentally Controlled Cultivation',
-   tech1Desc: 'We utilize standardized canvas raceway ponds situated beneath specialized netting structures. This hybrid approach harnesses maximum natural sunlight and airflow while allowing us to strictly manage the micro-climate and shield the biomass from external weather variables.',
+   tech1Desc: 'We utilize standardized canvas raceway ponds situated beneath specialized greenhouse structures. This hybrid approach harnesses maximum natural sunlight and airflow while allowing us to strictly manage the micro-climate and shield the biomass from external weather variables.',
    
    tech2Title: 'IoT-Integrated Smart Farming',
    tech2Desc: 'Precision agriculture requires precise data. We implement IoT (Internet of Things) sensor networks to continuously monitor crucial environmental metrics in real time—including water temperature, pH balance, and nutrient density—ensuring optimized, highly consistent growth cycles without the guesswork.',
@@ -355,7 +355,7 @@ export const defaultResources: TranslationResources = {
    cat4Title: 'Premium Grains',
    cat4Desc1: 'Organic ST25 Rice: Vietnam is a top-tier global exporter of rice. We bypass standard commodity channels to focus on award-winning, fragrant ST25 rice varieties cultivated under strict organic protocols, perfect for clean-label retail and premium food manufacturing.',
    cat5Title: 'Superfoods & Botanical Biomass',
-   cat5Desc1: 'Việt Wolffia (Watermeal): Grown in highly controlled, open canvas ponds under simple net structures to ensure absolute purity and optimal micro-climate management. As the world’s most nutrient-dense plant, our Wolffia is available as live biomass, dried superfood powder, and specialty functional roasts (including craft beer applications).',
+   cat5Desc1: 'Việt Wolffia (Watermeal): Grown in highly controlled, open canvas ponds under greenhouse structures to ensure absolute purity and optimal micro-climate management. As the world’s most nutrient-dense plant, our Wolffia is available as live biomass, dried superfood powder, and specialty functional roasts (including craft beer applications).',
    cat5Desc2: 'Bio-Balance Animal Nutrition: A proprietary, zero-waste feed blending nutrient-rich aquatic biomass with upcycled fruit waste, engineered for commercial aquaculture and sustainable livestock.',
    part2Label: 'Part 2',
    part2Title: 'Sustainable Agricultural Inputs',
@@ -475,7 +475,7 @@ export const defaultResources: TranslationResources = {
     step3Title: 'Tận Thu Chiến Lược',
     step3Desc: 'Chúng tôi tận thu các phụ phẩm chế biến giàu dinh dưỡng như vỏ chanh dây, vỏ chuối và vỏ xoài, ngăn ngừa việc tích tụ tại các bãi rác.',
     step4Title: 'Động Cơ Wolffia',
-    step4Desc: 'Chúng tôi nuôi trồng Wolffia globosa trong các ao bạt chuyên dụng ngoài trời dưới cấu trúc lưới đơn giản, sản xuất một lượng lớn protein thực vật bền vững.',
+    step4Desc: 'Chúng tôi nuôi trồng Wolffia globosa trong các ao bạt chuyên dụng ngoài trời dưới cấu trúc nhà kính, sản xuất một lượng lớn protein thực vật bền vững.',
     step5Title: 'Thức Ăn Cân Bằng Sinh Học',
     step5Desc: 'Phụ phẩm trái cây tận thu được phối trộn chuyên môn hóa với sinh khối Wolffia để tạo ra thức ăn độc quyền, dễ tiêu hóa cho thủy sản và chăn nuôi thương mại, hoàn thành chu kỳ không rác thải.',
     cta: 'Xem Cách Mô Hình Tuần Hoàn Của Chúng Tôi Hoạt Động →',
@@ -571,7 +571,7 @@ export const defaultResources: TranslationResources = {
    spotlightDesc2: 'Bằng việc nuôi trồng Wolffia Globosa (Bèo tấm/Trứng nước), chúng tôi tạo ra một nguồn protein thực vật mang tính cách mạng. Quan trọng hơn, mô hình này thể hiện chính xác các chuẩn mực vận hành cần thiết để đáp ứng nhu cầu khắt khe của thị trường tiêu dùng toàn cầu và mảng dinh dưỡng động vật chuyên biệt.',
    
    tech1Title: 'Canh Tác Kiểm Soát Môi Trường',
-   tech1Desc: 'Chúng tôi sử dụng hệ thống ao nổi lót bạt chuẩn hóa đặt dưới cấu trúc lưới che chuyên dụng. Phương pháp kết hợp này giúp tận dụng tối đa ánh sáng tự nhiên và luồng khí lưu thông, đồng thời kiểm soát chặt chẽ vi khí hậu và bảo vệ sinh khối khỏi những biến động khắc nghiệt của thời tiết bên ngoài.',
+   tech1Desc: 'Chúng tôi sử dụng hệ thống ao nổi lót bạt chuẩn hóa đặt dưới cấu trúc nhà kính chuyên dụng. Phương pháp kết hợp này giúp tận dụng tối đa ánh sáng tự nhiên và luồng khí lưu thông, đồng thời kiểm soát chặt chẽ vi khí hậu và bảo vệ sinh khối khỏi những biến động khắc nghiệt của thời tiết bên ngoài.',
    
    tech2Title: 'Nông Nghiệp Thông Minh Tích Hợp IoT',
    tech2Desc: 'Nông nghiệp chính xác đòi hỏi những dữ liệu chuẩn xác. Chúng tôi triển khai mạng lưới cảm biến IoT để liên tục theo dõi các chỉ số môi trường thiết yếu theo thời gian thực — từ nhiệt độ nước, độ pH đến mật độ dinh dưỡng — qua đó tối ưu hóa quy trình, đảm bảo chu kỳ sinh trưởng đồng đều mà không dựa vào phỏng đoán.',
@@ -763,7 +763,7 @@ export const defaultResources: TranslationResources = {
    cat4Title: 'Ngũ Cốc Cao Cấp',
    cat4Desc1: 'Gạo ST25 Hữu Cơ: Việt Nam là nhà xuất khẩu gạo hàng đầu thế giới. Chúng tôi vượt qua các kênh hàng hóa tiêu chuẩn để tập trung vào các giống gạo ST25 thơm ngon, đạt giải thưởng được trồng theo các quy trình hữu cơ nghiêm ngặt, hoàn hảo cho bán lẻ nhãn sạch và sản xuất thực phẩm cao cấp.',
    cat5Title: 'Siêu Thực Phẩm & Sinh Khối Thực Vật',
-   cat5Desc1: 'Việt Wolffia (Bèo Tấm/Trứng Nước): Được trồng trong các ao bạt mở được kiểm soát chặt chẽ dưới các cấu trúc lưới đơn giản để đảm bảo độ tinh khiết tuyệt đối và quản lý vi khí hậu tối ưu. Là loài thực vật giàu dinh dưỡng nhất thế giới, Wolffia của chúng tôi có sẵn dưới dạng sinh khối tươi, bột siêu thực phẩm sấy khô, và đồ rang chức năng đặc biệt (bao gồm cả ứng dụng bia thủ công).',
+   cat5Desc1: 'Việt Wolffia (Bèo Tấm/Trứng Nước): Được trồng trong các ao bạt mở được kiểm soát chặt chẽ dưới các cấu trúc nhà kính để đảm bảo độ tinh khiết tuyệt đối và quản lý vi khí hậu tối ưu. Là loài thực vật giàu dinh dưỡng nhất thế giới, Wolffia của chúng tôi có sẵn dưới dạng sinh khối tươi, bột siêu thực phẩm sấy khô, và đồ rang chức năng đặc biệt (bao gồm cả ứng dụng bia thủ công).',
    cat5Desc2: 'Dinh Dưỡng Động Vật Bio-Balance: Một thức ăn độc quyền, không rác thải pha trộn sinh khối thủy sinh giàu dinh dưỡng với rác thải trái cây được tái chế, được thiết kế cho nuôi trồng thủy sản thương mại và chăn nuôi bền vững.',
    part2Label: 'Phần 2',
    part2Title: 'Đầu Vào Nông Nghiệp Bền Vững',
