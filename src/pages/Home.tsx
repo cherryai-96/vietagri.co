@@ -207,8 +207,6 @@ export const Home: React.FC = () => {
         </div>
       </section>
 
-      <DualBuyerPathways />
-
       {/* Introduction Section */}
       <section className="py-24 bg-white text-carbon px-4 md:px-8 border-b border-gold-warm/15">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
@@ -411,6 +409,8 @@ export const Home: React.FC = () => {
           `}} />
         </div>
       </section>
+
+      <DualBuyerPathways />
 
       {/* Global Sourcing spotlight & Quality banner */}
       <section className="py-20 relative px-4 md:px-8 border-y border-gold-warm/20 text-cream overflow-hidden">
