@@ -46,7 +46,7 @@ export const ProductInputCard: React.FC<ProductInputCardProps> = ({
         <div className="w-10 h-1 bg-forest-leaf" />
 
         <h3 className="font-serif font-bold text-xl md:text-2xl text-forest">
-          {t(titleKey)}
+          {typeof t(titleKey) === 'string' ? t(titleKey).replace(/^Bio\.SoilZ:\s*/i, '') : t(titleKey)}
         </h3>
 
         <p className="font-sans font-light text-carbon/70 text-sm leading-relaxed">
