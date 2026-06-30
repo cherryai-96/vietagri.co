@@ -26,7 +26,6 @@ export const Home: React.FC = () => {
   const [introSlide, setIntroSlide] = useState(0);
   const introImages = [
     { src: '/images/intro_slide_1.png?v=2', alt: 'Agricultural Harvesting & Export Logistics' },
-    { src: '/images/export_containers.jpg', alt: 'High-tech Agriculture & Export Logistics' },
     { src: '/images/intro_slide_3.png?v=3', alt: 'Organic Consulting & Certification' },
   ];
 
