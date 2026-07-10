@@ -393,12 +393,7 @@ export const VietWolffia: React.FC = () => {
       category: 'beverage',
       desc: 'Refreshing and nutritious Wolffia drink.'
     },
-    {
-      src: '/images/beverages/B15.jpg',
-      title: 'Wolffia Beverage 15',
-      category: 'beverage',
-      desc: 'Refreshing and nutritious Wolffia drink.'
-    },
+
     {
       src: '/images/beverages/B16.jpg',
       title: 'Wolffia Beverage 16',
