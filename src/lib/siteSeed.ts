@@ -61,6 +61,17 @@ export function buildEditablePagesFromResources(resources: TranslationResources)
           visible: true,
           order: 2,
         },
+        {
+          id: 'home-intro-slider',
+          label: 'Home Intro Slider Images',
+          heading: 'Slider Images',
+          subheading: 'Format: JSON array of objects with src and alt',
+          body: JSON.stringify(resources['en']?.home?.introImages || []),
+          buttonText: '',
+          buttonLink: '',
+          visible: true,
+          order: 3,
+        },
       ],
     },
     {
@@ -144,6 +155,77 @@ export function buildEditablePagesFromResources(resources: TranslationResources)
       ],
     },
   ];
+}
+
+function updateText(resources: TranslationResources, language: 'en' | 'vi', path: string, newValue: string) {
+  const keys = path.split('.');
+  let current: any = resources[language];
+
+  for (let i = 0; i < keys.length - 1; i++) {
+    const key = keys[i];
+    if (!current[key] || typeof current[key] !== 'object') {
+      current[key] = {};
+    }
+    current = current[key];
+  }
+  
+  if (current) {
+    current[keys[keys.length - 1]] = newValue;
+  }
+}
+
+export function updateResourcesFromEditablePage(resources: TranslationResources, page: EditablePage): TranslationResources {
+  const updated = JSON.parse(JSON.stringify(resources)) as TranslationResources;
+  const lang = 'en'; // Assuming CMS currently only edits English sections
+
+  for (const section of page.sections) {
+    if (section.id === 'home-hero') {
+      updateText(updated, lang, 'home.heroTitle', section.heading);
+      updateText(updated, lang, 'home.heroSub', section.subheading);
+      updateText(updated, lang, 'home.advantageSub', section.body);
+      updateText(updated, lang, 'common.partnerBtn', section.buttonText);
+    } else if (section.id === 'home-spotlight') {
+      updateText(updated, lang, 'home.spotlightTitle', section.heading);
+      updateText(updated, lang, 'home.spotlightSub', section.subheading);
+      updateText(updated, lang, 'home.spotlightDesc1', section.body);
+      updateText(updated, lang, 'common.wolffiaBtn', section.buttonText);
+    } else if (section.id === 'home-intro-slider') {
+      try {
+        const images = JSON.parse(section.body);
+        if (Array.isArray(images)) {
+          updated[lang].home.introImages = images;
+        }
+      } catch (e) {
+        // ignore invalid JSON for images
+      }
+    } else if (section.id === 'about-hero') {
+      updateText(updated, lang, 'about.heroTitle', section.heading);
+      updateText(updated, lang, 'about.heroSub', section.subheading);
+      updateText(updated, lang, 'about.missionDesc', section.body);
+      updateText(updated, lang, 'common.contactBtn', section.buttonText);
+    } else if (section.id === 'services-hero') {
+      updateText(updated, lang, 'services.heroTitle', section.heading);
+      updateText(updated, lang, 'services.heroSub', section.subheading);
+      updateText(updated, lang, 'services.introDesc', section.body);
+      updateText(updated, lang, 'common.consultationBtn', section.buttonText);
+    } else if (section.id === 'wolffia-hero') {
+      updateText(updated, lang, 'wolffia.heroTitle', section.heading);
+      updateText(updated, lang, 'wolffia.heroSub', section.subheading);
+      updateText(updated, lang, 'wolffia.introText1', section.body);
+      updateText(updated, lang, 'common.sampleBtn', section.buttonText);
+    } else if (section.id === 'sustainability-hero') {
+      updateText(updated, lang, 'sustainability.heroTitle', section.heading);
+      updateText(updated, lang, 'sustainability.heroSub', section.subheading);
+      updateText(updated, lang, 'sustainability.introDesc1', section.body);
+      updateText(updated, lang, 'common.inquireCertBtn', section.buttonText);
+    } else if (section.id === 'contact-hero') {
+      updateText(updated, lang, 'contact.heroTitle', section.heading);
+      updateText(updated, lang, 'contact.heroSub', section.subheading);
+      updateText(updated, lang, 'common.sendInquiry', section.buttonText);
+    }
+  }
+
+  return updated;
 }
 
 export function buildSiteResourceRows(resources: TranslationResources) {

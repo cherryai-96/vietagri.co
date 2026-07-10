@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react';
 import { Link, Navigate, useParams } from 'react-router-dom';
-import { AlertTriangle, ArrowRight, Eye, Save } from 'lucide-react';
+import { ArrowRight, Eye, Save } from 'lucide-react';
 import { useEditablePagesData } from '../data/useAdminData';
 import type { EditablePage, PageSection, PageSlug } from '../types';
 import {
@@ -10,9 +10,7 @@ import {
   PageHeader,
   RichTextEditor,
   SEOEditorPlaceholder,
-  SelectField,
   StatusBadge,
-  TextareaField,
   ToggleSwitch,
   ToastNotification,
   UploadField,
@@ -52,72 +50,7 @@ function SectionEditor({ section, onChange }: { section: PageSection; onChange: 
   );
 }
 
-function PageSpecificPanel({ slug }: { slug: PageSlug }) {
-  if (slug === 'home') {
-    return (
-      <div className={`${cardClass} p-4`}>
-        <h3 className="font-serif text-2xl font-bold text-[#0B120C]">Home page spotlight fields</h3>
-        <div className="mt-4 grid gap-4 lg:grid-cols-2">
-          <FormField label="Hero eyebrow" value="Vietnam Agriculture Center" />
-          <FormField label="Overlay darkness slider" value="42%" help="Adjust readability of text over the hero image." />
-          <TextareaField label="Trust indicators" value="Export-ready supply • High-tech cultivation • B2B documentation • Việt Wolffia innovation" />
-          <UploadField type="image" />
-        </div>
-      </div>
-    );
-  }
-
-  if (slug === 'viet-wolffia') {
-    return (
-      <div className={`${cardClass} p-4`}>
-        <h3 className="font-serif text-2xl font-bold text-[#0B120C]">Việt Wolffia product manager</h3>
-        <div className="mt-4 grid gap-4 lg:grid-cols-2">
-          {['Fresh Biomass', 'Dried Wolffia', 'Roasted Wolffia', 'Bio-Balance Animal Nutrition', 'Custom Bio-Feed Formulations'].map((product) => (
-            <div key={product} className="rounded-lg border border-[#E5E0D5] bg-[#F8F2E6]/50 p-4">
-              <FormField label="Product name" value={product} />
-              <TextareaField label="Short description" value="Product description, application sectors, image, and technical document can be connected to backend records." rows={3} />
-              <SelectField label="Visibility" value="Show" options={['Show', 'Hide']} />
-            </div>
-          ))}
-        </div>
-      </div>
-    );
-  }
-
-  if (slug === 'sustainability') {
-    return (
-      <div className="rounded-lg border border-amber-200 bg-amber-50 p-4">
-        <div className="flex gap-3">
-          <AlertTriangle className="mt-0.5 h-5 w-5 shrink-0 text-amber-700" />
-          <div>
-            <h3 className="font-semibold text-amber-900">Certification wording help</h3>
-            <p className="mt-1 text-sm leading-6 text-amber-800">
-              Only display official certifications if VAC has verified documentation. If not yet certified, use terms like "prepared for",
-              "aligned with", or "certification pathway".
-            </p>
-          </div>
-        </div>
-      </div>
-    );
-  }
-
-  if (slug === 'contact') {
-    return (
-      <div className={`${cardClass} p-4`}>
-        <h3 className="font-serif text-2xl font-bold text-[#0B120C]">Official contact information</h3>
-        <div className="mt-4 grid gap-4 lg:grid-cols-2">
-          <FormField label="Company name" value="Vietnam Agriculture Center (VAC)" />
-          <FormField label="Email" value="inquiries@vietagri.co" />
-          <FormField label="Phone / WhatsApp" value="+84 858741968" />
-          <FormField label="Office hours" value="Monday - Friday, 8:00 AM - 5:00 PM Indochina Time / UTC+7" />
-          <div className="lg:col-span-2">
-            <TextareaField label="Headquarters" value="No 59, Truong Dang Que Street, Hanh Thong Ward, Ho Chi Minh City, Vietnam, 71423" />
-          </div>
-        </div>
-      </div>
-    );
-  }
-
+function PageSpecificPanel(_props: { slug: PageSlug }) {
   return null;
 }
 

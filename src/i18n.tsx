@@ -136,6 +136,12 @@ export const defaultResources: TranslationResources = {
    introSubtitle: 'Scaling volume, engineering purity, and powering sustainable global supply chains.',
    introPara1: 'The Vietnam Agriculture Center (VAC) is the definitive hub for large-scale enterprise procurement, premium contract farming, and advanced agritech innovation. Representing the full strength of Vietnam’s massive agricultural sector, we bridge the gap between high-volume commercial production and next-generation ecological science.',
    introPara2: 'We do not just move commodities; we transform how they are grown. By integrating cutting-edge Electroculture systems and elite microbial inputs directly into our farming networks, we naturally supercharge crop vitality, maximize yields, and protect the soil. Backed by our independent Organic Consulting & Certification services, VAC provides global corporate buyers with a resilient, transparent, and fully ESG-compliant supply chain from root to export.',
+   introImages: [
+    { src: '/images/ss1.1.JPG', alt: 'Vietnam Agriculture Center Introduction 1' },
+    { src: '/images/ss1.2.PNG', alt: 'Vietnam Agriculture Center Introduction 2' },
+    { src: '/images/ss1.3.jpg', alt: 'Vietnam Agriculture Center Introduction 3' },
+    { src: '/images/ss1.4.png', alt: 'Vietnam Agriculture Center Introduction 4' }
+   ],
    advantageTitle: 'An\u00A0Integrated\u00A0Agricultural<br className="hidden md:block" />Supply\u00A0Chain\u00A0Ecosystem',
    advantageSub: 'At Vietnam Agriculture Center (VAC), we eliminate the friction of international trade. We offer end‑to‑end solutions for global corporations, ensuring food sustainability, security, and uncompromising quality from seed to shipment.',
    

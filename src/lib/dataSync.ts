@@ -80,6 +80,37 @@ export async function loadEditablePages(fallbackPages: EditablePage[]): Promise<
 export async function saveEditablePage(page: EditablePage) {
   const payload = buildCmsPageRow(page);
   const apiResult = await postAdminUpdate('/api/admin/pages', payload);
+  
+  // Update site_resources in background
+  try {
+    const supabase = getSupabaseBrowserClient();
+    if (supabase) {
+      const { data: resourcesData } = await supabase.from('site_resources').select('*');
+      if (resourcesData) {
+        const { defaultResources } = await import('../i18n');
+        const { updateResourcesFromEditablePage, buildSiteResourceRows } = await import('./siteSeed');
+        let currentResources = JSON.parse(JSON.stringify(defaultResources));
+        for (const row of resourcesData) {
+          if (row.language === 'en' || row.language === 'vi') {
+            currentResources[row.language] = row.content || {};
+          }
+        }
+        
+        const updatedResources = updateResourcesFromEditablePage(currentResources, page);
+        const resourceRows = buildSiteResourceRows(updatedResources);
+        
+        for (const row of resourceRows) {
+          await supabase.from('site_resources').upsert({
+            language: row.language,
+            content: row.content,
+          }, { onConflict: 'language' });
+        }
+      }
+    }
+  } catch (e) {
+    console.error("Failed to sync site_resources", e);
+  }
+
   if (!apiResult.error) {
     return apiResult;
   }

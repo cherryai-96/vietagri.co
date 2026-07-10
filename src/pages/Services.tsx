@@ -30,22 +30,6 @@ export const Services: React.FC = () => {
       if (!isNaN(tabId)) {
         setActiveTab(tabId);
         setExpandedTabs(prev => prev.includes(tabId) ? prev : [...prev, tabId]);
-        
-        // Scroll to the specific tab smoothly
-        setTimeout(() => {
-          const isMobile = window.innerWidth < 1024;
-          const elementId = isMobile ? `tab-button-${tabId}` : 'services-tabs';
-          const element = document.getElementById(elementId);
-          if (element) {
-            const headerOffset = 100;
-            const elementPosition = element.getBoundingClientRect().top;
-            const offsetPosition = elementPosition + window.scrollY - headerOffset;
-            window.scrollTo({
-              top: offsetPosition,
-              behavior: 'smooth'
-            });
-          }
-        }, 150);
       }
     } else {
       window.scrollTo(0, 0);

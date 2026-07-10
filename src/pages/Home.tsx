@@ -24,12 +24,7 @@ export const Home: React.FC = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
 
   const [introSlide, setIntroSlide] = useState(0);
-  const introImages = [
-    { src: '/images/ss1.1.JPG', alt: 'Vietnam Agriculture Center Introduction 1' },
-    { src: '/images/ss1.2.PNG', alt: 'Vietnam Agriculture Center Introduction 2' },
-    { src: '/images/ss1.3.jpg', alt: 'Vietnam Agriculture Center Introduction 3' },
-    { src: '/images/ss1.4.png', alt: 'Vietnam Agriculture Center Introduction 4' },
-  ];
+  const introImages: { src: string; alt: string }[] = (t('home.introImages') as any) || [];
 
   useEffect(() => {
     const timer = setInterval(() => {
