@@ -426,6 +426,14 @@ export const defaultResources: TranslationResources = {
    followUs: 'Connect With Us',
    linkedin: 'Follow our corporate updates on LinkedIn',
    youtube: 'View our on‑the‑ground operations on YouTube',
+  },
+  footer: {
+   contact: 'Contact',
+   quickNavigation: 'Quick Navigation',
+   followUs: 'Follow us',
+   privacyPolicy: 'Privacy Policy',
+   termsOfService: 'Terms of Service',
+   esgDisclosures: 'ESG Disclosures'
   }
  },
  vi: {
@@ -834,6 +842,14 @@ export const defaultResources: TranslationResources = {
    followUs: 'Kết Nối Với Chúng Tôi',
    linkedin: 'Theo dõi các thông tin cập nhật trên LinkedIn',
    youtube: 'Khám phá các hoạt động thực địa trên YouTube',
+  },
+  footer: {
+   contact: 'Liên Hệ',
+   quickNavigation: 'Điều Hướng Nhanh',
+   followUs: 'Theo Dõi Chúng Tôi',
+   privacyPolicy: 'Chính Sách Bảo Mật',
+   termsOfService: 'Điều Khoản Dịch Vụ',
+   esgDisclosures: 'Báo Cáo ESG'
   }
  }
 };

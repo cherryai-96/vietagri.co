@@ -31,7 +31,7 @@ export const Footer: React.FC = () => {
         {/* Column 2: Contact */}
         <div className="flex flex-col gap-5">
           <h3 className="font-serif font-bold text-lg text-gold-champagne tracking-wide border-b border-gold-warm/15 pb-2">
-            Contact
+            {t('footer.contact')}
           </h3>
           <ul className="flex flex-col gap-4 text-sm font-light">
             <li className="flex items-start gap-2">
@@ -58,7 +58,7 @@ export const Footer: React.FC = () => {
         {/* Column 3: Quick Navigation */}
         <div className="flex flex-col gap-5">
           <h3 className="font-serif font-bold text-lg text-gold-champagne tracking-wide border-b border-gold-warm/15 pb-2">
-            Quick Navigation
+            {t('footer.quickNavigation')}
           </h3>
           <ul className="grid grid-cols-2 gap-3 text-sm font-light">
             <li>
@@ -142,7 +142,7 @@ export const Footer: React.FC = () => {
         {/* Column 5: Follow us */}
         <div className="flex flex-col gap-5">
           <h3 className="font-serif font-bold text-lg text-gold-champagne tracking-wide border-b border-gold-warm/15 pb-2">
-            Follow us
+            {t('footer.followUs')}
           </h3>
 
           <div className="flex items-center gap-3 mt-4">
@@ -165,9 +165,9 @@ export const Footer: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 md:px-8 pt-8 border-t border-gold-warm/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-cream/50">
         <p>{t('common.copyright')}</p>
         <div className="flex gap-6">
-          <a href="#" className="hover:text-gold-warm transition-colors">Privacy Policy</a>
-          <a href="#" className="hover:text-gold-warm transition-colors">Terms of Service</a>
-          <a href="#" className="hover:text-gold-warm transition-colors">ESG Disclosures</a>
+          <a href="#" className="hover:text-gold-warm transition-colors">{t('footer.privacyPolicy')}</a>
+          <a href="#" className="hover:text-gold-warm transition-colors">{t('footer.termsOfService')}</a>
+          <a href="#" className="hover:text-gold-warm transition-colors">{t('footer.esgDisclosures')}</a>
         </div>
       </div>
     </footer>
