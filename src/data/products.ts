@@ -118,17 +118,17 @@ export const CATEGORIES_DATA: Record<string, CategoryInfo> = {
     highlightsEn: [
       '4 Manufacturing technologies (Freeze-Dried, Dehydrated, Spray-Dried, Extract)',
       '100% natural, free from synthetic colours & preservatives',
-      'Ultra-fine particle sizing (80 to 200 Mesh)',
-      'High solubility formulations for instant RTD beverages & supplement mixes'
+      'Fine particle sizing (80 to 100 Mesh)',
+      'High solubility formulations for RTD beverages & supplement mixes'
     ],
     highlightsVi: [
       '4 công nghệ chế biến (Sấy thăng hoa, Sấy nhiệt/lạnh, Sấy phun, Chiết xuất)',
       '100% tự nhiên, không màu nhân tạo và chất bảo quản',
-      'Độ mịn hạt siêu cao (từ 80 đến 200 Mesh)',
+      'Độ mịn tiêu chuẩn (80 đến 100 Mesh)',
       'Độ hòa tan cao chuyên dụng cho đồ uống pha sẵn RTD & thực phẩm chức năng'
     ],
-    availableCutsEn: ['Fine Powder (80-120 Mesh)', 'Ultra-Fine Powder (150-200 Mesh)', 'Instant Water-Soluble Extract Powder', 'Granulated Powder'],
-    availableCutsVi: ['Bột mịn (80-120 Mesh)', 'Bột siêu mịn (150-200 Mesh)', 'Bột chiết xuất hòa tan nhanh', 'Bột dạng hạt (Granulated)'],
+    availableCutsEn: ['Fine Powder (80-100 Mesh)', 'Water-Soluble Extract Powder', 'Granulated Powder'],
+    availableCutsVi: ['Bột mịn (80-100 Mesh)', 'Bột chiết xuất hòa tan', 'Bột dạng hạt (Granulated)'],
     defaultPackagingEn: '1kg, 5kg Aluminum Vacuum Bags in 10kg/20kg Export Cartons or 25kg Fiber Drums',
     defaultPackagingVi: 'Túi nhôm hút chân không 1kg, 5kg đóng trong thùng carton 10kg/20kg hoặc Fiber Drum 25kg',
     storageEn: 'Cool, dry condition below 25°C, relative humidity < 60%',
@@ -139,17 +139,17 @@ export const CATEGORIES_DATA: Record<string, CategoryInfo> = {
     slug: 'freeze-dried-fruits',
     titleEn: 'Freeze-Dried Fruits',
     titleVi: 'Trái Cây Sấy Thăng Hoa',
-    subtitleEn: 'Nutrient-Dense Premium Snacks & Structural Ingredients',
-    subtitleVi: 'Trái Cây Sấy Giữ Trọn Dinh Dưỡng, Cấu Trúc Giòn Xốp & Hương Vị Tự Nhiên',
+    subtitleEn: 'Sublimation Vacuum Freeze-Drying preserving natural flavor, aroma & nutrients',
+    subtitleVi: 'Công Nghệ Sấy Thăng Hoa Chân Không Giữ Nguyên Hương Vị, Màu Sắc & Dinh Dưỡng',
     heroImage: '/images/products/IMG_7958.JPG',
     catalogueFileName: 'VAC_Freeze_Dried_Fruits_Catalogue_2026-1.pdf',
     catalogueDriveId: '1jPaTPhfWrBV9DBNz_5Iyp9pt_EtB_UfU',
-    descriptionEn: 'Using state-of-the-art sublimation vacuum freeze-drying technology, VAC freeze-dried fruits preserve over 98% of original vitamins, antioxidants, natural aroma, and cell structure. Offering a delightful crunchy texture with moisture content below 5%, ideal for premium retail snacks, breakfast cereals, chocolate coating, and bakery inclusions.',
-    descriptionVi: 'Ứng dụng công nghệ sấy thăng hoa chân không hiện đại, trái cây sấy thăng hoa VAC duy trì trên 98% hàm lượng vitamin, chất chống oxy hóa, hương thơm và cấu trúc tế bào tự nhiên. Tạo độ giòn xốp thơm ngon với độ ẩm dưới 5%, hoàn hảo cho snack ăn liền cao cấp, ngũ cốc ăn sáng, phủ sô-cô-la và làm nhân bánh.',
+    descriptionEn: 'Using sublimation vacuum freeze-drying technology, VAC freeze-dried fruits preserve original vitamins, antioxidants, natural aroma, and cell structure. Offering a delightful crunchy texture with moisture content below 5%, ideal for premium retail snacks, breakfast cereals, chocolate coating, and bakery inclusions.',
+    descriptionVi: 'Ứng dụng công nghệ sấy thăng hoa chân không hiện đại, trái cây sấy thăng hoa VAC duy trì hàm lượng vitamin, chất chống oxy hóa, hương thơm và cấu trúc tế bào tự nhiên. Tạo độ giòn xốp thơm ngon với độ ẩm dưới 5%, hoàn hảo cho snack ăn liền cao cấp, ngũ cốc ăn sáng, phủ sô-cô-la và làm nhân bánh.',
     highlightsEn: [
-      'Sublimation technology preserving 98%+ nutrients and natural structure',
-      'Ultra-low moisture content (< 5%) for long ambient shelf life (18-24 months)',
-      '100% pure fruit, non-fried, zero added sugar or preservatives',
+      'Sublimation technology preserving nutrients and natural structure',
+      'Low moisture content (< 5%) for long ambient shelf life (18-24 months)',
+      'Pure fruit, non-fried, zero added sugar or synthetic preservatives',
       'Diverse cut forms: Whole, Slices, Dices, and Crisps'
     ],
     highlightsVi: [
@@ -824,7 +824,7 @@ export const PRODUCTS_LIST: ProductItem[] = [
     nameVi: 'Bột Cải Xoan Kale Sấy Lạnh',
     category: 'powders',
     subCategory: 'Dehydrated Powder',
-    formats: ['120 Mesh Fine Green Powder'],
+    formats: ['100 Mesh Fine Green Powder'],
     specifications: {
       moisture: '< 6.0%',
       shelfLife: '18 months',
@@ -1866,7 +1866,7 @@ export const PRODUCTS_LIST: ProductItem[] = [
     scientificName: 'Colocasia esculenta',
     category: 'powders',
     subCategory: 'Dehydrated Powders',
-    formats: ['100-120 mesh powder'],
+    formats: ['80-100 mesh powder'],
     specifications: {
       brix: 'Natural aroma',
       shelfLife: '24 months',
