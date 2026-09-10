@@ -23,6 +23,7 @@ export const Products: React.FC = () => {
     {
       id: 'fruits',
       images: [
+        '/images/products/fresh/fresh_banana.png',
         '/images/products/IMG_7967.JPG',
         '/images/products/IMG_7966.PNG',
         '/images/products/IMG_7958.JPG',
@@ -31,7 +32,7 @@ export const Products: React.FC = () => {
       ],
       titleKey: 'products.cat2Title',
       descKeys: ['products.cat2Desc1', 'products.cat2Desc2'],
-      tags: ['Passion Fruit', 'Mango', 'Banana', 'Coconut', 'Durian', 'Pineapple'],
+      tags: ['Cavendish Banana', 'Passion Fruit', 'Mango', 'Coconut', 'Durian', 'Pineapple'],
     },
     {
       id: 'spices',
