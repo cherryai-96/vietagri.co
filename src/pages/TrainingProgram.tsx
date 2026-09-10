@@ -175,14 +175,14 @@ export const TrainingProgram: React.FC = () => {
       {/* === SECTION 1: BECOME A BRIDGE BETWEEN VIETNAM & THE WORLD === */}
       <section className="py-20 md:py-28 bg-ivory px-4 md:px-8 border-b border-gold-warm/15">
         <div className="max-w-7xl mx-auto flex flex-col gap-16">
-          <div className="text-center max-w-3xl mx-auto flex flex-col gap-4">
+          <div className="text-center max-w-5xl mx-auto flex flex-col gap-4">
             <span className="text-xs font-bold uppercase tracking-widest text-gold-antique">
               Trade Representation
             </span>
-            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-forest leading-tight">
+            <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-[2.5rem] font-bold text-forest leading-tight lg:whitespace-nowrap">
               {t('training.bridgeTitle')}
             </h2>
-            <p className="text-sm md:text-base text-carbon/80 font-light leading-relaxed">
+            <p className="text-sm md:text-base text-carbon/80 font-light leading-relaxed max-w-3xl mx-auto">
               {t('training.bridgeIntro')}
             </p>
           </div>
@@ -231,11 +231,11 @@ export const TrainingProgram: React.FC = () => {
       {/* === SECTION 2: WHO IS THIS PROGRAM FOR? === */}
       <section className="py-20 md:py-28 bg-cream px-4 md:px-8">
         <div className="max-w-7xl mx-auto flex flex-col gap-16">
-          <div className="text-center max-w-3xl mx-auto flex flex-col gap-3">
+          <div className="text-center max-w-4xl mx-auto flex flex-col gap-3">
             <span className="text-xs font-bold uppercase tracking-widest text-gold-antique">
               Target Audience
             </span>
-            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-forest">
+            <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-[2.5rem] font-bold text-forest lg:whitespace-nowrap">
               {t('training.whoTitle')}
             </h2>
             <p className="text-xs md:text-sm uppercase tracking-wider text-carbon/60 font-semibold">
@@ -278,11 +278,11 @@ export const TrainingProgram: React.FC = () => {
       {/* === SECTION 3: STRUCTURED CURRICULUM & MODULES === */}
       <section className="py-20 md:py-28 bg-ivory border-y border-gold-warm/15 px-4 md:px-8">
         <div className="max-w-7xl mx-auto flex flex-col gap-16">
-          <div className="text-center max-w-3xl mx-auto flex flex-col gap-3">
+          <div className="text-center max-w-5xl mx-auto flex flex-col gap-3">
             <span className="text-xs font-bold uppercase tracking-widest text-gold-antique">
               Curriculum Roadmap
             </span>
-            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-forest">
+            <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-[2.25rem] xl:text-[2.75rem] font-bold text-forest lg:whitespace-nowrap">
               {t('training.curriculumTitle')}
             </h2>
             <p className="text-xs md:text-sm uppercase tracking-wider text-carbon/60 font-semibold">
@@ -320,11 +320,11 @@ export const TrainingProgram: React.FC = () => {
       {/* === SECTION 4: PROGRAM BENEFITS & VAC SUPPORT === */}
       <section className="py-20 md:py-28 bg-cream px-4 md:px-8">
         <div className="max-w-7xl mx-auto flex flex-col gap-16">
-          <div className="text-center max-w-3xl mx-auto flex flex-col gap-3">
+          <div className="text-center max-w-5xl mx-auto flex flex-col gap-3">
             <span className="text-xs font-bold uppercase tracking-widest text-gold-antique">
               Ecosystem Advantage
             </span>
-            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-forest">
+            <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-[2.5rem] font-bold text-forest lg:whitespace-nowrap">
               {t('training.benefitsTitle')}
             </h2>
           </div>
