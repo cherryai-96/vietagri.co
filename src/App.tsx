@@ -8,6 +8,7 @@ import { Home } from './pages/Home';
 import { About } from './pages/About';
 import { Services } from './pages/Services';
 import { VietWolffia } from './pages/VietWolffia';
+import { TrainingProgram } from './pages/TrainingProgram';
 import { Contact } from './pages/Contact';
 import { Products } from './pages/Products';
 import { CategoryPage } from './pages/products/CategoryPage';
@@ -50,6 +51,7 @@ function App() {
                       <Route path="/about" element={<About />} />
                       <Route path="/services" element={<Services />} />
                       <Route path="/viet-wolffia" element={<VietWolffia />} />
+                      <Route path="/training-program" element={<TrainingProgram />} />
                       <Route path="/products" element={<Products />} />
                       <Route path="/products/:categorySlug" element={<CategoryPage />} />
                       <Route path="/catalogues" element={<Catalogues />} />

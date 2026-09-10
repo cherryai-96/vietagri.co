@@ -63,6 +63,7 @@ export const Header: React.FC = () => {
       ],
     },
     { path: '/viet-wolffia', label: t('nav.wolffia') },
+    { path: '/training-program', label: t('nav.training') },
     { path: '/contact', label: t('nav.contact') },
   ];
 
