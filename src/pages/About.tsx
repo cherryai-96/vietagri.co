@@ -184,40 +184,7 @@ export const About: React.FC = () => {
         </div>
       </section>
 
-      {/* Why VAC / Core Values Section */}
-      <section className="py-24 bg-cream text-carbon px-4 md:px-8">
-        <div className="max-w-7xl mx-auto flex flex-col gap-16">
-          <div className="text-center max-w-3xl mx-auto flex flex-col gap-4">
-            <span className="text-xs font-bold uppercase tracking-widest text-gold-antique">
-              <span dangerouslySetInnerHTML={{ __html: t('about.whySub') }} />
-            </span>
-            <h2 className="font-serif text-balance text-[2.25rem] leading-[1.1] sm:text-[3rem] md:text-5xl lg:text-6xl font-bold tracking-wide text-forest leading-tight">
-              <span dangerouslySetInnerHTML={{ __html: t('about.whyTitle') }} />
-            </h2>
-          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {values.map((val, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.15, duration: 0.6 }}
-                className="bg-ivory border border-gold-warm/15 rounded-xl p-8 flex flex-col gap-5 bento-card shadow-sm hover:shadow-md transition-shadow"
-              >
-                <div className="p-3.5 bg-forest/5 rounded-lg w-fit border border-gold-warm/10">
-                  {val.icon}
-                </div>
-                <h3 className="font-serif font-bold text-xl text-forest" dangerouslySetInnerHTML={{ __html: val.title }} />
-                <p className="text-xs md:text-sm text-carbon/70 font-light leading-relaxed flex-grow">
-                  <span dangerouslySetInnerHTML={{ __html: val.desc }} />
-                </p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* === SUSTAINABILITY & ESG INTEGRATED SECTION === */}
       <div id="sustainability" className="scroll-mt-24 border-t border-gold-warm/20">
@@ -449,6 +416,41 @@ export const About: React.FC = () => {
           </div>
         </section>
       </div>
+
+      {/* Why VAC / Core Values Section */}
+      <section className="py-24 bg-cream text-carbon px-4 md:px-8 border-t border-gold-warm/20">
+        <div className="max-w-7xl mx-auto flex flex-col gap-16">
+          <div className="text-center max-w-3xl mx-auto flex flex-col gap-4">
+            <span className="text-xs font-bold uppercase tracking-widest text-gold-antique">
+              <span dangerouslySetInnerHTML={{ __html: t('about.whySub') }} />
+            </span>
+            <h2 className="font-serif text-balance text-[2.25rem] leading-[1.1] sm:text-[3rem] md:text-5xl lg:text-6xl font-bold tracking-wide text-forest leading-tight">
+              <span dangerouslySetInnerHTML={{ __html: t('about.whyTitle') }} />
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {values.map((val, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.15, duration: 0.6 }}
+                className="bg-ivory border border-gold-warm/15 rounded-xl p-8 flex flex-col gap-5 bento-card shadow-sm hover:shadow-md transition-shadow"
+              >
+                <div className="p-3.5 bg-forest/5 rounded-lg w-fit border border-gold-warm/10">
+                  {val.icon}
+                </div>
+                <h3 className="font-serif font-bold text-xl text-forest" dangerouslySetInnerHTML={{ __html: val.title }} />
+                <p className="text-xs md:text-sm text-carbon/70 font-light leading-relaxed flex-grow">
+                  <span dangerouslySetInnerHTML={{ __html: val.desc }} />
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* CTA Section */}
       <section className="bg-forest text-cream py-24 px-4 md:px-8 relative overflow-hidden">
