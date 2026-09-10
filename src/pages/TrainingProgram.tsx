@@ -114,6 +114,7 @@ export const TrainingProgram: React.FC = () => {
         title="Vietnam Agri Traders Training Program | VAC"
         description="Become a certified Vietnam Agri Trader. Connecting Vietnam's agricultural strengths with global buyers through structured trade representative training and VAC partner ecosystem."
         url="https://vietagri.co/training-program"
+        preloadImage="/images/training_hero_bg.jpg"
       />
 
       {/* === HERO SECTION === */}
@@ -179,19 +180,19 @@ export const TrainingProgram: React.FC = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mt-8 w-full max-w-5xl pt-8 border-t border-gold-warm/20">
             <div className="bg-black/30 backdrop-blur-md border border-gold-warm/20 rounded-xl p-4 flex flex-col items-center text-center gap-1.5">
               <span className="font-serif text-xl md:text-2xl font-bold text-gold-champagne">100+</span>
-              <span className="text-[11px] md:text-xs text-cream/80 uppercase tracking-wider font-medium">Catalogue Products</span>
+              <span className="text-[11px] md:text-xs text-cream/80 uppercase tracking-wider font-medium">{language === 'vi' ? 'Sản Phẩm Catalogue' : 'Catalogue Products'}</span>
             </div>
             <div className="bg-black/30 backdrop-blur-md border border-gold-warm/20 rounded-xl p-4 flex flex-col items-center text-center gap-1.5">
               <span className="font-serif text-xl md:text-2xl font-bold text-gold-champagne">04</span>
-              <span className="text-[11px] md:text-xs text-cream/80 uppercase tracking-wider font-medium">Core Modules</span>
+              <span className="text-[11px] md:text-xs text-cream/80 uppercase tracking-wider font-medium">{language === 'vi' ? 'Chuyên Đề Cốt Lõi' : 'Core Modules'}</span>
             </div>
             <div className="bg-black/30 backdrop-blur-md border border-gold-warm/20 rounded-xl p-4 flex flex-col items-center text-center gap-1.5">
               <span className="font-serif text-xl md:text-2xl font-bold text-gold-champagne">Global</span>
-              <span className="text-[11px] md:text-xs text-cream/80 uppercase tracking-wider font-medium">Buyer Networks</span>
+              <span className="text-[11px] md:text-xs text-cream/80 uppercase tracking-wider font-medium">{language === 'vi' ? 'Mạng Lưới Người Mua' : 'Buyer Networks'}</span>
             </div>
             <div className="bg-black/30 backdrop-blur-md border border-gold-warm/20 rounded-xl p-4 flex flex-col items-center text-center gap-1.5">
               <span className="font-serif text-xl md:text-2xl font-bold text-gold-champagne">100%</span>
-              <span className="text-[11px] md:text-xs text-cream/80 uppercase tracking-wider font-medium">VAC Ecosystem Backing</span>
+              <span className="text-[11px] md:text-xs text-cream/80 uppercase tracking-wider font-medium">{language === 'vi' ? 'Hậu Thuẫn Từ VAC' : 'VAC Ecosystem Backing'}</span>
             </div>
           </div>
         </div>
