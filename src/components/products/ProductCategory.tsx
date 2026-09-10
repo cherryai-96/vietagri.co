@@ -94,14 +94,20 @@ export const ProductCategory: React.FC<ProductCategoryProps> = ({
         )}
         <div className="absolute inset-0 bg-gradient-to-t from-carbon/20 to-transparent" />
         {/* Tags overlay */}
-        <div className="absolute bottom-4 left-4 right-4 flex gap-2 flex-wrap">
+        <div className="absolute bottom-4 left-4 right-4 flex gap-2 flex-wrap z-20">
           {tags.map((tag, idx) => (
-            <span
+            <button
               key={idx}
-              className="bg-white/90 backdrop-blur-sm text-forest font-bold text-[10px] tracking-wider uppercase px-3 py-1.5 rounded-full shadow-sm"
+              type="button"
+              onClick={() => setCurrentSlide(idx < displayImages.length ? idx : 0)}
+              className={`transition-all duration-300 font-bold text-[10px] sm:text-[11px] tracking-wider uppercase px-3 py-1.5 rounded-full shadow-md ${
+                idx === currentSlide
+                  ? 'bg-gold-warm text-brown-soil font-extrabold ring-2 ring-gold-champagne scale-105'
+                  : 'bg-white/90 backdrop-blur-sm text-forest hover:bg-white hover:text-carbon'
+              }`}
             >
               {tag}
-            </span>
+            </button>
           ))}
         </div>
       </div>

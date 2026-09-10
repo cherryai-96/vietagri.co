@@ -199,7 +199,25 @@ export const CATEGORIES_DATA: Record<string, CategoryInfo> = {
 };
 
 export const PRODUCTS_LIST: ProductItem[] = [
-{
+  {
+    id: 'fresh-cavendish-banana',
+    nameEn: 'Fresh Cavendish Banana',
+    nameVi: 'Chuối Cavendish Tươi Xuất Khẩu',
+    scientificName: 'Musa acuminata (Cavendish Group)',
+    category: 'fresh',
+    subCategory: 'Tropical Fruits',
+    formats: ['Hand / Cluster (4, 5, 6 hands/box)', 'Grade A Export Standard'],
+    specifications: {
+      brix: '18 - 22° (when ripe)',
+      shelfLife: '30 - 45 days in reefer container (+13.5°C)',
+      storage: '+13.5°C to +14.5°C, RH 85-90%',
+      packaging: '13.5kg / 18.5kg Vacuum PE Bag in Master Carton'
+    },
+    applications: ['Fresh Retail', 'Supermarket Chains', 'Wholesale Markets'],
+    seasonality: 'Year-round',
+    image: '/images/products/fresh/fresh_banana.png'
+  },
+  {
     id: 'fresh-red-dragon-fruit',
     nameEn: 'Fresh Red Dragon Fruit',
     nameVi: 'Thanh Long Ruột Đỏ Tươi',
