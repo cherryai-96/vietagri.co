@@ -117,22 +117,27 @@ export const TrainingProgram: React.FC = () => {
       />
 
       {/* === HERO SECTION === */}
-      <section className="relative pt-32 pb-24 md:pt-40 md:pb-32 bg-carbon text-cream overflow-hidden px-4 md:px-8 border-b border-gold-warm/20">
-        <div className="absolute inset-0 z-0 opacity-30 bg-cover bg-center" style={{ backgroundImage: `url('/images/shero.webp')` }} />
-        <div className="absolute inset-0 bg-gradient-to-t from-carbon via-carbon/80 to-carbon/40" />
+      <section className="relative pt-32 pb-24 md:pt-40 md:pb-36 bg-carbon text-cream overflow-hidden px-4 md:px-8 border-b border-gold-warm/30">
+        {/* Background Image with Cinematic Overlay */}
+        <div 
+          className="absolute inset-0 z-0 opacity-50 bg-cover bg-center transition-all duration-1000 transform scale-105" 
+          style={{ backgroundImage: `url('/images/training_hero_bg.jpg')` }} 
+        />
+        <div className="absolute inset-0 z-0 bg-gradient-to-b from-carbon/90 via-carbon/75 to-carbon" />
+        <div className="absolute inset-0 z-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-transparent via-carbon/40 to-carbon opacity-80" />
 
-        <div className="max-w-5xl mx-auto relative z-10 text-center flex flex-col items-center gap-6">
+        <div className="max-w-6xl mx-auto relative z-10 text-center flex flex-col items-center gap-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
-            className="flex flex-col items-center gap-4"
+            className="flex flex-col items-center gap-5"
           >
-            <span className="text-xs md:text-sm font-bold uppercase tracking-widest text-gold-champagne bg-gold-warm/15 border border-gold-warm/30 px-4 py-1.5 rounded-full flex items-center gap-2">
-              <GraduationCap size={16} className="text-gold-warm" />
+            <span className="text-xs md:text-sm font-bold uppercase tracking-[0.2em] text-gold-champagne bg-gold-warm/15 border border-gold-warm/40 px-5 py-2 rounded-full flex items-center gap-2.5 backdrop-blur-md shadow-lg shadow-black/20">
+              <GraduationCap size={18} className="text-gold-warm" />
               {t('training.heroEyebrow')}
             </span>
-            <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-gold-champagne max-w-4xl text-balance">
+            <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] xl:text-[3.75rem] font-bold leading-[1.15] text-gold-champagne max-w-5xl tracking-tight drop-shadow-md">
               {t('training.heroTitle')}
             </h1>
           </motion.div>
@@ -148,26 +153,46 @@ export const TrainingProgram: React.FC = () => {
             <p>{t('training.heroPara3')}</p>
           </motion.div>
 
-          {/* Tagline */}
-          <div className="mt-2 py-2 px-6 bg-forest/40 border border-gold-warm/20 rounded-full text-gold-champagne text-xs md:text-sm font-bold uppercase tracking-[0.25em]">
+          {/* Tagline Badge */}
+          <div className="py-2 px-8 bg-forest/50 border border-gold-warm/30 rounded-full text-gold-champagne text-xs md:text-sm font-bold uppercase tracking-[0.25em] backdrop-blur-md shadow-inner">
             {t('training.tagline')}
           </div>
 
           {/* Action Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 mt-6 w-full sm:w-auto">
+          <div className="flex flex-col sm:flex-row gap-4 mt-2 w-full sm:w-auto">
             <button
               onClick={() => setModalMode('apply')}
-              className="bg-gold-warm hover:bg-gold-champagne text-brown-soil font-bold text-xs md:text-sm uppercase tracking-wider py-4 px-8 rounded-lg shadow-lg hover:shadow-gold-warm/20 transition-all duration-300 flex items-center justify-center gap-2"
+              className="bg-gold-warm hover:bg-gold-champagne text-brown-soil font-bold text-xs md:text-sm uppercase tracking-wider py-4 px-9 rounded-xl shadow-xl hover:shadow-gold-warm/25 hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center gap-2.5"
             >
               <span>{t('training.btnApply')}</span>
               <ArrowRight size={16} />
             </button>
             <button
               onClick={() => setModalMode('info')}
-              className="bg-transparent hover:bg-white/10 text-cream border border-gold-warm/40 font-bold text-xs md:text-sm uppercase tracking-wider py-4 px-8 rounded-lg transition-all duration-300 flex items-center justify-center gap-2"
+              className="bg-white/10 hover:bg-white/20 text-cream border border-gold-warm/40 backdrop-blur-md font-bold text-xs md:text-sm uppercase tracking-wider py-4 px-9 rounded-xl shadow-lg transition-all duration-300 flex items-center justify-center gap-2.5"
             >
               <span>{t('training.btnInfo')}</span>
             </button>
+          </div>
+
+          {/* Header Quick Highlights Grid */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mt-8 w-full max-w-5xl pt-8 border-t border-gold-warm/20">
+            <div className="bg-black/30 backdrop-blur-md border border-gold-warm/20 rounded-xl p-4 flex flex-col items-center text-center gap-1.5">
+              <span className="font-serif text-xl md:text-2xl font-bold text-gold-champagne">100+</span>
+              <span className="text-[11px] md:text-xs text-cream/80 uppercase tracking-wider font-medium">Catalogue Products</span>
+            </div>
+            <div className="bg-black/30 backdrop-blur-md border border-gold-warm/20 rounded-xl p-4 flex flex-col items-center text-center gap-1.5">
+              <span className="font-serif text-xl md:text-2xl font-bold text-gold-champagne">04</span>
+              <span className="text-[11px] md:text-xs text-cream/80 uppercase tracking-wider font-medium">Core Modules</span>
+            </div>
+            <div className="bg-black/30 backdrop-blur-md border border-gold-warm/20 rounded-xl p-4 flex flex-col items-center text-center gap-1.5">
+              <span className="font-serif text-xl md:text-2xl font-bold text-gold-champagne">Global</span>
+              <span className="text-[11px] md:text-xs text-cream/80 uppercase tracking-wider font-medium">Buyer Networks</span>
+            </div>
+            <div className="bg-black/30 backdrop-blur-md border border-gold-warm/20 rounded-xl p-4 flex flex-col items-center text-center gap-1.5">
+              <span className="font-serif text-xl md:text-2xl font-bold text-gold-champagne">100%</span>
+              <span className="text-[11px] md:text-xs text-cream/80 uppercase tracking-wider font-medium">VAC Ecosystem Backing</span>
+            </div>
           </div>
         </div>
       </section>
