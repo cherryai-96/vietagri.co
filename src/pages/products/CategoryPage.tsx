@@ -282,10 +282,6 @@ export const CategoryPage: React.FC<CategoryPageProps> = ({ categoryKey: propCat
                         <span>{language === 'vi' ? 'Hạn bảo quản:' : 'Shelf Life:'}</span>
                         <span className="font-semibold text-forest">{p.specifications.shelfLife}</span>
                       </div>
-                      <div className="flex justify-between text-[11px] text-carbon/70">
-                        <span>{language === 'vi' ? 'Xuất xứ:' : 'Origin:'}</span>
-                        <span className="font-semibold text-carbon">{p.specifications.origin}</span>
-                      </div>
 
                       <button
                         onClick={() => setSelectedProduct(p)}

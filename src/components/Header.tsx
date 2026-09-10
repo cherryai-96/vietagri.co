@@ -39,6 +39,17 @@ export const Header: React.FC = () => {
     { path: '/', label: t('nav.home') },
     { path: '/about', label: t('nav.about') },
     {
+      label: t('nav.services'),
+      isDropdown: true,
+      dropdownKey: 'services',
+      children: [
+        { path: '/services', label: language === 'vi' ? 'Tất cả dịch vụ' : 'All Services' },
+        { path: '/contract-farming', label: language === 'vi' ? 'Canh tác hợp đồng' : 'Contract Farming' },
+        { path: '/infrastructure-rd', label: language === 'vi' ? 'Cơ sở hạ tầng & R&D' : 'Infrastructure & R&D' },
+        { path: '/organic-consulting-certification', label: language === 'vi' ? 'Tư vấn hữu cơ' : 'Organic Consulting' },
+      ],
+    },
+    {
       label: t('nav.products'),
       isDropdown: true,
       dropdownKey: 'products',
@@ -49,17 +60,6 @@ export const Header: React.FC = () => {
         { path: '/products/freeze-dried-fruits', label: language === 'vi' ? 'Trái cây sấy thăng hoa (Freeze-Dried)' : 'Freeze-Dried Fruits' },
         { path: '/products/iqf-fruits-vegetables', label: language === 'vi' ? 'Nông sản cấp đông rời (IQF)' : 'IQF Frozen Produce' },
         { path: '/agricultural-inputs', label: language === 'vi' ? 'Vật tư & Phân bón hữu cơ' : 'Sustainable Agriculture Inputs' },
-      ],
-    },
-    {
-      label: t('nav.services'),
-      isDropdown: true,
-      dropdownKey: 'services',
-      children: [
-        { path: '/services', label: language === 'vi' ? 'Tất cả dịch vụ' : 'All Services' },
-        { path: '/contract-farming', label: language === 'vi' ? 'Canh tác hợp đồng' : 'Contract Farming' },
-        { path: '/infrastructure-rd', label: language === 'vi' ? 'Cơ sở hạ tầng & R&D' : 'Infrastructure & R&D' },
-        { path: '/organic-consulting-certification', label: language === 'vi' ? 'Tư vấn hữu cơ' : 'Organic Consulting' },
       ],
     },
     { path: '/viet-wolffia', label: t('nav.wolffia') },
