@@ -406,6 +406,111 @@ export const Home: React.FC = () => {
         </div>
       </section>
 
+      {/* 4-Format B2B Portfolio Section */}
+      <section className="py-24 bg-carbon text-cream px-4 md:px-8 border-t border-white/10">
+        <div className="max-w-7xl mx-auto flex flex-col gap-12">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 border-b border-white/10 pb-8">
+            <div>
+              <span className="text-xs font-bold uppercase tracking-widest text-gold-warm mb-2 block">
+                B2B Sourcing Formats
+              </span>
+              <h2 className="font-serif text-3xl md:text-4xl font-bold text-cream">
+                4 Processing Technologies for Global Buyers
+              </h2>
+            </div>
+            <Link
+              to="/products"
+              className="text-xs font-bold text-gold-warm hover:text-gold-champagne uppercase tracking-wider flex items-center gap-2 transition-colors"
+            >
+              <span>Explore All Products</span>
+              <ArrowRight size={14} />
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <Link
+              to="/products/fresh"
+              className="group bg-carbon-light border border-white/10 hover:border-gold-warm/50 rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between"
+            >
+              <div>
+                <div className="w-12 h-12 rounded-xl bg-forest/20 text-forest-fresh flex items-center justify-center font-bold text-xl mb-6 border border-forest/30">
+                  01
+                </div>
+                <h3 className="font-serif font-bold text-xl text-cream group-hover:text-gold-champagne transition-colors mb-2">
+                  Fresh Fruits & Vegetables
+                </h3>
+                <p className="text-xs text-cream/70 leading-relaxed font-light mb-6">
+                  Gap-certified farm direct fruits & vegetables. Cold-chain controlled from harvesting to port loading.
+                </p>
+              </div>
+              <div className="text-xs font-bold text-gold-warm flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                <span>View 24 Fresh Items</span> <ArrowRight size={12} />
+              </div>
+            </Link>
+
+            <Link
+              to="/products/powders"
+              className="group bg-carbon-light border border-white/10 hover:border-gold-warm/50 rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between"
+            >
+              <div>
+                <div className="w-12 h-12 rounded-xl bg-gold-warm/20 text-gold-champagne flex items-center justify-center font-bold text-xl mb-6 border border-gold-warm/30">
+                  02
+                </div>
+                <h3 className="font-serif font-bold text-xl text-cream group-hover:text-gold-champagne transition-colors mb-2">
+                  Fruit & Vegetable Powders
+                </h3>
+                <p className="text-xs text-cream/70 leading-relaxed font-light mb-6">
+                  Spray-Dried, Freeze-Dried, Vacuum-Dried & AD Powders. Pure clean label for F&B formulations.
+                </p>
+              </div>
+              <div className="text-xs font-bold text-gold-warm flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                <span>View Powders</span> <ArrowRight size={12} />
+              </div>
+            </Link>
+
+            <Link
+              to="/products/freeze-dried"
+              className="group bg-carbon-light border border-white/10 hover:border-gold-warm/50 rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between"
+            >
+              <div>
+                <div className="w-12 h-12 rounded-xl bg-cyan-900/30 text-cyan-400 flex items-center justify-center font-bold text-xl mb-6 border border-cyan-500/30">
+                  03
+                </div>
+                <h3 className="font-serif font-bold text-xl text-cream group-hover:text-gold-champagne transition-colors mb-2">
+                  Freeze-Dried (FD) Fruits
+                </h3>
+                <p className="text-xs text-cream/70 leading-relaxed font-light mb-6">
+                  Sublimation drying under deep freeze. Retains 98%+ natural structure, vivid colors & intense flavor profiles.
+                </p>
+              </div>
+              <div className="text-xs font-bold text-gold-warm flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                <span>View FD Range</span> <ArrowRight size={12} />
+              </div>
+            </Link>
+
+            <Link
+              to="/products/iqf"
+              className="group bg-carbon-light border border-white/10 hover:border-gold-warm/50 rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between"
+            >
+              <div>
+                <div className="w-12 h-12 rounded-xl bg-blue-900/30 text-blue-400 flex items-center justify-center font-bold text-xl mb-6 border border-blue-500/30">
+                  04
+                </div>
+                <h3 className="font-serif font-bold text-xl text-cream group-hover:text-gold-champagne transition-colors mb-2">
+                  IQF Quick Frozen
+                </h3>
+                <p className="text-xs text-cream/70 leading-relaxed font-light mb-6">
+                  Individually Quick Frozen at -35°C. Dices, slices, chunks & whole fruits for commercial manufacturing.
+                </p>
+              </div>
+              <div className="text-xs font-bold text-gold-warm flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                <span>View IQF Catalog</span> <ArrowRight size={12} />
+              </div>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       <DualBuyerPathways />
 
       {/* Global Sourcing spotlight & Quality banner */}

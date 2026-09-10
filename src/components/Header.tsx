@@ -8,12 +8,14 @@ export const Header: React.FC = () => {
   const { language, setLanguage, t } = useTranslation();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [mobileDropdownOpen, setMobileDropdownOpen] = useState(false);
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
+  const [mobileProductsOpen, setMobileProductsOpen] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
     setIsMobileMenuOpen(false);
-    setMobileDropdownOpen(false);
+    setMobileServicesOpen(false);
+    setMobileProductsOpen(false);
   }, [location.pathname]);
 
   // Track scroll position to change background opacity
@@ -37,8 +39,22 @@ export const Header: React.FC = () => {
     { path: '/', label: t('nav.home') },
     { path: '/about', label: t('nav.about') },
     {
+      label: t('nav.products'),
+      isDropdown: true,
+      dropdownKey: 'products',
+      children: [
+        { path: '/products', label: language === 'vi' ? 'Tất cả sản phẩm (Gateway)' : 'All Products Overview' },
+        { path: '/products/fresh-fruits-vegetables', label: language === 'vi' ? 'Trái cây & Rau củ tươi (Fresh)' : 'Fresh Fruits & Vegetables' },
+        { path: '/products/fruit-vegetable-powders', label: language === 'vi' ? 'Bột nông sản thực phẩm (Powders)' : 'Fruit & Vegetable Powders' },
+        { path: '/products/freeze-dried-fruits', label: language === 'vi' ? 'Trái cây sấy thăng hoa (Freeze-Dried)' : 'Freeze-Dried Fruits' },
+        { path: '/products/iqf-fruits-vegetables', label: language === 'vi' ? 'Nông sản cấp đông rời (IQF)' : 'IQF Frozen Produce' },
+        { path: '/agricultural-inputs', label: language === 'vi' ? 'Vật tư & Phân bón hữu cơ' : 'Sustainable Agriculture Inputs' },
+      ],
+    },
+    {
       label: t('nav.services'),
       isDropdown: true,
+      dropdownKey: 'services',
       children: [
         { path: '/services', label: language === 'vi' ? 'Tất cả dịch vụ' : 'All Services' },
         { path: '/contract-farming', label: language === 'vi' ? 'Canh tác hợp đồng' : 'Contract Farming' },
@@ -46,7 +62,6 @@ export const Header: React.FC = () => {
         { path: '/organic-consulting-certification', label: language === 'vi' ? 'Tư vấn hữu cơ' : 'Organic Consulting' },
       ],
     },
-    { path: '/products', label: t('nav.products') },
     { path: '/viet-wolffia', label: t('nav.wolffia') },
     { path: '/sustainability', label: t('nav.sustainability') },
     { path: '/contact', label: t('nav.contact') },
@@ -83,7 +98,7 @@ export const Header: React.FC = () => {
           </Link>
 
           {/* Desktop Nav Links */}
-          <div className="hidden lg:flex items-center gap-4 xl:gap-8">
+          <div className="hidden lg:flex items-center gap-4 xl:gap-7">
             {navLinks.map((link, idx) => (
               link.isDropdown ? (
                 <div key={idx} className="relative group py-2">
@@ -91,7 +106,7 @@ export const Header: React.FC = () => {
                     {link.label}
                     <ChevronDown size={14} className="group-hover:rotate-180 transition-transform duration-300" />
                   </div>
-                  <div className="absolute top-full left-0 mt-0 w-56 bg-carbon/95 backdrop-blur-md border border-gold-warm/20 rounded-md shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top translate-y-2 group-hover:translate-y-0 overflow-hidden">
+                  <div className="absolute top-full left-0 mt-0 w-64 bg-carbon/95 backdrop-blur-md border border-gold-warm/20 rounded-md shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top translate-y-2 group-hover:translate-y-0 overflow-hidden">
                     <div className="flex flex-col py-2">
                       {link.children?.map((child) => (
                         <NavLink
@@ -134,7 +149,7 @@ export const Header: React.FC = () => {
             ))}
             <button
               onClick={toggleLanguage}
-              className="bg-forest hover:bg-forest-leaf text-cream px-4 py-2 rounded font-sans text-xs font-bold uppercase tracking-wider transition-all duration-300 hover:shadow-lg hover:shadow-forest/10 cursor-pointer flex items-center gap-2 border border-forest/20 ml-2"
+              className="bg-forest hover:bg-forest-leaf text-cream px-3.5 py-1.5 rounded font-sans text-xs font-bold uppercase tracking-wider transition-all duration-300 hover:shadow-lg hover:shadow-forest/10 cursor-pointer flex items-center gap-1.5 border border-forest/20 ml-1"
             >
               <Globe size={14} />
               <span>{language === 'en' ? 'VI' : 'EN'}</span>
@@ -159,13 +174,16 @@ export const Header: React.FC = () => {
               link.isDropdown ? (
                 <div key={idx} className="flex flex-col border-b border-white/5 py-2">
                   <button 
-                    onClick={() => setMobileDropdownOpen(!mobileDropdownOpen)}
+                    onClick={() => {
+                      if (link.dropdownKey === 'products') setMobileProductsOpen(!mobileProductsOpen);
+                      if (link.dropdownKey === 'services') setMobileServicesOpen(!mobileServicesOpen);
+                    }}
                     className="flex justify-between items-center font-sans text-base font-bold uppercase tracking-wide text-cream/80 hover:text-cream text-left w-full"
                   >
                     <span>{link.label}</span>
-                    <ChevronDown size={18} className={`transition-transform duration-300 ${mobileDropdownOpen ? 'rotate-180 text-gold-champagne' : ''}`} />
+                    <ChevronDown size={18} className={`transition-transform duration-300 ${(link.dropdownKey === 'products' ? mobileProductsOpen : mobileServicesOpen) ? 'rotate-180 text-gold-champagne' : ''}`} />
                   </button>
-                  {mobileDropdownOpen && (
+                  {((link.dropdownKey === 'products' ? mobileProductsOpen : mobileServicesOpen)) && (
                     <div className="flex flex-col gap-2 mt-3 pl-4 border-l-2 border-gold-warm/30 ml-2">
                       {link.children?.map((child) => (
                         <NavLink

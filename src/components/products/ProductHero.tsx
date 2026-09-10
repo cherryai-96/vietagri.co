@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTranslation } from '../../i18n';
 import { motion } from 'framer-motion';
-import { ArrowRight, ChevronDown } from 'lucide-react';
+import { ArrowRight, ChevronDown, Download } from 'lucide-react';
 
 export const ProductHero: React.FC = () => {
   const { t } = useTranslation();
@@ -65,10 +65,13 @@ export const ProductHero: React.FC = () => {
             <ArrowRight size={16} className="group-hover:translate-x-1.5 transition-transform duration-300" />
           </a>
           <a
-            href="#part1"
-            className="border border-cream/40 hover:border-gold-champagne hover:bg-cream/10 text-cream px-8 py-4 rounded font-bold text-sm uppercase tracking-wider transition-all duration-300 cursor-pointer hover:scale-[1.03] backdrop-blur-sm"
+            href="https://drive.google.com/drive/folders/1zJaPV65t-kaxJvh0puFX7zvatIIuvFaR"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="border border-cream/40 hover:border-gold-champagne hover:bg-cream/10 text-cream px-8 py-4 rounded font-bold text-sm uppercase tracking-wider transition-all duration-300 cursor-pointer hover:scale-[1.03] backdrop-blur-sm flex items-center gap-2"
           >
-            {t('products.btnCategories')}
+            <Download size={16} />
+            <span>{t('products.btnCategories')}</span>
           </a>
         </motion.div>
 
