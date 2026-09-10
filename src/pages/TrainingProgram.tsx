@@ -79,26 +79,27 @@ export const TrainingProgram: React.FC = () => {
   ];
 
   const curriculumModules = [
-    {
-      num: '01',
-      title: t('training.mod1Title'),
-      desc: t('training.mod1Desc')
-    },
-    {
-      num: '02',
-      title: t('training.mod2Title'),
-      desc: t('training.mod2Desc')
-    },
-    {
-      num: '03',
-      title: t('training.mod3Title'),
-      desc: t('training.mod3Desc')
-    },
-    {
-      num: '04',
-      title: t('training.mod4Title'),
-      desc: t('training.mod4Desc')
-    },
+    { num: '01', title: t('training.mod1Title'), desc: t('training.mod1Desc') },
+    { num: '02', title: t('training.mod2Title'), desc: t('training.mod2Desc') },
+    { num: '03', title: t('training.mod3Title'), desc: t('training.mod3Desc') },
+    { num: '04', title: t('training.mod4Title'), desc: t('training.mod4Desc') },
+    { num: '05', title: t('training.mod5Title'), desc: t('training.mod5Desc') },
+    { num: '06', title: t('training.mod6Title'), desc: t('training.mod6Desc') },
+    { num: '07', title: t('training.mod7Title'), desc: t('training.mod7Desc') },
+    { num: '08', title: t('training.mod8Title'), desc: t('training.mod8Desc') },
+    { num: '09', title: t('training.mod9Title'), desc: t('training.mod9Desc') },
+    { num: '10', title: t('training.mod10Title'), desc: t('training.mod10Desc') },
+  ];
+
+  const portfolioItems = [
+    t('training.pfItem1'),
+    t('training.pfItem2'),
+    t('training.pfItem3'),
+    t('training.pfItem4'),
+    t('training.pfItem5'),
+    t('training.pfItem6'),
+    t('training.pfItem7'),
+    t('training.pfItem8'),
   ];
 
   const programBenefits = [
@@ -183,7 +184,7 @@ export const TrainingProgram: React.FC = () => {
               <span className="text-[11px] md:text-xs text-cream/80 uppercase tracking-wider font-medium">{language === 'vi' ? 'Sản Phẩm Catalogue' : 'Catalogue Products'}</span>
             </div>
             <div className="bg-black/30 backdrop-blur-md border border-gold-warm/20 rounded-xl p-4 flex flex-col items-center text-center gap-1.5">
-              <span className="font-serif text-xl md:text-2xl font-bold text-gold-champagne">04</span>
+              <span className="font-serif text-xl md:text-2xl font-bold text-gold-champagne">10</span>
               <span className="text-[11px] md:text-xs text-cream/80 uppercase tracking-wider font-medium">{language === 'vi' ? 'Chuyên Đề Cốt Lõi' : 'Core Modules'}</span>
             </div>
             <div className="bg-black/30 backdrop-blur-md border border-gold-warm/20 rounded-xl p-4 flex flex-col items-center text-center gap-1.5">
@@ -301,7 +302,7 @@ export const TrainingProgram: React.FC = () => {
         </div>
       </section>
 
-      {/* === SECTION 3: STRUCTURED CURRICULUM & MODULES === */}
+      {/* === SECTION 3: STRUCTURED CURRICULUM & 10 MODULES === */}
       <section className="py-20 md:py-28 bg-ivory border-y border-gold-warm/15 px-4 md:px-8">
         <div className="max-w-7xl mx-auto flex flex-col gap-16">
           <div className="text-center max-w-5xl mx-auto flex flex-col gap-3">
@@ -314,31 +315,84 @@ export const TrainingProgram: React.FC = () => {
             <p className="text-xs md:text-sm uppercase tracking-wider text-carbon/60 font-semibold">
               {t('training.curriculumSub')}
             </p>
+            <p className="text-sm md:text-base text-carbon/80 font-light leading-relaxed max-w-4xl mx-auto mt-2">
+              {t('training.curriculumIntro')}
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {/* 10 Modules Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
             {curriculumModules.map((mod, idx) => (
               <motion.div
                 key={idx}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: idx * 0.15, duration: 0.6 }}
-                className="bg-cream border border-gold-warm/20 rounded-2xl p-8 flex flex-col gap-4 shadow-sm hover:shadow-md transition-all duration-300 relative overflow-hidden"
+                transition={{ delay: (idx % 2) * 0.1, duration: 0.5 }}
+                className="bg-cream border border-gold-warm/20 rounded-2xl p-6 md:p-8 flex flex-col gap-4 shadow-sm hover:shadow-md transition-all duration-300 relative overflow-hidden group"
               >
-                <div className="flex items-center gap-4">
-                  <span className="font-serif font-black text-3xl md:text-4xl text-gold-warm opacity-80">
+                <div className="flex items-start gap-4">
+                  <span className="font-serif font-black text-2xl md:text-3xl text-gold-warm opacity-85 shrink-0 bg-forest/5 px-3 py-1 rounded-lg border border-gold-warm/20">
                     {mod.num}
                   </span>
-                  <h3 className="font-serif text-lg md:text-xl font-bold text-forest leading-snug">
+                  <h3 className="font-serif text-base md:text-lg font-bold text-forest leading-snug group-hover:text-forest-fresh transition-colors">
                     {mod.title}
                   </h3>
                 </div>
-                <p className="text-xs md:text-sm text-carbon/75 font-light leading-relaxed pl-12">
+                <p className="text-xs md:text-sm text-carbon/75 font-light leading-relaxed pl-14">
                   {mod.desc}
                 </p>
               </motion.div>
             ))}
+          </div>
+
+          {/* Practical Training Approach Callout */}
+          <div className="bg-forest/5 border border-gold-warm/30 rounded-2xl p-8 md:p-10 flex flex-col md:flex-row items-start md:items-center gap-6 shadow-sm">
+            <div className="p-4 bg-forest text-gold-champagne rounded-xl shrink-0 border border-gold-warm/30">
+              <Sparkles size={32} />
+            </div>
+            <div className="flex flex-col gap-2">
+              <div className="flex flex-wrap items-center gap-3">
+                <h3 className="font-serif text-xl md:text-2xl font-bold text-forest">
+                  {t('training.practicalTitle')}
+                </h3>
+                <span className="text-[11px] font-bold uppercase tracking-wider bg-gold-warm/20 text-brown-soil px-3 py-1 rounded-full border border-gold-warm/30">
+                  40% Theory • 60% Practical
+                </span>
+              </div>
+              <p className="text-xs md:text-sm text-carbon/80 font-light leading-relaxed">
+                {t('training.practicalDesc')}
+              </p>
+            </div>
+          </div>
+
+          {/* Practical Trading Portfolio Outcomes Checklist */}
+          <div className="bg-white border border-gold-warm/25 rounded-2xl p-8 md:p-12 shadow-md flex flex-col gap-8">
+            <div className="flex flex-col gap-2 text-center md:text-left">
+              <span className="text-xs font-bold uppercase tracking-widest text-gold-antique">
+                Program Deliverables
+              </span>
+              <h3 className="font-serif text-xl md:text-2xl font-bold text-forest">
+                {t('training.portfolioTitle')}
+              </h3>
+              <p className="text-xs md:text-sm text-carbon/70 font-light">
+                {t('training.portfolioSub')}
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {portfolioItems.map((item, idx) => (
+                <div 
+                  key={idx} 
+                  className="flex items-start gap-3 bg-ivory/60 border border-gold-warm/15 rounded-xl p-4 transition-colors hover:bg-forest/5"
+                >
+                  <CheckCircle2 size={20} className="text-forest shrink-0 mt-0.5" />
+                  <span className="text-xs md:text-sm text-carbon/85 font-medium leading-snug">
+                    {item}
+                  </span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>

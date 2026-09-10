@@ -327,16 +327,53 @@ export const defaultResources: TranslationResources = {
     who4Title: 'Senior Industry Experts',
     who4Desc: 'Retired or consulting veterans with deep domain experience ready to monetize global connections through structured VAC partnerships.',
 
-    curriculumTitle: 'Structured Curriculum & Capability Building',
+    curriculumTitle: 'Structured 10-Module Curriculum Roadmap',
     curriculumSub: 'Master the complete lifecycle of international agricultural commerce',
-    mod1Title: 'Module 1: Global Market Intelligence',
-    mod1Desc: 'Identifying high-demand export markets, analyzing tariff structures, MRL compliance, and buyer requirements across Asia, EU, and Americas.',
-    mod2Title: 'Module 2: Buyer Engagement & Commercial Negotiation',
-    mod2Desc: 'Mastering B2B outreach, structuring FOB/CIF quotes, sample evaluations, and closing long-term commercial contracts.',
-    mod3Title: 'Module 3: Export Supply Chain & Quality Assurance',
-    mod3Desc: 'Understanding GlobalG.A.P., Organic certifications, phytosanitary protocols, and cold-chain export packaging standards.',
-    mod4Title: 'Module 4: VAC Partner Execution & Commission Structuring',
-    mod4Desc: 'Seamlessly aligning with VAC’s processing ecosystem, managing buyer inquiries, and securing structured trade agent commissions.',
+    curriculumIntro: 'Our practical 5-day programme comprises 10 integrated modules that take participants through the complete agricultural trading journey—from understanding Vietnam’s agricultural opportunities to finding global buyers, facilitating orders and developing sustainable repeat business.',
+
+    mod1Title: 'Module 1: Agricultural Trading Foundations and the VAC Business Model',
+    mod1Desc: 'Understand the agriculture value chain, the role of an agricultural trader and VAC’s asset-light trading model. Participants learn how traders connect global buyer demand with qualified Vietnamese farms and processors without purchasing or holding inventory.',
+
+    mod2Title: 'Module 2: Product Knowledge and Export Market Readiness',
+    mod2Desc: 'Learn how to evaluate agricultural products for international markets, including product forms, applications, specifications, seasonality, processing options, packaging, certifications and export requirements. Participants prepare a Product Opportunity Sheet for a selected product.',
+
+    mod3Title: 'Module 3: Target Market Research and Selection',
+    mod3Desc: 'Learn how to identify and compare promising export markets using buyer demand, market access, competition, logistics, regulatory requirements and commercial potential. Participants complete a structured market-screening exercise and select their priority market.',
+
+    mod4Title: 'Module 4: Buyer Prospecting and Qualification',
+    mod4Desc: 'Identify suitable importers, distributors, manufacturers, wholesalers, retailers and food-service buyers. Participants learn practical online research techniques, develop an Ideal Buyer Profile and prepare a verified list of qualified buyer prospects.',
+
+    mod5Title: 'Module 5: Buyer-Centred Outreach and Sales Communication',
+    mod5Desc: 'Develop professional buyer-specific value propositions, introductory emails, LinkedIn messages and supporting sales materials. Participants learn how to communicate VAC’s capabilities clearly without making unsupported product, pricing, certification or delivery claims.',
+
+    mod6Title: 'Module 6: Buyer Discovery Follow Up and CRM Management',
+    mod6Desc: 'Learn how to conduct structured buyer conversations, uncover technical and commercial requirements, respond to initial objections and maintain professional follow-up. Participants practise buyer calls and record prospects, communications and next actions in the CRM.',
+
+    mod7Title: 'Module 7: Export Quotations Costing and Incoterms',
+    mod7Desc: 'Understand the components of an export quotation, including product cost, packaging, logistics, documentation, commissions, margins, payment terms and Incoterms. Participants prepare and evaluate an approval-ready commercial offer using a practical pricing case.',
+
+    mod8Title: 'Module 8: Negotiation Payment and Order Confirmation',
+    mod8Desc: 'Develop practical negotiation skills covering price and non-price variables, conditional concessions, payment security, authority limits and purchase-order review. Participants take part in buyer negotiation role-plays and learn how to document provisional agreements and confirmed orders.',
+
+    mod9Title: 'Module 9: Supplier Matching Quality and Export Execution',
+    mod9Desc: 'Learn how VAC matches confirmed buyer requirements with qualified farms and processors. Participants practise preparing supplier RFQs, verifying capabilities, coordinating specifications, quality controls, packaging, export documents, logistics milestones and shipment readiness.',
+
+    mod10Title: 'Module 10: Post Delivery Management Repeat Sales and Trader Growth',
+    mod10Desc: 'Learn how to manage delivery feedback, complaints, claims, corrective actions and buyer follow-up. Participants also explore VAC trader revenue streams, ethical trading standards, repeat-order development and long-term account growth before completing a practical 30-day action plan.',
+
+    practicalTitle: 'Practical Training Approach',
+    practicalDesc: 'The programme combines approximately 40% instructor-led learning with 60% practical application. Participants work on market research, real buyer prospecting, communication exercises, commercial calculations, negotiation role-plays, supplier matching and order-execution simulations.',
+
+    portfolioTitle: 'Practical Trading Portfolio Outcomes',
+    portfolioSub: 'By the end of the programme, each participant will have developed a practical trading portfolio containing:',
+    pfItem1: 'A selected agricultural product and target market',
+    pfItem2: 'A verified list of qualified international buyers',
+    pfItem3: 'Buyer outreach messages and a contact campaign',
+    pfItem4: 'A buyer discovery and follow-up plan',
+    pfItem5: 'A quotation and negotiation worksheet',
+    pfItem6: 'A supplier matching and export-execution plan',
+    pfItem7: 'A CRM-managed buyer-development pipeline',
+    pfItem8: 'A supervised 30-day trader action plan',
 
     benefitsTitle: 'Program Highlights & VAC Support',
     benefit1Title: 'Direct VAC Ecosystem Access',
@@ -809,16 +846,53 @@ export const defaultResources: TranslationResources = {
     who4Title: 'Chuyên Gia Cựu Trào & Cố Vấn Ngành',
     who4Desc: 'Các chuyên gia ngành nông nghiệp và thương mại muốn thương mại hóa mạng lưới quan hệ quốc tế thông qua hợp tác với VAC.',
 
-    curriculumTitle: 'Khung Chương Trình Đào Tạo & Năng Lực Cốt Lõi',
+    curriculumTitle: 'Khung 10 Chuyên Đề Đào Tạo Lộ Trình Thực Chiến',
     curriculumSub: 'Master toàn bộ chuỗi giá trị thương mại nông sản quốc tế',
-    mod1Title: 'Chuyên đề 1: Nghiên Cứu & Thị Trường Quốc Tế',
-    mod1Desc: 'Xác định thị trường tiềm năng, phân tích thuế quan, tuân thủ MRL và tiêu chuẩn nhập khẩu của Châu Á, EU và Châu Mỹ.',
-    mod2Title: 'Chuyên đề 2: Tiếp Cận Người Mua & Đàm Phán Thương Mại',
-    mod2Desc: 'Kỹ năng B2B outreach, cấu trúc báo giá FOB/CIF, gửi mẫu thử nghiệm và chốt hợp đồng thương mại dài hạn.',
-    mod3Title: 'Chuyên đề 3: Chuỗi Cung Ứng & Kiểm Soát Chất Lượng Export',
-    mod3Desc: 'Hiểu rõ tiêu chuẩn GlobalG.A.P., chứng nhận Hữu cơ, kiểm dịch thực vật và quy cách đóng gói xuất khẩu cold-chain.',
-    mod4Title: 'Chuyên đề 4: Phối Hợp Hệ Sinh Thái VAC & Cấu Trúc Hoa Hồng',
-    mod4Desc: 'Phối hợp nhịp nhàng với hạ tầng chế biến VAC, xử lý yêu cầu báo giá và nhận hoa hồng đại lý thương mại minh bạch.',
+    curriculumIntro: 'Chương trình đào tạo thực chiến 5 ngày bao gồm 10 chuyên đề tích hợp, đưa học viên qua toàn bộ hành trình thương mại nông nghiệp—từ việc thấu hiểu tiềm năng nông sản Việt Nam đến tìm kiếm khách hàng toàn cầu, xúc tiến đơn hàng và phát triển kinh doanh bền vững.',
+
+    mod1Title: 'Chuyên đề 1: Nền Tảng Thương Mại Nông Sản & Mô Hình Kinh Doanh VAC',
+    mod1Desc: 'Hiểu rõ chuỗi giá trị nông nghiệp, vai trò thương nhân nông sản và mô hình thương mại nhẹ tài sản (asset-light) của VAC. Học viên học cách kết nối nhu cầu người mua toàn cầu với các trang trại và nhà máy đạt chuẩn tại Việt Nam mà không cần tự thu mua hay lưu kho.',
+
+    mod2Title: 'Chuyên đề 2: Kiến Thức Sản Phẩm & Mức Độ Sẵn Sàng Xuất Khẩu',
+    mod2Desc: 'Học cách đánh giá nông sản cho thị trường quốc tế, bao gồm quy cách, ứng dụng, thông số kỹ thuật, tính mùa vụ, phương án chế biến, đóng gói, chứng nhận và tiêu chuẩn xuất khẩu. Học viên hoàn thành Bảng Cơ Hội Sản Phẩm (Product Opportunity Sheet) cho sản phẩm lựa chọn.',
+
+    mod3Title: 'Chuyên đề 3: Nghiên Cứu & Lựa Chọn Thị Trường Mục Tiêu',
+    mod3Desc: 'Học cách nhận diện và so sánh các thị trường xuất khẩu tiềm năng dựa trên nhu cầu người mua, khả năng tiếp cận, cạnh tranh, logistics, rào cản pháp lý và tiềm năng thương mại. Học viên thực hành bài tập sàng lọc thị trường và chọn thị trường ưu tiên.',
+
+    mod4Title: 'Chuyên đề 4: Tìm Kiếm & Sàng Lọc Người Mua Tiềm Năng',
+    mod4Desc: 'Nhận diện các nhà nhập khẩu, nhà phân phối, nhà sản xuất, nhà bán buôn, bán lẻ và kênh F&B phù hợp. Học viên học kỹ thuật nghiên cứu thực chiến online, xây dựng Chân Dung Người Mua Lý Tưởng (Ideal Buyer Profile) và lập danh sách người mua đã xác minh.',
+
+    mod5Title: 'Chuyên đề 5: Tiếp Cận Người Mua & Giao Tiếp Bán Hàng Chuẩn Quốc Tế',
+    mod5Desc: 'Xây dựng đề xuất giá trị chuyên biệt cho từng người mua, email giới thiệu, thông điệp LinkedIn và tài liệu bán hàng hỗ trợ. Học viên học cách truyền tải rõ ràng năng lực của VAC chuẩn xác, không đưa ra các cam kết vượt quá khả năng thực tế.',
+
+    mod6Title: 'Chuyên đề 6: Theo Dõi Cuộc Gọi Khai Thác & Quản Lý CRM',
+    mod6Desc: 'Học cách thực hiện cuộc gọi trao đổi bài bản với người mua, khai thác yêu cầu kỹ thuật & thương mại, xử lý các từ chối ban đầu và duy trì chăm sóc chuyên nghiệp. Thực hành cuộc gọi thực tế và ghi nhận dữ liệu, hành động tiếp theo trên hệ thống CRM.',
+
+    mod7Title: 'Chuyên đề 7: Định Giá Xuất Khẩu, Tính Chi Phí & Incoterms',
+    mod7Desc: 'Nắm vững các thành phần của báo giá xuất khẩu: giá vốn, đóng gói, logistics, chứng từ, hoa hồng đại lý, biên lợi nhuận, điều khoản thanh toán và Incoterms. Thực hành lập và đánh giá báo giá thương mại hoàn chỉnh dựa trên case-study thực tế.',
+
+    mod8Title: 'Chuyên đề 8: Đàm Phán, Điều Khoản Thanh Toán & Xác Nhận Đơn Hàng',
+    mod8Desc: 'Phát triển kỹ năng đàm phán thực chiến về giá và các điều khoản phi giá cả, nhượng bộ có điều kiện, an toàn thanh toán, hạn mức thẩm quyền và kiểm tra đơn đặt hàng (PO). Thực hành đóng vai đàm phán và hoàn thiện thỏa thuận tạm thời & đơn hàng xác nhận.',
+
+    mod9Title: 'Chuyên đề 9: Kết Nối Nhà Cung Cấp, Kiểm Soát Chất Lượng & Thực Thi Xuất Khẩu',
+    mod9Desc: 'Học cách VAC kết nối yêu cầu người mua với các trang trại & nhà máy đạt chuẩn. Thực hành lập RFQ gửi nhà cung ứng, kiểm tra năng lực, phối hợp tiêu chuẩn kỹ thuật, kiểm soát chất lượng, đóng gói, chứng từ xuất khẩu, mốc logistics và sẵn sàng giao hàng.',
+
+    mod10Title: 'Chuyên đề 10: Quản Lý Sau Giao Hàng, Đơn Hàng Lặp Lại & Phát Triển Thương Nhân',
+    mod10Desc: 'Học cách xử lý phản hồi sau giao hàng, khiếu nại, biện pháp khắc phục và chăm sóc người mua. Khám phá cơ chế dòng thu nhập của thương nhân VAC, chuẩn mực đạo đức thương mại, phát triển đơn hàng tái đặt và lập Kế hoạch hành động 30 ngày thực chiến.',
+
+    practicalTitle: 'Phương Pháp Đào Tạo Thực Chiến',
+    practicalDesc: 'Chương trình kết hợp khoảng 40% lý thuyết hướng dẫn trực tiếp với 60% thực hành thực tế. Học viên trực tiếp làm nghiên cứu thị trường, tìm kiếm người mua thật, thực hành giao tiếp bán hàng, tính toán báo giá thương mại, đóng vai đàm phán, kết nối nhà cung cấp và mô phỏng thực thi đơn hàng.',
+
+    portfolioTitle: 'Bộ Hồ Sơ Năng Lực Thương Mại Sau Khóa Học',
+    portfolioSub: 'Kết thúc chương trình, mỗi học viên sẽ xây dựng hoàn chỉnh bộ hồ sơ năng lực thương mại gồm:',
+    pfItem1: 'Sản phẩm nông sản lựa chọn & thị trường mục tiêu đã xác định',
+    pfItem2: 'Danh sách người mua quốc tế đã qua sàng lọc & xác minh',
+    pfItem3: 'Bộ thông điệp tiếp cận người mua & chiến dịch liên hệ thực tế',
+    pfItem4: 'Kế hoạch khai thác thông tin người mua & chăm sóc theo dõi',
+    pfItem5: 'Bảng tính toán báo giá xuất khẩu & kịch bản đàm phán',
+    pfItem6: 'Phương án kết nối nhà cung cấp & kế hoạch thực thi xuất khẩu',
+    pfItem7: 'Hệ thống quản lý tiến trình phát triển khách hàng trên CRM',
+    pfItem8: 'Kế hoạch hành động 30 ngày thực chiến có cố vấn đồng hành',
 
     benefitsTitle: 'Quyền Lợi & Hỗ Trợ Từ VAC',
     benefit1Title: 'Tiếp Cận Hệ Sinh Thái VAC Trực Tiếp',
