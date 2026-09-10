@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation, Navigate } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import { LanguageProvider } from './i18n';
 import { Header } from './components/Header';
@@ -8,7 +8,6 @@ import { Home } from './pages/Home';
 import { About } from './pages/About';
 import { Services } from './pages/Services';
 import { VietWolffia } from './pages/VietWolffia';
-import { Sustainability } from './pages/Sustainability';
 import { Contact } from './pages/Contact';
 import { Products } from './pages/Products';
 import { CategoryPage } from './pages/products/CategoryPage';
@@ -54,7 +53,7 @@ function App() {
                       <Route path="/products" element={<Products />} />
                       <Route path="/products/:categorySlug" element={<CategoryPage />} />
                       <Route path="/catalogues" element={<Catalogues />} />
-                      <Route path="/sustainability" element={<Sustainability />} />
+                      <Route path="/sustainability" element={<Navigate to="/about" replace />} />
                       <Route path="/agricultural-inputs" element={<AgricultureInputs />} />
                       <Route path="/contract-farming" element={<ContractFarming />} />
                       <Route path="/infrastructure-rd" element={<Infrastructure />} />

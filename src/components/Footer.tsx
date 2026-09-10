@@ -87,7 +87,7 @@ export const Footer: React.FC = () => {
               </Link>
             </li>
             <li>
-              <Link to="/sustainability" className="hover:text-gold-champagne hover:underline transition-all duration-200">
+              <Link to="/about#sustainability" className="hover:text-gold-champagne hover:underline transition-all duration-200">
                 {t('nav.sustainability')}
               </Link>
             </li>
