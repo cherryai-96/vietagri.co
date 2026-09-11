@@ -8,7 +8,6 @@ import {
   Handshake, 
   TrendingUp, 
   CheckCircle2, 
-  ArrowRight, 
   Building2, 
   Store, 
   UtensilsCrossed, 
@@ -153,16 +152,7 @@ export const TrainingProgram: React.FC = () => {
             {t('training.tagline')}
           </div>
 
-          {/* Action Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 mt-2 w-full sm:w-auto">
-            <button
-              onClick={() => setModalMode('info')}
-              className="bg-gold-warm hover:bg-gold-champagne text-brown-soil font-bold text-xs md:text-sm uppercase tracking-wider py-4 px-9 rounded-xl shadow-xl hover:shadow-gold-warm/25 hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center gap-2.5"
-            >
-              <span>{t('training.btnInfo')}</span>
-              <ArrowRight size={16} />
-            </button>
-          </div>
+
 
           {/* Header Quick Highlights Grid */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mt-8 w-full max-w-5xl pt-8 border-t border-gold-warm/20">
