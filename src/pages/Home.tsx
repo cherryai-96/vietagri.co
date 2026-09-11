@@ -406,166 +406,161 @@ export const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* 4-Format B2B Portfolio Section */}
-      <section className="py-24 bg-carbon text-cream px-4 md:px-8 border-t border-white/10">
-        <div className="max-w-7xl mx-auto flex flex-col gap-12">
+      {/* 4-Format B2B Portfolio Section (Redesigned with Product Thumbnails & i18n) */}
+      <section className="py-24 bg-carbon text-cream px-4 md:px-8 border-t border-white/10 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto flex flex-col gap-12 relative z-10">
+          
+          {/* Header */}
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 border-b border-white/10 pb-8">
             <div>
               <span className="text-xs font-bold uppercase tracking-widest text-gold-warm mb-2 block">
-                B2B Sourcing Formats
+                {t('home.formatsEyebrow')}
               </span>
-              <h2 className="font-serif text-3xl md:text-4xl font-bold text-cream">
-                4 Processing Technologies for Global Buyers
+              <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-cream">
+                {t('home.formatsTitle')}
               </h2>
             </div>
             <Link
               to="/products"
-              className="text-xs font-bold text-gold-warm hover:text-gold-champagne uppercase tracking-wider flex items-center gap-2 transition-colors"
+              className="text-xs font-bold text-gold-warm hover:text-gold-champagne uppercase tracking-wider flex items-center gap-2 transition-colors cursor-pointer shrink-0"
             >
-              <span>Explore All Products</span>
+              <span>{t('common.exploreBtn')}</span>
               <ArrowRight size={14} />
             </Link>
           </div>
 
+          {/* 4 Format Cards Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             
-            {/* Format 01: Fresh Fruits & Vegetables */}
+            {/* 01: Fresh Fruits & Vegetables */}
             <Link
               to="/products/fresh"
-              className="group bg-carbon-light border border-white/10 hover:border-gold-warm/60 rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-1.5 shadow-lg flex flex-col justify-between"
+              className="group bg-carbon-light border border-white/10 hover:border-gold-warm/60 rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between shadow-lg hover:shadow-gold-warm/10"
             >
               <div>
-                <div className="relative h-44 w-full overflow-hidden bg-black">
+                <div className="relative h-44 w-full overflow-hidden bg-black/40 border-b border-white/10">
                   <img 
                     src="/images/fresh_cavendish_banana.jpg" 
-                    alt="Fresh Cavendish Bananas & Tropical Fruits" 
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    alt="Fresh Cavendish Banana & Tropical Produce" 
+                    className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-carbon-light via-carbon-light/20 to-transparent" />
-                  <div className="absolute top-3 left-3 px-3 py-1 bg-black/60 backdrop-blur-md rounded-lg border border-forest-fresh/40 text-forest-fresh font-bold text-xs shadow-md">
-                    01 • Fresh
+                  <div className="absolute inset-0 bg-gradient-to-t from-carbon-light via-transparent to-transparent opacity-80" />
+                  <div className="absolute top-3 left-3 w-9 h-9 rounded-xl bg-forest/80 backdrop-blur-md text-forest-fresh flex items-center justify-center font-bold text-sm border border-forest-fresh/30 shadow-md">
+                    01
                   </div>
                 </div>
 
-                <div className="p-6 pt-4">
-                  <h3 className="font-serif font-bold text-xl text-cream group-hover:text-gold-champagne transition-colors mb-2">
-                    Fresh Fruits & Vegetables
+                <div className="p-6 flex flex-col gap-2">
+                  <h3 className="font-serif font-bold text-xl text-cream group-hover:text-gold-champagne transition-colors">
+                    {t('home.freshTitle')}
                   </h3>
-                  <p className="text-xs text-cream/70 leading-relaxed font-light mb-4">
-                    GAP-certified farm-direct produce. Cold-chain controlled from harvesting to port loading.
+                  <p className="text-xs text-cream/70 leading-relaxed font-light mt-1">
+                    {t('home.freshDesc')}
                   </p>
                 </div>
               </div>
 
-              <div className="p-6 pt-0">
-                <div className="text-xs font-bold text-gold-warm flex items-center gap-1.5 group-hover:translate-x-1 transition-transform">
-                  <span>View 24 Fresh Items</span> <ArrowRight size={12} />
-                </div>
+              <div className="px-6 pb-6 text-xs font-bold text-gold-warm flex items-center gap-1.5 group-hover:translate-x-1 transition-transform">
+                <span>{t('home.freshCta')}</span> <ArrowRight size={12} />
               </div>
             </Link>
 
-            {/* Format 02: Fruit & Vegetable Powders */}
+            {/* 02: Fruit & Vegetable Powders */}
             <Link
               to="/products/powders"
-              className="group bg-carbon-light border border-white/10 hover:border-gold-warm/60 rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-1.5 shadow-lg flex flex-col justify-between"
+              className="group bg-carbon-light border border-white/10 hover:border-gold-warm/60 rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between shadow-lg hover:shadow-gold-warm/10"
             >
               <div>
-                <div className="relative h-44 w-full overflow-hidden bg-black">
+                <div className="relative h-44 w-full overflow-hidden bg-black/40 border-b border-white/10">
                   <img 
                     src="/images/fruit_powders_thumb.jpg" 
                     alt="Fruit & Vegetable Powders" 
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-carbon-light via-carbon-light/20 to-transparent" />
-                  <div className="absolute top-3 left-3 px-3 py-1 bg-black/60 backdrop-blur-md rounded-lg border border-gold-warm/40 text-gold-champagne font-bold text-xs shadow-md">
-                    02 • Powders
+                  <div className="absolute inset-0 bg-gradient-to-t from-carbon-light via-transparent to-transparent opacity-80" />
+                  <div className="absolute top-3 left-3 w-9 h-9 rounded-xl bg-gold-warm/80 backdrop-blur-md text-brown-soil flex items-center justify-center font-bold text-sm border border-gold-champagne/40 shadow-md">
+                    02
                   </div>
                 </div>
 
-                <div className="p-6 pt-4">
-                  <h3 className="font-serif font-bold text-xl text-cream group-hover:text-gold-champagne transition-colors mb-2">
-                    Fruit & Vegetable Powders
+                <div className="p-6 flex flex-col gap-2">
+                  <h3 className="font-serif font-bold text-xl text-cream group-hover:text-gold-champagne transition-colors">
+                    {t('home.powdersTitle')}
                   </h3>
-                  <p className="text-xs text-cream/70 leading-relaxed font-light mb-4">
-                    Spray-Dried, Freeze-Dried, Vacuum-Dried & AD Powders. Pure clean label for F&B formulations.
+                  <p className="text-xs text-cream/70 leading-relaxed font-light mt-1">
+                    {t('home.powdersDesc')}
                   </p>
                 </div>
               </div>
 
-              <div className="p-6 pt-0">
-                <div className="text-xs font-bold text-gold-warm flex items-center gap-1.5 group-hover:translate-x-1 transition-transform">
-                  <span>View Powders</span> <ArrowRight size={12} />
-                </div>
+              <div className="px-6 pb-6 text-xs font-bold text-gold-warm flex items-center gap-1.5 group-hover:translate-x-1 transition-transform">
+                <span>{t('home.powdersCta')}</span> <ArrowRight size={12} />
               </div>
             </Link>
 
-            {/* Format 03: Freeze-Dried (FD) Fruits */}
+            {/* 03: Freeze-Dried (FD) Fruits */}
             <Link
               to="/products/freeze-dried"
-              className="group bg-carbon-light border border-white/10 hover:border-gold-warm/60 rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-1.5 shadow-lg flex flex-col justify-between"
+              className="group bg-carbon-light border border-white/10 hover:border-gold-warm/60 rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between shadow-lg hover:shadow-gold-warm/10"
             >
               <div>
-                <div className="relative h-44 w-full overflow-hidden bg-black">
+                <div className="relative h-44 w-full overflow-hidden bg-black/40 border-b border-white/10">
                   <img 
                     src="/images/freeze_dried_thumb.jpg" 
                     alt="Freeze-Dried Fruits" 
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-carbon-light via-carbon-light/20 to-transparent" />
-                  <div className="absolute top-3 left-3 px-3 py-1 bg-black/60 backdrop-blur-md rounded-lg border border-cyan-400/40 text-cyan-300 font-bold text-xs shadow-md">
-                    03 • Freeze-Dried
+                  <div className="absolute inset-0 bg-gradient-to-t from-carbon-light via-transparent to-transparent opacity-80" />
+                  <div className="absolute top-3 left-3 w-9 h-9 rounded-xl bg-cyan-900/80 backdrop-blur-md text-cyan-300 flex items-center justify-center font-bold text-sm border border-cyan-400/40 shadow-md">
+                    03
                   </div>
                 </div>
 
-                <div className="p-6 pt-4">
-                  <h3 className="font-serif font-bold text-xl text-cream group-hover:text-gold-champagne transition-colors mb-2">
-                    Freeze-Dried (FD) Fruits
+                <div className="p-6 flex flex-col gap-2">
+                  <h3 className="font-serif font-bold text-xl text-cream group-hover:text-gold-champagne transition-colors">
+                    {t('home.fdTitle')}
                   </h3>
-                  <p className="text-xs text-cream/70 leading-relaxed font-light mb-4">
-                    Sublimation drying under deep freeze. Retains 98%+ natural structure, vivid colors & intense flavor profiles.
+                  <p className="text-xs text-cream/70 leading-relaxed font-light mt-1">
+                    {t('home.fdDesc')}
                   </p>
                 </div>
               </div>
 
-              <div className="p-6 pt-0">
-                <div className="text-xs font-bold text-gold-warm flex items-center gap-1.5 group-hover:translate-x-1 transition-transform">
-                  <span>View FD Range</span> <ArrowRight size={12} />
-                </div>
+              <div className="px-6 pb-6 text-xs font-bold text-gold-warm flex items-center gap-1.5 group-hover:translate-x-1 transition-transform">
+                <span>{t('home.fdCta')}</span> <ArrowRight size={12} />
               </div>
             </Link>
 
-            {/* Format 04: IQF Quick Frozen */}
+            {/* 04: IQF Quick Frozen */}
             <Link
               to="/products/iqf"
-              className="group bg-carbon-light border border-white/10 hover:border-gold-warm/60 rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-1.5 shadow-lg flex flex-col justify-between"
+              className="group bg-carbon-light border border-white/10 hover:border-gold-warm/60 rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between shadow-lg hover:shadow-gold-warm/10"
             >
               <div>
-                <div className="relative h-44 w-full overflow-hidden bg-black">
+                <div className="relative h-44 w-full overflow-hidden bg-black/40 border-b border-white/10">
                   <img 
                     src="/images/iqf_thumb.jpg" 
                     alt="IQF Quick Frozen Fruits" 
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-carbon-light via-carbon-light/20 to-transparent" />
-                  <div className="absolute top-3 left-3 px-3 py-1 bg-black/60 backdrop-blur-md rounded-lg border border-blue-400/40 text-blue-300 font-bold text-xs shadow-md">
-                    04 • IQF Frozen
+                  <div className="absolute inset-0 bg-gradient-to-t from-carbon-light via-transparent to-transparent opacity-80" />
+                  <div className="absolute top-3 left-3 w-9 h-9 rounded-xl bg-blue-900/80 backdrop-blur-md text-blue-300 flex items-center justify-center font-bold text-sm border border-blue-400/40 shadow-md">
+                    04
                   </div>
                 </div>
 
-                <div className="p-6 pt-4">
-                  <h3 className="font-serif font-bold text-xl text-cream group-hover:text-gold-champagne transition-colors mb-2">
-                    IQF Quick Frozen
+                <div className="p-6 flex flex-col gap-2">
+                  <h3 className="font-serif font-bold text-xl text-cream group-hover:text-gold-champagne transition-colors">
+                    {t('home.iqfTitle')}
                   </h3>
-                  <p className="text-xs text-cream/70 leading-relaxed font-light mb-4">
-                    Individually Quick Frozen at -35°C. Dices, slices, chunks & whole fruits for commercial manufacturing.
+                  <p className="text-xs text-cream/70 leading-relaxed font-light mt-1">
+                    {t('home.iqfDesc')}
                   </p>
                 </div>
               </div>
 
-              <div className="p-6 pt-0">
-                <div className="text-xs font-bold text-gold-warm flex items-center gap-1.5 group-hover:translate-x-1 transition-transform">
-                  <span>View IQF Catalog</span> <ArrowRight size={12} />
-                </div>
+              <div className="px-6 pb-6 text-xs font-bold text-gold-warm flex items-center gap-1.5 group-hover:translate-x-1 transition-transform">
+                <span>{t('home.iqfCta')}</span> <ArrowRight size={12} />
               </div>
             </Link>
 
