@@ -199,13 +199,13 @@ export const CATEGORIES_DATA: Record<string, CategoryInfo> = {
 };
 
 export const PRODUCTS_LIST: ProductItem[] = [
-  {
+{
     id: 'fresh-cavendish-banana',
     nameEn: 'Fresh Cavendish Banana',
     nameVi: 'Chuối Cavendish Tươi Xuất Khẩu',
     scientificName: 'Musa acuminata (Cavendish Group)',
     category: 'fresh',
-    subCategory: 'Tropical Fruits',
+    subCategory: 'Fruits',
     formats: ['Hand / Cluster (4, 5, 6 hands/box)', 'Grade A Export Standard'],
     specifications: {
       brix: '18 - 22° (when ripe)',
@@ -217,13 +217,67 @@ export const PRODUCTS_LIST: ProductItem[] = [
     seasonality: 'Year-round',
     image: '/images/products/fresh/fresh_banana.png'
   },
-  {
+{
+    id: 'fresh-mango',
+    nameEn: 'Fresh Cat Chu / R2E2 Mango',
+    nameVi: 'Xoài Cát Chu / R2E2 Tươi Xuất Khẩu',
+    scientificName: 'Mangifera indica',
+    category: 'fresh',
+    subCategory: 'Fruits',
+    formats: ['Whole VHT Treated Fruit', 'Size 300g-500g'],
+    specifications: {
+      brix: '14 - 17°',
+      shelfLife: '25 - 30 days',
+      storage: '+10°C to +12°C',
+      packaging: '5kg / 10kg Export Carton with VHT Stamp'
+    },
+    applications: ['Fresh Retail (Japan, Korea, Australia Markets)'],
+    seasonality: 'Year-round (Peak: Dec to May)',
+    image: '/images/products/fresh/fresh_mango.png'
+  },
+{
+    id: 'fresh-pomelo',
+    nameEn: 'Fresh Green Skin Pomelo',
+    nameVi: 'Bưởi Da Xanh Tươi',
+    scientificName: 'Citrus grandis',
+    category: 'fresh',
+    subCategory: 'Fruits',
+    formats: ['Whole Fruit (1.2kg-2.0kg)'],
+    specifications: {
+      brix: '11 - 13°',
+      shelfLife: '60 days',
+      storage: '+10°C to +12°C',
+      packaging: '12kg Export Carton (6-9 fruits)'
+    },
+    applications: ['Fresh Retail', 'Premium Gift Packs'],
+    seasonality: 'Year-round',
+    image: '/images/products/fresh/fresh_pomelo.png'
+  },
+{
+    id: 'fresh-durian',
+    nameEn: 'Fresh Ri6 / Monthong Durian',
+    nameVi: 'Sầu Riêng Ri6 / Monthong Tươi',
+    scientificName: 'Durio zibethinus',
+    category: 'fresh',
+    subCategory: 'Fruits',
+    formats: ['Whole Fruit (2kg-4.5kg)', 'Frozen Flesh Tray'],
+    specifications: {
+      brix: '28 - 35°',
+      shelfLife: '10 days (Fresh) / 24 months (Frozen)',
+      storage: '+13°C to +15°C',
+      packaging: '18kg Export Carton (4-6 fruits)'
+    },
+    applications: ['Gourmet Retail', 'Bakery', 'Desserts'],
+    seasonality: 'Year-round',
+    image: '/images/products/fresh/fresh_durian.png'
+  },
+{
     id: 'fresh-red-dragon-fruit',
     nameEn: 'Fresh Red Dragon Fruit',
     nameVi: 'Thanh Long Ruột Đỏ Tươi',
     scientificName: 'Hylocereus costaricensis',
     category: 'fresh',
-    subCategory: 'Tropical Fruits',
+    subCategory: 'Fruits',
     formats: ['Whole Fruit', 'Caliber 300g-450g / 450g-650g'],
     specifications: {
       brix: '13 - 16°',
@@ -236,12 +290,174 @@ export const PRODUCTS_LIST: ProductItem[] = [
     image: '/images/products/fresh/fresh_red_dragon_fruit.png'
   },
 {
+    id: 'fresh-pineapple',
+    nameEn: 'Fresh MD2 Pineapple',
+    nameVi: 'Dứa / Thơm MD2 Tươi',
+    scientificName: 'Ananas comosus',
+    category: 'fresh',
+    subCategory: 'Fruits',
+    formats: ['Crown-on', 'Crownless'],
+    specifications: {
+      brix: '14 - 17°',
+      shelfLife: '28 days',
+      storage: '+8°C to +10°C',
+      packaging: '12kg Export Carton (6-9 counts)'
+    },
+    applications: ['Fresh Retail', 'Fresh Cut Processing'],
+    seasonality: 'Year-round',
+    image: '/images/products/fresh/fresh_pineapple.png'
+  },
+{
+    id: 'fresh-coconut',
+    nameEn: 'Fresh Young Diamond Coconut',
+    nameVi: 'Dừa Xiêm Xanh Gọt Kim Cương Tươi',
+    scientificName: 'Cocos nucifera',
+    category: 'fresh',
+    subCategory: 'Fruits',
+    formats: ['Diamond Cut', 'Easy-Open Ring Cut'],
+    specifications: {
+      brix: '7 - 9° (Natural Coconut Water)',
+      shelfLife: '60 days in cold chain',
+      storage: '+2°C to +4°C',
+      packaging: '9 or 12 coconuts per Export Carton'
+    },
+    applications: ['Fresh Hydration', 'Supermarkets', 'Hospitality'],
+    seasonality: 'Year-round',
+    image: '/images/products/fresh/fresh_coconut.png'
+  },
+{
+    id: 'fresh-jackfruit',
+    nameEn: 'Fresh Red Flesh Jackfruit',
+    nameVi: 'Mít Ruột Đỏ Tươi',
+    scientificName: 'Artocarpus heterophyllus',
+    category: 'fresh',
+    subCategory: 'Fruits',
+    formats: ['Whole Fruit', 'Cleaned Pods'],
+    specifications: {
+      brix: '18 - 22°',
+      shelfLife: '20 days',
+      storage: '+10°C to +12°C',
+      packaging: '10kg - 15kg Master Carton'
+    },
+    applications: ['Fresh Retail', 'Pre-cut Trays'],
+    seasonality: 'Year-round',
+    image: '/images/products/fresh/fresh_jackfruit.png'
+  },
+{
+    id: 'fresh-mangosteen',
+    nameEn: 'Fresh Mangosteen',
+    nameVi: 'Măng Cụt Tươi',
+    scientificName: 'Garcinia mangostana',
+    category: 'fresh',
+    subCategory: 'Fruits',
+    formats: ['Whole Fruit', 'Grade 4A, 5A, 6A'],
+    specifications: {
+      brix: '16 - 19°',
+      shelfLife: '18 - 21 days',
+      storage: '+12°C to +13°C',
+      packaging: '5kg / 9kg Plastic Crate or Carton'
+    },
+    applications: ['Air-Freight & Sea-Freight Premium Retail'],
+    seasonality: 'May to August',
+    image: '/images/products/fresh/fresh_mangosteen.png'
+  },
+{
+    id: 'fresh-passion-fruit',
+    nameEn: 'Fresh Purple Passion Fruit',
+    nameVi: 'Chanh Dây Tím Tươi',
+    scientificName: 'Passiflora edulis',
+    category: 'fresh',
+    subCategory: 'Fruits',
+    formats: ['Whole Fruit Grade A (10-14 pcs/kg)'],
+    specifications: {
+      brix: '15 - 18°',
+      shelfLife: '30 days',
+      storage: '+5°C to +7°C',
+      packaging: '2kg / 4.5kg / 10kg Export Carton'
+    },
+    applications: ['Fresh Retail', 'Juice Extracting'],
+    seasonality: 'Year-round',
+    image: '/images/products/fresh/fresh_passion_fruit.png'
+  },
+{
+    id: 'fresh-lychee',
+    nameEn: 'Fresh Thieu Lychee',
+    nameVi: 'Vải Thiều Tươi',
+    scientificName: 'Litchi chinensis',
+    category: 'fresh',
+    subCategory: 'Fruits',
+    formats: ['Whole Fruit with Stem', 'Grade A'],
+    specifications: {
+      brix: '17 - 20°',
+      shelfLife: '20 - 25 days (VHT Treated)',
+      storage: '+3°C to +5°C',
+      packaging: '5kg / 10kg Ventilated Carton'
+    },
+    applications: ['Fresh Retail', 'Gourmet Export'],
+    seasonality: 'May to July',
+    image: '/images/products/fresh/fresh_lychee.png'
+  },
+{
+    id: 'fresh-longan',
+    nameEn: 'Fresh Longan (I-Do)',
+    nameVi: 'Nhãn I-Do Tươi',
+    scientificName: 'Dimocarpus longan',
+    category: 'fresh',
+    subCategory: 'Fruits',
+    formats: ['Bunch / Whole Fruit'],
+    specifications: {
+      brix: '18 - 22°',
+      shelfLife: '30 days',
+      storage: '+4°C to +6°C',
+      packaging: '10kg Plastic Crate / Carton'
+    },
+    applications: ['Fresh Retail', 'Canned Fruit Processing'],
+    seasonality: 'Year-round',
+    image: '/images/products/fresh/fresh_longan.png'
+  },
+{
+    id: 'fresh-rambutan',
+    nameEn: 'Fresh Rambutan',
+    nameVi: 'Chôm Chôm Tươi',
+    scientificName: 'Nephelium lappaceum',
+    category: 'fresh',
+    subCategory: 'Fruits',
+    formats: ['Whole Fruit', 'Grade A Sorted'],
+    specifications: {
+      brix: '16 - 19°',
+      shelfLife: '14 days',
+      storage: '+10°C to +12°C',
+      packaging: '5kg / 10kg Export Carton'
+    },
+    applications: ['Fresh Retail', 'Fruit Salads'],
+    seasonality: 'May to September',
+    image: '/images/products/fresh/fresh_rambutan.png'
+  },
+{
+    id: 'fresh-avocado',
+    nameEn: 'Fresh Hass / 034 Avocado',
+    nameVi: 'Bơ 034 / Hass Tươi',
+    scientificName: 'Persea americana',
+    category: 'fresh',
+    subCategory: 'Fruits',
+    formats: ['Whole Fruit (300g-500g)'],
+    specifications: {
+      brix: 'Dry matter > 21%',
+      shelfLife: '21 days (Cold storage)',
+      storage: '+5°C to +7°C',
+      packaging: '4kg / 10kg Master Carton'
+    },
+    applications: ['Fresh Retail', 'HORECA', 'Guacamole'],
+    seasonality: 'March to September',
+    image: '/images/products/fresh/fresh_avocado.png'
+  },
+{
     id: 'fresh-watermelon',
     nameEn: 'Fresh Seedless Watermelon',
     nameVi: 'Dưa Hấu Không Hạt Tươi',
     scientificName: 'Citrullus lanatus',
     category: 'fresh',
-    subCategory: 'Tropical Fruits',
+    subCategory: 'Fruits',
     formats: ['Whole Fruit', 'Weight 3kg - 6kg/fruit'],
     specifications: {
       brix: '11 - 13°',
@@ -254,12 +470,48 @@ export const PRODUCTS_LIST: ProductItem[] = [
     image: '/images/products/fresh/fresh_seedless_watermelon.png'
   },
 {
+    id: 'fresh-melon',
+    nameEn: 'Fresh Cantaloupe Melon',
+    nameVi: 'Dưa Lưới Tươi',
+    scientificName: 'Cucumis melo',
+    category: 'fresh',
+    subCategory: 'Fruits',
+    formats: ['Whole Fruit 1.2kg - 2.2kg'],
+    specifications: {
+      brix: '13 - 16°',
+      shelfLife: '21 days',
+      storage: '+8°C to +10°C',
+      packaging: '4-6 fruits in Master Carton'
+    },
+    applications: ['Fresh Retail', 'High-End Supermarkets'],
+    seasonality: 'Year-round',
+    image: '/images/products/fresh/fresh_melon.png'
+  },
+{
+    id: 'fresh-strawberry',
+    nameEn: 'Fresh Da Lat Strawberry',
+    nameVi: 'Dâu Tây Đà Lạt Tươi',
+    scientificName: 'Fragaria × ananassa',
+    category: 'fresh',
+    subCategory: 'Fruits',
+    formats: ['Whole Fruit', 'Grade A'],
+    specifications: {
+      brix: '8 - 11°',
+      shelfLife: '7 - 10 days',
+      storage: '+2°C to +4°C',
+      packaging: '250g Punnet in 3kg Carton'
+    },
+    applications: ['Fresh Retail', 'Desserts', 'Confectionery'],
+    seasonality: 'November to April',
+    image: '/images/products/fresh/fresh_strawberry.png'
+  },
+{
     id: 'fresh-custard-apple',
     nameEn: 'Fresh Custard Apple (Sugar Apple)',
     nameVi: 'Mãng Cầu Ta (Na) Tươi',
     scientificName: 'Annona squamosa',
     category: 'fresh',
-    subCategory: 'Tropical Fruits',
+    subCategory: 'Fruits',
     formats: ['Whole Fruit', 'Size 350g-500g/fruit'],
     specifications: {
       brix: '18 - 22°',
@@ -277,7 +529,7 @@ export const PRODUCTS_LIST: ProductItem[] = [
     nameVi: 'Mãng Cầu Xiêm Tươi',
     scientificName: 'Annona muricata',
     category: 'fresh',
-    subCategory: 'Tropical Fruits',
+    subCategory: 'Fruits',
     formats: ['Whole Fruit', '1.5kg - 3.5kg/fruit'],
     specifications: {
       brix: '14 - 17°',
@@ -290,66 +542,12 @@ export const PRODUCTS_LIST: ProductItem[] = [
     image: '/images/products/fresh/fresh_soursop.png'
   },
 {
-    id: 'fresh-acerola-cherry',
-    nameEn: 'Fresh Acerola Cherry',
-    nameVi: 'Sơ Ri Tươi',
-    scientificName: 'Malpighia emarginta',
-    category: 'fresh',
-    subCategory: 'Tropical Fruits',
-    formats: ['Whole Cherry', 'Grade A Sorted'],
-    specifications: {
-      brix: '7 - 10°',
-      shelfLife: '7 - 10 days in cold chain',
-      storage: '+2°C to +4°C',
-      packaging: '2kg / 3kg Clamshell Punnet in Master Carton'
-    },
-    applications: ['Natural Vitamin C Extract', 'Fresh Retail', 'Preserves'],
-    seasonality: 'May to October',
-    image: '/images/products/fresh/fresh_acerola_cherry.png'
-  },
-{
-    id: 'fresh-persimmon',
-    nameEn: 'Fresh Persimmon',
-    nameVi: 'Hồng Tươi Đà Lạt',
-    scientificName: 'Diospyros kaki',
-    category: 'fresh',
-    subCategory: 'Tropical Fruits',
-    formats: ['Crispy Whole Fruit', 'Size 150g-250g'],
-    specifications: {
-      brix: '14 - 18°',
-      shelfLife: '20 - 25 days',
-      storage: '+2°C to +5°C',
-      packaging: '5kg / 10kg Export Carton'
-    },
-    applications: ['Fresh Retail', 'Drying Processing'],
-    seasonality: 'September to December',
-    image: '/images/products/fresh/fresh_persimmon.png'
-  },
-{
-    id: 'fresh-guava',
-    nameEn: 'Fresh Pink / White Guava',
-    nameVi: 'Ổi Ruột Hồng / Trắng Tươi',
-    scientificName: 'Psidium guajava',
-    category: 'fresh',
-    subCategory: 'Tropical Fruits',
-    formats: ['Whole Fruit with Foam Net', 'Size 250g-400g'],
-    specifications: {
-      brix: '9 - 12°',
-      shelfLife: '20 days',
-      storage: '+8°C to +10°C',
-      packaging: '10kg Export Carton with Individual Foam Sleeve'
-    },
-    applications: ['Fresh Retail', 'Juicing'],
-    seasonality: 'Year-round',
-    image: '/images/products/fresh/fresh_guava.png'
-  },
-{
     id: 'fresh-star-apple',
     nameEn: 'Fresh Star Apple (Vú Sữa)',
     nameVi: 'Vú Sữa Lò Rèn / Hoàng Kim Tươi',
     scientificName: 'Chrysophyllum cainito',
     category: 'fresh',
-    subCategory: 'Tropical Fruits',
+    subCategory: 'Fruits',
     formats: ['Whole Fruit', 'Caliber 250g-400g'],
     specifications: {
       brix: '13 - 16°',
@@ -362,12 +560,30 @@ export const PRODUCTS_LIST: ProductItem[] = [
     image: '/images/products/fresh/fresh_star_apple.png'
   },
 {
+    id: 'fresh-guava',
+    nameEn: 'Fresh Pink / White Guava',
+    nameVi: 'Ổi Ruột Hồng / Trắng Tươi',
+    scientificName: 'Psidium guajava',
+    category: 'fresh',
+    subCategory: 'Fruits',
+    formats: ['Whole Fruit with Foam Net', 'Size 250g-400g'],
+    specifications: {
+      brix: '9 - 12°',
+      shelfLife: '20 days',
+      storage: '+8°C to +10°C',
+      packaging: '10kg Export Carton with Individual Foam Sleeve'
+    },
+    applications: ['Fresh Retail', 'Juicing'],
+    seasonality: 'Year-round',
+    image: '/images/products/fresh/fresh_guava.png'
+  },
+{
     id: 'fresh-papaya',
     nameEn: 'Fresh Red Flesh Papaya',
     nameVi: 'Đu Đủ Ruột Đỏ Tươi',
     scientificName: 'Carica papaya',
     category: 'fresh',
-    subCategory: 'Tropical Fruits',
+    subCategory: 'Fruits',
     formats: ['Whole Fruit', 'Size 800g - 1.8kg'],
     specifications: {
       brix: '11 - 14°',
@@ -380,58 +596,165 @@ export const PRODUCTS_LIST: ProductItem[] = [
     image: '/images/products/fresh/fresh_papaya.png'
   },
 {
-    id: 'fresh-mangosteen',
-    nameEn: 'Fresh Mangosteen',
-    nameVi: 'Măng Cụt Tươi',
-    scientificName: 'Garcinia mangostana',
+    id: 'fresh-rose-apple',
+    nameEn: 'Fresh Rose Apple (Wax Apple)',
+    nameVi: 'Mận An Phước Tươi',
+    scientificName: 'Syzygium samarangense',
     category: 'fresh',
-    subCategory: 'Tropical Fruits',
-    formats: ['Whole Fruit', 'Grade 4A, 5A, 6A'],
+    subCategory: 'Fruits',
+    formats: ['Whole Fruit Grade A'],
     specifications: {
-      brix: '16 - 19°',
-      shelfLife: '18 - 21 days',
-      storage: '+12°C to +13°C',
-      packaging: '5kg / 9kg Plastic Crate or Carton'
+      brix: '9 - 12°',
+      shelfLife: '12 days',
+      storage: '+6°C to +8°C',
+      packaging: '5kg Foam-padded Carton'
     },
-    applications: ['Air-Freight & Sea-Freight Premium Retail'],
-    seasonality: 'May to August',
-    image: '/images/products/fresh/fresh_mangosteen.png'
-  },
-{
-    id: 'fresh-coconut',
-    nameEn: 'Fresh Young Diamond Coconut',
-    nameVi: 'Dừa Xiêm Xanh Gọt Kim Cương Tươi',
-    scientificName: 'Cocos nucifera',
-    category: 'fresh',
-    subCategory: 'Tropical Fruits',
-    formats: ['Diamond Cut', 'Easy-Open Ring Cut'],
-    specifications: {
-      brix: '7 - 9° (Natural Coconut Water)',
-      shelfLife: '60 days in cold chain',
-      storage: '+2°C to +4°C',
-      packaging: '9 or 12 coconuts per Export Carton'
-    },
-    applications: ['Fresh Hydration', 'Supermarkets', 'Hospitality'],
+    applications: ['Fresh Retail'],
     seasonality: 'Year-round',
-    image: '/images/products/fresh/fresh_coconut.png'
+    image: '/images/products/fresh/fresh_rose_apple.png'
   },
 {
-    id: 'fresh-mango',
-    nameEn: 'Fresh Cat Chu / R2E2 Mango',
-    nameVi: 'Xoài Cát Chu / R2E2 Tươi Xuất Khẩu',
-    scientificName: 'Mangifera indica',
+    id: 'fresh-king-orange',
+    nameEn: 'Fresh King Orange',
+    nameVi: 'Cam Sành Tươi',
+    scientificName: 'Citrus nobilis',
     category: 'fresh',
-    subCategory: 'Tropical Fruits',
-    formats: ['Whole VHT Treated Fruit', 'Size 300g-500g'],
+    subCategory: 'Fruits',
+    formats: ['Whole Fruit'],
     specifications: {
-      brix: '14 - 17°',
-      shelfLife: '25 - 30 days',
-      storage: '+10°C to +12°C',
-      packaging: '5kg / 10kg Export Carton with VHT Stamp'
+      brix: '10 - 13°',
+      shelfLife: '20 days',
+      storage: '+8°C to +10°C',
+      packaging: '10kg / 15kg Master Carton'
     },
-    applications: ['Fresh Retail (Japan, Korea, Australia Markets)'],
-    seasonality: 'Year-round (Peak: Dec to May)',
-    image: '/images/products/fresh/fresh_mango.png'
+    applications: ['Fresh Juice', 'Retail'],
+    seasonality: 'Year-round',
+    image: '/images/products/fresh/fresh_king_orange.png'
+  },
+{
+    id: 'fresh-tangerine',
+    nameEn: 'Fresh Sweet Tangerine',
+    nameVi: 'Quýt Đường Tươi',
+    scientificName: 'Citrus reticulata',
+    category: 'fresh',
+    subCategory: 'Fruits',
+    formats: ['Whole Fruit'],
+    specifications: {
+      brix: '11 - 14°',
+      shelfLife: '20 days',
+      storage: '+8°C to +10°C',
+      packaging: '10kg Export Carton'
+    },
+    applications: ['Fresh Retail', 'Gift Boxes'],
+    seasonality: 'October to February',
+    image: '/images/products/fresh/fresh_tangerine.png'
+  },
+{
+    id: 'fresh-persimmon',
+    nameEn: 'Fresh Persimmon',
+    nameVi: 'Hồng Tươi Đà Lạt',
+    scientificName: 'Diospyros kaki',
+    category: 'fresh',
+    subCategory: 'Fruits',
+    formats: ['Crispy Whole Fruit', 'Size 150g-250g'],
+    specifications: {
+      brix: '14 - 18°',
+      shelfLife: '20 - 25 days',
+      storage: '+2°C to +5°C',
+      packaging: '5kg / 10kg Export Carton'
+    },
+    applications: ['Fresh Retail', 'Drying Processing'],
+    seasonality: 'September to December',
+    image: '/images/products/fresh/fresh_persimmon.png'
+  },
+{
+    id: 'fresh-sapodilla',
+    nameEn: 'Fresh Sapodilla (Sapotche)',
+    nameVi: 'Hồng Xiêm Tươi',
+    scientificName: 'Manilkara zapota',
+    category: 'fresh',
+    subCategory: 'Fruits',
+    formats: ['Whole Fruit'],
+    specifications: {
+      brix: '19 - 24°',
+      shelfLife: '14 days',
+      storage: '+12°C to +14°C',
+      packaging: '5kg Export Carton'
+    },
+    applications: ['Fresh Retail', 'Smoothies'],
+    seasonality: 'Year-round',
+    image: '/images/products/fresh/fresh_sapodilla.png'
+  },
+{
+    id: 'fresh-acerola-cherry',
+    nameEn: 'Fresh Acerola Cherry',
+    nameVi: 'Sơ Ri Tươi',
+    scientificName: 'Malpighia emarginta',
+    category: 'fresh',
+    subCategory: 'Fruits',
+    formats: ['Whole Cherry', 'Grade A Sorted'],
+    specifications: {
+      brix: '7 - 10°',
+      shelfLife: '7 - 10 days in cold chain',
+      storage: '+2°C to +4°C',
+      packaging: '2kg / 3kg Clamshell Punnet in Master Carton'
+    },
+    applications: ['Natural Vitamin C Extract', 'Fresh Retail', 'Preserves'],
+    seasonality: 'May to October',
+    image: '/images/products/fresh/fresh_acerola_cherry.png'
+  },
+{
+    id: 'fresh-cashew',
+    nameEn: 'Fresh Cashew',
+    nameVi: 'Trái / Hạt Điều Tươi',
+    scientificName: 'Anacardium occidentale',
+    category: 'fresh',
+    subCategory: 'Fruits',
+    formats: ['Fresh Whole', 'Grade A'],
+    specifications: {
+      shelfLife: '15 - 20 days',
+      storage: '+10°C to +12°C',
+      packaging: '10kg Carton Box'
+    },
+    applications: ['Fresh Retail', 'Nut Processing'],
+    seasonality: 'Feb - May',
+    image: '/images/products/fresh/fresh_cashew.png'
+  },
+{
+    id: 'fresh-gac-fruit',
+    nameEn: 'Fresh Gac Fruit',
+    nameVi: 'Quả Gấc Tươi',
+    scientificName: 'Momordica cochinchinensis',
+    category: 'fresh',
+    subCategory: 'Fruits',
+    formats: ['Whole Fruit (1kg-2.5kg)'],
+    specifications: {
+      brix: 'Lycopene & Beta-Carotene rich',
+      shelfLife: '20 days',
+      storage: '+10°C to +12°C',
+      packaging: '10kg Export Carton'
+    },
+    applications: ['Lycopene Extraction', 'Nutraceuticals', 'Culinary'],
+    seasonality: 'September to February',
+    image: '/images/products/fresh/fresh_gac_fruit.png'
+  },
+{
+    id: 'fresh-lime',
+    nameEn: 'Fresh Seedless Lime',
+    nameVi: 'Chanh Không Hạt Tươi Xuất Khẩu',
+    scientificName: 'Citrus latifolia',
+    category: 'fresh',
+    subCategory: 'Vegetables & Spices',
+    formats: ['Whole Green Lime', 'Caliber 12-20 pcs/kg'],
+    specifications: {
+      brix: '7 - 9°',
+      shelfLife: '40 - 50 days',
+      storage: '+5°C to +7°C',
+      packaging: '7kg / 10kg Ventilated Export Carton'
+    },
+    applications: ['Fresh Supermarkets', 'Restaurants', 'Beverage Industry'],
+    seasonality: 'Year-round',
+    image: '/images/products/fresh/fresh_lime.png'
   },
 {
     id: 'fresh-ginger',
@@ -439,7 +762,7 @@ export const PRODUCTS_LIST: ProductItem[] = [
     nameVi: 'Gừng Tươi Già Xuất Khẩu',
     scientificName: 'Zingiber officinale',
     category: 'fresh',
-    subCategory: 'Culinary Crops',
+    subCategory: 'Vegetables & Spices',
     formats: ['Whole Root', 'Washed & Air-Dried 100g+'],
     specifications: {
       shelfLife: '60 - 90 days',
@@ -456,7 +779,7 @@ export const PRODUCTS_LIST: ProductItem[] = [
     nameVi: 'Tỏi Cô Đơn / Tỏi Nhiều Tép Tươi',
     scientificName: 'Allium sativum',
     category: 'fresh',
-    subCategory: 'Culinary Crops',
+    subCategory: 'Vegetables & Spices',
     formats: ['Whole Bulb', 'Size 3.5cm - 5.5cm'],
     specifications: {
       shelfLife: '6 - 9 months',
@@ -468,47 +791,12 @@ export const PRODUCTS_LIST: ProductItem[] = [
     image: '/images/products/fresh/fresh_garlic.png'
   },
 {
-    id: 'fresh-lime',
-    nameEn: 'Fresh Seedless Lime',
-    nameVi: 'Chanh Không Hạt Tươi Xuất Khẩu',
-    scientificName: 'Citrus latifolia',
-    category: 'fresh',
-    subCategory: 'Culinary Crops',
-    formats: ['Whole Green Lime', 'Caliber 12-20 pcs/kg'],
-    specifications: {
-      brix: '7 - 9°',
-      shelfLife: '40 - 50 days',
-      storage: '+5°C to +7°C',
-      packaging: '7kg / 10kg Ventilated Export Carton'
-    },
-    applications: ['Fresh Supermarkets', 'Restaurants', 'Beverage Industry'],
-    seasonality: 'Year-round',
-    image: '/images/products/fresh/fresh_lime.png'
-  },
-{
-    id: 'fresh-purple-sweet-potato',
-    nameEn: 'Fresh Purple Sweet Potato',
-    nameVi: 'Khoai Lang Tím Nhật Tươi',
-    scientificName: 'Ipomoea batatas',
-    category: 'fresh',
-    subCategory: 'Root Vegetables',
-    formats: ['Cleaned Whole Root', 'Size S/M/L (100g-350g)'],
-    specifications: {
-      shelfLife: '45 - 60 days',
-      storage: '+13°C to +15°C',
-      packaging: '10kg / 20kg Export Carton'
-    },
-    applications: ['Fresh Retail', 'Baking', 'Starch Processing'],
-    seasonality: 'Year-round',
-    image: '/images/products/fresh/fresh_purple_sweet_potato.png'
-  },
-{
     id: 'fresh-chili',
     nameEn: 'Fresh Bird Eye / Red Chili',
     nameVi: 'Ớt Chỉ Thiên / Ớt Sừng Tươi',
     scientificName: 'Capsicum frutescens',
     category: 'fresh',
-    subCategory: 'Culinary Crops',
+    subCategory: 'Vegetables & Spices',
     formats: ['With Stem / Stemless', 'Length 4cm-7cm'],
     specifications: {
       shelfLife: '25 - 30 days',
@@ -519,56 +807,56 @@ export const PRODUCTS_LIST: ProductItem[] = [
     seasonality: 'Year-round',
     image: '/images/products/fresh/fresh_chili.png'
   },
-  {
-    id: 'fresh-cashew',
-    nameEn: 'Fresh Cashew',
-    nameVi: 'Trái / Hạt Điều Tươi',
-    scientificName: 'Anacardium occidentale',
-    category: 'fresh',
-    subCategory: 'Tropical Fruits',
-    formats: ['Fresh Whole', 'Grade A'],
-    specifications: {
-      shelfLife: '15 - 20 days',
-      storage: '+10°C to +12°C',
-      packaging: '10kg Carton Box'
-    },
-    applications: ['Fresh Retail', 'Nut Processing'],
-    seasonality: 'Feb - May',
-    image: '/images/products/fresh/fresh_cashew.png'
-  },
 {
-    id: 'fresh-onion',
-    nameEn: 'Fresh Onion',
-    nameVi: 'Hành Tây Tươi',
-    scientificName: 'Allium cepa',
+    id: 'fresh-turmeric',
+    nameEn: 'Fresh Yellow / Red Turmeric',
+    nameVi: 'Nghệ Vàng / Nghệ Nếp Tươi',
+    scientificName: 'Curcuma longa',
     category: 'fresh',
     subCategory: 'Vegetables & Spices',
-    formats: ['Whole Bulbs', 'Peeled'],
+    formats: ['Washed Whole Rhizome', 'High Curcumin Content'],
     specifications: {
-      shelfLife: '60 - 90 days',
-      storage: '+0°C to +4°C',
-      packaging: '10kg / 20kg Mesh Bag'
+      shelfLife: '60 days',
+      storage: '+12°C to +14°C',
+      packaging: '10kg / 25kg Mesh Bag or Carton'
     },
-    applications: ['Culinary', 'Food Industry'],
-    seasonality: 'Year-round',
-    image: '/images/products/fresh/fresh_onion.png'
+    applications: ['Curcumin Extraction', 'Food Processing', 'Spice'],
+    seasonality: 'December to May',
+    image: '/images/products/fresh/fresh_turmeric.png'
   },
 {
-    id: 'fresh-galangal',
-    nameEn: 'Fresh Galangal',
-    nameVi: 'Củ Riềng Tươi',
-    scientificName: 'Alpinia galanga',
+    id: 'fresh-lemongrass',
+    nameEn: 'Fresh Lemongrass',
+    nameVi: 'Sả Tươi',
+    scientificName: 'Cymbopogon citratus',
     category: 'fresh',
     subCategory: 'Vegetables & Spices',
-    formats: ['Whole Rhizomes', 'Sliced'],
+    formats: ['Fresh Cut Stalks', 'Trimmed'],
     specifications: {
-      shelfLife: '30 - 45 days',
-      storage: '+12°C to +15°C',
-      packaging: '10kg Carton Box'
+      shelfLife: '21 - 30 days',
+      storage: '+5°C to +8°C',
+      packaging: '10kg Carton'
     },
-    applications: ['Spices & Seasoning', 'Extracts'],
+    applications: ['Culinary', 'Essential Oils'],
     seasonality: 'Year-round',
-    image: '/images/products/fresh/fresh_galangal.png'
+    image: '/images/products/fresh/fresh_lemongrass.png'
+  },
+{
+    id: 'fresh-purple-sweet-potato',
+    nameEn: 'Fresh Purple Sweet Potato',
+    nameVi: 'Khoai Lang Tím Nhật Tươi',
+    scientificName: 'Ipomoea batatas',
+    category: 'fresh',
+    subCategory: 'Vegetables & Spices',
+    formats: ['Cleaned Whole Root', 'Size S/M/L (100g-350g)'],
+    specifications: {
+      shelfLife: '45 - 60 days',
+      storage: '+13°C to +15°C',
+      packaging: '10kg / 20kg Export Carton'
+    },
+    applications: ['Fresh Retail', 'Baking', 'Starch Processing'],
+    seasonality: 'Year-round',
+    image: '/images/products/fresh/fresh_purple_sweet_potato.png'
   },
 {
     id: 'fresh-shallot',
@@ -586,6 +874,23 @@ export const PRODUCTS_LIST: ProductItem[] = [
     applications: ['Culinary', 'Processing'],
     seasonality: 'Year-round',
     image: '/images/products/fresh/fresh_shallot.png'
+  },
+{
+    id: 'fresh-onion',
+    nameEn: 'Fresh Onion',
+    nameVi: 'Hành Tây Tươi',
+    scientificName: 'Allium cepa',
+    category: 'fresh',
+    subCategory: 'Vegetables & Spices',
+    formats: ['Whole Bulbs', 'Peeled'],
+    specifications: {
+      shelfLife: '60 - 90 days',
+      storage: '+0°C to +4°C',
+      packaging: '10kg / 20kg Mesh Bag'
+    },
+    applications: ['Culinary', 'Food Industry'],
+    seasonality: 'Year-round',
+    image: '/images/products/fresh/fresh_onion.png'
   },
 {
     id: 'fresh-carrot',
@@ -622,41 +927,6 @@ export const PRODUCTS_LIST: ProductItem[] = [
     image: '/images/products/fresh/fresh_bell_pepper.png'
   },
 {
-    id: 'fresh-sugarcane',
-    nameEn: 'Fresh Sugarcane',
-    nameVi: 'Mía Tươi',
-    scientificName: 'Saccharum officinarum',
-    category: 'fresh',
-    subCategory: 'Vegetables & Spices',
-    formats: ['Peeled Cut Stalks', 'Whole Stalks'],
-    specifications: {
-      brix: '18 - 22°',
-      shelfLife: '14 - 21 days',
-      storage: '+2°C to +5°C',
-      packaging: '20kg Vacuum Bag / Carton'
-    },
-    applications: ['Juice Bar', 'Beverages'],
-    seasonality: 'Year-round',
-    image: '/images/products/fresh/fresh_sugarcane.png'
-  },
-{
-    id: 'fresh-lemongrass',
-    nameEn: 'Fresh Lemongrass',
-    nameVi: 'Sả Tươi',
-    scientificName: 'Cymbopogon citratus',
-    category: 'fresh',
-    subCategory: 'Vegetables & Spices',
-    formats: ['Fresh Cut Stalks', 'Trimmed'],
-    specifications: {
-      shelfLife: '21 - 30 days',
-      storage: '+5°C to +8°C',
-      packaging: '10kg Carton'
-    },
-    applications: ['Culinary', 'Essential Oils'],
-    seasonality: 'Year-round',
-    image: '/images/products/fresh/fresh_lemongrass.png'
-  },
-{
     id: 'fresh-tomato',
     nameEn: 'Fresh Tomato',
     nameVi: 'Cà Chua Tươi',
@@ -674,21 +944,39 @@ export const PRODUCTS_LIST: ProductItem[] = [
     image: '/images/products/fresh/fresh_tomato.png'
   },
 {
-    id: 'fresh-turmeric',
-    nameEn: 'Fresh Yellow / Red Turmeric',
-    nameVi: 'Nghệ Vàng / Nghệ Nếp Tươi',
-    scientificName: 'Curcuma longa',
+    id: 'fresh-galangal',
+    nameEn: 'Fresh Galangal',
+    nameVi: 'Củ Riềng Tươi',
+    scientificName: 'Alpinia galanga',
     category: 'fresh',
-    subCategory: 'Culinary Crops',
-    formats: ['Washed Whole Rhizome', 'High Curcumin Content'],
+    subCategory: 'Vegetables & Spices',
+    formats: ['Whole Rhizomes', 'Sliced'],
     specifications: {
-      shelfLife: '60 days',
-      storage: '+12°C to +14°C',
-      packaging: '10kg / 25kg Mesh Bag or Carton'
+      shelfLife: '30 - 45 days',
+      storage: '+12°C to +15°C',
+      packaging: '10kg Carton Box'
     },
-    applications: ['Curcumin Extraction', 'Food Processing', 'Spice'],
-    seasonality: 'December to May',
-    image: '/images/products/fresh/fresh_turmeric.png'
+    applications: ['Spices & Seasoning', 'Extracts'],
+    seasonality: 'Year-round',
+    image: '/images/products/fresh/fresh_galangal.png'
+  },
+{
+    id: 'fresh-sugarcane',
+    nameEn: 'Fresh Sugarcane',
+    nameVi: 'Mía Tươi',
+    scientificName: 'Saccharum officinarum',
+    category: 'fresh',
+    subCategory: 'Vegetables & Spices',
+    formats: ['Peeled Cut Stalks', 'Whole Stalks'],
+    specifications: {
+      brix: '18 - 22°',
+      shelfLife: '14 - 21 days',
+      storage: '+2°C to +5°C',
+      packaging: '20kg Vacuum Bag / Carton'
+    },
+    applications: ['Juice Bar', 'Beverages'],
+    seasonality: 'Year-round',
+    image: '/images/products/fresh/fresh_sugarcane.png'
   },
 {
     id: 'powder-fd-passion-fruit',
@@ -1318,312 +1606,6 @@ export const PRODUCTS_LIST: ProductItem[] = [
     },
     applications: ['Smoothie Mixes', 'Sorbet Base', 'Natural Colorant Inclusion'],
     image: '/images/products/iqf/iqf_red_dragon_fruit.png'
-  },
-{
-    id: 'fresh-rambutan',
-    nameEn: 'Fresh Rambutan',
-    nameVi: 'Chôm Chôm Tươi',
-    scientificName: 'Nephelium lappaceum',
-    category: 'fresh',
-    subCategory: 'Tropical Fruits',
-    formats: ['Whole Fruit', 'Grade A Sorted'],
-    specifications: {
-      brix: '16 - 19°',
-      shelfLife: '14 days',
-      storage: '+10°C to +12°C',
-      packaging: '5kg / 10kg Export Carton'
-    },
-    applications: ['Fresh Retail', 'Fruit Salads'],
-    seasonality: 'May to September',
-    image: '/images/products/fresh/fresh_rambutan.png'
-  },
-{
-    id: 'fresh-strawberry',
-    nameEn: 'Fresh Da Lat Strawberry',
-    nameVi: 'Dâu Tây Đà Lạt Tươi',
-    scientificName: 'Fragaria × ananassa',
-    category: 'fresh',
-    subCategory: 'Tropical Fruits',
-    formats: ['Whole Fruit', 'Grade A'],
-    specifications: {
-      brix: '8 - 11°',
-      shelfLife: '7 - 10 days',
-      storage: '+2°C to +4°C',
-      packaging: '250g Punnet in 3kg Carton'
-    },
-    applications: ['Fresh Retail', 'Desserts', 'Confectionery'],
-    seasonality: 'November to April',
-    image: '/images/products/fresh/fresh_strawberry.png'
-  },
-{
-    id: 'fresh-lychee',
-    nameEn: 'Fresh Thieu Lychee',
-    nameVi: 'Vải Thiều Tươi',
-    scientificName: 'Litchi chinensis',
-    category: 'fresh',
-    subCategory: 'Tropical Fruits',
-    formats: ['Whole Fruit with Stem', 'Grade A'],
-    specifications: {
-      brix: '17 - 20°',
-      shelfLife: '20 - 25 days (VHT Treated)',
-      storage: '+3°C to +5°C',
-      packaging: '5kg / 10kg Ventilated Carton'
-    },
-    applications: ['Fresh Retail', 'Gourmet Export'],
-    seasonality: 'May to July',
-    image: '/images/products/fresh/fresh_lychee.png'
-  },
-{
-    id: 'fresh-longan',
-    nameEn: 'Fresh Longan (I-Do)',
-    nameVi: 'Nhãn I-Do Tươi',
-    scientificName: 'Dimocarpus longan',
-    category: 'fresh',
-    subCategory: 'Tropical Fruits',
-    formats: ['Bunch / Whole Fruit'],
-    specifications: {
-      brix: '18 - 22°',
-      shelfLife: '30 days',
-      storage: '+4°C to +6°C',
-      packaging: '10kg Plastic Crate / Carton'
-    },
-    applications: ['Fresh Retail', 'Canned Fruit Processing'],
-    seasonality: 'Year-round',
-    image: '/images/products/fresh/fresh_longan.png'
-  },
-{
-    id: 'fresh-sapodilla',
-    nameEn: 'Fresh Sapodilla (Sapotche)',
-    nameVi: 'Hồng Xiêm Tươi',
-    scientificName: 'Manilkara zapota',
-    category: 'fresh',
-    subCategory: 'Tropical Fruits',
-    formats: ['Whole Fruit'],
-    specifications: {
-      brix: '19 - 24°',
-      shelfLife: '14 days',
-      storage: '+12°C to +14°C',
-      packaging: '5kg Export Carton'
-    },
-    applications: ['Fresh Retail', 'Smoothies'],
-    seasonality: 'Year-round',
-    image: '/images/products/fresh/fresh_sapodilla.png'
-  },
-{
-    id: 'fresh-melon',
-    nameEn: 'Fresh Cantaloupe Melon',
-    nameVi: 'Dưa Lưới Tươi',
-    scientificName: 'Cucumis melo',
-    category: 'fresh',
-    subCategory: 'Tropical Fruits',
-    formats: ['Whole Fruit 1.2kg - 2.2kg'],
-    specifications: {
-      brix: '13 - 16°',
-      shelfLife: '21 days',
-      storage: '+8°C to +10°C',
-      packaging: '4-6 fruits in Master Carton'
-    },
-    applications: ['Fresh Retail', 'High-End Supermarkets'],
-    seasonality: 'Year-round',
-    image: '/images/products/fresh/fresh_melon.png'
-  },
-{
-    id: 'fresh-banana',
-    nameEn: 'Fresh Cavendish Banana',
-    nameVi: 'Chuối Laba / Cavendish Tươi',
-    scientificName: 'Musa acuminata',
-    category: 'fresh',
-    subCategory: 'Tropical Fruits',
-    formats: ['Hands (4-6 fingers)', 'Grade A'],
-    specifications: {
-      brix: '18 - 22°',
-      shelfLife: '35 - 40 days (Green stage)',
-      storage: '+13°C to +14°C',
-      packaging: '13.5kg / 18kg Vacuum Bag Carton'
-    },
-    applications: ['Fresh Retail', 'Ripening Centers'],
-    seasonality: 'Year-round',
-    image: '/images/products/fresh/fresh_banana.png'
-  },
-{
-    id: 'fresh-pineapple',
-    nameEn: 'Fresh MD2 Pineapple',
-    nameVi: 'Dứa / Thơm MD2 Tươi',
-    scientificName: 'Ananas comosus',
-    category: 'fresh',
-    subCategory: 'Tropical Fruits',
-    formats: ['Crown-on', 'Crownless'],
-    specifications: {
-      brix: '14 - 17°',
-      shelfLife: '28 days',
-      storage: '+8°C to +10°C',
-      packaging: '12kg Export Carton (6-9 counts)'
-    },
-    applications: ['Fresh Retail', 'Fresh Cut Processing'],
-    seasonality: 'Year-round',
-    image: '/images/products/fresh/fresh_pineapple.png'
-  },
-{
-    id: 'fresh-king-orange',
-    nameEn: 'Fresh King Orange',
-    nameVi: 'Cam Sành Tươi',
-    scientificName: 'Citrus nobilis',
-    category: 'fresh',
-    subCategory: 'Tropical Fruits',
-    formats: ['Whole Fruit'],
-    specifications: {
-      brix: '10 - 13°',
-      shelfLife: '20 days',
-      storage: '+8°C to +10°C',
-      packaging: '10kg / 15kg Master Carton'
-    },
-    applications: ['Fresh Juice', 'Retail'],
-    seasonality: 'Year-round',
-    image: '/images/products/fresh/fresh_king_orange.png'
-  },
-{
-    id: 'fresh-tangerine',
-    nameEn: 'Fresh Sweet Tangerine',
-    nameVi: 'Quýt Đường Tươi',
-    scientificName: 'Citrus reticulata',
-    category: 'fresh',
-    subCategory: 'Tropical Fruits',
-    formats: ['Whole Fruit'],
-    specifications: {
-      brix: '11 - 14°',
-      shelfLife: '20 days',
-      storage: '+8°C to +10°C',
-      packaging: '10kg Export Carton'
-    },
-    applications: ['Fresh Retail', 'Gift Boxes'],
-    seasonality: 'October to February',
-    image: '/images/products/fresh/fresh_tangerine.png'
-  },
-{
-    id: 'fresh-avocado',
-    nameEn: 'Fresh Hass / 034 Avocado',
-    nameVi: 'Bơ 034 / Hass Tươi',
-    scientificName: 'Persea americana',
-    category: 'fresh',
-    subCategory: 'Tropical Fruits',
-    formats: ['Whole Fruit (300g-500g)'],
-    specifications: {
-      brix: 'Dry matter > 21%',
-      shelfLife: '21 days (Cold storage)',
-      storage: '+5°C to +7°C',
-      packaging: '4kg / 10kg Master Carton'
-    },
-    applications: ['Fresh Retail', 'HORECA', 'Guacamole'],
-    seasonality: 'March to September',
-    image: '/images/products/fresh/fresh_avocado.png'
-  },
-{
-    id: 'fresh-jackfruit',
-    nameEn: 'Fresh Red Flesh Jackfruit',
-    nameVi: 'Mít Ruột Đỏ Tươi',
-    scientificName: 'Artocarpus heterophyllus',
-    category: 'fresh',
-    subCategory: 'Tropical Fruits',
-    formats: ['Whole Fruit', 'Cleaned Pods'],
-    specifications: {
-      brix: '18 - 22°',
-      shelfLife: '20 days',
-      storage: '+10°C to +12°C',
-      packaging: '10kg - 15kg Master Carton'
-    },
-    applications: ['Fresh Retail', 'Pre-cut Trays'],
-    seasonality: 'Year-round',
-    image: '/images/products/fresh/fresh_jackfruit.png'
-  },
-{
-    id: 'fresh-durian',
-    nameEn: 'Fresh Ri6 / Monthong Durian',
-    nameVi: 'Sầu Riêng Ri6 / Monthong Tươi',
-    scientificName: 'Durio zibethinus',
-    category: 'fresh',
-    subCategory: 'Tropical Fruits',
-    formats: ['Whole Fruit (2kg-4.5kg)', 'Frozen Flesh Tray'],
-    specifications: {
-      brix: '28 - 35°',
-      shelfLife: '10 days (Fresh) / 24 months (Frozen)',
-      storage: '+13°C to +15°C',
-      packaging: '18kg Export Carton (4-6 fruits)'
-    },
-    applications: ['Gourmet Retail', 'Bakery', 'Desserts'],
-    seasonality: 'Year-round',
-    image: '/images/products/fresh/fresh_durian.png'
-  },
-{
-    id: 'fresh-pomelo',
-    nameEn: 'Fresh Green Skin Pomelo',
-    nameVi: 'Bưởi Da Xanh Tươi',
-    scientificName: 'Citrus grandis',
-    category: 'fresh',
-    subCategory: 'Tropical Fruits',
-    formats: ['Whole Fruit (1.2kg-2.0kg)'],
-    specifications: {
-      brix: '11 - 13°',
-      shelfLife: '60 days',
-      storage: '+10°C to +12°C',
-      packaging: '12kg Export Carton (6-9 fruits)'
-    },
-    applications: ['Fresh Retail', 'Premium Gift Packs'],
-    seasonality: 'Year-round',
-    image: '/images/products/fresh/fresh_pomelo.png'
-  },
-{
-    id: 'fresh-rose-apple',
-    nameEn: 'Fresh Rose Apple (Wax Apple)',
-    nameVi: 'Mận An Phước Tươi',
-    scientificName: 'Syzygium samarangense',
-    category: 'fresh',
-    subCategory: 'Tropical Fruits',
-    formats: ['Whole Fruit Grade A'],
-    specifications: {
-      brix: '9 - 12°',
-      shelfLife: '12 days',
-      storage: '+6°C to +8°C',
-      packaging: '5kg Foam-padded Carton'
-    },
-    applications: ['Fresh Retail'],
-    seasonality: 'Year-round',
-    image: '/images/products/fresh/fresh_rose_apple.png'
-  },
-{
-    id: 'fresh-passion-fruit',
-    nameEn: 'Fresh Purple Passion Fruit',
-    nameVi: 'Chanh Dây Tím Tươi',
-    scientificName: 'Passiflora edulis',
-    category: 'fresh',
-    subCategory: 'Tropical Fruits',
-    formats: ['Whole Fruit Grade A (10-14 pcs/kg)'],
-    specifications: {
-      brix: '15 - 18°',
-      shelfLife: '30 days',
-      storage: '+5°C to +7°C',
-      packaging: '2kg / 4.5kg / 10kg Export Carton'
-    },
-    applications: ['Fresh Retail', 'Juice Extracting'],
-    seasonality: 'Year-round',
-    image: '/images/products/fresh/fresh_passion_fruit.png'
-  },
-{
-    id: 'fresh-gac-fruit',
-    nameEn: 'Fresh Gac Fruit',
-    nameVi: 'Quả Gấc Tươi',
-    scientificName: 'Momordica cochinchinensis',
-    category: 'fresh',
-    subCategory: 'Tropical Fruits',
-    formats: ['Whole Fruit (1kg-2.5kg)'],
-    specifications: {
-      brix: 'Lycopene & Beta-Carotene rich',
-      shelfLife: '20 days',
-      storage: '+10°C to +12°C',
-      packaging: '10kg Export Carton'
-    },
-    applications: ['Lycopene Extraction', 'Nutraceuticals', 'Culinary'],
-    seasonality: 'September to February',
-    image: '/images/products/fresh/fresh_gac_fruit.png'
   },
 {
     id: 'powder-fd-lychee',

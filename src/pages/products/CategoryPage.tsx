@@ -12,7 +12,6 @@ import {
   FileText,
   Sparkles,
   Search,
-  Filter,
   X,
   ChevronRight,
   Info
@@ -35,7 +34,7 @@ export const CategoryPage: React.FC<CategoryPageProps> = ({ categoryKey: propCat
   const [selectedProduct, setSelectedProduct] = useState<ProductItem | null>(null);
 
   // Subcategories for filtering
-  const subCategories = Array.from(new Set(products.map(p => p.subCategory).filter(Boolean)));
+  const subCategories = Array.from(new Set(products.map(p => p.subCategory).filter((s): s is string => Boolean(s))));
 
   const filteredProducts = products.filter(p => {
     const nameMatch =
@@ -207,20 +206,38 @@ export const CategoryPage: React.FC<CategoryPageProps> = ({ categoryKey: propCat
                 )}
               </div>
 
-              {/* Subcategory dropdown */}
+              {/* Subcategory Pill Tabs for quick switching */}
               {subCategories.length > 0 && (
-                <div className="flex items-center gap-2">
-                  <Filter size={16} className="text-gold-warm" />
-                  <select
-                    value={selectedSubCategory}
-                    onChange={(e) => setSelectedSubCategory(e.target.value)}
-                    className="bg-white border border-gold-warm/30 rounded px-3 py-2 text-xs md:text-sm text-carbon focus:outline-none focus:border-gold-warm cursor-pointer"
+                <div className="flex items-center gap-2 flex-wrap">
+                  <button
+                    onClick={() => setSelectedSubCategory('all')}
+                    className={`px-3.5 py-1.5 rounded-full text-xs font-bold transition-all cursor-pointer ${
+                      selectedSubCategory === 'all'
+                        ? 'bg-forest text-cream shadow-sm'
+                        : 'bg-white text-carbon/75 hover:bg-forest/10 border border-gold-warm/25'
+                    }`}
                   >
-                    <option value="all">{language === 'vi' ? 'Tất cả phân loại' : 'All Sub-categories'}</option>
-                    {subCategories.map((sub) => (
-                      <option key={sub} value={sub}>{sub}</option>
-                    ))}
-                  </select>
+                    {language === 'vi' ? `Tất cả (${products.length})` : `All (${products.length})`}
+                  </button>
+                  {subCategories.map((sub) => {
+                    const count = products.filter(p => p.subCategory === sub).length;
+                    const displaySubName = language === 'vi' 
+                      ? (sub === 'Fruits' ? 'Trái cây tươi' : sub === 'Vegetables & Spices' ? 'Rau củ & Gia vị' : sub)
+                      : sub;
+                    return (
+                      <button
+                        key={sub}
+                        onClick={() => setSelectedSubCategory(sub)}
+                        className={`px-3.5 py-1.5 rounded-full text-xs font-bold transition-all cursor-pointer ${
+                          selectedSubCategory === sub
+                            ? 'bg-forest text-cream shadow-sm'
+                            : 'bg-white text-carbon/75 hover:bg-forest/10 border border-gold-warm/25'
+                        }`}
+                      >
+                        {displaySubName} ({count})
+                      </button>
+                    );
+                  })}
                 </div>
               )}
             </div>
