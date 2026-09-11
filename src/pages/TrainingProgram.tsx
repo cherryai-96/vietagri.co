@@ -501,17 +501,6 @@ export const TrainingProgram: React.FC = () => {
             </motion.div>
 
           </div>
-
-          {/* Bottom Callout */}
-          <div className="text-center pt-4">
-            <button
-              onClick={() => setModalMode('info')}
-              className="bg-forest hover:bg-forest-fresh text-cream font-bold text-xs md:text-sm uppercase tracking-wider py-4 px-10 rounded-lg shadow-lg transition-all duration-300 inline-flex items-center gap-2"
-            >
-              <span>{t('training.btnInfo')}</span>
-              <ArrowRight size={16} />
-            </button>
-          </div>
         </div>
       </section>
 
