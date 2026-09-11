@@ -401,6 +401,10 @@ export const defaultResources: TranslationResources = {
     earnTradingTitle: 'Earn Through Real Trading Activities',
     earnTradingDesc: 'Subject to VAC’s applicable agreements and transaction terms, graduates may participate in approved trader revenue arrangements, including sales commissions, shared margins and long-term account development fees.',
 
+    certEyebrow: 'PROGRAM CERTIFICATION',
+    certTitle: 'Official Certificate of Completion',
+    certSubtitle: 'Awarded upon successful completion of the five-day practical training programme and assessments',
+
     formTitle: 'Register / Inquire For The Program',
     formSub: 'Submit your details to join the upcoming cohort or request full curriculum documentation.',
     formFullName: 'Full Name',
@@ -935,6 +939,10 @@ export const defaultResources: TranslationResources = {
 
     earnTradingTitle: 'Tạo Thu Nhập Từ Hoạt Động Thương Mại Thực Tế',
     earnTradingDesc: 'Theo các thỏa thuận và điều khoản giao dịch áp dụng của VAC, học viên tốt nghiệp có thể tham gia vào cơ chế dòng thu nhập thương nhân được phê duyệt, bao gồm hoa hồng bán hàng, chia sẻ biên lợi nhuận và phí phát triển tài khoản khách hàng dài hạn.',
+
+    certEyebrow: 'CHỨNG NHẬN CHƯƠNG TRÌNH',
+    certTitle: 'Chứng Nhận Hoàn Thành Khóa Học',
+    certSubtitle: 'Awarded upon successful completion of the five-day practical training programme and assessments',
 
     formTitle: 'Đăng Ký / Nhận Thông Tin Chương Trình',
     formSub: 'Gửi thông tin để tham gia khóa đào tạo tiếp theo hoặc nhận bộ tài liệu chi tiết.',

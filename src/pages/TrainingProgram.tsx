@@ -504,6 +504,43 @@ export const TrainingProgram: React.FC = () => {
         </div>
       </section>
 
+      {/* === SECTION 5: PROGRAM CERTIFICATE === */}
+      <section className="py-20 md:py-24 bg-carbon text-cream px-4 md:px-8 border-t border-gold-warm/30 relative overflow-hidden">
+        <div className="absolute inset-0 z-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-forest/20 via-transparent to-transparent opacity-60" />
+        <div className="max-w-5xl mx-auto flex flex-col gap-10 items-center text-center relative z-10">
+          
+          <div className="flex flex-col gap-3 max-w-3xl">
+            <span className="text-xs font-bold uppercase tracking-widest text-gold-warm">
+              {t('training.certEyebrow')}
+            </span>
+            <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-cream">
+              {t('training.certTitle')}
+            </h2>
+            <p className="text-sm md:text-base text-cream/80 font-light leading-relaxed max-w-2xl mx-auto">
+              {t('training.certSubtitle')}
+            </p>
+          </div>
+
+          {/* Certificate Image Frame */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="w-full max-w-4xl bg-carbon/80 border border-gold-warm/40 rounded-2xl p-3 md:p-4 shadow-2xl backdrop-blur-sm group hover:border-gold-warm/70 transition-all"
+          >
+            <div className="relative overflow-hidden rounded-xl border border-gold-warm/20 bg-black">
+              <img 
+                src="/images/training_certificate.jpg" 
+                alt="Certificate of Completion - Vietnam Agri Traders Training Program" 
+                className="w-full h-auto object-contain rounded-xl shadow-lg transform transition-transform duration-700 group-hover:scale-[1.01]"
+              />
+            </div>
+          </motion.div>
+
+        </div>
+      </section>
+
       {/* === APPLICATION & INFO MODAL === */}
       <AnimatePresence>
         {modalMode && (
