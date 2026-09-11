@@ -443,41 +443,63 @@ export const TrainingProgram: React.FC = () => {
               </p>
             </motion.div>
 
-            {/* Card 3: Collaborate with VAC */}
+            {/* Card 3: Collaborate with VAC (Redesigned Flagship Card) */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 25 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="bg-white border border-gold-warm/25 rounded-2xl p-8 flex flex-col gap-6 shadow-sm hover:shadow-md transition-all md:col-span-2"
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="relative overflow-hidden bg-gradient-to-br from-forest via-[#133324] to-carbon text-cream border border-gold-warm/35 rounded-3xl p-6 sm:p-8 md:p-10 shadow-2xl md:col-span-2 group"
             >
-              <div className="flex flex-col gap-2">
-                <div className="flex items-center gap-3">
-                  <div className="p-3 bg-forest/5 rounded-xl border border-gold-warm/20 w-fit text-forest">
-                    <Handshake className="w-6 h-6 text-gold-warm" />
-                  </div>
-                  <h3 className="font-serif text-xl md:text-2xl font-bold text-forest">
-                    {t('training.collabTitle')}
-                  </h3>
-                </div>
-                <p className="text-sm text-carbon/75 font-light leading-relaxed">
-                  {t('training.collabDesc')}
-                </p>
-              </div>
+              {/* Decorative Background Elements */}
+              <div className="absolute -top-24 -right-24 w-72 h-72 bg-gold-warm/10 rounded-full blur-3xl pointer-events-none" />
+              <div className="absolute -bottom-24 -left-24 w-72 h-72 bg-forest-fresh/10 rounded-full blur-3xl pointer-events-none" />
 
-              {/* 9 Checklist Items */}
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 pt-2">
-                {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((itemNum) => (
-                  <div 
-                    key={itemNum}
-                    className="flex items-start gap-3 bg-ivory/70 border border-gold-warm/15 rounded-xl p-3.5 transition-colors hover:bg-forest/5"
-                  >
-                    <CheckCircle2 className="w-5 h-5 text-forest shrink-0 mt-0.5" />
-                    <span className="text-xs md:text-sm text-carbon/85 font-medium leading-snug">
-                      {t(`training.collabItem${itemNum}` as any)}
-                    </span>
+              <div className="relative z-10 flex flex-col gap-8">
+                
+                {/* Header & Subtitle */}
+                <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 border-b border-gold-warm/20 pb-6">
+                  <div className="flex items-center gap-4">
+                    <div className="p-3.5 bg-gold-warm/15 rounded-2xl border border-gold-warm/35 text-gold-champagne shadow-inner shrink-0">
+                      <Handshake className="w-7 h-7 text-gold-champagne" />
+                    </div>
+                    <div>
+                      <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-gold-champagne/90">
+                        {language === 'vi' ? 'HỢP TÁC TOÀN DIỆN' : 'FULL ECOSYSTEM SUPPORT'}
+                      </span>
+                      <h3 className="font-serif text-2xl md:text-3xl font-bold text-cream mt-0.5">
+                        {t('training.collabTitle')}
+                      </h3>
+                    </div>
                   </div>
-                ))}
+                  <p className="text-xs md:text-sm text-cream/80 font-light max-w-md leading-relaxed">
+                    {t('training.collabDesc')}
+                  </p>
+                </div>
+
+                {/* 9 Numbered Value-Chain Cards */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                  {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((itemNum) => (
+                    <motion.div 
+                      key={itemNum}
+                      initial={{ opacity: 0, y: 15 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: itemNum * 0.04, duration: 0.4 }}
+                      className="bg-white/10 backdrop-blur-md border border-white/15 hover:border-gold-warm/60 hover:bg-white/15 transition-all duration-300 rounded-2xl p-4 flex items-start gap-3.5 shadow-sm hover:shadow-lg group/item hover:-translate-y-0.5"
+                    >
+                      <div className="flex items-center justify-center w-7 h-7 rounded-lg bg-gold-warm/20 border border-gold-warm/40 text-gold-champagne text-xs font-bold shrink-0 font-serif group-hover/item:bg-gold-warm group-hover/item:text-brown-soil transition-colors">
+                        0{itemNum}
+                      </div>
+                      <div className="flex flex-col gap-0.5">
+                        <span className="text-xs md:text-sm text-cream/95 font-medium leading-snug group-hover/item:text-gold-champagne transition-colors">
+                          {t(`training.collabItem${itemNum}` as any)}
+                        </span>
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+
               </div>
             </motion.div>
 
