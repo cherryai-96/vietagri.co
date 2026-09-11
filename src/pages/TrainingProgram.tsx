@@ -15,8 +15,6 @@ import {
   Factory, 
   Briefcase, 
   Users, 
-  Award, 
-  BookOpen, 
   Sparkles, 
   X, 
   Send 
@@ -102,12 +100,7 @@ export const TrainingProgram: React.FC = () => {
     t('training.pfItem8'),
   ];
 
-  const programBenefits = [
-    { title: t('training.benefit1Title'), desc: t('training.benefit1Desc'), icon: <BookOpen className="w-6 h-6 text-forest" /> },
-    { title: t('training.benefit2Title'), desc: t('training.benefit2Desc'), icon: <Award className="w-6 h-6 text-forest" /> },
-    { title: t('training.benefit3Title'), desc: t('training.benefit3Desc'), icon: <Handshake className="w-6 h-6 text-forest" /> },
-    { title: t('training.benefit4Title'), desc: t('training.benefit4Desc'), icon: <Globe2 className="w-6 h-6 text-forest" /> },
-  ];
+
 
   return (
     <div className="w-full flex flex-col min-h-screen bg-cream text-carbon font-sans">
@@ -391,43 +384,126 @@ export const TrainingProgram: React.FC = () => {
         </div>
       </section>
 
-      {/* === SECTION 4: PROGRAM BENEFITS & VAC SUPPORT === */}
+      {/* === SECTION 4: FROM TRAINING TO REAL EXPORT BUSINESS === */}
       <section className="py-20 md:py-28 bg-cream px-4 md:px-8">
-        <div className="max-w-7xl mx-auto flex flex-col gap-16">
-          <div className="text-center max-w-5xl mx-auto flex flex-col gap-3">
+        <div className="max-w-7xl mx-auto flex flex-col gap-14">
+          
+          {/* Header */}
+          <div className="text-center max-w-4xl mx-auto flex flex-col gap-4">
             <span className="text-xs font-bold uppercase tracking-widest text-gold-antique">
-              Ecosystem Advantage
+              {t('training.fromTrainingEyebrow')}
             </span>
-            <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-[2.5rem] font-bold text-forest lg:whitespace-nowrap">
-              {t('training.benefitsTitle')}
+            <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-[2.5rem] font-bold text-forest leading-tight">
+              {t('training.realBusinessTitle')}
             </h2>
+            <div className="flex flex-col gap-3 pt-2 text-sm md:text-base text-carbon/80 font-light leading-relaxed">
+              <p>{t('training.realBusinessPara1')}</p>
+              <p>{t('training.realBusinessPara2')}</p>
+            </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {programBenefits.map((ben, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.1, duration: 0.6 }}
-                className="bg-white border border-gold-warm/20 rounded-xl p-6 flex flex-col gap-4 shadow-sm hover:shadow-md transition-all duration-300"
-              >
-                <div className="p-3 bg-forest/5 rounded-xl border border-gold-warm/15 w-fit">
-                  {ben.icon}
+          {/* Cards Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            
+            {/* Card 1: Start Developing Export Opportunities */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="bg-white border border-gold-warm/25 rounded-2xl p-8 flex flex-col gap-4 shadow-sm hover:shadow-md transition-all"
+            >
+              <div className="p-3 bg-forest/5 rounded-xl border border-gold-warm/20 w-fit text-forest">
+                <Globe2 className="w-6 h-6 text-gold-warm" />
+              </div>
+              <h3 className="font-serif text-xl font-bold text-forest">
+                {t('training.startDevTitle')}
+              </h3>
+              <p className="text-sm text-carbon/75 font-light leading-relaxed">
+                {t('training.startDevDesc')}
+              </p>
+            </motion.div>
+
+            {/* Card 2: Build Your Own Global Buyer Network */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="bg-white border border-gold-warm/25 rounded-2xl p-8 flex flex-col gap-4 shadow-sm hover:shadow-md transition-all"
+            >
+              <div className="p-3 bg-forest/5 rounded-xl border border-gold-warm/20 w-fit text-forest">
+                <Users className="w-6 h-6 text-gold-warm" />
+              </div>
+              <h3 className="font-serif text-xl font-bold text-forest">
+                {t('training.buildNetworkTitle')}
+              </h3>
+              <p className="text-sm text-carbon/75 font-light leading-relaxed">
+                {t('training.buildNetworkDesc')}
+              </p>
+            </motion.div>
+
+            {/* Card 3: Collaborate with VAC */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="bg-white border border-gold-warm/25 rounded-2xl p-8 flex flex-col gap-6 shadow-sm hover:shadow-md transition-all md:col-span-2"
+            >
+              <div className="flex flex-col gap-2">
+                <div className="flex items-center gap-3">
+                  <div className="p-3 bg-forest/5 rounded-xl border border-gold-warm/20 w-fit text-forest">
+                    <Handshake className="w-6 h-6 text-gold-warm" />
+                  </div>
+                  <h3 className="font-serif text-xl md:text-2xl font-bold text-forest">
+                    {t('training.collabTitle')}
+                  </h3>
                 </div>
-                <h3 className="font-serif text-base md:text-lg font-bold text-forest">
-                  {ben.title}
-                </h3>
-                <p className="text-xs md:text-sm text-carbon/70 font-light leading-relaxed">
-                  {ben.desc}
+                <p className="text-sm text-carbon/75 font-light leading-relaxed">
+                  {t('training.collabDesc')}
                 </p>
-              </motion.div>
-            ))}
+              </div>
+
+              {/* 9 Checklist Items */}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 pt-2">
+                {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((itemNum) => (
+                  <div 
+                    key={itemNum}
+                    className="flex items-start gap-3 bg-ivory/70 border border-gold-warm/15 rounded-xl p-3.5 transition-colors hover:bg-forest/5"
+                  >
+                    <CheckCircle2 className="w-5 h-5 text-forest shrink-0 mt-0.5" />
+                    <span className="text-xs md:text-sm text-carbon/85 font-medium leading-snug">
+                      {t(`training.collabItem${itemNum}` as any)}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+
+            {/* Card 4: Earn Through Real Trading Activities */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="bg-white border border-gold-warm/25 rounded-2xl p-8 flex flex-col gap-4 shadow-sm hover:shadow-md transition-all md:col-span-2"
+            >
+              <div className="p-3 bg-forest/5 rounded-xl border border-gold-warm/20 w-fit text-forest">
+                <TrendingUp className="w-6 h-6 text-gold-warm" />
+              </div>
+              <h3 className="font-serif text-xl font-bold text-forest">
+                {t('training.earnTradingTitle')}
+              </h3>
+              <p className="text-sm text-carbon/75 font-light leading-relaxed">
+                {t('training.earnTradingDesc')}
+              </p>
+            </motion.div>
+
           </div>
 
           {/* Bottom Callout */}
-          <div className="text-center pt-8">
+          <div className="text-center pt-4">
             <button
               onClick={() => setModalMode('info')}
               className="bg-forest hover:bg-forest-fresh text-cream font-bold text-xs md:text-sm uppercase tracking-wider py-4 px-10 rounded-lg shadow-lg transition-all duration-300 inline-flex items-center gap-2"
