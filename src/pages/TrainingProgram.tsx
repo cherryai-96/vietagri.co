@@ -531,14 +531,14 @@ export const TrainingProgram: React.FC = () => {
         <div className="absolute inset-0 z-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-forest/20 via-transparent to-transparent opacity-60" />
         <div className="max-w-5xl mx-auto flex flex-col gap-10 items-center text-center relative z-10">
           
-          <div className="flex flex-col gap-3 max-w-3xl">
+          <div className="flex flex-col gap-3 max-w-5xl">
             <span className="text-xs font-bold uppercase tracking-widest text-gold-warm">
               {t('training.certEyebrow')}
             </span>
             <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-cream">
               {t('training.certTitle')}
             </h2>
-            <p className="text-sm md:text-base text-cream/80 font-light leading-relaxed max-w-2xl mx-auto">
+            <p className="text-xs sm:text-sm md:text-base text-cream/90 font-light leading-relaxed max-w-none sm:whitespace-nowrap inline-block mx-auto">
               {t('training.certSubtitle')}
             </p>
           </div>
@@ -549,13 +549,13 @@ export const TrainingProgram: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
-            className="w-full max-w-4xl bg-carbon/80 border border-gold-warm/40 rounded-2xl p-3 md:p-4 shadow-2xl backdrop-blur-sm group hover:border-gold-warm/70 transition-all"
+            className="w-full max-w-4xl bg-carbon/90 border border-gold-warm/35 rounded-xl p-1 md:p-1.5 shadow-2xl backdrop-blur-sm group hover:border-gold-warm/60 transition-all"
           >
-            <div className="relative overflow-hidden rounded-xl border border-gold-warm/20 bg-black">
+            <div className="relative overflow-hidden rounded-lg border border-gold-warm/20 bg-carbon">
               <img 
                 src="/images/training_certificate.jpg" 
                 alt="Certificate of Completion - Vietnam Agri Traders Training Program" 
-                className="w-full h-auto object-contain rounded-xl shadow-lg transform transition-transform duration-700 group-hover:scale-[1.01]"
+                className="w-full h-auto object-contain rounded-lg shadow-md transform transition-transform duration-700 group-hover:scale-[1.005]"
               />
             </div>
           </motion.div>
