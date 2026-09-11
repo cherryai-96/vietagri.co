@@ -163,17 +163,11 @@ export const TrainingProgram: React.FC = () => {
           {/* Action Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 mt-2 w-full sm:w-auto">
             <button
-              onClick={() => setModalMode('apply')}
+              onClick={() => setModalMode('info')}
               className="bg-gold-warm hover:bg-gold-champagne text-brown-soil font-bold text-xs md:text-sm uppercase tracking-wider py-4 px-9 rounded-xl shadow-xl hover:shadow-gold-warm/25 hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center gap-2.5"
             >
-              <span>{t('training.btnApply')}</span>
-              <ArrowRight size={16} />
-            </button>
-            <button
-              onClick={() => setModalMode('info')}
-              className="bg-white/10 hover:bg-white/20 text-cream border border-gold-warm/40 backdrop-blur-md font-bold text-xs md:text-sm uppercase tracking-wider py-4 px-9 rounded-xl shadow-lg transition-all duration-300 flex items-center justify-center gap-2.5"
-            >
               <span>{t('training.btnInfo')}</span>
+              <ArrowRight size={16} />
             </button>
           </div>
 
@@ -435,10 +429,10 @@ export const TrainingProgram: React.FC = () => {
           {/* Bottom Callout */}
           <div className="text-center pt-8">
             <button
-              onClick={() => setModalMode('apply')}
+              onClick={() => setModalMode('info')}
               className="bg-forest hover:bg-forest-fresh text-cream font-bold text-xs md:text-sm uppercase tracking-wider py-4 px-10 rounded-lg shadow-lg transition-all duration-300 inline-flex items-center gap-2"
             >
-              <span>{t('training.btnApply')}</span>
+              <span>{t('training.btnInfo')}</span>
               <ArrowRight size={16} />
             </button>
           </div>
@@ -462,7 +456,7 @@ export const TrainingProgram: React.FC = () => {
                     Vietnam Agriculture Center
                   </span>
                   <h3 className="font-serif text-xl font-bold text-white">
-                    {modalMode === 'apply' ? t('training.btnApply') : t('training.btnInfo')}
+                    {t('training.btnInfo')}
                   </h3>
                 </div>
                 <button
@@ -479,7 +473,7 @@ export const TrainingProgram: React.FC = () => {
                   <div className="flex flex-col items-center justify-center py-10 text-center gap-4">
                     <CheckCircle2 size={48} className="text-forest" />
                     <h4 className="font-serif font-bold text-2xl text-forest">
-                      {language === 'vi' ? 'Đã Nhận Thông Tin Đăng Ký' : 'Application Received'}
+                      {language === 'vi' ? 'Đã Nhận Thông Tin Đăng Ký' : 'Inquiry Received'}
                     </h4>
                     <p className="text-sm text-carbon/70 max-w-md font-light">
                       {t('common.success')}
@@ -563,7 +557,7 @@ export const TrainingProgram: React.FC = () => {
                           <span>{t('common.loading')}</span>
                         ) : (
                           <>
-                            <span>{modalMode === 'apply' ? t('training.btnSubmitApply') : t('training.btnSubmitInquiry')}</span>
+                            <span>{t('training.btnSubmitInquiry')}</span>
                             <Send size={14} />
                           </>
                         )}
