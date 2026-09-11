@@ -5,7 +5,7 @@ import { Mail, MapPin, Phone } from 'lucide-react';
 import vacLogo from '../assets/vac-logo-7.png';
 
 export const Footer: React.FC = () => {
-  const { t } = useTranslation();
+  const { t, language } = useTranslation();
 
   return (
     <footer className="bg-brown-soil text-cream/80 pt-16 pb-8 border-t border-gold-warm/20 font-sans">
@@ -125,33 +125,33 @@ export const Footer: React.FC = () => {
           </h3>
           <ul className="flex flex-col gap-2.5 text-xs md:text-sm font-light">
             <li>
-              <Link to="/products#beverages" className="hover:text-gold-champagne hover:underline transition-all duration-200 block whitespace-nowrap">
-                {t('products.tabBeverages')}
+              <Link to="/products" className="hover:text-gold-champagne hover:underline transition-all duration-200 block whitespace-nowrap">
+                {language === 'vi' ? 'Tổng quan sản phẩm' : 'All Products Overview'}
               </Link>
             </li>
             <li>
-              <Link to="/products#fruits" className="hover:text-gold-champagne hover:underline transition-all duration-200 block whitespace-nowrap">
-                {t('products.tabFruits')}
+              <Link to="/products/fresh-fruits-vegetables" className="hover:text-gold-champagne hover:underline transition-all duration-200 block whitespace-nowrap">
+                {language === 'vi' ? 'Trái cây & Rau củ tươi (Fresh)' : 'Fresh Fruits & Vegetables'}
               </Link>
             </li>
             <li>
-              <Link to="/products#spices" className="hover:text-gold-champagne hover:underline transition-all duration-200 block whitespace-nowrap">
-                {t('products.tabSpices')}
+              <Link to="/products/fruit-vegetable-powders" className="hover:text-gold-champagne hover:underline transition-all duration-200 block whitespace-nowrap">
+                {language === 'vi' ? 'Bột nông sản thực phẩm (Powders)' : 'Fruit & Vegetable Powders'}
               </Link>
             </li>
             <li>
-              <Link to="/products#grains" className="hover:text-gold-champagne hover:underline transition-all duration-200 block whitespace-nowrap">
-                {t('products.tabGrains')}
+              <Link to="/products/freeze-dried-fruits" className="hover:text-gold-champagne hover:underline transition-all duration-200 block whitespace-nowrap">
+                {language === 'vi' ? 'Trái cây sấy thăng hoa (Freeze-Dried)' : 'Freeze-Dried Fruits'}
               </Link>
             </li>
             <li>
-              <Link to="/products#superfoods" className="hover:text-gold-champagne hover:underline transition-all duration-200 block whitespace-nowrap">
-                {t('products.tabSuperfoods')}
+              <Link to="/products/iqf-fruits-vegetables" className="hover:text-gold-champagne hover:underline transition-all duration-200 block whitespace-nowrap">
+                {language === 'vi' ? 'Nông sản cấp đông rời (IQF)' : 'IQF Frozen Produce'}
               </Link>
             </li>
             <li>
-              <Link to="/products#inputs" className="hover:text-gold-champagne hover:underline transition-all duration-200 block whitespace-nowrap">
-                {t('products.tabInputs')}
+              <Link to="/agricultural-inputs" className="hover:text-gold-champagne hover:underline transition-all duration-200 block whitespace-nowrap">
+                {language === 'vi' ? 'Vật Tư Nông Nghiệp' : 'Agriculture Input'}
               </Link>
             </li>
           </ul>
