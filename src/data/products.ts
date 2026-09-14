@@ -447,7 +447,7 @@ export const PRODUCTS_LIST: ProductItem[] = [
   },
   {
     id: 'poultry-whole-chicken',
-    nameEn: 'Frozen Whole Chicken (Eviscerated & Griller)',
+    nameEn: 'Conventional Frozen Whole Chicken (Eviscerated & Griller)',
     nameVi: 'Thịt Gà Nguyên Con Đông Lạnh',
     scientificName: 'Gallus gallus domesticus',
     category: 'poultry',
