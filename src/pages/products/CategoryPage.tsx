@@ -264,7 +264,7 @@ export const CategoryPage: React.FC<CategoryPageProps> = ({ categoryKey: propCat
                     <img
                       src={p.image}
                       alt={p.nameEn}
-                      className="w-full h-full object-cover object-[center_65%] scale-[1.20] transition-transform duration-500 group-hover:scale-[1.30]"
+                      className="w-full h-full object-cover object-center scale-100 transition-transform duration-500 group-hover:scale-105"
                       onError={(e) => {
                         (e.target as HTMLElement).style.display = 'none';
                       }}

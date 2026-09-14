@@ -290,7 +290,7 @@ export const CropsPlantBasedPage: React.FC = () => {
                     <img
                       src={cat.img}
                       alt={cat.titleEn}
-                      className="w-full h-full object-cover scale-[1.20] group-hover:scale-[1.30] transition-transform duration-500"
+                      className="w-full h-full object-cover scale-100 group-hover:scale-105 transition-transform duration-500"
                     />
                     <div className="absolute top-3 left-3 bg-carbon/80 backdrop-blur-sm text-gold-warm text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded z-10">
                       {cat.count} SKUs
@@ -399,7 +399,7 @@ export const CropsPlantBasedPage: React.FC = () => {
                     <img
                       src={p.image}
                       alt={p.nameEn}
-                      className="w-full h-full object-cover object-[center_65%] scale-[1.20] transition-transform duration-500 group-hover:scale-[1.30]"
+                      className="w-full h-full object-cover object-center scale-100 transition-transform duration-500 group-hover:scale-105"
                       onError={(e) => {
                         (e.target as HTMLElement).style.display = 'none';
                       }}
