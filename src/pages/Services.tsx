@@ -73,7 +73,9 @@ export const Services: React.FC = () => {
           'Local pricing audit report provided directly to buyers before commercial sign-off.'
         ]
       },
-      image: '/images/agriculture_products.png'
+      image: '/images/agriculture_products.png',
+      linkPath: '/contact',
+      linkText: t('common.contactUs') || 'Contact Us'
     },
     {
       id: 1,
@@ -95,7 +97,9 @@ export const Services: React.FC = () => {
           'Guaranteed buy-back agreements at pre-negotiated floor pricing to hedge market volatility.'
         ]
       },
-      image: '/images/ai-services-hightech.png'
+      image: '/images/ai-services-hightech.png',
+      linkPath: '/contract-farming',
+      linkText: t('nav.contractFarming') || 'Contract Farming'
     },
     {
       id: 2,
@@ -117,7 +121,9 @@ export const Services: React.FC = () => {
           'ESG data structuring for corporate reporting metrics.'
         ]
       },
-      image: '/images/organic_certification.png'
+      image: '/images/organic_certification.png',
+      linkPath: '/organic-consulting-certification',
+      linkText: t('nav.organicConsulting') || 'Organic Consulting'
     },
     {
       id: 3,
@@ -139,7 +145,9 @@ export const Services: React.FC = () => {
           'Reduction in irrigation and fertilizer requirements while maintaining peak output.'
         ]
       },
-      image: '/images/electroculture.png'
+      image: '/images/electroculture.png',
+      linkPath: '/infrastructure-rd',
+      linkText: t('nav.infrastructure') || 'Infrastructure & R&D'
     },
     {
       id: 4,
@@ -161,7 +169,9 @@ export const Services: React.FC = () => {
           'Pre-shipment inspection reports (SGS/Bureau Veritas coordination) for every export container.'
         ]
       },
-      image: '/images/export_quality.png'
+      image: '/images/export_quality.png',
+      linkPath: '/contact',
+      linkText: t('common.contactUs') || 'Contact Us'
     },
     {
       id: 5,
@@ -183,7 +193,9 @@ export const Services: React.FC = () => {
           'LCL/FCL ocean freight coordination with tier-1 shipping lines.'
         ]
       },
-      image: '/images/global_logistics.png'
+      image: '/images/global_logistics.png',
+      linkPath: '/contact',
+      linkText: t('common.contactUs') || 'Contact Us'
     }
   ];
 
@@ -213,6 +225,18 @@ export const Services: React.FC = () => {
                 </div>
               ))}
             </div>
+
+            {tabData.linkPath && (
+              <div className="pt-2">
+                <Link
+                  to={tabData.linkPath}
+                  className="inline-flex items-center gap-2 bg-forest hover:bg-brown-soil text-gold-champagne px-5 py-2.5 rounded-lg text-xs font-bold uppercase tracking-wider transition-all duration-300 shadow-md border border-gold-warm/20 group"
+                >
+                  <span>{tabData.linkText}</span>
+                  <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+                </Link>
+              </div>
+            )}
           </div>
           
           <div className="lg:w-2/5 shrink-0">

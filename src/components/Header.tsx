@@ -60,6 +60,7 @@ export const Header: React.FC = () => {
     { path: '/', label: t('nav.home') },
     { path: '/about', label: t('nav.about') },
     {
+      path: '/services',
       label: t('nav.services'),
       isDropdown: true,
       dropdownKey: 'services',
