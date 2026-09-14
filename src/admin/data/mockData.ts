@@ -410,8 +410,8 @@ export const siteSettings: SiteSettings = {
   companyName: 'Vietnam Agriculture Center (VAC)',
   shortName: 'VAC',
   tagline: 'Connecting local potential with global demand.',
-  email: 'inquiries@vietagri.co',
-  phone: '+84 858741968',
+  email: 'export@vietagri.co',
+  phone: '+84 858 741 968 / +84 376 066 194',
   officeHours: 'Monday - Friday, 8:00 AM - 5:00 PM Indochina Time / UTC+7',
   headquartersAddress: 'No 59, Truong Dang Que Street, Hanh Thong Ward, Ho Chi Minh City, Vietnam, 71423',
   linkedIn: '',
@@ -423,7 +423,7 @@ export const siteSettings: SiteSettings = {
   maintenanceMode: false,
   defaultLanguage: 'English',
   timezone: 'Asia/Ho_Chi_Minh',
-  adminNotificationEmail: 'inquiries@vietagri.co',
+  adminNotificationEmail: 'export@vietagri.co',
 };
 
 export const activityItems = [

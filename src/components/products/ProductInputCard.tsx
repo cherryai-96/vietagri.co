@@ -36,7 +36,7 @@ export const ProductInputCard: React.FC<ProductInputCardProps> = ({
         <img
           src={image}
           alt={t(titleKey)}
-          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+          className="w-full h-full object-cover scale-[1.35] transition-transform duration-700 group-hover:scale-[1.45]"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-brown-soil/30 to-transparent" />
       </div>

@@ -54,16 +54,22 @@ export const Footer: React.FC = () => {
               <MapPin size={16} className="text-gold-warm shrink-0 mt-0.5" />
               <span className="leading-snug">{t('common.address')}</span>
             </li>
-            <li className="flex items-center gap-2.5">
-              <Phone size={16} className="text-gold-warm shrink-0" />
-              <a href="tel:+84858741968" className="hover:text-gold-champagne transition-colors">
-                +84 858741968
-              </a>
+            <li className="flex items-start gap-2.5">
+              <Phone size={16} className="text-gold-warm shrink-0 mt-0.5" />
+              <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
+                <a href="tel:+84858741968" className="hover:text-gold-champagne transition-colors">
+                  +84 858 741 968
+                </a>
+                <span className="text-gold-warm/40">/</span>
+                <a href="tel:+84376066194" className="hover:text-gold-champagne transition-colors">
+                  +84 376 066 194
+                </a>
+              </div>
             </li>
             <li className="flex items-center gap-2.5">
               <Mail size={16} className="text-gold-warm shrink-0" />
-              <a href="mailto:inquiries@vietagri.co" className="hover:text-gold-champagne transition-colors">
-                inquiries@vietagri.co
+              <a href="mailto:export@vietagri.co" className="hover:text-gold-champagne transition-colors">
+                export@vietagri.co
               </a>
             </li>
           </ul>
@@ -130,28 +136,23 @@ export const Footer: React.FC = () => {
               </Link>
             </li>
             <li>
-              <Link to="/products/fresh-fruits-vegetables" className="hover:text-gold-champagne hover:underline transition-all duration-200 block whitespace-nowrap">
-                {language === 'vi' ? 'Trái cây & Rau củ tươi (Fresh)' : 'Fresh Fruits & Vegetables'}
-              </Link>
-            </li>
-            <li>
-              <Link to="/products/fruit-vegetable-powders" className="hover:text-gold-champagne hover:underline transition-all duration-200 block whitespace-nowrap">
-                {language === 'vi' ? 'Bột nông sản thực phẩm (Powders)' : 'Fruit & Vegetable Powders'}
-              </Link>
-            </li>
-            <li>
-              <Link to="/products/freeze-dried-fruits" className="hover:text-gold-champagne hover:underline transition-all duration-200 block whitespace-nowrap">
-                {language === 'vi' ? 'Trái cây sấy thăng hoa (Freeze-Dried)' : 'Freeze-Dried Fruits'}
-              </Link>
-            </li>
-            <li>
-              <Link to="/products/iqf-fruits-vegetables" className="hover:text-gold-champagne hover:underline transition-all duration-200 block whitespace-nowrap">
-                {language === 'vi' ? 'Nông sản cấp đông rời (IQF)' : 'IQF Frozen Produce'}
-              </Link>
-            </li>
-            <li>
               <Link to="/agricultural-inputs" className="hover:text-gold-champagne hover:underline transition-all duration-200 block whitespace-nowrap">
-                {language === 'vi' ? 'Vật Tư Nông Nghiệp' : 'Agriculture Input'}
+                {language === 'vi' ? 'Vật Tư Nông Nghiệp' : 'Agricultural Inputs'}
+              </Link>
+            </li>
+            <li>
+              <Link to="/products/fresh-fruits-vegetables" className="hover:text-gold-champagne hover:underline transition-all duration-200 block whitespace-nowrap">
+                {language === 'vi' ? 'Nông Sản & Sản Phẩm Từ Cây Trồng' : 'Crop & Plant-Based Products'}
+              </Link>
+            </li>
+            <li>
+              <Link to="/products/poultry-products" className="hover:text-gold-champagne hover:underline transition-all duration-200 block whitespace-nowrap">
+                {language === 'vi' ? 'Sản Phẩm Gia Cầm' : 'Poultry Products'}
+              </Link>
+            </li>
+            <li>
+              <Link to="/products/seafood-products" className="hover:text-gold-champagne hover:underline transition-all duration-200 block whitespace-nowrap">
+                {language === 'vi' ? 'Sản Phẩm Thủy Hải Sản' : 'Aquaculture & Seafood Products'}
               </Link>
             </li>
           </ul>

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink, Link, useLocation } from 'react-router-dom';
 import { useTranslation } from '../i18n';
-import { Menu, X, Globe, ChevronDown } from 'lucide-react';
+import { Menu, X, Globe, ChevronDown, ChevronRight } from 'lucide-react';
 import vacLogo from '../assets/vac-logo-6.png';
 
 export const Header: React.FC = () => {
@@ -10,12 +10,14 @@ export const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const [mobileProductsOpen, setMobileProductsOpen] = useState(false);
+  const [openMobileSubCategories, setOpenMobileSubCategories] = useState<Record<string, boolean>>({});
   const location = useLocation();
 
   useEffect(() => {
     setIsMobileMenuOpen(false);
     setMobileServicesOpen(false);
     setMobileProductsOpen(false);
+    setOpenMobileSubCategories({});
   }, [location.pathname]);
 
   // Track scroll position to change background opacity
@@ -35,7 +37,26 @@ export const Header: React.FC = () => {
     setLanguage(language === 'en' ? 'vi' : 'en');
   };
 
-  const navLinks = [
+  const toggleMobileSub = (key: string) => {
+    setOpenMobileSubCategories(prev => ({ ...prev, [key]: !prev[key] }));
+  };
+
+  interface NavChild {
+    path: string;
+    label: string;
+    hasSub?: boolean;
+    subChildren?: { path: string; label: string }[];
+  }
+
+  interface NavItem {
+    path?: string;
+    label: string;
+    isDropdown?: boolean;
+    dropdownKey?: string;
+    children?: NavChild[];
+  }
+
+  const navLinks: NavItem[] = [
     { path: '/', label: t('nav.home') },
     { path: '/about', label: t('nav.about') },
     {
@@ -51,15 +72,38 @@ export const Header: React.FC = () => {
     },
     {
       label: t('nav.products'),
+      path: '/products',
       isDropdown: true,
       dropdownKey: 'products',
       children: [
-        { path: '/products', label: language === 'vi' ? 'Tổng quan' : 'Overview' },
-        { path: '/products/fresh-fruits-vegetables', label: language === 'vi' ? 'Trái cây & Rau củ tươi (Fresh)' : 'Fresh Fruits & Vegetables' },
-        { path: '/products/fruit-vegetable-powders', label: language === 'vi' ? 'Bột nông sản thực phẩm (Powders)' : 'Fruit & Vegetable Powders' },
-        { path: '/products/freeze-dried-fruits', label: language === 'vi' ? 'Trái cây sấy thăng hoa (Freeze-Dried)' : 'Freeze-Dried Fruits' },
-        { path: '/products/iqf-fruits-vegetables', label: language === 'vi' ? 'Nông sản cấp đông rời (IQF)' : 'IQF Frozen Produce' },
-        { path: '/agricultural-inputs', label: language === 'vi' ? 'Vật Tư Nông Nghiệp' : 'Agriculture Input' },
+        { path: '/agricultural-inputs', label: language === 'vi' ? 'Vật tư nông nghiệp' : 'Agricultural Inputs' },
+        {
+          path: '/products/crops-plant-based-products',
+          label: language === 'vi' ? 'Nông sản & Sản phẩm từ cây trồng' : 'Crop & Plant-Based Products',
+          hasSub: true,
+          subChildren: [
+            { path: '/products/fresh-fruits-vegetables', label: language === 'vi' ? 'Trái cây & Nông sản tươi' : 'Fresh Fruits & Produce' },
+            { path: '/products/fruit-vegetable-powders', label: language === 'vi' ? 'Bột nông sản & Rau củ' : 'Fruit & Vegetable Powders' },
+            { path: '/products/fruit-purees', label: language === 'vi' ? 'Puree & Nước ép trái cây (Fruit Purees, Juices & Concentrates)' : 'Fruit Purees, Juices & Concentrates' },
+            { path: '/products/freeze-dried-fruits', label: language === 'vi' ? 'Trái cây sấy thăng hoa' : 'Freeze-Dried Fruits' },
+            { path: '/products/iqf-fruits-vegetables', label: language === 'vi' ? 'Nông sản cấp đông rời (IQF)' : 'IQF Frozen Produce' },
+          ],
+        },
+        {
+          path: '/products/poultry-products',
+          label: language === 'vi' ? 'Sản phẩm gia cầm' : 'Poultry Products',
+          hasSub: false,
+        },
+        {
+          path: '/products/seafood-products',
+          label: language === 'vi' ? 'Sản phẩm thủy hải sản' : 'Aquaculture & Seafood Products',
+          hasSub: true,
+          subChildren: [
+            { path: '/products/basa-fish-pangasius', label: language === 'vi' ? 'Cá Tra — Pangasius (Basa)' : 'Basa Fish — Pangasius' },
+            { path: '/products/vietnamese-shrimp', label: language === 'vi' ? 'Tôm Việt Nam' : 'Vietnamese Shrimp' },
+            { path: '/products/squid-products', label: language === 'vi' ? 'Mực xuất khẩu' : 'Squid' },
+          ],
+        },
       ],
     },
     { path: '/viet-wolffia', label: t('nav.wolffia') },
@@ -102,24 +146,64 @@ export const Header: React.FC = () => {
             {navLinks.map((link, idx) => (
               link.isDropdown ? (
                 <div key={idx} className="relative group py-2">
-                  <div className="flex items-center gap-1 font-sans text-[11px] xl:text-xs font-bold tracking-wider uppercase text-cream/80 hover:text-gold-champagne transition-colors duration-300 cursor-pointer">
-                    {link.label}
+                  <NavLink
+                    to={link.path || (link.dropdownKey === 'products' ? '/products' : '/services')}
+                    className={({ isActive }) =>
+                      `flex items-center gap-1 font-sans text-[11px] xl:text-xs font-bold tracking-wider uppercase transition-colors duration-300 cursor-pointer ${
+                        isActive ? 'text-gold-champagne' : 'text-cream/80 hover:text-gold-champagne'
+                      }`
+                    }
+                  >
+                    <span>{link.label}</span>
                     <ChevronDown size={14} className="group-hover:rotate-180 transition-transform duration-300" />
-                  </div>
-                  <div className="absolute top-full left-0 mt-0 w-64 bg-carbon/95 backdrop-blur-md border border-gold-warm/20 rounded-md shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top translate-y-2 group-hover:translate-y-0 overflow-hidden">
+                  </NavLink>
+                  <div className="absolute top-full left-0 mt-0 w-80 bg-carbon/95 backdrop-blur-md border border-gold-warm/20 rounded-md shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top translate-y-2 group-hover:translate-y-0">
                     <div className="flex flex-col py-2">
-                      {link.children?.map((child) => (
-                        <NavLink
-                          key={child.path}
-                          to={child.path}
-                          className={({ isActive }) =>
-                            `px-4 py-2.5 font-sans text-xs tracking-wide uppercase transition-colors duration-200 ${
-                              isActive ? 'bg-gold-warm/10 text-gold-champagne font-bold' : 'text-cream/80 hover:bg-white/5 hover:text-cream'
-                            }`
-                          }
-                        >
-                          {child.label}
-                        </NavLink>
+                      {link.children?.map((child, cIdx) => (
+                        child.hasSub ? (
+                          <div key={cIdx} className="relative group/sub">
+                            <NavLink
+                              to={child.path}
+                              className={({ isActive }) =>
+                                `px-4 py-2.5 font-sans text-xs tracking-wide uppercase transition-colors duration-200 flex justify-between items-center ${
+                                  isActive ? 'bg-gold-warm/10 text-gold-champagne font-bold' : 'text-cream/80 hover:bg-white/5 hover:text-cream'
+                                }`
+                              }
+                            >
+                              <span>{child.label}</span>
+                              <ChevronRight size={14} className="text-gold-warm/70 group-hover/sub:translate-x-1 transition-transform" />
+                            </NavLink>
+
+                            {/* Flyout Sub-menu */}
+                            <div className="absolute left-full top-0 ml-1 w-72 bg-carbon/95 backdrop-blur-md border border-gold-warm/20 rounded-md shadow-2xl opacity-0 invisible group-hover/sub:opacity-100 group-hover/sub:visible transition-all duration-200 py-2">
+                              {child.subChildren?.map((subChild, sIdx) => (
+                                <NavLink
+                                  key={sIdx}
+                                  to={subChild.path}
+                                  className={({ isActive }) =>
+                                    `px-4 py-2 font-sans text-xs tracking-wide transition-colors duration-200 block ${
+                                      isActive ? 'bg-gold-warm/10 text-gold-champagne font-bold' : 'text-cream/70 hover:bg-white/5 hover:text-cream'
+                                    }`
+                                  }
+                                >
+                                  {subChild.label}
+                                </NavLink>
+                              ))}
+                            </div>
+                          </div>
+                        ) : (
+                          <NavLink
+                            key={cIdx}
+                            to={child.path}
+                            className={({ isActive }) =>
+                              `px-4 py-2.5 font-sans text-xs tracking-wide uppercase transition-colors duration-200 block ${
+                                isActive ? 'bg-gold-warm/10 text-gold-champagne font-bold' : 'text-cream/80 hover:bg-white/5 hover:text-cream'
+                              }`
+                            }
+                          >
+                            {child.label}
+                          </NavLink>
+                        )
                       ))}
                     </div>
                   </div>
@@ -185,19 +269,49 @@ export const Header: React.FC = () => {
                   </button>
                   {((link.dropdownKey === 'products' ? mobileProductsOpen : mobileServicesOpen)) && (
                     <div className="flex flex-col gap-2 mt-3 pl-4 border-l-2 border-gold-warm/30 ml-2">
-                      {link.children?.map((child) => (
-                        <NavLink
-                          key={child.path}
-                          to={child.path}
-                          onClick={() => setIsMobileMenuOpen(false)}
-                          className={({ isActive }) =>
-                            `font-sans text-sm font-semibold tracking-wide py-2 ${
-                              isActive ? 'text-gold-champagne' : 'text-cream/70 hover:text-cream'
-                            }`
-                          }
-                        >
-                          {child.label}
-                        </NavLink>
+                      {link.children?.map((child, cIdx) => (
+                        child.hasSub ? (
+                          <div key={cIdx} className="flex flex-col gap-1 py-1">
+                            <button
+                              onClick={() => toggleMobileSub(child.label)}
+                              className="flex justify-between items-center font-sans text-sm font-semibold tracking-wide text-cream/80 hover:text-cream text-left w-full"
+                            >
+                              <span>{child.label}</span>
+                              <ChevronDown size={16} className={`transition-transform duration-200 ${openMobileSubCategories[child.label] ? 'rotate-180 text-gold-champagne' : ''}`} />
+                            </button>
+                            {openMobileSubCategories[child.label] && (
+                              <div className="flex flex-col gap-2 mt-2 pl-3 border-l border-white/10 ml-2">
+                                {child.subChildren?.map((subChild, sIdx) => (
+                                  <NavLink
+                                    key={sIdx}
+                                    to={subChild.path}
+                                    onClick={() => setIsMobileMenuOpen(false)}
+                                    className={({ isActive }) =>
+                                      `font-sans text-xs tracking-wide py-1.5 ${
+                                        isActive ? 'text-gold-champagne font-bold' : 'text-cream/70 hover:text-cream'
+                                      }`
+                                    }
+                                  >
+                                    {subChild.label}
+                                  </NavLink>
+                                ))}
+                              </div>
+                            )}
+                          </div>
+                        ) : (
+                          <NavLink
+                            key={cIdx}
+                            to={child.path}
+                            onClick={() => setIsMobileMenuOpen(false)}
+                            className={({ isActive }) =>
+                              `font-sans text-sm font-semibold tracking-wide py-2 ${
+                                isActive ? 'text-gold-champagne' : 'text-cream/70 hover:text-cream'
+                              }`
+                            }
+                          >
+                            {child.label}
+                          </NavLink>
+                        )
                       ))}
                     </div>
                   )}
@@ -230,3 +344,4 @@ export const Header: React.FC = () => {
     </header>
   );
 };
+

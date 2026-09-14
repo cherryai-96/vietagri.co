@@ -12,6 +12,7 @@ import { TrainingProgram } from './pages/TrainingProgram';
 import { Contact } from './pages/Contact';
 import { Products } from './pages/Products';
 import { CategoryPage } from './pages/products/CategoryPage';
+import { CropsPlantBasedPage } from './pages/products/CropsPlantBasedPage';
 import { Catalogues } from './pages/Catalogues';
 import { ContractFarming } from './pages/ContractFarming';
 import { Infrastructure } from './pages/Infrastructure';
@@ -53,6 +54,8 @@ function App() {
                       <Route path="/viet-wolffia" element={<VietWolffia />} />
                       <Route path="/training-program" element={<TrainingProgram />} />
                       <Route path="/products" element={<Products />} />
+                      <Route path="/products/crops-plant-based-products" element={<CropsPlantBasedPage />} />
+                      <Route path="/products/crops-plant-based" element={<CropsPlantBasedPage />} />
                       <Route path="/products/:categorySlug" element={<CategoryPage />} />
                       <Route path="/catalogues" element={<Catalogues />} />
                       <Route path="/sustainability" element={<Navigate to="/about" replace />} />

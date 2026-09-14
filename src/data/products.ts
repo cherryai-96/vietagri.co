@@ -3,7 +3,7 @@ export interface ProductItem {
   nameEn: string;
   nameVi: string;
   scientificName?: string;
-  category: 'fresh' | 'powders' | 'freeze-dried' | 'iqf';
+  category: 'fresh' | 'powders' | 'freeze-dried' | 'iqf' | 'poultry' | 'seafood' | 'basa' | 'shrimp' | 'squid' | string;
   subCategory?: string;
   formats: string[];
   specifications: {
@@ -20,7 +20,7 @@ export interface ProductItem {
 }
 
 export interface CategoryInfo {
-  id: 'fresh' | 'powders' | 'freeze-dried' | 'iqf';
+  id: string;
   slug: string;
   titleEn: string;
   titleVi: string;
@@ -57,7 +57,7 @@ export interface CatalogueInfo {
 }
 
 export interface FormatComparison {
-  formatKey: 'fresh' | 'powders' | 'freeze-dried' | 'iqf';
+  formatKey: 'fresh' | 'powders' | 'freeze-dried' | 'iqf' | 'purees';
   titleEn: string;
   titleVi: string;
   bestSuitedEn: string;
@@ -195,11 +195,1163 @@ export const CATEGORIES_DATA: Record<string, CategoryInfo> = {
     defaultPackagingVi: 'Túi PE xanh chuyên dụng lót trong thùng carton 10kg/15kg hoặc Octabin 1000kg',
     storageEn: 'Deep frozen at -18°C or lower continuous storage',
     storageVi: 'Trạng thái cấp đông sâu tại -18°C hoặc thấp hơn liên tục'
+  },
+  'purees': {
+    id: 'purees',
+    slug: 'fruit-purees',
+    titleEn: 'Fruit Purees, Juices & Concentrates',
+    titleVi: 'Puree Trái Cây, Nước Ép & Đậm Đặc (Fruit Purees, Juices & Concentrates)',
+    subtitleEn: '100% Pure Natural Fruit Purees, Juices & Concentrates for F&B Industrial Processing',
+    subtitleVi: 'Nông Sản Xay Nhuyễn & Nước Ép Tự Nhiên 100% Phục Vụ Chế Biến Công Nghiệp & Đồ Uống',
+    heroImage: '/images/products/puree/puree_mango.png',
+    catalogueFileName: 'VAC_Puree_Concentrate_Catalogue_2026.pdf',
+    catalogueDriveId: '1S5D829gwdnJuHvCJN6EHFK3we_Eh8pLQ',
+    descriptionEn: 'VAC Fruit Purees and Concentrates are crafted from selected fresh tropical fruits harvested at peak ripeness in Vietnam. Processed under aseptic cold-crushing and thermal flash pasteurisation systems, our purees retain vibrant natural colour, rich aroma, smooth texture, and bio-nutrients without artificial flavours, preservatives, or added sugar.',
+    descriptionVi: 'Trái cây xay nhuyễn (Puree) và Nước ép đậm đặc VAC được sản xuất từ 100% trái cây tươi nhiệt đới thu hoạch đúng độ chín tại Việt Nam. Xử lý bằng hệ thống nghiền lạnh vô trùng và thanh trùng siêu tốc, giữ trọn màu sắc tươi sáng, hương vị đậm đà, độ mịn mượt tự nhiên và dưỡng chất quý giá mà không bổ sung đường, hương liệu hay chất bảo quản.',
+    highlightsEn: [
+      '100% Natural Fresh Fruit, Zero Added Sugar or Artificial Preservatives',
+      'Aseptic Processing & Flash Pasteurisation preserving fresh fruit aroma & color',
+      'Strict Brix (°Bx), pH, and Pulp content standardization for industrial consistency',
+      'Flexible Formats: Puree with Seeds, Seedless Puree, Single-Strength Juice, Juice Concentrate'
+    ],
+    highlightsVi: [
+      '100% Trái cây tươi tự nhiên, không bổ sung đường hay chất bảo quản nhân tạo',
+      'Công nghệ nghiền vô trùng & Thanh trùng siêu tốc giữ nguyên màu sắc & hương vị tươi',
+      'Kiểm soát chuẩn xác chỉ số Brix (°Bx), pH và độ mịn pulp cho quy mô công nghiệp',
+      'Đa dạng quy cách: Puree có hạt, Puree bỏ hạt, Nước ép nguyên chất, Nước ép đậm đặc'
+    ],
+    availableCutsEn: [
+      'Aseptic Frozen Puree (Seedless / Seed-in)',
+      'Single Strength Natural Fruit Juice',
+      'High Brix Fruit Juice Concentrate',
+      'Frozen Puree Drum / Pouch Packaging'
+    ],
+    availableCutsVi: [
+      'Puree cấp đông vô trùng (Bỏ hạt / Có hạt)',
+      'Nước ép tươi nguyên chất single-strength',
+      'Nước ép trái cây đậm đặc Brix cao',
+      'Puree đóng phuy / túi PE cấp đông'
+    ],
+    defaultPackagingEn: '20kg Aseptic Bag in Box, 200kg Aseptic Steel Drum, or 10kg Vacuum Pouch',
+    defaultPackagingVi: 'Túi vô trùng Aseptic 20kg đóng hộp Carton, Phuy thép vô trùng 200kg, hoặc Túi chân không 10kg',
+    storageEn: 'Deep freeze at -18°C for Purees, or Chilled/Ambient for Aseptic Packaging',
+    storageVi: 'Cấp đông sâu -18°C đối với Puree đông lạnh, hoặc bảo quản mát/thường đối với hàng Aseptic'
+  },
+  'seafood': {
+    id: 'seafood',
+    slug: 'seafood-products',
+    titleEn: 'Aquaculture & Seafood Products',
+    titleVi: 'Sản Phẩm Thủy Hải Sản',
+    subtitleEn: 'Export-Grade Basa Fish, Shrimp & Squid Products Direct from Accredited Facilities',
+    subtitleVi: 'Cá Basa, Tôm & Mực Đạt Chuẩn Xuất Khẩu Quốc Tế',
+    heroImage: '/images/products/seafood/basa_whole_round.jpeg',
+    catalogueFileName: 'VAC_Basa_Fish_Catalog_2026.pdf',
+    catalogueDriveId: '1EBOBC4fxbm_xXpTCEQZ5024KMe5bZw_5',
+    descriptionEn: 'VAC provides a comprehensive portfolio of aquaculture and seafood products including Basa fish, Black Tiger & Vannamei shrimp, and Squid/Octopus. Processed in HACCP, BRCGS, and ISO certified facilities with strict traceability from accredited farms to global buyers.',
+    descriptionVi: 'VAC cung cấp danh mục sản phẩm thủy hải sản cao cấp bao gồm Cá Basa, Tôm Sú/Thẻ chân trắng và Mực/Bạch tuộc. Được chế biến tại các nhà máy đạt chứng nhận HACCP, BRCGS, ISO với quy trình truy xuất nguồn gốc nghiêm ngặt từ vùng nuôi đạt chuẩn đến đối tác thương mại toàn cầu.',
+    highlightsEn: [
+      'HACCP, BRCGS, ISO & Halal Certified Processing Facilities',
+      'Strict Antibiotic & Heavy Metal Residue Testing',
+      'Deep Freeze (-18°C) Cold Chain Integrity',
+      'Diverse Export Formats (Fillet, Portions, Steaks, PTO, Nobashi, Rings, Skewers)'
+    ],
+    highlightsVi: [
+      'Nhà máy chế biến đạt chuẩn HACCP, BRCGS, ISO & Halal',
+      'Kiểm soát nghiêm ngặt dư lượng kháng sinh & kim loại nặng',
+      'Bảo quản chuỗi lạnh cấp đông sâu (-18°C) liên tục',
+      'Đa dạng quy cách chế biến (Fillet, Cắt khúc, Tôm PTO, Nobashi, Mực khoanh, Xiên que)'
+    ],
+    availableCutsEn: ['Fillet (Well/Untrimmed)', 'Cutlet / Steaks', 'Cubes / Portions', 'PTO / P&D / Nobashi Shrimp', 'Squid Tube / Rings / Tentacles'],
+    availableCutsVi: ['Fillet (Lọc sạch / Chưa lọc)', 'Cắt khúc / Steaks', 'Cắt vuông / Cắt khúc', 'Tôm PTO / P&D / Nobashi', 'Mực ống / Khoanh / Râu mực'],
+    defaultPackagingEn: 'IQF 1kg / 2kg PE Rider Bag in 10kg Master Carton or Interleaved Shatterpack',
+    defaultPackagingVi: 'Cấp đông rời IQF túi PE 1kg / 2kg lót thùng carton 10kg hoặc mạ băng đóng khối',
+    storageEn: 'Deep freeze at -18°C or lower continuous storage',
+    storageVi: 'Bảo quản cấp đông sâu tại -18°C hoặc thấp hơn'
+  },
+  'crops-plant-based': {
+    id: 'crops-plant-based',
+    slug: 'crops-plant-based-products',
+    titleEn: 'Crops & Plant-Based Products',
+    titleVi: 'Nông Sản & Sản Phẩm Từ Cây Trồng',
+    subtitleEn: 'Comprehensive Portfolio of Fresh, Dried, Powdered, Pureed & IQF Produce',
+    subtitleVi: 'Danh Mục Tổng Thể Nông Sản Tươi, Bột, Sấy Thăng Hoa, Puree & Cấp Đông IQF',
+    heroImage: '/images/products/IMG_7966.PNG',
+    catalogueFileName: 'VAC_Puree_Concentrate_Catalogue_2026.pdf',
+    catalogueDriveId: '1S5D829gwdnJuHvCJN6EHFK3we_Eh8pLQ',
+    descriptionEn: 'VAC provides an integrated portfolio of tropical agricultural produce across five core formats: Fresh Fruits & Vegetables, Fruit & Veg Powders, Fruit Purees & Juices, Freeze-Dried Fruits, and IQF Frozen Produce. Processed under GlobalG.A.P, HACCP, ISO, and BRCGS standards for global B2B supply.',
+    descriptionVi: 'VAC cung cấp hệ sinh thái nông sản nhiệt đới toàn diện qua 5 định dạng chế biến chính: Trái Cây & Rau Củ Tươi, Bột Nông Sản, Puree & Nước Ép Trái Cây, Trái Cây Sấy Thăng Hoa, và Nông Sản Cấp Đông IQF. Sản xuất theo tiêu chuẩn GlobalG.A.P, HACCP, ISO, BRCGS phục vụ cung ứng B2B quốc tế.',
+    highlightsEn: [
+      'GlobalG.A.P & VietGAP Farm Traceability',
+      '5 Processing Formats (Fresh, Powder, Puree/Juice, Freeze-Dried, IQF)',
+      'Certified Cold Chain & Post-Harvest Treatments (VHT/Irradiation)',
+      'Customized Industrial B2B Packaging & Private Labeling'
+    ],
+    highlightsVi: [
+      'Truy xuất nguồn gốc vùng trồng VietGAP & GlobalG.A.P',
+      '5 Định dạng chế biến (Tươi, Bột, Puree/Nước ép, Sấy thăng hoa, IQF)',
+      'Chứng nhận chuỗi lạnh & Xử lý sau thu hoạch (VHT/Chiếu xạ)',
+      'Đóng gói B2B công nghiệp & gia công nhãn hàng riêng (Private Label)'
+    ],
+    availableCutsEn: ['Whole Produce', 'Diced / Cubes', 'Puree / Aseptic Liquid', 'Fine Powder (80-100 Mesh)', 'Freeze-Dried Slices'],
+    availableCutsVi: ['Quả nguyên', 'Cắt hạt lựu / Cắt khúc', 'Puree / Nước ép vô trùng', 'Bột mịn (80-100 Mesh)', 'Lát sấy thăng hoa'],
+    defaultPackagingEn: 'Ventilated Cartons, Aseptic Bags in Drums, Vacuum Pouches & Master Cartons',
+    defaultPackagingVi: 'Thùng carton thông khí, Phuy Aseptic 200kg, Túi nhôm chân không & Thùng master',
+    storageEn: 'Format-dependent: +2°C to +13°C (Fresh), -18°C (IQF/Puree), Ambient dry (Powders/FD)',
+    storageVi: 'Tùy định dạng: +2°C đến +13°C (Hàng tươi), -18°C (IQF/Puree), Khô thoáng (Bột/Sấy)'
+  },
+  'poultry': {
+    id: 'poultry',
+    slug: 'poultry-products',
+    titleEn: 'Poultry Products',
+    titleVi: 'Sản Phẩm Gia Cầm Xuất Khẩu',
+    subtitleEn: 'Export-Grade Chicken & Poultry Products Processed to Strict Standards',
+    subtitleVi: 'Thịt Gà & Gia Cầm Chế Biến Tiêu Chuẩn Xuất Khẩu Quốc Tế',
+    heroImage: '/images/products/poultry/poultry_halal_whole_chicken.jpeg',
+    catalogueFileName: 'VAC_Chicken_Products_Catalog_2026.pdf',
+    catalogueDriveId: '1u8_chicken_catalog',
+    descriptionEn: 'VAC supplies high-quality poultry products sourced from biosecure commercial farms. Processed in ISO & Halal certified slaughterhouses with complete disease control, strict hygiene, and deep-freeze preservation.',
+    descriptionVi: 'VAC cung cấp các sản phẩm gia cầm chất lượng cao từ các trang trại thương mại an toàn sinh học. Chế biến tại nhà máy giết mổ đạt chuẩn ISO & Halal với kiểm soát dịch bệnh nghiêm ngặt và bảo quản cấp đông sâu.',
+    highlightsEn: [
+      'Biosecure Farming & Avian Flu Free Certification',
+      'Halal & ISO Certified Slaughtering & Processing',
+      'Continuous Blast Freezing (-35°C) & Deep Cold Storage',
+      'Custom Bulk Export Packaging for Wholesalers & Processing Plants'
+    ],
+    highlightsVi: [
+      'Trang trại an toàn sinh học đạt chứng nhận không cúm gia cầm',
+      'Quy trình giết mổ & chế biến đạt chuẩn Halal & ISO',
+      'Cấp đông gió siêu tốc (-35°C) & lưu kho lạnh sâu',
+      'Đóng gói xuất khẩu linh hoạt cho nhà bán buôn & nhà máy chế biến'
+    ],
+    availableCutsEn: ['Whole Chicken', 'Chicken Feet / Paws', 'Chicken Breast / Thigh', 'Wings & Drumsticks'],
+    availableCutsVi: ['Gà nguyên con', 'Chân gà / Cánh gà', 'Ức gà / Đùi gà', 'Đùi cánh gia công'],
+    defaultPackagingEn: '10kg / 15kg PE Bag in Master Carton or Vacuum Pack',
+    defaultPackagingVi: 'Túi PE 10kg / 15kg lót thùng carton master hoặc hút chân không',
+    storageEn: 'Deep freeze at -18°C or lower continuous storage',
+    storageVi: 'Bảo quản cấp đông sâu tại -18°C hoặc thấp hơn'
+  },
+  'basa': {
+    id: 'basa',
+    slug: 'basa-fish-pangasius',
+    titleEn: 'Basa Fish — Pangasius',
+    titleVi: 'Cá Tra & Cá Basa Chế Biến Xuất Khẩu',
+    subtitleEn: 'High-Quality White Flesh Pangasius Fillets, Portions & Steaks from Mekong Delta Farms',
+    subtitleVi: 'Fillet Cá Tra/Basa Trắng Sạch, Cắt Khúc & Steaks Thu Hoạch Từ Vùng Nuôi ĐBSCL',
+    heroImage: '/images/products/seafood/basa_well_trimmed_fillet.jpeg',
+    catalogueFileName: 'VAC_Basa_Fish_Catalog_2026.pdf',
+    catalogueDriveId: '1EBOBC4fxbm_xXpTCEQZ5024KMe5bZw_5',
+    descriptionEn: 'VAC supplies export-standard Pangasius hypophthalmus (Basa fish) processed under strict HACCP and BRCGS certifications. Available in well-trimmed fillets, untrimmed fillets, rose fillets, steaks, portions, cubes, and skewers.',
+    descriptionVi: 'VAC cung cấp Cá Tra/Cá Basa (Pangasius hypophthalmus) đạt tiêu chuẩn xuất khẩu được chế biến theo chứng nhận HACCP và BRCGS. Đa dạng chủng loại Fillet lọc sạch, Fillet chưa lọc, Fillet cuộn hoa hồng, cắt khúc steaks, cắt khối cubes và xiên que.',
+    highlightsEn: [
+      'HACCP, BRCGS, ISO & Halal Certified Facilities',
+      'ASC / BAP Certified Responsible Aquaculture Sourcing',
+      '100% White Flesh, Zero Chemical Residue / Antibiotic Guaranteed',
+      'IQF Individual Quick Freezing & Glazing Customized (0-20%)'
+    ],
+    highlightsVi: [
+      'Nhà máy đạt chứng chỉ quốc tế HACCP, BRCGS, ISO & Halal',
+      'Nguồn nuôi trồng đạt chứng nhận ASC / BAP bền vững',
+      'Thịt trắng 100%, không dư lượng kháng sinh hay hóa chất',
+      'Cấp đông rời IQF & Mạ băng theo yêu cầu khách hàng (0-20%)'
+    ],
+    availableCutsEn: ['Fillet Well-trimmed', 'Fillet Untrimmed', 'Steaks / Cutlets', 'Portions / Cubes', 'Rose Fillet', 'Skewers'],
+    availableCutsVi: ['Fillet Lọc sạch', 'Fillet Chưa lọc', 'Cắt khúc Steaks', 'Cắt vuông Portions/Cubes', 'Fillet Cuộn hoa hồng', 'Xiên que'],
+    defaultPackagingEn: 'IQF 1kg / 2kg PE Rider Bag in 10kg Master Carton or Interleaved Shatterpack',
+    defaultPackagingVi: 'Túi PE 1kg / 2kg lót thùng carton 10kg hoặc đóng khối shatterpack',
+    storageEn: 'Deep freeze at -18°C or lower continuous storage',
+    storageVi: 'Bảo quản cấp đông sâu tại -18°C hoặc thấp hơn'
+  },
+  'shrimp': {
+    id: 'shrimp',
+    slug: 'vietnamese-shrimp',
+    titleEn: 'Vietnamese Shrimp Products',
+    titleVi: 'Tôm Việt Nam Xuất Khẩu (Vannamei & Black Tiger)',
+    subtitleEn: 'Export-Grade Whiteleg & Black Tiger Shrimp: HOSO, HLSO, PTO, P&D, Nobashi & Value-Added Formats',
+    subtitleVi: 'Tôm Thẻ Chân Trắng & Tôm Sú: HOSO, HLSO, PTO, P&D, Nobashi & Chế Biến Giá Trị Gia Tăng',
+    heroImage: '/images/products/seafood/shrimp_hoso.jpeg',
+    catalogueFileName: 'VAC_Shrimp_Products_Catalog_2026.pdf',
+    catalogueDriveId: '1ZHNriy_IOit5LKeXVvAVF15nKxTGdrif',
+    descriptionEn: 'Premium Vietnamese shrimp products harvested from ASC/BAP certified coastal farms. Featuring Black Tiger (Penaeus monodon) and Whiteleg (Penaeus vannamei) shrimp processed into HOSO, HLSO, PTO, P&D, Nobashi, Tempura, and Cooked IQF formats.',
+    descriptionVi: 'Sản phẩm Tôm Việt Nam chất lượng cao thu hoạch từ các vùng nuôi ven biển đạt chuẩn ASC/BAP. Bao gồm Tôm Sú và Tôm Thẻ chân trắng được chế biến thành Tôm nguyên con HOSO, Tôm bỏ đầu HLSO, Tôm PTO, P&D, Nobashi, Tempura và Tôm luộc chín IQF.',
+    highlightsEn: [
+      'Black Tiger & Vannamei Shrimp from ASC/BAP Certified Farms',
+      'Complete Traceability & Disease Free Bio-Security',
+      'Value-Added Formats (Nobashi, Butterfly, Tempura Breaded)',
+      'Precise Weight Grading & IQF Single-Freeze Quality'
+    ],
+    highlightsVi: [
+      'Tôm Sú & Tôm Thẻ chân trắng từ trang trại đạt chuẩn ASC/BAP',
+      'Truy xuất nguồn gốc 100% & An toàn sinh học không bệnh dịch',
+      'Chế biến giá trị gia tăng (Nobashi, Bướm, Tôm lăn bột Tempura)',
+      'Phân loại size chính xác & Cấp đông đơn IQF tươi ngon'
+    ],
+    availableCutsEn: ['HOSO (Head-on Shell-on)', 'HLSO (Headless Shell-on)', 'PTO (Peeled Tail-on)', 'P&D (Peeled & Deveined)', 'Nobashi Stretch Shrimp', 'Cooked IQF'],
+    availableCutsVi: ['Tôm nguyên con HOSO', 'Tôm bỏ đầu HLSO', 'Tôm còn đuôi PTO', 'Tôm bóc vỏ bỏ chỉ P&D', 'Tôm duỗi Nobashi', 'Tôm luộc chín IQF'],
+    defaultPackagingEn: '1kg / 1.8kg Block Frozen Box or IQF Rider Bag in 10kg Master Carton',
+    defaultPackagingVi: 'Đóng khối Block 1kg / 1.8kg hoặc Cấp đông rời IQF túi PE trong thùng 10kg',
+    storageEn: 'Deep freeze at -18°C or lower continuous storage',
+    storageVi: 'Bảo quản cấp đông sâu tại -18°C hoặc thấp hơn'
+  },
+  'squid': {
+    id: 'squid',
+    slug: 'squid-products',
+    titleEn: 'Squid & Octopus Products',
+    titleVi: 'Mực & Bạch Tuộc Chế Biến Xuất Khẩu',
+    subtitleEn: 'Wild-Caught Ocean Squid & Octopus: Whole Cleaned, Tubes, Rings, Tentacles & Flower Cut',
+    subtitleVi: 'Mực & Bạch Tuộc Biển Tự Nhiên: Nguyên Con Làm Sạch, Mực Ống, Mực Khoanh, Râu Mực & Mực Cắt Hoa',
+    heroImage: '/images/products/seafood/squid_whole_cleaned.jpeg',
+    catalogueFileName: 'VAC_Squid_Products_Catalog_2026.pdf',
+    catalogueDriveId: '1UU-DLH9UjaDWFbz5LCserzNZFjaMHAUo',
+    descriptionEn: 'Wild-caught ocean squid and octopus from Vietnamese waters, processed immediately post-landing to maintain natural sweetness and tender texture. Offering Whole Cleaned Squid, Squid Tubes (U4-U10), Squid Rings, Flower Cut Squid, Tentacles, Dried Squid, and Baby Octopus.',
+    descriptionVi: 'Mực và bạch tuộc đánh bắt tự nhiên tại vùng biển Việt Nam, chế biến ngay sau khi cập cảng để giữ nguyên độ ngọt và độ giòn tự nhiên. Cung cấp Mực nguyên con làm sạch, Mực ống (U4-U10), Mực khoanh, Mực cắt hoa, Râu mực, Mực khô và Bạch tuộc baby.',
+    highlightsEn: [
+      '100% Wild-Caught Ocean Seafood with High Natural Sweetness',
+      'Instant Post-Landing Processing for Firm Texture',
+      'Customized Cutting (Pineapple/Flower Cut, Rings, Tubes, Skewers)',
+      'EU & US FDA Registered Export Facilities'
+    ],
+    highlightsVi: [
+      '100% Thủy hải sản biển đánh bắt tự nhiên với độ ngọt cao',
+      'Chế biến ngay sau khi cấp cảng giữ độ giòn săn chắc',
+      'Cắt định hình theo yêu cầu (Cắt hoa khía vảy rồng, Khoanh, Ống, Xiên que)',
+      'Nhà máy xuất khẩu đạt mã EU & đăng ký US FDA'
+    ],
+    availableCutsEn: ['Whole Cleaned Squid', 'Squid Tube (U4, U5, U7, U10)', 'Squid Rings', 'Flower / Pineapple Cut', 'Tentacles', 'Dried Squid', 'Cut / Baby Octopus'],
+    availableCutsVi: ['Mực nguyên con làm sạch', 'Mực ống (U4, U5, U7, U10)', 'Mực khoanh', 'Mực cắt hoa vảy rồng', 'Râu mực', 'Mực khô sấy', 'Bạch tuộc cắt / baby'],
+    defaultPackagingEn: 'IQF PE Bag 1kg / 2kg in 10kg Master Carton or Block Frozen 1kg/2kg',
+    defaultPackagingVi: 'Túi PE IQF 1kg / 2kg lót thùng carton 10kg hoặc đóng khối Block 1kg/2kg',
+    storageEn: 'Deep freeze at -18°C or lower continuous storage',
+    storageVi: 'Bảo quản cấp đông sâu tại -18°C hoặc thấp hơn'
   }
 };
 
 export const PRODUCTS_LIST: ProductItem[] = [
-{
+  // === POULTRY PRODUCTS ===
+  {
+    id: 'poultry-halal-whole-chicken',
+    nameEn: 'Halal Whole Chicken (Eviscerated & Griller)',
+    nameVi: 'Thịt Gà Nguyên Con Chứng Nhận Halal',
+    scientificName: 'Gallus gallus domesticus',
+    category: 'poultry',
+    subCategory: 'Halal Chicken',
+    formats: ['Whole Bird (Head-off, Feet-off, Eviscerated)', 'Griller / Broiler'],
+    specifications: {
+      shelfLife: '24 months (Frozen -18°C) / 14 days (Chilled 0-4°C)',
+      storage: '-18°C or lower (Frozen)',
+      packaging: '10kg / 15kg PE Lined Master Carton or IVP Polybag',
+      origin: 'Vietnam (Halal Slaughterhouse Certified)'
+    },
+    applications: ['Retail Supermarkets', 'Halal Wholesale', 'Food Service & HORECA'],
+    seasonality: 'Year-round',
+    image: '/images/products/poultry/poultry_whole_chicken.jpeg'
+  },
+  {
+    id: 'poultry-whole-chicken',
+    nameEn: 'Frozen Whole Chicken (Eviscerated & Griller)',
+    nameVi: 'Thịt Gà Nguyên Con Đông Lạnh',
+    scientificName: 'Gallus gallus domesticus',
+    category: 'poultry',
+    subCategory: 'Chicken Cuts',
+    formats: ['Whole Bird (Head-off, Feet-off, Eviscerated)', 'Griller / Broiler (800g - 1800g)'],
+    specifications: {
+      shelfLife: '24 months (Frozen -18°C)',
+      storage: '-18°C or lower',
+      packaging: '10kg / 15kg PE Lined Master Carton',
+      origin: 'Vietnam'
+    },
+    applications: ['Food Service & HORECA', 'Supermarket Retail', 'Wholesale Import'],
+    seasonality: 'Year-round',
+    image: '/images/products/poultry/poultry_whole_chicken.jpeg'
+  },
+  {
+    id: 'poultry-boneless-breast-fillet',
+    nameEn: 'Boneless Skinless Chicken Breast Fillet',
+    nameVi: 'Ức Gà Phi Lê Bỏ Da Bỏ Xương',
+    scientificName: 'Gallus gallus domesticus',
+    category: 'poultry',
+    subCategory: 'Chicken Cuts',
+    formats: ['Single Fillet', 'Butterfly Cut', 'Dices & Strips'],
+    specifications: {
+      shelfLife: '24 months (Frozen) / 14 days (Chilled)',
+      storage: '-18°C or lower',
+      packaging: '2kg Vacuum Pack x 6 / 12kg Master Carton',
+      origin: 'Vietnam'
+    },
+    applications: ['Health Snacks', 'Meal Prep', 'Industrial Food Manufacturing'],
+    seasonality: 'Year-round',
+    image: '/images/products/poultry/poultry_boneless_breast.jpeg'
+  },
+  {
+    id: 'poultry-bone-in-breast',
+    nameEn: 'Bone-in Chicken Breast',
+    nameVi: 'Ức Gà Có Xương Có Da',
+    scientificName: 'Gallus gallus domesticus',
+    category: 'poultry',
+    subCategory: 'Chicken Cuts',
+    formats: ['Bone-in Skin-on Breast', 'Half Breast Cuts'],
+    specifications: {
+      shelfLife: '24 months (Frozen -18°C)',
+      storage: '-18°C or lower',
+      packaging: '10kg / 15kg PE Lined Master Carton',
+      origin: 'Vietnam'
+    },
+    applications: ['Food Processing', 'Catering', 'Supermarkets'],
+    seasonality: 'Year-round',
+    image: '/images/products/poultry/poultry_bone_in_breast.jpeg'
+  },
+  {
+    id: 'poultry-leg-quarters',
+    nameEn: 'Frozen Chicken Leg Quarters',
+    nameVi: 'Đùi Gà Góc Tư Đông Lạnh',
+    scientificName: 'Gallus gallus domesticus',
+    category: 'poultry',
+    subCategory: 'Chicken Cuts',
+    formats: ['Whole Leg Quarter', 'Bone-in Skin-on'],
+    specifications: {
+      shelfLife: '24 months',
+      storage: '-18°C or lower',
+      packaging: '10kg / 15kg Bulk Master Carton',
+      origin: 'Vietnam'
+    },
+    applications: ['Institutional Catering', 'Food Service', 'Wholesale Distribution'],
+    seasonality: 'Year-round',
+    image: '/images/products/poultry/poultry_leg_quarters.jpeg'
+  },
+  {
+    id: 'poultry-thighs',
+    nameEn: 'Chicken Thighs (Bone-in / Boneless)',
+    nameVi: 'Đùi Gà Má Đùi (Có Xương / Bỏ Xương)',
+    scientificName: 'Gallus gallus domesticus',
+    category: 'poultry',
+    subCategory: 'Chicken Cuts',
+    formats: ['Bone-in Thigh', 'Boneless Skinless Thigh Meat'],
+    specifications: {
+      shelfLife: '24 months',
+      storage: '-18°C or lower',
+      packaging: '10kg PE Lined Master Carton',
+      origin: 'Vietnam'
+    },
+    applications: ['Restaurants & HORECA', 'Meal Prep', 'Retail Packs'],
+    seasonality: 'Year-round',
+    image: '/images/products/poultry/poultry_thighs.jpeg'
+  },
+  {
+    id: 'poultry-drumsticks',
+    nameEn: 'Chicken Drumsticks',
+    nameVi: 'Đùi Tỏi Gà Đông Lạnh',
+    scientificName: 'Gallus gallus domesticus',
+    category: 'poultry',
+    subCategory: 'Chicken Cuts',
+    formats: ['Skin-on Drumstick', 'Caliber Graded (100g - 150g+)'],
+    specifications: {
+      shelfLife: '24 months',
+      storage: '-18°C or lower',
+      packaging: '10kg / 15kg IQF Master Carton',
+      origin: 'Vietnam'
+    },
+    applications: ['Fast Food Chains', 'Retail Supermarkets', 'Food Service'],
+    seasonality: 'Year-round',
+    image: '/images/products/poultry/poultry_drumsticks.jpeg'
+  },
+  {
+    id: 'poultry-chicken-wings',
+    nameEn: 'Whole Chicken Wings (3-Joint)',
+    nameVi: 'Cánh Gà Nguyên Con (3 Khớp)',
+    scientificName: 'Gallus gallus domesticus',
+    category: 'poultry',
+    subCategory: 'Chicken Cuts',
+    formats: ['3-Joint Whole Wing (100g+)'],
+    specifications: {
+      shelfLife: '24 months',
+      storage: '-18°C or lower',
+      packaging: '10kg IQF Master Carton',
+      origin: 'Vietnam'
+    },
+    applications: ['Bar & Grill', 'Fast Food Chains', 'Wholesale Import'],
+    seasonality: 'Year-round',
+    image: '/images/products/poultry/poultry_whole_wings.jpeg'
+  },
+  {
+    id: 'poultry-wing-portions',
+    nameEn: 'Chicken Wing Portions (Wingette & Drumette)',
+    nameVi: 'Cánh Gà Cắt Khớp (Cánh Giữa & Tỏi Cánh)',
+    scientificName: 'Gallus gallus domesticus',
+    category: 'poultry',
+    subCategory: 'Chicken Cuts',
+    formats: ['Mid-Joint Wing (Wingette)', 'Wingstick (Drumette)'],
+    specifications: {
+      shelfLife: '24 months',
+      storage: '-18°C or lower',
+      packaging: '10kg / 12kg IQF Master Carton',
+      origin: 'Vietnam'
+    },
+    applications: ['QSR Chains', 'Supermarkets', 'Snack Processing'],
+    seasonality: 'Year-round',
+    image: '/images/products/poultry/poultry_wing_portions.jpeg'
+  },
+  {
+    id: 'poultry-chicken-feet-paws',
+    nameEn: 'Export Chicken Feet & Paws',
+    nameVi: 'Chân Gà & Bàn Chân Gà Xuất Khẩu',
+    scientificName: 'Gallus gallus domesticus',
+    category: 'poultry',
+    subCategory: 'Chicken By-Products',
+    formats: ['Grade A Paws (35g+)', 'Grade A Feet (45g+)'],
+    specifications: {
+      shelfLife: '24 months',
+      storage: '-18°C or lower',
+      packaging: '15kg Block Frozen or IQF Carton',
+      origin: 'Vietnam'
+    },
+    applications: ['Asian Wholesale Markets', 'Dim Sum Manufacturing', 'Snack Processing'],
+    seasonality: 'Year-round',
+    image: '/images/products/poultry/poultry_feet_paws.jpeg'
+  },
+  {
+    id: 'poultry-gizzard-liver-heart',
+    nameEn: 'Chicken Offals (Gizzard, Liver & Heart)',
+    nameVi: 'Mề Gà, Gan Gà & Tim Gà Đông Lạnh',
+    scientificName: 'Gallus gallus domesticus',
+    category: 'poultry',
+    subCategory: 'Chicken By-Products',
+    formats: ['Cleaned Gizzard', 'Fresh Frozen Liver', 'Heart'],
+    specifications: {
+      shelfLife: '24 months',
+      storage: '-18°C or lower',
+      packaging: '10kg PE Lined Master Carton',
+      origin: 'Vietnam'
+    },
+    applications: ['Pet Food Processing', 'Traditional Markets', 'Food Manufacturing'],
+    seasonality: 'Year-round',
+    image: '/images/products/poultry/poultry_offals.jpeg'
+  },
+  {
+    id: 'poultry-chicken-necks',
+    nameEn: 'Chicken Necks',
+    nameVi: 'Cổ Gà Đông Lạnh',
+    scientificName: 'Gallus gallus domesticus',
+    category: 'poultry',
+    subCategory: 'Chicken By-Products',
+    formats: ['Skin-on Neck', 'Skinless Neck'],
+    specifications: {
+      shelfLife: '24 months',
+      storage: '-18°C or lower',
+      packaging: '10kg / 15kg PE Lined Master Carton',
+      origin: 'Vietnam'
+    },
+    applications: ['Soup Stock & Broth Processing', 'Pet Food Industry', 'Wholesale'],
+    seasonality: 'Year-round',
+    image: '/images/products/poultry/poultry_necks.jpeg'
+  },
+  {
+    id: 'poultry-nuggets-patties',
+    nameEn: 'Chicken Nuggets & Patties',
+    nameVi: 'Gà Viên Tẩm Bột & Thịt Gà Burger',
+    scientificName: 'Gallus gallus domesticus',
+    category: 'poultry',
+    subCategory: 'Chicken Cuts',
+    formats: ['Breaded Nuggets', 'Chicken Patties'],
+    specifications: {
+      shelfLife: '18 months',
+      storage: '-18°C or lower',
+      packaging: '500g / 1kg Retail Pouch or Bulk 10kg Carton',
+      origin: 'Vietnam (OEM Private Label)'
+    },
+    applications: ['Convenience Stores', 'Retail Supermarkets', 'QSR Chains'],
+    seasonality: 'Year-round',
+    image: '/images/products/poultry/poultry_nuggets_patties.jpeg'
+  },
+  {
+    id: 'poultry-sausages-breaded',
+    nameEn: 'Chicken Sausages & Breaded Chicken',
+    nameVi: 'Xúc Xích Gà & Thịt Gà Tẩm Bột',
+    scientificName: 'Gallus gallus domesticus',
+    category: 'poultry',
+    subCategory: 'Chicken Cuts',
+    formats: ['Frankfurter Sausages', 'Breaded Fillet Cuts'],
+    specifications: {
+      shelfLife: '18 months',
+      storage: '-18°C or lower',
+      packaging: '500g / 1kg Pack or 10kg Carton',
+      origin: 'Vietnam (OEM Private Label)'
+    },
+    applications: ['Retail Ready', 'Breakfast & School Catering', 'Fast Food'],
+    seasonality: 'Year-round',
+    image: '/images/products/poultry/poultry_sausages_breaded.jpeg'
+  },
+  {
+    id: 'poultry-marinated-ready-to-cook',
+    nameEn: 'Marinated & Ready-to-Cook Poultry',
+    nameVi: 'Thịt Gà Tẩm Ướp Gia Vị Sẵn',
+    scientificName: 'Gallus gallus domesticus',
+    category: 'poultry',
+    subCategory: 'Chicken Cuts',
+    formats: ['Marinated Skewers', 'Pre-seasoned Cuts', 'BBQ Marinated Wings'],
+    specifications: {
+      shelfLife: '18 months',
+      storage: '-18°C or lower',
+      packaging: 'Vacuum Pack or IQF Pouch',
+      origin: 'Vietnam (OEM Private Label)'
+    },
+    applications: ['Supermarket Ready Meals', 'HORECA & BBQ Chains', 'Retail Ready'],
+    seasonality: 'Year-round',
+    image: '/images/products/poultry/poultry_marinated.jpeg'
+  },
+
+  // === BASA FISH (PANGASIUS) PRODUCTS ===
+  {
+    id: 'basa-well-trimmed-fillet',
+    nameEn: 'Pangasius Basa Fillet (Well-Trimmed)',
+    nameVi: 'Cá Tra Basa Phi Lê Làm Sạch Mỡ (Well-Trimmed)',
+    scientificName: 'Pangasius hypophthalmus',
+    category: 'basa',
+    subCategory: 'Basa Fish — Pangasius',
+    formats: ['Skinless, Boneless, Fat Off, Red Meat Off, Belly Off', 'Sizes: 120-170g, 170-220g, 220g+'],
+    specifications: {
+      shelfLife: '24 months',
+      storage: '-18°C or lower',
+      packaging: '10kg IQF Bulk Carton or 1kg IVP Printed Retail Bag',
+      origin: 'Mekong Delta, Vietnam (ASC / BAP Certified)'
+    },
+    applications: ['Supermarket Retail', 'Food Service & Restaurants', 'Industrial Processing'],
+    seasonality: 'Year-round',
+    image: '/images/products/seafood/basa_well_trimmed_fillet.jpeg'
+  },
+  {
+    id: 'basa-untrimmed-fillet',
+    nameEn: 'Pangasius Basa Fillet (Untrimmed / Semi-Trimmed)',
+    nameVi: 'Cá Tra Basa Phi Lê Nguyên Bản (Untrimmed)',
+    scientificName: 'Pangasius hypophthalmus',
+    category: 'basa',
+    subCategory: 'Basa Fish — Pangasius',
+    formats: ['Skinless, Boneless, Fat-On, Red Meat On', 'Sizes: 170-220g, 220g+'],
+    specifications: {
+      shelfLife: '24 months',
+      storage: '-18°C or lower',
+      packaging: '10kg Interleaved Block / IQF Master Carton',
+      origin: 'Vietnam'
+    },
+    applications: ['Catering & Institutional Markets', 'Processing Plants'],
+    seasonality: 'Year-round',
+    image: '/images/products/seafood/basa_boneless_fillet.jpeg'
+  },
+  {
+    id: 'basa-whole-round',
+    nameEn: 'Whole Round Basa Fish',
+    nameVi: 'Cá Tra Basa Nguyên Con Đông Lạnh',
+    scientificName: 'Pangasius hypophthalmus',
+    category: 'basa',
+    subCategory: 'Basa Fish — Pangasius',
+    formats: ['Whole Round (Gut-In or Eviscerated)', 'Sizes: 800g-1.2kg, 1.2-2kg'],
+    specifications: {
+      shelfLife: '24 months',
+      storage: '-18°C or lower',
+      packaging: '10kg Bulk Master Carton',
+      origin: 'Vietnam'
+    },
+    applications: ['Wholesale Fish Markets', 'Seafood Processing Plants'],
+    seasonality: 'Year-round',
+    image: '/images/products/seafood/basa_whole_round.jpeg'
+  },
+  {
+    id: 'basa-headed-gutted',
+    nameEn: 'Headed & Gutted Basa Fish (H&G)',
+    nameVi: 'Cá Tra Basa Bỏ Đầu Rút Ruột (H&G)',
+    scientificName: 'Pangasius hypophthalmus',
+    category: 'basa',
+    subCategory: 'Basa Fish — Pangasius',
+    formats: ['Head-Off, Tail-On, Eviscerated'],
+    specifications: {
+      shelfLife: '24 months',
+      storage: '-18°C or lower',
+      packaging: '10kg IQF Master Carton',
+      origin: 'Vietnam'
+    },
+    applications: ['Traditional Markets', 'Fish Wholesalers'],
+    seasonality: 'Year-round',
+    image: '/images/products/seafood/basa_headed_gutted.jpeg'
+  },
+  {
+    id: 'basa-steak-cuts',
+    nameEn: 'Frozen Pangasius Basa Fish Steak',
+    nameVi: 'Cá Tra Basa Cắt Khúc Đông Lạnh (Basa Steak)',
+    scientificName: 'Pangasius hypophthalmus',
+    category: 'basa',
+    subCategory: 'Basa Fish — Pangasius',
+    formats: ['Skin-On, Bone-In Steak Cuts (Thickness 2.5-3.5cm)'],
+    specifications: {
+      shelfLife: '24 months',
+      storage: '-18°C or lower',
+      packaging: '1kg Retail PE Bag or 10kg Master Carton',
+      origin: 'Vietnam'
+    },
+    applications: ['Retail Markets', 'Asian Supermarkets', 'Home Cooking'],
+    seasonality: 'Year-round',
+    image: '/images/products/seafood/basa_steaks.jpeg'
+  },
+  {
+    id: 'basa-loin-portions',
+    nameEn: 'Pangasius Basa Loin & Portion Cuts',
+    nameVi: 'Cá Tra Basa Cắt Loin & Miếng Vuông (Loin Portions)',
+    scientificName: 'Pangasius hypophthalmus',
+    category: 'basa',
+    subCategory: 'Basa Fish — Pangasius',
+    formats: ['Thick Loin Cut 80-120g', 'Square Portions 50-80g'],
+    specifications: {
+      shelfLife: '24 months',
+      storage: '-18°C or lower',
+      packaging: '10kg IQF Carton',
+      origin: 'Vietnam'
+    },
+    applications: ['Gourmet Food Service', 'Air Fryer Meals'],
+    seasonality: 'Year-round',
+    image: '/images/products/seafood/basa_portions.jpeg'
+  },
+  {
+    id: 'basa-cubes-portions',
+    nameEn: 'Pangasius Basa Cubes & Dices',
+    nameVi: 'Cá Tra Basa Cắt Khối Hạt Lựu (Basa Cubes)',
+    scientificName: 'Pangasius hypophthalmus',
+    category: 'basa',
+    subCategory: 'Basa Fish — Pangasius',
+    formats: ['Dice 15x15mm, 20x20mm', 'Portion Cuts 50-80g'],
+    specifications: {
+      shelfLife: '24 months',
+      storage: '-18°C or lower',
+      packaging: '10kg IQF Carton',
+      origin: 'Vietnam'
+    },
+    applications: ['Ready Meals', 'Fish Soups & Skewers', 'Food Manufacturing'],
+    seasonality: 'Year-round',
+    image: '/images/products/seafood/basa_cubes.jpeg'
+  },
+  {
+    id: 'basa-belly-strips',
+    nameEn: 'Pangasius Basa Belly Flaps & Strips',
+    nameVi: 'Bào Ngư & Dải Thịt Bụng Cá Tra Basa',
+    scientificName: 'Pangasius hypophthalmus',
+    category: 'basa',
+    subCategory: 'Basa Fish — Pangasius',
+    formats: ['Skinless Fat Belly Strips'],
+    specifications: {
+      shelfLife: '24 months',
+      storage: '-18°C or lower',
+      packaging: '10kg Block Frozen / IQF Carton',
+      origin: 'Vietnam'
+    },
+    applications: ['Fish Soup Ingredients', 'Fish Oil Processing'],
+    seasonality: 'Year-round',
+    image: '/images/products/seafood/basa_strips.jpeg'
+  },
+  {
+    id: 'basa-breaded-fillet',
+    nameEn: 'Breaded Pangasius Basa Fillets',
+    nameVi: 'Cá Tra Basa Phi Lê Tẩm Bột Chiên',
+    scientificName: 'Pangasius hypophthalmus',
+    category: 'basa',
+    subCategory: 'Basa Fish — Pangasius',
+    formats: ['Crispy Panko Breaded Fillet (100g, 150g)'],
+    specifications: {
+      shelfLife: '18 months',
+      storage: '-18°C or lower',
+      packaging: '1kg Retail Bag x 10 / Master Carton',
+      origin: 'Vietnam (OEM Private Label)'
+    },
+    applications: ['Fish & Chips Chains', 'QSR Restaurants'],
+    seasonality: 'Year-round',
+    image: '/images/products/seafood/basa_breaded_fillets.jpeg'
+  },
+  {
+    id: 'basa-battered-portions',
+    nameEn: 'Battered Pangasius Basa Portions',
+    nameVi: 'Cá Tra Basa Cắt Miếng Tẩm Bột Battered',
+    scientificName: 'Pangasius hypophthalmus',
+    category: 'basa',
+    subCategory: 'Basa Fish — Pangasius',
+    formats: ['Tempura / Beer Battered Portions (50-80g)'],
+    specifications: {
+      shelfLife: '18 months',
+      storage: '-18°C or lower',
+      packaging: '10kg HORECA Master Pack',
+      origin: 'Vietnam'
+    },
+    applications: ['Pubs & Restaurants', 'Food Service'],
+    seasonality: 'Year-round',
+    image: '/images/products/seafood/basa_battered_portions.jpeg'
+  },
+  {
+    id: 'basa-fish-fingers',
+    nameEn: 'Basa Fish Fingers & Sticks',
+    nameVi: 'Cá Tra Basa Cắt Thanh Tẩm Bột (Fish Fingers)',
+    scientificName: 'Pangasius hypophthalmus',
+    category: 'basa',
+    subCategory: 'Basa Fish — Pangasius',
+    formats: ['Pre-cooked Breaded Fish Sticks (25g-30g/piece)'],
+    specifications: {
+      shelfLife: '18 months',
+      storage: '-18°C or lower',
+      packaging: '300g / 500g Retail Box or 5kg Bulk',
+      origin: 'Vietnam'
+    },
+    applications: ['Supermarket Freezer Section', 'School Meals'],
+    seasonality: 'Year-round',
+    image: '/images/products/seafood/basa_fish_fingers.jpeg'
+  },
+  {
+    id: 'basa-marinated-cubes',
+    nameEn: 'Marinated & Seasoned Basa Cubes',
+    nameVi: 'Cá Tra Basa Cắt Khối Tẩm Ướp Gia Vị',
+    scientificName: 'Pangasius hypophthalmus',
+    category: 'basa',
+    subCategory: 'Basa Fish — Pangasius',
+    formats: ['Garlic & Herb / Teriyaki / Cajun Marinated Cubes'],
+    specifications: {
+      shelfLife: '18 months',
+      storage: '-18°C or lower',
+      packaging: '500g Vacuum Pouch or 10kg Master Carton',
+      origin: 'Vietnam'
+    },
+    applications: ['Meal Kits', 'Ready-to-Cook Products'],
+    seasonality: 'Year-round',
+    image: '/images/products/seafood/basa_seasoned_cubes.jpeg'
+  },
+  {
+    id: 'basa-marinated-fillets',
+    nameEn: 'Marinated & Herb Seasoned Basa Fillets',
+    nameVi: 'Cá Tra Basa Phi Lê Tẩm Ướp Gia Vị Thảo Mộc',
+    scientificName: 'Pangasius hypophthalmus',
+    category: 'basa',
+    subCategory: 'Basa Fish — Pangasius',
+    formats: ['Herb & Garlic / Lemon Pepper Marinated Whole Fillets'],
+    specifications: {
+      shelfLife: '18 months',
+      storage: '-18°C or lower',
+      packaging: '1kg Vacuum Bag or 10kg Master Carton',
+      origin: 'Vietnam'
+    },
+    applications: ['Supermarket Ready Meals', 'Food Service & HORECA'],
+    seasonality: 'Year-round',
+    image: '/images/products/seafood/basa_marinated_fillets.jpeg'
+  },
+
+  // === VIETNAMESE SHRIMP PRODUCTS ===
+  {
+    id: 'shrimp-vannamei-hoso',
+    nameEn: 'Vannamei Whiteleg Shrimp HOSO (Head-On Shell-On)',
+    nameVi: 'Tôm Thẻ Chân Trắng HOSO (Còn Đầu Còn Vỏ)',
+    scientificName: 'Litopenaeus vannamei',
+    category: 'shrimp',
+    subCategory: 'Vietnamese Shrimp',
+    formats: ['Whole Raw HOSO', 'Counts: 16/20, 21/25, 26/30, 31/40, 41/50 counts/kg'],
+    specifications: {
+      shelfLife: '24 months',
+      storage: '-18°C or lower',
+      packaging: '1kg / 2kg Frozen Block Carton x 6 / Master Carton',
+      origin: 'Vietnam (ASC / BAP 4-Star Certified)'
+    },
+    applications: ['Seafood Buffets', 'High-End Dining', 'Export Wholesale'],
+    seasonality: 'Year-round',
+    image: '/images/products/seafood/shrimp_hoso.jpeg'
+  },
+  {
+    id: 'shrimp-vannamei-hlso',
+    nameEn: 'Vannamei Whiteleg Shrimp HLSO (Headless Shell-On)',
+    nameVi: 'Tôm Thẻ Chân Trắng HLSO (Bỏ Đầu Còn Vỏ)',
+    scientificName: 'Litopenaeus vannamei',
+    category: 'shrimp',
+    subCategory: 'Vietnamese Shrimp',
+    formats: ['Raw Headless Shell-On', 'Counts: 16/20, 26/30, 31/40, 41/50, 51/60'],
+    specifications: {
+      shelfLife: '24 months',
+      storage: '-18°C or lower',
+      packaging: '1.8kg Block x 6 / 10.8kg Master Carton or 1kg IQF Bag',
+      origin: 'Vietnam'
+    },
+    applications: ['Restaurant Chains', 'Seafood Wholesalers'],
+    seasonality: 'Year-round',
+    image: '/images/products/seafood/shrimp_hlso.jpeg'
+  },
+  {
+    id: 'shrimp-vannamei-pdto',
+    nameEn: 'Vannamei Shrimp PDTO (Peeled Deveined Tail-On)',
+    nameVi: 'Tôm Thẻ Bóc Vỏ Rút Chỉ Còn Đuôi (PDTO)',
+    scientificName: 'Litopenaeus vannamei',
+    category: 'shrimp',
+    subCategory: 'Vietnamese Shrimp',
+    formats: ['Raw / Cooked IQF PDTO', 'Counts: 21/25, 26/30, 31/40, 41/50, 51/60'],
+    specifications: {
+      shelfLife: '24 months',
+      storage: '-18°C or lower',
+      packaging: '1kg IQF Printed Bag x 10 / Master Carton',
+      origin: 'Vietnam'
+    },
+    applications: ['Gourmet Dining', 'Shrimp Cocktails', 'Retail Ready'],
+    seasonality: 'Year-round',
+    image: '/images/products/seafood/shrimp_pto.jpeg'
+  },
+  {
+    id: 'shrimp-vannamei-pd-pud',
+    nameEn: 'Vannamei Shrimp P&D / PUD (Peeled & Deveined)',
+    nameVi: 'Tôm Thẻ Bóc Vỏ Rút Chỉ Bỏ Đuôi (P&D / PUD)',
+    scientificName: 'Litopenaeus vannamei',
+    category: 'shrimp',
+    subCategory: 'Vietnamese Shrimp',
+    formats: ['Peeled & Deveined Tail-Off', 'Raw & Cooked IQF'],
+    specifications: {
+      shelfLife: '24 months',
+      storage: '-18°C or lower',
+      packaging: '1kg IQF Rider Bag x 10 / Master Carton',
+      origin: 'Vietnam'
+    },
+    applications: ['Pizza & Pasta Toppings', 'Ready Meals', 'Processing Plants'],
+    seasonality: 'Year-round',
+    image: '/images/products/seafood/shrimp_pd.jpeg'
+  },
+  {
+    id: 'shrimp-cooked-cocktail',
+    nameEn: 'Cooked Peeled Cocktail Shrimp',
+    nameVi: 'Tôm Hấp Bóc Vỏ Cocktail (Cooked Cocktail Shrimp)',
+    scientificName: 'Litopenaeus vannamei',
+    category: 'shrimp',
+    subCategory: 'Vietnamese Shrimp',
+    formats: ['Fully Cooked Peeled Tail-On IQF'],
+    specifications: {
+      shelfLife: '24 months',
+      storage: '-18°C or lower',
+      packaging: '500g / 1kg Retail Zipper Bag with Sauce Ring',
+      origin: 'Vietnam'
+    },
+    applications: ['Supermarket Ready-to-Eat', 'Appetizer Trays'],
+    seasonality: 'Year-round',
+    image: '/images/products/seafood/shrimp_cocktail.jpeg'
+  },
+  {
+    id: 'shrimp-butterfly-cut',
+    nameEn: 'Raw & Cooked Butterfly-Cut Shrimp',
+    nameVi: 'Tôm Chẻ Lưng Bướm (Butterfly-Cut Shrimp)',
+    scientificName: 'Litopenaeus vannamei',
+    category: 'shrimp',
+    subCategory: 'Vietnamese Shrimp',
+    formats: ['Deep Butterfly Cut Tail-On IQF'],
+    specifications: {
+      shelfLife: '24 months',
+      storage: '-18°C or lower',
+      packaging: '1kg IQF Rider Bag x 10 / Carton',
+      origin: 'Vietnam'
+    },
+    applications: ['Grilling & Frying', 'Catering Events'],
+    seasonality: 'Year-round',
+    image: '/images/products/seafood/shrimp_butterfly.jpeg'
+  },
+  {
+    id: 'shrimp-black-tiger-hoso',
+    nameEn: 'Giant Black Tiger Shrimp HOSO & HLSO',
+    nameVi: 'Tôm Sú Nguyên Con (Black Tiger HOSO & HLSO)',
+    scientificName: 'Penaeus monodon',
+    category: 'shrimp',
+    subCategory: 'Vietnamese Shrimp',
+    formats: ['Giant HOSO / HLSO', 'Counts: 8/12, 13/15, 16/20 counts/kg'],
+    specifications: {
+      shelfLife: '24 months',
+      storage: '-18°C or lower',
+      packaging: '1kg / 2kg Block Carton x 6 / Master Carton',
+      origin: 'Vietnam (Mangrove Ecological Farming)'
+    },
+    applications: ['Luxury Seafood Dining', 'Five-Star Hotels', 'Export Wholesale'],
+    seasonality: 'Year-round',
+    image: '/images/products/seafood/shrimp_hoso.jpeg'
+  },
+  {
+    id: 'shrimp-black-tiger-pdto',
+    nameEn: 'Black Tiger Shrimp PDTO & P&D',
+    nameVi: 'Tôm Sú Bóc Vỏ Rút Chỉ (Black Tiger PDTO)',
+    scientificName: 'Penaeus monodon',
+    category: 'shrimp',
+    subCategory: 'Vietnamese Shrimp',
+    formats: ['PDTO & P&D Raw IQF', 'Counts: 16/20, 21/25, 26/30'],
+    specifications: {
+      shelfLife: '24 months',
+      storage: '-18°C or lower',
+      packaging: '1kg IQF Printed Bag x 10 / Master Carton',
+      origin: 'Vietnam'
+    },
+    applications: ['Fine Dining Seafood', 'Asian Gourmet Cuisine'],
+    seasonality: 'Year-round',
+    image: '/images/products/seafood/shrimp_pto.jpeg'
+  },
+  {
+    id: 'shrimp-breaded-tempura',
+    nameEn: 'Panko Breaded & Tempura Shrimp',
+    nameVi: 'Tôm Tẩm Bột Panko & Tempura Chiên Giòn',
+    scientificName: 'Litopenaeus vannamei',
+    category: 'shrimp',
+    subCategory: 'Vietnamese Shrimp',
+    formats: ['Pre-fried / Oven-ready Breaded Shrimp (13-15g/piece)'],
+    specifications: {
+      shelfLife: '18 months',
+      storage: '-18°C or lower',
+      packaging: '300g Tray x 20 / Carton or Custom OEM Pouch',
+      origin: 'Vietnam'
+    },
+    applications: ['Japanese Restaurants', 'Supermarket Freezer Section'],
+    seasonality: 'Year-round',
+    image: '/images/products/seafood/shrimp_breaded.jpeg'
+  },
+  {
+    id: 'shrimp-nobashi-ebi',
+    nameEn: 'Nobashi Stretched Shrimp (Ebi Fry)',
+    nameVi: 'Tôm Nobashi Duỗi Thẳng (Ebi Fry Format)',
+    scientificName: 'Litopenaeus vannamei',
+    category: 'shrimp',
+    subCategory: 'Vietnamese Shrimp',
+    formats: ['Stretched PDTO Shrimp (Sizes 16/20, 21/25, 26/30)'],
+    specifications: {
+      shelfLife: '18 months',
+      storage: '-18°C or lower',
+      packaging: '20 pieces/tray x 20 trays / Master Carton',
+      origin: 'Vietnam'
+    },
+    applications: ['Sushi Bars', 'Japanese Bento', 'Food Service'],
+    seasonality: 'Year-round',
+    image: '/images/products/seafood/shrimp_tempura.jpeg'
+  },
+  {
+    id: 'shrimp-skewers-marinated',
+    nameEn: 'Raw & Cooked Marinated Shrimp Skewers',
+    nameVi: 'Tôm Xiên Que Tẩm Ướp Gia Vị BBQ',
+    scientificName: 'Litopenaeus vannamei',
+    category: 'shrimp',
+    subCategory: 'Vietnamese Shrimp',
+    formats: ['Bamboo Skewers (4-5 shrimp/skewer, Garlic/Herb/Cajun)'],
+    specifications: {
+      shelfLife: '18 months',
+      storage: '-18°C or lower',
+      packaging: '500g Vacuum Pack x 10 / Carton',
+      origin: 'Vietnam'
+    },
+    applications: ['Barbecue Chains', 'Retail Ready Grill Section'],
+    seasonality: 'Year-round',
+    image: '/images/products/seafood/shrimp_skewers.jpeg'
+  },
+  {
+    id: 'shrimp-retail-assortment',
+    nameEn: 'Retail-Ready Value-Added Shrimp Assortment',
+    nameVi: 'Bộ Sản Phẩm Tôm Chế Biến Sẵn Đóng Túi Retail',
+    scientificName: 'Litopenaeus vannamei',
+    category: 'shrimp',
+    subCategory: 'Vietnamese Shrimp',
+    formats: ['Seasoned Shrimp, Shrimp Cakes, Garlic Butter Shrimp'],
+    specifications: {
+      shelfLife: '18 months',
+      storage: '-18°C or lower',
+      packaging: '400g / 500g Stand-up Zipper Pouch (Private Label)',
+      origin: 'Vietnam'
+    },
+    applications: ['Supermarket Chains', 'Retail Convenience Stores'],
+    seasonality: 'Year-round',
+    image: '/images/products/seafood/shrimp_retail_ready.jpeg'
+  },
+
+  // === SQUID & CALAMARI PRODUCTS ===
+  {
+    id: 'squid-whole-round',
+    nameEn: 'Wild Ocean Whole Round Squid',
+    nameVi: 'Mực Ống Nguyên Con Đánh Bắt Tự Nhiên',
+    scientificName: 'Photololigo edulis / Todarodes pacificus',
+    category: 'squid',
+    subCategory: 'Squid & Calamari',
+    formats: ['Whole Round Sea-Frozen', 'Sizes: 10-15cm, 15-20cm, 20-25cm, 25cm+'],
+    specifications: {
+      shelfLife: '24 months',
+      storage: '-18°C or lower',
+      packaging: '10kg Block / IQF Master Carton',
+      origin: 'Vietnam Sea Wild-Caught'
+    },
+    applications: ['Seafood Wholesalers', 'Processing Plants'],
+    seasonality: 'Year-round',
+    image: '/images/products/seafood/squid_whole_round.jpeg'
+  },
+  {
+    id: 'squid-whole-cleaned',
+    nameEn: 'Whole Cleaned Ocean Squid',
+    nameVi: 'Mực Ống Tự Nhiên Làm Sạch (Whole Cleaned)',
+    scientificName: 'Photololigo edulis',
+    category: 'squid',
+    subCategory: 'Squid & Calamari',
+    formats: ['Gutted, Ink Sac Removed, Wing-On, Head-On / Head-Off'],
+    specifications: {
+      shelfLife: '24 months',
+      storage: '-18°C or lower',
+      packaging: '1kg IQF Rider Bag x 10 / Master Carton',
+      origin: 'Vietnam'
+    },
+    applications: ['Seafood Restaurants', 'Stir-Fry & Grilling', 'Supermarket Retail'],
+    seasonality: 'Year-round',
+    image: '/images/products/seafood/squid_whole_cleaned.jpeg'
+  },
+  {
+    id: 'squid-skinless-tubes',
+    nameEn: 'Skinless Squid Tubes (U5, U7, U10)',
+    nameVi: 'Mực Thân Bỏ Da Đông Lạnh (Squid Tubes)',
+    scientificName: 'Photololigo edulis',
+    category: 'squid',
+    subCategory: 'Squid & Calamari',
+    formats: ['First Grade Skinless, Boneless Tubes', 'Sizes: U5, U7, U10, U20 (pcs/kg)'],
+    specifications: {
+      shelfLife: '24 months',
+      storage: '-18°C or lower',
+      packaging: '10kg IQF Bulk Carton or 1kg IVP Retail Bag',
+      origin: 'Vietnam'
+    },
+    applications: ['Catering Services', 'Calamari Ring Slicing', 'Industrial Plants'],
+    seasonality: 'Year-round',
+    image: '/images/products/seafood/squid_tubes.jpeg'
+  },
+  {
+    id: 'squid-iqf-rings',
+    nameEn: 'IQF Squid Rings (Raw / Blanched)',
+    nameVi: 'Mực Khoanh Đông Lạnh IQF (Squid Rings)',
+    scientificName: 'Photololigo edulis',
+    category: 'squid',
+    subCategory: 'Squid & Calamari',
+    formats: ['Diameter 3-7cm, Width 1-1.5cm', 'Raw & Blanched IQF'],
+    specifications: {
+      shelfLife: '24 months',
+      storage: '-18°C or lower',
+      packaging: '1kg IQF Printed Bag x 10 / Master Carton',
+      origin: 'Vietnam'
+    },
+    applications: ['Pizza Toppings', 'Seafood Mix', 'Mediterranean Cuisine'],
+    seasonality: 'Year-round',
+    image: '/images/products/seafood/squid_rings.jpeg'
+  },
+  {
+    id: 'squid-cleaned-tentacles',
+    nameEn: 'Cleaned Ocean Squid Tentacles',
+    nameVi: 'Râu Mực Biển Làm Sạch (Squid Tentacles)',
+    scientificName: 'Photololigo edulis',
+    category: 'squid',
+    subCategory: 'Squid & Calamari',
+    formats: ['Eyes-Off, Beak-Off Cleaned Tentacles'],
+    specifications: {
+      shelfLife: '24 months',
+      storage: '-18°C or lower',
+      packaging: '1kg IQF Bag x 10 / Carton or 2kg Interleaved Block',
+      origin: 'Vietnam'
+    },
+    applications: ['Asian Stir-Fry', 'Seafood Hotpot', 'Snack Manufacturing'],
+    seasonality: 'Year-round',
+    image: '/images/products/seafood/squid_tentacles.jpeg'
+  },
+  {
+    id: 'squid-wings-strips',
+    nameEn: 'Squid Wings & Cut Strips',
+    nameVi: 'Vè Mực & Mực Cắt Dải (Squid Wings & Strips)',
+    scientificName: 'Photololigo edulis',
+    category: 'squid',
+    subCategory: 'Squid & Calamari',
+    formats: ['Skinless Squid Wings', 'Strips 1x5cm, 1.5x7cm'],
+    specifications: {
+      shelfLife: '24 months',
+      storage: '-18°C or lower',
+      packaging: '10kg IQF Bulk Carton',
+      origin: 'Vietnam'
+    },
+    applications: ['Seafood Salad Mix', 'Industrial Food Processing'],
+    seasonality: 'Year-round',
+    image: '/images/products/seafood/squid_wings.jpeg'
+  },
+  {
+    id: 'squid-fillet-pineapple-cut',
+    nameEn: 'Pineapple-Cut Carved Squid Fillets',
+    nameVi: 'Mực Phi Lê Cắt Vảy Rồng (Pineapple Cut Squid)',
+    scientificName: 'Photololigo edulis',
+    category: 'squid',
+    subCategory: 'Squid & Calamari',
+    formats: ['Cross-Hatch Diamond Carved Fillet Sheets (4x6cm, 5x8cm)'],
+    specifications: {
+      shelfLife: '24 months',
+      storage: '-18°C or lower',
+      packaging: '1kg IQF Bag x 10 / Master Carton',
+      origin: 'Vietnam'
+    },
+    applications: ['Chinese & Asian Stir-Fry', 'High-End Seafood Buffets'],
+    seasonality: 'Year-round',
+    image: '/images/products/seafood/squid_fillets.jpeg'
+  },
+  {
+    id: 'squid-breaded-rings',
+    nameEn: 'Breaded Calamari Squid Rings',
+    nameVi: 'Mực Khoanh Tẩm Bột Chiên (Breaded Calamari)',
+    scientificName: 'Photololigo edulis',
+    category: 'squid',
+    subCategory: 'Squid & Calamari',
+    formats: ['Panko Breaded Rings (Pre-fried / Oven ready)'],
+    specifications: {
+      shelfLife: '18 months',
+      storage: '-18°C or lower',
+      packaging: '500g / 1kg Retail Color Pouch or 10kg HORECA Pack',
+      origin: 'Vietnam (OEM Available)'
+    },
+    applications: ['Fast Food & Bars', 'Finger Food Catering', 'Supermarket Retail'],
+    seasonality: 'Year-round',
+    image: '/images/products/seafood/squid_breaded_rings.jpeg'
+  },
+  {
+    id: 'squid-battered-strips',
+    nameEn: 'Battered Calamari Strips',
+    nameVi: 'Mực Cắt Dải Tẩm Bột Battered',
+    scientificName: 'Photololigo edulis',
+    category: 'squid',
+    subCategory: 'Squid & Calamari',
+    formats: ['Seasoned Batter Coated Strips'],
+    specifications: {
+      shelfLife: '18 months',
+      storage: '-18°C or lower',
+      packaging: '10kg Master Carton',
+      origin: 'Vietnam'
+    },
+    applications: ['Pub Food', 'Food Service'],
+    seasonality: 'Year-round',
+    image: '/images/products/seafood/squid_battered_calamari.jpeg'
+  },
+  {
+    id: 'squid-grilled-portions',
+    nameEn: 'Seasoned & Grilled Squid Portions',
+    nameVi: 'Mực Nướng Gia Vị Chế Biến Sẵn',
+    scientificName: 'Photololigo edulis',
+    category: 'squid',
+    subCategory: 'Squid & Calamari',
+    formats: ['Char-grilled Whole & Tube Portions'],
+    specifications: {
+      shelfLife: '18 months',
+      storage: '-18°C or lower',
+      packaging: '300g / 500g Vacuum Pouch',
+      origin: 'Vietnam'
+    },
+    applications: ['Ready Meals', 'Retail Ready'],
+    seasonality: 'Year-round',
+    image: '/images/products/seafood/squid_grilled_portions.jpeg'
+  },
+  {
+    id: 'squid-dried-export',
+    nameEn: 'Export Grade Sun-Dried Ocean Squid',
+    nameVi: 'Mực Khô Biển Tự Nhiên Xuất Khẩu',
+    scientificName: 'Photololigo edulis',
+    category: 'squid',
+    subCategory: 'Squid & Calamari',
+    formats: ['Natural Sun-Dried Whole Squid (Sizes: 10-15, 16-20, 21-25 pcs/kg)'],
+    specifications: {
+      shelfLife: '12 months',
+      storage: 'Cool dry condition (< 15°C) or Frozen (-18°C)',
+      packaging: '10kg Bulk Carton or 500g Vacuum Pack',
+      origin: 'Vietnam'
+    },
+    applications: ['Asian Specialty Stores', 'Gift Packs', 'Snack Processing'],
+    seasonality: 'Year-round',
+    image: '/images/products/seafood/squid_dried.jpeg'
+  },
+  {
     id: 'fresh-cavendish-banana',
     nameEn: 'Fresh Cavendish Banana',
     nameVi: 'Chuối Cavendish Tươi Xuất Khẩu',
@@ -1912,6 +3064,295 @@ export const PRODUCTS_LIST: ProductItem[] = [
     applications: ['Natural Food Color', 'Tea & Cocktails'],
     seasonality: 'Year-round',
     image: '/images/products/powders/powders_butterfly_pea_flower.png'
+  },
+  // === PUREE, JUICE & CONCENTRATE PRODUCTS ===
+  {
+    id: 'puree-durian',
+    nameEn: 'Frozen Durian Puree (Seedless)',
+    nameVi: 'Puree Sầu Riêng Đông Lạnh (Bỏ Hạt)',
+    scientificName: 'Durio zibethinus',
+    category: 'purees',
+    subCategory: 'Fruit Purees',
+    formats: ['Frozen Seedless Puree', 'Aseptic Puree'],
+    specifications: {
+      brix: '24 - 30°',
+      shelfLife: '24 months at -18°C',
+      storage: '-18°C or lower',
+      packaging: '10kg Vacuum Pouch / 200kg Aseptic Drum'
+    },
+    applications: ['Ice Cream & Gelato', 'Pastry & Bakery', 'Durian Beverages', 'Dessert Processing'],
+    seasonality: 'Year-round',
+    image: '/images/products/puree/puree_durian.png'
+  },
+  {
+    id: 'puree-avocado',
+    nameEn: 'Frozen Avocado Puree',
+    nameVi: 'Puree Bơ Đông Lạnh',
+    scientificName: 'Persea americana',
+    category: 'purees',
+    subCategory: 'Fruit Purees',
+    formats: ['Smooth Puree (Hass / 034 Variety)', 'Pulp Chunk'],
+    specifications: {
+      brix: 'Natural fruit sugar',
+      shelfLife: '18 months at -18°C',
+      storage: '-18°C or lower',
+      packaging: '5kg / 10kg Vacuum Pouch'
+    },
+    applications: ['Smoothies & Shakes', 'Guacamole & Dips', 'Baby Food', 'Cosmetic Formulations'],
+    seasonality: 'Main crop May - Oct',
+    image: '/images/products/puree/puree_avocado.png'
+  },
+  {
+    id: 'puree-red-dragon-fruit',
+    nameEn: 'Frozen Red Dragon Fruit Puree',
+    nameVi: 'Puree Thanh Long Ruột Đỏ Đông Lạnh',
+    scientificName: 'Hylocereus costaricensis',
+    category: 'purees',
+    subCategory: 'Fruit Purees',
+    formats: ['Seed-in Puree', 'Filtered Seedless Puree'],
+    specifications: {
+      brix: '12 - 15°',
+      shelfLife: '24 months at -18°C',
+      storage: '-18°C or lower',
+      packaging: '10kg / 20kg Aseptic Bag in Box / 200kg Drum'
+    },
+    applications: ['Smoothie Bases', 'Beverage Colorant', 'Ice Cream', 'Yogurt Toppings'],
+    seasonality: 'Year-round',
+    image: '/images/products/puree/puree_dragon_fruit.png'
+  },
+  {
+    id: 'puree-soursop',
+    nameEn: 'Frozen Soursop Puree / Pulp',
+    nameVi: 'Puree / Thịt Mãng Cầu Gai Đông Lạnh',
+    scientificName: 'Annona muricata',
+    category: 'purees',
+    subCategory: 'Fruit Purees',
+    formats: ['Seedless Pulp Puree', 'Coarse Puree'],
+    specifications: {
+      brix: '13 - 16°',
+      shelfLife: '24 months at -18°C',
+      storage: '-18°C or lower',
+      packaging: '10kg Vacuum Pouch / 200kg Drum'
+    },
+    applications: ['Nectars & Juices', 'Sorbet', 'Confectionery Fillings', 'Nutraceutical Drinks'],
+    seasonality: 'Year-round',
+    image: '/images/products/puree/puree_soursop.png'
+  },
+  {
+    id: 'puree-mango',
+    nameEn: 'Frozen Mango Puree (Cat Chu / Kaew Variety)',
+    nameVi: 'Puree Xoài Cát Chu / Xoài Keo Đông Lạnh',
+    scientificName: 'Mangifera indica',
+    category: 'purees',
+    subCategory: 'Fruit Purees',
+    formats: ['Smooth Aseptic Puree', 'Frozen Puree Block'],
+    specifications: {
+      brix: '14 - 18°',
+      shelfLife: '24 months at -18°C',
+      storage: '-18°C or lower',
+      packaging: '20kg Aseptic Bag in Box / 200kg Aseptic Steel Drum'
+    },
+    applications: ['Juice Blends', 'Baby Food', 'Bakery Glazes', 'Yogurt & Ice Cream'],
+    seasonality: 'Peak harvest Mar - Jul',
+    image: '/images/products/puree/puree_mango.png'
+  },
+  {
+    id: 'puree-strawberry',
+    nameEn: 'Frozen Strawberry Puree',
+    nameVi: 'Puree Dâu Tây Đông Lạnh',
+    scientificName: 'Fragaria × ananassa',
+    category: 'purees',
+    subCategory: 'Fruit Purees',
+    formats: ['Filtered Seedless Puree', 'Seed-in Puree'],
+    specifications: {
+      brix: '8 - 11°',
+      shelfLife: '24 months at -18°C',
+      storage: '-18°C or lower',
+      packaging: '10kg Pouch / 200kg Drum'
+    },
+    applications: ['Dessert Sauces', 'Fruit Preparations', 'Cocktail Mixers', 'Bakery Fillings'],
+    seasonality: 'Nov - Apr',
+    image: '/images/products/puree/puree_strawberry.png'
+  },
+  {
+    id: 'puree-pineapple',
+    nameEn: 'Frozen Pineapple Puree',
+    nameVi: 'Puree Dứa (Thơm) Đông Lạnh',
+    scientificName: 'Ananas comosus',
+    category: 'purees',
+    subCategory: 'Fruit Purees',
+    formats: ['Smooth Puree', 'Single-Strength Crush'],
+    specifications: {
+      brix: '12 - 14°',
+      shelfLife: '24 months at -18°C',
+      storage: '-18°C or lower',
+      packaging: '20kg Aseptic Bag / 200kg Drum'
+    },
+    applications: ['Tropical Juice Blends', 'Jams & Preserves', 'BBQ Marinades & Sauces'],
+    seasonality: 'Year-round',
+    image: '/images/products/puree/puree_pineapple.png'
+  },
+  {
+    id: 'puree-peach',
+    nameEn: 'Frozen Peach Puree',
+    nameVi: 'Puree Đào Đông Lạnh',
+    scientificName: 'Prunus persica',
+    category: 'purees',
+    subCategory: 'Fruit Purees',
+    formats: ['Smooth Golden Puree'],
+    specifications: {
+      brix: '11 - 14°',
+      shelfLife: '24 months at -18°C',
+      storage: '-18°C or lower',
+      packaging: '10kg Pouch / 200kg Drum'
+    },
+    applications: ['Peach Teas', 'Baby Food Purees', 'Fruit Spreads', 'Dairy Inclusions'],
+    seasonality: 'May - Aug',
+    image: '/images/products/puree/puree_peach.png'
+  },
+  {
+    id: 'juice-watermelon',
+    nameEn: 'Natural Watermelon Juice (Single Strength)',
+    nameVi: 'Nước Ép Dưa Hấu Nguyên Chất',
+    scientificName: 'Citrullus lanatus',
+    category: 'purees',
+    subCategory: 'Natural Juices',
+    formats: ['Single Strength Unsweetened Juice'],
+    specifications: {
+      brix: '8 - 10°',
+      shelfLife: '24 months at -18°C',
+      storage: '-18°C or lower',
+      packaging: '200kg Aseptic Drum / 20kg Bag in Box'
+    },
+    applications: ['RTD Cold-Pressed Beverages', 'Hydration Drinks', 'Ice Pops'],
+    seasonality: 'Year-round',
+    image: '/images/products/puree/juice_watermelon.png'
+  },
+  {
+    id: 'juice-passion-fruit',
+    nameEn: 'Natural Passion Fruit Juice (Seedless)',
+    nameVi: 'Nước Ép Chanh Dây Nguyên Chất (Bỏ Hạt)',
+    scientificName: 'Passiflora edulis',
+    category: 'purees',
+    subCategory: 'Natural Juices',
+    formats: ['Single Strength Seedless Juice', 'Juice with Seeds'],
+    specifications: {
+      brix: '13 - 16°',
+      shelfLife: '24 months at -18°C',
+      storage: '-18°C or lower',
+      packaging: '20kg Aseptic Bag / 200kg Drum'
+    },
+    applications: ['Acid Balance Beverage Mixers', 'Confectionery', 'Sauces & Dressing'],
+    seasonality: 'Year-round',
+    image: '/images/products/puree/juice_passion_fruit.png'
+  },
+  {
+    id: 'juice-pomelo',
+    nameEn: 'Natural Pink Pomelo Juice',
+    nameVi: 'Nước Ép Bưởi Hồng Nguyên Chất',
+    scientificName: 'Citrus maxima',
+    category: 'purees',
+    subCategory: 'Natural Juices',
+    formats: ['Single Strength Pulp Juice'],
+    specifications: {
+      brix: '9 - 11°',
+      shelfLife: '24 months at -18°C',
+      storage: '-18°C or lower',
+      packaging: '20kg Aseptic Bag / 200kg Drum'
+    },
+    applications: ['Detox Beverages', 'Citrus Juice Blends', 'Cocktail Bases'],
+    seasonality: 'Year-round',
+    image: '/images/products/puree/juice_pomelo.png'
+  },
+  {
+    id: 'juice-pineapple',
+    nameEn: 'Natural Pineapple Juice (Single Strength)',
+    nameVi: 'Nước Ép Dứa Nguyên Chất',
+    scientificName: 'Ananas comosus',
+    category: 'purees',
+    subCategory: 'Natural Juices',
+    formats: ['Single Strength Juice'],
+    specifications: {
+      brix: '12 - 14°',
+      shelfLife: '24 months at -18°C',
+      storage: '-18°C or lower',
+      packaging: '200kg Aseptic Drum'
+    },
+    applications: ['Canned Drinks', 'Beverage Bottling', 'Food Service'],
+    seasonality: 'Year-round',
+    image: '/images/products/puree/juice_pineapple.png'
+  },
+  {
+    id: 'concentrate-coconut',
+    nameEn: 'Coconut Water Concentrate 60° Brix',
+    nameVi: 'Nước Dừa Đậm Đặc 60° Brix',
+    scientificName: 'Cocos nucifera',
+    category: 'purees',
+    subCategory: 'Juice Concentrates',
+    formats: ['60° Brix High Concentrate'],
+    specifications: {
+      brix: '60° ± 1°',
+      shelfLife: '24 months at -18°C',
+      storage: '-18°C or lower',
+      packaging: '200kg Steel Drum with Aseptic Liner'
+    },
+    applications: ['Isotonic Drinks Reconstitution', 'Coconut Water Reconstitution', 'Flavoring'],
+    seasonality: 'Year-round',
+    image: '/images/products/puree/concentrate_coconut.png'
+  },
+  {
+    id: 'concentrate-pineapple',
+    nameEn: 'Pineapple Juice Concentrate 60° Brix',
+    nameVi: 'Nước Ép Dứa Đậm Đặc 60° Brix',
+    scientificName: 'Ananas comosus',
+    category: 'purees',
+    subCategory: 'Juice Concentrates',
+    formats: ['Clarified Concentrate 60° Brix', 'Cloudy Concentrate'],
+    specifications: {
+      brix: '60° ± 1°',
+      shelfLife: '24 months at -18°C',
+      storage: '-18°C or lower',
+      packaging: '250kg Aseptic Drum'
+    },
+    applications: ['Juice Manufacturing Reconstitution', 'Canned Fruit Syrup', 'Sweetener Replacement'],
+    seasonality: 'Year-round',
+    image: '/images/products/puree/concentrate_pineapple.png'
+  },
+  {
+    id: 'concentrate-passion-fruit',
+    nameEn: 'Passion Fruit Juice Concentrate 50° Brix',
+    nameVi: 'Nước Chanh Dây Đậm Đặc 50° Brix',
+    scientificName: 'Passiflora edulis',
+    category: 'purees',
+    subCategory: 'Juice Concentrates',
+    formats: ['Concentrate 50° Brix'],
+    specifications: {
+      brix: '50° ± 1°',
+      shelfLife: '24 months at -18°C',
+      storage: '-18°C or lower',
+      packaging: '200kg Aseptic Drum'
+    },
+    applications: ['Tropical Beverage Reconstitution', 'Candy & Syrup Manufacturing'],
+    seasonality: 'Year-round',
+    image: '/images/products/puree/concentrate_passion_fruit.png'
+  },
+  {
+    id: 'concentrate-mango',
+    nameEn: 'Mango Juice Concentrate 28-30° Brix',
+    nameVi: 'Nước Xoài Đậm Đặc 28-30° Brix',
+    scientificName: 'Mangifera indica',
+    category: 'purees',
+    subCategory: 'Juice Concentrates',
+    formats: ['Concentrated Puree 28-30° Brix'],
+    specifications: {
+      brix: '28 - 30°',
+      shelfLife: '24 months at -18°C',
+      storage: '-18°C or lower',
+      packaging: '215kg Aseptic Drum'
+    },
+    applications: ['Industrial Nectar Reconstitution', 'Yogurt Fruit Prep', 'Bakery Topping'],
+    seasonality: 'Mar - Jul',
+    image: '/images/products/puree/concentrate_mango.png'
   }
 ];
 
@@ -1985,7 +3426,21 @@ export const CATALOGUES_LIST: CatalogueInfo[] = [
     coverImage: '/images/products/IMG_7960.JPG',
     descEn: 'Cryogenic IQF frozen fruits and vegetables (-35°C freezing, -18°C storage) in free-flowing Dices, Slices, Halves, and Puree blocks for industrial food manufacturing.',
     descVi: 'Nông sản cấp đông siêu tốc IQF (-35°C) tơi rời dạng Hạt lựu, Lát, Nửa quả và Khối Puree phục vụ nhà máy chế biến thực phẩm và chuỗi HORECA.'
-  }
+  },
+  {
+    id: 'cat-purees-2026',
+    titleEn: 'Fruit Purees & Concentrates Catalogue 2026',
+    titleVi: 'Catalogue Trái Cây Xay Nhuyễn & Nước Ép Đậm Đặc 2026',
+    category: 'Purees & Concentrates',
+    pageCount: 8,
+    fileSize: '18.5 MB',
+    fileName: 'VAC_IQF_Puree_Catalogue_2026.pdf',
+    downloadUrl: '/catalogues/VAC_IQF_Puree_Catalogue_2026.pdf',
+    driveId: '1o3DgzPTqN9fjnEEsuFG-YnNzkG_A2aRj',
+    coverImage: '/images/products/puree/puree_mango.png',
+    descEn: 'Aseptic frozen fruit purees, seedless pulps, single-strength juices, and high-Brix concentrates for F&B industrial processing.',
+    descVi: 'Puree trái cây cấp đông vô trùng, thịt quả bỏ hạt, nước ép nguyên chất và nước ép đậm đặc Brix cao cho ngành chế biến F&B công nghiệp.'
+  },
 ];
 
 export const FORMAT_COMPARISONS: FormatComparison[] = [
@@ -2044,18 +3499,76 @@ export const FORMAT_COMPARISONS: FormatComparison[] = [
     shelfLifeEn: '24 months',
     shelfLifeVi: '24 tháng',
     link: '/products/iqf-fruits-vegetables'
-  }
+  },
+  {
+    formatKey: 'purees',
+    titleEn: 'Fruit Purees, Juices & Concentrates',
+    titleVi: 'Xay Nhuyễn & Đậm Đặc (Puree & Concentrate)',
+    bestSuitedEn: 'Beverage Bottling, Dairy & Ice Cream, Bakery Fillings, Jams/Sauces & Baby Food Plants',
+    bestSuitedVi: 'Nhà máy sản xuất đồ uống đóng chai, Sữa & Kem, Nhân bánh kẹo, Mứt/Sốt & Thực phẩm trẻ em',
+    advantageEn: '100% Homogeneous texture, zero fruit waste, standardized Brix/pH, smooth pumping in production',
+    advantageVi: 'Cấu trúc đồng nhất 100%, không hao hụt trái cây, chuẩn hóa Brix/pH, bơm rót dễ dàng trong dây chuyền',
+    storageEn: 'Deep freeze at -18°C for Purees, Ambient for Aseptic packaging',
+    storageVi: 'Bảo quản đông -18°C đối với Puree, hoặc nhiệt độ phòng cho bao bì Aseptic',
+    shelfLifeEn: '18 - 24 months',
+    shelfLifeVi: '18 - 24 tháng',
+    link: '/products/fruit-purees'
+  },
 ];
 
 export function getProductsByCategory(category: string): ProductItem[] {
-  return PRODUCTS_LIST.filter(p => p.category === category);
+  const norm = category.toLowerCase().trim();
+  if (norm === 'crops-plant-based' || norm === 'crops-plant-based-products' || norm === 'crops') {
+    return PRODUCTS_LIST.filter(p => ['fresh', 'powders', 'purees', 'freeze-dried', 'iqf'].includes(p.category));
+  }
+  if (norm === 'seafood' || norm === 'seafood-products' || norm === 'aquaculture-seafood') {
+    return PRODUCTS_LIST.filter(p => ['seafood', 'basa', 'shrimp', 'squid'].includes(p.category));
+  }
+  if (norm === 'basa' || norm === 'basa-fish-pangasius') {
+    return PRODUCTS_LIST.filter(p => p.category === 'basa');
+  }
+  if (norm === 'shrimp' || norm === 'vietnamese-shrimp') {
+    return PRODUCTS_LIST.filter(p => p.category === 'shrimp');
+  }
+  if (norm === 'squid' || norm === 'squid-products') {
+    return PRODUCTS_LIST.filter(p => p.category === 'squid');
+  }
+  if (norm === 'poultry' || norm === 'poultry-products') {
+    return PRODUCTS_LIST.filter(p => p.category === 'poultry');
+  }
+  if (norm === 'purees' || norm === 'fruit-purees' || norm === 'puree-products') {
+    return PRODUCTS_LIST.filter(p => p.category === 'purees');
+  }
+  return PRODUCTS_LIST.filter(p => p.category === norm || (CATEGORIES_DATA[norm] && CATEGORIES_DATA[norm].slug === p.category));
 }
 
 export function getCategoryInfo(slugOrId: string): CategoryInfo | undefined {
+  const norm = slugOrId.toLowerCase().trim();
   for (const cat of Object.values(CATEGORIES_DATA)) {
-    if (cat.id === slugOrId || cat.slug === slugOrId) {
+    if (cat.id === norm || cat.slug === norm) {
       return cat;
     }
+  }
+  if (norm === 'crops-plant-based' || norm === 'crops-plant-based-products' || norm === 'crops') {
+    return CATEGORIES_DATA['crops-plant-based'];
+  }
+  if (norm === 'seafood' || norm === 'seafood-products' || norm === 'aquaculture-seafood') {
+    return CATEGORIES_DATA['seafood'];
+  }
+  if (norm === 'basa' || norm === 'basa-fish-pangasius') {
+    return CATEGORIES_DATA['basa'];
+  }
+  if (norm === 'shrimp' || norm === 'vietnamese-shrimp') {
+    return CATEGORIES_DATA['shrimp'];
+  }
+  if (norm === 'squid' || norm === 'squid-products') {
+    return CATEGORIES_DATA['squid'];
+  }
+  if (norm === 'poultry' || norm === 'poultry-products') {
+    return CATEGORIES_DATA['poultry'];
+  }
+  if (norm === 'purees' || norm === 'fruit-purees' || norm === 'puree-products') {
+    return CATEGORIES_DATA['purees'];
   }
   return undefined;
 }

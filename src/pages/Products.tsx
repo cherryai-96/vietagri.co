@@ -3,95 +3,100 @@ import { Helmet } from 'react-helmet-async';
 import { useTranslation } from '../i18n';
 import { ProductHero } from '../components/products/ProductHero';
 import { ProductCategory } from '../components/products/ProductCategory';
-import { ProductInputCard } from '../components/products/ProductInputCard';
 import { ProductInquiryForm } from '../components/products/ProductInquiryForm';
 import { ProductCTA } from '../components/products/ProductCTA';
 
 import { motion } from 'framer-motion';
 
 export const Products: React.FC = () => {
-  const { t } = useTranslation();
+  const { language } = useTranslation();
 
-  const exportCategories = [
+  const mainCategories = [
     {
-      id: 'beverages',
-      image: '/images/products/coffee_cacao.png',
-      titleKey: 'products.cat1Title',
-      descKeys: ['products.cat1Desc1', 'products.cat1Desc2'],
-      tags: ['Coffee', 'Cacao'],
-    },
-    {
-      id: 'fruits',
+      id: 'crop-products',
+      titleEn: 'Crop & Plant-Based Products',
+      titleVi: 'Nông Sản & Sản Phẩm Từ Cây Trồng',
+      descEn: 'Explore Vietnamese fruit and vegetable products in fresh, powder, puree, frozen and individually quick frozen (IQF) formats. VAC works with growers and processors to match product varieties, processing methods, packaging and order volumes to the needs of importers, food manufacturers, food-service operators and retailers.',
+      descVi: 'Khám phá các sản phẩm trái cây và rau củ Việt Nam dưới các dạng tươi, bột, xay nhuyễn (puree), đông lạnh và cấp đông rời siêu tốc (IQF). VAC hợp tác với các vùng trồng và nhà máy chế biến để tối ưu hóa quy cách, phương pháp xử lý, đóng gói và sản lượng đáp ứng chính xác nhu cầu của nhà nhập khẩu, nhà máy thực phẩm và chuỗi bán lẻ.',
+      linkPath: '/products/fresh-fruits-vegetables',
+      linkTextEn: 'Explore Crop & Plant-Based Products',
+      linkTextVi: 'Xem Danh Mục Nông Sản & Cây Trồng',
+      tags: ['Fresh Produce', 'Dehydrated Powders', 'Fruit Purees, Juices & Concentrates', 'Freeze-Dried', 'IQF Frozen'],
       images: [
         '/images/products/fresh/fresh_banana.png',
         '/images/products/IMG_7967.JPG',
         '/images/products/IMG_7966.PNG',
         '/images/products/IMG_7958.JPG',
-        '/images/products/IMG_7960.JPG',
-        '/images/products/IMG_7961.JPG'
+        '/images/products/IMG_7960.JPG'
       ],
-      titleKey: 'products.cat2Title',
-      descKeys: ['products.cat2Desc1', 'products.cat2Desc2'],
-      tags: ['Cavendish Banana', 'Passion Fruit', 'Mango', 'Coconut', 'Durian', 'Pineapple'],
     },
     {
-      id: 'spices',
-      image: '/images/products/spices_nuts.png',
-      titleKey: 'products.cat3Title',
-      descKeys: ['products.cat3Desc1', 'products.cat3Desc2'],
-      tags: ['Cashews', 'Black Pepper', 'Cinnamon'],
+      id: 'poultry-products',
+      titleEn: 'Poultry Products',
+      titleVi: 'Sản Phẩm Gia Cầm Xuất Khẩu',
+      descEn: 'Source Vietnamese chicken products through two clearly defined supply channels: Halal-certified and conventional. Available product forms may include whole chicken, cuts, by-products and value-added products. VAC matches enquiries with suitable processing partners and coordinates specifications, cold-chain handling and required documentation. Halal certification is verified for the specific supplier, product and destination market.',
+      descVi: 'Nguồn cung ứng các sản phẩm thịt gà Việt Nam thông qua hai kênh cung ứng riêng biệt: Tiêu chuẩn Halal và Tiêu chuẩn thông thường. Danh mục sản phẩm bao gồm gà nguyên con, thịt gà cắt miếng, phụ phẩm và sản phẩm chế biến sâu. VAC kết nối yêu cầu thương mại với các đối tác chế biến phù hợp, quản lý chuỗi lạnh và hồ sơ chứng nhận Halal theo đúng thị trường đích.',
+      linkPath: '/products/poultry-products',
+      linkTextEn: 'Explore Poultry Products',
+      linkTextVi: 'Xem Danh Mục Sản Phẩm Gia Cầm',
+      tags: ['Halal-Certified', 'Conventional Chicken', 'Whole Bird & Cuts', 'By-Products', 'Value-Added'],
+      images: [
+        '/images/products/poultry/poultry_feet.png',
+        '/images/products/poultry/poultry_halal.png',
+        '/images/products/poultry/poultry_wings.png',
+        '/images/products/poultry/poultry_breast.png'
+      ],
     },
     {
-      id: 'grains',
-      image: '/images/products/premium_rice.png',
-      titleKey: 'products.cat4Title',
-      descKeys: ['products.cat4Desc1'],
-      tags: ['ST25 Rice'],
+      id: 'seafood-products',
+      titleEn: 'Aquaculture & Seafood Products',
+      titleVi: 'Sản Phẩm Thủy Hải Sản',
+      descEn: 'Discover Vietnamese Basa fish, shrimp and squid in a range of whole, cut, cleaned and frozen export formats. VAC coordinates species and origin information, processing specifications, size grades, packaging, quality documentation and cold-chain export arrangements with suitable seafood partners.',
+      descVi: 'Khám phá các sản phẩm Cá Basa, Tôm Việt Nam và Mực xuất khẩu với đa dạng dạng nguyên con, cắt khúc, làm sạch và cấp đông xuất khẩu. VAC phối hợp thông tin loài, nguồn gốc, quy cách chế biến, phân loại kích thước, đóng gói và hồ sơ xuất khẩu chuỗi lạnh với các nhà máy hải sản uy tín.',
+      linkPath: '/products/seafood-products',
+      linkTextEn: 'Explore Seafood Products',
+      linkTextVi: 'Xem Danh Mục Thủy Hải Sản',
+      tags: ['Basa Fish / Pangasius', 'Black Tiger & Vannamei Shrimp', 'Ocean Squid & Octopus', 'Frozen Export Formats'],
+      images: [
+        '/images/products/seafood/basa_p2_img1.png',
+        '/images/products/seafood/shrimp_p2_img1.png',
+        '/images/products/seafood/squid_p2_img1.jpeg',
+        '/images/products/seafood/basa_p3_img1.png'
+      ],
     },
     {
-      id: 'superfoods',
-      image: '/images/products/wolffia_superfood.png',
-      titleKey: 'products.cat5Title',
-      descKeys: ['products.cat5Desc1', 'products.cat5Desc2'],
-      tags: ['Việt Wolffia', 'Bio-Balance'],
-    },
-  ];
-
-  const inputProducts = [
-    {
-      id: 'soilz',
-      image: '/images/products/Bio.soilz.png',
-      titleKey: 'products.input1Title',
-      descKey: 'products.input1Desc',
-      benefitsKeys: ['products.input1Ben1', 'products.input1Ben2', 'products.input1Ben3', 'products.input1Ben4'],
-    },
-    {
-      id: 'manure',
-      image: '/images/products/Chicken_manure.png',
-      titleKey: 'products.input2Title',
-      descKey: 'products.input2Desc',
-      benefitsKeys: ['products.input2Ben1', 'products.input2Ben2', 'products.input2Ben3'],
-    },
-    {
-      id: 'cowdung',
-      image: '/images/products/Cow_dung.png',
-      titleKey: 'products.input3Title',
-      descKey: 'products.input3Desc',
-      benefitsKeys: ['products.input3Ben1', 'products.input3Ben2', 'products.input3Ben3'],
+      id: 'agricultural-inputs',
+      titleEn: 'Agriculture Inputs',
+      titleVi: 'Vật Tư & Nguyên Liệu Nông Nghiệp',
+      descEn: 'Explore VAC’s existing range of agriculture input products for growers and farming partners. Our team helps identify suitable products for different cultivation needs and coordinates product information, supply and technical guidance with the relevant partners.',
+      descVi: 'Khám phá danh mục giải pháp vật tư nông nghiệp của VAC dành cho người trồng và đối tác trang trại. Đội ngũ chuyên gia VAC tư vấn lựa chọn sản phẩm phù hợp với thổ nhưỡng, quy trình canh tác và phối hợp cung ứng kỹ thuật tối ưu hóa năng suất.',
+      linkPath: '/agricultural-inputs',
+      linkTextEn: 'Explore Agriculture Inputs',
+      linkTextVi: 'Xem Danh Mục Vật Tư Nông Nghiệp',
+      tags: ['Bio-Fertilizers', 'Organic Soil Conditioners', 'Microbial Activators', 'Sustainable Inputs'],
+      images: [
+        '/images/products/Bio.soilz.png',
+        '/images/products/Chicken_manure.png',
+        '/images/products/Cow_dung.png',
+        '/images/products/soil_activator.png'
+      ],
     },
   ];
 
   return (
-    <div className="w-full flex flex-col min-h-screen">
+    <div className="w-full flex flex-col min-h-screen bg-cream text-carbon">
       <Helmet>
-        <title>Products & Solutions | Vietnam Agriculture Center</title>
-        <meta name="description" content="Explore Vietnam Agriculture Center's premium agricultural exports, contract farming products, superfoods, botanical biomass, and sustainable agricultural inputs for regenerative, high-yield farming." />
+        <title>Our Products & Export Portfolio | Vietnam Agriculture Center</title>
+        <meta
+          name="description"
+          content="Vietnam Agriculture Center (VAC) connects international buyers with Vietnamese growers, processors and suppliers across four core product categories."
+        />
       </Helmet>
 
       {/* === HERO === */}
       <ProductHero />
 
-      {/* === PART 1: EXPORT & CONTRACT FARMING === */}
+      {/* === MAIN PRODUCTS OVERVIEW SECTION === */}
       <section id="part1" className="py-20 md:py-28 bg-ivory px-4 md:px-8">
         <div className="max-w-7xl mx-auto">
           {/* Section Header */}
@@ -100,27 +105,39 @@ export const Products: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
-            className="flex flex-col gap-4 mb-16 md:mb-20"
+            className="flex flex-col gap-5 mb-16 md:mb-20 max-w-4xl"
           >
-            <h2 className="font-serif font-bold text-[2rem] leading-[1.1] sm:text-3xl md:text-4xl lg:text-[2.75rem] tracking-wide text-forest w-full xl:whitespace-nowrap">
-              {t('products.part1Title')}
+            <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-gold-warm">
+              <span className="w-8 h-[2px] bg-gold-warm" />
+              <span>{language === 'vi' ? 'Tổng Quan Danh Mục Sản Phẩm' : 'Products Overview'}</span>
+            </div>
+
+            <h2 className="font-serif font-black text-3xl sm:text-4xl md:text-5xl tracking-wide text-forest uppercase leading-tight">
+              {language === 'vi' ? 'Sản Phẩm Của Chúng Tôi' : 'Our Products'}
             </h2>
-            <p className="font-sans font-light text-carbon/70 text-sm md:text-base leading-relaxed max-w-3xl">
-              {t('products.part1Intro')}
+
+            <p className="font-sans text-base md:text-lg text-carbon/80 leading-relaxed font-light text-justify">
+              {language === 'vi'
+                ? 'Trung Tâm Nông Nghiệp Việt Nam (VAC) kết nối các nhà mua hàng quốc tế với các vùng trồng, nhà chế biến và nhà cung ứng Việt Nam qua 4 nhóm sản phẩm chủ lực. Chúng tôi điều phối quy cách kỹ thuật, đối tác cung ứng phù hợp, đóng gói, chứng nhận chất lượng và thủ tục xuất khẩu đáp ứng chính xác tiêu chuẩn của từng sản phẩm và thị trường tiêu thụ.'
+                : 'Vietnam Agriculture Center (VAC) connects international buyers with Vietnamese growers, processors and suppliers across four product categories. We coordinate buyer specifications, suitable supply partners, packaging, quality documentation and export arrangements according to each product and destination market.'}
             </p>
           </motion.div>
 
-          {/* Product Categories — alternating layout */}
-          <div className="flex flex-col gap-10 md:gap-14">
-            {exportCategories.map((cat, idx) => (
+          {/* Product Categories — Alternating 4 Core Categories */}
+          <div className="flex flex-col gap-12 md:gap-16">
+            {mainCategories.map((cat, idx) => (
               <ProductCategory
                 key={cat.id}
                 id={cat.id}
-                image={cat.image}
-                images={cat.images}
-                titleKey={cat.titleKey}
-                descKeys={cat.descKeys}
+                titleEn={cat.titleEn}
+                titleVi={cat.titleVi}
+                descEn={cat.descEn}
+                descVi={cat.descVi}
+                linkPath={cat.linkPath}
+                linkTextEn={cat.linkTextEn}
+                linkTextVi={cat.linkTextVi}
                 tags={cat.tags}
+                images={cat.images}
                 reversed={idx % 2 !== 0}
               />
             ))}
@@ -128,65 +145,8 @@ export const Products: React.FC = () => {
         </div>
       </section>
 
-      {/* === DIVIDER BANNER (Part 1 → Part 2 transition) === */}
-      <section className="py-16 md:py-20 relative px-4 md:px-8 border-y border-gold-warm/20 text-cream overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <img src="/images/products/soil_activator.png" alt="Sustainable Farming" className="w-full h-full object-cover opacity-50" />
-          <div className="absolute inset-0 bg-forest/80 mix-blend-overlay" />
-          <div className="absolute inset-0 bg-carbon/70" />
-        </div>
-        <div className="max-w-3xl mx-auto text-center flex flex-col gap-4 items-center relative z-10">
-          <h2 className="font-serif text-balance text-[1.75rem] leading-[1.15] sm:text-3xl md:text-4xl font-bold text-gold-champagne">
-            {t('products.part2Title')}
-          </h2>
-          <p className="text-sm md:text-base text-cream/80 leading-relaxed font-light max-w-2xl">
-            {t('products.part2Intro')}
-          </p>
-          <div className="h-[1px] w-20 bg-gold-warm/40 my-1" />
-          <p className="text-xs uppercase tracking-widest text-gold-warm font-semibold">
-            Bio-Fertilizers • Soil Conditioners • Organic Inputs
-          </p>
-        </div>
-      </section>
-
-      {/* === PART 2: SUSTAINABLE AGRICULTURAL INPUTS === */}
-      <section id="inputs" className="py-20 md:py-28 bg-cream px-4 md:px-8">
-        <div className="max-w-7xl mx-auto">
-          {/* Section Header */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-            className="flex flex-col gap-4 mb-16 md:mb-20"
-          >
-            <h2 className="font-serif font-bold text-[2rem] leading-[1.1] sm:text-3xl md:text-4xl lg:text-[2.75rem] tracking-wide text-forest w-full xl:whitespace-nowrap">
-              {t('products.part2Title')}
-            </h2>
-            <p className="font-sans font-light text-carbon/70 text-sm md:text-base leading-relaxed max-w-3xl">
-              {t('products.part2Intro')}
-            </p>
-          </motion.div>
-
-          {/* Input Products — 3-column grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {inputProducts.map((input, idx) => (
-              <ProductInputCard
-                key={input.id}
-                id={input.id}
-                image={input.image}
-                titleKey={input.titleKey}
-                descKey={input.descKey}
-                benefitsKeys={input.benefitsKeys}
-                index={idx}
-              />
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* === INQUIRY FORM === */}
-      <section className="py-20 md:py-28 bg-ivory/80 px-4 md:px-8">
+      <section id="inquiry" className="py-20 md:py-28 bg-cream border-t border-gold-warm/20 px-4 md:px-8">
         <div className="max-w-4xl mx-auto">
           <ProductInquiryForm />
         </div>
@@ -197,3 +157,4 @@ export const Products: React.FC = () => {
     </div>
   );
 };
+

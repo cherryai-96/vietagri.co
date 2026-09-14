@@ -180,15 +180,21 @@ export const Contact: React.FC = () => {
                   <MapPin size={18} className="text-gold-warm shrink-0 mt-1" />
                   <span>No 59, Truong Dang Que Street, Hanh Thong Ward, Ho Chi Minh City, Vietnam, 71423</span>
                 </div>
-                <div className="flex items-center gap-4">
-                  <Phone size={18} className="text-gold-warm shrink-0" />
-                  <a href="tel:+84858741968" className="hover:text-gold-antique transition-colors font-mono">
-                    {t('common.phone')}
-                  </a>
+                <div className="flex items-start gap-4">
+                  <Phone size={18} className="text-gold-warm shrink-0 mt-1" />
+                  <div className="flex flex-wrap items-center gap-x-2 gap-y-1 font-mono">
+                    <a href="tel:+84858741968" className="hover:text-gold-antique transition-colors">
+                      +84 858 741 968
+                    </a>
+                    <span className="text-carbon/40">/</span>
+                    <a href="tel:+84376066194" className="hover:text-gold-antique transition-colors">
+                      +84 376 066 194
+                    </a>
+                  </div>
                 </div>
                 <div className="flex items-center gap-4">
                   <Mail size={18} className="text-gold-warm shrink-0" />
-                  <a href="mailto:inquiries@vietagri.co" className="hover:text-gold-antique transition-colors">
+                  <a href="mailto:export@vietagri.co" className="hover:text-gold-antique transition-colors">
                     {t('common.email')}
                   </a>
                 </div>

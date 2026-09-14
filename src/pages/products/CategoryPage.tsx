@@ -18,7 +18,7 @@ import {
 } from 'lucide-react';
 
 interface CategoryPageProps {
-  categoryKey?: 'fresh' | 'powders' | 'freeze-dried' | 'iqf';
+  categoryKey?: string;
 }
 
 export const CategoryPage: React.FC<CategoryPageProps> = ({ categoryKey: propCategoryKey }) => {
@@ -33,8 +33,8 @@ export const CategoryPage: React.FC<CategoryPageProps> = ({ categoryKey: propCat
   const [selectedSubCategory, setSelectedSubCategory] = useState<string>('all');
   const [selectedProduct, setSelectedProduct] = useState<ProductItem | null>(null);
 
-  // Subcategories for filtering
-  const subCategories = Array.from(new Set(products.map(p => p.subCategory).filter((s): s is string => Boolean(s))));
+  // Subcategories for filtering (excluding any value-added tabs)
+  const subCategories = Array.from(new Set(products.map(p => p.subCategory).filter((s): s is string => Boolean(s) && typeof s === 'string' && !s.toLowerCase().includes('value-added'))));
 
   const filteredProducts = products.filter(p => {
     const nameMatch =
@@ -182,9 +182,7 @@ export const CategoryPage: React.FC<CategoryPageProps> = ({ categoryKey: propCat
               <h2 className="font-serif text-2xl md:text-3xl font-bold text-forest uppercase">
                 {language === 'vi' ? `Danh Mục Sản Phẩm (${filteredProducts.length})` : `Product Portfolio (${filteredProducts.length})`}
               </h2>
-              <p className="text-xs md:text-sm text-carbon/70 mt-1 font-light">
-                {language === 'vi' ? 'Trích xuất chính xác theoCatalogue 2026 chính thức' : 'Extracted directly from Official 2026 Catalogue'}
-              </p>
+
             </div>
 
             {/* Controls */}
@@ -262,11 +260,11 @@ export const CategoryPage: React.FC<CategoryPageProps> = ({ categoryKey: propCat
                   transition={{ duration: 0.3 }}
                   className="bg-white rounded-xl border border-gold-warm/20 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group"
                 >
-                  <div className="relative h-48 w-full bg-carbon/5 overflow-hidden">
+                  <div className="relative h-56 w-full bg-ivory/40 border-b border-gold-warm/15 overflow-hidden flex items-center justify-center">
                     <img
                       src={p.image}
                       alt={p.nameEn}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      className="w-full h-full object-cover object-[center_65%] scale-[1.20] transition-transform duration-500 group-hover:scale-[1.30]"
                       onError={(e) => {
                         (e.target as HTMLElement).style.display = 'none';
                       }}
