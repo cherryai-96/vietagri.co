@@ -59,18 +59,7 @@ export const Header: React.FC = () => {
   const navLinks: NavItem[] = [
     { path: '/', label: t('nav.home') },
     { path: '/about', label: t('nav.about') },
-    {
-      path: '/services',
-      label: t('nav.services'),
-      isDropdown: true,
-      dropdownKey: 'services',
-      children: [
-        { path: '/services', label: language === 'vi' ? 'Tất cả dịch vụ' : 'All Services' },
-        { path: '/contract-farming', label: language === 'vi' ? 'Canh tác hợp đồng' : 'Contract Farming' },
-        { path: '/infrastructure-rd', label: language === 'vi' ? 'Cơ sở hạ tầng & R&D' : 'Infrastructure & R&D' },
-        { path: '/organic-consulting-certification', label: language === 'vi' ? 'Tư vấn hữu cơ' : 'Organic Consulting' },
-      ],
-    },
+    { path: '/services', label: t('nav.services') },
     {
       label: t('nav.products'),
       path: '/products',
