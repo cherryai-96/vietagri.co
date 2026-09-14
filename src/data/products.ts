@@ -1135,7 +1135,7 @@ export const PRODUCTS_LIST: ProductItem[] = [
   },
   {
     id: 'shrimp-retail-assortment',
-    nameEn: 'Retail-Ready Value-Added Shrimp Assortment',
+    nameEn: 'Retail-Ready Shrimp Assortment',
     nameVi: 'Bộ Sản Phẩm Tôm Chế Biến Sẵn Đóng Túi Retail',
     scientificName: 'Litopenaeus vannamei',
     category: 'shrimp',
