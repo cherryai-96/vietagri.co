@@ -570,24 +570,7 @@ export const Home: React.FC = () => {
 
       <DualBuyerPathways />
 
-      {/* Global Sourcing spotlight & Quality banner */}
-      <section className="py-20 relative px-4 md:px-8 border-y border-gold-warm/20 text-cream overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <img src="/images/global_logistics.png" alt="Global Sourcing" className="w-full h-full object-cover opacity-60" />
-          <div className="absolute inset-0 bg-forest/80 mix-blend-overlay" />
-          <div className="absolute inset-0 bg-carbon/70" />
-        </div>
-        <div className="max-w-4xl mx-auto text-center flex flex-col gap-6 items-center relative z-10">
-          <h2 className="font-serif text-balance text-[2rem] leading-[1.1] sm:text-4xl md:text-5xl font-bold text-gold-champagne"><span dangerouslySetInnerHTML={{ __html: t('home.trustTitle') }} /></h2>
-          <p className="text-sm md:text-base text-cream/80 leading-relaxed font-light max-w-2xl">
-            {t('home.trustDesc')}
-          </p>
-          <div className="h-[1px] w-24 bg-gold-warm/40 my-2" />
-          <p className="text-xs uppercase tracking-widest text-gold-warm font-semibold">
-            B2B Sourcing • Secure Trade Agents • Fully Trackable Shipments
-          </p>
-        </div>
-      </section>
+
 
       {/* CTA Partner Section */}
       <section className="py-24 bg-brown-soil text-cream relative px-4 md:px-8">
