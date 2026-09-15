@@ -72,7 +72,7 @@ export const Header: React.FC = () => {
           label: language === 'vi' ? 'Nông sản & Sản phẩm từ cây trồng' : 'Crop & Plant-Based Products',
           hasSub: true,
           subChildren: [
-            { path: '/products/fresh-fruits-vegetables', label: language === 'vi' ? 'Trái cây & Nông sản tươi' : 'Fresh Fruits & Produce' },
+            { path: '/products/fresh-fruits-vegetables', label: language === 'vi' ? 'Trái cây & Nông sản tươi' : 'Fresh Fruits & Vegetables' },
             { path: '/products/fruit-vegetable-powders', label: language === 'vi' ? 'Bột nông sản & Rau củ' : 'Fruit & Vegetable Powders' },
             { path: '/products/fruit-purees', label: language === 'vi' ? 'Puree & Nước ép trái cây (Fruit Purees, Juices & Concentrates)' : 'Fruit Purees, Juices & Concentrates' },
             { path: '/products/freeze-dried-fruits', label: language === 'vi' ? 'Trái cây sấy thăng hoa' : 'Freeze-Dried Fruits' },
