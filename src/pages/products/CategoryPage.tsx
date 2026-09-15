@@ -374,10 +374,6 @@ export const CategoryPage: React.FC<CategoryPageProps> = ({ categoryKey: propCat
                     </div>
                   )}
                   <div>
-                    <span className="text-xs text-gold-warm font-bold uppercase block">{language === 'vi' ? 'Hạn bảo quản:' : 'Shelf Life:'}</span>
-                    <span className="font-medium text-carbon">{selectedProduct.specifications.shelfLife}</span>
-                  </div>
-                  <div>
                     <span className="text-xs text-gold-warm font-bold uppercase block">{language === 'vi' ? 'Điều kiện lưu trữ:' : 'Storage:'}</span>
                     <span className="font-medium text-carbon">{selectedProduct.specifications.storage}</span>
                   </div>

@@ -433,10 +433,6 @@ export const CropsPlantBasedPage: React.FC = () => {
                     </div>
 
                     <div className="pt-3 border-t border-gold-warm/15 flex flex-col gap-2">
-                      <div className="flex justify-between text-[11px] text-carbon/70">
-                        <span>{language === 'vi' ? 'Hạn bảo quản:' : 'Shelf Life:'}</span>
-                        <span className="font-semibold text-forest">{p.specifications.shelfLife}</span>
-                      </div>
                       <button
                         onClick={() => setSelectedProduct(p)}
                         className="w-full mt-2 bg-gold-warm/15 hover:bg-gold-warm text-brown-soil font-bold text-xs uppercase tracking-wider py-2.5 rounded transition-all duration-300 flex items-center justify-center gap-2 border border-gold-warm/30 cursor-pointer"
@@ -500,10 +496,6 @@ export const CropsPlantBasedPage: React.FC = () => {
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs bg-ivory p-4 rounded-xl border border-gold-warm/15">
-                  <div>
-                    <span className="text-xs text-gold-warm font-bold uppercase block">{language === 'vi' ? 'Hạn bảo quản:' : 'Shelf Life:'}</span>
-                    <span className="font-medium text-carbon">{selectedProduct.specifications.shelfLife}</span>
-                  </div>
                   <div>
                     <span className="text-xs text-gold-warm font-bold uppercase block">{language === 'vi' ? 'Điều kiện lưu trữ:' : 'Storage:'}</span>
                     <span className="font-medium text-carbon">{selectedProduct.specifications.storage}</span>
