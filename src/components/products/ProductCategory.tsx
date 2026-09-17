@@ -88,6 +88,14 @@ export const ProductCategory: React.FC<ProductCategoryProps> = ({
               exit={{ opacity: 0, scale: 0.98 }}
               transition={{ duration: 0.7, ease: 'easeInOut' }}
               className="absolute inset-0 w-full h-full object-cover"
+              onError={(e) => {
+                const target = e.target as HTMLImageElement;
+                if (id === 'poultry-products') {
+                  target.src = '/images/products/poultry/poultry_halal_whole_chicken.jpeg';
+                } else if (id === 'seafood-products') {
+                  target.src = '/images/products/seafood/basa_well_trimmed_fillet.jpeg';
+                }
+              }}
             />
           )}
         </AnimatePresence>
