@@ -41,10 +41,12 @@ export const Products: React.FC = () => {
       linkTextVi: 'Xem Danh Mục Sản Phẩm Gia Cầm',
       tags: ['Halal-Certified', 'Conventional Chicken', 'Whole Bird & Cuts', 'By-Products', 'Value-Added'],
       images: [
-        '/images/products/poultry/poultry_feet.png',
-        '/images/products/poultry/poultry_halal.png',
-        '/images/products/poultry/poultry_wings.png',
-        '/images/products/poultry/poultry_breast.png'
+        '/images/products/poultry/poultry_halal_whole_chicken.jpeg',
+        '/images/products/poultry/poultry_boneless_breast.jpeg',
+        '/images/products/poultry/poultry_whole_wings.jpeg',
+        '/images/products/poultry/poultry_drumsticks.jpeg',
+        '/images/products/poultry/poultry_feet_paws.jpeg',
+        '/images/products/poultry/poultry_leg_quarters.jpeg'
       ],
     },
     {
@@ -58,10 +60,12 @@ export const Products: React.FC = () => {
       linkTextVi: 'Xem Danh Mục Thủy Hải Sản',
       tags: ['Basa Fish / Pangasius', 'Black Tiger & Vannamei Shrimp', 'Ocean Squid & Octopus', 'Frozen Export Formats'],
       images: [
-        '/images/products/seafood/basa_p2_img1.png',
-        '/images/products/seafood/shrimp_p2_img1.png',
-        '/images/products/seafood/squid_p2_img1.jpeg',
-        '/images/products/seafood/basa_p3_img1.png'
+        '/images/products/seafood/basa_well_trimmed_fillet.jpeg',
+        '/images/products/seafood/shrimp_hoso.jpeg',
+        '/images/products/seafood/squid_whole_cleaned.jpeg',
+        '/images/products/seafood/basa_steaks.jpeg',
+        '/images/products/seafood/shrimp_pto.jpeg',
+        '/images/products/seafood/squid_rings.jpeg'
       ],
     },
     {
