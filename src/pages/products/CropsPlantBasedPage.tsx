@@ -241,7 +241,7 @@ export const CropsPlantBasedPage: React.FC = () => {
                 titleVi: 'Bột Trái Cây & Rau Củ',
                 titleEn: 'Fruit & Veg Powders',
                 link: '/products/fruit-vegetable-powders',
-                img: '/images/products/categories/cat_powders.png',
+                img: '/images/products/powders/powders_fruit.png',
                 icon: Layers,
                 count: 16,
                 descVi: 'Bột sấy thăng hoa & chiết xuất hòa tan 100% độ mịn 80-100 mesh cho F&B'
@@ -274,7 +274,7 @@ export const CropsPlantBasedPage: React.FC = () => {
                 titleVi: 'Nông Sản Cấp Đông IQF',
                 titleEn: 'IQF Fruits & Vegetables',
                 link: '/products/iqf-fruits-vegetables',
-                img: '/images/products/categories/cat_iqf.png',
+                img: '/images/products/iqf/iqf_mango_dice.png',
                 icon: Snowflake,
                 count: 6,
                 descVi: 'Cấp đông rời siêu tốc -35°C, tơi rời 100% định lượng tự động dễ dàng'
