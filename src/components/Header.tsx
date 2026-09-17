@@ -258,19 +258,51 @@ export const Header: React.FC = () => {
                     <ChevronDown size={18} className={`transition-transform duration-300 ${(link.dropdownKey === 'products' ? mobileProductsOpen : mobileServicesOpen) ? 'rotate-180 text-gold-champagne' : ''}`} />
                   </button>
                   {((link.dropdownKey === 'products' ? mobileProductsOpen : mobileServicesOpen)) && (
-                    <div className="flex flex-col gap-2 mt-3 pl-4 border-l-2 border-gold-warm/30 ml-2">
+                    <div className="flex flex-col gap-2 mt-3 pl-3 border-l-2 border-gold-warm/30 ml-2">
+                      {/* Direct link to main Products / Services Overview page */}
+                      {link.path && (
+                        <NavLink
+                          to={link.path}
+                          onClick={() => setIsMobileMenuOpen(false)}
+                          className={({ isActive }) =>
+                            `font-sans text-sm font-bold tracking-wide py-2 text-gold-champagne hover:underline flex items-center justify-between border-b border-white/10 pb-2 ${
+                              isActive ? 'text-gold-champagne font-black' : ''
+                            }`
+                          }
+                        >
+                          <span>{language === 'vi' ? 'Tổng quan tất cả sản phẩm' : 'All Products Overview'}</span>
+                          <ChevronRight size={14} className="text-gold-warm" />
+                        </NavLink>
+                      )}
+
                       {link.children?.map((child, cIdx) => (
                         child.hasSub ? (
                           <div key={cIdx} className="flex flex-col gap-1 py-1">
-                            <button
-                              onClick={() => toggleMobileSub(child.label)}
-                              className="flex justify-between items-center font-sans text-sm font-semibold tracking-wide text-cream/80 hover:text-cream text-left w-full"
-                            >
-                              <span>{child.label}</span>
-                              <ChevronDown size={16} className={`transition-transform duration-200 ${openMobileSubCategories[child.label] ? 'rotate-180 text-gold-champagne' : ''}`} />
-                            </button>
+                            <div className="flex justify-between items-center w-full py-1">
+                              <NavLink
+                                to={child.path}
+                                onClick={() => setIsMobileMenuOpen(false)}
+                                className={({ isActive }) =>
+                                  `font-sans text-sm font-semibold tracking-wide text-cream/90 hover:text-gold-champagne text-left flex-grow pr-2 ${
+                                    isActive ? 'text-gold-champagne font-bold' : ''
+                                  }`
+                                }
+                              >
+                                {child.label}
+                              </NavLink>
+                              <button
+                                onClick={(e) => {
+                                  e.stopPropagation();
+                                  toggleMobileSub(child.label);
+                                }}
+                                className="p-1 text-gold-warm/80 hover:text-gold-champagne cursor-pointer"
+                                aria-label="Toggle sub-category"
+                              >
+                                <ChevronDown size={18} className={`transition-transform duration-200 ${openMobileSubCategories[child.label] ? 'rotate-180 text-gold-champagne' : ''}`} />
+                              </button>
+                            </div>
                             {openMobileSubCategories[child.label] && (
-                              <div className="flex flex-col gap-2 mt-2 pl-3 border-l border-white/10 ml-2">
+                              <div className="flex flex-col gap-2 mt-1 pl-3 border-l border-white/10 ml-2">
                                 {child.subChildren?.map((subChild, sIdx) => (
                                   <NavLink
                                     key={sIdx}
