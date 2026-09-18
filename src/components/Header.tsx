@@ -270,7 +270,7 @@ export const Header: React.FC = () => {
                             }`
                           }
                         >
-                          <span>{language === 'vi' ? 'Tổng quan tất cả sản phẩm' : 'All Products Overview'}</span>
+                          <span>{language === 'vi' ? 'Tổng quan sản phẩm' : 'Products Overview'}</span>
                           <ChevronRight size={14} className="text-gold-warm" />
                         </NavLink>
                       )}
