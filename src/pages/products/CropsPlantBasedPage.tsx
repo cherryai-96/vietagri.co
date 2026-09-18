@@ -65,16 +65,20 @@ export const CropsPlantBasedPage: React.FC = () => {
     <div className="w-full flex flex-col min-h-screen bg-cream text-carbon">
       <Helmet>
         <title>
-          {language === 'vi'
-            ? 'Nông Sản & Sản Phẩm Từ Cây Trồng | Vietnam Agriculture Center'
-            : 'Crops & Plant-Based Products | Vietnam Agriculture Center'}
+          {language === 'zh'
+            ? '农产品与植物基产品 | Vietnam Agriculture Center'
+            : (language === 'vi'
+              ? 'Nông Sản & Sản Phẩm Từ Cây Trồng | Vietnam Agriculture Center'
+              : 'Crops & Plant-Based Products | Vietnam Agriculture Center')}
         </title>
         <meta
           name="description"
           content={
-            language === 'vi'
-              ? 'Khám phá danh mục nông sản tươi, bột trái cây & rau củ, puree, trái cây sấy thăng hoa và sản phẩm cấp đông IQF của VAC phục vụ cung ứng B2B quốc tế.'
-              : 'Explore VAC’s fresh fruits and vegetables, fruit and vegetable powders, purees, freeze-dried fruits and IQF products for international B2B sourcing.'
+            language === 'zh'
+              ? '探索VAC的鲜果蔬菜、果蔬果粉、果浆浓缩汁、冻干水果及IQF单体速冻产品，服务国际B2B采购。'
+              : (language === 'vi'
+                ? 'Khám phá danh mục nông sản tươi, bột trái cây & rau củ, puree, trái cây sấy thăng hoa và sản phẩm cấp đông IQF của VAC phục vụ cung ứng B2B quốc tế.'
+                : 'Explore VAC’s fresh fruits and vegetables, fruit and vegetable powders, purees, freeze-dried fruits and IQF products for international B2B sourcing.')
           }
         />
       </Helmet>
@@ -94,15 +98,15 @@ export const CropsPlantBasedPage: React.FC = () => {
           {/* Breadcrumb */}
           <div className="flex items-center gap-2 text-xs md:text-sm text-gold-warm/80 mb-6 uppercase tracking-wider font-semibold">
             <Link to="/" className="hover:text-gold-champagne transition-colors">
-              {language === 'vi' ? 'Trang chủ' : 'Home'}
+              {language === 'zh' ? '首页' : (language === 'vi' ? 'Trang chủ' : 'Home')}
             </Link>
             <ChevronRight size={14} />
             <Link to="/products" className="hover:text-gold-champagne transition-colors">
-              {language === 'vi' ? 'Sản phẩm' : 'Products'}
+              {language === 'zh' ? '产品中心' : (language === 'vi' ? 'Sản phẩm' : 'Products')}
             </Link>
             <ChevronRight size={14} />
             <span className="text-cream font-bold">
-              {language === 'vi' ? catInfo.titleVi : catInfo.titleEn}
+              {language === 'zh' ? (catInfo.titleZh || catInfo.titleEn) : (language === 'vi' ? catInfo.titleVi : catInfo.titleEn)}
             </span>
           </div>
 
@@ -118,10 +122,10 @@ export const CropsPlantBasedPage: React.FC = () => {
                   CROPS & PLANT-BASED ECOSYSTEM
                 </span>
                 <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-black text-white leading-tight uppercase">
-                  {language === 'vi' ? catInfo.titleVi : catInfo.titleEn}
+                  {language === 'zh' ? (catInfo.titleZh || catInfo.titleEn) : (language === 'vi' ? catInfo.titleVi : catInfo.titleEn)}
                 </h1>
                 <p className="text-lg md:text-xl text-gold-champagne font-medium mt-3">
-                  {language === 'vi' ? catInfo.subtitleVi : catInfo.subtitleEn}
+                  {language === 'zh' ? (catInfo.subtitleZh || catInfo.subtitleEn) : (language === 'vi' ? catInfo.subtitleVi : catInfo.subtitleEn)}
                 </p>
               </motion.div>
 
@@ -131,7 +135,7 @@ export const CropsPlantBasedPage: React.FC = () => {
                 transition={{ delay: 0.2, duration: 0.6 }}
                 className="text-sm md:text-base text-cream/80 leading-relaxed font-light text-justify max-w-3xl"
               >
-                {language === 'vi' ? catInfo.descriptionVi : catInfo.descriptionEn}
+                {language === 'zh' ? (catInfo.descriptionZh || catInfo.descriptionEn) : (language === 'vi' ? catInfo.descriptionVi : catInfo.descriptionEn)}
               </motion.p>
 
               <motion.div
@@ -146,13 +150,13 @@ export const CropsPlantBasedPage: React.FC = () => {
                   className="bg-gold-warm hover:bg-gold-champagne text-brown-soil px-6 py-3.5 rounded font-bold text-xs md:text-sm uppercase tracking-wider transition-all duration-300 shadow-lg flex items-center gap-2 group hover:scale-[1.02]"
                 >
                   <Download size={16} />
-                  <span>{language === 'vi' ? 'Tải Catalogue 2026 (PDF)' : 'Download Catalogue 2026'}</span>
+                  <span>{language === 'zh' ? '下载 2026 产品目录 (PDF)' : (language === 'vi' ? 'Tải Catalogue 2026 (PDF)' : 'Download Catalogue 2026')}</span>
                 </a>
                 <button
                   onClick={() => scrollToSection('portfolio')}
                   className="bg-white/10 hover:bg-white/20 border border-gold-warm/40 text-cream px-6 py-3.5 rounded font-bold text-xs md:text-sm uppercase tracking-wider transition-all duration-300 flex items-center gap-2 cursor-pointer"
                 >
-                  <span>{language === 'vi' ? 'Xem Danh Mục 66 Sản Phẩm' : 'Explore 66 Products'}</span>
+                  <span>{language === 'zh' ? '探索全系66款农产品' : (language === 'vi' ? 'Xem Danh Mục 66 Sản Phẩm' : 'Explore 66 Products')}</span>
                   <ArrowRight size={16} />
                 </button>
               </motion.div>
@@ -162,25 +166,25 @@ export const CropsPlantBasedPage: React.FC = () => {
             <div className="lg:col-span-4 bg-carbon-light/90 border border-gold-warm/25 rounded-2xl p-6 backdrop-blur-md shadow-2xl">
               <h3 className="font-serif text-lg font-bold text-cream mb-4 flex items-center gap-2 border-b border-gold-warm/20 pb-3">
                 <FileText size={18} className="text-gold-warm" />
-                <span>{language === 'vi' ? 'Thông Số Tiêu Chuẩn Nông Sản' : 'Crops Portfolio Standard'}</span>
+                <span>{language === 'zh' ? '农产品组合技术标准' : (language === 'vi' ? 'Thông Số Tiêu Chuẩn Nông Sản' : 'Crops Portfolio Standard')}</span>
               </h3>
               <div className="flex flex-col gap-4 text-xs md:text-sm">
                 <div>
-                  <span className="text-gold-warm font-semibold uppercase text-[11px] block">{language === 'vi' ? '5 Định dạng chế biến:' : '5 Core Formats:'}</span>
+                  <span className="text-gold-warm font-semibold uppercase text-[11px] block">{language === 'zh' ? '5大核心加工规格:' : (language === 'vi' ? '5 Định dạng chế biến:' : '5 Core Formats:')}</span>
                   <span className="text-cream/90 font-light">
-                    {(language === 'vi' ? catInfo.availableCutsVi : catInfo.availableCutsEn).join(' • ')}
+                    {(language === 'zh' ? (catInfo.availableCutsZh || catInfo.availableCutsEn) : (language === 'vi' ? catInfo.availableCutsVi : catInfo.availableCutsEn)).join(' • ')}
                   </span>
                 </div>
                 <div>
-                  <span className="text-gold-warm font-semibold uppercase text-[11px] block">{language === 'vi' ? 'Đóng gói chuẩn B2B xuất khẩu:' : 'Export B2B Packaging:'}</span>
+                  <span className="text-gold-warm font-semibold uppercase text-[11px] block">{language === 'zh' ? 'B2B出口标准包装:' : (language === 'vi' ? 'Đóng gói chuẩn B2B xuất khẩu:' : 'Export B2B Packaging:')}</span>
                   <span className="text-cream/90 font-light">
-                    {language === 'vi' ? catInfo.defaultPackagingVi : catInfo.defaultPackagingEn}
+                    {language === 'zh' ? (catInfo.defaultPackagingZh || catInfo.defaultPackagingEn) : (language === 'vi' ? catInfo.defaultPackagingVi : catInfo.defaultPackagingEn)}
                   </span>
                 </div>
                 <div>
-                  <span className="text-gold-warm font-semibold uppercase text-[11px] block">{language === 'vi' ? 'Bảo quản & Kiểm soát chất lượng:' : 'Storage & Quality Control:'}</span>
+                  <span className="text-gold-warm font-semibold uppercase text-[11px] block">{language === 'zh' ? '储运与质量控制:' : (language === 'vi' ? 'Bảo quản & Kiểm soát chất lượng:' : 'Storage & Quality Control:')}</span>
                   <span className="text-cream/90 font-light">
-                    {language === 'vi' ? catInfo.storageVi : catInfo.storageEn}
+                    {language === 'zh' ? (catInfo.storageZh || catInfo.storageEn) : (language === 'vi' ? catInfo.storageVi : catInfo.storageEn)}
                   </span>
                 </div>
               </div>
@@ -193,7 +197,7 @@ export const CropsPlantBasedPage: React.FC = () => {
       <section className="py-12 bg-ivory border-b border-gold-warm/15 px-4 md:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {(language === 'vi' ? catInfo.highlightsVi : catInfo.highlightsEn).map((h, i) => (
+            {(language === 'zh' ? (catInfo.highlightsZh || catInfo.highlightsEn) : (language === 'vi' ? catInfo.highlightsVi : catInfo.highlightsEn)).map((h, i) => (
               <div key={i} className="bg-white p-5 rounded-xl border border-gold-warm/15 shadow-sm flex items-start gap-3">
                 <CheckCircle className="text-forest-fresh shrink-0 mt-0.5" size={20} />
                 <span className="text-xs md:text-sm text-carbon/90 font-medium leading-relaxed">{h}</span>

@@ -2,6 +2,7 @@ export interface ProductItem {
   id: string;
   nameEn: string;
   nameVi: string;
+  nameZh?: string;
   scientificName?: string;
   category: 'fresh' | 'powders' | 'freeze-dried' | 'iqf' | 'poultry' | 'seafood' | 'basa' | 'shrimp' | 'squid' | string;
   subCategory?: string;
@@ -24,27 +25,35 @@ export interface CategoryInfo {
   slug: string;
   titleEn: string;
   titleVi: string;
+  titleZh?: string;
   subtitleEn: string;
   subtitleVi: string;
+  subtitleZh?: string;
   heroImage: string;
   catalogueFileName: string;
   catalogueDriveId: string;
   descriptionEn: string;
   descriptionVi: string;
+  descriptionZh?: string;
   highlightsEn: string[];
   highlightsVi: string[];
+  highlightsZh?: string[];
   availableCutsEn: string[];
   availableCutsVi: string[];
+  availableCutsZh?: string[];
   defaultPackagingEn: string;
   defaultPackagingVi: string;
+  defaultPackagingZh?: string;
   storageEn: string;
   storageVi: string;
+  storageZh?: string;
 }
 
 export interface CatalogueInfo {
   id: string;
   titleEn: string;
   titleVi: string;
+  titleZh?: string;
   category: string;
   pageCount: number;
   fileSize: string;
@@ -54,20 +63,26 @@ export interface CatalogueInfo {
   coverImage: string;
   descEn: string;
   descVi: string;
+  descZh?: string;
 }
 
 export interface FormatComparison {
   formatKey: 'fresh' | 'powders' | 'freeze-dried' | 'iqf' | 'purees';
   titleEn: string;
   titleVi: string;
+  titleZh?: string;
   bestSuitedEn: string;
   bestSuitedVi: string;
+  bestSuitedZh?: string;
   advantageEn: string;
   advantageVi: string;
+  advantageZh?: string;
   storageEn: string;
   storageVi: string;
+  storageZh?: string;
   shelfLifeEn: string;
   shelfLifeVi: string;
+  shelfLifeZh?: string;
   link: string;
 }
 
@@ -3571,4 +3586,95 @@ export function getCategoryInfo(slugOrId: string): CategoryInfo | undefined {
     return CATEGORIES_DATA['purees'];
   }
   return undefined;
+}
+
+// Localized getter functions for Chinese (zh), Vietnamese (vi), English (en)
+export function getLocalizedProductName(item: ProductItem, lang: string): string {
+  if (lang === 'zh' && item.nameZh) return item.nameZh;
+  if (lang === 'vi') return item.nameVi;
+  return item.nameEn;
+}
+
+export function getLocalizedCategoryTitle(cat: CategoryInfo, lang: string): string {
+  if (lang === 'zh' && cat.titleZh) return cat.titleZh;
+  if (lang === 'vi') return cat.titleVi;
+  return cat.titleEn;
+}
+
+export function getLocalizedCategorySubtitle(cat: CategoryInfo, lang: string): string {
+  if (lang === 'zh' && cat.subtitleZh) return cat.subtitleZh;
+  if (lang === 'vi') return cat.subtitleVi;
+  return cat.subtitleEn;
+}
+
+export function getLocalizedCategoryDesc(cat: CategoryInfo, lang: string): string {
+  if (lang === 'zh' && cat.descriptionZh) return cat.descriptionZh;
+  if (lang === 'vi') return cat.descriptionVi;
+  return cat.descriptionEn;
+}
+
+export function getLocalizedCategoryHighlights(cat: CategoryInfo, lang: string): string[] {
+  if (lang === 'zh' && cat.highlightsZh && cat.highlightsZh.length > 0) return cat.highlightsZh;
+  if (lang === 'vi') return cat.highlightsVi;
+  return cat.highlightsEn;
+}
+
+export function getLocalizedCategoryCuts(cat: CategoryInfo, lang: string): string[] {
+  if (lang === 'zh' && cat.availableCutsZh && cat.availableCutsZh.length > 0) return cat.availableCutsZh;
+  if (lang === 'vi') return cat.availableCutsVi;
+  return cat.availableCutsEn;
+}
+
+export function getLocalizedCategoryPackaging(cat: CategoryInfo, lang: string): string {
+  if (lang === 'zh' && cat.defaultPackagingZh) return cat.defaultPackagingZh;
+  if (lang === 'vi') return cat.defaultPackagingVi;
+  return cat.defaultPackagingEn;
+}
+
+export function getLocalizedCategoryStorage(cat: CategoryInfo, lang: string): string {
+  if (lang === 'zh' && cat.storageZh) return cat.storageZh;
+  if (lang === 'vi') return cat.storageVi;
+  return cat.storageEn;
+}
+
+export function getLocalizedCatalogueTitle(cat: CatalogueInfo, lang: string): string {
+  if (lang === 'zh' && cat.titleZh) return cat.titleZh;
+  if (lang === 'vi') return cat.titleVi;
+  return cat.titleEn;
+}
+
+export function getLocalizedCatalogueDesc(cat: CatalogueInfo, lang: string): string {
+  if (lang === 'zh' && cat.descZh) return cat.descZh;
+  if (lang === 'vi') return cat.descVi;
+  return cat.descEn;
+}
+
+export function getLocalizedFormatTitle(fmt: FormatComparison, lang: string): string {
+  if (lang === 'zh' && fmt.titleZh) return fmt.titleZh;
+  if (lang === 'vi') return fmt.titleVi;
+  return fmt.titleEn;
+}
+
+export function getLocalizedFormatBestSuited(fmt: FormatComparison, lang: string): string {
+  if (lang === 'zh' && fmt.bestSuitedZh) return fmt.bestSuitedZh;
+  if (lang === 'vi') return fmt.bestSuitedVi;
+  return fmt.bestSuitedEn;
+}
+
+export function getLocalizedFormatAdvantage(fmt: FormatComparison, lang: string): string {
+  if (lang === 'zh' && fmt.advantageZh) return fmt.advantageZh;
+  if (lang === 'vi') return fmt.advantageVi;
+  return fmt.advantageEn;
+}
+
+export function getLocalizedFormatStorage(fmt: FormatComparison, lang: string): string {
+  if (lang === 'zh' && fmt.storageZh) return fmt.storageZh;
+  if (lang === 'vi') return fmt.storageVi;
+  return fmt.storageEn;
+}
+
+export function getLocalizedFormatShelfLife(fmt: FormatComparison, lang: string): string {
+  if (lang === 'zh' && fmt.shelfLifeZh) return fmt.shelfLifeZh;
+  if (lang === 'vi') return fmt.shelfLifeVi;
+  return fmt.shelfLifeEn;
 }

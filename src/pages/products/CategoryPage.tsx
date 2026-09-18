@@ -2,7 +2,19 @@ import React, { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useParams, Link } from 'react-router-dom';
 import { useTranslation } from '../../i18n';
-import { getCategoryInfo, getProductsByCategory, type ProductItem } from '../../data/products';
+import { 
+  getCategoryInfo, 
+  getProductsByCategory, 
+  type ProductItem,
+  getLocalizedCategoryTitle,
+  getLocalizedCategorySubtitle,
+  getLocalizedCategoryDesc,
+  getLocalizedCategoryHighlights,
+  getLocalizedCategoryCuts,
+  getLocalizedCategoryPackaging,
+  getLocalizedCategoryStorage,
+  getLocalizedProductName
+} from '../../data/products';
 import { ProductInquiryForm } from '../../components/products/ProductInquiryForm';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
@@ -33,11 +45,21 @@ export const CategoryPage: React.FC<CategoryPageProps> = ({ categoryKey: propCat
   const [selectedSubCategory, setSelectedSubCategory] = useState<string>('all');
   const [selectedProduct, setSelectedProduct] = useState<ProductItem | null>(null);
 
+  const categoryTitle = getLocalizedCategoryTitle(catInfo, language);
+  const categorySubtitle = getLocalizedCategorySubtitle(catInfo, language);
+  const categoryDesc = getLocalizedCategoryDesc(catInfo, language);
+  const categoryHighlights = getLocalizedCategoryHighlights(catInfo, language);
+  const categoryCuts = getLocalizedCategoryCuts(catInfo, language);
+  const categoryPackaging = getLocalizedCategoryPackaging(catInfo, language);
+  const categoryStorage = getLocalizedCategoryStorage(catInfo, language);
+
   // Subcategories for filtering (excluding any value-added tabs)
   const subCategories = Array.from(new Set(products.map(p => p.subCategory).filter((s): s is string => Boolean(s) && typeof s === 'string' && !s.toLowerCase().includes('value-added'))));
 
   const filteredProducts = products.filter(p => {
+    const pName = getLocalizedProductName(p, language);
     const nameMatch =
+      pName.toLowerCase().includes(searchQuery.toLowerCase()) ||
       p.nameEn.toLowerCase().includes(searchQuery.toLowerCase()) ||
       p.nameVi.toLowerCase().includes(searchQuery.toLowerCase()) ||
       (p.scientificName && p.scientificName.toLowerCase().includes(searchQuery.toLowerCase()));
@@ -49,10 +71,10 @@ export const CategoryPage: React.FC<CategoryPageProps> = ({ categoryKey: propCat
   return (
     <div className="w-full flex flex-col min-h-screen bg-cream text-carbon">
       <Helmet>
-        <title>{`${language === 'vi' ? catInfo.titleVi : catInfo.titleEn} | Vietnam Agriculture Center`}</title>
+        <title>{`${categoryTitle} | Vietnam Agriculture Center`}</title>
         <meta
           name="description"
-          content={language === 'vi' ? catInfo.descriptionVi : catInfo.descriptionEn}
+          content={categoryDesc}
         />
       </Helmet>
 
@@ -70,11 +92,11 @@ export const CategoryPage: React.FC<CategoryPageProps> = ({ categoryKey: propCat
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           {/* Breadcrumb */}
           <div className="flex items-center gap-2 text-xs md:text-sm text-gold-warm/80 mb-6 uppercase tracking-wider font-semibold">
-            <Link to="/" className="hover:text-gold-champagne transition-colors">Home</Link>
+            <Link to="/" className="hover:text-gold-champagne transition-colors">{language === 'zh' ? '首页' : (language === 'vi' ? 'Trang chủ' : 'Home')}</Link>
             <ChevronRight size={14} />
-            <Link to="/products" className="hover:text-gold-champagne transition-colors">Products</Link>
+            <Link to="/products" className="hover:text-gold-champagne transition-colors">{language === 'zh' ? '产品中心' : (language === 'vi' ? 'Sản phẩm' : 'Products')}</Link>
             <ChevronRight size={14} />
-            <span className="text-cream font-bold">{language === 'vi' ? catInfo.titleVi : catInfo.titleEn}</span>
+            <span className="text-cream font-bold">{categoryTitle}</span>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
@@ -86,13 +108,13 @@ export const CategoryPage: React.FC<CategoryPageProps> = ({ categoryKey: propCat
               >
                 <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gold-warm/15 border border-gold-warm/30 text-gold-warm text-xs font-bold uppercase tracking-widest mb-4">
                   <Sparkles size={14} />
-                  {language === 'vi' ? 'Định Dạng Chế Biến Chuyên Sâu' : 'Specialized Processing Format'}
+                  {language === 'zh' ? '专业加工规格' : (language === 'vi' ? 'Định Dạng Chế Biến Chuyên Sâu' : 'Specialized Processing Format')}
                 </span>
                 <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-black text-white leading-tight uppercase">
-                  {language === 'vi' ? catInfo.titleVi : catInfo.titleEn}
+                  {categoryTitle}
                 </h1>
                 <p className="text-lg md:text-xl text-gold-champagne font-medium mt-3">
-                  {language === 'vi' ? catInfo.subtitleVi : catInfo.subtitleEn}
+                  {categorySubtitle}
                 </p>
               </motion.div>
 
@@ -102,7 +124,7 @@ export const CategoryPage: React.FC<CategoryPageProps> = ({ categoryKey: propCat
                 transition={{ delay: 0.2, duration: 0.6 }}
                 className="text-sm md:text-base text-cream/80 leading-relaxed font-light text-justify"
               >
-                {language === 'vi' ? catInfo.descriptionVi : catInfo.descriptionEn}
+                {categoryDesc}
               </motion.p>
 
               <motion.div
@@ -117,13 +139,13 @@ export const CategoryPage: React.FC<CategoryPageProps> = ({ categoryKey: propCat
                   className="bg-gold-warm hover:bg-gold-champagne text-brown-soil px-6 py-3.5 rounded font-bold text-xs md:text-sm uppercase tracking-wider transition-all duration-300 shadow-lg flex items-center gap-2 group hover:scale-[1.02]"
                 >
                   <Download size={16} />
-                  <span>{language === 'vi' ? 'Tải Catalogue 2026 (PDF)' : 'Download Format Catalogue'}</span>
+                  <span>{language === 'zh' ? '下载规格目录 (PDF)' : (language === 'vi' ? 'Tải Catalogue 2026 (PDF)' : 'Download Format Catalogue')}</span>
                 </a>
                 <a
                   href="#inquiry"
                   className="border border-gold-warm/40 hover:border-gold-champagne hover:bg-gold-warm/10 text-cream px-6 py-3.5 rounded font-bold text-xs md:text-sm uppercase tracking-wider transition-all duration-300 flex items-center gap-2"
                 >
-                  <span>{language === 'vi' ? 'Yêu Cầu Báo Giá & Mẫu Thử' : 'Request Quote & Samples'}</span>
+                  <span>{language === 'zh' ? '索取报价与样品' : (language === 'vi' ? 'Yêu Cầu Báo Giá & Mẫu Thử' : 'Request Quote & Samples')}</span>
                   <ArrowRight size={16} />
                 </a>
               </motion.div>
@@ -133,25 +155,25 @@ export const CategoryPage: React.FC<CategoryPageProps> = ({ categoryKey: propCat
             <div className="lg:col-span-4 bg-carbon-light/90 border border-gold-warm/25 rounded-2xl p-6 backdrop-blur-md shadow-2xl">
               <h3 className="font-serif text-lg font-bold text-cream mb-4 flex items-center gap-2 border-b border-gold-warm/20 pb-3">
                 <FileText size={18} className="text-gold-warm" />
-                <span>{language === 'vi' ? 'Thông Số Định Dạng Cốt Lõi' : 'Format Technical Standard'}</span>
+                <span>{language === 'zh' ? '核心技术规格标准' : (language === 'vi' ? 'Thông Số Định Dạng Cốt Lõi' : 'Format Technical Standard')}</span>
               </h3>
               <div className="flex flex-col gap-4 text-xs md:text-sm">
                 <div>
-                  <span className="text-gold-warm font-semibold uppercase text-[11px] block">{language === 'vi' ? 'Quy cách dạng cắt:' : 'Available Formats & Cuts:'}</span>
+                  <span className="text-gold-warm font-semibold uppercase text-[11px] block">{language === 'zh' ? '可选切形规格:' : (language === 'vi' ? 'Quy cách dạng cắt:' : 'Available Formats & Cuts:')}</span>
                   <span className="text-cream/90 font-light">
-                    {(language === 'vi' ? catInfo.availableCutsVi : catInfo.availableCutsEn).join(' • ')}
+                    {categoryCuts.join(' • ')}
                   </span>
                 </div>
                 <div>
-                  <span className="text-gold-warm font-semibold uppercase text-[11px] block">{language === 'vi' ? 'Đóng gói chuẩn xuất khẩu:' : 'Default Export Packaging:'}</span>
+                  <span className="text-gold-warm font-semibold uppercase text-[11px] block">{language === 'zh' ? '标准出口包装:' : (language === 'vi' ? 'Đóng gói chuẩn xuất khẩu:' : 'Default Export Packaging:')}</span>
                   <span className="text-cream/90 font-light">
-                    {language === 'vi' ? catInfo.defaultPackagingVi : catInfo.defaultPackagingEn}
+                    {categoryPackaging}
                   </span>
                 </div>
                 <div>
-                  <span className="text-gold-warm font-semibold uppercase text-[11px] block">{language === 'vi' ? 'Điều kiện bảo quản:' : 'Storage & Preservation:'}</span>
+                  <span className="text-gold-warm font-semibold uppercase text-[11px] block">{language === 'zh' ? '储存与保鲜条件:' : (language === 'vi' ? 'Điều kiện bảo quản:' : 'Storage & Preservation:')}</span>
                   <span className="text-cream/90 font-light">
-                    {language === 'vi' ? catInfo.storageVi : catInfo.storageEn}
+                    {categoryStorage}
                   </span>
                 </div>
               </div>
@@ -164,7 +186,7 @@ export const CategoryPage: React.FC<CategoryPageProps> = ({ categoryKey: propCat
       <section className="py-12 bg-ivory border-b border-gold-warm/15 px-4 md:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {(language === 'vi' ? catInfo.highlightsVi : catInfo.highlightsEn).map((h, i) => (
+            {categoryHighlights.map((h, i) => (
               <div key={i} className="bg-white p-5 rounded-xl border border-gold-warm/15 shadow-sm flex items-start gap-3">
                 <CheckCircle className="text-forest-fresh shrink-0 mt-0.5" size={20} />
                 <span className="text-xs md:text-sm text-carbon/90 font-medium leading-relaxed">{h}</span>
@@ -180,7 +202,7 @@ export const CategoryPage: React.FC<CategoryPageProps> = ({ categoryKey: propCat
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-12">
             <div>
               <h2 className="font-serif text-2xl md:text-3xl font-bold text-forest uppercase">
-                {language === 'vi' ? `Danh Mục Sản Phẩm (${filteredProducts.length})` : `Product Portfolio (${filteredProducts.length})`}
+                {language === 'zh' ? `产品目录 (${filteredProducts.length})` : (language === 'vi' ? `Danh Mục Sản Phẩm (${filteredProducts.length})` : `Product Portfolio (${filteredProducts.length})`)}
               </h2>
 
             </div>
@@ -192,7 +214,7 @@ export const CategoryPage: React.FC<CategoryPageProps> = ({ categoryKey: propCat
                 <Search size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-carbon/40" />
                 <input
                   type="text"
-                  placeholder={language === 'vi' ? 'Tìm nông sản...' : 'Search product...'}
+                  placeholder={language === 'zh' ? '搜索产品...' : (language === 'vi' ? 'Tìm nông sản...' : 'Search product...')}
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   className="w-full pl-9 pr-4 py-2 bg-white border border-gold-warm/30 rounded text-xs md:text-sm text-carbon focus:outline-none focus:border-gold-warm"
@@ -215,13 +237,15 @@ export const CategoryPage: React.FC<CategoryPageProps> = ({ categoryKey: propCat
                         : 'bg-white text-carbon/75 hover:bg-forest/10 border border-gold-warm/25'
                     }`}
                   >
-                    {language === 'vi' ? `Tất cả (${products.length})` : `All (${products.length})`}
+                    {language === 'zh' ? `全部 (${products.length})` : (language === 'vi' ? `Tất cả (${products.length})` : `All (${products.length})`)}
                   </button>
                   {subCategories.map((sub) => {
                     const count = products.filter(p => p.subCategory === sub).length;
-                    const displaySubName = language === 'vi' 
-                      ? (sub === 'Fruits' ? 'Trái cây tươi' : sub === 'Vegetables & Spices' ? 'Rau củ & Gia vị' : sub)
-                      : sub;
+                    const displaySubName = language === 'zh'
+                      ? (sub === 'Fruits' ? '新鲜水果' : sub === 'Vegetables & Spices' ? '蔬菜与香料' : sub)
+                      : (language === 'vi' 
+                        ? (sub === 'Fruits' ? 'Trái cây tươi' : sub === 'Vegetables & Spices' ? 'Rau củ & Gia vị' : sub)
+                        : sub);
                     return (
                       <button
                         key={sub}
@@ -246,7 +270,7 @@ export const CategoryPage: React.FC<CategoryPageProps> = ({ categoryKey: propCat
             <div className="text-center py-16 bg-white rounded-2xl border border-gold-warm/15 p-8">
               <Info size={40} className="mx-auto text-gold-warm mb-4 opacity-50" />
               <p className="text-base text-carbon/70 font-medium">
-                {language === 'vi' ? 'Không tìm thấy sản phẩm phù hợp.' : 'No products found matching your search.'}
+                {language === 'zh' ? '未找到符合条件的农产品。' : (language === 'vi' ? 'Không tìm thấy sản phẩm phù hợp.' : 'No products found matching your search.')}
               </p>
             </div>
           ) : (
@@ -270,14 +294,14 @@ export const CategoryPage: React.FC<CategoryPageProps> = ({ categoryKey: propCat
                       }}
                     />
                     <div className="absolute top-3 left-3 bg-carbon/80 backdrop-blur-sm text-gold-warm text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded">
-                      {p.subCategory || catInfo.titleEn}
+                      {p.subCategory || categoryTitle}
                     </div>
                   </div>
 
                   <div className="p-5 flex flex-col flex-grow justify-between gap-4">
                     <div>
                       <h3 className="font-serif text-base font-bold text-forest group-hover:text-gold-warm transition-colors leading-snug">
-                        {language === 'vi' ? p.nameVi : p.nameEn}
+                        {getLocalizedProductName(p, language)}
                       </h3>
                       {p.scientificName && (
                         <p className="text-[11px] text-carbon/50 italic font-sans mt-0.5">{p.scientificName}</p>
@@ -294,7 +318,7 @@ export const CategoryPage: React.FC<CategoryPageProps> = ({ categoryKey: propCat
 
                     <div className="pt-3 border-t border-gold-warm/15 flex flex-col gap-2">
                       <div className="flex justify-between text-[11px] text-carbon/70">
-                        <span>{language === 'vi' ? 'Hạn bảo quản:' : 'Shelf Life:'}</span>
+                        <span>{language === 'zh' ? '保质期:' : (language === 'vi' ? 'Hạn bảo quản:' : 'Shelf Life:')}</span>
                         <span className="font-semibold text-forest">{p.specifications.shelfLife}</span>
                       </div>
 
@@ -302,7 +326,7 @@ export const CategoryPage: React.FC<CategoryPageProps> = ({ categoryKey: propCat
                         onClick={() => setSelectedProduct(p)}
                         className="w-full mt-2 bg-cream hover:bg-gold-warm hover:text-brown-soil border border-gold-warm/30 text-forest text-xs font-bold uppercase tracking-wider py-2 rounded transition-all duration-300 flex items-center justify-center gap-1.5"
                       >
-                        <span>{language === 'vi' ? 'Xem Thông Số & Báo Giá' : 'View Spec & Quote'}</span>
+                        <span>{language === 'zh' ? '查看规格与报价' : (language === 'vi' ? 'Xem Thông Số & Báo Giá' : 'View Spec & Quote')}</span>
                         <ChevronRight size={14} />
                       </button>
                     </div>

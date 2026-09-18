@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink, Link, useLocation } from 'react-router-dom';
 import { useTranslation } from '../i18n';
-import { Menu, X, Globe, ChevronDown, ChevronRight } from 'lucide-react';
+import { Menu, X, ChevronDown, ChevronRight } from 'lucide-react';
 import vacLogo from '../assets/vac-logo-6.png';
 
 export const Header: React.FC = () => {
@@ -33,8 +33,8 @@ export const Header: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const toggleLanguage = () => {
-    setLanguage(language === 'en' ? 'vi' : 'en');
+  const setLang = (lang: 'en' | 'vi' | 'zh') => {
+    setLanguage(lang);
   };
 
   const toggleMobileSub = (key: string) => {
@@ -66,32 +66,32 @@ export const Header: React.FC = () => {
       isDropdown: true,
       dropdownKey: 'products',
       children: [
-        { path: '/agricultural-inputs', label: language === 'vi' ? 'Vật tư nông nghiệp' : 'Agricultural Inputs' },
+        { path: '/agricultural-inputs', label: language === 'zh' ? '农业物资' : (language === 'vi' ? 'Vật tư nông nghiệp' : 'Agricultural Inputs') },
         {
           path: '/products/crops-plant-based-products',
-          label: language === 'vi' ? 'Nông sản & Sản phẩm từ cây trồng' : 'Crop & Plant-Based Products',
+          label: language === 'zh' ? '农产品与植物基产品' : (language === 'vi' ? 'Nông sản & Sản phẩm từ cây trồng' : 'Crop & Plant-Based Products'),
           hasSub: true,
           subChildren: [
-            { path: '/products/fresh-fruits-vegetables', label: language === 'vi' ? 'Trái cây & Nông sản tươi' : 'Fresh Fruits & Vegetables' },
-            { path: '/products/fruit-vegetable-powders', label: language === 'vi' ? 'Bột nông sản & Rau củ' : 'Fruit & Vegetable Powders' },
-            { path: '/products/fruit-purees', label: language === 'vi' ? 'Puree & Nước ép trái cây (Fruit Purees, Juices & Concentrates)' : 'Fruit Purees, Juices & Concentrates' },
-            { path: '/products/freeze-dried-fruits', label: language === 'vi' ? 'Trái cây sấy thăng hoa' : 'Freeze-Dried Fruits' },
-            { path: '/products/iqf-fruits-vegetables', label: language === 'vi' ? 'Nông sản cấp đông rời (IQF)' : 'IQF Frozen Produce' },
+            { path: '/products/fresh-fruits-vegetables', label: language === 'zh' ? '新鲜水果与蔬菜' : (language === 'vi' ? 'Trái cây & Nông sản tươi' : 'Fresh Fruits & Vegetables') },
+            { path: '/products/fruit-vegetable-powders', label: language === 'zh' ? '果蔬果粉' : (language === 'vi' ? 'Bột nông sản & Rau củ' : 'Fruit & Vegetable Powders') },
+            { path: '/products/fruit-purees', label: language === 'zh' ? '果浆与浓缩果汁' : (language === 'vi' ? 'Puree & Nước ép trái cây (Fruit Purees, Juices & Concentrates)' : 'Fruit Purees, Juices & Concentrates') },
+            { path: '/products/freeze-dried-fruits', label: language === 'zh' ? '冻干水果' : (language === 'vi' ? 'Trái cây sấy thăng hoa' : 'Freeze-Dried Fruits') },
+            { path: '/products/iqf-fruits-vegetables', label: language === 'zh' ? '单体速冻农产品 (IQF)' : (language === 'vi' ? 'Nông sản cấp đông rời (IQF)' : 'IQF Frozen Produce') },
           ],
         },
         {
           path: '/products/poultry-products',
-          label: language === 'vi' ? 'Sản phẩm gia cầm' : 'Poultry Products',
+          label: language === 'zh' ? '家禽肉类产品' : (language === 'vi' ? 'Sản phẩm gia cầm' : 'Poultry Products'),
           hasSub: false,
         },
         {
           path: '/products/seafood-products',
-          label: language === 'vi' ? 'Sản phẩm thủy hải sản' : 'Aquaculture & Seafood Products',
+          label: language === 'zh' ? '水产与海鲜产品' : (language === 'vi' ? 'Sản phẩm thủy hải sản' : 'Aquaculture & Seafood Products'),
           hasSub: true,
           subChildren: [
-            { path: '/products/basa-fish-pangasius', label: language === 'vi' ? 'Cá Tra — Pangasius (Basa)' : 'Basa Fish — Pangasius' },
-            { path: '/products/vietnamese-shrimp', label: language === 'vi' ? 'Tôm Việt Nam' : 'Vietnamese Shrimp' },
-            { path: '/products/squid-products', label: language === 'vi' ? 'Mực xuất khẩu' : 'Squid' },
+            { path: '/products/basa-fish-pangasius', label: language === 'zh' ? '巴沙鱼 — Pangasius (Basa)' : (language === 'vi' ? 'Cá Tra — Pangasius (Basa)' : 'Basa Fish — Pangasius') },
+            { path: '/products/vietnamese-shrimp', label: language === 'zh' ? '越南对虾' : (language === 'vi' ? 'Tôm Việt Nam' : 'Vietnamese Shrimp') },
+            { path: '/products/squid-products', label: language === 'zh' ? '出口鱿鱼' : (language === 'vi' ? 'Mực xuất khẩu' : 'Squid') },
           ],
         },
       ],
@@ -123,10 +123,10 @@ export const Header: React.FC = () => {
             />
             <div className="flex flex-col items-center whitespace-nowrap">
               <span className="font-serif font-black text-sm sm:text-base md:text-lg lg:text-[0.95rem] xl:text-[1rem] text-cream tracking-wide leading-none transition-colors duration-300 uppercase">
-                {language === 'vi' ? 'Trung Tâm Nông Nghiệp Việt Nam' : 'Vietnam Agriculture Center'}
+                {language === 'zh' ? '越南农业中心' : (language === 'vi' ? 'Trung Tâm Nông Nghiệp Việt Nam' : 'Vietnam Agriculture Center')}
               </span>
               <span className="font-sans text-[8px] sm:text-[9px] md:text-[10px] lg:text-[9px] xl:text-[10px] text-gold-warm uppercase tracking-[0.16em] mt-1 font-semibold transition-colors duration-300 text-center">
-                {language === 'vi' ? 'Hội Tụ Tinh Hoa • Kết Nối Thế Giới' : 'Embracing Richness • Connecting Worlds'}
+                {language === 'zh' ? '汇聚精华 • 连接世界' : (language === 'vi' ? 'Hội Tụ Tinh Hoa • Kết Nối Thế Giới' : 'Embracing Richness • Connecting Worlds')}
               </span>
             </div>
           </Link>
@@ -221,13 +221,32 @@ export const Header: React.FC = () => {
                 </NavLink>
               )
             ))}
-            <button
-              onClick={toggleLanguage}
-              className="bg-forest hover:bg-forest-leaf text-cream px-3.5 py-1.5 rounded font-sans text-xs font-bold uppercase tracking-wider transition-all duration-300 hover:shadow-lg hover:shadow-forest/10 cursor-pointer flex items-center gap-1.5 border border-forest/20 ml-1"
-            >
-              <Globe size={14} />
-              <span>{language === 'en' ? 'VI' : 'EN'}</span>
-            </button>
+            <div className="flex items-center gap-1 bg-forest/80 p-1 rounded border border-forest/30 ml-1">
+              <button
+                onClick={() => setLang('vi')}
+                className={`px-2 py-0.5 rounded text-[11px] font-bold uppercase transition-all ${
+                  language === 'vi' ? 'bg-gold-warm text-brown-soil shadow' : 'text-cream/80 hover:text-cream'
+                }`}
+              >
+                VI
+              </button>
+              <button
+                onClick={() => setLang('en')}
+                className={`px-2 py-0.5 rounded text-[11px] font-bold uppercase transition-all ${
+                  language === 'en' ? 'bg-gold-warm text-brown-soil shadow' : 'text-cream/80 hover:text-cream'
+                }`}
+              >
+                EN
+              </button>
+              <button
+                onClick={() => setLang('zh')}
+                className={`px-2 py-0.5 rounded text-[11px] font-bold transition-all ${
+                  language === 'zh' ? 'bg-gold-warm text-brown-soil shadow' : 'text-cream/80 hover:text-cream'
+                }`}
+              >
+                中文
+              </button>
+            </div>
           </div>
 
           {/* Mobile Menu Button */}
@@ -270,7 +289,7 @@ export const Header: React.FC = () => {
                             }`
                           }
                         >
-                          <span>{language === 'vi' ? 'Tổng quan sản phẩm' : 'Products Overview'}</span>
+                          <span>{language === 'zh' ? '产品概览' : (language === 'vi' ? 'Tổng quan sản phẩm' : 'Products Overview')}</span>
                           <ChevronRight size={14} className="text-gold-warm" />
                         </NavLink>
                       )}
@@ -353,13 +372,32 @@ export const Header: React.FC = () => {
                 </NavLink>
               )
             ))}
-            <button
-              onClick={() => { toggleLanguage(); setIsMobileMenuOpen(false); }}
-              className="bg-forest hover:bg-forest-leaf text-cream flex items-center justify-center gap-2 py-3 rounded font-sans text-sm font-bold uppercase tracking-wider transition-all duration-300 mt-6 border border-forest/20"
-            >
-              <Globe size={16} />
-              <span>{language === 'en' ? 'Tiếng Việt' : 'English'}</span>
-            </button>
+            <div className="grid grid-cols-3 gap-2 mt-6">
+              <button
+                onClick={() => { setLang('vi'); setIsMobileMenuOpen(false); }}
+                className={`py-2.5 rounded font-sans text-xs font-bold uppercase tracking-wider transition-all border ${
+                  language === 'vi' ? 'bg-gold-warm text-brown-soil border-gold-warm' : 'bg-forest/60 text-cream border-forest/30'
+                }`}
+              >
+                Tiếng Việt
+              </button>
+              <button
+                onClick={() => { setLang('en'); setIsMobileMenuOpen(false); }}
+                className={`py-2.5 rounded font-sans text-xs font-bold uppercase tracking-wider transition-all border ${
+                  language === 'en' ? 'bg-gold-warm text-brown-soil border-gold-warm' : 'bg-forest/60 text-cream border-forest/30'
+                }`}
+              >
+                English
+              </button>
+              <button
+                onClick={() => { setLang('zh'); setIsMobileMenuOpen(false); }}
+                className={`py-2.5 rounded font-sans text-xs font-bold transition-all border ${
+                  language === 'zh' ? 'bg-gold-warm text-brown-soil border-gold-warm' : 'bg-forest/60 text-cream border-forest/30'
+                }`}
+              >
+                中文
+              </button>
+            </div>
           </div>
         </div>
       )}

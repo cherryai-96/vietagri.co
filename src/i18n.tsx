@@ -5,7 +5,7 @@ import { startTransition, useEffect } from 'react';
 import { loadSiteResources } from './lib/dataSync';
 
 
-type Language = 'en' | 'vi';
+type Language = 'en' | 'vi' | 'zh';
 
 export interface TranslationResources {
  [key: string]: {
