@@ -132,27 +132,27 @@ export const Footer: React.FC = () => {
           <ul className="flex flex-col gap-2.5 text-xs md:text-sm font-light">
             <li>
               <Link to="/products" className="hover:text-gold-champagne hover:underline transition-all duration-200 block whitespace-nowrap">
-                {language === 'zh' ? '产品概览' : (language === 'vi' ? 'Tổng quan sản phẩm' : 'Products Overview')}
+                {language === 'vi' ? 'Tổng quan sản phẩm' : 'All Products Overview'}
               </Link>
             </li>
             <li>
               <Link to="/agricultural-inputs" className="hover:text-gold-champagne hover:underline transition-all duration-200 block whitespace-nowrap">
-                {language === 'zh' ? '农业物资' : (language === 'vi' ? 'Vật Tư Nông Nghiệp' : 'Agricultural Inputs')}
+                {language === 'vi' ? 'Vật Tư Nông Nghiệp' : 'Agricultural Inputs'}
               </Link>
             </li>
             <li>
               <Link to="/products/fresh-fruits-vegetables" className="hover:text-gold-champagne hover:underline transition-all duration-200 block whitespace-nowrap">
-                {language === 'zh' ? '农产品与植物基产品' : (language === 'vi' ? 'Nông Sản & Sản Phẩm Từ Cây Trồng' : 'Crop & Plant-Based Products')}
+                {language === 'vi' ? 'Nông Sản & Sản Phẩm Từ Cây Trồng' : 'Crop & Plant-Based Products'}
               </Link>
             </li>
             <li>
               <Link to="/products/poultry-products" className="hover:text-gold-champagne hover:underline transition-all duration-200 block whitespace-nowrap">
-                {language === 'zh' ? '家禽肉类产品' : (language === 'vi' ? 'Sản Phẩm Gia Cầm' : 'Poultry Products')}
+                {language === 'vi' ? 'Sản Phẩm Gia Cầm' : 'Poultry Products'}
               </Link>
             </li>
             <li>
               <Link to="/products/seafood-products" className="hover:text-gold-champagne hover:underline transition-all duration-200 block whitespace-nowrap">
-                {language === 'zh' ? '水产与海鲜产品' : (language === 'vi' ? 'Sản Phẩm Thủy Hải Sản' : 'Aquaculture & Seafood Products')}
+                {language === 'vi' ? 'Sản Phẩm Thủy Hải Sản' : 'Aquaculture & Seafood Products'}
               </Link>
             </li>
           </ul>

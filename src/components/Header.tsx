@@ -1,8 +1,20 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { NavLink, Link, useLocation } from 'react-router-dom';
-import { useTranslation } from '../i18n';
-import { Menu, X, ChevronDown, ChevronRight } from 'lucide-react';
+import { useTranslation, type Language } from '../i18n';
+import { Menu, X, Globe, ChevronDown, ChevronRight, Check } from 'lucide-react';
 import vacLogo from '../assets/vac-logo-6.png';
+
+interface LangOption {
+  code: Language;
+  label: string;
+  shortLabel: string;
+}
+
+const LANGUAGES: LangOption[] = [
+  { code: 'en', label: 'English (EN)', shortLabel: 'EN' },
+  { code: 'vi', label: 'Tiếng Việt (VI)', shortLabel: 'VI' },
+  { code: 'zh', label: '中文 (ZH)', shortLabel: 'ZH' },
+];
 
 export const Header: React.FC = () => {
   const { language, setLanguage, t } = useTranslation();
@@ -11,6 +23,8 @@ export const Header: React.FC = () => {
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const [mobileProductsOpen, setMobileProductsOpen] = useState(false);
   const [openMobileSubCategories, setOpenMobileSubCategories] = useState<Record<string, boolean>>({});
+  const [isLangDropdownOpen, setIsLangDropdownOpen] = useState(false);
+  const langDropdownRef = useRef<HTMLDivElement>(null);
   const location = useLocation();
 
   useEffect(() => {
@@ -18,6 +32,7 @@ export const Header: React.FC = () => {
     setMobileServicesOpen(false);
     setMobileProductsOpen(false);
     setOpenMobileSubCategories({});
+    setIsLangDropdownOpen(false);
   }, [location.pathname]);
 
   // Track scroll position to change background opacity
@@ -33,9 +48,16 @@ export const Header: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const setLang = (lang: 'en' | 'vi' | 'zh') => {
-    setLanguage(lang);
-  };
+  // Handle click outside for language dropdown
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (langDropdownRef.current && !langDropdownRef.current.contains(event.target as Node)) {
+        setIsLangDropdownOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
 
   const toggleMobileSub = (key: string) => {
     setOpenMobileSubCategories(prev => ({ ...prev, [key]: !prev[key] }));
@@ -66,32 +88,35 @@ export const Header: React.FC = () => {
       isDropdown: true,
       dropdownKey: 'products',
       children: [
-        { path: '/agricultural-inputs', label: language === 'zh' ? '农业物资' : (language === 'vi' ? 'Vật tư nông nghiệp' : 'Agricultural Inputs') },
+        { 
+          path: '/agricultural-inputs', 
+          label: language === 'vi' ? 'Vật tư nông nghiệp' : language === 'zh' ? '农业物资' : 'Agricultural Inputs' 
+        },
         {
           path: '/products/crops-plant-based-products',
-          label: language === 'zh' ? '农产品与植物基产品' : (language === 'vi' ? 'Nông sản & Sản phẩm từ cây trồng' : 'Crop & Plant-Based Products'),
+          label: language === 'vi' ? 'Nông sản & Sản phẩm từ cây trồng' : language === 'zh' ? '农作物及植物基产品' : 'Crop & Plant-Based Products',
           hasSub: true,
           subChildren: [
-            { path: '/products/fresh-fruits-vegetables', label: language === 'zh' ? '新鲜水果与蔬菜' : (language === 'vi' ? 'Trái cây & Nông sản tươi' : 'Fresh Fruits & Vegetables') },
-            { path: '/products/fruit-vegetable-powders', label: language === 'zh' ? '果蔬果粉' : (language === 'vi' ? 'Bột nông sản & Rau củ' : 'Fruit & Vegetable Powders') },
-            { path: '/products/fruit-purees', label: language === 'zh' ? '果浆与浓缩果汁' : (language === 'vi' ? 'Puree & Nước ép trái cây (Fruit Purees, Juices & Concentrates)' : 'Fruit Purees, Juices & Concentrates') },
-            { path: '/products/freeze-dried-fruits', label: language === 'zh' ? '冻干水果' : (language === 'vi' ? 'Trái cây sấy thăng hoa' : 'Freeze-Dried Fruits') },
-            { path: '/products/iqf-fruits-vegetables', label: language === 'zh' ? '单体速冻农产品 (IQF)' : (language === 'vi' ? 'Nông sản cấp đông rời (IQF)' : 'IQF Frozen Produce') },
+            { path: '/products/fresh-fruits-vegetables', label: language === 'vi' ? 'Trái cây & Nông sản tươi' : language === 'zh' ? '新鲜水果与蔬菜' : 'Fresh Fruits & Vegetables' },
+            { path: '/products/fruit-vegetable-powders', label: language === 'vi' ? 'Bột nông sản & Rau củ' : language === 'zh' ? '果蔬粉' : 'Fruit & Vegetable Powders' },
+            { path: '/products/fruit-purees', label: language === 'vi' ? 'Puree & Nước ép trái cây (Fruit Purees, Juices & Concentrates)' : language === 'zh' ? '果浆、浓缩汁与果汁' : 'Fruit Purees, Juices & Concentrates' },
+            { path: '/products/freeze-dried-fruits', label: language === 'vi' ? 'Trái cây sấy thăng hoa' : language === 'zh' ? '冻干水果' : 'Freeze-Dried Fruits' },
+            { path: '/products/iqf-fruits-vegetables', label: language === 'vi' ? 'Nông sản cấp đông rời (IQF)' : language === 'zh' ? 'IQF单体速冻农产品' : 'IQF Frozen Produce' },
           ],
         },
         {
           path: '/products/poultry-products',
-          label: language === 'zh' ? '家禽肉类产品' : (language === 'vi' ? 'Sản phẩm gia cầm' : 'Poultry Products'),
+          label: language === 'vi' ? 'Sản phẩm gia cầm' : language === 'zh' ? '家禽类产品' : 'Poultry Products',
           hasSub: false,
         },
         {
           path: '/products/seafood-products',
-          label: language === 'zh' ? '水产与海鲜产品' : (language === 'vi' ? 'Sản phẩm thủy hải sản' : 'Aquaculture & Seafood Products'),
+          label: language === 'vi' ? 'Sản phẩm thủy hải sản' : language === 'zh' ? '水产及海鲜产品' : 'Aquaculture & Seafood Products',
           hasSub: true,
           subChildren: [
-            { path: '/products/basa-fish-pangasius', label: language === 'zh' ? '巴沙鱼 — Pangasius (Basa)' : (language === 'vi' ? 'Cá Tra — Pangasius (Basa)' : 'Basa Fish — Pangasius') },
-            { path: '/products/vietnamese-shrimp', label: language === 'zh' ? '越南对虾' : (language === 'vi' ? 'Tôm Việt Nam' : 'Vietnamese Shrimp') },
-            { path: '/products/squid-products', label: language === 'zh' ? '出口鱿鱼' : (language === 'vi' ? 'Mực xuất khẩu' : 'Squid') },
+            { path: '/products/basa-fish-pangasius', label: language === 'vi' ? 'Cá Tra — Pangasius (Basa)' : language === 'zh' ? '巴沙鱼 / 龙利鱼 (Pangasius)' : 'Basa Fish — Pangasius' },
+            { path: '/products/vietnamese-shrimp', label: language === 'vi' ? 'Tôm Việt Nam' : language === 'zh' ? '越南对虾' : 'Vietnamese Shrimp' },
+            { path: '/products/squid-products', label: language === 'vi' ? 'Mực xuất khẩu' : language === 'zh' ? '出口鱿鱼' : 'Squid' },
           ],
         },
       ],
@@ -123,10 +148,10 @@ export const Header: React.FC = () => {
             />
             <div className="flex flex-col items-center whitespace-nowrap">
               <span className="font-serif font-black text-sm sm:text-base md:text-lg lg:text-[0.95rem] xl:text-[1rem] text-cream tracking-wide leading-none transition-colors duration-300 uppercase">
-                {language === 'zh' ? '越南农业中心' : (language === 'vi' ? 'Trung Tâm Nông Nghiệp Việt Nam' : 'Vietnam Agriculture Center')}
+                {language === 'vi' ? 'Trung Tâm Nông Nghiệp Việt Nam' : language === 'zh' ? '越南农业中心' : 'Vietnam Agriculture Center'}
               </span>
               <span className="font-sans text-[8px] sm:text-[9px] md:text-[10px] lg:text-[9px] xl:text-[10px] text-gold-warm uppercase tracking-[0.16em] mt-1 font-semibold transition-colors duration-300 text-center">
-                {language === 'zh' ? '汇聚精华 • 连接世界' : (language === 'vi' ? 'Hội Tụ Tinh Hoa • Kết Nối Thế Giới' : 'Embracing Richness • Connecting Worlds')}
+                {language === 'vi' ? 'Hội Tụ Tinh Hoa • Kết Nối Thế Giới' : language === 'zh' ? '汇聚精粹 • 链接全球' : 'Embracing Richness • Connecting Worlds'}
               </span>
             </div>
           </Link>
@@ -148,31 +173,50 @@ export const Header: React.FC = () => {
                     <ChevronDown size={14} className="group-hover:rotate-180 transition-transform duration-300" />
                   </NavLink>
                   <div className="absolute top-full left-0 mt-0 w-80 bg-carbon/95 backdrop-blur-md border border-gold-warm/20 rounded-md shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top translate-y-2 group-hover:translate-y-0">
-                    <div className="flex flex-col py-2">
+                    <div className="p-3 flex flex-col gap-1">
+                      {/* Direct Link to Products Overview */}
+                      {link.path && (
+                        <NavLink
+                          to={link.path}
+                          className={({ isActive }) =>
+                            `font-sans text-xs font-bold tracking-wider uppercase p-2 rounded transition-colors text-gold-champagne hover:bg-gold-warm/15 flex items-center justify-between border-b border-white/10 mb-1 ${
+                              isActive ? 'bg-gold-warm/10 font-black' : ''
+                            }`
+                          }
+                        >
+                          <span>{language === 'vi' ? 'Tổng quan sản phẩm' : language === 'zh' ? '产品总览' : 'Products Overview'}</span>
+                          <ChevronRight size={14} className="text-gold-warm" />
+                        </NavLink>
+                      )}
+
                       {link.children?.map((child, cIdx) => (
                         child.hasSub ? (
                           <div key={cIdx} className="relative group/sub">
                             <NavLink
                               to={child.path}
                               className={({ isActive }) =>
-                                `px-4 py-2.5 font-sans text-xs tracking-wide uppercase transition-colors duration-200 flex justify-between items-center ${
-                                  isActive ? 'bg-gold-warm/10 text-gold-champagne font-bold' : 'text-cream/80 hover:bg-white/5 hover:text-cream'
+                                `flex items-center justify-between p-2 rounded text-xs font-medium transition-colors ${
+                                  isActive
+                                    ? 'bg-forest text-cream font-bold'
+                                    : 'text-cream/80 hover:text-cream hover:bg-forest/50'
                                 }`
                               }
                             >
                               <span>{child.label}</span>
-                              <ChevronRight size={14} className="text-gold-warm/70 group-hover/sub:translate-x-1 transition-transform" />
+                              <ChevronRight size={14} className="text-gold-warm" />
                             </NavLink>
 
-                            {/* Flyout Sub-menu */}
-                            <div className="absolute left-full top-0 ml-1 w-72 bg-carbon/95 backdrop-blur-md border border-gold-warm/20 rounded-md shadow-2xl opacity-0 invisible group-hover/sub:opacity-100 group-hover/sub:visible transition-all duration-200 py-2">
+                            {/* Sub-dropdown menu */}
+                            <div className="absolute top-0 left-full ml-1 w-72 bg-carbon/95 backdrop-blur-md border border-gold-warm/20 rounded-md shadow-2xl opacity-0 invisible group-hover/sub:opacity-100 group-hover/sub:visible transition-all duration-200 p-2 flex flex-col gap-1">
                               {child.subChildren?.map((subChild, sIdx) => (
                                 <NavLink
                                   key={sIdx}
                                   to={subChild.path}
                                   className={({ isActive }) =>
-                                    `px-4 py-2 font-sans text-xs tracking-wide transition-colors duration-200 block ${
-                                      isActive ? 'bg-gold-warm/10 text-gold-champagne font-bold' : 'text-cream/70 hover:bg-white/5 hover:text-cream'
+                                    `p-2 rounded text-xs transition-colors ${
+                                      isActive
+                                        ? 'text-gold-champagne bg-gold-warm/10 font-bold'
+                                        : 'text-cream/80 hover:text-cream hover:bg-white/5'
                                     }`
                                   }
                                 >
@@ -186,8 +230,10 @@ export const Header: React.FC = () => {
                             key={cIdx}
                             to={child.path}
                             className={({ isActive }) =>
-                              `px-4 py-2.5 font-sans text-xs tracking-wide uppercase transition-colors duration-200 block ${
-                                isActive ? 'bg-gold-warm/10 text-gold-champagne font-bold' : 'text-cream/80 hover:bg-white/5 hover:text-cream'
+                              `block p-2 rounded text-xs font-medium transition-colors ${
+                                isActive
+                                  ? 'bg-forest text-cream font-bold'
+                                  : 'text-cream/80 hover:text-cream hover:bg-forest/50'
                               }`
                             }
                           >
@@ -221,31 +267,40 @@ export const Header: React.FC = () => {
                 </NavLink>
               )
             ))}
-            <div className="flex items-center gap-1 bg-forest/80 p-1 rounded border border-forest/30 ml-1">
+
+            {/* Desktop Language Switcher Dropdown */}
+            <div className="relative ml-1" ref={langDropdownRef}>
               <button
-                onClick={() => setLang('vi')}
-                className={`px-2 py-0.5 rounded text-[11px] font-bold uppercase transition-all ${
-                  language === 'vi' ? 'bg-gold-warm text-brown-soil shadow' : 'text-cream/80 hover:text-cream'
-                }`}
+                onClick={() => setIsLangDropdownOpen(!isLangDropdownOpen)}
+                className="bg-forest hover:bg-forest-leaf text-cream px-3 py-1.5 rounded font-sans text-xs font-bold uppercase tracking-wider transition-all duration-300 cursor-pointer flex items-center gap-1.5 border border-forest/20 shadow-sm"
+                aria-label="Select Language"
               >
-                VI
+                <Globe size={14} className="text-gold-warm" />
+                <span>{language.toUpperCase()}</span>
+                <ChevronDown size={12} className={`transition-transform duration-200 ${isLangDropdownOpen ? 'rotate-180' : ''}`} />
               </button>
-              <button
-                onClick={() => setLang('en')}
-                className={`px-2 py-0.5 rounded text-[11px] font-bold uppercase transition-all ${
-                  language === 'en' ? 'bg-gold-warm text-brown-soil shadow' : 'text-cream/80 hover:text-cream'
-                }`}
-              >
-                EN
-              </button>
-              <button
-                onClick={() => setLang('zh')}
-                className={`px-2 py-0.5 rounded text-[11px] font-bold transition-all ${
-                  language === 'zh' ? 'bg-gold-warm text-brown-soil shadow' : 'text-cream/80 hover:text-cream'
-                }`}
-              >
-                中文
-              </button>
+
+              {isLangDropdownOpen && (
+                <div className="absolute right-0 top-full mt-2 w-44 bg-carbon/95 backdrop-blur-md border border-gold-warm/20 rounded-md shadow-2xl py-1 z-50 animate-fade-in">
+                  {LANGUAGES.map((lang) => (
+                    <button
+                      key={lang.code}
+                      onClick={() => {
+                        setLanguage(lang.code);
+                        setIsLangDropdownOpen(false);
+                      }}
+                      className={`w-full text-left px-3.5 py-2 text-xs font-sans font-semibold transition-colors flex items-center justify-between cursor-pointer ${
+                        language === lang.code
+                          ? 'text-gold-champagne bg-forest/40 font-bold'
+                          : 'text-cream/80 hover:text-cream hover:bg-white/5'
+                      }`}
+                    >
+                      <span>{lang.label}</span>
+                      {language === lang.code && <Check size={14} className="text-gold-warm" />}
+                    </button>
+                  ))}
+                </div>
+              )}
             </div>
           </div>
 
@@ -278,7 +333,7 @@ export const Header: React.FC = () => {
                   </button>
                   {((link.dropdownKey === 'products' ? mobileProductsOpen : mobileServicesOpen)) && (
                     <div className="flex flex-col gap-2 mt-3 pl-3 border-l-2 border-gold-warm/30 ml-2">
-                      {/* Direct link to main Products / Services Overview page */}
+                      {/* Direct link to main Products Overview page */}
                       {link.path && (
                         <NavLink
                           to={link.path}
@@ -289,7 +344,7 @@ export const Header: React.FC = () => {
                             }`
                           }
                         >
-                          <span>{language === 'zh' ? '产品概览' : (language === 'vi' ? 'Tổng quan sản phẩm' : 'Products Overview')}</span>
+                          <span>{language === 'vi' ? 'Tổng quan sản phẩm' : language === 'zh' ? '产品总览' : 'Products Overview'}</span>
                           <ChevronRight size={14} className="text-gold-warm" />
                         </NavLink>
                       )}
@@ -372,31 +427,32 @@ export const Header: React.FC = () => {
                 </NavLink>
               )
             ))}
-            <div className="grid grid-cols-3 gap-2 mt-6">
-              <button
-                onClick={() => { setLang('vi'); setIsMobileMenuOpen(false); }}
-                className={`py-2.5 rounded font-sans text-xs font-bold uppercase tracking-wider transition-all border ${
-                  language === 'vi' ? 'bg-gold-warm text-brown-soil border-gold-warm' : 'bg-forest/60 text-cream border-forest/30'
-                }`}
-              >
-                Tiếng Việt
-              </button>
-              <button
-                onClick={() => { setLang('en'); setIsMobileMenuOpen(false); }}
-                className={`py-2.5 rounded font-sans text-xs font-bold uppercase tracking-wider transition-all border ${
-                  language === 'en' ? 'bg-gold-warm text-brown-soil border-gold-warm' : 'bg-forest/60 text-cream border-forest/30'
-                }`}
-              >
-                English
-              </button>
-              <button
-                onClick={() => { setLang('zh'); setIsMobileMenuOpen(false); }}
-                className={`py-2.5 rounded font-sans text-xs font-bold transition-all border ${
-                  language === 'zh' ? 'bg-gold-warm text-brown-soil border-gold-warm' : 'bg-forest/60 text-cream border-forest/30'
-                }`}
-              >
-                中文
-              </button>
+
+            {/* Mobile Language Switcher Selector Bar */}
+            <div className="mt-6 pt-4 border-t border-white/10 flex flex-col gap-2">
+              <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-gold-warm">
+                <Globe size={14} />
+                <span>{language === 'vi' ? 'Ngôn ngữ / Language' : language === 'zh' ? '语言 / Language' : 'Language'}</span>
+              </div>
+              <div className="grid grid-cols-3 gap-2 mt-1">
+                {LANGUAGES.map((lang) => (
+                  <button
+                    key={lang.code}
+                    onClick={() => {
+                      setLanguage(lang.code);
+                      setIsMobileMenuOpen(false);
+                    }}
+                    className={`py-2.5 px-3 rounded text-xs font-sans font-bold uppercase tracking-wider transition-all text-center border cursor-pointer flex items-center justify-center gap-1 ${
+                      language === lang.code
+                        ? 'bg-forest text-gold-champagne border-gold-warm/50 shadow-md font-extrabold'
+                        : 'bg-carbon/60 text-cream/70 border-white/10 hover:text-cream hover:bg-carbon'
+                    }`}
+                  >
+                    <span>{lang.shortLabel}</span>
+                    {language === lang.code && <Check size={12} className="text-gold-warm" />}
+                  </button>
+                ))}
+              </div>
             </div>
           </div>
         </div>
@@ -404,4 +460,3 @@ export const Header: React.FC = () => {
     </header>
   );
 };
-

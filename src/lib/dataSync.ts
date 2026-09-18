@@ -45,9 +45,9 @@ export async function loadSiteResources(): Promise<TranslationResources | null> 
   const { data, error } = await supabase.from('site_resources').select('language, content');
   if (error || !data?.length) return null;
 
-  const remote: TranslationResources = { en: {}, vi: {} };
+  const remote: TranslationResources = { en: {}, vi: {}, zh: {} };
   for (const row of data) {
-    if (row.language === 'en' || row.language === 'vi') {
+    if (row.language === 'en' || row.language === 'vi' || row.language === 'zh') {
       remote[row.language] = row.content as TranslationResources['en'];
     }
   }
@@ -91,7 +91,7 @@ export async function saveEditablePage(page: EditablePage) {
         const { updateResourcesFromEditablePage, buildSiteResourceRows } = await import('./siteSeed');
         let currentResources = JSON.parse(JSON.stringify(defaultResources));
         for (const row of resourcesData) {
-          if (row.language === 'en' || row.language === 'vi') {
+          if (row.language === 'en' || row.language === 'vi' || row.language === 'zh') {
             currentResources[row.language] = row.content || {};
           }
         }
