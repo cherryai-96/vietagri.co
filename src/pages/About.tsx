@@ -51,7 +51,7 @@ export const About: React.FC = () => {
             className="flex flex-col gap-4"
           >
             <span className="text-xs md:text-sm font-bold uppercase tracking-widest text-gold-champagne bg-forest/40 border border-gold-warm/20 px-4 py-1.5 rounded-full self-center">
-              About Us & Sustainability
+              {t('language') === 'vi' ? 'Về Chúng Tôi & Phát Triển Bền Vững' : t('language') === 'zh' ? '关于我们与可持续发展' : 'About Us & Sustainability'}
             </span>
             <h1 className="font-serif text-[2.25rem] leading-[1.1] sm:text-[3rem] md:text-5xl lg:text-[3.5rem] font-bold leading-tight tracking-wide text-gold-champagne w-full xl:whitespace-nowrap">
               <span dangerouslySetInnerHTML={{ __html: t('about.heroTitle') }} />
@@ -116,7 +116,7 @@ export const About: React.FC = () => {
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           <div className="lg:col-span-6 flex flex-col gap-6">
             <span className="text-xs font-bold uppercase tracking-widest text-gold-antique">
-              National Footprint
+              {t('language') === 'vi' ? 'Mạng Lưới Toàn Quốc' : t('language') === 'zh' ? '全国产业布局' : 'National Footprint'}
             </span>
             <h2 className="font-serif text-balance text-[2rem] leading-[1.1] sm:text-4xl md:text-5xl font-bold text-forest leading-tight">
               <span dangerouslySetInnerHTML={{ __html: t('about.footprintTitle') }} />
@@ -131,15 +131,15 @@ export const About: React.FC = () => {
             <div className="flex flex-wrap gap-4 pt-4 text-xs font-semibold text-forest">
               <div className="flex items-center gap-1.5 bg-cream px-4 py-2.5 rounded-full border border-gold-warm/15 shadow-sm">
                 <MapPin size={14} className="text-gold-warm" />
-                <span>Central Highlands Region</span>
+                <span>{t('language') === 'vi' ? 'Khu Vực Tây Nguyên' : t('language') === 'zh' ? '越南西原农业产区' : 'Central Highlands Region'}</span>
               </div>
               <div className="flex items-center gap-1.5 bg-cream px-4 py-2.5 rounded-full border border-gold-warm/15 shadow-sm">
                 <MapPin size={14} className="text-gold-warm" />
-                <span>Mekong Delta Region</span>
+                <span>{t('language') === 'vi' ? 'Đồng Bằng Sông Cửu Long' : t('language') === 'zh' ? '湄公河三角洲农产基地' : 'Mekong Delta Region'}</span>
               </div>
               <div className="flex items-center gap-1.5 bg-cream px-4 py-2.5 rounded-full border border-gold-warm/15 shadow-sm">
                 <MapPin size={14} className="text-gold-warm" />
-                <span>Ho Chi Minh City Logistics Hub</span>
+                <span>{t('language') === 'vi' ? 'Trung Tâm Logistics TP. HCM' : t('language') === 'zh' ? '胡志明市出口物流枢纽' : 'Ho Chi Minh City Logistics Hub'}</span>
               </div>
             </div>
           </div>
@@ -151,14 +151,16 @@ export const About: React.FC = () => {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-forest/70 via-transparent to-transparent" />
             <div className="absolute bottom-6 left-6 right-6 text-cream">
-              <h3 className="font-serif font-bold text-xl md:text-2xl text-gold-champagne">Integrated Field Network</h3>
-              <p className="text-xs font-light text-cream/80 mt-1">Direct oversight across fertile farming regions in Vietnam.</p>
+              <h3 className="font-serif font-bold text-xl md:text-2xl text-gold-champagne">
+                {t('language') === 'vi' ? 'Mạng Lưới Vùng Trồng Tích Hợp' : t('language') === 'zh' ? '一体化产地基地网络' : 'Integrated Field Network'}
+              </h3>
+              <p className="text-xs font-light text-cream/80 mt-1">
+                {t('language') === 'vi' ? 'Giám sát trực tiếp trên khắp các vùng canh tác phì nhiêu tại Việt Nam.' : t('language') === 'zh' ? '深入越南肥沃农业产区，实行全流程直接监管。' : 'Direct oversight across fertile farming regions in Vietnam.'}
+              </p>
             </div>
           </div>
         </div>
       </section>
-
-
 
       {/* === SUSTAINABILITY & ESG INTEGRATED SECTION === */}
       <div id="sustainability" className="scroll-mt-24 border-t border-gold-warm/20">
@@ -168,7 +170,7 @@ export const About: React.FC = () => {
             <div className="flex flex-col gap-6">
               <span className="text-xs font-bold uppercase tracking-widest text-gold-champagne bg-forest px-3 py-1 rounded-full w-fit flex items-center gap-1.5">
                 <Sparkles size={14} className="text-gold-warm" />
-                ESG & Sustainability
+                {t('language') === 'vi' ? 'ESG & Phát Triển Bền Vững' : t('language') === 'zh' ? 'ESG 与可持续发展' : 'ESG & Sustainability'}
               </span>
               <h2 className="font-serif text-balance text-[2.25rem] leading-[1.1] sm:text-[3rem] md:text-5xl lg:text-6xl font-bold text-forest leading-tight">
                 <span dangerouslySetInnerHTML={{ __html: t('sustainability.introTitle') }} />
@@ -195,7 +197,7 @@ export const About: React.FC = () => {
               <div className="lg:col-span-5 flex flex-col gap-5">
                 <span className="text-xs font-bold text-gold-antique uppercase tracking-widest flex items-center gap-1.5">
                   <ShieldCheck size={16} className="text-gold-warm" />
-                  Certification Consultancy
+                  {t('language') === 'vi' ? 'Tư Vấn & Chứng Nhận' : t('language') === 'zh' ? '认证与合规咨询' : 'Certification Consultancy'}
                 </span>
                 <h2 className="font-serif text-balance text-[2.25rem] leading-[1.1] sm:text-[3rem] md:text-5xl font-bold text-forest leading-tight">
                   <span dangerouslySetInnerHTML={{ __html: t('sustainability.certTitle') }} />
@@ -211,19 +213,19 @@ export const About: React.FC = () => {
               <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6">
                 {[
                   {
-                    title: 'Organic Transition',
+                    title: t('language') === 'vi' ? 'Chuyển Đổi Hữu Cơ' : t('language') === 'zh' ? '有机转型管理' : 'Organic Transition',
                     desc: t('sustainability.certBullet1'),
                   },
                   {
-                    title: 'GlobalG.A.P. Compliance',
+                    title: t('language') === 'vi' ? 'Tuân Thủ GlobalG.A.P.' : t('language') === 'zh' ? 'GlobalG.A.P. 标准对接' : 'GlobalG.A.P. Compliance',
                     desc: t('sustainability.certBullet2'),
                   },
                   {
-                    title: 'Clean-Label Standards',
+                    title: t('language') === 'vi' ? 'Tiêu Chuẩn Clean-Label' : t('language') === 'zh' ? '清洁标签规范' : 'Clean-Label Standards',
                     desc: t('sustainability.certBullet3'),
                   },
                   {
-                    title: 'Audit Support',
+                    title: t('language') === 'vi' ? 'Hỗ Trợ Kiểm Toán' : t('language') === 'zh' ? '独立审计支持' : 'Audit Support',
                     desc: t('sustainability.certBullet4'),
                   },
                 ].map((item, idx) => (
@@ -257,7 +259,7 @@ export const About: React.FC = () => {
             <div className="text-center flex flex-col gap-4 max-w-3xl mx-auto mb-16">
               <span className="text-xs font-bold text-gold-antique uppercase tracking-widest flex items-center justify-center gap-1.5">
                 <RotateCcw size={16} className="text-gold-warm" />
-                Circular Economy
+                {t('language') === 'vi' ? 'Kinh Tế Tuần Hoàn' : t('language') === 'zh' ? '循环经济生态' : 'Circular Economy'}
               </span>
               <h2 className="font-serif text-balance text-[2rem] leading-[1.1] sm:text-4xl md:text-5xl font-bold text-forest">
                 <span dangerouslySetInnerHTML={{ __html: t('sustainability.circularTitle') }} />
@@ -277,21 +279,21 @@ export const About: React.FC = () => {
               {[
                 {
                   step: '01',
-                  title: 'Biomass Rescuing',
+                  title: t('language') === 'vi' ? 'Thu Hồi Sinh Khối' : t('language') === 'zh' ? '生物质回收利用' : 'Biomass Rescuing',
                   desc: t('sustainability.circularBullet1'),
                   color: 'bg-forest text-cream',
                   icon: <RotateCcw size={20} className="text-gold-warm" />
                 },
                 {
                   step: '02',
-                  title: 'High-Nutrient Upcycling',
-                  desc: 'Processing by-products through biological stabilization and controlled dehydration to retain maximum enzymes and vitamins.',
+                  title: t('language') === 'vi' ? 'Nâng Cấp Dinh Dưỡng' : t('language') === 'zh' ? '高营养升级循环' : 'High-Nutrient Upcycling',
+                  desc: t('language') === 'vi' ? 'Xử lý phụ phẩm bằng sinh học ổn định và sấy khô kiểm soát nhằm giữ lại tối đa enzyme và vitamin.' : t('language') === 'zh' ? '通过生物稳定化与受控脱水技术处理副产品，最大程度保留天然酶与维生素。' : 'Processing by-products through biological stabilization and controlled dehydration to retain maximum enzymes and vitamins.',
                   color: 'bg-cream border border-gold-warm/20 text-carbon',
                   icon: <Sparkles size={20} className="text-forest" />
                 },
                 {
                   step: '03',
-                  title: 'Secondary Value Chains',
+                  title: t('language') === 'vi' ? 'Chuỗi Giá Trị Thứ Cấp' : t('language') === 'zh' ? '二次价值链构建' : 'Secondary Value Chains',
                   desc: t('sustainability.circularBullet2'),
                   color: 'bg-brown-soil text-cream',
                   icon: <ArrowRight size={20} className="text-gold-warm rotate-90 md:rotate-0" />
