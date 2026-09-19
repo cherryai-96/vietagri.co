@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { useTranslation } from '../../i18n';
 import { getProductsByCategory, getCategoryInfo, type ProductItem } from '../../data/products';
+import { translateSubCategory, translateFormat } from '../../utils/i18nHelpers';
 import { ProductInquiryForm } from '../../components/products/ProductInquiryForm';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
@@ -432,25 +433,7 @@ export const CropsPlantBasedPage: React.FC = () => {
                       }}
                     />
                     <div className="absolute top-3 left-3 bg-carbon/80 backdrop-blur-sm text-gold-warm text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded">
-                      {language === 'zh'
-                        ? (p.subCategory === 'Fruit Purees' ? '果浆系列' :
-                           p.subCategory === 'Natural Juices' ? '原汁系列' :
-                           p.subCategory === 'Juice Concentrates' ? '浓缩汁系列' :
-                           p.subCategory === 'Fruits' ? '新鲜水果' :
-                           p.subCategory === 'Vegetables & Spices' ? '蔬菜与香料' :
-                           p.subCategory === 'Halal Chicken' ? '清真鸡肉' :
-                           p.subCategory === 'Chicken Cuts' ? '鸡肉分割部位' :
-                           (p.subCategory ||
-                            (p.category === 'fresh' ? '生鲜农产品' :
-                             p.category === 'powders' ? '果蔬纯粉' :
-                             p.category === 'purees' ? '果浆与浓缩汁' :
-                             p.category === 'freeze-dried' ? '冻干系列' : 'IQF 速冻')))
-                        : (p.subCategory || (
-                          p.category === 'fresh' ? 'Fresh Produce' :
-                          p.category === 'powders' ? 'Plant Powders' :
-                          p.category === 'purees' ? 'Purees & Concentrates' :
-                          p.category === 'freeze-dried' ? 'Freeze-Dried' : 'IQF Frozen'
-                        ))}
+                      {translateSubCategory(p.subCategory, language, language === 'vi' ? 'Nông Sản' : language === 'zh' ? '农产品' : 'Crops')}
                     </div>
                   </div>
 
@@ -464,33 +447,11 @@ export const CropsPlantBasedPage: React.FC = () => {
                       )}
 
                       <div className="mt-3 flex flex-wrap gap-1.5">
-                        {p.formats.map((fmt, idx) => {
-                          const displayFmt = language === 'zh'
-                            ? (fmt === 'Frozen Seedless Puree' ? '冷冻无核果泥' :
-                               fmt === 'Aseptic Puree' ? '无菌装果泥' :
-                               fmt === 'Smooth Puree (Hass / 034 Variety)' ? '细腻果泥 (Hass/034)' :
-                               fmt === 'Pulp Chunk' ? '果肉颗粒' :
-                               fmt === 'Seed-in Puree' ? '带籽果泥' :
-                               fmt === 'Filtered Seedless Puree' ? '过滤无核果泥' :
-                               fmt === 'Raw Single-Strength Juice' ? '原榨单倍浓度汁' :
-                               fmt === 'Aseptic Drum Juice' ? '无菌大桶汁' :
-                               fmt === 'Single-Strength Juice' ? '原榨单倍汁' :
-                               fmt === 'Clear Juice' ? '澄清汁' :
-                               fmt === '60-65 Brix Concentrate' ? '60-65 Brix 浓缩汁' :
-                               fmt === '50 Brix Concentrate' ? '50 Brix 浓缩汁' :
-                               fmt === '28-30 Brix Aseptic Puree' ? '28-30 Brix 无菌果泥' :
-                               fmt === 'Aseptic Drum' ? '无菌大桶装' :
-                               fmt === 'Whole Fruit' ? '整果' :
-                               fmt === 'Fine Powder (80-100 Mesh)' ? '80-100目细粉' :
-                               fmt === 'Freeze-Dried Slices / Cubes' ? '冻干切片/切块' :
-                               fmt === 'IQF Frozen Produce' ? 'IQF 速冻果蔬' : fmt)
-                            : fmt;
-                          return (
-                            <span key={idx} className="bg-ivory border border-gold-warm/15 text-carbon/80 text-[10px] px-2 py-0.5 rounded font-medium">
-                              {displayFmt}
-                            </span>
-                          );
-                        })}
+                        {p.formats.map((fmt, idx) => (
+                          <span key={idx} className="bg-ivory border border-gold-warm/15 text-carbon/80 text-[10px] px-2 py-0.5 rounded font-medium">
+                            {translateFormat(fmt, language)}
+                          </span>
+                        ))}
                       </div>
                     </div>
 

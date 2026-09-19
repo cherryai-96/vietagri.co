@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet-async';
 import { useParams, Link } from 'react-router-dom';
 import { useTranslation } from '../../i18n';
 import { getCategoryInfo, getProductsByCategory, type ProductItem } from '../../data/products';
+import { translateSubCategory, translateFormat, translateShelfLife } from '../../utils/i18nHelpers';
 import { ProductInquiryForm } from '../../components/products/ProductInquiryForm';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
@@ -219,11 +220,7 @@ export const CategoryPage: React.FC<CategoryPageProps> = ({ categoryKey: propCat
                   </button>
                   {subCategories.map((sub) => {
                     const count = products.filter(p => p.subCategory === sub).length;
-                    const displaySubName = language === 'vi' 
-                      ? (sub === 'Fruits' ? 'Trái cây tươi' : sub === 'Vegetables & Spices' ? 'Rau củ & Gia vị' : sub)
-                      : language === 'zh'
-                      ? (sub === 'Fruits' ? '新鲜水果' : sub === 'Vegetables & Spices' ? '蔬菜与香料' : sub)
-                      : sub;
+                    const displaySubName = translateSubCategory(sub, language);
                     return (
                       <button
                         key={sub}
@@ -272,27 +269,7 @@ export const CategoryPage: React.FC<CategoryPageProps> = ({ categoryKey: propCat
                       }}
                     />
                     <div className="absolute top-3 left-3 bg-carbon/80 backdrop-blur-sm text-gold-warm text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded">
-                      {language === 'zh'
-                        ? (p.subCategory === 'Fruit Purees' ? '果浆系列' :
-                           p.subCategory === 'Natural Juices' ? '原汁系列' :
-                           p.subCategory === 'Juice Concentrates' ? '浓缩汁系列' :
-                           p.subCategory === 'Fruits' ? '新鲜水果' :
-                           p.subCategory === 'Vegetables & Spices' ? '蔬菜与香料' :
-                           p.subCategory === 'Chicken Cuts' ? '鸡肉分割部位' :
-                           p.subCategory === 'Halal Chicken' ? '清真鸡肉' :
-                           p.subCategory === 'Chicken Offal' ? '鸡副产品' :
-                           p.subCategory === 'Processed & Value-Added' ? '深加工系列' :
-                           p.subCategory === 'Basa Fillet' ? '巴沙鱼柳' :
-                           p.subCategory === 'Whole & H&G Basa' ? '原条与去头巴沙鱼' :
-                           p.subCategory === 'Value-Added Basa' ? '深加工巴沙鱼' :
-                           p.subCategory === 'Vannamei Shrimp' ? '南美白对虾' :
-                           p.subCategory === 'Black Tiger Shrimp' ? '黑虎虾/草虾' :
-                           p.subCategory === 'Value-Added Shrimp' ? '深加工虾类' :
-                           p.subCategory === 'Whole Squid' ? '原条鱿鱼' :
-                           p.subCategory === 'Squid Cuts & Rings' ? '鱿鱼圈与切块' :
-                           p.subCategory === 'Value-Added Squid' ? '深加工鱿鱼' :
-                           (p.subCategory || catInfo.titleZh || catInfo.titleEn))
-                        : (p.subCategory || catInfo.titleEn)}
+                      {translateSubCategory(p.subCategory, language, language === 'vi' ? catInfo.titleVi : language === 'zh' ? (catInfo.titleZh || catInfo.titleEn) : catInfo.titleEn)}
                     </div>
                   </div>
 
@@ -306,40 +283,18 @@ export const CategoryPage: React.FC<CategoryPageProps> = ({ categoryKey: propCat
                       )}
 
                       <div className="mt-3 flex flex-wrap gap-1.5">
-                        {p.formats.map((fmt, idx) => {
-                          const displayFmt = language === 'zh'
-                            ? (fmt === 'Frozen Seedless Puree' ? '冷冻无核果泥' :
-                               fmt === 'Aseptic Puree' ? '无菌装果泥' :
-                               fmt === 'Smooth Puree (Hass / 034 Variety)' ? '细腻果泥 (Hass/034)' :
-                               fmt === 'Pulp Chunk' ? '果肉颗粒' :
-                               fmt === 'Seed-in Puree' ? '带籽果泥' :
-                               fmt === 'Filtered Seedless Puree' ? '过滤无核果泥' :
-                               fmt === 'Raw Single-Strength Juice' ? '原榨单倍浓度汁' :
-                               fmt === 'Aseptic Drum Juice' ? '无菌大桶汁' :
-                               fmt === 'Single-Strength Juice' ? '原榨单倍汁' :
-                               fmt === 'Clear Juice' ? '澄清汁' :
-                               fmt === '60-65 Brix Concentrate' ? '60-65 Brix 浓缩汁' :
-                               fmt === '50 Brix Concentrate' ? '50 Brix 浓缩汁' :
-                               fmt === '28-30 Brix Aseptic Puree' ? '28-30 Brix 无菌果泥' :
-                               fmt === 'Aseptic Drum' ? '无菌大桶装' :
-                               fmt === 'Whole Fruit' ? '整果' :
-                               fmt === 'Fine Powder (80-100 Mesh)' ? '80-100目细粉' :
-                               fmt === 'Freeze-Dried Slices / Cubes' ? '冻干切片/切块' :
-                               fmt === 'IQF Frozen Produce' ? 'IQF 速冻果蔬' : fmt)
-                            : fmt;
-                          return (
-                            <span key={idx} className="bg-ivory border border-gold-warm/15 text-carbon/80 text-[10px] px-2 py-0.5 rounded font-medium">
-                              {displayFmt}
-                            </span>
-                          );
-                        })}
+                        {p.formats.map((fmt, idx) => (
+                          <span key={idx} className="bg-ivory border border-gold-warm/15 text-carbon/80 text-[10px] px-2 py-0.5 rounded font-medium">
+                            {translateFormat(fmt, language)}
+                          </span>
+                        ))}
                       </div>
                     </div>
 
                     <div className="pt-3 border-t border-gold-warm/15 flex flex-col gap-2">
                       <div className="flex justify-between text-[11px] text-carbon/70">
                         <span>{language === 'vi' ? 'Hạn bảo quản:' : language === 'zh' ? '保质期：' : 'Shelf Life:'}</span>
-                        <span className="font-semibold text-forest">{p.specifications.shelfLife}</span>
+                        <span className="font-semibold text-forest">{translateShelfLife(p.specifications.shelfLife, language)}</span>
                       </div>
 
                       <button
