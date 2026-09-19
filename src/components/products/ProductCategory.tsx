@@ -11,13 +11,16 @@ interface ProductCategoryProps {
   titleKey?: string;
   titleEn?: string;
   titleVi?: string;
+  titleZh?: string;
   descKeys?: string[];
   descEn?: string;
   descVi?: string;
+  descZh?: string;
   tags: string[];
   linkPath?: string;
   linkTextEn?: string;
   linkTextVi?: string;
+  linkTextZh?: string;
   reversed?: boolean;
 }
 
@@ -28,13 +31,16 @@ export const ProductCategory: React.FC<ProductCategoryProps> = ({
   titleKey,
   titleEn,
   titleVi,
+  titleZh,
   descKeys,
   descEn,
   descVi,
+  descZh,
   tags,
   linkPath,
   linkTextEn,
   linkTextVi,
+  linkTextZh,
   reversed = false,
 }) => {
   const { t, language } = useTranslation();
@@ -54,16 +60,16 @@ export const ProductCategory: React.FC<ProductCategoryProps> = ({
   }, [displayImages.length]);
 
   const displayTitle = titleEn && titleVi
-    ? (language === 'vi' ? titleVi : titleEn)
+    ? (language === 'vi' ? titleVi : language === 'zh' ? (titleZh || titleEn) : titleEn)
     : (titleKey ? t(titleKey) : '');
 
   const displayDesc = descEn && descVi
-    ? (language === 'vi' ? descVi : descEn)
+    ? (language === 'vi' ? descVi : language === 'zh' ? (descZh || descEn) : descEn)
     : null;
 
-  const defaultBtnText = language === 'vi' ? 'Xem Chi Tiết Danh Mục' : 'Explore Category Products';
+  const defaultBtnText = language === 'vi' ? 'Xem Chi Tiết Danh Mục' : language === 'zh' ? '查看产品目录' : 'Explore Category Products';
   const displayBtnText = linkTextEn && linkTextVi
-    ? (language === 'vi' ? linkTextVi : linkTextEn)
+    ? (language === 'vi' ? linkTextVi : language === 'zh' ? (linkTextZh || linkTextEn) : linkTextEn)
     : defaultBtnText;
 
   return (

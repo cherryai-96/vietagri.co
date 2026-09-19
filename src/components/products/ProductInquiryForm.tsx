@@ -4,7 +4,7 @@ import { Send, CheckCircle2, AlertCircle } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 export const ProductInquiryForm: React.FC = () => {
-  const { t } = useTranslation();
+  const { t, language } = useTranslation();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
@@ -41,7 +41,9 @@ export const ProductInquiryForm: React.FC = () => {
           <div className="w-20 h-20 bg-forest/10 rounded-full flex items-center justify-center mb-6">
             <CheckCircle2 size={40} className="text-forest" />
           </div>
-          <h4 className="font-serif font-bold text-2xl text-carbon mb-4">Request Received</h4>
+          <h4 className="font-serif font-bold text-2xl text-carbon mb-4">
+            {language === 'vi' ? 'Đã Nhận Yêu Cầu' : language === 'zh' ? '已收到您的询价申请' : 'Request Received'}
+          </h4>
           <p className="text-carbon/70 font-light max-w-md">
             {t('common.success')}
           </p>
@@ -114,18 +116,18 @@ export const ProductInquiryForm: React.FC = () => {
               <select
                 id="category"
                 required
-                className="w-full bg-cream border border-black/10 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-forest/30 focus:border-forest/50 transition-all font-light appearance-none cursor-pointer"
+                className="w-full bg-cream border border-black/10 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-forest/30 focus:border-forest/50 transition-all font-light appearance-none cursor-pointer text-carbon"
               >
-                <option value="">Select a category</option>
-                <option value="beverages">Specialty Beverages: Coffee & Cacao</option>
-                <option value="fruits">High-Value Tropical Fruits</option>
-                <option value="spices">Spices & Nuts</option>
-                <option value="grains">Premium Grains</option>
-                <option value="superfoods">Superfoods & Botanical Biomass</option>
-                <option value="soilz">Bio.SoilZ</option>
-                <option value="manure">Premium Japanese Chicken Manure</option>
-                <option value="cowdung">Composted Cow Dung</option>
-                <option value="general">General Product Inquiry</option>
+                <option value="">{language === 'vi' ? 'Chọn danh mục sản phẩm' : language === 'zh' ? '选择产品类别' : 'Select a category'}</option>
+                <option value="beverages">{language === 'vi' ? 'Đồ uống đặc sản: Cà phê & Cacao' : language === 'zh' ? '特产饮品：咖啡与可可' : 'Specialty Beverages: Coffee & Cacao'}</option>
+                <option value="fruits">{language === 'vi' ? 'Trái cây nhiệt đới giá trị cao' : language === 'zh' ? '高价值热带水果' : 'High-Value Tropical Fruits'}</option>
+                <option value="spices">{language === 'vi' ? 'Gia vị & Hạt điều' : language === 'zh' ? '香料与坚果' : 'Spices & Nuts'}</option>
+                <option value="grains">{language === 'vi' ? 'Nông sản hạt cao cấp' : language === 'zh' ? '优质谷物农产品' : 'Premium Grains'}</option>
+                <option value="superfoods">{language === 'vi' ? 'Siêu thực phẩm & Sinh khối thực vật' : language === 'zh' ? '超级食品与植物生物质' : 'Superfoods & Botanical Biomass'}</option>
+                <option value="soilz">{language === 'vi' ? 'Chế phẩm cải tạo đất Bio.SoilZ' : language === 'zh' ? 'Bio.SoilZ 土壤改良剂' : 'Bio.SoilZ Soil Enhancers'}</option>
+                <option value="manure">{language === 'vi' ? 'Phân gà hữu cơ Nhật Bản' : language === 'zh' ? '日本进口有机鸡粪' : 'Premium Japanese Chicken Manure'}</option>
+                <option value="cowdung">{language === 'vi' ? 'Phân bò hoai mục Bio' : language === 'zh' ? '腐熟发酵牛粪' : 'Composted Cow Dung'}</option>
+                <option value="general">{language === 'vi' ? 'Tư vấn nông sản chung' : language === 'zh' ? '通用产品咨询' : 'General Product Inquiry'}</option>
               </select>
             </div>
             
@@ -146,17 +148,17 @@ export const ProductInquiryForm: React.FC = () => {
               </label>
               <select
                 id="format"
-                className="w-full bg-cream border border-black/10 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-forest/30 focus:border-forest/50 transition-all font-light appearance-none cursor-pointer"
+                className="w-full bg-cream border border-black/10 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-forest/30 focus:border-forest/50 transition-all font-light appearance-none cursor-pointer text-carbon"
               >
-                <option value="">Select preferred format</option>
-                <option value="fresh">Fresh</option>
-                <option value="dried">Dried</option>
-                <option value="powder">Powder</option>
-                <option value="frozen">Frozen Pulp</option>
-                <option value="bulk">Bulk Raw Material</option>
-                <option value="processed">Processed Ingredient</option>
-                <option value="fertilizer">Fertilizer / Soil Input</option>
-                <option value="custom">Custom</option>
+                <option value="">{language === 'vi' ? 'Chọn định dạng mong muốn' : language === 'zh' ? '选择希望的规格形态' : 'Select preferred format'}</option>
+                <option value="fresh">{language === 'vi' ? 'Tươi nguyên trái / củ' : language === 'zh' ? '生鲜果蔬' : 'Fresh'}</option>
+                <option value="dried">{language === 'vi' ? 'Sấy dẻo / Sấy giòn' : language === 'zh' ? '干制 / 烘干' : 'Dried'}</option>
+                <option value="powder">{language === 'vi' ? 'Bột nguyên chất' : language === 'zh' ? '纯粉末' : 'Powder'}</option>
+                <option value="frozen">{language === 'vi' ? 'Cấp đông IQF / Puree đông' : language === 'zh' ? 'IQF 速冻 / 冻果浆' : 'Frozen Pulp'}</option>
+                <option value="bulk">{language === 'vi' ? 'Nguyên liệu thô đóng bao bốt' : language === 'zh' ? '散装原料' : 'Bulk Raw Material'}</option>
+                <option value="processed">{language === 'vi' ? 'Thành phần chế biến sâu' : language === 'zh' ? '深加工配料' : 'Processed Ingredient'}</option>
+                <option value="fertilizer">{language === 'vi' ? 'Phân bón & Chế phẩm đất' : language === 'zh' ? '肥料 / 土壤投入品' : 'Fertilizer / Soil Input'}</option>
+                <option value="custom">{language === 'vi' ? 'Quy cách riêng theo yêu cầu' : language === 'zh' ? '定制规格' : 'Custom'}</option>
               </select>
             </div>
           </div>

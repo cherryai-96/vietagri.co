@@ -2,6 +2,7 @@ export interface ProductItem {
   id: string;
   nameEn: string;
   nameVi: string;
+  nameZh?: string;
   scientificName?: string;
   category: 'fresh' | 'powders' | 'freeze-dried' | 'iqf' | 'poultry' | 'seafood' | 'basa' | 'shrimp' | 'squid' | string;
   subCategory?: string;
@@ -24,27 +25,35 @@ export interface CategoryInfo {
   slug: string;
   titleEn: string;
   titleVi: string;
+  titleZh?: string;
   subtitleEn: string;
   subtitleVi: string;
+  subtitleZh?: string;
   heroImage: string;
   catalogueFileName: string;
   catalogueDriveId: string;
   descriptionEn: string;
   descriptionVi: string;
+  descriptionZh?: string;
   highlightsEn: string[];
   highlightsVi: string[];
+  highlightsZh?: string[];
   availableCutsEn: string[];
   availableCutsVi: string[];
+  availableCutsZh?: string[];
   defaultPackagingEn: string;
   defaultPackagingVi: string;
+  defaultPackagingZh?: string;
   storageEn: string;
   storageVi: string;
+  storageZh?: string;
 }
 
 export interface CatalogueInfo {
   id: string;
   titleEn: string;
   titleVi: string;
+  titleZh?: string;
   category: string;
   pageCount: number;
   fileSize: string;
@@ -54,6 +63,7 @@ export interface CatalogueInfo {
   coverImage: string;
   descEn: string;
   descVi: string;
+  descZh?: string;
 }
 
 export interface FormatComparison {
@@ -3361,6 +3371,7 @@ export const CATALOGUES_LIST: CatalogueInfo[] = [
     id: 'cat-harvest-edition-2026',
     titleEn: 'VAC Complete Product Catalogue 2026 (Harvest Edition)',
     titleVi: 'Catalogue Tổng Tập Nông Sản VietAgri 2026 (Harvest Edition)',
+    titleZh: 'VAC 2026年农产品综合目录 (Harvest Edition)',
     category: 'Complete Master Portfolio',
     pageCount: 16,
     fileSize: '34.9 MB',
@@ -3369,12 +3380,14 @@ export const CATALOGUES_LIST: CatalogueInfo[] = [
     driveId: '1U70DJaj_9dWtu6jSr9sZmsxNeBO-7jAF',
     coverImage: '/images/products/IMG_7966.PNG',
     descEn: 'Comprehensive guide covering all 4 processing formats: Fresh Produce, Fruit & Vegetable Powders, Freeze-Dried Fruits, and IQF Frozen Produce alongside Viet Wolffia and Organic Inputs.',
-    descVi: 'Tài liệu tổng hợp toàn bộ 4 định dạng chế biến nông sản: Nông sản tươi, Bột trái cây & rau củ, Trái cây sấy thăng hoa và Cấp đông IQF cùng siêu thực phẩm Việt Wolffia & Phân bón hữu cơ.'
+    descVi: 'Tài liệu tổng hợp toàn bộ 4 định dạng chế biến nông sản: Nông sản tươi, Bột trái cây & rau củ, Trái cây sấy thăng hoa và Cấp đông IQF cùng siêu thực phẩm Việt Wolffia & Phân bón hữu cơ.',
+    descZh: '全面涵盖4大加工形态：鲜果农产品、水果蔬菜粉、冻干水果、IQF速冻农产品以及越南 Wolffia 和有机农业投入品。'
   },
   {
     id: 'cat-fresh-2026',
     titleEn: 'Fresh Fruits & Vegetables Catalogue 2026',
     titleVi: 'Catalogue Trái Cây & Rau Củ Tươi Xuất Khẩu 2026',
+    titleZh: '2026年出口鲜果与蔬菜产品目录',
     category: 'Fresh Produce',
     pageCount: 12,
     fileSize: '31.1 MB',
@@ -3383,12 +3396,14 @@ export const CATALOGUES_LIST: CatalogueInfo[] = [
     driveId: '1N9T754XJ1-0x9HT5p8hBhvb9hV3N3-bP',
     coverImage: '/images/products/IMG_7967.JPG',
     descEn: 'Export-grade Vietnamese fresh fruits, root vegetables, and culinary crops with seasonal calendars, caliber specifications, and post-harvest cold chain management.',
-    descVi: 'Trái cây tươi xuất khẩu, củ quả và gia vị nhiệt đới Việt Nam kèm lịch thu hoạch theo mùa, tiêu chuẩn phân loại size và quy trình bảo quản chuỗi lạnh xuất khẩu.'
+    descVi: 'Trái cây tươi xuất khẩu, củ quả và gia vị nhiệt đới Việt Nam kèm lịch thu hoạch theo mùa, tiêu chuẩn phân loại size và quy trình bảo quản chuỗi lạnh xuất khẩu.',
+    descZh: '出口级越南鲜果、根茎类蔬菜及热带调味作物，附带季节性采收日历、规格分级标准及采后冷链保鲜管理。'
   },
   {
     id: 'cat-powders-2026',
     titleEn: 'Fruit & Vegetable Powders Product Catalogue 2026',
     titleVi: 'Catalogue Bột Trái Cây & Rau Củ Thực Phẩm 2026',
+    titleZh: '2026年水果与蔬菜粉产品目录',
     category: 'Food Ingredients & Extracts',
     pageCount: 12,
     fileSize: '25.0 MB',
@@ -3397,12 +3412,14 @@ export const CATALOGUES_LIST: CatalogueInfo[] = [
     driveId: '1HdqV7OvaVWPwKMaf4u2pwMnQuS9bZ6mT',
     coverImage: '/images/products/coffee_cacao.png',
     descEn: 'Technical specifications for Freeze-Dried Powders, Tropical Powder Collection, Dehydrated Powders, and 100% Water Soluble Extract Powders for F&B and Nutraceuticals.',
-    descVi: 'Thông số kỹ thuật chi tiết cho Bột sấy thăng hoa, Bộ sưu tập bột nông sản nhiệt đới, Bột sấy lạnh và Bột chiết xuất hòa tan 100% chuyên dụng cho F&B và Dược phẩm.'
+    descVi: 'Thông số kỹ thuật chi tiết cho Bột sấy thăng hoa, Bộ sưu tập bột nông sản nhiệt đới, Bột sấy lạnh và Bột chiết xuất hòa tan 100% chuyên dụng cho F&B và Dược phẩm.',
+    descZh: '冻干粉、热带农产品粉系列、冷干粉及100%水溶性提取粉的技术规格，专为食品饮料及保健品工业打造。'
   },
   {
     id: 'cat-freeze-dried-2026',
     titleEn: 'Freeze-Dried Fruits Product Catalogue 2026',
     titleVi: 'Catalogue Trái Cây Sấy Thăng Hoa 2026',
+    titleZh: '2026年冻干水果产品目录',
     category: 'Sublimation Dried Fruits',
     pageCount: 6,
     fileSize: '10.6 MB',
@@ -3411,12 +3428,14 @@ export const CATALOGUES_LIST: CatalogueInfo[] = [
     driveId: '1jPaTPhfWrBV9DBNz_5Iyp9pt_EtB_UfU',
     coverImage: '/images/products/IMG_7958.JPG',
     descEn: 'Sublimation vacuum freeze-dried fruits with crispy texture, moisture under 5%, preserving 98%+ nutrients in Whole, Slices, Dices, and Crisps forms.',
-    descVi: 'Trái cây sấy thăng hoa chân không giữ trọn 98% dinh dưỡng, cấu trúc giòn xốp thơm ngon với độ ẩm dưới 5% dạng Nguyên quả, Lát, Hạt lựu và Crisps.'
+    descVi: 'Trái cây sấy thăng hoa chân không giữ trọn 98% dinh dưỡng, cấu trúc giòn xốp thơm ngon với độ ẩm dưới 5% dạng Nguyên quả, Lát, Hạt lựu và Crisps.',
+    descZh: '真空升华冻干水果，保持酥脆口感，水分低于5%，保留98%以上的营养成分，涵盖整果、切片、切丁及脆片形态。'
   },
   {
     id: 'cat-iqf-2026',
     titleEn: 'IQF Fruits & Vegetables Product Catalogue 2026',
     titleVi: 'Catalogue Trái Cây & Rau Củ Cấp Đông IQF 2026',
+    titleZh: '2026年IQF速冻水果与蔬菜产品目录',
     category: 'Individually Quick-Frozen',
     pageCount: 6,
     fileSize: '12.0 MB',
@@ -3425,12 +3444,14 @@ export const CATALOGUES_LIST: CatalogueInfo[] = [
     driveId: '1G2bwMHCCkACltg-6l6RwoHKYICe4nagj',
     coverImage: '/images/products/IMG_7960.JPG',
     descEn: 'Cryogenic IQF frozen fruits and vegetables (-35°C freezing, -18°C storage) in free-flowing Dices, Slices, Halves, and Puree blocks for industrial food manufacturing.',
-    descVi: 'Nông sản cấp đông siêu tốc IQF (-35°C) tơi rời dạng Hạt lựu, Lát, Nửa quả và Khối Puree phục vụ nhà máy chế biến thực phẩm và chuỗi HORECA.'
+    descVi: 'Nông sản cấp đông siêu tốc IQF (-35°C) tơi rời dạng Hạt lựu, Lát, Nửa quả và Khối Puree phục vụ nhà máy chế biến thực phẩm và chuỗi HORECA.',
+    descZh: '深冷IQF速冻水果与蔬菜（-35°C冻结，-18°C储存），提供松散切丁、切片、对半及果泥块形态，服务于工业食品制造。'
   },
   {
     id: 'cat-purees-2026',
     titleEn: 'Fruit Purees & Concentrates Catalogue 2026',
     titleVi: 'Catalogue Trái Cây Xay Nhuyễn & Nước Ép Đậm Đặc 2026',
+    titleZh: '2026年果泥与浓缩果汁产品目录',
     category: 'Purees & Concentrates',
     pageCount: 8,
     fileSize: '18.5 MB',
@@ -3439,7 +3460,8 @@ export const CATALOGUES_LIST: CatalogueInfo[] = [
     driveId: '1o3DgzPTqN9fjnEEsuFG-YnNzkG_A2aRj',
     coverImage: '/images/products/puree/puree_mango.png',
     descEn: 'Aseptic frozen fruit purees, seedless pulps, single-strength juices, and high-Brix concentrates for F&B industrial processing.',
-    descVi: 'Puree trái cây cấp đông vô trùng, thịt quả bỏ hạt, nước ép nguyên chất và nước ép đậm đặc Brix cao cho ngành chế biến F&B công nghiệp.'
+    descVi: 'Puree trái cây cấp đông vô trùng, thịt quả bỏ hạt, nước ép nguyên chất và nước ép đậm đặc Brix cao cho ngành chế biến F&B công nghiệp.',
+    descZh: '无菌冷冻果泥、去籽果肉、原汁及高Brix浓缩果汁，专为食品饮料工业加工设计。'
   },
 ];
 

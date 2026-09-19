@@ -12,12 +12,14 @@ export const Catalogues: React.FC = () => {
   return (
     <div className="w-full flex flex-col min-h-screen bg-cream text-carbon">
       <Helmet>
-        <title>{language === 'vi' ? 'Trung Tâm Catalogue 2026 | VietAgri.co' : '2026 Product Catalogue Centre | VietAgri.co'}</title>
+        <title>{language === 'vi' ? 'Trung Tâm Catalogue 2026 | VietAgri.co' : language === 'zh' ? '2026年产品目录中心 | VietAgri.co' : '2026 Product Catalogue Centre | VietAgri.co'}</title>
         <meta
           name="description"
           content={
             language === 'vi'
               ? 'Tải miễn phí 5 Catalogue Nông sản Việt Nam 2026 chính thức: Trái cây tươi, Bột nông sản, Trái cây sấy thăng hoa, Nông sản cấp đông IQF và Tổng tập Harvest Edition.'
+              : language === 'zh'
+              ? '免费下载2026年越南农业中心5大官方产品目录：鲜果农产品、农产品果粉、冻干水果、IQF速冻农产品及 Harvest Edition 综合目录。'
               : 'Download official 2026 Vietnamese Agricultural Product Catalogues: Fresh Produce, Fruit Powders, Freeze-Dried Fruits, IQF Frozen Produce, and Complete Harvest Edition.'
           }
         />
@@ -41,7 +43,7 @@ export const Catalogues: React.FC = () => {
             className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gold-warm/15 border border-gold-warm/30 text-gold-warm text-xs font-bold uppercase tracking-widest"
           >
             <Sparkles size={14} />
-            {language === 'vi' ? 'Tài Liệu Xuất Khẩu Chính Thức 2026' : 'Official 2026 Export Catalogues'}
+            {language === 'vi' ? 'Tài Liệu Xuất Khẩu Chính Thức 2026' : language === 'zh' ? '2026 官方出口产品目录' : 'Official 2026 Export Catalogues'}
           </motion.span>
 
           <motion.h1
@@ -50,7 +52,7 @@ export const Catalogues: React.FC = () => {
             transition={{ delay: 0.1 }}
             className="font-serif text-3xl sm:text-4xl md:text-5xl font-black text-white uppercase tracking-wide max-w-4xl"
           >
-            {language === 'vi' ? 'Trung Tâm Tải Catalogue Nông Sản VAC' : 'VAC Product Catalogue Centre'}
+            {language === 'vi' ? 'Trung Tâm Tải Catalogue Nông Sản VAC' : language === 'zh' ? 'VAC 农产品目录下载中心' : 'VAC Product Catalogue Centre'}
           </motion.h1>
 
           <motion.p
@@ -61,13 +63,15 @@ export const Catalogues: React.FC = () => {
           >
             {language === 'vi'
               ? 'Tải trực tiếp bộ tài liệu kỹ thuật và danh mục 5 bản Catalogue 2026 phục vụ nhà mua hàng, nhà máy chế biến F&B và nhà nhập khẩu quốc tế.'
+              : language === 'zh'
+              ? '直接下载5本 2026 官方产品规格目录，专为国际企业买家、食品饮料制造商及进口商打造。'
               : 'Direct download access to all 5 official 2026 product format catalogues for international enterprise buyers, F&B manufacturers, and importers.'}
           </motion.p>
 
           <div className="flex flex-wrap justify-center gap-6 text-xs md:text-sm text-cream/80 pt-2 font-light">
-            <span className="flex items-center gap-1.5"><CheckCircle2 size={16} className="text-gold-warm" /> {language === 'vi' ? 'Tải trực tiếp không cần đăng ký' : 'Instant barrier-free PDF download'}</span>
-            <span className="flex items-center gap-1.5"><CheckCircle2 size={16} className="text-gold-warm" /> {language === 'vi' ? 'Thông số quy cách B2B chuẩn' : 'Full B2B spec sheet coverage'}</span>
-            <span className="flex items-center gap-1.5"><CheckCircle2 size={16} className="text-gold-warm" /> {language === 'vi' ? 'Bản quyền VAC 2026' : 'Official 2026 VAC Edition'}</span>
+            <span className="flex items-center gap-1.5"><CheckCircle2 size={16} className="text-gold-warm" /> {language === 'vi' ? 'Tải trực tiếp không cần đăng ký' : language === 'zh' ? '直接下载，无需注册' : 'Instant barrier-free PDF download'}</span>
+            <span className="flex items-center gap-1.5"><CheckCircle2 size={16} className="text-gold-warm" /> {language === 'vi' ? 'Thông số quy cách B2B chuẩn' : language === 'zh' ? '全套 B2B 规格书支持' : 'Full B2B spec sheet coverage'}</span>
+            <span className="flex items-center gap-1.5"><CheckCircle2 size={16} className="text-gold-warm" /> {language === 'vi' ? 'Bản quyền VAC 2026' : language === 'zh' ? 'VAC 2026 官方正版' : 'Official 2026 VAC Edition'}</span>
           </div>
         </div>
       </section>
@@ -100,7 +104,7 @@ export const Catalogues: React.FC = () => {
 
                   <div className="absolute bottom-4 left-4 right-4 flex justify-between items-end text-cream text-xs">
                     <span className="flex items-center gap-1 bg-carbon/80 px-2.5 py-1 rounded backdrop-blur-sm">
-                      <FileText size={14} className="text-gold-warm" /> {cat.pageCount} {language === 'vi' ? 'Trang' : 'Pages'}
+                      <FileText size={14} className="text-gold-warm" /> {cat.pageCount} {language === 'vi' ? 'Trang' : language === 'zh' ? '页' : 'Pages'}
                     </span>
                     <span className="bg-carbon/80 px-2.5 py-1 rounded backdrop-blur-sm font-semibold text-gold-champagne">
                       {cat.fileSize}
@@ -112,10 +116,10 @@ export const Catalogues: React.FC = () => {
                 <div className="p-6 flex flex-col flex-grow justify-between gap-6">
                   <div>
                     <h3 className="font-serif text-lg font-bold text-forest leading-snug group-hover:text-gold-warm transition-colors">
-                      {language === 'vi' ? cat.titleVi : cat.titleEn}
+                      {language === 'vi' ? cat.titleVi : language === 'zh' ? (cat.titleZh || cat.titleEn) : cat.titleEn}
                     </h3>
                     <p className="text-xs md:text-sm text-carbon/70 font-light mt-3 leading-relaxed">
-                      {language === 'vi' ? cat.descVi : cat.descEn}
+                      {language === 'vi' ? cat.descVi : language === 'zh' ? (cat.descZh || cat.descEn) : cat.descEn}
                     </p>
                   </div>
 
@@ -126,7 +130,7 @@ export const Catalogues: React.FC = () => {
                       className="w-full bg-gold-warm hover:bg-gold-champagne text-brown-soil font-bold text-xs uppercase tracking-wider py-3.5 rounded shadow transition-all duration-300 flex items-center justify-center gap-2 group/btn"
                     >
                       <Download size={16} />
-                      <span>{language === 'vi' ? 'Tải PDF Trực Tiếp' : 'Download PDF Catalogue'}</span>
+                      <span>{language === 'vi' ? 'Tải PDF Trực Tiếp' : language === 'zh' ? '直接下载 PDF 目录' : 'Download PDF Catalogue'}</span>
                     </a>
 
                     <a
@@ -135,7 +139,7 @@ export const Catalogues: React.FC = () => {
                       rel="noopener noreferrer"
                       className="w-full bg-cream hover:bg-carbon/5 border border-gold-warm/30 text-forest font-semibold text-xs py-2.5 rounded transition-all duration-300 flex items-center justify-center gap-1.5"
                     >
-                      <span>{language === 'vi' ? 'Xem Trực Tuyến trên Google Drive' : 'View Online on Google Drive'}</span>
+                      <span>{language === 'vi' ? 'Xem Trực Tuyến trên Google Drive' : language === 'zh' ? '在 Google Drive 在线预览' : 'View Online on Google Drive'}</span>
                       <ExternalLink size={14} />
                     </a>
                   </div>
@@ -150,9 +154,9 @@ export const Catalogues: React.FC = () => {
       <section className="py-20 bg-ivory border-t border-gold-warm/20 px-4 md:px-8">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-10">
-            <span className="text-gold-warm text-xs font-bold uppercase tracking-widest">{language === 'vi' ? 'Liên Hệ Thương Mại' : 'Commercial Support'}</span>
+            <span className="text-gold-warm text-xs font-bold uppercase tracking-widest">{language === 'vi' ? 'Liên Hệ Thương Mại' : language === 'zh' ? '商务支持' : 'Commercial Support'}</span>
             <h2 className="font-serif text-3xl font-bold text-forest uppercase mt-2">
-              {language === 'vi' ? 'Yêu Cầu Tài Liệu Kỹ Thuật Độc Quyền hoặc Báo Giá' : 'Request Custom Technical Specs & Quotation'}
+              {language === 'vi' ? 'Yêu Cầu Tài Liệu Kỹ Thuật Độc Quyền hoặc Báo Giá' : language === 'zh' ? '索取专属技术规格书与报价' : 'Request Custom Technical Specs & Quotation'}
             </h2>
           </div>
           <div className="bg-white rounded-2xl p-6 md:p-8 shadow-xl border border-gold-warm/20">
