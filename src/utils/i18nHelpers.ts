@@ -77,6 +77,21 @@ export const formatZhMap: Record<string, string> = {
   '28-30 Brix Aseptic Puree': '28-30 Brix 无菌果泥',
   'Aseptic Drum': '无菌大桶装',
   'Whole Fruit': '整果',
+  'Whole Fruit with Foam Net': '整果 (带网套保鲜)',
+  'Size 250g-400g': '单果重 250g-400g',
+  'Size 800g - 1.8kg': '单果重 800g-1.8kg',
+  'Whole Fruit Grade A': '特级整果 (Grade A)',
+  'Crispy Whole Fruit': '脆甜整果',
+  '150g-250g': '单果重 150g-250g',
+  'Whole Cherry': '整颗鲜果',
+  'Grade A Sorted': '特级分选 (Grade A)',
+  'Whole Bird (Head-off, Feet-off, Eviscerated)': '全鸡 (去头去脚去内脏)',
+  'Griller / Broiler': '烧烤级/雏鸡',
+  'Single Fillet': '单条肉排',
+  'Butterfly Cut': '蝴蝶切/开背',
+  'Dices & Strips': '切丁与切条',
+  'Bone-in Skin-on Breast': '带骨带皮鸡胸',
+  'Half Breast Cuts': '半鸡胸切块',
   'Fine Powder (80-100 Mesh)': '80-100目细粉',
   'Freeze-Dried Slices / Cubes': '冻干切片/切块',
   'IQF Frozen Produce': 'IQF 速冻果蔬'
@@ -90,7 +105,16 @@ export const translateSubCategory = (sub: string | undefined, lang: string, fall
 };
 
 export const translateFormat = (fmt: string, lang: string): string => {
-  if (lang === 'zh') return formatZhMap[fmt] || fmt;
+  if (lang === 'zh') {
+    if (formatZhMap[fmt]) return formatZhMap[fmt];
+    let res = fmt;
+    res = res.replace(/^Size\s+/i, '单果重 ');
+    res = res.replace(/^Grade\s+A\s+Sorted/i, '特级分选 (Grade A)');
+    res = res.replace(/^Grade\s+A/i, '特级 Grade A');
+    res = res.replace(/Whole Fruit/i, '整果');
+    res = res.replace(/Foam Net/i, '保鲜网套');
+    return res;
+  }
   return fmt;
 };
 
@@ -98,12 +122,22 @@ export const translateShelfLife = (life: string | undefined, lang: string): stri
   if (!life) return '';
   if (lang === 'zh') {
     return life
-      .replace(/24 months \(Frozen -18°C\)/g, '-18°C 冷冻保质 24 个月')
-      .replace(/24 months/g, '保质期 24 个月')
-      .replace(/18 months under vacuum/g, '真空密封保质 18 个月')
-      .replace(/12 months/g, '保质期 12 个月')
-      .replace(/36 months/g, '保质期 36 个月')
-      .replace(/at -18°C/g, '在 -18°C 环境下');
+      .replace(/(\d+)\s*-\s*(\d+)\s*days/gi, '$1 - $2 天')
+      .replace(/(\d+)\s*days/gi, '$1 天')
+      .replace(/(\d+)\s*months/gi, '$1 个月')
+      .replace(/Frozen -18°C/gi, '-18°C 冷冻')
+      .replace(/under vacuum/gi, '真空包装')
+      .replace(/Chilled 0-4°C/gi, '0-4°C 冷藏')
+      .replace(/at -18°C or lower/gi, '-18°C 或更低冷冻');
+  }
+  if (lang === 'vi') {
+    return life
+      .replace(/(\d+)\s*-\s*(\d+)\s*days/gi, '$1 - $2 ngày')
+      .replace(/(\d+)\s*days/gi, '$1 ngày')
+      .replace(/(\d+)\s*months/gi, '$1 tháng')
+      .replace(/Frozen -18°C/gi, 'Cấp đông -18°C')
+      .replace(/under vacuum/gi, 'Hút chân không')
+      .replace(/Chilled 0-4°C/gi, 'Bảo quản mát 0-4°C');
   }
   return life;
 };
