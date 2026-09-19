@@ -174,21 +174,6 @@ export const Header: React.FC = () => {
                   </NavLink>
                   <div className="absolute top-full left-0 mt-0 w-80 bg-carbon/95 backdrop-blur-md border border-gold-warm/20 rounded-md shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top translate-y-2 group-hover:translate-y-0">
                     <div className="p-3 flex flex-col gap-1">
-                      {/* Direct Link to Products Overview */}
-                      {link.path && (
-                        <NavLink
-                          to={link.path}
-                          className={({ isActive }) =>
-                            `font-sans text-xs font-bold tracking-wider uppercase p-2 rounded transition-colors text-gold-champagne hover:bg-gold-warm/15 flex items-center justify-between border-b border-white/10 mb-1 ${
-                              isActive ? 'bg-gold-warm/10 font-black' : ''
-                            }`
-                          }
-                        >
-                          <span>{language === 'vi' ? 'Tổng quan sản phẩm' : language === 'zh' ? '产品总览' : 'Products Overview'}</span>
-                          <ChevronRight size={14} className="text-gold-warm" />
-                        </NavLink>
-                      )}
-
                       {link.children?.map((child, cIdx) => (
                         child.hasSub ? (
                           <div key={cIdx} className="relative group/sub">

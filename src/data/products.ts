@@ -87,13 +87,16 @@ export const CATEGORIES_DATA: Record<string, CategoryInfo> = {
     slug: 'fresh-fruits-vegetables',
     titleEn: 'Fresh Fruits & Vegetables',
     titleVi: 'Trái Cây & Rau Củ Tươi Xuất Khẩu',
+    titleZh: '出口新鲜水果与蔬菜',
     subtitleEn: 'Seasonal Export-Grade Produce Direct from Verified Farms',
     subtitleVi: 'Nông Sản Tươi Đạt Chuẩn Xuất Khẩu Thu Hoạch Trực Tiếp Từ Vùng Trồng',
+    subtitleZh: '产地直采·符合 VietGAP/GlobalG.A.P 出口标准',
     heroImage: '/images/products/IMG_7966.PNG',
     catalogueFileName: 'VAC_Fresh_Fruits_Vegetables_Catalogue_2026.pdf',
     catalogueDriveId: '1N9T754XJ1-0x9HT5p8hBhvb9hV3N3-bP',
     descriptionEn: 'VAC connects global buyers directly to accredited Vietnamese fruit orchards and vegetable farms. Managed under strict VietGAP and GlobalG.A.P protocols, our fresh produce undergoes rigorous MRL testing, cold chain preservation, and certified VHT/irradiation treatment to ensure border compliance across the EU, USA, Japan, Korea, and ASEAN markets.',
     descriptionVi: 'VAC kết nối trực tiếp nhà mua hàng quốc tế với các trang trại và vùng trồng liên kết đạt chuẩn tại Việt Nam. Được quản lý theo quy trình VietGAP và GlobalG.A.P nghiêm ngặt, nông sản tươi VAC đáp ứng đầy đủ tiêu chuẩn dư lượng MRLs, bảo quản chuỗi lạnh liên tục và xử lý dịch hại (VHT/Chiếu xạ) sẵn sàng xuất khẩu.',
+    descriptionZh: 'VAC 将全球买家直接对接至越南经过认证的水果果园及蔬菜基地。全流程采用 VietGAP 和 GlobalG.A.P 规范管理，生鲜农产品经过严格的农药残留 (MRL) 检测、全程冷链保鲜及 VHT 蒸汽热处理 / 辐射灭菌处理，完全符合欧盟、美国、日本、韩国及东盟市场的准入要求。',
     highlightsEn: [
       'Strict MRL & pesticide residue compliance',
       'Continuous cold chain management (REEFER container +2°C to +13°C)',
@@ -106,25 +109,37 @@ export const CATEGORIES_DATA: Record<string, CategoryInfo> = {
       'Xử lý sau thu hoạch đạt chuẩn (Xử lý hơi nước nóng VHT / Chiếu xạ)',
       'Đóng gói xuất khẩu chuyên dụng (Thùng carton thông khí / Khay nhựa)'
     ],
+    highlightsZh: [
+      '严格控制农药残留 (MRLs) 符合目标国标准',
+      '全程冷链运输管理 (冷藏集装箱 +2°C 至 +13°C)',
+      '后处理检疫认证 (VHT 蒸汽热处理 / 辐射灭菌)',
+      '定制化透气出口包装 (透气纸箱 / 塑料周转箱)'
+    ],
     availableCutsEn: ['Whole Fruit', 'Stem-on', 'Sorted by Caliber/Weight', 'Cleaned & Polished'],
     availableCutsVi: ['Quả nguyên', 'Còn cành lá', 'Phân loại theo kích thước/trọng lượng', 'Làm sạch & đánh bóng'],
+    availableCutsZh: ['整果', '带茎带叶', '按果径/重量分级', '清洗与抛光'],
     defaultPackagingEn: '5kg, 10kg, 18kg Ventilated Export Cartons with PE Liner or Plastic Crates on PE Pallets',
     defaultPackagingVi: 'Thùng carton đục lỗ 5kg, 10kg, 18kg có túi PE lót hoặc khay nhựa trên pallet quấn màng PE',
+    defaultPackagingZh: '5kg, 10kg, 18kg 出口透气纸箱（内衬 PE 袋）或托盘装塑料周转箱',
     storageEn: 'Cold storage (+2°C to +13°C depending on commodity), 85-95% RH',
-    storageVi: 'Bảo quản lạnh (+2°C đến +13°C tùy loại nông sản), độ ẩm tương đối 85-95%'
+    storageVi: 'Bảo quản lạnh (+2°C đến +13°C tùy loại nông sản), độ ẩm tương đối 85-95%',
+    storageZh: '冷库储存（+2°C 至 +13°C，视具体品种而定），相对湿度 85-95%'
   },
   'powders': {
     id: 'powders',
     slug: 'fruit-vegetable-powders',
     titleEn: 'Fruit & Vegetable Powders',
     titleVi: 'Bột Trái Cây & Rau Củ Thực Phẩm',
+    titleZh: '食品级果蔬纯粉',
     subtitleEn: 'High-Purity Natural Ingredients for F&B, Bakery & Supplements',
     subtitleVi: 'Nguyên Liệu Tự Nhiên Cao Cấp Phục Vụ Đồ Uống, Bánh Kẹo & Thực Phẩm Chức Năng',
+    subtitleZh: '高纯度天然食品配料·专供食品饮料、烘焙与保健品工业',
     heroImage: '/images/products/coffee_cacao.png',
     catalogueFileName: 'VAC_Powders_Product_Catalogue_2026-5.pdf',
     catalogueDriveId: '1HdqV7OvaVWPwKMaf4u2pwMnQuS9bZ6mT',
     descriptionEn: 'Engineered for industrial food and beverage manufacturers, VAC supplies a comprehensive portfolio of fruit and vegetable powders processed via Freeze-Drying, Dehydration, Spray-Drying, and Cold Water Soluble Extraction. Retaining vibrant natural colours, active bio-nutrients, and authentic flavour profiles without synthetic fillers or carrier agents.',
     descriptionVi: 'Dành riêng cho nhà sản xuất thực phẩm và đồ uống công nghiệp, VAC cung cấp danh mục bột trái cây & rau củ phong phú chế biến bằng công nghệ Sấy thăng hoa, Sấy lạnh/sấy nhiệt, Sấy phun và Chiết xuất hòa tan. Giữ trọn màu sắc tự nhiên, hoạt chất sinh học và hương vị đặc trưng không pha tạp chất hay chất độn nhân tạo.',
+    descriptionZh: 'VAC 专为食品饮料工业化生产商打造，提供涵盖冻干 (Freeze-Dried)、热风/冷风干燥 (Dehydrated)、喷雾干燥 (Spray-Dried) 及水溶萃取 (Extract) 工艺的完整果蔬粉系列。保留鲜艳天然色素、生物活性营养素及纯正风味，无任何人工添加剂、防腐剂或填充剂。',
     highlightsEn: [
       '4 Manufacturing technologies (Freeze-Dried, Dehydrated, Spray-Dried, Extract)',
       '100% natural, free from synthetic colours & preservatives',
@@ -137,25 +152,37 @@ export const CATEGORIES_DATA: Record<string, CategoryInfo> = {
       'Độ mịn tiêu chuẩn (80 đến 100 Mesh)',
       'Độ hòa tan cao chuyên dụng cho đồ uống pha sẵn RTD & thực phẩm chức năng'
     ],
+    highlightsZh: [
+      '4 大核心生产工艺（冻干、干燥、喷雾干燥、水溶萃取）',
+      '100% 天然成分，无人工色素与防腐剂',
+      '标准细度（80 至 100 Mesh）',
+      '高水溶性配方，适用于 RTD 即饮饮料与补充剂混合粉'
+    ],
     availableCutsEn: ['Fine Powder (80-100 Mesh)', 'Water-Soluble Extract Powder', 'Granulated Powder'],
     availableCutsVi: ['Bột mịn (80-100 Mesh)', 'Bột chiết xuất hòa tan', 'Bột dạng hạt (Granulated)'],
+    availableCutsZh: ['细粉 (80-100 Mesh)', '水溶性萃取粉', '造粒颗粒粉 (Granulated)'],
     defaultPackagingEn: '1kg, 5kg Aluminum Vacuum Bags in 10kg/20kg Export Cartons or 25kg Fiber Drums',
     defaultPackagingVi: 'Túi nhôm hút chân không 1kg, 5kg đóng trong thùng carton 10kg/20kg hoặc Fiber Drum 25kg',
+    defaultPackagingZh: '1kg/5kg 铝箔真空袋，20kg 出口纸箱或 25kg 纸板桶 (Fiber Drum)',
     storageEn: 'Cool, dry condition below 25°C, relative humidity < 60%',
-    storageVi: 'Nơi khô ráo, thoáng mát dưới 25°C, độ ẩm tương đối < 60%'
+    storageVi: 'Nơi khô ráo, thoáng mát dưới 25°C, độ ẩm tương đối < 60%',
+    storageZh: '阴凉干燥处，25°C 以下，相对湿度 < 60%'
   },
   'freeze-dried': {
     id: 'freeze-dried',
     slug: 'freeze-dried-fruits',
     titleEn: 'Freeze-Dried Fruits',
     titleVi: 'Trái Cây Sấy Thăng Hoa',
+    titleZh: '冻干水果系列',
     subtitleEn: 'Sublimation Vacuum Freeze-Drying preserving natural flavor, aroma & nutrients',
     subtitleVi: 'Công Nghệ Sấy Thăng Hoa Chân Không Giữ Nguyên Hương Vị, Màu Sắc & Dinh Dưỡng',
+    subtitleZh: '真空升华冻干技术·完美锁住天然香气、营养与纯正口感',
     heroImage: '/images/products/IMG_7958.JPG',
     catalogueFileName: 'VAC_Freeze_Dried_Fruits_Catalogue_2026-1.pdf',
     catalogueDriveId: '1jPaTPhfWrBV9DBNz_5Iyp9pt_EtB_UfU',
     descriptionEn: 'Using sublimation vacuum freeze-drying technology, VAC freeze-dried fruits preserve original vitamins, antioxidants, natural aroma, and cell structure. Offering a delightful crunchy texture with moisture content below 5%, ideal for premium retail snacks, breakfast cereals, chocolate coating, and bakery inclusions.',
     descriptionVi: 'Ứng dụng công nghệ sấy thăng hoa chân không hiện đại, trái cây sấy thăng hoa VAC duy trì hàm lượng vitamin, chất chống oxy hóa, hương thơm và cấu trúc tế bào tự nhiên. Tạo độ giòn xốp thơm ngon với độ ẩm dưới 5%, hoàn hảo cho snack ăn liền cao cấp, ngũ cốc ăn sáng, phủ sô-cô-la và làm nhân bánh.',
+    descriptionZh: 'VAC 冻干水果采用现代真空升华冻干技术，完整保留了原生维生素、抗氧化物质、天然香气与细胞结构。产品水分低于 5%，呈现酥脆爽口的质地，是高端零售零食、早餐麦片、巧克力涂层及烘焙夹心的理想选择。',
     highlightsEn: [
       'Sublimation technology preserving nutrients and natural structure',
       'Low moisture content (< 5%) for long ambient shelf life (18-24 months)',
@@ -168,25 +195,37 @@ export const CATEGORIES_DATA: Record<string, CategoryInfo> = {
       '100% trái cây nguyên chất, không chiên, không thêm đường hay chất bảo quản',
       'Đa dạng dạng cắt: Nguyên quả, Thái lát, Hạt lựu, Mảnh giòn crisps'
     ],
+    highlightsZh: [
+      '升华冻干技术保留 98% 以上营养与天然结构',
+      '超低水分含量 (< 5%)，常温保质期长达 18-24 个月',
+      '100% 纯水果，非油炸、无添加糖及防腐剂',
+      '多种切割规格：整果、切片、切丁及碎屑 (Crisps)'
+    ],
     availableCutsEn: ['Whole Fruit', 'Slices (3-5mm / 5-7mm)', 'Pieces & Dices (5x5mm, 10x10mm)', 'Crisps & Powder Blend'],
     availableCutsVi: ['Nguyên quả', 'Thái lát (3-5mm / 5-7mm)', 'Cắt mảnh & hạt lựu (5x5mm, 10x10mm)', 'Mảnh giòn crisps'],
+    availableCutsZh: ['整果', '切片 (3-5mm / 5-7mm)', '切丁 (5x5mm, 10x10mm)', '酥脆碎屑 (Crisps) 与复合粉末'],
     defaultPackagingEn: 'Double PE inner bags in 5kg/10kg Export Cartons or Customized Retail Pouches',
     defaultPackagingVi: 'Túi PE đôi lót trong thùng carton 5kg/10kg xuất khẩu hoặc túi zipper nhôm OEM',
+    defaultPackagingZh: '双层 PE 内袋，5kg/10kg 出口纸箱或定制 OEM 拉链铝箔袋',
     storageEn: 'Ambient temperature (below 28°C), keep sealed in moisture-barrier packaging',
-    storageVi: 'Nhiệt độ phòng (dưới 28°C), kín khí trong bao bì chống ẩm'
+    storageVi: 'Nhiệt độ phòng (dưới 28°C), kín khí trong bao bì chống ẩm',
+    storageZh: '常温密封保存（28°C 以下），避光防潮'
   },
   'iqf': {
     id: 'iqf',
     slug: 'iqf-fruits-vegetables',
     titleEn: 'IQF Fruits & Vegetables',
     titleVi: 'Trái Cây & Rau Củ Cấp Đông IQF',
+    titleZh: 'IQF 速冻果蔬',
     subtitleEn: 'Individually Quick-Frozen Formats for Controlled Industrial Portioning',
     subtitleVi: 'Nông Sản Cấp Đông Nhanh Rời Rạc Phục Vụ Chế Biến Công Nghiệp & HORECA',
+    subtitleZh: '单体快速冻结技术·便于工业化定量投料与餐饮应用',
     heroImage: '/images/products/IMG_7960.JPG',
     catalogueFileName: 'VAC_IQF_Fruits_Vegetables_Catalogue_2026-1.pdf',
     catalogueDriveId: '1G2bwMHCCkACltg-6l6RwoHKYICe4nagj',
     descriptionEn: 'VAC IQF produce uses cryogenic fluidised bed freezing at -35°C to quickly freeze individual fruit and vegetable pieces, preventing large ice crystal formation and cell wall damage. Resulting in free-flowing frozen ingredients that allow exact industrial portioning without thawing the entire bulk package.',
     descriptionVi: 'Nông sản IQF VAC sử dụng công nghệ cấp đông băng chuyền siêu tốc ở -35°C để làm đông lạnh nhanh từng mảnh trái cây/rau củ riêng biệt, ngăn chặn hình thành tinh thể đá lớn làm vỡ tế bào. Sản phẩm tơi rời giúp các nhà máy chế biến định lượng chính xác mà không cần rã đông cả thùng.',
+    descriptionZh: 'VAC IQF 农产品采用 -35°C 流化床流体超速冻结技术，快速冻结单体果蔬颗粒，防止形成大冰晶破坏细胞壁。产品呈现 100% 颗粒独立散装状态，便于食品工厂进行精准定量投料，无需整箱解冻。',
     highlightsEn: [
       'Ultra-fast freezing (-35°C) preserving cellular integrity and drip-loss upon thawing',
       '100% free-flowing pieces for automated industrial dispensing',
@@ -199,25 +238,37 @@ export const CATEGORIES_DATA: Record<string, CategoryInfo> = {
       'Kiểm soát vi sinh nghiêm ngặt và rà kim loại tự động',
       'Đa dạng dạng cắt (Hạt lựu, Nửa quả, Thái lát, Nguyên quả, Khối Puree)'
     ],
+    highlightsZh: [
+      '-35°C 超速冻结，保留细胞完整度与复原口感',
+      '100% 单体独立不粘连，适用于自动化投料',
+      '严格的微生物控制与自动金属检测仪把关',
+      '丰富切割形态（切丁、切块、切片、整果、冻块）'
+    ],
     availableCutsEn: ['Dice (10x10mm, 15x15mm, 20x20mm)', 'Slices / Strips', 'Halves & Segments', 'Whole / Seedless', 'Frozen Puree/Pulp Blocks'],
     availableCutsVi: ['Hạt lựu (10x10mm, 15x15mm, 20x20mm)', 'Thái lát / Dải dài', 'Nửa quả & Múi', 'Nguyên quả / Bỏ hạt', 'Khối Puree/Thịt quả đông lạnh'],
+    availableCutsZh: ['切丁 (10x10mm, 15x15mm, 20x20mm)', '切片 / 切条', '对半切 / 瓣状', '整果 / 去核去籽', '冻果浆/果肉块 (Puree Blocks)'],
     defaultPackagingEn: '10kg / 15kg Blue PE Bag inside Heavy-Duty Export Carton or 1000kg Octabin',
     defaultPackagingVi: 'Túi PE xanh chuyên dụng lót trong thùng carton 10kg/15kg hoặc Octabin 1000kg',
+    defaultPackagingZh: '10kg / 15kg 蓝 PE 内袋出口重型纸箱或 1000kg 八角纸箱 (Octabin)',
     storageEn: 'Deep frozen at -18°C or lower continuous storage',
-    storageVi: 'Trạng thái cấp đông sâu tại -18°C hoặc thấp hơn liên tục'
+    storageVi: 'Trạng thái cấp đông sâu tại -18°C hoặc thấp hơn liên tục',
+    storageZh: '深度冷冻储存于 -18°C 或更低温度'
   },
   'purees': {
     id: 'purees',
     slug: 'fruit-purees',
     titleEn: 'Fruit Purees, Juices & Concentrates',
     titleVi: 'Puree Trái Cây, Nước Ép & Đậm Đặc (Fruit Purees, Juices & Concentrates)',
+    titleZh: '果浆、浓缩汁与原汁',
     subtitleEn: '100% Pure Natural Fruit Purees, Juices & Concentrates for F&B Industrial Processing',
     subtitleVi: 'Nông Sản Xay Nhuyễn & Nước Ép Tự Nhiên 100% Phục Vụ Chế Biến Công Nghiệp & Đồ Uống',
+    subtitleZh: '100% 纯天然无菌果浆与浓缩果汁·专供食品饮料工业加工',
     heroImage: '/images/products/puree/puree_mango.png',
     catalogueFileName: 'VAC_Puree_Concentrate_Catalogue_2026.pdf',
     catalogueDriveId: '1S5D829gwdnJuHvCJN6EHFK3we_Eh8pLQ',
     descriptionEn: 'VAC Fruit Purees and Concentrates are crafted from selected fresh tropical fruits harvested at peak ripeness in Vietnam. Processed under aseptic cold-crushing and thermal flash pasteurisation systems, our purees retain vibrant natural colour, rich aroma, smooth texture, and bio-nutrients without artificial flavours, preservatives, or added sugar.',
     descriptionVi: 'Trái cây xay nhuyễn (Puree) và Nước ép đậm đặc VAC được sản xuất từ 100% trái cây tươi nhiệt đới thu hoạch đúng độ chín tại Việt Nam. Xử lý bằng hệ thống nghiền lạnh vô trùng và thanh trùng siêu tốc, giữ trọn màu sắc tươi sáng, hương vị đậm đà, độ mịn mượt tự nhiên và dưỡng chất quý giá mà không bổ sung đường, hương liệu hay chất bảo quản.',
+    descriptionZh: 'VAC 果浆与浓缩汁选用越南原产地最佳成熟度的热风/热带水果制作。采用冷破碎无菌处理与瞬时高温灭菌 (Flash Pasteurisation) 系统，保留鲜艳色彩、浓郁果香、细腻质地与天然营养，无人工香精、防腐剂或添加糖。',
     highlightsEn: [
       '100% Natural Fresh Fruit, Zero Added Sugar or Artificial Preservatives',
       'Aseptic Processing & Flash Pasteurisation preserving fresh fruit aroma & color',
@@ -229,6 +280,12 @@ export const CATEGORIES_DATA: Record<string, CategoryInfo> = {
       'Công nghệ nghiền vô trùng & Thanh trùng siêu tốc giữ nguyên màu sắc & hương vị tươi',
       'Kiểm soát chuẩn xác chỉ số Brix (°Bx), pH và độ mịn pulp cho quy mô công nghiệp',
       'Đa dạng quy cách: Puree có hạt, Puree bỏ hạt, Nước ép nguyên chất, Nước ép đậm đặc'
+    ],
+    highlightsZh: [
+      '100% 天然鲜果原料，无添加糖与防腐剂',
+      '无菌冷破碎与瞬时灭菌技术，保留鲜果风味',
+      '严格标准化 Brix 糖度、pH 及果肉含量',
+      '灵活规格：带籽/去籽果浆、原汁 (Single-Strength)、浓缩汁'
     ],
     availableCutsEn: [
       'Aseptic Frozen Puree (Seedless / Seed-in)',
@@ -242,23 +299,34 @@ export const CATEGORIES_DATA: Record<string, CategoryInfo> = {
       'Nước ép trái cây đậm đặc Brix cao',
       'Puree đóng phuy / túi PE cấp đông'
     ],
+    availableCutsZh: [
+      '无菌冻果浆 (去籽 / 带籽)',
+      '单倍浓度天然果汁 (Single-Strength)',
+      '高 Brix 糖度浓缩果汁',
+      '桶装/袋装冻果浆'
+    ],
     defaultPackagingEn: '20kg Aseptic Bag in Box, 200kg Aseptic Steel Drum, or 10kg Vacuum Pouch',
     defaultPackagingVi: 'Túi vô trùng Aseptic 20kg đóng hộp Carton, Phuy thép vô trùng 200kg, hoặc Túi chân không 10kg',
+    defaultPackagingZh: '20kg 无菌盒中袋 (BIB)、200kg 无菌钢桶 (Steel Drum) 或 10kg 真空袋',
     storageEn: 'Deep freeze at -18°C for Purees, or Chilled/Ambient for Aseptic Packaging',
-    storageVi: 'Cấp đông sâu -18°C đối với Puree đông lạnh, hoặc bảo quản mát/thường đối với hàng Aseptic'
+    storageVi: 'Cấp đông sâu -18°C đối với Puree đông lạnh, hoặc bảo quản mát/thường đối với hàng Aseptic',
+    storageZh: '冻果浆 -18°C 深度冷冻；无菌包装可常温/冷藏保存'
   },
   'seafood': {
     id: 'seafood',
     slug: 'seafood-products',
     titleEn: 'Aquaculture & Seafood Products',
     titleVi: 'Sản Phẩm Thủy Hải Sản',
+    titleZh: '出口级水产与海鲜',
     subtitleEn: 'Export-Grade Basa Fish, Shrimp & Squid Products Direct from Accredited Facilities',
     subtitleVi: 'Cá Basa, Tôm & Mực Đạt Chuẩn Xuất Khẩu Quốc Tế',
+    subtitleZh: '巴沙鱼、对虾及远洋鱿鱼·标准加工厂直供',
     heroImage: '/images/products/seafood/basa_whole_round.jpeg',
     catalogueFileName: 'VAC_Basa_Fish_Catalog_2026.pdf',
     catalogueDriveId: '1EBOBC4fxbm_xXpTCEQZ5024KMe5bZw_5',
     descriptionEn: 'VAC provides a comprehensive portfolio of aquaculture and seafood products including Basa fish, Black Tiger & Vannamei shrimp, and Squid/Octopus. Processed in HACCP, BRCGS, and ISO certified facilities with strict traceability from accredited farms to global buyers.',
     descriptionVi: 'VAC cung cấp danh mục sản phẩm thủy hải sản cao cấp bao gồm Cá Basa, Tôm Sú/Thẻ chân trắng và Mực/Bạch tuộc. Được chế biến tại các nhà máy đạt chứng nhận HACCP, BRCGS, ISO với quy trình truy xuất nguồn gốc nghiêm ngặt từ vùng nuôi đạt chuẩn đến đối tác thương mại toàn cầu.',
+    descriptionZh: 'VAC 提供涵盖巴沙鱼、草虾/南美白对虾、鱿鱼及章鱼的出口级水产品。产品均在认证的 HACCP、BRCGS 及 ISO 工厂加工，全程可追溯。',
     highlightsEn: [
       'HACCP, BRCGS, ISO & Halal Certified Processing Facilities',
       'Strict Antibiotic & Heavy Metal Residue Testing',
@@ -271,25 +339,37 @@ export const CATEGORIES_DATA: Record<string, CategoryInfo> = {
       'Bảo quản chuỗi lạnh cấp đông sâu (-18°C) liên tục',
       'Đa dạng quy cách chế biến (Fillet, Cắt khúc, Tôm PTO, Nobashi, Mực khoanh, Xiên que)'
     ],
+    highlightsZh: [
+      'HACCP、BRCGS、ISO 及清真 Halal 认证加工厂',
+      '严格的抗生素与重金属残留检测',
+      '-18°C 深度冷冻全程冷链保障',
+      '多样化出口规格（鱼片、切段、虾仁、鱿鱼圈、串烧）'
+    ],
     availableCutsEn: ['Fillet (Well/Untrimmed)', 'Cutlet / Steaks', 'Cubes / Portions', 'PTO / P&D / Nobashi Shrimp', 'Squid Tube / Rings / Tentacles'],
     availableCutsVi: ['Fillet (Lọc sạch / Chưa lọc)', 'Cắt khúc / Steaks', 'Cắt vuông / Cắt khúc', 'Tôm PTO / P&D / Nobashi', 'Mực ống / Khoanh / Râu mực'],
+    availableCutsZh: ['巴沙鱼片 (修剪/未修剪)', '切段 / 鱼排 (Steaks)', '切块 (Portions/Cubes)', '带尾/去尾虾仁 (PTO/P&D/Nobashi)', '鱿鱼筒/鱿鱼圈/鱿鱼须'],
     defaultPackagingEn: 'IQF 1kg / 2kg PE Rider Bag in 10kg Master Carton or Interleaved Shatterpack',
     defaultPackagingVi: 'Cấp đông rời IQF túi PE 1kg / 2kg lót thùng carton 10kg hoặc mạ băng đóng khối',
+    defaultPackagingZh: '1kg/2kg IQF 骑缝袋 10kg Master 纸箱或包冰块装',
     storageEn: 'Deep freeze at -18°C or lower continuous storage',
-    storageVi: 'Bảo quản cấp đông sâu tại -18°C hoặc thấp hơn'
+    storageVi: 'Bảo quản cấp đông sâu tại -18°C hoặc thấp hơn',
+    storageZh: '深度冷冻于 -18°C 或更低温度'
   },
   'crops-plant-based': {
     id: 'crops-plant-based',
     slug: 'crops-plant-based-products',
     titleEn: 'Crops & Plant-Based Products',
     titleVi: 'Nông Sản & Sản Phẩm Từ Cây Trồng',
+    titleZh: '农产品与植物基产品',
     subtitleEn: 'Comprehensive Portfolio of Fresh, Dried, Powdered, Pureed & IQF Produce',
     subtitleVi: 'Danh Mục Tổng Thể Nông Sản Tươi, Bột, Sấy Thăng Hoa, Puree & Cấp Đông IQF',
+    subtitleZh: '涵盖鲜果、纯粉、冻干、果浆及 IQF 速冻的完整产品线',
     heroImage: '/images/products/IMG_7966.PNG',
     catalogueFileName: 'VAC_Puree_Concentrate_Catalogue_2026.pdf',
     catalogueDriveId: '1S5D829gwdnJuHvCJN6EHFK3we_Eh8pLQ',
     descriptionEn: 'VAC provides an integrated portfolio of tropical agricultural produce across five core formats: Fresh Fruits & Vegetables, Fruit & Veg Powders, Fruit Purees & Juices, Freeze-Dried Fruits, and IQF Frozen Produce. Processed under GlobalG.A.P, HACCP, ISO, and BRCGS standards for global B2B supply.',
     descriptionVi: 'VAC cung cấp hệ sinh thái nông sản nhiệt đới toàn diện qua 5 định dạng chế biến chính: Trái Cây & Rau Củ Tươi, Bột Nông Sản, Puree & Nước Ép Trái Cây, Trái Cây Sấy Thăng Hoa, và Nông Sản Cấp Đông IQF. Sản xuất theo tiêu chuẩn GlobalG.A.P, HACCP, ISO, BRCGS phục vụ cung ứng B2B quốc tế.',
+    descriptionZh: 'VAC 提供越南热带农产品 5 大加工规格生态：新鲜果蔬、果蔬纯粉、果浆浓缩汁、冻干水果及 IQF 速冻农产品。严格遵循 GlobalG.A.P、HACCP、ISO 与 BRCGS 国际标准，满足全球 B2B 采购需求。',
     highlightsEn: [
       'GlobalG.A.P & VietGAP Farm Traceability',
       '5 Processing Formats (Fresh, Powder, Puree/Juice, Freeze-Dried, IQF)',
@@ -302,25 +382,37 @@ export const CATEGORIES_DATA: Record<string, CategoryInfo> = {
       'Chứng nhận chuỗi lạnh & Xử lý sau thu hoạch (VHT/Chiếu xạ)',
       'Đóng gói B2B công nghiệp & gia công nhãn hàng riêng (Private Label)'
     ],
+    highlightsZh: [
+      'GlobalG.A.P 及 VietGAP 基地全程可追溯',
+      '5 大核心加工形态（生鲜、纯粉、果浆/果汁、冻干、IQF速冻）',
+      '认证冷链及检疫后处理 (VHT 蒸汽热处理 / 辐射灭菌)',
+      '定制化 B2B 工业包装与 OEM 贴牌服务'
+    ],
     availableCutsEn: ['Whole Produce', 'Diced / Cubes', 'Puree / Aseptic Liquid', 'Fine Powder (80-100 Mesh)', 'Freeze-Dried Slices'],
     availableCutsVi: ['Quả nguyên', 'Cắt hạt lựu / Cắt khúc', 'Puree / Nước ép vô trùng', 'Bột mịn (80-100 Mesh)', 'Lát sấy thăng hoa'],
+    availableCutsZh: ['整果/整菜', '切丁 / 切块', '果浆 / 无菌原汁', '细粉 (80-100 Mesh)', '冻干片/冻干丁'],
     defaultPackagingEn: 'Ventilated Cartons, Aseptic Bags in Drums, Vacuum Pouches & Master Cartons',
     defaultPackagingVi: 'Thùng carton thông khí, Phuy Aseptic 200kg, Túi nhôm chân không & Thùng master',
+    defaultPackagingZh: '出口透气纸箱、200kg 无菌大钢桶、真空袋及 Master 纸箱',
     storageEn: 'Format-dependent: +2°C to +13°C (Fresh), -18°C (IQF/Puree), Ambient dry (Powders/FD)',
-    storageVi: 'Tùy định dạng: +2°C đến +13°C (Hàng tươi), -18°C (IQF/Puree), Khô thoáng (Bột/Sấy)'
+    storageVi: 'Tùy định dạng: +2°C đến +13°C (Hàng tươi), -18°C (IQF/Puree), Khô thoáng (Bột/Sấy)',
+    storageZh: '依规格而定：+2°C 至 +13°C (生鲜)，-18°C (IQF/果浆)，常温干燥 (纯粉/冻干)'
   },
   'poultry': {
     id: 'poultry',
     slug: 'poultry-products',
     titleEn: 'Poultry Products',
     titleVi: 'Sản Phẩm Gia Cầm Xuất Khẩu',
+    titleZh: '出口家禽类产品',
     subtitleEn: 'Export-Grade Chicken & Poultry Products Processed to Strict Standards',
     subtitleVi: 'Thịt Gà & Gia Cầm Chế Biến Tiêu Chuẩn Xuất Khẩu Quốc Tế',
+    subtitleZh: '符合清真 certification 与常规标准的高品质鸡肉产品',
     heroImage: '/images/products/poultry/poultry_halal_whole_chicken.jpeg',
     catalogueFileName: 'VAC_Chicken_Products_Catalog_2026.pdf',
     catalogueDriveId: '1u8_chicken_catalog',
     descriptionEn: 'VAC supplies high-quality poultry products sourced from biosecure commercial farms. Processed in ISO & Halal certified slaughterhouses with complete disease control, strict hygiene, and deep-freeze preservation.',
     descriptionVi: 'VAC cung cấp các sản phẩm gia cầm chất lượng cao từ các trang trại thương mại an toàn sinh học. Chế biến tại nhà máy giết mổ đạt chuẩn ISO & Halal với kiểm soát dịch bệnh nghiêm ngặt và bảo quản cấp đông sâu.',
+    descriptionZh: 'VAC 从生物安全商业农场采购优质家禽产品。在 ISO 及 Halal 清真认证屠宰场加工，控制疫病，深度冷冻保鲜。',
     highlightsEn: [
       'Biosecure Farming & Avian Flu Free Certification',
       'Halal & ISO Certified Slaughtering & Processing',
@@ -333,25 +425,37 @@ export const CATEGORIES_DATA: Record<string, CategoryInfo> = {
       'Cấp đông gió siêu tốc (-35°C) & lưu kho lạnh sâu',
       'Đóng gói xuất khẩu linh hoạt cho nhà bán buôn & nhà máy chế biến'
     ],
+    highlightsZh: [
+      '生物安全养殖·无禽流感认证基地',
+      'Halal 清真及 ISO 认证屠宰加工',
+      '-35°C 鼓风超速冻结与深冷储存',
+      '灵活的批量出口包装，适合批发商与加工厂'
+    ],
     availableCutsEn: ['Whole Chicken', 'Chicken Feet / Paws', 'Chicken Breast / Thigh', 'Wings & Drumsticks'],
     availableCutsVi: ['Gà nguyên con', 'Chân gà / Cánh gà', 'Ức gà / Đùi gà', 'Đùi cánh gia công'],
+    availableCutsZh: ['整鸡', '鸡爪 / 鸡掌', '鸡胸 / 鸡腿', '翅膀 / 棒棒腿'],
     defaultPackagingEn: '10kg / 15kg PE Bag in Master Carton or Vacuum Pack',
     defaultPackagingVi: 'Túi PE 10kg / 15kg lót thùng carton master hoặc hút chân không',
+    defaultPackagingZh: '10kg / 15kg PE 内袋外 Master 纸箱或真空包装',
     storageEn: 'Deep freeze at -18°C or lower continuous storage',
-    storageVi: 'Bảo quản cấp đông sâu tại -18°C hoặc thấp hơn'
+    storageVi: 'Bảo quản cấp đông sâu tại -18°C hoặc thấp hơn',
+    storageZh: '-18°C 或更低深度冷冻保存'
   },
   'basa': {
     id: 'basa',
     slug: 'basa-fish-pangasius',
     titleEn: 'Basa Fish — Pangasius',
     titleVi: 'Cá Tra & Cá Basa Chế Biến Xuất Khẩu',
+    titleZh: '巴沙鱼 / 龙利鱼 (Pangasius)',
     subtitleEn: 'High-Quality White Flesh Pangasius Fillets, Portions & Steaks from Mekong Delta Farms',
     subtitleVi: 'Fillet Cá Tra/Basa Trắng Sạch, Cắt Khúc & Steaks Thu Hoạch Từ Vùng Nuôi ĐBSCL',
+    subtitleZh: '湄公河三角洲优质白肉巴沙鱼片、切段与鱼排',
     heroImage: '/images/products/seafood/basa_well_trimmed_fillet.jpeg',
     catalogueFileName: 'VAC_Basa_Fish_Catalog_2026.pdf',
     catalogueDriveId: '1EBOBC4fxbm_xXpTCEQZ5024KMe5bZw_5',
     descriptionEn: 'VAC supplies export-standard Pangasius hypophthalmus (Basa fish) processed under strict HACCP and BRCGS certifications. Available in well-trimmed fillets, untrimmed fillets, rose fillets, steaks, portions, cubes, and skewers.',
     descriptionVi: 'VAC cung cấp Cá Tra/Cá Basa (Pangasius hypophthalmus) đạt tiêu chuẩn xuất khẩu được chế biến theo chứng nhận HACCP và BRCGS. Đa dạng chủng loại Fillet lọc sạch, Fillet chưa lọc, Fillet cuộn hoa hồng, cắt khúc steaks, cắt khối cubes và xiên que.',
+    descriptionZh: 'VAC 供应在 HACCP 和 BRCGS 严格认证下加工的出口标准 Pangasius 巴沙鱼。提供精修鱼片、未精修鱼片、玫瑰卷鱼片、鱼排、鱼块及串烧。',
     highlightsEn: [
       'HACCP, BRCGS, ISO & Halal Certified Facilities',
       'ASC / BAP Certified Responsible Aquaculture Sourcing',
@@ -364,25 +468,37 @@ export const CATEGORIES_DATA: Record<string, CategoryInfo> = {
       'Thịt trắng 100%, không dư lượng kháng sinh hay hóa chất',
       'Cấp đông rời IQF & Mạ băng theo yêu cầu khách hàng (0-20%)'
     ],
+    highlightsZh: [
+      'HACCP、BRCGS、ISO 及 Halal 认证工厂',
+      'ASC / BAP 认证可持续水产养殖源头',
+      '100% 纯白肉，无抗生素与化学残留保证',
+      'IQF 单体速冻与包冰定制 (0-20%)'
+    ],
     availableCutsEn: ['Fillet Well-trimmed', 'Fillet Untrimmed', 'Steaks / Cutlets', 'Portions / Cubes', 'Rose Fillet', 'Skewers'],
     availableCutsVi: ['Fillet Lọc sạch', 'Fillet Chưa lọc', 'Cắt khúc Steaks', 'Cắt vuông Portions/Cubes', 'Fillet Cuộn hoa hồng', 'Xiên que'],
+    availableCutsZh: ['精修鱼片 (Well-trimmed)', '未精修鱼片 (Untrimmed)', '切段鱼排 (Steaks)', '切块 (Portions/Cubes)', '玫瑰卷鱼片 (Rose)', '串烧 (Skewers)'],
     defaultPackagingEn: 'IQF 1kg / 2kg PE Rider Bag in 10kg Master Carton or Interleaved Shatterpack',
     defaultPackagingVi: 'Túi PE 1kg / 2kg lót thùng carton 10kg hoặc đóng khối shatterpack',
+    defaultPackagingZh: '1kg / 2kg PE 骑缝袋 10kg Master 纸箱或平板冻',
     storageEn: 'Deep freeze at -18°C or lower continuous storage',
-    storageVi: 'Bảo quản cấp đông sâu tại -18°C hoặc thấp hơn'
+    storageVi: 'Bảo quản cấp đông sâu tại -18°C hoặc thấp hơn',
+    storageZh: '-18°C 或更低深度冷冻保存'
   },
   'shrimp': {
     id: 'shrimp',
     slug: 'vietnamese-shrimp',
     titleEn: 'Vietnamese Shrimp Products',
     titleVi: 'Tôm Việt Nam Xuất Khẩu (Vannamei & Black Tiger)',
+    titleZh: '越南对虾系列 (南美白对虾与草虾)',
     subtitleEn: 'Export-Grade Whiteleg & Black Tiger Shrimp: HOSO, HLSO, PTO, P&D, Nobashi & Value-Added Formats',
     subtitleVi: 'Tôm Thẻ Chân Trắng & Tôm Sú: HOSO, HLSO, PTO, P&D, Nobashi & Chế Biến Giá Trị Gia Tăng',
+    subtitleZh: '出口级对虾：HOSO、HLSO、PTO、P&D、Nobashi 及深加工规格',
     heroImage: '/images/products/seafood/shrimp_hoso.jpeg',
     catalogueFileName: 'VAC_Shrimp_Products_Catalog_2026.pdf',
     catalogueDriveId: '1ZHNriy_IOit5LKeXVvAVF15nKxTGdrif',
     descriptionEn: 'Premium Vietnamese shrimp products harvested from ASC/BAP certified coastal farms. Featuring Black Tiger (Penaeus monodon) and Whiteleg (Penaeus vannamei) shrimp processed into HOSO, HLSO, PTO, P&D, Nobashi, Tempura, and Cooked IQF formats.',
     descriptionVi: 'Sản phẩm Tôm Việt Nam chất lượng cao thu hoạch từ các vùng nuôi ven biển đạt chuẩn ASC/BAP. Bao gồm Tôm Sú và Tôm Thẻ chân trắng được chế biến thành Tôm nguyên con HOSO, Tôm bỏ đầu HLSO, Tôm PTO, P&D, Nobashi, Tempura và Tôm luộc chín IQF.',
+    descriptionZh: 'VAC 优质越南对虾采自 ASC/BAP 认证沿海养殖场。涵盖草虾 (Penaeus monodon) 与南美白对虾 (Penaeus vannamei)，加工为 HOSO 带头带壳、HLSO 去头带壳、PTO 留尾、P&D 去壳去肠线、Nobashi 伸长虾及 Tempura 天妇罗。',
     highlightsEn: [
       'Black Tiger & Vannamei Shrimp from ASC/BAP Certified Farms',
       'Complete Traceability & Disease Free Bio-Security',
@@ -395,25 +511,37 @@ export const CATEGORIES_DATA: Record<string, CategoryInfo> = {
       'Chế biến giá trị gia tăng (Nobashi, Bướm, Tôm lăn bột Tempura)',
       'Phân loại size chính xác & Cấp đông đơn IQF tươi ngon'
     ],
+    highlightsZh: [
+      'ASC/BAP 认证养殖场草虾与白对虾',
+      '全程可追溯与生物安全无病害',
+      '高附加值加工形态 (Nobashi、蝴蝶虾、天妇罗)',
+      '精准重量分级与 IQF 单冻品质'
+    ],
     availableCutsEn: ['HOSO (Head-on Shell-on)', 'HLSO (Headless Shell-on)', 'PTO (Peeled Tail-on)', 'P&D (Peeled & Deveined)', 'Nobashi Stretch Shrimp', 'Cooked IQF'],
     availableCutsVi: ['Tôm nguyên con HOSO', 'Tôm bỏ đầu HLSO', 'Tôm còn đuôi PTO', 'Tôm bóc vỏ bỏ chỉ P&D', 'Tôm duỗi Nobashi', 'Tôm luộc chín IQF'],
+    availableCutsZh: ['HOSO (带头带壳)', 'HLSO (去头带壳)', 'PTO (去壳留尾)', 'P&D (去壳去肠线)', 'Nobashi 伸长虾', '熟冻 IQF (Cooked)'],
     defaultPackagingEn: '1kg / 1.8kg Block Frozen Box or IQF Rider Bag in 10kg Master Carton',
     defaultPackagingVi: 'Đóng khối Block 1kg / 1.8kg hoặc Cấp đông rời IQF túi PE trong thùng 10kg',
+    defaultPackagingZh: '1kg / 1.8kg 块冻盒装或 IQF 袋装 10kg Master 纸箱',
     storageEn: 'Deep freeze at -18°C or lower continuous storage',
-    storageVi: 'Bảo quản cấp đông sâu tại -18°C hoặc thấp hơn'
+    storageVi: 'Bảo quản cấp đông sâu tại -18°C hoặc thấp hơn',
+    storageZh: '-18°C 或更低深度冷冻保存'
   },
   'squid': {
     id: 'squid',
     slug: 'squid-products',
     titleEn: 'Squid & Octopus Products',
     titleVi: 'Mực & Bạch Tuộc Chế Biến Xuất Khẩu',
+    titleZh: '远洋鱿鱼与章鱼系列',
     subtitleEn: 'Wild-Caught Ocean Squid & Octopus: Whole Cleaned, Tubes, Rings, Tentacles & Flower Cut',
     subtitleVi: 'Mực & Bạch Tuộc Biển Tự Nhiên: Nguyên Con Làm Sạch, Mực Ống, Mực Khoanh, Râu Mực & Mực Cắt Hoa',
+    subtitleZh: '野生捕捞远洋鱿鱼与章鱼：原条做净、鱿鱼筒、鱿鱼圈、鱿鱼须及切花',
     heroImage: '/images/products/seafood/squid_whole_cleaned.jpeg',
     catalogueFileName: 'VAC_Squid_Products_Catalog_2026.pdf',
     catalogueDriveId: '1UU-DLH9UjaDWFbz5LCserzNZFjaMHAUo',
     descriptionEn: 'Wild-caught ocean squid and octopus from Vietnamese waters, processed immediately post-landing to maintain natural sweetness and tender texture. Offering Whole Cleaned Squid, Squid Tubes (U4-U10), Squid Rings, Flower Cut Squid, Tentacles, Dried Squid, and Baby Octopus.',
     descriptionVi: 'Mực và bạch tuộc đánh bắt tự nhiên tại vùng biển Việt Nam, chế biến ngay sau khi cập cảng để giữ nguyên độ ngọt và độ giòn tự nhiên. Cung cấp Mực nguyên con làm sạch, Mực ống (U4-U10), Mực khoanh, Mực cắt hoa, Râu mực, Mực khô và Bạch tuộc baby.',
+    descriptionZh: '越南海域野生捕捞鱿鱼与章鱼，靠岸后立即加工，保持天然鲜甜与紧实口感。提供做净原条、鱿鱼筒 (U4-U10)、鱿鱼圈、切花鱿鱼、鱿鱼须、干鱿鱼及 Baby 小章鱼。',
     highlightsEn: [
       '100% Wild-Caught Ocean Seafood with High Natural Sweetness',
       'Instant Post-Landing Processing for Firm Texture',
@@ -426,12 +554,21 @@ export const CATEGORIES_DATA: Record<string, CategoryInfo> = {
       'Cắt định hình theo yêu cầu (Cắt hoa khía vảy rồng, Khoanh, Ống, Xiên que)',
       'Nhà máy xuất khẩu đạt mã EU & đăng ký US FDA'
     ],
+    highlightsZh: [
+      '100% 远洋野生捕捞，天然鲜甜度高',
+      '靠岸即加工，肉质紧实爽脆',
+      '定制化切割 (菠萝切花、鱿鱼圈、鱿鱼筒、串烧)',
+      '欧盟 (EU) 及美国 FDA 注册出口工厂'
+    ],
     availableCutsEn: ['Whole Cleaned Squid', 'Squid Tube (U4, U5, U7, U10)', 'Squid Rings', 'Flower / Pineapple Cut', 'Tentacles', 'Dried Squid', 'Cut / Baby Octopus'],
     availableCutsVi: ['Mực nguyên con làm sạch', 'Mực ống (U4, U5, U7, U10)', 'Mực khoanh', 'Mực cắt hoa vảy rồng', 'Râu mực', 'Mực khô sấy', 'Bạch tuộc cắt / baby'],
+    availableCutsZh: ['做净原条鱿鱼', '鱿鱼筒 (U4, U5, U7, U10)', '鱿鱼圈', '菠萝切花 (Pineapple Cut)', '鱿鱼须', '干鱿鱼', '切块 / Baby 小章鱼'],
     defaultPackagingEn: 'IQF PE Bag 1kg / 2kg in 10kg Master Carton or Block Frozen 1kg/2kg',
     defaultPackagingVi: 'Túi PE IQF 1kg / 2kg lót thùng carton 10kg hoặc đóng khối Block 1kg/2kg',
+    defaultPackagingZh: '1kg / 2kg IQF 袋装 10kg Master 纸箱 or 1kg/2kg 块冻',
     storageEn: 'Deep freeze at -18°C or lower continuous storage',
-    storageVi: 'Bảo quản cấp đông sâu tại -18°C hoặc thấp hơn'
+    storageVi: 'Bảo quản cấp đông sâu tại -18°C hoặc thấp hơn',
+    storageZh: '-18°C 或更低深度冷冻保存'
   }
 };
 

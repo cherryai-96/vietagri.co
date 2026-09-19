@@ -119,7 +119,11 @@ export const CropsPlantBasedPage: React.FC = () => {
               >
                 <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gold-warm/15 border border-gold-warm/30 text-gold-warm text-xs font-bold uppercase tracking-widest mb-4">
                   <Sparkles size={14} />
-                  CROPS & PLANT-BASED ECOSYSTEM
+                  {language === 'vi'
+                    ? 'HỆ SINH THÁI NÔNG SẢN & THỰC VẬT'
+                    : language === 'zh'
+                    ? '农产品与植物基生态系统'
+                    : 'CROPS & PLANT-BASED ECOSYSTEM'}
                 </span>
                 <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-black text-white leading-tight uppercase">
                   {language === 'vi' ? catInfo.titleVi : language === 'zh' ? (catInfo.titleZh || catInfo.titleEn) : catInfo.titleEn}
