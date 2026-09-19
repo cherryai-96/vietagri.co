@@ -164,7 +164,7 @@ export const CategoryPage: React.FC<CategoryPageProps> = ({ categoryKey: propCat
       <section className="py-12 bg-ivory border-b border-gold-warm/15 px-4 md:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {(language === 'vi' ? catInfo.highlightsVi : catInfo.highlightsEn).map((h, i) => (
+            {(language === 'vi' ? catInfo.highlightsVi : language === 'zh' ? (catInfo.highlightsZh || catInfo.highlightsEn) : catInfo.highlightsEn).map((h: string, i: number) => (
               <div key={i} className="bg-white p-5 rounded-xl border border-gold-warm/15 shadow-sm flex items-start gap-3">
                 <CheckCircle className="text-forest-fresh shrink-0 mt-0.5" size={20} />
                 <span className="text-xs md:text-sm text-carbon/90 font-medium leading-relaxed">{h}</span>
@@ -279,7 +279,7 @@ export const CategoryPage: React.FC<CategoryPageProps> = ({ categoryKey: propCat
                   <div className="p-5 flex flex-col flex-grow justify-between gap-4">
                     <div>
                       <h3 className="font-serif text-base font-bold text-forest group-hover:text-gold-warm transition-colors leading-snug">
-                        {language === 'vi' ? p.nameVi : p.nameEn}
+                        {language === 'vi' ? p.nameVi : language === 'zh' ? (p.nameZh || p.nameEn) : p.nameEn}
                       </h3>
                       {p.scientificName && (
                         <p className="text-[11px] text-carbon/50 italic font-sans mt-0.5">{p.scientificName}</p>
@@ -352,7 +352,7 @@ export const CategoryPage: React.FC<CategoryPageProps> = ({ categoryKey: propCat
                 <div>
                   <span className="text-[10px] text-gold-warm font-bold uppercase tracking-widest">{selectedProduct.subCategory}</span>
                   <h3 className="font-serif text-xl font-bold text-white">
-                    {language === 'vi' ? selectedProduct.nameVi : selectedProduct.nameEn}
+                    {language === 'vi' ? selectedProduct.nameVi : language === 'zh' ? (selectedProduct.nameZh || selectedProduct.nameEn) : selectedProduct.nameEn}
                   </h3>
                 </div>
                 <button

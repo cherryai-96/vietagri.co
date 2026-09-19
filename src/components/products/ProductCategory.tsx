@@ -16,7 +16,10 @@ interface ProductCategoryProps {
   descEn?: string;
   descVi?: string;
   descZh?: string;
-  tags: string[];
+  tags?: string[];
+  tagsVi?: string[];
+  tagsZh?: string[];
+  tagsEn?: string[];
   linkPath?: string;
   linkTextEn?: string;
   linkTextVi?: string;
@@ -37,6 +40,9 @@ export const ProductCategory: React.FC<ProductCategoryProps> = ({
   descVi,
   descZh,
   tags,
+  tagsVi,
+  tagsZh,
+  tagsEn,
   linkPath,
   linkTextEn,
   linkTextVi,
@@ -71,6 +77,10 @@ export const ProductCategory: React.FC<ProductCategoryProps> = ({
   const displayBtnText = linkTextEn && linkTextVi
     ? (language === 'vi' ? linkTextVi : language === 'zh' ? (linkTextZh || linkTextEn) : linkTextEn)
     : defaultBtnText;
+
+  const displayTags = tagsEn && tagsVi
+    ? (language === 'vi' ? tagsVi : language === 'zh' ? (tagsZh || tagsEn) : tagsEn)
+    : (tags || []);
 
   return (
     <motion.div
@@ -138,7 +148,7 @@ export const ProductCategory: React.FC<ProductCategoryProps> = ({
         
         {/* Tags overlay */}
         <div className="absolute bottom-4 left-4 right-4 flex gap-2 flex-wrap z-20">
-          {tags.map((tag, idx) => (
+          {displayTags.map((tag, idx) => (
             <span
               key={idx}
               className="bg-white/95 backdrop-blur-md text-forest font-bold text-[10px] tracking-wider uppercase px-3 py-1.5 rounded-full shadow-md border border-gold-warm/20"
@@ -154,7 +164,9 @@ export const ProductCategory: React.FC<ProductCategoryProps> = ({
         <div className="flex flex-col gap-4">
           <div className="flex items-center gap-3">
             <div className="w-10 h-1 bg-gold-warm rounded-full" />
-            <span className="text-xs font-bold uppercase tracking-widest text-gold-warm">Category Overview</span>
+            <span className="text-xs font-bold uppercase tracking-widest text-gold-warm">
+              {language === 'vi' ? 'Tổng Quan Danh Mục' : language === 'zh' ? '产品类目总览' : 'Category Overview'}
+            </span>
           </div>
 
           <h3 className="font-serif font-bold text-2xl md:text-3xl text-forest leading-tight uppercase">

@@ -24,7 +24,9 @@ export const Products: React.FC = () => {
       linkTextEn: 'Explore Crop & Plant-Based Products',
       linkTextVi: 'Xem Danh Mục Nông Sản & Cây Trồng',
       linkTextZh: '查看农产品与植物基产品目录',
-      tags: ['Fresh Produce', 'Dehydrated Powders', 'Fruit Purees, Juices & Concentrates', 'Freeze-Dried', 'IQF Frozen'],
+      tagsEn: ['Fresh Produce', 'Dehydrated Powders', 'Fruit Purees, Juices & Concentrates', 'Freeze-Dried', 'IQF Frozen'],
+      tagsVi: ['Nông Sản Tươi', 'Bột Chế Biến', 'Puree & Nước Ép', 'Sấy Thăng Hoa', 'Cấp Đông IQF'],
+      tagsZh: ['生鲜农产品', '果蔬纯粉', '果浆与浓缩汁', '冻干水果', 'IQF速冻'],
       images: [
         '/images/products/fresh/fresh_banana.png',
         '/images/products/IMG_7967.JPG',
@@ -45,7 +47,9 @@ export const Products: React.FC = () => {
       linkTextEn: 'Explore Poultry Products',
       linkTextVi: 'Xem Danh Mục Sản Phẩm Gia Cầm',
       linkTextZh: '查看家禽类产品目录',
-      tags: ['Halal-Certified', 'Conventional Chicken', 'Whole Bird & Cuts', 'By-Products', 'Value-Added'],
+      tagsEn: ['Halal-Certified', 'Conventional Chicken', 'Whole Bird & Cuts', 'By-Products', 'Value-Added'],
+      tagsVi: ['Chứng Nhận Halal', 'Gà Công Nghiệp', 'Gà Nguyên Con & Cắt Miếng', 'Phụ Phẩm Gia Cầm', 'Chế Biến Sâu'],
+      tagsZh: ['清真认证 (Halal)', '常规鸡肉', '整鸡与分割肉', '副产品', '深加工产品'],
       images: [
         '/images/products/poultry/poultry_halal_whole_chicken.jpeg',
         '/images/products/poultry/poultry_boneless_breast.jpeg',
@@ -67,7 +71,9 @@ export const Products: React.FC = () => {
       linkTextEn: 'Explore Seafood Products',
       linkTextVi: 'Xem Danh Mục Thủy Hải Sản',
       linkTextZh: '查看水产与海鲜产品目录',
-      tags: ['Basa Fish / Pangasius', 'Black Tiger & Vannamei Shrimp', 'Ocean Squid & Octopus', 'Frozen Export Formats'],
+      tagsEn: ['Basa Fish / Pangasius', 'Black Tiger & Vannamei Shrimp', 'Ocean Squid & Octopus', 'Frozen Export Formats'],
+      tagsVi: ['Cá Basa / Pangasius', 'Tôm Sú & Tôm Thẻ', 'Mực & Bạch Tuộc', 'Cấp Đông Xuất Khẩu'],
+      tagsZh: ['巴沙鱼 / 龙利鱼', '草虾与南美白对虾', '远洋鱿鱼与章鱼', '出口速冻规格'],
       images: [
         '/images/products/seafood/basa_well_trimmed_fillet.jpeg',
         '/images/products/seafood/shrimp_hoso.jpeg',
@@ -89,7 +95,9 @@ export const Products: React.FC = () => {
       linkTextEn: 'Explore Agriculture Inputs',
       linkTextVi: 'Xem Danh Mục Vật Tư Nông Nghiệp',
       linkTextZh: '查看农业投入品目录',
-      tags: ['Bio-Fertilizers', 'Organic Soil Conditioners', 'Microbial Activators', 'Sustainable Inputs'],
+      tagsEn: ['Bio-Fertilizers', 'Organic Soil Conditioners', 'Microbial Activators', 'Sustainable Inputs'],
+      tagsVi: ['Phân Bón Sinh Học', 'Cải Tạo Đất Hữu Cơ', 'Vi Sinh Kích Hoạt', 'Vật Tư Bền Vững'],
+      tagsZh: ['生物有机肥', '有机土壤改良剂', '微生物激活剂', '可持续投入品'],
       images: [
         '/images/products/Bio.soilz.png',
         '/images/products/Chicken_manure.png',
@@ -157,7 +165,9 @@ export const Products: React.FC = () => {
                 linkTextEn={cat.linkTextEn}
                 linkTextVi={cat.linkTextVi}
                 linkTextZh={cat.linkTextZh}
-                tags={cat.tags}
+                tagsEn={cat.tagsEn}
+                tagsVi={cat.tagsVi}
+                tagsZh={cat.tagsZh}
                 images={cat.images}
                 reversed={idx % 2 !== 0}
               />
