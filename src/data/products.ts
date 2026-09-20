@@ -70,6 +70,8 @@ export interface CatalogueInfo {
   titleEn: string;
   titleVi: string;
   titleZh?: string;
+  titleKo?: string;
+  titleJa?: string;
   category: string;
   pageCount: number;
   fileSize: string;
@@ -80,6 +82,8 @@ export interface CatalogueInfo {
   descEn: string;
   descVi: string;
   descZh?: string;
+  descKo?: string;
+  descJa?: string;
 }
 
 export interface FormatComparison {
@@ -4187,6 +4191,10 @@ export const CATALOGUES_LIST: CatalogueInfo[] = [
     descEn: 'Comprehensive guide covering all 4 processing formats: Fresh Produce, Fruit & Vegetable Powders, Freeze-Dried Fruits, and IQF Frozen Produce alongside Viet Wolffia and Organic Inputs.',
     descVi: 'Tài liệu tổng hợp toàn bộ 4 định dạng chế biến nông sản: Nông sản tươi, Bột trái cây & rau củ, Trái cây sấy thăng hoa và Cấp đông IQF cùng siêu thực phẩm Việt Wolffia & Phân bón hữu cơ.',
     descZh: '全面涵盖4大加工形态：鲜果农产品、水果蔬菜粉、冻干水果、IQF速冻农产品以及越南 Wolffia 和有机农业投入品。'
+    titleKo: 'VAC 2026 종합 농산물 카탈로그 (Harvest Edition)',
+    titleJa: 'VAC 2026年 総合農産物カタログ（Harvest Edition）',
+    descKo: '신선 농산물, 과채 분말, 동결건조 과일, IQF 급속 냉동 농산물 4대 가공 형태와 베트남 울피아 및 유기 농자재를 종합 수록한 공식 통합 안내서.',
+    descJa: '生果・果菜パウダー・FD・IQF急速冷凍の4大加工形態に加え、ベトナム・ウルフイアおよび有機農資材を完壁に網羅した総合ガイド。',
   },
   {
     id: 'cat-fresh-2026',
@@ -4203,6 +4211,10 @@ export const CATALOGUES_LIST: CatalogueInfo[] = [
     descEn: 'Export-grade Vietnamese fresh fruits, root vegetables, and culinary crops with seasonal calendars, caliber specifications, and post-harvest cold chain management.',
     descVi: 'Trái cây tươi xuất khẩu, củ quả và gia vị nhiệt đới Việt Nam kèm lịch thu hoạch theo mùa, tiêu chuẩn phân loại size và quy trình bảo quản chuỗi lạnh xuất khẩu.',
     descZh: '出口级越南鲜果、根茎类蔬菜及热带调味作物，附带季节性采收日历、规格分级标准及采后冷链保鲜管理。'
+    titleKo: '2026 수출용 신선 과일 및 채소 카탈로그',
+    titleJa: '2026年 輸出用新鮮果物＆野菜カタログ',
+    descKo: '수출 등급 베트남 신선 과일, 근채류 및 조리용 작물의 수확 캘린더, 중량/크기 선별 기준 및 수확 후 콜드체인 보관 지침 안내.',
+    descJa: '輸出グレードのベトナム産生果・根菜・調理作物の収穫カレンダー、サイズ選別規格、収穫後コールドチェーン管理を掲載。',
   },
   {
     id: 'cat-powders-2026',
@@ -4219,6 +4231,10 @@ export const CATALOGUES_LIST: CatalogueInfo[] = [
     descEn: 'Technical specifications for Freeze-Dried Powders, Tropical Powder Collection, Dehydrated Powders, and 100% Water Soluble Extract Powders for F&B and Nutraceuticals.',
     descVi: 'Thông số kỹ thuật chi tiết cho Bột sấy thăng hoa, Bộ sưu tập bột nông sản nhiệt đới, Bột sấy lạnh và Bột chiết xuất hòa tan 100% chuyên dụng cho F&B và Dược phẩm.',
     descZh: '冻干粉、热带农产品粉系列、冷干粉及100%水溶性提取粉的技术规格，专为食品饮料及保健品工业打造。'
+    titleKo: '2026 식품급 과채 순수 분말 카탈로그',
+    titleJa: '2026年 果菜パウダー製品カタログ',
+    descKo: '식음료 및 건강기능식품용 동결건조 분말, 열대 농산물 분말 컬렉션, 열풍 건조 분말 및 100% 수용성 추출 분말의 기술 사양서.',
+    descJa: 'FDパウダー、熱帯農産物パウダー、熱風乾燥パウダー、100％水溶性エキスパウダーのF&B・サプリメント向け詳細仕様書。',
   },
   {
     id: 'cat-freeze-dried-2026',
@@ -4235,6 +4251,10 @@ export const CATALOGUES_LIST: CatalogueInfo[] = [
     descEn: 'Sublimation vacuum freeze-dried fruits with crispy texture, moisture under 5%, preserving 98%+ nutrients in Whole, Slices, Dices, and Crisps forms.',
     descVi: 'Trái cây sấy thăng hoa chân không giữ trọn 98% dinh dưỡng, cấu trúc giòn xốp thơm ngon với độ ẩm dưới 5% dạng Nguyên quả, Lát, Hạt lựu và Crisps.',
     descZh: '真空升华冻干水果，保持酥脆口感，水分低于5%，保留98%以上的营养成分，涵盖整果、切片、切丁及脆片形态。'
+    titleKo: '2026 동결건조 과일 제품 카탈로그',
+    titleJa: '2026年 フリーズドライフルーツカタログ',
+    descKo: '수분 5% 미만, 영양소 98% 이상 보존, 바삭한 식감의 진공 승화 동결건조 과일 (통원물, 슬라이스, 다이스, 크리스프 형태).',
+    descJa: '水分5％未満、栄養素98％以上保持。サクサク食感の真空昇華フリーズドライフルーツ（ホール、スライス、ダイス、クリスプ形態）。',
   },
   {
     id: 'cat-iqf-2026',
@@ -4251,6 +4271,10 @@ export const CATALOGUES_LIST: CatalogueInfo[] = [
     descEn: 'Cryogenic IQF frozen fruits and vegetables (-35°C freezing, -18°C storage) in free-flowing Dices, Slices, Halves, and Puree blocks for industrial food manufacturing.',
     descVi: 'Nông sản cấp đông siêu tốc IQF (-35°C) tơi rời dạng Hạt lựu, Lát, Nửa quả và Khối Puree phục vụ nhà máy chế biến thực phẩm và chuỗi HORECA.',
     descZh: '深冷IQF速冻水果与蔬菜（-35°C冻结，-18°C储存），提供松散切丁、切片、对半及果泥块形态，服务于工业食品制造。'
+    titleKo: '2026 IQF 급속 냉동 과채 카탈로그',
+    titleJa: '2026年 IQF急速冷凍果菜カタログ',
+    descKo: '산업용 식품 가공을 위한 초저온 IQF 급속 냉동 과채 (-35°C 동결) 낱개 떼어짐 다이스, 슬라이스, 하프 및 퓨레 블록 안내.',
+    descJa: '食品工業加工向け超急速IQF凍結（-35℃凍結）バラ凍結ダイス、スライス、ハーフ、ピューレブロック仕様書。',
   },
   {
     id: 'cat-purees-2026',
@@ -4267,6 +4291,10 @@ export const CATALOGUES_LIST: CatalogueInfo[] = [
     descEn: 'Aseptic frozen fruit purees, seedless pulps, single-strength juices, and high-Brix concentrates for F&B industrial processing.',
     descVi: 'Puree trái cây cấp đông vô trùng, thịt quả bỏ hạt, nước ép nguyên chất và nước ép đậm đặc Brix cao cho ngành chế biến F&B công nghiệp.',
     descZh: '无菌冷冻果泥、去籽果肉、原汁及高Brix浓缩果汁，专为食品饮料工业加工设计。'
+    titleKo: '2026 과일 퓨레, 원액 및 농축액 카탈로그',
+    titleJa: '2026年 フルーツピューレ＆濃縮果汁カタログ',
+    descKo: '식음료 산업 가공용 무균 냉동 과일 퓨레, 씨제거 과육, 100% 착즙 생과일 원액 및 고Brix 농축액 사양서.',
+    descJa: 'F&B産業加工向け無菌冷凍フルーツピューレ、裏ごし果肉、ストレート果汁、高Brix濃縮果汁仕様書。',
   },
 ];
 
