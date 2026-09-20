@@ -81,6 +81,10 @@ export const CropsPlantBasedPage: React.FC = () => {
             ? 'Nông Sản & Sản Phẩm Từ Cây Trồng | Vietnam Agriculture Center'
             : language === 'zh'
             ? '农产品与植物基产品 | 越南农业中心'
+            : language === 'ko'
+            ? '농산물 및 식물성 제품 | 베트남 농업 센터'
+            : language === 'ja'
+            ? '農産物＆植物性製品 | ベトナム農業センター'
             : 'Crops & Plant-Based Products | Vietnam Agriculture Center'}
         </title>
         <meta
@@ -90,6 +94,10 @@ export const CropsPlantBasedPage: React.FC = () => {
               ? 'Khám phá danh mục nông sản tươi, bột trái cây & rau củ, puree, trái cây sấy thăng hoa và sản phẩm cấp đông IQF của VAC phục vụ cung ứng B2B quốc tế.'
               : language === 'zh'
               ? '探索 VAC 鲜果蔬菜、水果及蔬菜粉、果泥、冻干水果及 IQF 速冻产品，满足国际 B2B 采购需求。'
+              : language === 'ko'
+              ? '신선 과일 및 채소, 과채 분말, 퓨레, 동결건조 과일 및 IQF 급속 냉동 제품의 글로벌 B2B 공급망 안내.'
+              : language === 'ja'
+              ? '新鮮な果物＆野菜、果菜パウダー、ピューレ、フリーズドライ、IQF急速冷凍製品のB2B調達のご案内。'
               : 'Explore VAC’s fresh fruits and vegetables, fruit and vegetable powders, purees, freeze-dried fruits and IQF products for international B2B sourcing.'
           }
         />

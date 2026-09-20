@@ -12,18 +12,26 @@ interface ProductCategoryProps {
   titleEn?: string;
   titleVi?: string;
   titleZh?: string;
+  titleKo?: string;
+  titleJa?: string;
   descKeys?: string[];
   descEn?: string;
   descVi?: string;
   descZh?: string;
+  descKo?: string;
+  descJa?: string;
   tags?: string[];
   tagsVi?: string[];
   tagsZh?: string[];
+  tagsKo?: string[];
+  tagsJa?: string[];
   tagsEn?: string[];
   linkPath?: string;
   linkTextEn?: string;
   linkTextVi?: string;
   linkTextZh?: string;
+  linkTextKo?: string;
+  linkTextJa?: string;
   reversed?: boolean;
 }
 
@@ -35,18 +43,26 @@ export const ProductCategory: React.FC<ProductCategoryProps> = ({
   titleEn,
   titleVi,
   titleZh,
+  titleKo,
+  titleJa,
   descKeys,
   descEn,
   descVi,
   descZh,
+  descKo,
+  descJa,
   tags,
   tagsVi,
   tagsZh,
+  tagsKo,
+  tagsJa,
   tagsEn,
   linkPath,
   linkTextEn,
   linkTextVi,
   linkTextZh,
+  linkTextKo,
+  linkTextJa,
   reversed = false,
 }) => {
   const { t, language } = useTranslation();
@@ -66,20 +82,20 @@ export const ProductCategory: React.FC<ProductCategoryProps> = ({
   }, [displayImages.length]);
 
   const displayTitle = titleEn && titleVi
-    ? (language === 'vi' ? titleVi : language === 'zh' ? (titleZh || titleEn) : titleEn)
+    ? (language === 'vi' ? titleVi : language === 'zh' ? (titleZh || titleEn) : language === 'ko' ? (titleKo || titleEn) : language === 'ja' ? (titleJa || titleEn) : titleEn)
     : (titleKey ? t(titleKey) : '');
 
   const displayDesc = descEn && descVi
-    ? (language === 'vi' ? descVi : language === 'zh' ? (descZh || descEn) : descEn)
+    ? (language === 'vi' ? descVi : language === 'zh' ? (descZh || descEn) : language === 'ko' ? (descKo || descEn) : language === 'ja' ? (descJa || descEn) : descEn)
     : null;
 
-  const defaultBtnText = language === 'vi' ? 'Xem Chi Tiết Danh Mục' : language === 'zh' ? '查看产品目录' : 'Explore Category Products';
+  const defaultBtnText = language === 'vi' ? 'Xem Chi Tiết Danh Mục' : language === 'zh' ? '查看产品目录' : language === 'ko' ? '제품 카탈로그 보기' : language === 'ja' ? '製品カタログを見る' : 'Explore Category Products';
   const displayBtnText = linkTextEn && linkTextVi
-    ? (language === 'vi' ? linkTextVi : language === 'zh' ? (linkTextZh || linkTextEn) : linkTextEn)
+    ? (language === 'vi' ? linkTextVi : language === 'zh' ? (linkTextZh || linkTextEn) : language === 'ko' ? (linkTextKo || linkTextEn) : language === 'ja' ? (linkTextJa || linkTextEn) : linkTextEn)
     : defaultBtnText;
 
   const displayTags = tagsEn && tagsVi
-    ? (language === 'vi' ? tagsVi : language === 'zh' ? (tagsZh || tagsEn) : tagsEn)
+    ? (language === 'vi' ? tagsVi : language === 'zh' ? (tagsZh || tagsEn) : language === 'ko' ? (tagsKo || tagsEn) : language === 'ja' ? (tagsJa || tagsEn) : tagsEn)
     : (tags || []);
 
   return (
