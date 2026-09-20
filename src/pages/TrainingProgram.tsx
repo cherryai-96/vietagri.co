@@ -50,25 +50,25 @@ export const TrainingProgram: React.FC = () => {
 
   const whoTargetGroups = [
     {
-      badge: language === 'vi' ? ' Sinh Viên & Trẻ Tuổi' : language === 'zh' ? ' 青年人才' : 'Young Talent',
+      badge: language === 'vi' ? ' Sinh Viên & Trẻ Tuổi' : language === 'zh' ? ' 青年人才' : language === 'ko' ? ' 청년 인재' : language === 'ja' ? ' 若手人材' : 'Young Talent',
       title: t('training.who1Title'),
       desc: t('training.who1Desc'),
       icon: <GraduationCap className="w-7 h-7 text-gold-warm" />
     },
     {
-      badge: language === 'vi' ? ' Quản Lý & Điều Hành' : language === 'zh' ? ' 企业高管' : 'Executives',
+      badge: language === 'vi' ? ' Quản Lý & Điều Hành' : language === 'zh' ? ' 企业高管' : language === 'ko' ? ' 경영진' : language === 'ja' ? ' 経営幹部' : 'Executives',
       title: t('training.who2Title'),
       desc: t('training.who2Desc'),
       icon: <Briefcase className="w-7 h-7 text-gold-warm" />
     },
     {
-      badge: language === 'vi' ? ' Doanh Nhân Nông Nghiệp' : language === 'zh' ? ' 农业创业者' : 'Entrepreneurs',
+      badge: language === 'vi' ? ' Doanh Nhân Nông Nghiệp' : language === 'zh' ? ' 农业创业者' : language === 'ko' ? ' 농업 창업가' : language === 'ja' ? ' 農業起業家' : 'Entrepreneurs',
       title: t('training.who3Title'),
       desc: t('training.who3Desc'),
       icon: <TrendingUp className="w-7 h-7 text-gold-warm" />
     },
     {
-      badge: language === 'vi' ? ' Chuyên Gia Cựu Trào' : language === 'zh' ? ' 资深专家' : 'Senior Experts',
+      badge: language === 'vi' ? ' Chuyên Gia Cựu Trào' : language === 'zh' ? ' 资深专家' : language === 'ko' ? ' 수석 전문가' : language === 'ja' ? ' シニアエキスパート' : 'Senior Experts',
       title: t('training.who4Title'),
       desc: t('training.who4Desc'),
       icon: <Users className="w-7 h-7 text-gold-warm" />
@@ -158,19 +158,19 @@ export const TrainingProgram: React.FC = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mt-8 w-full max-w-5xl pt-8 border-t border-gold-warm/20">
             <div className="bg-black/30 backdrop-blur-md border border-gold-warm/20 rounded-xl p-4 flex flex-col items-center text-center gap-1.5">
               <span className="font-serif text-xl md:text-2xl font-bold text-gold-champagne">100+</span>
-              <span className="text-[11px] md:text-xs text-cream/80 uppercase tracking-wider font-medium">{language === 'vi' ? 'Sản Phẩm Catalogue' : language === 'zh' ? '目录产品' : 'Catalogue Products'}</span>
+              <span className="text-[11px] md:text-xs text-cream/80 uppercase tracking-wider font-medium">{language === 'vi' ? 'Sản Phẩm Catalogue' : language === 'zh' ? '目录产品' : language === 'ko' ? '카탈로그 제품' : language === 'ja' ? 'カタログ製品' : 'Catalogue Products'}</span>
             </div>
             <div className="bg-black/30 backdrop-blur-md border border-gold-warm/20 rounded-xl p-4 flex flex-col items-center text-center gap-1.5">
               <span className="font-serif text-xl md:text-2xl font-bold text-gold-champagne">10</span>
-              <span className="text-[11px] md:text-xs text-cream/80 uppercase tracking-wider font-medium">{language === 'vi' ? 'Chuyên Đề Cốt Lõi' : language === 'zh' ? '核心专题' : 'Core Modules'}</span>
+              <span className="text-[11px] md:text-xs text-cream/80 uppercase tracking-wider font-medium">{language === 'vi' ? 'Chuyên Đề Cốt Lõi' : language === 'zh' ? '核心专题' : language === 'ko' ? '핵심 모듈' : language === 'ja' ? 'コアモジュール' : 'Core Modules'}</span>
             </div>
             <div className="bg-black/30 backdrop-blur-md border border-gold-warm/20 rounded-xl p-4 flex flex-col items-center text-center gap-1.5">
               <span className="font-serif text-xl md:text-2xl font-bold text-gold-champagne">Global</span>
-              <span className="text-[11px] md:text-xs text-cream/80 uppercase tracking-wider font-medium">{language === 'vi' ? 'Mạng Lưới Người Mua' : language === 'zh' ? '全球买家网络' : 'Buyer Networks'}</span>
+              <span className="text-[11px] md:text-xs text-cream/80 uppercase tracking-wider font-medium">{language === 'vi' ? 'Mạng Lưới Người Mua' : language === 'zh' ? '全球买家网络' : language === 'ko' ? '바이어 네트워크' : language === 'ja' ? 'バイヤーネットワーク' : 'Buyer Networks'}</span>
             </div>
             <div className="bg-black/30 backdrop-blur-md border border-gold-warm/20 rounded-xl p-4 flex flex-col items-center text-center gap-1.5">
               <span className="font-serif text-xl md:text-2xl font-bold text-gold-champagne">100%</span>
-              <span className="text-[11px] md:text-xs text-cream/80 uppercase tracking-wider font-medium">{language === 'vi' ? 'Hậu Thuẫn Từ VAC' : language === 'zh' ? 'VAC 生态支持' : 'VAC Ecosystem Backing'}</span>
+              <span className="text-[11px] md:text-xs text-cream/80 uppercase tracking-wider font-medium">{language === 'vi' ? 'Hậu Thuẫn Từ VAC' : language === 'zh' ? 'VAC 生态支持' : language === 'ko' ? 'VAC 에코시스템 지원' : language === 'ja' ? 'VAC エコシステム支援' : 'VAC Ecosystem Backing'}</span>
             </div>
           </div>
         </div>
@@ -221,7 +221,7 @@ export const TrainingProgram: React.FC = () => {
               </div>
               <div className="flex flex-col gap-2">
                 <h3 className="font-serif text-xl md:text-2xl font-bold text-gold-champagne">
-                  {language === 'vi' ? 'Vai trò Cốt lõi của Thương nhân' : language === 'zh' ? '贸易商核心角色' : 'Your Principal Role'}
+                  {language === 'vi' ? 'Vai trò Cốt lõi của Thương nhân' : language === 'zh' ? '贸易商核心角色' : language === 'ko' ? '무역상 핵심 역할' : language === 'ja' ? '貿易商の核心的役割' : 'Your Principal Role'}
                 </h3>
                 <p className="text-sm md:text-base text-cream/90 font-light leading-relaxed">
                   {t('training.bridgeRole')}
@@ -455,7 +455,7 @@ export const TrainingProgram: React.FC = () => {
                     </div>
                     <div>
                       <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-gold-champagne/90">
-                        {language === 'vi' ? 'HỢP TÁC TOÀN DIỆN' : language === 'zh' ? '全方位生态支持' : 'FULL ECOSYSTEM SUPPORT'}
+                        {language === 'vi' ? 'HỢP TÁC TOÀN DIỆN' : language === 'zh' ? '全方位生态支持' : language === 'ko' ? '종합 생태계 지원' : language === 'ja' ? '総合エコシステム支援' : 'FULL ECOSYSTEM SUPPORT'}
                       </span>
                       <h3 className="font-serif text-2xl md:text-3xl font-bold text-cream mt-0.5">
                         {t('training.collabTitle')}
@@ -587,7 +587,7 @@ export const TrainingProgram: React.FC = () => {
                   <div className="flex flex-col items-center justify-center py-10 text-center gap-4">
                     <CheckCircle2 size={48} className="text-forest" />
                     <h4 className="font-serif font-bold text-2xl text-forest">
-                      {language === 'vi' ? 'Đã Nhận Thông Tin Đăng Ký' : language === 'zh' ? '已收到报名申请' : 'Inquiry Received'}
+                      {language === 'vi' ? 'Đã Nhận Thông Tin Đăng Ký' : language === 'zh' ? '已收到报名申请' : language === 'ko' ? '신청이 접수되었습니다' : language === 'ja' ? 'お申し込みを受信しました' : 'Inquiry Received'}
                     </h4>
                     <p className="text-sm text-carbon/70 max-w-md font-light">
                       {t('common.success')}
@@ -639,7 +639,7 @@ export const TrainingProgram: React.FC = () => {
                       <input
                         type="text"
                         placeholder="Export Executive / Farm Owner / Senior Consultant..."
-                        className="bg-ivory border border-gold-warm/30 rounded px-4 py-2.5 text-xs md:text-sm text-carbon focus:outline-none focus:border-gold-warm"
+                        className="bg-[#fffdf9] border border-gold-warm/30 rounded px-4 py-2.5 text-xs md:text-sm text-carbon focus:outline-none focus:border-gold-warm"
                       />
                     </div>
 
@@ -649,8 +649,8 @@ export const TrainingProgram: React.FC = () => {
                       </label>
                       <textarea
                         rows={3}
-                        placeholder={language === 'vi' ? 'Nêu ngắn gọn định hướng hoặc mong muốn hợp tác...' : language === 'zh' ? '简要说明您的合作意向或市场网络...' : 'Briefly describe your interest or market network...'}
-                        className="bg-ivory border border-gold-warm/30 rounded px-4 py-2.5 text-xs md:text-sm text-carbon focus:outline-none focus:border-gold-warm"
+                        placeholder={language === 'vi' ? 'Nêu ngắn gọn định hướng hoặc mong muốn hợp tác...' : language === 'zh' ? '简要说明您的合作意向或市场网络...' : language === 'ko' ? '협력 의향이나 시장 네트워크를 간략히 기술해 주세요...' : language === 'ja' ? 'コラボレーションの意向や市場ネットワークを簡潔にご記述ください...' : 'Briefly describe your interest or market network...'}
+                        className="bg-[#fffdf9] border border-gold-warm/30 rounded px-4 py-2.5 text-xs md:text-sm text-carbon focus:outline-none focus:border-gold-warm"
                       />
                     </div>
 
@@ -660,7 +660,7 @@ export const TrainingProgram: React.FC = () => {
                         onClick={() => setModalMode(null)}
                         className="px-4 py-2.5 border border-carbon/20 rounded text-xs font-bold uppercase tracking-wider text-carbon hover:bg-carbon/5"
                       >
-                        {language === 'vi' ? 'Hủy' : language === 'zh' ? '取消' : 'Cancel'}
+                        {language === 'vi' ? 'Hủy' : language === 'zh' ? '取消' : language === 'ko' ? '취소' : language === 'ja' ? 'キャンセル' : 'Cancel'}
                       </button>
                       <button
                         type="submit"

@@ -1,0 +1,417 @@
+import re
+
+ko_resources = """
+  ko: {
+    nav: {
+      home: '홈',
+      about: '회사 소개',
+      services: '핵심 서비스',
+      wolffia: '베트남 울피아',
+      training: '교육 프로그램',
+      products: '제품 안내',
+      catalogues: '카탈로그 2026',
+      sustainability: '지속가능성',
+      contact: '문의하기',
+    },
+    common: {
+      partnerBtn: '파트너십 문의',
+      downloadBtn: '기업 브로슈어 다운로드',
+      exploreBtn: '역량 및 솔루션 보기',
+      contactBtn: '담당팀 문의하기',
+      servicesBtn: '핵심 서비스 보기',
+      consultationBtn: '서비스 상담 요청',
+      wolffiaBtn: '플래그십 농장 방문',
+      sampleBtn: '울피아 샘플 및 사양 요청',
+      commercialBtn: '영업팀 문의하기',
+      inquireCertBtn: '인증 서비스 문의',
+      submitBtn: '상담 신청하기',
+      sendInquiry: 'VAC에 문의 전송',
+      loading: '전송 중...',
+      success: '감사합니다! 요청이 성공적으로 전송되었습니다.',
+      error: '오류가 발생했습니다. 다시 시도해 주세요.',
+      hours: '운영 시간: 월요일 - 금요일, 08:00 - 17:00 (UTC+7)',
+      address: 'No 59, Truong Dang Que Street, Hanh Thong Ward, Ho Chi Minh City, Vietnam',
+      phone: '+84 858 741 968 / +84 376 066 194',
+      email: 'export@vietagri.co',
+      copyright: '© 2026 Vietnam Agriculture Center. All Rights Reserved.',
+      connecting: '베트남의 농업 잠재력과\\n세계적인 수요를 연결합니다.',
+    },
+    dualBuyer: {
+      title: 'VAC 협력 파트너십 선택',
+      sub: '검증된 베트남 농산물 조달부터 고성능 스마트 농업 시스템 구축까지, VAC는 지속가능한 성장을 지원합니다.',
+      sourcingTitle: '프리미엄 글로벌 조달 및 수출',
+      sourcingSub: 'EU, 미국, 싱가포르, 말레이시아의 기업 구매자를 위한 유기농 ST25 쌀 및 수출용 패션후르츠 클린라벨 공급망.',
+      sourcingBtn: '조달 솔루션 탐색 →',
+      farmingTitle: '기업 계약 재배 및 농업 기술',
+      farmingSub: '지역 투자자 및 대규모 농장 구축용. 전계농법(Electroculture), 일본 프리미엄 유기 자재 및 체계적 협력 농업.',
+      farmingBtn: '재배 솔루션 탐색 →',
+    },
+    bioLoop: {
+      title: '바이오 밸런스 순환 시스템',
+      sub: '고품질 자재, 고부가가치 작물, 과일 부산물 및 울피아 단백질을 순환 자원화하는 제로 웨이스트 농업 생태계.',
+      step1Title: '프리미엄 유기 자재',
+      step1Desc: '살균 처리된 고품질 일본산 계분을 수입·분배하여 토양 생태계를 복원합니다.',
+      step2Title: '고수율 재배',
+      step2Desc: '10헥타르 패션후르츠 농장 등 대규모 고부가가치 프로젝트에 최상급 유기 자재를 공급합니다.',
+      step3Title: '업사이클링 리사이클',
+      step3Desc: '패션후르츠, 바나나, 망고 껍질 등 영양가 높은 가공 부산물을 회수하여 매립을 방지합니다.',
+      step4Title: '울피아 바이오 엔진',
+      step4Desc: '온실 전용 수로에서 울피아(Wolffia globosa)를 재배하여 대량의 식물성 단백질을 생산합니다.',
+      step5Title: '바이오 밸런스 사료',
+      step5Desc: '회수한 과일 부산물과 울피아 바이오매스를 배합하여 소화율이 높은 수산 및 축산용 사료를 제조합니다.',
+      cta: '순환 농업 모델 자세히 보기 →',
+    },
+    organicRisk: {
+      title: '수출 리스크 제거: 공급망 위험 관리',
+      sub: '국제 규정 준수 미비는 검증되지 않은 농가에게 큰 위험입니다. VAC는 행정적 차질을 없애고 통관 안전을 보장합니다.',
+      riskTitle: '주요 리스크',
+      risk1: '잔류농약(MRL) 초과로 인한 통관 거부',
+      risk2: '농가 재배 프로토콜 미검증',
+      risk3: '제3자 감사 부적합',
+      risk4: '증빙 문서 부실',
+      risk5: '유기농 전환 계획 부재',
+      solutionTitle: 'VAC 솔루션',
+      sol1: '재배 프로토콜 통합 관리',
+      sol2: '농가 규정 준수 지원',
+      sol3: '국제 현장 감사 대비',
+      sol4: '클린라벨 전환 로드맵',
+      sol5: '현장 커뮤니케이션 및 서류 전담 지원',
+      cta: '공급망 리스크 해결하기 →',
+    },
+    infra: {
+      heroTitle: '인프라 및 R&D 연구소',
+      heroSub: '수출용 공급망 및 순환 농업 모델을 지원하는 전문 시설, 가공 시스템 및 응용 농업 연구.',
+      certTitle: '국제 표준 시설',
+      labTitle: '울피아 마더 랩 (Mother Lab)',
+      labDesc: 'VAC의 핵심 혁신 센터. 완벽한 바이오 안보를 위해 RO 정수 시스템, UV 살균 및 미세 분무 시스템을 갖추어 100% 병원균 없는 바이오매스를 생산합니다.',
+      procTitle: '수출 전용 가공 센터',
+      procDesc: 'HACCP 및 FSSC 22000 기준을 준수하며, 선별부터 냉동 퓨레 파우치 및 무균 포장까지 수확 직후의 신선도를 산업 규모로 유지합니다.',
+      cta: '주요 시설 둘러보기 →',
+    },
+    contractFarming: {
+      heroTitle: '기업 계약 재배 및 농업 기술',
+      heroSub: '프리미엄 유기 자재, 전계농법, 현장 기술 지원 및 수출 맞춤형 작물 계획에 기반한 스마트 재배 파트너십.',
+      forWhoTitle: '대상 파트너',
+      for1Title: '지역 및 체계적 투자자',
+      for1Desc: '운영 지원을 통해 확장 가능한 농업 프로젝트를 찾는 투자자.',
+      for2Title: '대규모 농장 운영자',
+      for2Desc: '수출 잠재력을 가진 상업 농장을 개발하려는 토지 소유자.',
+      for3Title: '전략적 원자재 구매자',
+      for3Desc: '상류 공급 품질과 작물 생산 계획을 직접 관리하고자 하는 대형 구매자.',
+      whatWeProvide: 'VAC 제공 항목',
+      prov1: '전계농법(Electroculture) 시스템 설비 설계',
+      prov2: '일본산 프리미엄 유기 비료 공급',
+      prov3: '작물 선정 및 상업화 계획',
+      prov4: '농장 재배 프로토콜 개발',
+      prov5: '현장 기술 지도 및 모니터링',
+      prov6: '공급망 및 바이어 매칭',
+      prov7: '유기농 전환 로드맵 제시',
+      prov8: '수확 후 가공 및 수출 연결',
+      ctaTitle: 'VAC와 함께 지속가능한 농업 파트너십 구축',
+      ctaBtn: '재배 프로젝트 문의하기 →',
+    },
+    sourcing: {
+      heroTitle: '글로벌 구매자를 위한 검증된 베트남 농산물',
+      heroSub: 'VAC의 글로벌 네트워크, 가공 역량 및 국제 규정 준수 시스템을 통해 베트남 최고급 수출용 농산물을 조달하세요.',
+      reqBtn: '제품 상세 사양 요청 →',
+      volLabel: '예상 조달 물량 / 농장 규모 / 투자 범위',
+      targetMarket: '목표 수출 시장',
+      interest: '관심 분야:',
+    },
+    home: {
+      heroTitle: '베트남 <span class="text-transparent bg-clip-text bg-gradient-to-r from-gold-champagne via-gold-warm to-gold-antique">풍요로운 농업</span>을 세계로 연결합니다',
+      heroSub: '프리미엄 제품 조달, 첨단 계약 재배, 원스톱 수출 물류를 아우르는 신뢰할 수 있는 현지 파트너.',
+      introHeadline: '베트남 농업의 가치를 전하는 든든한 파트너',
+      introSubtitle: '생산량 증대, 품질 공학, 지속가능한 글로벌 공급망 구축.',
+      introPara1: '베트남 농업 센터(VAC)는 대규모 기업 조달, 계약 재배 및 첨단 농업 기술의 허브입니다. 상업 생산과 차세대 생태 과학을 결합하여 베트남 농업의 가치를 전 세계에 전달합니다.',
+      introPara2: '전계농법과 미생물 자재를 적용하여 작물 활력을 증대하고 토양을 보호합니다. 독립적인 유기농 컨설팅 및 인증 서비스를 통해 transparent하고 ESG를 준수하는 공급망을 제공합니다.',
+      introImages: [
+        { src: '/images/ss1.1.JPG', alt: 'Vietnam Agriculture Center Introduction 1' },
+        { src: '/images/ss1.2.PNG', alt: 'Vietnam Agriculture Center Introduction 2' },
+        { src: '/images/ss1.3.jpg', alt: 'Vietnam Agriculture Center Introduction 3' },
+        { src: '/images/ss1.4.png', alt: 'Vietnam Agriculture Center Introduction 4' }
+      ],
+      advantageTitle: '통합 농업 공급망 생태계',
+      advantageSub: 'VAC는 국제 무역의 비효율성을 개선하여 종자부터 출하까지 식품 안전과 품질을 완벽히 보장합니다.',
+      sourcingTitle: '글로벌 조달 서비스',
+      sourcingSub: '국제 표준 규격을 준수하는 프리미엄 농산물 공급망.',
+      agriInputsTitle: '농업 자재 공급',
+      agriInputsSub: '일본산 프리미엄 유기 비료 및 스마트 농업 솔루션.',
+      wolffiaTitle: '베트남 울피아 (Việt Wolffia)',
+      wolffiaSub: '고단백 식물성 바이오매스 생산 및 스마트 가공.',
+      servicesTitle: '핵심 서비스',
+      servicesSub: '계약 재배, 기술 컨설팅, 인증 지원 및 글로벌 물류.',
+    },
+    about: {
+      heroTitle: 'VAC 소개',
+      heroSub: '베트남 농업의 글로벌 경쟁력과 지속가능성을 선도합니다.',
+      missionTitle: '사명과 비전',
+      missionDesc: '첨단 기술과 검증된 공급망을 통해 베트남 농산물의 국제적 가치를 극대화합니다.',
+    },
+    services: {
+      heroTitle: 'VAC 핵심 서비스',
+      heroSub: '조달, 스마트 농업, 유기농 인증, 글로벌 물류까지 원스톱 솔루션 제공.',
+    },
+    wolffia: {
+      heroTitle: 'Việt Wolffia — 미네랄 단백질 바이오매스',
+      heroSub: '세계에서 가장 작은 관속 식물이 선사하는 지속가능한 식물성 단백질 혁명.',
+    },
+    training: {
+      heroTitle: '농업 기술 교육 프로그램',
+      heroSub: '스마트 농법, 전계농법, 유기농 재배 실무 기술 교육.',
+    },
+    products: {
+      heroTitle: '수출용 농수산물 제품 센터',
+      heroSub: '신선 농산물, 분말, 퓨레, 동결건조, IQF 냉동, 수산물 및 계육 포트폴리오.',
+    },
+    catalogues: {
+      heroTitle: '제품 카탈로그 2026',
+      heroSub: 'VAC 공식 제품 카탈로그 및 상세 사양서 다운로드.',
+    },
+    contact: {
+      heroTitle: '문의하기',
+      heroSub: 'VAC 글로벌 팀이 친절하게 상담해 드립니다.',
+    },
+    footer: {
+      aboutTitle: '베트남 농업 센터 (VAC)',
+      aboutDesc: '베트남 풍부한 농업 자원과 글로벌 시장을 연결하는 통합 농업 조달 및 스마트 재배 전문 센터.',
+      quickLinks: '빠른 링크',
+      productCategories: '제품 카테고리',
+      contactInfo: '연락처 정보',
+      rights: 'All Rights Reserved.',
+    },
+    agriInputs: {
+      heroTitle: '농업 자재 및 유기 솔루션',
+      heroSub: '일본산 최고급 발효 계분, 전계농법 자재 및 토양 개량제.',
+    }
+  },
+"""
+
+ja_resources = """
+  ja: {
+    nav: {
+      home: 'ホーム',
+      about: '会社概要',
+      services: '中核サービス',
+      wolffia: 'ベトナム・ウルフイア',
+      training: '研修プログラム',
+      products: '取扱製品',
+      catalogues: 'カタログ 2026',
+      sustainability: 'サステナビリティ',
+      contact: 'お問い合わせ',
+    },
+    common: {
+      partnerBtn: 'パートナーシップのお問い合わせ',
+      downloadBtn: '企業パンフレットダウンロード',
+      exploreBtn: 'ソリューションを見る',
+      contactBtn: '担当チームへ連絡',
+      servicesBtn: 'サービス一覧を見る',
+      consultationBtn: 'ご相談・お見積り依頼',
+      wolffiaBtn: 'フラッグシップ農場を見る',
+      sampleBtn: 'サンプル・仕様書請求',
+      commercialBtn: '営業チームへ連絡',
+      inquireCertBtn: '認証サービスについて問い合わせ',
+      submitBtn: '送信する',
+      sendInquiry: 'VACへお問い合わせ送信',
+      loading: '送信中...',
+      success: 'ありがとうございます！送信が完了しました。',
+      error: 'エラーが発生しました。もう一度お試しください。',
+      hours: '営業時間: 月〜金 08:00 - 17:00 (UTC+7)',
+      address: 'No 59, Truong Dang Que Street, Hanh Thong Ward, Ho Chi Minh City, Vietnam',
+      phone: '+84 858 741 968 / +84 376 066 194',
+      email: 'export@vietagri.co',
+      copyright: '© 2026 Vietnam Agriculture Center. All Rights Reserved.',
+      connecting: 'ベトナムの農業ポテンシャルと\\n世界をつなぐパートナー。',
+    },
+    dualBuyer: {
+      title: 'VACとの提携パスウェイの選択',
+      sub: '高品質なベトナム農産物の調達から、スマート農業システムの構築まで、持続可能な成長をサポートします。',
+      sourcingTitle: 'プレミアム グローバル調達・輸出',
+      sourcingSub: 'EU・米国・シンガポール・マレーシア等の企業バイヤー向け。オーガニックST25米やパッションフルーツ等のクリーンレーベル供給網。',
+      sourcingBtn: '調達ソリューションを見る →',
+      farmingTitle: '企業向け契約栽培＆アグリテック',
+      farmingSub: '投資家および大規模農場開発者向け。電磁界農法（Electroculture）、日本の高品質有機資材、体系的な協力営農。',
+      farmingBtn: '営農ソリューションを見る →',
+    },
+    bioLoop: {
+      title: 'バイオバランス循環エコシステム',
+      sub: '高品質資材・高価値作物・果実バイオマス残渣・ウルフイアタンパク質を循環利用するゼロウェイスト農業モデル。',
+      step1Title: 'プレミアム有機資材',
+      step1Desc: '高温殺菌された高品質な日本産鶏フン堆肥を輸入・施용し、地力を回復させます。',
+      step2Title: '高収量栽培',
+      step2Desc: '10ヘクタールのパッションフルーツ農園など、大規模型高価値農業プロジェクトへ展開します。',
+      step3Title: 'アップサイクル回収',
+      step3Desc: 'パッションフルーツ・バナナ・マンゴー等の果皮残渣を回収し、埋め立て廃棄を防ぎます。',
+      step4Title: 'ウルフイア・バイオエンジン',
+      step4Desc: 'ハウス内の専用水路でミジンコモ（Wolffia globosa）を培養し、大量の植物性タンパク質を生産します。',
+      step5Title: 'バイオバランス飼料',
+      step5Desc: '回収した果実残渣とウルフイアを配合し、消化率の高い水産・畜産用バイオ飼料を製造します。',
+      cta: '循環型モデルの仕組みを見る →',
+    },
+    organicRisk: {
+      title: '輸出リスクの回避：サプライチェーンリスク管理',
+      sub: '国際基準の未達成は企業にとって大きなリスクです。VACは手続き上の混乱を排除し、安全な輸出通関を保証します。',
+      riskTitle: '主なリスク',
+      risk1: '残留農薬（MRL）基準違反による通関拒否',
+      risk2: '農場の栽培プロトコル未検証',
+      risk3: '第三者監査の不適合',
+      risk4: '証明書類の不備',
+      risk5: '有機認証移行計画の欠여',
+      solutionTitle: 'VACのソリューション',
+      sol1: '栽培プロトコルの一元管理',
+      sol2: '農場レベルのコンプライアンス支援',
+      sol3: '国際監査の事前準備支援',
+      sol4: 'クリーンレーベル移行ロードマップ',
+      sol5: '現地手配および書類作成サポート',
+      cta: 'サプライチェーンのリスクを解消する →',
+    },
+    infra: {
+      heroTitle: 'インフラストラクチャー＆R&D研究施設',
+      heroSub: '輸出向け供給網と循環型農業モデルを支える専門施設、加工システム、応用農業研究。',
+      certTitle: '国際標準に準拠した施設',
+      labTitle: 'ウルフイア マザーラボ（Mother Lab）',
+      labDesc: 'バイオセキュリティを徹底したイノベーションセンター。RO純水装置・UV殺균・微細ミスト制御を完備し、100％無病原体のバイオマスを安定生産します。',
+      procTitle: '輸出専用セントラル加工工場',
+      procDesc: 'HACCPおよびFSSC 22000基準を遵守し、選別から冷凍ピューレパウチ・無菌包装まで、収穫直後の鮮度を産業スケールで維持します。',
+      cta: '主要施設を見る →',
+    },
+    contractFarming: {
+      heroTitle: '企業向け契約栽培＆アグリテック',
+      heroSub: '高品質な日本産有機資材、電磁界農法、現地技術指導、輸出向け作付け計画に基づくスマート営農パートナーシップ。',
+      forWhoTitle: '対象パートナー',
+      for1Title: '地域・体系的投資家',
+      for1Desc: '運用サポートを備えた拡張性のある農業プロジェクトを求める投資家。',
+      for2Title: '大規模農場オペレーター',
+      for2Desc: '輸出可能性のある商業農場を開発・運営する土地所有者。',
+      for3Title: '戦略的原材料バイヤー',
+      for3Desc: '川上での調達品質と作付け計画を直接管理したい大口バイヤー。',
+      whatWeProvide: 'VACの提供内容',
+      prov1: '電磁界農法（Electroculture）システムの設計・設置',
+      prov2: '日本産プレミアム有機肥料の供給',
+      prov3: '作物の選定および商業計画の策定',
+      prov4: '農場栽培プロトコルの開発',
+      prov5: '現地技術指導とモニタリング',
+      prov6: 'サプライチェーンとバイヤーのマッチング',
+      prov7: '有機認証移行ロードマップの提示',
+      prov8: '収穫後加工および輸出出荷の連携',
+      ctaTitle: 'VACと共に持続可能な農業パートナーシップを構築',
+      ctaBtn: '営農プロジェクトについて相談する →',
+    },
+    sourcing: {
+      heroTitle: 'グローバルバイヤー向け 検証済みベトナム農産物',
+      heroSub: 'VACのグローバルネットワーク、加工能力、国際コンプライアンス管理により、高品質なベトナム産農産物を安心して調達いただけます。',
+      reqBtn: '製品仕様書をリクエスト →',
+      volLabel: '想定調達量 / 農場規模 / 投資規模',
+      targetMarket: '対象輸出市場',
+      interest: '関心分野:',
+    },
+    home: {
+      heroTitle: 'ベトナムの<span class="text-transparent bg-clip-text bg-gradient-to-r from-gold-champagne via-gold-warm to-gold-antique">豊かな農業</span>を世界へ繋ぐ',
+      heroSub: '高品質な農水産物の調達、先端契約栽培、ワンストップ輸出物流まで網羅する信頼の現地パートナー。',
+      introHeadline: 'ベトナム農業の価値を届ける確かなパートナー',
+      introSubtitle: '生産量の拡大、品質工学、持続可能なグローバルサプライチェーンの構築。',
+      introPara1: 'ベトナム農業センター（VAC）は、大規模企業調達、契約栽培、先端アグリテックのハブです。商業生産と次世代生態科学を融合させ、ベトナム農業の強みを世界へ発신します。',
+      introPara2: '電磁界農法や微生物資材を導入し、作物の生命力を高め土壌を保護します。独立した有機認証コンサルティングを通じ、透明性が高くESGに適合した供給網を提供します。',
+      introImages: [
+        { src: '/images/ss1.1.JPG', alt: 'Vietnam Agriculture Center Introduction 1' },
+        { src: '/images/ss1.2.PNG', alt: 'Vietnam Agriculture Center Introduction 2' },
+        { src: '/images/ss1.3.jpg', alt: 'Vietnam Agriculture Center Introduction 3' },
+        { src: '/images/ss1.4.png', alt: 'Vietnam Agriculture Center Introduction 4' }
+      ],
+      advantageTitle: '統合型 農業サプライチェーン生態系',
+      advantageSub: 'VACは国際貿易の障壁を取り除き、種苗から出荷まで食品の安全性と品質を保証します。',
+      sourcingTitle: 'グローバル調達サービス',
+      sourcingSub: '国際規格に準拠した高品質農産物サプライチェーン。',
+      agriInputsTitle: '農業資材供給',
+      agriInputsSub: '日本産プレミアム有機肥料およびスマート農業ソリューション。',
+      wolffiaTitle: 'ベトナム・ウルフイア',
+      wolffiaSub: '高タンパク植物性バイオマスの生産およびスマート加工。',
+      servicesTitle: '中核サービス',
+      servicesSub: '契約栽培、技術コンサルティング、認証支援および国際物流。',
+    },
+    about: {
+      heroTitle: 'VACについて',
+      heroSub: 'ベトナム農業のグローバル競合力と持続可能性をリードします。',
+      missionTitle: 'ミッションとビジョン',
+      missionDesc: '先端技術と検証された供給網を通じてベトナム農産物の国際的価値を最大化します。',
+    },
+    services: {
+      heroTitle: 'VAC 中核サービス',
+      heroSub: '調達・スマート農業・有機認証・国際物流までワンストップで提供。',
+    },
+    wolffia: {
+      heroTitle: 'Việt Wolffia — ミネラルタンパク質バイオマス',
+      heroSub: '世界最小の血管植物がもたらす持続可能な植物性タンパク質革命。',
+    },
+    training: {
+      heroTitle: '農業技術研修プログラム',
+      heroSub: 'スマート農法・電磁界農法・有機栽培の現場実務研修。',
+    },
+    products: {
+      heroTitle: '輸出用 農水産物製品センター',
+      heroSub: '新鮮農産物、パウダー、ピューレ、フリーズドライ、IQF冷凍、水産物および鶏肉。',
+    },
+    catalogues: {
+      heroTitle: '製品カタログ 2026',
+      heroSub: 'VAC公式製品カタログおよび詳細仕様書のダウンロード。',
+    },
+    contact: {
+      heroTitle: 'お問い合わせ',
+      heroSub: 'VACグローバルチームが迅速にご対応いたします。',
+    },
+    footer: {
+      aboutTitle: 'ベトナム農業センター (VAC)',
+      aboutDesc: 'ベトナムの豊かな農業資源とグローバル市場を繋ぐ、統合型農業調達・スマート営農センター。',
+      quickLinks: 'クイックリンク',
+      productCategories: '製品カテゴリー',
+      contactInfo: '連絡先情報',
+      rights: 'All Rights Reserved.',
+    },
+    agriInputs: {
+      heroTitle: '農業資材＆オーガニックソリューション',
+      heroSub: '日本産最高級発酵鶏フン堆肥、電磁界農法資材および土壌改良剤。',
+    }
+  },
+"""
+
+file_path = "/Users/tt/Desktop/Vietagri/Website/Vietagri.co/src/i18n.tsx"
+with open(file_path, "r", encoding="utf-8") as f:
+    content = f.read()
+
+# 1. Update export type Language
+content = content.replace("export type Language = 'en' | 'vi' | 'zh';", "export type Language = 'en' | 'vi' | 'zh' | 'ko' | 'ja';")
+
+# 2. Add ko and ja to defaultResources before the closing brace of defaultResources
+# Find the end of `zh: { ... }` inside `defaultResources`
+content = content.replace("  zh: {\n" if "  zh: {" in content else "zh: {", "zh_marker")
+
+# Let's find where `defaultResources` ends
+pattern = r"(zh:\s*\{.*?\n  \})\n\};"
+replacement = r"\1,\n" + ko_resources.strip() + ",\n" + ja_resources.strip() + "\n};"
+content = re.sub(pattern, replacement, content, flags=re.DOTALL)
+
+# 3. Update LanguageProvider mergedResources & loop
+old_provider_code = """   const mergedResources: TranslationResources = {
+    en: { ...defaultResources.en },
+    vi: { ...defaultResources.vi },
+    zh: { ...defaultResources.zh }
+   };
+
+   for (const lang of ['en', 'vi', 'zh']) {"""
+
+new_provider_code = """   const mergedResources: TranslationResources = {
+    en: { ...defaultResources.en },
+    vi: { ...defaultResources.vi },
+    zh: { ...defaultResources.zh },
+    ko: { ...defaultResources.ko },
+    ja: { ...defaultResources.ja }
+   };
+
+   for (const lang of ['en', 'vi', 'zh', 'ko', 'ja']) {"""
+
+content = content.replace(old_provider_code, new_provider_code)
+
+with open(file_path, "w", encoding="utf-8") as f:
+    f.write(content)
+
+print("Finished updating src/i18n.tsx with KO and JA dictionaries!")

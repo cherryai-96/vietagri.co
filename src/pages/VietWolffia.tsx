@@ -5,12 +5,12 @@ import { CheckCircle2, FlaskConical, Droplet, Sparkles, Scale, ChevronRight, Che
 import { SEO } from '../components/SEO';
 
 const CATEGORIES = [
-  { id: 'culinary', labelEn: 'Culinaries', labelVi: 'Ẩm Thực', labelZh: '美食品鉴' },
-  { id: 'beverage', labelEn: 'Beverages', labelVi: 'Đồ Uống', labelZh: '健康饮品' },
-  { id: 'pastry', labelEn: 'Pastries', labelVi: 'Bánh Ngọt', labelZh: '烘焙糕点' },
-  { id: 'snack', labelEn: 'Snacks', labelVi: 'Snack', labelZh: '休闲零食' },
-  { id: 'supplement', labelEn: 'Supplements', labelVi: 'Thực Phẩm Bổ Sung', labelZh: '膳食补充剂' },
-  { id: 'others', labelEn: 'Others', labelVi: 'Khác', labelZh: '其他应用' }
+  { id: 'culinary', labelEn: 'Culinaries', labelVi: 'Ẩm Thực', labelZh: '美食品鉴', labelKo: '미식 요리', labelJa: 'グルメ料理' },
+  { id: 'beverage', labelEn: 'Beverages', labelVi: 'Đồ Uống', labelZh: '健康饮品', labelKo: '건강 음료', labelJa: 'ヘルスドリンク' },
+  { id: 'pastry', labelEn: 'Pastries', labelVi: 'Bánh Ngọt', labelZh: '烘焙糕点', labelKo: '베이커리 & 디저트', labelJa: 'ベーカリー＆スイーツ' },
+  { id: 'snack', labelEn: 'Snacks', labelVi: 'Snack', labelZh: '休闲零食', labelKo: '헬시 스낵', labelJa: 'ヘルシースナック' },
+  { id: 'supplement', labelEn: 'Supplements', labelVi: 'Thực Phẩm Bổ Sung', labelZh: '膳食补充剂', labelKo: '건강기능식품', labelJa: 'サプリメント' },
+  { id: 'others', labelEn: 'Others', labelVi: 'Khác', labelZh: '其他应用', labelKo: '기타 응용 분야', labelJa: 'その他応用' }
 ] as const;
 
 type CategoryType = typeof CATEGORIES[number]['id'];
@@ -511,7 +511,7 @@ export const VietWolffia: React.FC = () => {
             className="flex flex-col gap-4"
           >
             <span className="text-xs md:text-sm font-bold uppercase tracking-widest text-gold-champagne bg-forest/40 border border-gold-warm/20 px-4 py-1.5 rounded-full self-center">
-              {language === 'vi' ? 'Đột Phá Chủ Lực' : language === 'zh' ? '旗舰创新项目' : 'Flagship Innovation'}
+              {language === 'vi' ? 'Đột Phá Chủ Lực' : language === 'zh' ? '旗舰创新项目' : language === 'ko' ? '플래그십 혁신 프로젝트' : language === 'ja' ? 'フラッグシップ・イノベーション' : 'Flagship Innovation'}
             </span>
             <h1 className="font-serif text-balance text-[2.25rem] leading-[1.1] sm:text-[3rem] md:text-5xl lg:text-6xl font-bold leading-tight tracking-wide text-gold-champagne"><span dangerouslySetInnerHTML={{ __html: t('wolffia.heroTitle') }} /></h1>
           </motion.div>
@@ -540,11 +540,11 @@ export const VietWolffia: React.FC = () => {
 
           <div className="lg:col-span-5 bg-ivory border border-gold-warm/15 rounded-2xl p-6 shadow-md relative overflow-hidden flex flex-col items-center">
             <div className="absolute top-0 right-0 bg-gold-warm text-brown-soil font-bold text-[10px] uppercase tracking-wider px-3 py-1 rounded-bl-lg">
-              {language === 'vi' ? 'Phân Tích Chính Thức' : language === 'zh' ? '官方检测分析' : 'Official Analysis'}
+              {language === 'vi' ? 'Phân Tích Chính Thức' : language === 'zh' ? '官方检测分析' : language === 'ko' ? '공식 성분 분석' : language === 'ja' ? '公式成分分析' : 'Official Analysis'}
             </div>
             <h3 className="font-serif font-bold text-lg text-forest mb-4 self-start flex items-center gap-1.5">
               <Scale size={18} className="text-gold-warm" />
-              {language === 'vi' ? 'So Sánh Dinh Dưỡng' : language === 'zh' ? '营养成分对比' : 'Nutritional Comparison'}
+              {language === 'vi' ? 'So Sánh Dinh Dưỡng' : language === 'zh' ? '营养成分对比' : language === 'ko' ? '영양 성분 비교' : language === 'ja' ? '栄養成分の比較' : 'Nutritional Comparison'}
             </h3>
             
             <div className="w-full rounded-lg overflow-hidden border border-gold-warm/10 bg-white">
@@ -558,7 +558,7 @@ export const VietWolffia: React.FC = () => {
               />
             </div>
             <p className="text-[10px] text-carbon/50 mt-3 text-center italic leading-relaxed">
-              * {language === 'vi' ? 'Nhấp vào biểu đồ để xem bảng chi tiết hàm lượng protein & axit amin thiết yếu.' : language === 'zh' ? '点击图表查看详细蛋白质及必需氨基酸谱 (mg/g 干重)。' : 'Click chart to view detailed protein & essential amino acid spectrum (mg/g dry weight).'}
+              * {language === 'vi' ? 'Nhấp vào biểu đồ để xem bảng chi tiết hàm lượng protein & axit amin thiết yếu.' : language === 'zh' ? '点击图表查看详细蛋白质及必需氨基酸谱 (mg/g 干重)。' : language === 'ko' ? '차트를 클릭하면 단백질 및 필수 아미노산 조성표(mg/g 건조중량)를 확인하실 수 있습니다.' : language === 'ja' ? 'チャートをクリックすると、アミノ酸およびタンパク質の詳細仕様（mg/g乾物重）をご覧いただけます。' : 'Click chart to view detailed protein & essential amino acid spectrum (mg/g dry weight).'}
             </p>
           </div>
         </div>
@@ -569,7 +569,7 @@ export const VietWolffia: React.FC = () => {
         <div className="max-w-6xl mx-auto flex flex-col gap-16">
           <div className="text-center max-w-3xl mx-auto flex flex-col gap-4">
             <span className="text-xs font-bold uppercase tracking-widest text-gold-antique">
-              {language === 'vi' ? 'Tiêu Chuẩn Sản Xuất' : language === 'zh' ? '生产技术标准' : 'Production Standards'}
+              {language === 'vi' ? 'Tiêu Chuẩn Sản Xuất' : language === 'zh' ? '生产技术标准' : language === 'ko' ? '생산 기술 표준' : language === 'ja' ? '生産技術基準' : 'Production Standards'}
             </span>
             <h2 className="font-serif text-balance text-[2rem] leading-[1.1] sm:text-4xl md:text-5xl font-bold tracking-wide text-forest leading-tight"><span dangerouslySetInnerHTML={{ __html: t('wolffia.cultTitle') }} /></h2>
             <p className="text-sm md:text-base text-carbon/75 font-light leading-relaxed">
@@ -621,7 +621,7 @@ export const VietWolffia: React.FC = () => {
         <div className="max-w-7xl mx-auto flex flex-col gap-16">
           <div className="text-center max-w-3xl mx-auto flex flex-col gap-4">
             <span className="text-xs font-bold uppercase tracking-widest text-gold-antique">
-              {language === 'vi' ? 'Ứng Dụng Đa Dạng' : language === 'zh' ? '广泛应用领域' : 'Versatile Outlets'}
+              {language === 'vi' ? 'Ứng Dụng Đa Dạng' : language === 'zh' ? '广泛应用领域' : language === 'ko' ? '다양한 응용 분야' : language === 'ja' ? '幅広い応用分野' : 'Versatile Outlets'}
             </span>
             <h2 className="font-serif text-balance text-[2rem] leading-[1.1] sm:text-4xl md:text-5xl font-bold tracking-wide text-forest leading-tight"><span dangerouslySetInnerHTML={{ __html: t('wolffia.appTitle') }} /></h2>
             <p className="text-sm md:text-base text-carbon/75 font-light leading-relaxed"><span dangerouslySetInnerHTML={{ __html: t('wolffia.appSub') }} /></p>
@@ -698,11 +698,11 @@ export const VietWolffia: React.FC = () => {
                 <div className="flex flex-col gap-3 pt-2">
                   <div className="flex items-start gap-2 text-xs md:text-sm font-light text-carbon/85">
                     <CheckCircle2 size={16} className="text-gold-warm shrink-0 mt-0.5" />
-                    <span>{language === 'vi' ? 'Thử nghiệm quy mô thương mại cho siêu rau củ giá trị cao.' : language === 'zh' ? '高价值植物蛋白商业化规模培育试验。' : 'Commercial-scale trials for high-value botanical greens.'}</span>
+                    <span>{language === 'vi' ? 'Thử nghiệm quy mô thương mại cho siêu rau củ giá trị cao.' : language === 'zh' ? '高价值植物蛋白商业化规模培育试验。' : language === 'ko' ? '고부가가치 식물성 단백질 상업 재배 실증 상용화.' : language === 'ja' ? '高価値植物性タンパク質の商用栽培実証試験。' : 'Commercial-scale trials for high-value botanical greens.'}</span>
                   </div>
                   <div className="flex items-start gap-2 text-xs md:text-sm font-light text-carbon/85">
                     <CheckCircle2 size={16} className="text-gold-warm shrink-0 mt-0.5" />
-                    <span>{language === 'vi' ? 'Hệ thống hiệu chuẩn lưới quang hợp tối ưu.' : language === 'zh' ? '光合作用防护网校准优化系统。' : 'Optimized photosynthesis net calibration systems.'}</span>
+                    <span>{language === 'vi' ? 'Hệ thống hiệu chuẩn lưới quang hợp tối ưu.' : language === 'zh' ? '光合作用防护网校准优化系统。' : language === 'ko' ? '광합성 보호 망 최적화 보정 시스템.' : language === 'ja' ? '光合成保護ネット校正最適化システム。' : 'Optimized photosynthesis net calibration systems.'}</span>
                   </div>
                 </div>
               </div>
@@ -720,10 +720,10 @@ export const VietWolffia: React.FC = () => {
             <div className="flex flex-col gap-3">
               <span className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-forest">
                 <Sparkles size={16} />
-                {language === 'vi' ? 'Danh Mục Sản Phẩm' : language === 'zh' ? '产品系列' : 'Portfolio'}
+                {language === 'vi' ? 'Danh Mục Sản Phẩm' : language === 'zh' ? '产品系列' : language === 'ko' ? '제품 포트폴리오' : language === 'ja' ? '製品ポートフォリオ' : 'Portfolio'}
               </span>
               <h2 className="font-serif text-[2rem] leading-[1.1] sm:text-4xl md:text-5xl font-bold text-carbon">
-                {language === 'vi' ? 'Sản Phẩm Việt Wolffia' : language === 'zh' ? '越南 Wolffia 水萍产品' : 'Việt Wolffia Products'}
+                {language === 'vi' ? 'Sản Phẩm Việt Wolffia' : language === 'zh' ? '越南 Wolffia 水萍产品' : language === 'ko' ? '베트남 울피아 제품군' : language === 'ja' ? '베트남・ウルフイア製品' : 'Việt Wolffia Products'}
               </h2>
             </div>
             <a 
@@ -733,7 +733,7 @@ export const VietWolffia: React.FC = () => {
               className="self-start flex items-center gap-2 bg-[#d7ea44] hover:bg-[#c6db31] text-forest px-6 py-3 rounded-xl font-semibold transition-all duration-300 inline-flex text-sm md:text-base cursor-pointer"
             >
               <Sparkles size={18} />
-              {language === 'vi' ? 'Xem Tất Cả Sản Phẩm' : language === 'zh' ? '查看全部产品' : 'View All Products'}
+              {language === 'vi' ? 'Xem Tất Cả Sản Phẩm' : language === 'zh' ? '查看全部产品' : language === 'ko' ? '전 제품 보기' : language === 'ja' ? '全製品を見る' : 'View All Products'}
             </a>
           </div>
 
@@ -763,7 +763,7 @@ export const VietWolffia: React.FC = () => {
                 {/* Glassmorphism Card Overlay */}
                 <div className="absolute bottom-4 right-4 md:bottom-5 md:right-5 backdrop-blur-md bg-carbon/70 border border-white/20 px-5 py-2.5 md:px-6 md:py-3 rounded-full text-white shadow-xl transition-all duration-500 overflow-hidden text-center md:text-left inline-block w-auto max-w-[90%] md:max-w-max">
                   <h3 className="font-serif text-base md:text-xl font-bold m-0 leading-none">
-                    {language === 'vi' ? item.titleVi : language === 'zh' ? item.titleZh : item.titleEn}
+                    {language === 'vi' ? item.titleVi : language === 'zh' ? item.titleZh : language === 'ko' ? ((item as any).titleKo || item.titleEn) : language === 'ja' ? ((item as any).titleJa || item.titleEn) : item.titleEn}
                   </h3>
                 </div>
               </motion.div>
@@ -779,7 +779,7 @@ export const VietWolffia: React.FC = () => {
           <div className="flex flex-col xl:flex-row justify-between items-start xl:items-center gap-8">
             <div className="flex flex-col gap-3">
               <span className="text-xs font-bold uppercase tracking-widest text-gold-antique">
-                {language === 'vi' ? 'Thư Viện Hình Ảnh' : language === 'zh' ? '实景图库与应用展示' : 'Visual Showcase'}
+                {language === 'vi' ? 'Thư Viện Hình Ảnh' : language === 'zh' ? '实景图库与应用展示' : language === 'ko' ? '갤러리 & 활용 사례' : language === 'ja' ? 'ギャラリー＆活用事例' : 'Visual Showcase'}
               </span>
               <h2 className="font-serif text-balance text-[2rem] leading-[1.1] sm:text-4xl md:text-5xl font-bold text-forest leading-tight"><span dangerouslySetInnerHTML={{ __html: t('wolffia.galleryTitle') }} /></h2>
             </div>
@@ -796,7 +796,7 @@ export const VietWolffia: React.FC = () => {
                       : 'bg-cream text-forest border-gold-warm/15 hover:border-gold-warm/40'
                   }`}
                 >
-                  {language === 'vi' ? cat.labelVi : language === 'zh' ? cat.labelZh : cat.labelEn}
+                  {language === 'vi' ? cat.labelVi : language === 'zh' ? cat.labelZh : language === 'ko' ? cat.labelKo : language === 'ja' ? cat.labelJa : cat.labelEn}
                 </button>
               ))}
             </div>
@@ -862,7 +862,7 @@ export const VietWolffia: React.FC = () => {
               href="/contact"
               className="bg-gold-warm hover:bg-gold-champagne text-brown-soil px-8 py-3.5 rounded font-bold text-sm uppercase tracking-wider transition-all duration-300 shadow-lg shadow-gold-warm/15 flex items-center gap-2 group cursor-pointer"
             >
-              <span>{language === 'vi' ? 'Yêu Cầu Mẫu Thử & Thông Số' : language === 'zh' ? '索取样品与规格书' : 'Request Samples & Specs'}</span>
+              <span>{language === 'vi' ? 'Yêu Cầu Mẫu Thử & Thông Số' : language === 'zh' ? '索取样品与规格书' : language === 'ko' ? '샘플 및 사양서 요청' : language === 'ja' ? 'サンプル・仕様書を請求' : 'Request Samples & Specs'}</span>
             </a>
           </div>
         </div>

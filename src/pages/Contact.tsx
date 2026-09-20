@@ -138,7 +138,7 @@ export const Contact: React.FC = () => {
           >
             <span className="text-xs md:text-sm font-bold uppercase tracking-widest text-gold-champagne bg-forest/40 border border-gold-warm/20 px-4 py-1.5 rounded-full self-center flex items-center gap-2">
               <Globe size={14} className="text-gold-warm animate-spin-slow" />
-              {t('language') === 'vi' ? 'Cổng Thông Tin & Bộ Phận Báo Giá B2B' : t('language') === 'zh' ? 'B2B 采购与商务咨询对接' : 'B2B Portal & Sourcing Desk'}
+              {t('language') === 'vi' ? 'Cổng Thông Tin & Bộ Phận Báo Giá B2B' : t('language') === 'zh' ? 'B2B 采购与商务咨询对接' : t('language') === 'ko' ? 'B2B 포털 & 소싱 데스크' : t('language') === 'ja' ? 'B2B ポータル＆調達デスク' : 'B2B Portal & Sourcing Desk'}
             </span>
             <h1 className="font-serif text-balance text-[2.25rem] leading-[1.1] sm:text-[3rem] md:text-5xl lg:text-6xl font-bold leading-tight tracking-wide text-gold-champagne"><span dangerouslySetInnerHTML={{ __html: t('contact.heroTitle') }} /></h1>
           </motion.div>
@@ -160,7 +160,7 @@ export const Contact: React.FC = () => {
           <div className="lg:col-span-5 flex flex-col gap-10">
             <div className="flex flex-col gap-4">
               <span className="text-xs font-bold text-gold-antique uppercase tracking-widest">
-                {t('language') === 'vi' ? 'Vận Hành Toàn Cầu' : t('language') === 'zh' ? '全球运营与服务' : 'Global Operations'}
+                {t('language') === 'vi' ? 'Vận Hành Toàn Cầu' : t('language') === 'zh' ? '全球运营与服务' : t('language') === 'ko' ? '글로벌 운영' : t('language') === 'ja' ? 'グローバルオペレーション' : 'Global Operations'}
               </span>
               <h2 className="font-serif text-balance text-[2rem] leading-[1.1] sm:text-4xl md:text-5xl font-bold text-forest"><span dangerouslySetInnerHTML={{ __html: t('contact.introTitle') }} /></h2>
               <p className="text-sm text-carbon/75 font-light leading-relaxed">
@@ -290,7 +290,7 @@ export const Contact: React.FC = () => {
               {/* Department Routing */}
               <div className="flex flex-col gap-2">
                 <label className="text-xs uppercase font-semibold tracking-wider text-carbon/70">
-                  {t('language') === 'vi' ? 'Bộ Phận Đổi Hàng Target Trade Desk *' : t('language') === 'zh' ? '目标商务对接部门 *' : 'Target Trade Desk *'}
+                  {t('language') === 'vi' ? 'Bộ Phận Đổi Hàng Target Trade Desk *' : t('language') === 'zh' ? '目标商务对接部门 *' : t('language') === 'ko' ? '목표 무역 창구 *' : t('language') === 'ja' ? '対象貿易デスク *' : 'Target Trade Desk *'}
                 </label>
                 <select
                   name="department"
@@ -298,9 +298,9 @@ export const Contact: React.FC = () => {
                   onChange={handleInputChange}
                   className="w-full bg-cream border border-gold-warm/30 rounded px-4 py-3 text-sm focus:outline-none focus:border-gold-warm transition-colors"
                 >
-                  <option value="sourcing">{t('language') === 'vi' ? 'Bộ Phận Cung Ứng & Logistics' : t('language') === 'zh' ? '采购与物流对接部门' : 'Sourcing & Logistics Desk'}</option>
-                  <option value="contract">{t('language') === 'vi' ? 'Bộ Phận Hợp Tác Trồng Trọt & Liên Doanh' : t('language') === 'zh' ? 'OEM/ODM 代工与契约种植部门' : 'Contract Farming & Joint Ventures Desk'}</option>
-                  <option value="commercial">{t('language') === 'vi' ? 'Tư Vấn Thương Mại & Xuất Khẩu Chung' : t('language') === 'zh' ? '综合商务与出口咨询' : 'General Commercial / Export Logistics'}</option>
+                  <option value="sourcing">{t('language') === 'vi' ? 'Bộ Phận Cung Ứng & Logistics' : t('language') === 'zh' ? '采购与物流对接部门' : t('language') === 'ko' ? '소싱 & 물류 창구' : t('language') === 'ja' ? '調達・物流デスク' : 'Sourcing & Logistics Desk'}</option>
+                  <option value="contract">{t('language') === 'vi' ? 'Bộ Phận Hợp Tác Trồng Trọt & Liên Doanh' : t('language') === 'zh' ? 'OEM/ODM 代工与契约种植部门' : t('language') === 'ko' ? '계약 재배 & 합작 투자 창구' : t('language') === 'ja' ? '契約栽培・合弁事業デスク' : 'Contract Farming & Joint Ventures Desk'}</option>
+                  <option value="commercial">{t('language') === 'vi' ? 'Tư Vấn Thương Mại & Xuất Khẩu Chung' : t('language') === 'zh' ? '综合商务与出口咨询' : t('language') === 'ko' ? '일반 상업 / 수출 물류' : t('language') === 'ja' ? '一般商業 / 輸出物流' : 'General Commercial / Export Logistics'}</option>
                 </select>
               </div>
 

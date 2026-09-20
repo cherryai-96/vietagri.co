@@ -42,7 +42,15 @@ export const ProductInquiryForm: React.FC = () => {
             <CheckCircle2 size={40} className="text-forest" />
           </div>
           <h4 className="font-serif font-bold text-2xl text-carbon mb-4">
-            {language === 'vi' ? 'Đã Nhận Yêu Cầu' : language === 'zh' ? '已收到您的询价申请' : 'Request Received'}
+            {language === 'vi'
+              ? 'Đã Nhận Yêu Cầu'
+              : language === 'zh'
+              ? '已收到您的询价申请'
+              : language === 'ko'
+              ? '문의가 접수되었습니다'
+              : language === 'ja'
+              ? 'お問い合わせを受信いたしました'
+              : 'Request Received'}
           </h4>
           <p className="text-carbon/70 font-light max-w-md">
             {t('common.success')}

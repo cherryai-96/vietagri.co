@@ -1858,7 +1858,8 @@ export const defaultResources: TranslationResources = {
       formCategory: '관심 제품 카테고리',
       formVolume: '예상 수량 / 조달 물량',
       formFormat: '희망 가공 형태',
-      formMessage: '상세 요구사항 / 문의 내용'
+      formMessage: '상세 요구사항 / 문의 내용',
+      formSubmit: 'B2B 견적 문의 전송'
     },
     catalogues: {
       heroTitle: '제품 카탈로그 2026',
@@ -2052,7 +2053,8 @@ export const defaultResources: TranslationResources = {
       formCategory: '関心製品カテゴリー',
       formVolume: '想定数量 / 調達量',
       formFormat: '希望加工形態',
-      formMessage: '詳細要求 / お問い合わせ内容'
+      formMessage: '詳細要求 / お問い合わせ内容',
+      formSubmit: 'B2B見積もり・相談送信'
     },
     catalogues: {
       heroTitle: '製品カタログ 2026',

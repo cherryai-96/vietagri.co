@@ -118,15 +118,15 @@ export const CropsPlantBasedPage: React.FC = () => {
           {/* Breadcrumb */}
           <div className="flex items-center gap-2 text-xs md:text-sm text-gold-warm/80 mb-6 uppercase tracking-wider font-semibold">
             <Link to="/" className="hover:text-gold-champagne transition-colors">
-              {language === 'vi' ? 'Trang chủ' : language === 'zh' ? '首页' : 'Home'}
+              {language === 'vi' ? 'Trang chủ' : language === 'zh' ? '首页' : language === 'ko' ? '홈' : language === 'ja' ? 'ホーム' : 'Home'}
             </Link>
             <ChevronRight size={14} />
             <Link to="/products" className="hover:text-gold-champagne transition-colors">
-              {language === 'vi' ? 'Sản phẩm' : language === 'zh' ? '产品中心' : 'Products'}
+              {language === 'vi' ? 'Sản phẩm' : language === 'zh' ? '产品中心' : language === 'ko' ? '제품' : language === 'ja' ? '製品' : 'Products'}
             </Link>
             <ChevronRight size={14} />
             <span className="text-cream font-bold">
-              {language === 'vi' ? catInfo.titleVi : language === 'zh' ? (catInfo.titleZh || catInfo.titleEn) : catInfo.titleEn}
+              {language === 'vi' ? catInfo.titleVi : language === 'zh' ? (catInfo.titleZh || catInfo.titleEn) : language === 'ko' ? (catInfo.titleKo || catInfo.titleEn) : language === 'ja' ? (catInfo.titleJa || catInfo.titleEn) : catInfo.titleEn}
             </span>
           </div>
 
@@ -143,13 +143,17 @@ export const CropsPlantBasedPage: React.FC = () => {
                     ? 'HỆ SINH THÁI NÔNG SẢN & THỰC VẬT'
                     : language === 'zh'
                     ? '农产品与植物基生态系统'
+                    : language === 'ko'
+                    ? '농산물 및 식물성 생태계'
+                    : language === 'ja'
+                    ? '農産物＆植物性エコシステム'
                     : 'CROPS & PLANT-BASED ECOSYSTEM'}
                 </span>
                 <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-black text-white leading-tight uppercase">
-                  {language === 'vi' ? catInfo.titleVi : language === 'zh' ? (catInfo.titleZh || catInfo.titleEn) : catInfo.titleEn}
+                  {language === 'vi' ? catInfo.titleVi : language === 'zh' ? (catInfo.titleZh || catInfo.titleEn) : language === 'ko' ? (catInfo.titleKo || catInfo.titleEn) : language === 'ja' ? (catInfo.titleJa || catInfo.titleEn) : catInfo.titleEn}
                 </h1>
                 <p className="text-lg md:text-xl text-gold-champagne font-medium mt-3">
-                  {language === 'vi' ? catInfo.subtitleVi : language === 'zh' ? (catInfo.subtitleZh || catInfo.subtitleEn) : catInfo.subtitleEn}
+                  {language === 'vi' ? catInfo.subtitleVi : language === 'zh' ? (catInfo.subtitleZh || catInfo.subtitleEn) : language === 'ko' ? (catInfo.subtitleKo || catInfo.subtitleEn) : language === 'ja' ? (catInfo.subtitleJa || catInfo.subtitleEn) : catInfo.subtitleEn}
                 </p>
               </motion.div>
 
@@ -159,7 +163,7 @@ export const CropsPlantBasedPage: React.FC = () => {
                 transition={{ delay: 0.2, duration: 0.6 }}
                 className="text-sm md:text-base text-cream/80 leading-relaxed font-light text-justify max-w-3xl"
               >
-                {language === 'vi' ? catInfo.descriptionVi : language === 'zh' ? (catInfo.descriptionZh || catInfo.descriptionEn) : catInfo.descriptionEn}
+                {language === 'vi' ? catInfo.descriptionVi : language === 'zh' ? (catInfo.descriptionZh || catInfo.descriptionEn) : language === 'ko' ? (catInfo.descriptionKo || catInfo.descriptionEn) : language === 'ja' ? (catInfo.descriptionJa || catInfo.descriptionEn) : catInfo.descriptionEn}
               </motion.p>
 
               <motion.div
@@ -174,13 +178,13 @@ export const CropsPlantBasedPage: React.FC = () => {
                   className="bg-gold-warm hover:bg-gold-champagne text-brown-soil px-6 py-3.5 rounded font-bold text-xs md:text-sm uppercase tracking-wider transition-all duration-300 shadow-lg flex items-center gap-2 group hover:scale-[1.02]"
                 >
                   <Download size={16} />
-                  <span>{language === 'vi' ? 'Tải Catalogue 2026 (PDF)' : language === 'zh' ? '下载 2026 产品目录 (PDF)' : 'Download Catalogue 2026'}</span>
+                  <span>{language === 'vi' ? 'Tải Catalogue 2026 (PDF)' : language === 'zh' ? '下载 2026 产品目录 (PDF)' : language === 'ko' ? '2026 카탈로그 다운로드 (PDF)' : language === 'ja' ? '2026 カタログをダウンロード (PDF)' : 'Download Catalogue 2026'}</span>
                 </a>
                 <button
                   onClick={() => scrollToSection('portfolio')}
                   className="bg-white/10 hover:bg-white/20 border border-gold-warm/40 text-cream px-6 py-3.5 rounded font-bold text-xs md:text-sm uppercase tracking-wider transition-all duration-300 flex items-center gap-2 cursor-pointer"
                 >
-                  <span>{language === 'vi' ? 'Xem Danh Mục 66 Sản Phẩm' : language === 'zh' ? '查看全系列 66 款产品' : 'Explore 66 Products'}</span>
+                  <span>{language === 'vi' ? 'Xem Danh Mục 66 Sản Phẩm' : language === 'zh' ? '查看全系列 66 款产品' : language === 'ko' ? '66개 제품 둘러보기' : language === 'ja' ? '66製品を見る' : 'Explore 66 Products'}</span>
                   <ArrowRight size={16} />
                 </button>
               </motion.div>
