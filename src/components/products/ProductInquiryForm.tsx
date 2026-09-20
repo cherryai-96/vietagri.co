@@ -118,16 +118,16 @@ export const ProductInquiryForm: React.FC = () => {
                 required
                 className="w-full bg-cream border border-black/10 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-forest/30 focus:border-forest/50 transition-all font-light appearance-none cursor-pointer text-carbon"
               >
-                <option value="">{language === 'vi' ? 'Chọn danh mục sản phẩm' : language === 'zh' ? '选择产品类别' : 'Select a category'}</option>
-                <option value="beverages">{language === 'vi' ? 'Đồ uống đặc sản: Cà phê & Cacao' : language === 'zh' ? '特产饮品：咖啡与可可' : 'Specialty Beverages: Coffee & Cacao'}</option>
-                <option value="fruits">{language === 'vi' ? 'Trái cây nhiệt đới giá trị cao' : language === 'zh' ? '高价值热带水果' : 'High-Value Tropical Fruits'}</option>
-                <option value="spices">{language === 'vi' ? 'Gia vị & Hạt điều' : language === 'zh' ? '香料与坚果' : 'Spices & Nuts'}</option>
-                <option value="grains">{language === 'vi' ? 'Nông sản hạt cao cấp' : language === 'zh' ? '优质谷物农产品' : 'Premium Grains'}</option>
-                <option value="superfoods">{language === 'vi' ? 'Siêu thực phẩm & Sinh khối thực vật' : language === 'zh' ? '超级食品与植物生物质' : 'Superfoods & Botanical Biomass'}</option>
-                <option value="soilz">{language === 'vi' ? 'Chế phẩm cải tạo đất Bio.SoilZ' : language === 'zh' ? 'Bio.SoilZ 土壤改良剂' : 'Bio.SoilZ Soil Enhancers'}</option>
-                <option value="manure">{language === 'vi' ? 'Phân gà hữu cơ Nhật Bản' : language === 'zh' ? '日本进口有机鸡粪' : 'Premium Japanese Chicken Manure'}</option>
-                <option value="cowdung">{language === 'vi' ? 'Phân bò hoai mục Bio' : language === 'zh' ? '腐熟发酵牛粪' : 'Composted Cow Dung'}</option>
-                <option value="general">{language === 'vi' ? 'Tư vấn nông sản chung' : language === 'zh' ? '通用产品咨询' : 'General Product Inquiry'}</option>
+                <option value="">{language === 'vi' ? 'Chọn danh mục sản phẩm' : language === 'zh' ? '选择产品类别' : language === 'ko' ? '제품 카테고리 선택' : language === 'ja' ? '製品カテゴリーを選択' : 'Select a category'}</option>
+                <option value="beverages">{language === 'vi' ? 'Đồ uống đặc sản: Cà phê & Cacao' : language === 'zh' ? '特产饮品：咖啡与可可' : language === 'ko' ? '특산 음료: 커피 & 카카오' : language === 'ja' ? '特産飲料：コーヒー＆カカオ' : 'Specialty Beverages: Coffee & Cacao'}</option>
+                <option value="fruits">{language === 'vi' ? 'Trái cây nhiệt đới giá trị cao' : language === 'zh' ? '高价值热带水果' : language === 'ko' ? '고부가가치 열대 과일' : language === 'ja' ? '高価値熱帯フルーツ' : 'High-Value Tropical Fruits'}</option>
+                <option value="spices">{language === 'vi' ? 'Gia vị & Hạt điều' : language === 'zh' ? '香料与坚果' : language === 'ko' ? '향신료 & 견과류' : language === 'ja' ? '香料＆ナッツ' : 'Spices & Nuts'}</option>
+                <option value="grains">{language === 'vi' ? 'Nông sản hạt cao cấp' : language === 'zh' ? '优质谷物农产品' : language === 'ko' ? '프리미엄 곡물 농산물' : language === 'ja' ? 'プレミアム穀物農産物' : 'Premium Grains'}</option>
+                <option value="superfoods">{language === 'vi' ? 'Siêu thực phẩm & Sinh khối thực vật' : language === 'zh' ? '超级食品与植物生物质' : language === 'ko' ? '슈퍼푸드 & 식물성 바이오매스' : language === 'ja' ? 'スーパーフード＆植物性バイオマス' : 'Superfoods & Botanical Biomass'}</option>
+                <option value="soilz">{language === 'vi' ? 'Chế phẩm cải tạo đất Bio.SoilZ' : language === 'zh' ? 'Bio.SoilZ 土壤改良剂' : language === 'ko' ? 'Bio.SoilZ 토양 개량제' : language === 'ja' ? 'Bio.SoilZ 土壌改良剤' : 'Bio.SoilZ Soil Enhancers'}</option>
+                <option value="manure">{language === 'vi' ? 'Phân gà hữu cơ Nhật Bản' : language === 'zh' ? '日本进口有机鸡粪' : language === 'ko' ? '일본산 유기농 계분' : language === 'ja' ? '日本産有機鶏糞堆肥' : 'Premium Japanese Chicken Manure'}</option>
+                <option value="cowdung">{language === 'vi' ? 'Phân bò hoai mục Bio' : language === 'zh' ? '腐熟发酵牛粪' : language === 'ko' ? '발효 우분 비료' : language === 'ja' ? '完熟発酵牛糞堆肥' : 'Composted Cow Dung'}</option>
+                <option value="general">{language === 'vi' ? 'Tư vấn nông sản chung' : language === 'zh' ? '通用产品咨询' : language === 'ko' ? '일반 농산물 상담' : language === 'ja' ? '一般的な製品相談' : 'General Product Inquiry'}</option>
               </select>
             </div>
             
@@ -150,15 +150,15 @@ export const ProductInquiryForm: React.FC = () => {
                 id="format"
                 className="w-full bg-cream border border-black/10 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-forest/30 focus:border-forest/50 transition-all font-light appearance-none cursor-pointer text-carbon"
               >
-                <option value="">{language === 'vi' ? 'Chọn định dạng mong muốn' : language === 'zh' ? '选择希望的规格形态' : 'Select preferred format'}</option>
-                <option value="fresh">{language === 'vi' ? 'Tươi nguyên trái / củ' : language === 'zh' ? '生鲜果蔬' : 'Fresh'}</option>
-                <option value="dried">{language === 'vi' ? 'Sấy dẻo / Sấy giòn' : language === 'zh' ? '干制 / 烘干' : 'Dried'}</option>
-                <option value="powder">{language === 'vi' ? 'Bột nguyên chất' : language === 'zh' ? '纯粉末' : 'Powder'}</option>
-                <option value="frozen">{language === 'vi' ? 'Cấp đông IQF / Puree đông' : language === 'zh' ? 'IQF 速冻 / 冻果浆' : 'Frozen Pulp'}</option>
-                <option value="bulk">{language === 'vi' ? 'Nguyên liệu thô đóng bao bốt' : language === 'zh' ? '散装原料' : 'Bulk Raw Material'}</option>
-                <option value="processed">{language === 'vi' ? 'Thành phần chế biến sâu' : language === 'zh' ? '深加工配料' : 'Processed Ingredient'}</option>
-                <option value="fertilizer">{language === 'vi' ? 'Phân bón & Chế phẩm đất' : language === 'zh' ? '肥料 / 土壤投入品' : 'Fertilizer / Soil Input'}</option>
-                <option value="custom">{language === 'vi' ? 'Quy cách riêng theo yêu cầu' : language === 'zh' ? '定制规格' : 'Custom'}</option>
+                <option value="">{language === 'vi' ? 'Chọn định dạng mong muốn' : language === 'zh' ? '选择希望的规格形态' : language === 'ko' ? '희망 가공 형태 선택' : language === 'ja' ? '希望加工形態を選択' : 'Select preferred format'}</option>
+                <option value="fresh">{language === 'vi' ? 'Tươi nguyên trái / củ' : language === 'zh' ? '生鲜果蔬' : language === 'ko' ? '신선 원물 과채' : language === 'ja' ? '新鮮生果実・野菜' : 'Fresh'}</option>
+                <option value="dried">{language === 'vi' ? 'Sấy dẻo / Sấy giòn' : language === 'zh' ? '干制 / 烘干' : language === 'ko' ? '건조 / 동결건조' : language === 'ja' ? '乾燥・フリーズドライ' : 'Dried'}</option>
+                <option value="powder">{language === 'vi' ? 'Bột nguyên chất' : language === 'zh' ? '纯粉末' : language === 'ko' ? '순수 분말' : language === 'ja' ? '純粋パウダー' : 'Powder'}</option>
+                <option value="frozen">{language === 'vi' ? 'Cấp đông IQF / Puree đông' : language === 'zh' ? 'IQF 速冻 / 冻果浆' : language === 'ko' ? 'IQF 급속 냉동 / 냉동 퓨레' : language === 'ja' ? 'IQF急速冷凍／冷凍ピューレ' : 'Frozen Pulp'}</option>
+                <option value="bulk">{language === 'vi' ? 'Nguyên liệu thô đóng bao bốt' : language === 'zh' ? '散装原料' : language === 'ko' ? '벌크 원자재' : language === 'ja' ? 'バルク原材料' : 'Bulk Raw Material'}</option>
+                <option value="processed">{language === 'vi' ? 'Thành phần chế biến sâu' : language === 'zh' ? '深加工配料' : language === 'ko' ? '가공 원료' : language === 'ja' ? '深加工配料' : 'Processed Ingredient'}</option>
+                <option value="fertilizer">{language === 'vi' ? 'Phân bón & Chế phẩm đất' : language === 'zh' ? '肥料 / 土壤投入品' : language === 'ko' ? '비료 & 토양 개량제' : language === 'ja' ? '肥料・土壌改良資材' : 'Fertilizer / Soil Input'}</option>
+                <option value="custom">{language === 'vi' ? 'Quy cách riêng theo yêu cầu' : language === 'zh' ? '定制规格' : language === 'ko' ? '맞춤형 커스텀 규격' : language === 'ja' ? 'カスタム仕様' : 'Custom'}</option>
               </select>
             </div>
           </div>

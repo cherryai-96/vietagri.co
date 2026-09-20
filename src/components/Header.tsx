@@ -14,6 +14,8 @@ const LANGUAGES: LangOption[] = [
   { code: 'en', label: 'English (EN)', shortLabel: 'EN' },
   { code: 'vi', label: 'Tiếng Việt (VI)', shortLabel: 'VI' },
   { code: 'zh', label: '中文 (ZH)', shortLabel: 'ZH' },
+  { code: 'ko', label: '한국어 (KO)', shortLabel: 'KO' },
+  { code: 'ja', label: '日本語 (JA)', shortLabel: 'JA' },
 ];
 
 export const Header: React.FC = () => {
@@ -90,33 +92,33 @@ export const Header: React.FC = () => {
       children: [
         { 
           path: '/agricultural-inputs', 
-          label: language === 'vi' ? 'Vật tư nông nghiệp' : language === 'zh' ? '农业物资' : 'Agricultural Inputs' 
+          label: language === 'vi' ? 'Vật tư nông nghiệp' : language === 'zh' ? '农业物资' : language === 'ko' ? '농업 자재' : language === 'ja' ? '農業資材' : 'Agricultural Inputs' 
         },
         {
           path: '/products/crops-plant-based-products',
-          label: language === 'vi' ? 'Nông sản & Sản phẩm từ cây trồng' : language === 'zh' ? '农作物及植物基产品' : 'Crop & Plant-Based Products',
+          label: language === 'vi' ? 'Nông sản & Sản phẩm từ cây trồng' : language === 'zh' ? '农作物及植物基产品' : language === 'ko' ? '농산물 및 식물성 제품' : language === 'ja' ? '農産物＆植物性製品' : 'Crop & Plant-Based Products',
           hasSub: true,
           subChildren: [
-            { path: '/products/fresh-fruits-vegetables', label: language === 'vi' ? 'Trái cây & Nông sản tươi' : language === 'zh' ? '新鲜水果与蔬菜' : 'Fresh Fruits & Vegetables' },
-            { path: '/products/fruit-vegetable-powders', label: language === 'vi' ? 'Bột nông sản & Rau củ' : language === 'zh' ? '果蔬粉' : 'Fruit & Vegetable Powders' },
-            { path: '/products/fruit-purees', label: language === 'vi' ? 'Puree & Nước ép trái cây (Fruit Purees, Juices & Concentrates)' : language === 'zh' ? '果浆、浓缩汁与果汁' : 'Fruit Purees, Juices & Concentrates' },
-            { path: '/products/freeze-dried-fruits', label: language === 'vi' ? 'Trái cây sấy thăng hoa' : language === 'zh' ? '冻干水果' : 'Freeze-Dried Fruits' },
-            { path: '/products/iqf-fruits-vegetables', label: language === 'vi' ? 'Nông sản cấp đông rời (IQF)' : language === 'zh' ? 'IQF单体速冻农产品' : 'IQF Frozen Produce' },
+            { path: '/products/fresh-fruits-vegetables', label: language === 'vi' ? 'Trái cây & Nông sản tươi' : language === 'zh' ? '新鲜水果与蔬菜' : language === 'ko' ? '신선 과일 및 채소' : language === 'ja' ? '新鮮な果物＆野菜' : 'Fresh Fruits & Vegetables' },
+            { path: '/products/fruit-vegetable-powders', label: language === 'vi' ? 'Bột nông sản & Rau củ' : language === 'zh' ? '果蔬粉' : language === 'ko' ? '과채 순수 분말' : language === 'ja' ? '果菜パウダー' : 'Fruit & Vegetable Powders' },
+            { path: '/products/fruit-purees', label: language === 'vi' ? 'Puree & Nước ép trái cây (Fruit Purees, Juices & Concentrates)' : language === 'zh' ? '果浆、浓缩汁与果汁' : language === 'ko' ? '과일 퓨레, 원액 및 농축액' : language === 'ja' ? 'フルーツピューレ・濃縮液・果汁' : 'Fruit Purees, Juices & Concentrates' },
+            { path: '/products/freeze-dried-fruits', label: language === 'vi' ? 'Trái cây sấy thăng hoa' : language === 'zh' ? '冻干水果' : language === 'ko' ? '동결건조 과일' : language === 'ja' ? 'フリーズドライフルーツ' : 'Freeze-Dried Fruits' },
+            { path: '/products/iqf-fruits-vegetables', label: language === 'vi' ? 'Nông sản cấp đông rời (IQF)' : language === 'zh' ? 'IQF单体速冻农产品' : language === 'ko' ? 'IQF 급속 냉동 과채' : language === 'ja' ? 'IQF 急速冷凍果菜' : 'IQF Frozen Produce' },
           ],
         },
         {
           path: '/products/poultry-products',
-          label: language === 'vi' ? 'Sản phẩm gia cầm' : language === 'zh' ? '家禽类产品' : 'Poultry Products',
+          label: language === 'vi' ? 'Sản phẩm gia cầm' : language === 'zh' ? '家禽类产品' : language === 'ko' ? '가금류 제품' : language === 'ja' ? '家禽肉製品' : 'Poultry Products',
           hasSub: false,
         },
         {
           path: '/products/seafood-products',
-          label: language === 'vi' ? 'Sản phẩm thủy hải sản' : language === 'zh' ? '水产及海鲜产品' : 'Aquaculture & Seafood Products',
+          label: language === 'vi' ? 'Sản phẩm thủy hải sản' : language === 'zh' ? '水产及海鲜产品' : language === 'ko' ? '수산물 및 해산물' : language === 'ja' ? '水産物＆海鮮製品' : 'Aquaculture & Seafood Products',
           hasSub: true,
           subChildren: [
-            { path: '/products/basa-fish-pangasius', label: language === 'vi' ? 'Cá Tra — Pangasius (Basa)' : language === 'zh' ? '巴沙鱼 / 龙利鱼 (Pangasius)' : 'Basa Fish — Pangasius' },
-            { path: '/products/vietnamese-shrimp', label: language === 'vi' ? 'Tôm Việt Nam' : language === 'zh' ? '越南对虾' : 'Vietnamese Shrimp' },
-            { path: '/products/squid-products', label: language === 'vi' ? 'Mực xuất khẩu' : language === 'zh' ? '出口鱿鱼' : 'Squid' },
+            { path: '/products/basa-fish-pangasius', label: language === 'vi' ? 'Cá Tra — Pangasius (Basa)' : language === 'zh' ? '巴沙鱼 / 龙利鱼 (Pangasius)' : language === 'ko' ? '바사 피쉬 (Pangasius)' : language === 'ja' ? 'バサ魚 (Pangasius)' : 'Basa Fish — Pangasius' },
+            { path: '/products/vietnamese-shrimp', label: language === 'vi' ? 'Tôm Việt Nam' : language === 'zh' ? '越南对虾' : language === 'ko' ? '베트남 새우' : language === 'ja' ? 'ベトナム産エビ' : 'Vietnamese Shrimp' },
+            { path: '/products/squid-products', label: language === 'vi' ? 'Mực xuất khẩu' : language === 'zh' ? '出口鱿鱼' : language === 'ko' ? '오징어 및 문어' : language === 'ja' ? '遠洋イカ＆タコ' : 'Squid' },
           ],
         },
       ],

@@ -23,6 +23,14 @@ import {
   Snowflake
 } from 'lucide-react';
 
+const getProductName = (p: any, lang: string) => {
+  if (lang === 'vi') return p.nameVi;
+  if (lang === 'zh') return p.nameZh || p.nameEn;
+  if (lang === 'ko') return p.nameKo || p.nameEn;
+  if (lang === 'ja') return p.nameJa || p.nameEn;
+  return p.nameEn;
+};
+
 export const CropsPlantBasedPage: React.FC = () => {
   const { language } = useTranslation();
 
@@ -36,12 +44,12 @@ export const CropsPlantBasedPage: React.FC = () => {
 
   // Sub-category tab mapping
   const subCategoryTabs = [
-    { id: 'all', labelVi: 'Tất Cả Sản Phẩm', labelZh: '全部产品', labelEn: 'All Products', count: allProducts.length },
-    { id: 'fresh', labelVi: 'Trái Cây & Rau Củ Tươi', labelZh: '新鲜水果与蔬菜', labelEn: 'Fresh Fruits & Vegetables', count: allProducts.filter(p => p.category === 'fresh').length },
-    { id: 'powders', labelVi: 'Bột Trái Cây & Rau Củ', labelZh: '果蔬纯粉系列', labelEn: 'Fruit & Vegetable Powders', count: allProducts.filter(p => p.category === 'powders').length },
-    { id: 'purees', labelVi: 'Puree, Nước Ép & Đậm Đặc', labelZh: '果浆、浓缩汁与原汁', labelEn: 'Fruit Purees, Juices & Concentrates', count: allProducts.filter(p => p.category === 'purees').length },
-    { id: 'freeze-dried', labelVi: 'Trái Cây Sấy Thăng Hoa', labelZh: '冻干水果', labelEn: 'Freeze-Dried Fruits', count: allProducts.filter(p => p.category === 'freeze-dried').length },
-    { id: 'iqf', labelVi: 'Nông Sản Cấp Đông IQF', labelZh: 'IQF 速冻果蔬', labelEn: 'IQF Fruits & Vegetables', count: allProducts.filter(p => p.category === 'iqf').length },
+    { id: 'all', labelVi: 'Tất Cả Sản Phẩm', labelZh: '全部产品', labelKo: '전체 제품', labelJa: '全製品', labelEn: 'All Products', count: allProducts.length },
+    { id: 'fresh', labelVi: 'Trái Cây & Rau Củ Tươi', labelZh: '新鲜水果与蔬菜', labelKo: '신선 과일 및 채소', labelJa: '新鮮な果物＆野菜', labelEn: 'Fresh Fruits & Vegetables', count: allProducts.filter(p => p.category === 'fresh').length },
+    { id: 'powders', labelVi: 'Bột Trái Cây & Rau Củ', labelZh: '果蔬纯粉系列', labelKo: '과채 순수 분말', labelJa: '果菜パウダー', labelEn: 'Fruit & Vegetable Powders', count: allProducts.filter(p => p.category === 'powders').length },
+    { id: 'purees', labelVi: 'Puree, Nước Ép & Đậm Đặc', labelZh: '果浆、浓缩汁与果汁', labelKo: '과일 퓨레, 원액 및 농축액', labelJa: 'フルーツピューレ・濃縮液・果汁', labelEn: 'Fruit Purees, Juices & Concentrates', count: allProducts.filter(p => p.category === 'purees').length },
+    { id: 'freeze-dried', labelVi: 'Trái Cây Sấy Thăng Hoa', labelZh: '冻干水果', labelKo: '동결건조 과일', labelJa: 'フリーズドライフルーツ', labelEn: 'Freeze-Dried Fruits', count: allProducts.filter(p => p.category === 'freeze-dried').length },
+    { id: 'iqf', labelVi: 'Nông Sản Cấp Đông IQF', labelZh: 'IQF 速冻果蔬', labelKo: 'IQF 급속 냉동 과채', labelJa: 'IQF 急速冷凍果菜', labelEn: 'IQF Fruits & Vegetables', count: allProducts.filter(p => p.category === 'iqf').length },
   ];
 
   // Filter products by search query and subcategory
@@ -49,6 +57,9 @@ export const CropsPlantBasedPage: React.FC = () => {
     const nameMatch =
       p.nameEn.toLowerCase().includes(searchQuery.toLowerCase()) ||
       p.nameVi.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      (p.nameZh && p.nameZh.toLowerCase().includes(searchQuery.toLowerCase())) ||
+      (p.nameKo && p.nameKo.toLowerCase().includes(searchQuery.toLowerCase())) ||
+      (p.nameJa && p.nameJa.toLowerCase().includes(searchQuery.toLowerCase())) ||
       (p.scientificName && p.scientificName.toLowerCase().includes(searchQuery.toLowerCase()));
 
     const subMatch = selectedSubCategory === 'all' || p.category === selectedSubCategory;
@@ -399,7 +410,7 @@ export const CropsPlantBasedPage: React.FC = () => {
                     : 'bg-white text-carbon/75 hover:bg-forest/10 border border-gold-warm/25 shadow-sm'
                 }`}
               >
-                {language === 'vi' ? tab.labelVi : language === 'zh' ? (tab.labelZh || tab.labelEn) : tab.labelEn} ({tab.count})
+                {language === 'vi' ? tab.labelVi : language === 'zh' ? tab.labelZh : language === 'ko' ? tab.labelKo : language === 'ja' ? tab.labelJa : tab.labelEn} ({tab.count})
               </button>
             ))}
           </div>
@@ -409,7 +420,7 @@ export const CropsPlantBasedPage: React.FC = () => {
             <div className="text-center py-16 bg-white rounded-2xl border border-gold-warm/15 p-8">
               <Info size={40} className="mx-auto text-gold-warm mb-4 opacity-50" />
               <p className="text-base text-carbon/70 font-medium">
-                {language === 'vi' ? 'Không tìm thấy sản phẩm phù hợp.' : language === 'zh' ? '未找到符合条件的搜索产品。' : 'No products found matching your search.'}
+                {language === 'vi' ? 'Không tìm thấy sản phẩm phù hợp.' : language === 'zh' ? '未找到符合条件的搜索产品。' : language === 'ko' ? '검색 조건에 맞는 제품이 없습니다.' : language === 'ja' ? '条件に一致する製品が見つかりません。' : 'No products found matching your search.'}
               </p>
             </div>
           ) : (
@@ -433,14 +444,14 @@ export const CropsPlantBasedPage: React.FC = () => {
                       }}
                     />
                     <div className="absolute top-3 left-3 bg-carbon/80 backdrop-blur-sm text-gold-warm text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded">
-                      {translateSubCategory(p.subCategory, language, language === 'vi' ? 'Nông Sản' : language === 'zh' ? '农产品' : 'Crops')}
+                      {translateSubCategory(p.subCategory, language, language === 'vi' ? 'Nông Sản' : language === 'zh' ? '农产品' : language === 'ko' ? '농산물' : language === 'ja' ? '農産物' : 'Crops')}
                     </div>
                   </div>
 
                   <div className="p-5 flex flex-col flex-grow justify-between gap-4">
                     <div>
                       <h3 className="font-serif text-base font-bold text-forest group-hover:text-gold-warm transition-colors leading-snug">
-                        {language === 'vi' ? p.nameVi : language === 'zh' ? (p.nameZh || p.nameEn) : p.nameEn}
+                        {getProductName(p, language)}
                       </h3>
                       {p.scientificName && (
                         <p className="text-[11px] text-carbon/50 italic font-sans mt-0.5">{p.scientificName}</p>
@@ -460,7 +471,7 @@ export const CropsPlantBasedPage: React.FC = () => {
                         onClick={() => setSelectedProduct(p)}
                         className="w-full mt-2 bg-gold-warm/15 hover:bg-gold-warm text-brown-soil font-bold text-xs uppercase tracking-wider py-2.5 rounded transition-all duration-300 flex items-center justify-center gap-2 border border-gold-warm/30 cursor-pointer"
                       >
-                        <span>{language === 'vi' ? 'Xem Thông Số & Mẫu Thử' : language === 'zh' ? '查看规格与样品' : 'View Spec & Quote'}</span>
+                        <span>{language === 'vi' ? 'Xem Thông Số & Mẫu Thử' : language === 'zh' ? '查看规格与样品' : language === 'ko' ? '사양 및 견적 보기' : language === 'ja' ? '仕様・見積を見る' : 'View Spec & Quote'}</span>
                         <ChevronRight size={14} />
                       </button>
                     </div>
@@ -507,10 +518,10 @@ export const CropsPlantBasedPage: React.FC = () => {
                   </div>
                   <div className="flex flex-col gap-2">
                     <span className="text-[10px] font-bold uppercase tracking-widest text-forest bg-forest/10 px-2.5 py-1 rounded w-fit">
-                      {selectedProduct.subCategory || selectedProduct.category}
+                      {translateSubCategory(selectedProduct.subCategory, language)}
                     </span>
                     <h3 className="font-serif text-xl font-bold text-forest">
-                      {language === 'vi' ? selectedProduct.nameVi : language === 'zh' ? (selectedProduct.nameZh || selectedProduct.nameEn) : selectedProduct.nameEn}
+                      {getProductName(selectedProduct, language)}
                     </h3>
                     {selectedProduct.scientificName && (
                       <p className="text-xs italic text-carbon/60">{selectedProduct.scientificName}</p>
