@@ -87,7 +87,7 @@ export interface CatalogueInfo {
 }
 
 export interface FormatComparison {
-  formatKey: 'fresh' | 'powders' | 'freeze-dried' | 'iqf' | 'purees';
+  formatKey: 'fresh' | 'powders' | 'freeze-dried' | 'iqf' | 'purees' | 'canned';
   titleEn: string;
   titleVi: string;
   bestSuitedEn: string;
@@ -102,6 +102,63 @@ export interface FormatComparison {
 }
 
 export const CATEGORIES_DATA: Record<string, CategoryInfo> = {
+  'canned': {
+    id: 'canned',
+    slug: 'canned-fruits',
+    titleEn: 'Canned Fruits',
+    titleVi: 'Trái Cây Đóng Hộp',
+    titleZh: '水果罐头',
+    subtitleEn: 'Shelf-Stable Prepared Tropical Fruits in Syrup & Juice for Retail, Food-Service & Industrial Buyers',
+    subtitleVi: 'Trái Cây Nhiệt Đới Đóng Hộp Bảo Quản Nhiệt Độ Phòng Phục Vụ Bán Lẻ, HORECA & Công Nghiệp',
+    subtitleZh: '常温长保质期热带水果罐头·专供零售、餐饮与工业加工',
+    heroImage: '/images/products/canned-fruits/canned-peach.jpeg',
+    catalogueFileName: 'VAC_Canned_Fruits_Catalogue_2026.pdf',
+    catalogueDriveId: '1hdE_SHcFM-BVcgxiHprqvxHDBMKEin_i',
+    descriptionEn: 'Selected Vietnamese and internationally sourced canned fruit formats tailored for global buyer requirements. Processed under strict HACCP, ISO and commercial sterility controls, VAC canned fruits offer long ambient shelf life (24-36 months) with consistent quality, optimal drained weight, and flexible packaging options (Easy-Open cans, A-10 food-service cans, and glass jars).',
+    descriptionVi: 'Danh mục trái cây đóng hộp VAC được lựa chọn kỹ lưỡng từ nguồn nguyên liệu Việt Nam và quốc tế, đáp ứng đa dạng yêu cầu của các nhà mua hàng toàn cầu. Đạt tiêu chuẩn tiệt trùng thương mại nghiêm ngặt (HACCP, ISO), sản phẩm bảo quản ở nhiệt độ phòng lên đến 24-36 tháng với chất lượng đồng nhất, trọng lượng cái (drained weight) tối ưu và bao bì linh hoạt (lon nắp giật Easy-Open, lon A-10 HORECA, hũ thủy tinh).',
+    descriptionZh: 'VAC 水果罐头精选越南本地及国际优质原料，专为满足全球买家的多样化需求而打造。符合 HACCP、ISO 及商业无菌测试标准，产品可在常温下保存 24-36 个月，果肉品质稳定、沥干物重 (Drained Weight) 达标，并提供灵活的包装方案（易拉盖 Can、A-10 餐饮装大罐及玻璃瓶）。',
+    highlightsEn: [
+      'Commercial Sterility Testing & HACCP/ISO Certified Quality',
+      'Long Ambient Shelf Life (24 to 36 months)',
+      'Multiple Preparation Mediums (In Heavy/Light Syrup, Natural Juice, or Water)',
+      'Flexible Packaging: Easy-Open Cans, A-10 Food-Service Cans & Glass Jars (OEM / Private Label Available)'
+    ],
+    highlightsVi: [
+      'Kiểm định tiệt trùng thương mại & chứng nhận chất lượng HACCP/ISO',
+      'Thời hạn bảo quản dài ở nhiệt độ phòng (24 đến 36 tháng)',
+      'Đa dạng dung dịch ngâm (Nước đường đậm/nhạt, Nước ép tự nhiên, Nước lọc)',
+      'Bao bì đa dạng: Lon nắp giật Easy-Open, Lon lớn A-10 HORECA & Hũ thủy tinh (Nhận gia công OEM / Private Label)'
+    ],
+    highlightsZh: [
+      '商业无菌测试认证与 HACCP/ISO 严格质量控制',
+      '常温超长保质期 (24 至 36 个月)',
+      '多种浸泡介质（重糖/轻糖水、天然果汁或纯净水）',
+      '灵活包装方案：易拉盖 Can、A-10 餐饮大罐与玻璃瓶 (支持 OEM/私牌定制)'
+    ],
+    availableCutsEn: ['Halves & Slices', 'Dices & Cubes', 'Whole Peeled / Pitted', 'Rings & Tidbits', 'Fruit Cocktail Blends'],
+    availableCutsVi: ['Thái đôi & Thái lát', 'Hạt lựu & Cắt khối', 'Nguyên quả gọt vỏ / Bỏ hạt', 'Khoanh tròn & Miếng nhỏ', 'Trái cây hỗn hợp Fruit Cocktail'],
+    availableCutsZh: ['对半切 & 切片', '切丁 & 切块', '做净整果 / 去核', '果圈 & 碎片', '鸡尾酒水果混合'],
+    defaultPackagingEn: '425g, 565g, 850g Easy-Open Cans; A10 (3kg) Food-Service Cans in 12/24 Can Master Cartons',
+    defaultPackagingVi: 'Lon 425g, 565g, 850g nắp giật; Lon A10 (3kg) HORECA đóng trong thùng carton 12/24 lon',
+    defaultPackagingZh: '425g, 565g, 850g 易拉盖罐装；A10 (3kg) 餐饮规格外 Master 纸箱 (12/24罐/箱)',
+    storageEn: 'Store at ambient room temperature in dry, cool conditions. Refrigerate after opening.',
+    storageVi: 'Bảo quản ở nhiệt độ phòng thoáng mát, khô ráo. Giữ lạnh sau khi mở nắp.',
+    storageZh: '常温阴凉干燥保存。开封后请冷藏。',
+    titleKo: '통조림 과일',
+    titleJa: 'フルーツ缶詰',
+    subtitleKo: '리테일, 외식업 및 산업용 시럽·주스 담금 통조림 열대 과일',
+    subtitleJa: 'リテール・外食・産業用 シロップ＆果汁漬け熱帯フルーツ缶詰',
+    descriptionKo: '글로벌 구매자 요구 사항에 맞춰 엄선된 베트남 및 해외 원료 통조림 과일. 엄격한 HACCP, ISO 및 상업용 무균 테스트를 거쳐 24-36개월 상온 보관이 가능합니다.',
+    descriptionJa: 'グローバルバイヤーの要求に合わせて厳選されたベトナム産および輸入原材料のフルーツ缶詰。厳格なHACCP、ISOおよび商業無菌検査を経て、常温で24〜36ヶ月間保存可能です。',
+    highlightsKo: ['상업적 무균 검사 및 HACCP/ISO 품질 인증', '긴 상온 보관 기간 (24 ~ 36개월)', '다양한 침지 매체 (고농도/저농도 시럽, 천연 주스, 물)', '맞춤형 포장: 원터치 캔, A-10 대용량 캔, 유리병 (OEM/자체 브랜드 지원)'],
+    highlightsJa: ['商業無菌検査およびHACCP/ISO品質認証', '常温での長期間保存（24〜36ヶ月）', '多様な漬け込み液（重シロップ／轻シロップ、天然果汁、水）', '柔軟な包装：イージーオープン缶、A-10業務用缶、ガラス瓶（OEM/プライベートブランド対応）'],
+    availableCutsKo: ['하프 & 슬라이스', '다이스 & 큐브', '통원물 껍질제거 / 씨제거', '링 & 팁빗', '후르츠 칵테일 블렌드'],
+    availableCutsJa: ['ハーフ＆スライス', 'ダイス＆キューブ', 'ホール皮むき／種抜き', 'リング＆ティドビット', 'フルーツカクテルミックス'],
+    defaultPackagingKo: '425g, 565g, 850g 원터치 캔; A10 (3kg) 외식용 캔 (12/24 캔 마스터 상자)',
+    defaultPackagingJa: '425g、565g、850gイージーオープン缶；A10（3kg）業務用缶（12/24缶マスター段ボール入り）',
+    storageKo: '건냉한 상온에 보관. 개봉 후 냉장 보관.',
+    storageJa: '冷暗所で常温保存。 meしあがった後は冷蔵保管。',
+  },
   'fresh': {
     id: 'fresh',
     slug: 'fresh-fruits-vegetables',
@@ -747,6 +804,260 @@ export const CATEGORIES_DATA: Record<string, CategoryInfo> = {
 };
 
 export const PRODUCTS_LIST: ProductItem[] = [
+  // === CANNED FRUITS ===
+  {
+    id: 'canned-peach',
+    nameEn: 'Canned Peach (Halves, Slices, Dices)',
+    nameVi: 'Đào Đóng Hộp (Cắt Đôi, Thái Lát, Hạt Lựu)',
+    nameZh: '黄桃罐头 (对半切·切片·切丁)',
+    nameKo: '통조림 복숭아 (하프, 슬라이스, 다이스)',
+    nameJa: '복숭아 缶詰（ハーフ、スライス、ダイス）',
+    scientificName: 'Prunus persica',
+    category: 'canned',
+    subCategory: 'Canned Fruits',
+    formats: ['Halves', 'Slices', 'Dices (In Heavy/Light Syrup or Juice)'],
+    specifications: {
+      shelfLife: '24-36 months (Ambient storage)',
+      storage: 'Ambient dry storage (< 30°C). Refrigerate after opening.',
+      packaging: '425g, 565g, 850g Cans / A10 (3kg) Food-Service Cans',
+      origin: 'Vietnam / Imported'
+    },
+    applications: ['Bakery & Pastry Inclusions', 'Beverages & Dessert Toppings', 'Retail Supermarkets'],
+    seasonality: 'Year-round',
+    image: '/images/products/canned-fruits/canned-peach.jpeg'
+  },
+  {
+    id: 'canned-lychee',
+    nameEn: 'Canned Lychee (Whole Peeled & Pitted)',
+    nameVi: 'Vải Đóng Hộp (Bỏ Vỏ & Bỏ Hạt)',
+    nameZh: '荔枝罐头 (去皮去核)',
+    nameKo: '통조림 리치 (껍질/씨 제거)',
+    nameJa: 'ライチ缶詰（ホール皮むき・種抜き）',
+    scientificName: 'Litchi chinensis',
+    category: 'canned',
+    subCategory: 'Canned Fruits',
+    formats: ['Whole Peeled & Pitted in Light Syrup'],
+    specifications: {
+      shelfLife: '24-36 months (Ambient storage)',
+      storage: 'Ambient dry storage (< 30°C). Refrigerate after opening.',
+      packaging: '565g Cans (24 Cans/Carton) / A10 Food-Service Cans',
+      origin: 'Vietnam'
+    },
+    applications: ['Tropical Milk Teas & Cocktails', 'Desserts & Ice Cream', 'Retail & Food-Service'],
+    seasonality: 'Year-round',
+    image: '/images/products/canned-fruits/canned-lychee.jpeg'
+  },
+  {
+    id: 'canned-rambutan',
+    nameEn: 'Canned Rambutan (Whole & Pineapple-Stuffed)',
+    nameVi: 'Chôm Chôm Đóng Hộp (Nguyên Quả & Nhân Dứa)',
+    nameZh: '红毛丹罐头 (原果·酿菠萝)',
+    nameKo: '통조림 람부탄 (통원물 및 파인애플 잼)',
+    nameJa: 'ランブータン缶詰（ホール・パイナップル詰め）',
+    scientificName: 'Nephelium lappaceum',
+    category: 'canned',
+    subCategory: 'Canned Fruits',
+    formats: ['Whole Peeled & Pitted', 'Stuffed with Pineapple in Light Syrup'],
+    specifications: {
+      shelfLife: '24-36 months (Ambient storage)',
+      storage: 'Ambient dry storage (< 30°C). Refrigerate after opening.',
+      packaging: '565g Cans (24 Cans/Carton) / A10 Food-Service Cans',
+      origin: 'Vietnam'
+    },
+    applications: ['Cocktail & Mocktail Ingredients', 'Asian Desserts', 'Food-Service & HORECA'],
+    seasonality: 'Year-round',
+    image: '/images/products/canned-fruits/canned-rambutan.jpeg'
+  },
+  {
+    id: 'canned-longan',
+    nameEn: 'Canned Longan (Whole Peeled & Pitted)',
+    nameVi: 'Nhãn Đóng Hộp (Bỏ Vỏ & Bỏ Hạt)',
+    nameZh: '龙眼罐头 (去皮去核)',
+    nameKo: '통조림 롱간 (껍질/씨 제거)',
+    nameJa: 'ロンガン缶詰（ホール皮むき・種抜き）',
+    scientificName: 'Dimocarpus longan',
+    category: 'canned',
+    subCategory: 'Canned Fruits',
+    formats: ['Whole Peeled & Pitted in Syrup'],
+    specifications: {
+      shelfLife: '24-36 months (Ambient storage)',
+      storage: 'Ambient dry storage (< 30°C). Refrigerate after opening.',
+      packaging: '565g Cans (24 Cans/Carton) / A10 Food-Service Cans',
+      origin: 'Vietnam'
+    },
+    applications: ['Herbal Teas & Desserts', 'Catering & Buffet Line', 'Retail Supermarkets'],
+    seasonality: 'Year-round',
+    image: '/images/products/canned-fruits/canned-longan.jpeg'
+  },
+  {
+    id: 'canned-pineapple',
+    nameEn: 'Canned Pineapple (Rings, Slices, Chunks, Tidbits, Crushed)',
+    nameVi: 'Dứa Đóng Hộp (Khoanh, Lát, Khúc, Tidbits, Xay Nhuyễn)',
+    nameZh: '菠萝罐头 (菠萝圈·切片·切块·切碎)',
+    nameKo: '통조림 파인애플 (링, 슬라이스, 청크, 으깬 파인애플)',
+    nameJa: 'パイナップル缶詰（リング、スライス、チャンク、クラッシュ）',
+    scientificName: 'Ananas comosus',
+    category: 'canned',
+    subCategory: 'Canned Fruits',
+    formats: ['Rings / Slices', 'Chunks / Tidbits', 'Crushed in Light/Heavy Syrup or Juice'],
+    specifications: {
+      shelfLife: '24-36 months (Ambient storage)',
+      storage: 'Ambient dry storage (< 30°C). Refrigerate after opening.',
+      packaging: '565g, 850g Cans / A10 (3kg) Food-Service Cans',
+      origin: 'Vietnam'
+    },
+    applications: ['Pizza & Bakery Toppings', 'Fruit Salads & Desserts', 'Industrial Food Processing'],
+    seasonality: 'Year-round',
+    image: '/images/products/canned-fruits/canned-pineapple.jpeg'
+  },
+  {
+    id: 'canned-mango',
+    nameEn: 'Canned Mango (Slices, Dices, Pieces)',
+    nameVi: 'Xoài Đóng Hộp (Thái Lát, Hạt Lựu, Cắt Khúc)',
+    nameZh: '芒果罐头 (切片·切丁·切块)',
+    nameKo: '통조림 망고 (슬라이스, 다이스, 조각)',
+    nameJa: 'マンゴー缶詰（スライス、ダイス、カット）',
+    scientificName: 'Mangifera indica',
+    category: 'canned',
+    subCategory: 'Canned Fruits',
+    formats: ['Slices', 'Dices', 'Pieces in Syrup or Natural Juice'],
+    specifications: {
+      shelfLife: '24-36 months (Ambient storage)',
+      storage: 'Ambient dry storage (< 30°C). Refrigerate after opening.',
+      packaging: '425g, 850g Cans / A10 Food-Service Cans',
+      origin: 'Vietnam'
+    },
+    applications: ['Smoothies & Desserts', 'Yogurt & Bakery Fillings', 'Retail Supermarkets'],
+    seasonality: 'Year-round',
+    image: '/images/products/canned-fruits/canned-mango.jpeg'
+  },
+  {
+    id: 'canned-jackfruit',
+    nameEn: 'Canned Jackfruit (Strips, Slices, Pieces)',
+    nameVi: 'Mít Đóng Hộp (Thái Sợi, Thái Lát, Cắt Khúc)',
+    nameZh: '菠萝蜜罐头 (切条·切片·切块)',
+    nameKo: '통조림 잭프루트 (스트립, 슬라이스, 조각)',
+    nameJa: 'ジャックフルーツ缶詰（ストリップ、スライス、カット）',
+    scientificName: 'Artocarpus heterophyllus',
+    category: 'canned',
+    subCategory: 'Canned Fruits',
+    formats: ['Strips', 'Slices', 'Pieces in Syrup'],
+    specifications: {
+      shelfLife: '24-36 months (Ambient storage)',
+      storage: 'Ambient dry storage (< 30°C). Refrigerate after opening.',
+      packaging: '565g Cans / A10 Food-Service Cans',
+      origin: 'Vietnam'
+    },
+    applications: ['Tropical Shaved Ice & Desserts', 'Vegan Meat Alternatives (Young Jackfruit)', 'Retail & Catering'],
+    seasonality: 'Year-round',
+    image: '/images/products/canned-fruits/canned-jackfruit.jpeg'
+  },
+  {
+    id: 'canned-mandarin-orange',
+    nameEn: 'Canned Mandarin Orange (Whole Segments)',
+    nameVi: 'Quýt Đóng Hộp (Nguyên Múi)',
+    nameZh: '砂糖橘/蜜柑罐头 (整瓣)',
+    nameKo: '통조림 귤 (통 세그먼트)',
+    nameJa: 'みかん缶詰（ホールセグメント）',
+    scientificName: 'Citrus reticulata',
+    category: 'canned',
+    subCategory: 'Canned Fruits',
+    formats: ['Whole Segments in Light Syrup'],
+    specifications: {
+      shelfLife: '24-36 months (Ambient storage)',
+      storage: 'Ambient dry storage (< 30°C). Refrigerate after opening.',
+      packaging: '312g, 425g, 850g Cans / A10 Food-Service Cans',
+      origin: 'Imported / Vietnam'
+    },
+    applications: ['Fruit Salads & Cakes', 'Jelly & Pudding Toppings', 'Retail Supermarkets'],
+    seasonality: 'Year-round',
+    image: '/images/products/canned-fruits/canned-mandarin-orange.jpeg'
+  },
+  {
+    id: 'canned-fruit-cocktail',
+    nameEn: 'Canned Fruit Cocktail (Buyer-Specified Blend)',
+    nameVi: 'Trái Cây Hỗn Hợp Fruit Cocktail (Phối Trộn Theo Yêu Cầu)',
+    nameZh: '水果鸡尾酒罐头 (定制水果混合)',
+    nameKo: '통조림 후르츠 칵테일 (맞춤형 과일 혼합)',
+    nameJa: 'フルーツカクテル缶詰（カスタムミックス）',
+    scientificName: 'Mixed Fruit Species',
+    category: 'canned',
+    subCategory: 'Canned Fruits',
+    formats: ['Buyer-Specified Fruit Blend (With or without Cherry) in Syrup'],
+    specifications: {
+      shelfLife: '24-36 months (Ambient storage)',
+      storage: 'Ambient dry storage (< 30°C). Refrigerate after opening.',
+      packaging: '425g, 850g Cans / A10 (3kg) Food-Service Cans',
+      origin: 'Vietnam / Imported'
+    },
+    applications: ['Buffet & Catering Dessert Bars', 'Bakery & Cake Toppings', 'Retail Supermarkets'],
+    seasonality: 'Year-round',
+    image: '/images/products/canned-fruits/canned-fruit-cocktail.jpeg'
+  },
+  {
+    id: 'canned-mixed-tropical-fruit',
+    nameEn: 'Canned Mixed Tropical Fruit (Dices, Chunks)',
+    nameVi: 'Trái Cây Nhiệt Đới Hỗn Hợp Đóng Hộp (Hạt Lựu, Cắt Khúc)',
+    nameZh: '热带混合水果罐头 (切丁·切块)',
+    nameKo: '통조림 열대 혼합 과일 (다이스, 청크)',
+    nameJa: 'トロピカルミックスフルーツ缶詰（ダイス、チャンク）',
+    scientificName: 'Tropical Fruit Blend',
+    category: 'canned',
+    subCategory: 'Canned Fruits',
+    formats: ['Dices', 'Chunks', 'Pieces (Custom Tropical Blend) in Syrup'],
+    specifications: {
+      shelfLife: '24-36 months (Ambient storage)',
+      storage: 'Ambient dry storage (< 30°C). Refrigerate after opening.',
+      packaging: '565g, 850g Cans / A10 Food-Service Cans',
+      origin: 'Vietnam'
+    },
+    applications: ['Tropical Smoothies & Bowls', 'Hotel & Restaurant Buffets', 'Retail Distribution'],
+    seasonality: 'Year-round',
+    image: '/images/products/canned-fruits/canned-mixed-tropical-fruit.jpeg'
+  },
+  {
+    id: 'canned-nata-de-coco',
+    nameEn: 'Canned Nata De Coco (Coconut Gel Cubes)',
+    nameVi: 'Thạch Dừa Nata De Coco Đóng Hộp (Cắt Khối Cubes)',
+    nameZh: '椰果罐头 (Nata De Coco 立方块)',
+    nameKo: '통조림 나타드코코 (코코넛 젤 큐브)',
+    nameJa: 'ナタデココ缶詰（コ코넛ジェルキューブ）',
+    scientificName: 'Coconut Gel',
+    category: 'canned',
+    subCategory: 'Canned Fruits',
+    formats: ['Cubes (5x5mm, 10x10mm, 15x15mm)', 'Buyer-Specified Size in Syrup'],
+    specifications: {
+      shelfLife: '24-36 months (Ambient storage)',
+      storage: 'Ambient dry storage (< 30°C). Refrigerate after opening.',
+      packaging: '565g, 1kg Cans / A10 (3kg) Food-Service Cans',
+      origin: 'Vietnam'
+    },
+    applications: ['Bubble Tea & Beverage Toppings', 'Desserts & Yogurts', 'Industrial F&B Ingredients'],
+    seasonality: 'Year-round',
+    image: '/images/products/canned-fruits/canned-nata-de-coco.jpeg'
+  },
+  {
+    id: 'canned-dragon-fruit',
+    nameEn: 'Canned Dragon Fruit (Red / White Dices & Cubes)',
+    nameVi: 'Thanh Long Đóng Hộp (Ruột Đỏ / Ruột Trắng Cắt Hạt Lựu)',
+    nameZh: '火龙果罐头 (红肉/白肉 切丁·切块)',
+    nameKo: '통조림 드래곤프루트 (레드/화이트 다이스)',
+    nameJa: 'ドラゴンフルーツ缶詰（レッド／ホワイトダイス）',
+    scientificName: 'Hylocereus undatus / Hylocereus costaricensis',
+    category: 'canned',
+    subCategory: 'Canned Fruits',
+    formats: ['Dices', 'Cubes', 'Pieces in Light Syrup (Subject to availability)'],
+    specifications: {
+      shelfLife: '24-36 months (Ambient storage)',
+      storage: 'Ambient dry storage (< 30°C). Refrigerate after opening.',
+      packaging: '565g Cans / A10 Food-Service Cans',
+      origin: 'Vietnam'
+    },
+    applications: ['Exotic Dessert Bowls & Drinks', 'Yogurt & Ice Cream Toppings', 'Specialty B2B Supply'],
+    seasonality: 'Seasonal',
+    image: '/images/products/canned-fruits/canned-dragon-fruit.jpeg'
+  },
+
   // === POULTRY PRODUCTS ===
   {
     id: 'poultry-halal-whole-chicken',
@@ -4177,6 +4488,26 @@ export const PRODUCTS_LIST: ProductItem[] = [
 
 export const CATALOGUES_LIST: CatalogueInfo[] = [
   {
+    id: 'cat-canned-2026',
+    titleEn: 'Canned Fruits Product Catalogue 2026',
+    titleVi: 'Catalogue Trái Cây Đóng Hộp 2026',
+    titleZh: '2026年水果罐头产品目录',
+    category: 'Canned Fruits',
+    pageCount: 6,
+    fileSize: '5.7 MB',
+    fileName: 'VAC_Canned_Fruits_Catalogue_2026.pdf',
+    downloadUrl: '/catalogues/VAC_Canned_Fruits_Catalogue_2026.pdf',
+    driveId: '1hdE_SHcFM-BVcgxiHprqvxHDBMKEin_i',
+    coverImage: '/images/products/canned-fruits/hero.png',
+    descEn: 'Selected Vietnamese and internationally sourced canned fruits in syrup or juice: Peach, Lychee, Rambutan, Longan, Pineapple, Mango, Jackfruit, Mandarin Orange, Fruit Cocktail, Mixed Tropical Fruit, Nata de Coco, Dragon Fruit.',
+    descVi: 'Danh mục các loại trái cây đóng hộp ngâm nước đường hoặc nước ép: Đào, Vải, Chôm chôm, Nhãn, Dứa, Xoài, Mít, Quýt, Trái cây hỗn hợp, Nata de coco, Thanh long.',
+    descZh: '越南本地及国际优质糖水/果汁浸泡水果罐头：黄桃、荔枝、红毛丹、龙眼、菠萝、芒果、菠萝蜜、砂糖橘、水果鸡尾酒、热带混合水果、椰果、火龙果。',
+    titleKo: '2026 통조림 과일 제품 카탈로그',
+    titleJa: '2026年 フルーツ缶詰カタログ',
+    descKo: '베트남 및 해외 원료 통조림 과일 사양서: 복숭아, 리치, 람부탄, 롱간, 파인애플, 망고, 잭프루트, 귤, 후르츠 칵테일, 열대 혼합 과일, 나타드코코, 드래곤프루트.',
+    descJa: 'ベトナム産および輸入原材料のフルーツ缶詰仕様書：桃、ライチ、ランブータン、ロンガン、パイナップル、マンゴー、ジャックフルーツ、みかん、フルーツカクテル、トロピカルミックス、ナタデココ、ドラゴンフルーツ。',
+  },
+  {
     id: 'cat-harvest-edition-2026',
     titleEn: 'VAC Complete Product Catalogue 2026 (Harvest Edition)',
     titleVi: 'Catalogue Tổng Tập Nông Sản VietAgri 2026 (Harvest Edition)',
@@ -4300,6 +4631,20 @@ export const CATALOGUES_LIST: CatalogueInfo[] = [
 
 export const FORMAT_COMPARISONS: FormatComparison[] = [
   {
+    formatKey: 'canned',
+    titleEn: 'Canned Fruits',
+    titleVi: 'Trái Cây Đóng Hộp (Canned)',
+    bestSuitedEn: 'Retail Supermarkets, HORECA, Bakery & Food-Service Bulk Supply',
+    bestSuitedVi: 'Siêu thị bán lẻ, Chuỗi nhà hàng HORECA, Nhân bánh & Cung ứng công nghiệp',
+    advantageEn: 'Ready-to-use shelf-stable format (24-36 months ambient storage), consistent fruit quality, drained weight compliance',
+    advantageVi: 'Bảo quản nhiệt độ phòng dài lâu (24-36 tháng), sử dụng ngay, chất lượng quả đồng nhất, trọng lượng cái chuẩn xác',
+    storageEn: 'Ambient dry (< 30°C), refrigerate after opening',
+    storageVi: 'Nhiệt độ phòng thoáng mát (< 30°C), giữ lạnh sau mở nắp',
+    shelfLifeEn: '24 - 36 months',
+    shelfLifeVi: '24 - 36 tháng',
+    link: '/products/canned-fruits'
+  },
+  {
     formatKey: 'fresh',
     titleEn: 'Fresh Fruits & Vegetables',
     titleVi: 'Nông Sản Tươi (Fresh)',
@@ -4374,7 +4719,7 @@ export const FORMAT_COMPARISONS: FormatComparison[] = [
 export function getProductsByCategory(category: string): ProductItem[] {
   const norm = category.toLowerCase().trim();
   if (norm === 'crops-plant-based' || norm === 'crops-plant-based-products' || norm === 'crops') {
-    return PRODUCTS_LIST.filter(p => ['fresh', 'powders', 'purees', 'freeze-dried', 'iqf'].includes(p.category));
+    return PRODUCTS_LIST.filter(p => ['fresh', 'powders', 'purees', 'freeze-dried', 'iqf', 'canned'].includes(p.category));
   }
   if (norm === 'seafood' || norm === 'seafood-products' || norm === 'aquaculture-seafood') {
     return PRODUCTS_LIST.filter(p => ['seafood', 'basa', 'shrimp', 'squid'].includes(p.category));
@@ -4390,6 +4735,9 @@ export function getProductsByCategory(category: string): ProductItem[] {
   }
   if (norm === 'poultry' || norm === 'poultry-products') {
     return PRODUCTS_LIST.filter(p => p.category === 'poultry');
+  }
+  if (norm === 'canned' || norm === 'canned-fruits' || norm === 'canned-products') {
+    return PRODUCTS_LIST.filter(p => p.category === 'canned');
   }
   if (norm === 'purees' || norm === 'fruit-purees' || norm === 'puree-products') {
     return PRODUCTS_LIST.filter(p => p.category === 'purees');
@@ -4421,6 +4769,9 @@ export function getCategoryInfo(slugOrId: string): CategoryInfo | undefined {
   }
   if (norm === 'poultry' || norm === 'poultry-products') {
     return CATEGORIES_DATA['poultry'];
+  }
+  if (norm === 'canned' || norm === 'canned-fruits' || norm === 'canned-products') {
+    return CATEGORIES_DATA['canned'];
   }
   if (norm === 'purees' || norm === 'fruit-purees' || norm === 'puree-products') {
     return CATEGORIES_DATA['purees'];

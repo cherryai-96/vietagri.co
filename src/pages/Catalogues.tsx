@@ -66,14 +66,14 @@ export const Catalogues: React.FC = () => {
             className="text-base md:text-lg text-gold-champagne font-medium max-w-3xl leading-relaxed"
           >
             {language === 'vi'
-              ? 'Tải trực tiếp bộ tài liệu kỹ thuật và danh mục 5 bản Catalogue 2026 phục vụ nhà mua hàng, nhà máy chế biến F&B và nhà nhập khẩu quốc tế.'
+              ? 'Tải trực tiếp bộ tài liệu kỹ thuật và danh mục các bản Catalogue 2026 phục vụ nhà mua hàng, nhà máy chế biến F&B và nhà nhập khẩu quốc tế.'
               : language === 'zh'
-              ? '直接下载5本 2026 官方产品规格目录，专为国际企业买家、食品饮料制造商及进口商打造。'
+              ? '直接下载 2026 官方产品规格目录，专为国际企业买家、食品饮料制造商及进口商打造。'
               : language === 'ko'
-              ? '글로벌 기업 구매자, F&B 제조업체 및 수입업체를 위한 2026 공식 제품 카탈로그 5종 및 기술 사양서 직접 다운로드.'
+              ? '글로벌 기업 구매자, F&B 제조업체 및 수입업체를 위한 2026 공식 제품 카탈로그 및 기술 사양서 직접 다운로드.'
               : language === 'ja'
-              ? 'グローバルバイヤー、F&Bメーカーおよび輸入業者向け、2026年公式製品カタログ5冊および技術仕様書の直接ダウンロード。'
-              : 'Direct download access to all 5 official 2026 product format catalogues for international enterprise buyers, F&B manufacturers, and importers.'}
+              ? 'グローバルバイヤー、F&Bメーカーおよび輸入業者向け、2026年公式製品カタログおよび技術仕様書の直接ダウンロード。'
+              : 'Direct download access to all official 2026 product format catalogues for international enterprise buyers, F&B manufacturers, and importers.'}
           </motion.p>
 
           <div className="flex flex-wrap justify-center gap-6 text-xs md:text-sm text-cream/80 pt-2 font-light">

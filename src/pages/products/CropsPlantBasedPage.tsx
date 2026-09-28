@@ -50,6 +50,7 @@ export const CropsPlantBasedPage: React.FC = () => {
     { id: 'purees', labelVi: 'Puree, Nước Ép & Đậm Đặc', labelZh: '果浆、浓缩汁与果汁', labelKo: '과일 퓨레, 원액 및 농축액', labelJa: 'フルーツピューレ・濃縮液・果汁', labelEn: 'Fruit Purees, Juices & Concentrates', count: allProducts.filter(p => p.category === 'purees').length },
     { id: 'freeze-dried', labelVi: 'Trái Cây Sấy Thăng Hoa', labelZh: '冻干水果', labelKo: '동결건조 과일', labelJa: 'フリーズドライフルーツ', labelEn: 'Freeze-Dried Fruits', count: allProducts.filter(p => p.category === 'freeze-dried').length },
     { id: 'iqf', labelVi: 'Nông Sản Cấp Đông IQF', labelZh: 'IQF 速冻果蔬', labelKo: 'IQF 급속 냉동 과채', labelJa: 'IQF 急速冷凍果菜', labelEn: 'IQF Fruits & Vegetables', count: allProducts.filter(p => p.category === 'iqf').length },
+    { id: 'canned', labelVi: 'Trái Cây Đóng Hộp', labelZh: '水果罐头', labelKo: '통조림 과일', labelJa: 'フルーツ缶詰', labelEn: 'Canned Fruits', count: allProducts.filter(p => p.category === 'canned').length },
   ];
 
   // Filter products by search query and subcategory

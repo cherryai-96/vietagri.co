@@ -104,6 +104,7 @@ export const Header: React.FC = () => {
             { path: '/products/fruit-purees', label: language === 'vi' ? 'Puree & Nước ép trái cây (Fruit Purees, Juices & Concentrates)' : language === 'zh' ? '果浆、浓缩汁与果汁' : language === 'ko' ? '과일 퓨레, 원액 및 농축액' : language === 'ja' ? 'フルーツピューレ・濃縮液・果汁' : 'Fruit Purees, Juices & Concentrates' },
             { path: '/products/freeze-dried-fruits', label: language === 'vi' ? 'Trái cây sấy thăng hoa' : language === 'zh' ? '冻干水果' : language === 'ko' ? '동결건조 과일' : language === 'ja' ? 'フリーズドライフルーツ' : 'Freeze-Dried Fruits' },
             { path: '/products/iqf-fruits-vegetables', label: language === 'vi' ? 'Nông sản cấp đông rời (IQF)' : language === 'zh' ? 'IQF单体速冻农产品' : language === 'ko' ? 'IQF 급속 냉동 과채' : language === 'ja' ? 'IQF 急速冷凍果菜' : 'IQF Frozen Produce' },
+            { path: '/products/canned-fruits', label: language === 'vi' ? 'Trái cây đóng hộp (Canned Fruits)' : language === 'zh' ? '水果罐头' : language === 'ko' ? '통조림 과일' : language === 'ja' ? 'フルーツ缶詰' : 'Canned Fruits' },
           ],
         },
         {
