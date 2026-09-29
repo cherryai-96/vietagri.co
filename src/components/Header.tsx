@@ -12,10 +12,10 @@ interface LangOption {
 
 const LANGUAGES: LangOption[] = [
   { code: 'en', label: 'English (EN)', shortLabel: 'EN' },
-  { code: 'vi', label: 'Tiếng Việt (VI)', shortLabel: 'VI' },
-  { code: 'zh', label: '中文 (ZH)', shortLabel: 'ZH' },
-  { code: 'ko', label: '한국어 (KO)', shortLabel: 'KO' },
-  { code: 'ja', label: '日本語 (JA)', shortLabel: 'JA' },
+  { code: 'vi', label: 'Tiếng Việt (VN)', shortLabel: 'VN' },
+  { code: 'zh', label: '中文 (CH)', shortLabel: 'CH' },
+  { code: 'ko', label: '한국어 (KOR)', shortLabel: 'KOR' },
+  { code: 'ja', label: '日本語 (JPN)', shortLabel: 'JPN' },
 ];
 
 export const Header: React.FC = () => {
