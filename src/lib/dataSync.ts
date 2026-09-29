@@ -45,9 +45,9 @@ export async function loadSiteResources(): Promise<TranslationResources | null> 
   const { data, error } = await supabase.from('site_resources').select('language, content');
   if (error || !data?.length) return null;
 
-  const remote: TranslationResources = { en: {}, vi: {}, zh: {} };
+  const remote: TranslationResources = { en: {}, vi: {}, zh: {}, ko: {}, ja: {} };
   for (const row of data) {
-    if (row.language === 'en' || row.language === 'vi' || row.language === 'zh') {
+    if (row.language === 'en' || row.language === 'vi' || row.language === 'zh' || row.language === 'ko' || row.language === 'ja') {
       remote[row.language] = row.content as TranslationResources['en'];
     }
   }

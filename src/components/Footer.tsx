@@ -132,27 +132,27 @@ export const Footer: React.FC = () => {
           <ul className="flex flex-col gap-2.5 text-xs md:text-sm font-light">
             <li>
               <Link to="/products" className="hover:text-gold-champagne hover:underline transition-all duration-200 block whitespace-nowrap">
-                {language === 'vi' ? 'Tổng quan sản phẩm' : language === 'zh' ? '全系列产品总览' : 'All Products Overview'}
+                {language === 'vi' ? 'Tổng quan sản phẩm' : language === 'zh' ? '全系列产品总览' : language === 'ko' ? '제품 전체 개요' : language === 'ja' ? '製品全体概要' : 'All Products Overview'}
               </Link>
             </li>
             <li>
               <Link to="/agricultural-inputs" className="hover:text-gold-champagne hover:underline transition-all duration-200 block whitespace-nowrap">
-                {language === 'vi' ? 'Vật Tư Nông Nghiệp' : language === 'zh' ? '农业投入品与有机肥' : 'Agricultural Inputs'}
+                {language === 'vi' ? 'Vật Tư Nông Nghiệp' : language === 'zh' ? '农业投入品与有机肥' : language === 'ko' ? '농업 자재 및 유기농 비료' : language === 'ja' ? '農業資材・有機肥料' : 'Agricultural Inputs'}
               </Link>
             </li>
             <li>
               <Link to="/products/fresh-fruits-vegetables" className="hover:text-gold-champagne hover:underline transition-all duration-200 block whitespace-nowrap">
-                {language === 'vi' ? 'Nông Sản & Sản Phẩm Từ Cây Trồng' : language === 'zh' ? '农产品与植物基生态' : 'Crop & Plant-Based Products'}
+                {language === 'vi' ? 'Nông Sản & Sản Phẩm Từ Cây Trồng' : language === 'zh' ? '农产品与植物基生态' : language === 'ko' ? '농산물 및 식물성 제품' : language === 'ja' ? '農産物＆植物性製品' : 'Crop & Plant-Based Products'}
               </Link>
             </li>
             <li>
               <Link to="/products/poultry-products" className="hover:text-gold-champagne hover:underline transition-all duration-200 block whitespace-nowrap">
-                {language === 'vi' ? 'Sản Phẩm Gia Cầm' : language === 'zh' ? '家禽产品系列' : 'Poultry Products'}
+                {language === 'vi' ? 'Sản Phẩm Gia Cầm' : language === 'zh' ? '家禽产品系列' : language === 'ko' ? '가금류 제품 시리즈' : language === 'ja' ? '家禽製品シリーズ' : 'Poultry Products'}
               </Link>
             </li>
             <li>
               <Link to="/products/seafood-products" className="hover:text-gold-champagne hover:underline transition-all duration-200 block whitespace-nowrap">
-                {language === 'vi' ? 'Sản Phẩm Thủy Hải Sản' : language === 'zh' ? '水产与海鲜产品' : 'Aquaculture & Seafood Products'}
+                {language === 'vi' ? 'Sản Phẩm Thủy Hải Sản' : language === 'zh' ? '水产与海鲜产品' : language === 'ko' ? '수산 및 해산물 제품' : language === 'ja' ? '水産・海鮮製品' : 'Aquaculture & Seafood Products'}
               </Link>
             </li>
           </ul>
