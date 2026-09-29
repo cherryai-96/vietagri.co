@@ -258,15 +258,20 @@ export const Header: React.FC = () => {
 
             {/* Desktop Language Switcher Dropdown */}
             <div className="relative ml-1" ref={langDropdownRef}>
-              <button
-                onClick={() => setIsLangDropdownOpen(!isLangDropdownOpen)}
-                className="bg-forest hover:bg-forest-leaf text-cream px-3 py-1.5 rounded font-sans text-xs font-bold uppercase tracking-wider transition-all duration-300 cursor-pointer flex items-center gap-1.5 border border-forest/20 shadow-sm"
-                aria-label="Select Language"
-              >
-                <Globe size={14} className="text-gold-warm" />
-                <span>{language.toUpperCase()}</span>
-                <ChevronDown size={12} className={`transition-transform duration-200 ${isLangDropdownOpen ? 'rotate-180' : ''}`} />
-              </button>
+              {(() => {
+                const currentLangObj = LANGUAGES.find(l => l.code === language) || LANGUAGES[0];
+                return (
+                  <button
+                    onClick={() => setIsLangDropdownOpen(!isLangDropdownOpen)}
+                    className="bg-forest hover:bg-forest-leaf text-cream px-3 py-1.5 rounded font-sans text-xs font-bold uppercase tracking-wider transition-all duration-300 cursor-pointer flex items-center gap-1.5 border border-forest/20 shadow-sm"
+                    aria-label="Select Language"
+                  >
+                    <Globe size={14} className="text-gold-warm" />
+                    <span>{currentLangObj.shortLabel}</span>
+                    <ChevronDown size={12} className={`transition-transform duration-200 ${isLangDropdownOpen ? 'rotate-180' : ''}`} />
+                  </button>
+                );
+              })()}
 
               {isLangDropdownOpen && (
                 <div className="absolute right-0 top-full mt-2 w-44 bg-carbon/95 backdrop-blur-md border border-gold-warm/20 rounded-md shadow-2xl py-1 z-50 animate-fade-in">
