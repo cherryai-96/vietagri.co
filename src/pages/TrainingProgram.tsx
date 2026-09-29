@@ -181,7 +181,7 @@ export const TrainingProgram: React.FC = () => {
         <div className="max-w-7xl mx-auto flex flex-col gap-16">
           <div className="text-center max-w-5xl mx-auto flex flex-col gap-4">
             <span className="text-xs font-bold uppercase tracking-widest text-gold-antique">
-              Trade Representation
+              {language === 'vi' ? 'ĐẠI DIỆN THƯƠNG MẠI' : language === 'zh' ? '贸易代表' : language === 'ko' ? '무역 대리인' : language === 'ja' ? '貿易代表' : 'TRADE REPRESENTATION'}
             </span>
             <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-[2.5rem] font-bold text-forest leading-tight lg:whitespace-nowrap">
               {t('training.bridgeTitle')}
@@ -237,7 +237,7 @@ export const TrainingProgram: React.FC = () => {
         <div className="max-w-7xl mx-auto flex flex-col gap-16">
           <div className="text-center max-w-4xl mx-auto flex flex-col gap-3">
             <span className="text-xs font-bold uppercase tracking-widest text-gold-antique">
-              Target Audience
+              {language === 'vi' ? 'ĐỐI TƯỢNG THAM GIA' : language === 'zh' ? '目标学员' : language === 'ko' ? '교육 대상' : language === 'ja' ? '対象者' : 'TARGET AUDIENCE'}
             </span>
             <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-[2.5rem] font-bold text-forest lg:whitespace-nowrap">
               {t('training.whoTitle')}
@@ -284,7 +284,7 @@ export const TrainingProgram: React.FC = () => {
         <div className="max-w-7xl mx-auto flex flex-col gap-16">
           <div className="text-center max-w-5xl mx-auto flex flex-col gap-3">
             <span className="text-xs font-bold uppercase tracking-widest text-gold-antique">
-              Curriculum Roadmap
+              {language === 'vi' ? 'LỘ TRÌNH ĐÀO TẠO' : language === 'zh' ? '课程路线图' : language === 'ko' ? '커리큘럼 로드맵' : language === 'ja' ? 'カリキュラム・ロードマップ' : 'CURRICULUM ROADMAP'}
             </span>
             <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-[2.25rem] xl:text-[2.75rem] font-bold text-forest lg:whitespace-nowrap">
               {t('training.curriculumTitle')}
@@ -347,7 +347,7 @@ export const TrainingProgram: React.FC = () => {
           <div className="bg-white border border-gold-warm/25 rounded-2xl p-8 md:p-12 shadow-md flex flex-col gap-8">
             <div className="flex flex-col gap-2 text-center md:text-left">
               <span className="text-xs font-bold uppercase tracking-widest text-gold-antique">
-                Program Deliverables
+                {language === 'vi' ? 'KẾT QUẢ ĐẠT ĐƯỢC' : language === 'zh' ? '项目交付成果' : language === 'ko' ? '프로그램 수료 성과물' : language === 'ja' ? 'プログラム修了成果物' : 'PROGRAM DELIVERABLES'}
               </span>
               <h3 className="font-serif text-xl md:text-2xl font-bold text-forest">
                 {t('training.portfolioTitle')}
