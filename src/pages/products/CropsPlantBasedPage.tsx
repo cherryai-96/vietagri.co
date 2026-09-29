@@ -195,25 +195,25 @@ export const CropsPlantBasedPage: React.FC = () => {
             <div className="lg:col-span-4 bg-carbon-light/90 border border-gold-warm/25 rounded-2xl p-6 backdrop-blur-md shadow-2xl">
               <h3 className="font-serif text-lg font-bold text-cream mb-4 flex items-center gap-2 border-b border-gold-warm/20 pb-3">
                 <FileText size={18} className="text-gold-warm" />
-                <span>{language === 'vi' ? 'Thông Số Tiêu Chuẩn Nông Sản' : language === 'zh' ? '农产品标准技术规格' : 'Crops Portfolio Standard'}</span>
+                <span>{language === 'vi' ? 'Thông Số Tiêu Chuẩn Nông Sản' : language === 'zh' ? '农产品标准技术规格' : language === 'ko' ? '농산물 표준 포트폴리오 규격' : language === 'ja' ? '農産物標準仕様ポートフォリオ' : 'Crops Portfolio Standard'}</span>
               </h3>
               <div className="flex flex-col gap-4 text-xs md:text-sm">
                 <div>
-                  <span className="text-gold-warm font-semibold uppercase text-[11px] block">{language === 'vi' ? '5 Định dạng chế biến:' : language === 'zh' ? '5大加工形态：' : '5 Core Formats:'}</span>
+                  <span className="text-gold-warm font-semibold uppercase text-[11px] block">{language === 'vi' ? '5 Định dạng chế biến:' : language === 'zh' ? '5大加工形态：' : language === 'ko' ? '5가지 핵심 가공 형태:' : language === 'ja' ? '5つの主な加工形態：' : '5 Core Formats:'}</span>
                   <span className="text-cream/90 font-light">
-                    {(language === 'vi' ? catInfo.availableCutsVi : language === 'zh' ? (catInfo.availableCutsZh || catInfo.availableCutsEn) : catInfo.availableCutsEn).join(' • ')}
+                    {(language === 'vi' ? catInfo.availableCutsVi : language === 'zh' ? (catInfo.availableCutsZh || catInfo.availableCutsEn) : language === 'ko' ? (catInfo.availableCutsKo || catInfo.availableCutsEn) : language === 'ja' ? (catInfo.availableCutsJa || catInfo.availableCutsEn) : catInfo.availableCutsEn).join(' • ')}
                   </span>
                 </div>
                 <div>
-                  <span className="text-gold-warm font-semibold uppercase text-[11px] block">{language === 'vi' ? 'Đóng gói chuẩn B2B xuất khẩu:' : language === 'zh' ? '出口 B2B 标准包装：' : 'Export B2B Packaging:'}</span>
+                  <span className="text-gold-warm font-semibold uppercase text-[11px] block">{language === 'vi' ? 'Đóng gói chuẩn B2B xuất khẩu:' : language === 'zh' ? '出口 B2B 标准包装：' : language === 'ko' ? '수출 B2B 표준 포장:' : language === 'ja' ? '輸出用 B2B 標準包装：' : 'Export B2B Packaging:'}</span>
                   <span className="text-cream/90 font-light">
-                    {language === 'vi' ? catInfo.defaultPackagingVi : language === 'zh' ? (catInfo.defaultPackagingZh || catInfo.defaultPackagingEn) : catInfo.defaultPackagingEn}
+                    {language === 'vi' ? catInfo.defaultPackagingVi : language === 'zh' ? (catInfo.defaultPackagingZh || catInfo.defaultPackagingEn) : language === 'ko' ? (catInfo.defaultPackagingKo || catInfo.defaultPackagingEn) : language === 'ja' ? (catInfo.defaultPackagingJa || catInfo.defaultPackagingEn) : catInfo.defaultPackagingEn}
                   </span>
                 </div>
                 <div>
-                  <span className="text-gold-warm font-semibold uppercase text-[11px] block">{language === 'vi' ? 'Bảo quản & Kiểm soát chất lượng:' : language === 'zh' ? '储存与质量控制：' : 'Storage & Quality Control:'}</span>
+                  <span className="text-gold-warm font-semibold uppercase text-[11px] block">{language === 'vi' ? 'Bảo quản & Kiểm soát chất lượng:' : language === 'zh' ? '储存与质量控制：' : language === 'ko' ? '보관 및 품질 관리:' : language === 'ja' ? '保管＆品質管理：' : 'Storage & Quality Control:'}</span>
                   <span className="text-cream/90 font-light">
-                    {language === 'vi' ? catInfo.storageVi : language === 'zh' ? (catInfo.storageZh || catInfo.storageEn) : catInfo.storageEn}
+                    {language === 'vi' ? catInfo.storageVi : language === 'zh' ? (catInfo.storageZh || catInfo.storageEn) : language === 'ko' ? (catInfo.storageKo || catInfo.storageEn) : language === 'ja' ? (catInfo.storageJa || catInfo.storageEn) : catInfo.storageEn}
                   </span>
                 </div>
               </div>
@@ -226,7 +226,7 @@ export const CropsPlantBasedPage: React.FC = () => {
       <section className="py-12 bg-ivory border-b border-gold-warm/15 px-4 md:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {(language === 'vi' ? catInfo.highlightsVi : language === 'zh' ? (catInfo.highlightsZh || catInfo.highlightsEn) : catInfo.highlightsEn).map((h, i) => (
+            {(language === 'vi' ? catInfo.highlightsVi : language === 'zh' ? (catInfo.highlightsZh || catInfo.highlightsEn) : language === 'ko' ? (catInfo.highlightsKo || catInfo.highlightsEn) : language === 'ja' ? (catInfo.highlightsJa || catInfo.highlightsEn) : catInfo.highlightsEn).map((h, i) => (
               <div key={i} className="bg-white p-5 rounded-xl border border-gold-warm/15 shadow-sm flex items-start gap-3">
                 <CheckCircle className="text-forest-fresh shrink-0 mt-0.5" size={20} />
                 <span className="text-xs md:text-sm text-carbon/90 font-medium leading-relaxed">{h}</span>

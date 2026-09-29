@@ -17,7 +17,7 @@ import { SEO } from '../components/SEO';
 import { BioBalanceLoop } from '../components/BioBalanceLoop';
 
 export const Sustainability: React.FC = () => {
-  const { t } = useTranslation();
+  const { t, language } = useTranslation();
 
   return (
     <div className="font-sans overflow-hidden bg-cream text-carbon">
@@ -55,7 +55,7 @@ export const Sustainability: React.FC = () => {
           >
             <span className="text-xs md:text-sm font-bold uppercase tracking-widest text-gold-champagne bg-forest/40 border border-gold-warm/20 px-4 py-1.5 rounded-full self-center flex items-center gap-2">
               <Sparkles size={14} className="text-gold-warm" />
-              ESG & Sustainability
+              {language === 'vi' ? 'ESG & Phát Triển Bền Vững' : language === 'zh' ? 'ESG 与可持续发展' : language === 'ko' ? 'ESG & 지속가능성' : language === 'ja' ? 'ESG & サステナビリティ' : 'ESG & Sustainability'}
             </span>
             <h1 className="font-serif text-balance text-[2.25rem] leading-[1.1] sm:text-[3rem] md:text-5xl lg:text-6xl font-bold leading-tight tracking-wide text-gold-champagne"><span dangerouslySetInnerHTML={{ __html: t('sustainability.heroTitle') }} /></h1>
           </motion.div>
@@ -96,7 +96,7 @@ export const Sustainability: React.FC = () => {
             <div className="lg:col-span-5 flex flex-col gap-5">
               <span className="text-xs font-bold text-gold-antique uppercase tracking-widest flex items-center gap-1.5">
                 <ShieldCheck size={16} className="text-gold-warm" />
-                Certification Consultancy
+                {language === 'vi' ? 'Tư Vấn & Chứng Nhận' : language === 'zh' ? '认证与合规咨询' : language === 'ko' ? '인증 및 컨설팅' : language === 'ja' ? '認証・コンサルティング' : 'Certification Consultancy'}
               </span>
               <h2 className="font-serif text-balance text-[2.25rem] leading-[1.1] sm:text-[3rem] md:text-5xl lg:text-6xl font-bold text-forest leading-tight"><span dangerouslySetInnerHTML={{ __html: t('sustainability.certTitle') }} /></h2>
               <p className="text-xs uppercase tracking-wider text-carbon/60 font-semibold"><span dangerouslySetInnerHTML={{ __html: t('sustainability.certSub') }} /></p>
@@ -108,19 +108,19 @@ export const Sustainability: React.FC = () => {
             <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6">
               {[
                 {
-                  title: 'Organic Transition',
+                  title: language === 'vi' ? 'Chuyển Đổi Hữu Cơ' : language === 'zh' ? '有机转型管理' : language === 'ko' ? '유기농 전환 관리' : language === 'ja' ? 'オーガニック移行管理' : 'Organic Transition',
                   desc: t('sustainability.certBullet1'),
                 },
                 {
-                  title: 'GlobalG.A.P. Compliance',
+                  title: language === 'vi' ? 'Tuân Thủ GlobalG.A.P.' : language === 'zh' ? 'GlobalG.A.P. 标准对接' : language === 'ko' ? 'GlobalG.A.P. 준수' : language === 'ja' ? 'GlobalG.A.P. 準拠' : 'GlobalG.A.P. Compliance',
                   desc: t('sustainability.certBullet2'),
                 },
                 {
-                  title: 'Clean-Label Standards',
+                  title: language === 'vi' ? 'Tiêu Chuẩn Clean-Label' : language === 'zh' ? '清洁标签规范' : language === 'ko' ? '클린 라벨 표준' : language === 'ja' ? 'クリーンレーベル標準' : 'Clean-Label Standards',
                   desc: t('sustainability.certBullet3'),
                 },
                 {
-                  title: 'Audit Support',
+                  title: language === 'vi' ? 'Hỗ Trợ Kiểm Toán' : language === 'zh' ? '独立审计支持' : language === 'ko' ? '감사 지원' : language === 'ja' ? '監査サポート' : 'Audit Support',
                   desc: t('sustainability.certBullet4'),
                 },
               ].map((item, idx) => (
@@ -152,7 +152,7 @@ export const Sustainability: React.FC = () => {
           <div className="text-center flex flex-col gap-4 max-w-3xl mx-auto mb-16">
             <span className="text-xs font-bold text-gold-antique uppercase tracking-widest flex items-center justify-center gap-1.5">
               <RotateCcw size={16} className="text-gold-warm" />
-              Circular Economy
+              {language === 'vi' ? 'Kinh Tế Tuần Hoàn' : language === 'zh' ? '循环经济生态' : language === 'ko' ? '순환 경제' : language === 'ja' ? '循環型経済' : 'Circular Economy'}
             </span>
             <h2 className="font-serif text-balance text-[2rem] leading-[1.1] sm:text-4xl md:text-5xl font-bold text-forest"><span dangerouslySetInnerHTML={{ __html: t('sustainability.circularTitle') }} /></h2>
             <p className="text-xs uppercase tracking-wider text-carbon/60 font-semibold"><span dangerouslySetInnerHTML={{ __html: t('sustainability.circularSub') }} /></p>
@@ -168,21 +168,21 @@ export const Sustainability: React.FC = () => {
             {[
               {
                 step: '01',
-                title: 'Biomass Rescuing',
+                title: language === 'vi' ? 'Thu Hồi Sinh Khối' : language === 'zh' ? '生物质回收利用' : language === 'ko' ? '바이오매스 수거 및 업사이클링' : language === 'ja' ? 'バイオマス回収・アップサイクル' : 'Biomass Rescuing',
                 desc: t('sustainability.circularBullet1'),
                 color: 'bg-forest text-cream',
                 icon: <RotateCcw size={20} className="text-gold-warm" />
               },
               {
                 step: '02',
-                title: 'High-Nutrient Upcycling',
-                desc: 'Processing by-products through biological stabilization and controlled dehydration to retain maximum enzymes and vitamins.',
+                title: language === 'vi' ? 'Nâng Cấp Dinh Dưỡng' : language === 'zh' ? '高营养升级循环' : language === 'ko' ? '고영양 업사이클링' : language === 'ja' ? '高栄養アップサイクリング' : 'High-Nutrient Upcycling',
+                desc: language === 'vi' ? 'Xử lý phụ phẩm bằng sinh học ổn định và sấy khô kiểm soát nhằm giữ lại tối đa enzyme và vitamin.' : language === 'zh' ? '通过生物稳定化与受控脱水技术处理副产品，最大程度保留天然酶与维生素。' : language === 'ko' ? '생물학적 안정화 및 제어된 탈수 공정으로 농업 부산물을 처리하여 효소와 비타민을 최대한 보존합니다.' : language === 'ja' ? '生物学的安定化と制御された脱水処理により副産物を加工し、酵素とビタミンを最大限保持します。' : 'Processing by-products through biological stabilization and controlled dehydration to retain maximum enzymes and vitamins.',
                 color: 'bg-ivory border border-gold-warm/20 text-carbon',
                 icon: <Sparkles size={20} className="text-forest" />
               },
               {
                 step: '03',
-                title: 'Secondary Value Chains',
+                title: language === 'vi' ? 'Chuỗi Giá Trị Thứ Cấp' : language === 'zh' ? '二次价值链构建' : language === 'ko' ? '2차 가치 사슬' : language === 'ja' ? '二次フードバリューチェーン' : 'Secondary Value Chains',
                 desc: t('sustainability.circularBullet2'),
                 color: 'bg-brown-soil text-cream',
                 icon: <ArrowRight size={20} className="text-gold-warm rotate-90 md:rotate-0" />
@@ -221,7 +221,7 @@ export const Sustainability: React.FC = () => {
             <div className="lg:col-span-5 flex flex-col gap-5">
               <span className="text-xs font-bold text-gold-antique uppercase tracking-widest flex items-center gap-1.5">
                 <BarChart3 size={16} className="text-gold-warm" />
-                Impact Dashboard
+                {language === 'vi' ? 'Bảng Thống Kê Tác Động' : language === 'zh' ? '影响与绩效仪表盘' : language === 'ko' ? '임팩트 대시보드' : language === 'ja' ? 'インパクト・ダッシュボード' : 'Impact Dashboard'}
               </span>
               <h2 className="font-serif text-balance text-[2rem] leading-[1.1] sm:text-4xl md:text-5xl font-bold text-forest leading-tight"><span dangerouslySetInnerHTML={{ __html: t('sustainability.esgTitle') }} /></h2>
               <p className="text-xs uppercase tracking-wider text-carbon/60 font-semibold"><span dangerouslySetInnerHTML={{ __html: t('sustainability.esgSub') }} /></p>
@@ -234,39 +234,34 @@ export const Sustainability: React.FC = () => {
               {[
                 {
                   icon: <Droplets className="text-gold-warm w-8 h-8" />,
-                  title: 'Precision Water',
+                  title: language === 'vi' ? 'Tiết Kiệm Nước' : language === 'zh' ? '精准节水' : language === 'ko' ? '정밀 용수 관리' : language === 'ja' ? '精密節水管理' : 'Precision Water',
                   desc: t('sustainability.esgBullet1')
                 },
                 {
                   icon: <Maximize2 className="text-gold-warm w-8 h-8" />,
-                  title: 'Land Optimization',
+                  title: language === 'vi' ? 'Tối Ưu Diện Tích' : language === 'zh' ? '土地高效利用' : language === 'ko' ? '토지 최적화' : language === 'ja' ? '土地利用の最適化' : 'Land Optimization',
                   desc: t('sustainability.esgBullet2'),
                   metric: '5x Yield Intensity'
                 },
                 {
                   icon: <Users2 className="text-gold-warm w-8 h-8" />,
-                  title: 'Social Empowerment',
+                  title: language === 'vi' ? 'Tác Động Xã Hội' : language === 'zh' ? '赋能农户与社会' : language === 'ko' ? '사회적 임팩트' : language === 'ja' ? '社会的エンパワーメント' : 'Social Empowerment',
                   desc: t('sustainability.esgBullet3'),
                   metric: '100% Fair Contracts'
                 }
-              ].map((card, idx) => (
-                <motion.div
-                  key={idx}
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: idx * 0.1, duration: 0.6 }}
-                  className="bg-cream border border-gold-warm/15 rounded-xl p-6 flex flex-col justify-between shadow-sm min-h-[300px]"
-                >
-                  <div className="flex flex-col gap-4">
-                    <div className="bg-forest/5 p-3 rounded-lg w-fit">
-                      {card.icon}
-                    </div>
-                    <h3 className="font-serif font-bold text-lg md:text-xl text-forest leading-tight" dangerouslySetInnerHTML={{ __html: card.title }} />
-                    <p className="text-xs text-carbon/75 leading-relaxed font-light"><span dangerouslySetInnerHTML={{ __html: card.desc }} /></p>
+              ].map((metric, idx) => (
+                <div key={idx} className="bg-cream border border-gold-warm/15 rounded-xl p-6 flex flex-col justify-between gap-4 shadow-sm hover:shadow-md transition-all">
+                  <div className="flex flex-col gap-3">
+                    {metric.icon}
+                    <h3 className="font-serif font-bold text-lg text-forest">{metric.title}</h3>
+                    <p className="text-xs text-carbon/70 leading-relaxed font-light">{metric.desc}</p>
                   </div>
-
-                </motion.div>
+                  {metric.metric && (
+                    <span className="text-xs font-bold uppercase tracking-wider text-gold-antique bg-gold-warm/10 px-2.5 py-1 rounded w-fit mt-2">
+                      {metric.metric}
+                    </span>
+                  )}
+                </div>
               ))}
             </div>
 

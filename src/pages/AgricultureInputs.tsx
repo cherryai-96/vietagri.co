@@ -905,6 +905,10 @@ export const AgricultureInputs: React.FC = () => {
                 ? 'Liên kết chặt chẽ từ vật tư đầu vào đến nông sản xuất khẩu chất lượng cao.' 
                 : isZh
                 ? '将可持续投入品直接连接至全球出口市场的完整价值链。'
+                : isKo
+                ? '지속 가능한 농자재를 글로벌 수출 시장과 직접 연결하는 가치 사슬.'
+                : isJa
+                ? '持続可能な農業資材をグローバル輸出市場へ直接つなぐ価値チェーン。'
                 : 'A seamless value chain linking sustainable inputs directly to global export markets.'}
             </p>
           </div>
@@ -973,6 +977,10 @@ export const AgricultureInputs: React.FC = () => {
                 ? 'Xây Dựng Hệ Thống Canh Tác Bền Vững Cùng Việt Agri' 
                 : isZh
                 ? '与越南农业中心共建可持续高产耕作体系'
+                : isKo
+                ? 'VAC와 함께 더 지속 가능한 농업 시스템 구축'
+                : isJa
+                ? 'VACとともに、より持続可能な農業システムを構築'
                 : 'Build a More Sustainable Farming System with VAC'}
             </h2>
 
@@ -981,6 +989,10 @@ export const AgricultureInputs: React.FC = () => {
                 ? 'Liên hệ với đội ngũ kỹ thuật VAC để trao đổi về giải pháp vật tư nông nghiệp, khảo sát thổ nhưỡng và kế hoạch canh tác thương mại.' 
                 : isZh
                 ? '立即联系 VAC 农艺专家团队，探讨投入品方案、土壤适宜性评估及商业化耕作规划。'
+                : isKo
+                ? '농자재 솔루션, 토양 적합성 및 상업적 재배 계획에 대해 논의하려면 VAC 농학 팀에 문의하세요.'
+                : isJa
+                ? '農業資材ソリューション、土壌適合性、商業栽培計画について、VAC農学チームにご相談ください。'
                 : 'Connect with VAC’s agronomy team to discuss input solutions, soil suitability, and commercial cultivation plans.'}
             </p>
 

@@ -17,7 +17,7 @@ import {
 import { SEO } from '../components/SEO';
 
 export const Services: React.FC = () => {
-  const { t } = useTranslation();
+  const { t, language } = useTranslation();
   const [activeTab, setActiveTab] = useState<number>(0);
   const [expandedTabs, setExpandedTabs] = useState<number[]>([0]);
   const location = useLocation();
@@ -65,17 +65,17 @@ export const Services: React.FC = () => {
         t('services.sourcingBullet3'),
       ],
       details: {
-        specTitle: t('language') === 'vi' ? 'Năng Lực Cung Ứng & Nông Sản Chủ Lực' : t('language') === 'zh' ? '直采能力与核心大宗商品' : 'Sourcing Capabilities & Commodities',
+        specTitle: language === 'vi' ? 'Năng Lực Cung Ứng & Nông Sản Chủ Lực' : language === 'zh' ? '直采能力与核心大宗商品' : language === 'ko' ? '소싱 역량 및 주요 농산물' : language === 'ja' ? '調達能力・主要農産物' : 'Sourcing Capabilities & Commodities',
         specs: [
-          t('language') === 'vi' ? 'Kết nối trực tiếp mạng lưới vùng trồng đạt chuẩn tại 15 tỉnh thành.' : t('language') === 'zh' ? '直接对接 15 个省份认证合作农场基地网络。' : 'Direct access to certified grower networks across 15 provinces.',
-          t('language') === 'vi' ? 'Năng lực cung ứng đại trà các loại bột thực vật giá trị cao (như bột hạt sen cao cấp).' : t('language') === 'zh' ? '具备高价值植物纯粉的大宗稳定供应能力（如特级莲子粉）。' : 'Bulk supply capabilities for high-value botanical powders (e.g., premium lotus seed powder).',
-          t('language') === 'vi' ? 'Kiểm nghiệm dư lượng thuốc bảo vệ thực vật nghiêm ngặt (Eurofins) theo MRLs thị trường đích.' : t('language') === 'zh' ? '严格的农药残留检测 (Eurofins 认证)，完全符合目标市场 MRL 限量。' : 'Strict pesticide residue testing (Eurofins certified) mapping to target market restrictions (MRLs).',
-          t('language') === 'vi' ? 'Báo cáo kiểm toán giá gốc tại vườn cung cấp trực tiếp cho nhà mua hàng trước khi ký kết.' : t('language') === 'zh' ? '在商业签约前直接向买家提供产地价格审计报告。' : 'Local pricing audit report provided directly to buyers before commercial sign-off.'
+          language === 'vi' ? 'Kết nối trực tiếp mạng lưới vùng trồng đạt chuẩn tại 15 tỉnh thành.' : language === 'zh' ? '直接对接 15 个省份认证合作农场基地网络。' : language === 'ko' ? '15개 성의 인증된 재배 농가 네트워크에 직접 접근.' : language === 'ja' ? '15の省における認定農家ネットワークへの直接アクセス。' : 'Direct access to certified grower networks across 15 provinces.',
+          language === 'vi' ? 'Năng lực cung ứng đại trà các loại bột thực vật giá trị cao (như bột hạt sen cao cấp).' : language === 'zh' ? '具备高价值植物纯粉的大宗稳定供应能力（如特级莲子粉）。' : language === 'ko' ? '고부가가치 식물성 분말(예: 프리미엄 연꽃씨 분말)의 대량 공급 능력.' : language === 'ja' ? '高価値植物パウダー（例：プレミアムハスの実パウダー）の大容量供給体制。' : 'Bulk supply capabilities for high-value botanical powders (e.g., premium lotus seed powder).',
+          language === 'vi' ? 'Kiểm nghiệm dư lượng thuốc bảo vệ thực vật nghiêm ngặt (Eurofins) theo MRLs thị trường đích.' : language === 'zh' ? '严格的农药残留检测 (Eurofins 认证)，完全符合目标市场 MRL 限量。' : language === 'ko' ? '수출 대상국의 잔류농약 기준(MRLs)에 맞춘 엄격한 검사(Eurofins 인증).' : language === 'ja' ? '目的国の残留農薬基準（MRLs）に適合する厳格な検査（Eurofins認証）。' : 'Strict pesticide residue testing (Eurofins certified) mapping to target market restrictions (MRLs).',
+          language === 'vi' ? 'Báo cáo kiểm toán giá gốc tại vườn cung cấp trực tiếp cho nhà mua hàng trước khi ký kết.' : language === 'zh' ? '在商业签约前直接向买家提供产地价格审计报告。' : language === 'ko' ? '계약 체결 전 바이어에게 현지 원가 감사 보고서 직접 제공.' : language === 'ja' ? '契約締結前にバイヤーへ産地価格監査レポートを直接 provide。' : 'Local pricing audit report provided directly to buyers before commercial sign-off.'
         ]
       },
       image: '/images/agriculture_products.png',
       linkPath: '/contact',
-      linkText: t('language') === 'vi' ? 'Liên Hệ Ngay' : t('language') === 'zh' ? '立即联系我们' : 'Contact Us'
+      linkText: language === 'vi' ? 'Liên Hệ Ngay' : language === 'zh' ? '立即联系我们' : language === 'ko' ? '문의하기 →' : language === 'ja' ? 'お問い合わせ →' : 'CONTACT US →'
     },
     {
       id: 1,
@@ -89,12 +89,12 @@ export const Services: React.FC = () => {
         t('services.farmingBullet3'),
       ],
       details: {
-        specTitle: t('language') === 'vi' ? 'Cấu Trúc Đầu Tư & Hợp Tác' : t('language') === 'zh' ? '投资与契约种植合作架构' : 'Investment & Partnerships Structures',
+        specTitle: language === 'vi' ? 'Cấu Trúc Đầu Tư & Hợp Tác' : language === 'zh' ? '投资与契约种植合作架构' : language === 'ko' ? '투자 및 파트너십 구조' : language === 'ja' ? '投資・パートナーシップ構造' : 'Investment & Partnerships Structures',
         specs: [
-          t('language') === 'vi' ? 'Mô hình hoa hồng hấp dẫn cho các đại lý thương mại được chứng nhận.' : t('language') === 'zh' ? '为认证贸易代理商提供极具吸引力的佣金合作机制。' : 'Lucrative commission models (standard commission rates applied to certified trade agents).',
-          t('language') === 'vi' ? 'Vận hành trang trại trọn gói từ quỹ đất, tưới tiêu IoT đến thu hoạch.' : t('language') === 'zh' ? '提供从土地流转、IoT 智能灌溉到收割的全套农场托管服务。' : 'Turnkey farm operations covering land securing, IoT irrigation infrastructure, and harvest management.',
-          t('language') === 'vi' ? 'Thỏa thuận chia sẻ sản lượng minh bạch dựa trên năng suất lịch sử.' : t('language') === 'zh' ? '基于历史产量的透明化农作物作物分成与 ROI 预估协议。' : 'Structured crop-sharing agreements with transparent ROI projections based on historical yields.',
-          t('language') === 'vi' ? 'Cam kết bao tiêu sản lượng với giá sàn thỏa thuận trước nhằm rủi ro thị trường.' : t('language') === 'zh' ? '提供预设保底价的回购协议，规避市场价格波动风险。' : 'Guaranteed buy-back agreements at pre-negotiated floor pricing to hedge market volatility.'
+          language === 'vi' ? 'Mô hình hoa hồng hấp dẫn cho các đại lý thương mại được chứng nhận.' : language === 'zh' ? '为认证贸易代理商提供极具吸引力的佣金合作机制。' : language === 'ko' ? '인증된 무역 대리점을 위한 높은 수수료 보상 모델.' : language === 'ja' ? '認定貿易代理店向けの魅力的なコミッションモデル。' : 'Lucrative commission models (standard commission rates applied to certified trade agents).',
+          language === 'vi' ? 'Vận hành trang trại trọn gói từ quỹ đất, tưới tiêu IoT đến thu hoạch.' : language === 'zh' ? '提供从土地流转、IoT 智能灌溉到收割的全套农场托管服务。' : language === 'ko' ? '부지 확보, IoT 관개 시설부터 수확까지 턴키 농장 운영.' : language === 'ja' ? '用地確保からIoT灌漑インフラ、収穫までの一括農場運営。' : 'Turnkey farm operations covering land securing, IoT irrigation infrastructure, and harvest management.',
+          language === 'vi' ? 'Thỏa thuận chia sẻ sản lượng minh bạch dựa trên năng suất lịch sử.' : language === 'zh' ? '基于历史产量的透明化农作物分成与 ROI 预估协议。' : language === 'ko' ? '과거 수확량을 바탕으로 한 투명한 작물 분배 협약.' : language === 'ja' ? '過去の収量実績に基づく透明性の高い収穫物配分合意。' : 'Structured crop-sharing agreements with transparent ROI projections based on historical yields.',
+          language === 'vi' ? 'Cam kết bao tiêu sản lượng với giá sàn thỏa thuận trước nhằm rủi ro thị trường.' : language === 'zh' ? '提供预设保底价的回购协议，规避市场价格波动风险。' : language === 'ko' ? '시장 변동성 위험을 줄이기 위한 최저 보장 가격 수매 협약.' : language === 'ja' ? '市場変動リスクを回避するための最低保証価格での買い取り合意。' : 'Guaranteed buy-back agreements at pre-negotiated floor pricing to hedge market volatility.'
         ]
       },
       image: '/images/ai-services-hightech.png',
@@ -113,12 +113,12 @@ export const Services: React.FC = () => {
         t('services.organicBullet3'),
       ],
       details: {
-        specTitle: t('language') === 'vi' ? 'Năng Lực Chứng Nhận & Tiêu Chuẩn ESG' : t('language') === 'zh' ? '认证评估与 ESG 可持续发展标准' : 'Certification Capabilities & ESG Alignment',
+        specTitle: language === 'vi' ? 'Năng Lực Chứng Nhận & Tiêu Chuẩn ESG' : language === 'zh' ? '认证评估与 ESG 可持续发展标准' : language === 'ko' ? '인증 역량 및 ESG 준수' : language === 'ja' ? '認証能力・ESG準拠' : 'Certification Capabilities & ESG Alignment',
         specs: [
-          t('language') === 'vi' ? 'Lộ trình chuyển đổi từng bước từ đất trồng truyền thống sang hữu cơ.' : t('language') === 'zh' ? '为传统农田提供向有机农业转型的阶梯式规划路线图。' : 'Step-by-step transition mapping for conventional to organic farmland.',
-          t('language') === 'vi' ? 'Quản lý tuân thủ GlobalG.A.P., EU Organic và USDA Organic tại chỗ.' : t('language') === 'zh' ? '全程现场督导 GlobalG.A.P.、欧盟有机及 USDA 有机标准执行。' : 'On-the-ground management for GlobalG.A.P., EU Organic, and USDA Organic compliance.',
-          t('language') === 'vi' ? 'Đại diện làm việc trực tiếp với các đơn vị kiểm toán quốc tế.' : t('language') === 'zh' ? '在第三方国际机构审计期间提供全方位代表与对接服务。' : 'Full representation and liaison services during third-party international audits.',
-          t('language') === 'vi' ? 'Chuẩn hóa dữ liệu ESG phục vụ báo cáo doanh nghiệp.' : t('language') === 'zh' ? '为企业编制 ESG 指标报告提供标准化数据构建。' : 'ESG data structuring for corporate reporting metrics.'
+          language === 'vi' ? 'Lộ trình chuyển đổi từng bước từ đất trồng truyền thống sang hữu cơ.' : language === 'zh' ? '为传统农田提供向有机农业转型的阶梯式规划路线图。' : language === 'ko' ? '일반 농지에서 유기농 농지로의 단계적 전환 로드맵.' : language === 'ja' ? '慣行農地から有機農地への段階的な移行ロードマップ。' : 'Step-by-step transition mapping for conventional to organic farmland.',
+          language === 'vi' ? 'Quản lý tuân thủ GlobalG.A.P., EU Organic và USDA Organic tại chỗ.' : language === 'zh' ? '全程现场督导 GlobalG.A.P.、欧盟有机及 USDA 有机标准执行。' : language === 'ko' ? 'GlobalG.A.P., EU Organic, USDA Organic 규정 현장 관리.' : language === 'ja' ? 'GlobalG.A.P.、EU Organic、USDA Organicの現場コンプライアンス管理。' : 'On-the-ground management for GlobalG.A.P., EU Organic, and USDA Organic compliance.',
+          language === 'vi' ? 'Đại diện làm việc trực tiếp với các đơn vị kiểm toán quốc tế.' : language === 'zh' ? '在第三方国际机构审计期间提供全方位代表与对接服务。' : language === 'ko' ? '해외 제3자 기관 감사 시 전담 대행 및 커뮤니케이션 지원.' : language === 'ja' ? '第三者国際機関監査時の完全代行および連絡窓口サービス。' : 'Full representation and liaison services during third-party international audits.',
+          language === 'vi' ? 'Chuẩn hóa dữ liệu ESG phục vụ báo cáo doanh nghiệp.' : language === 'zh' ? '为企业编制 ESG 指标报告提供标准化数据构建。' : language === 'ko' ? '기업 보고서용 ESG 데이터 구조화 지원.' : language === 'ja' ? '企業レポート向けESGデータ構造化支援。' : 'ESG data structuring for corporate reporting metrics.'
         ]
       },
       image: '/images/organic_certification.png',
@@ -137,12 +137,12 @@ export const Services: React.FC = () => {
         t('services.agritechBullet3'),
       ],
       details: {
-        specTitle: t('language') === 'vi' ? 'Nông Nghiệp Điện Từ & Tối Ưu Năng Suất' : t('language') === 'zh' ? '物理电磁农业与非化学增产方案' : 'Electroculture & Non-Chemical Yield Optimization',
+        specTitle: language === 'vi' ? 'Nông Nghiệp Điện Từ & Tối Ưu Năng Suất' : language === 'zh' ? '物理电磁农业与非化学增产方案' : language === 'ko' ? '전자기 농업 및 비화학적 수확량 최적화' : language === 'ja' ? '電磁気農業・非化学的収量最適化' : 'Electroculture & Non-Chemical Yield Optimization',
         specs: [
-          t('language') === 'vi' ? 'Lắp đặt ăng-ten khí quyển và hệ thống tiếp địa địa từ.' : t('language') === 'zh' ? '安装大气电位天线与地磁接地物理系统。' : 'Installation of atmospheric antennas and geomagnetic grounding systems.',
-          t('language') === 'vi' ? 'Kích thích sức sống tế bào thực vật mà không dùng hóa chất.' : t('language') === 'zh' ? '无需化学试剂，自然激活植物细胞活力与代谢速率。' : 'Stimulation of plant cellular vitality and metabolic rates without synthetic chemicals.',
-          t('language') === 'vi' ? 'Tăng cường sức đề kháng tự nhiên với sâu bệnh và thời tiết khắc nghiệt.' : t('language') === 'zh' ? '天然增强植物对病虫害及极端天气的系统性抵抗力。' : 'Natural reinforcement of systemic resistance to pests and extreme weather.',
-          t('language') === 'vi' ? 'Giảm nhu cầu tưới nước và phân bón mà vẫn duy trì sản lượng cao.' : t('language') === 'zh' ? '在减少灌溉与肥料投入的同时，维持峰值产出。' : 'Reduction in irrigation and fertilizer requirements while maintaining peak output.'
+          language === 'vi' ? 'Lắp đặt ăng-ten khí quyển và hệ thống tiếp địa địa từ.' : language === 'zh' ? '安装大气电位天线与地磁接地物理系统。' : language === 'ko' ? '대기 전위 안테나 및 지자기 접지 시스템 설치.' : language === 'ja' ? '大気アンテナおよび地磁気接地システムの設置。' : 'Installation of atmospheric antennas and geomagnetic grounding systems.',
+          language === 'vi' ? 'Kích thích sức sống tế bào thực vật mà không dùng hóa chất.' : language === 'zh' ? '无需化学试剂，自然激活植物细胞活力与代谢速率。' : language === 'ko' ? '합성 화학물질 없이 식물 세포 활력 및 대사 촉진.' : language === 'ja' ? '化学薬品を使用しない植物細胞活性および代謝の促進。' : 'Stimulation of plant cellular vitality and metabolic rates without synthetic chemicals.',
+          language === 'vi' ? 'Tăng cường sức đề kháng tự nhiên với sâu bệnh và thời tiết khắc nghiệt.' : language === 'zh' ? '天然增强植物对病虫害及极端天气的系统性抵抗力。' : language === 'ko' ? '병충해 및 이상 기후에 대한 자연 면역력 강화.' : language === 'ja' ? '病害虫や极端気象に対する自然抵抗力の強化。' : 'Natural reinforcement of systemic resistance to pests and extreme weather.',
+          language === 'vi' ? 'Giảm nhu cầu tưới nước và phân bón mà vẫn duy trì sản lượng cao.' : language === 'zh' ? '在减少灌溉与肥料投入的同时，维持峰值产出。' : language === 'ko' ? '관수 및 비료 사용량을 줄이면서 최고의 수확량 유지.' : language === 'ja' ? '灌漑および肥料の必要量を削減しながら高水準の収量を維持。' : 'Reduction in irrigation and fertilizer requirements while maintaining peak output.'
         ]
       },
       image: '/images/electroculture.png',
@@ -161,17 +161,17 @@ export const Services: React.FC = () => {
         t('services.qaBullet3'),
       ],
       details: {
-        specTitle: t('language') === 'vi' ? 'Quy Trình Đảm Bảo Chất Lượng & Chứng Nhận' : t('language') === 'zh' ? '质量保证体系与出口认证通道' : 'Quality Assurance & Certifications Pathway',
+        specTitle: language === 'vi' ? 'Quy Trình Đảm Bảo Chất Lượng & Chứng Nhận' : language === 'zh' ? '质量保证体系与出口认证通道' : language === 'ko' ? '품질 보증 및 인증 프로세스' : language === 'ja' ? '品質保証・認証プロセス' : 'Quality Assurance & Certifications Pathway',
         specs: [
-          t('language') === 'vi' ? 'Đánh giá sẵn sàng trước kiểm toán cho GlobalG.A.P. và EU Organic.' : t('language') === 'zh' ? '提供 GlobalG.A.P. 与欧盟有机认证的预审评估。' : 'Pre-audit readiness assessments for GlobalG.A.P., EU Organic, and USDA Organic.',
-          t('language') === 'vi' ? 'Kỹ sư nông học tại chỗ quản lý vệ sinh cây trồng và an toàn nguồn nước.' : t('language') === 'zh' ? '驻地农艺师严格监管作物卫生、水质安全与土壤健康。' : 'On-the-ground agronomists managing crop hygiene, water safety, and soil health compliance.',
-          t('language') === 'vi' ? 'Mã truy xuất nguồn gốc lô hàng tích hợp hệ thống QR code.' : t('language') === 'zh' ? '全流程批次追溯码，无缝集成 QR 码追踪系统。' : 'End-to-end batch traceability codes integrated with QR tracking systems.',
-          t('language') === 'vi' ? 'Báo cáo kiểm định trước khi xuất hàng (SGS/Bureau Veritas) cho mỗi container.' : t('language') === 'zh' ? '为每个出口集装箱提供装船前检验报告 (SGS/BV 协调)。' : 'Pre-shipment inspection reports (SGS/Bureau Veritas coordination) for every export container.'
+          language === 'vi' ? 'Đánh giá sẵn sàng trước kiểm toán cho GlobalG.A.P. và EU Organic.' : language === 'zh' ? '提供 GlobalG.A.P. 与欧盟有机认证的预审评估。' : language === 'ko' ? 'GlobalG.A.P., EU Organic, USDA Organic 사전 감사 평가.' : language === 'ja' ? 'GlobalG.A.P.、EU Organic、USDA Organicの事前監査評価。' : 'Pre-audit readiness assessments for GlobalG.A.P., EU Organic, and USDA Organic.',
+          language === 'vi' ? 'Kỹ sư nông học tại chỗ quản lý vệ sinh cây trồng và an toàn nguồn nước.' : language === 'zh' ? '驻地农艺师严格监管作物卫生、水质安全与土壤健康。' : language === 'ko' ? '현장 농학자의 작물 위생, 수질 및 토양 건강 수준 상시 관리.' : language === 'ja' ? '現地農学専門家による作物衛生、水質および土壌の健康管理。' : 'On-the-ground agronomists managing crop hygiene, water safety, and soil health compliance.',
+          language === 'vi' ? 'Mã truy xuất nguồn gốc lô hàng tích hợp hệ thống QR code.' : language === 'zh' ? '全流程批次追溯码，无缝集成 QR 码追踪系统。' : language === 'ko' ? 'QR 코드 추적 시스템과 연동된 엔드투엔드 생산 이력 관리.' : language === 'ja' ? 'QRコード追跡システムと連携した全工程トレーサビリティ。' : 'End-to-end batch traceability codes integrated with QR tracking systems.',
+          language === 'vi' ? 'Báo cáo kiểm định trước khi xuất hàng (SGS/Bureau Veritas) cho mỗi container.' : language === 'zh' ? '为每个出口集装箱提供装船前检验报告 (SGS/BV 协调)。' : language === 'ko' ? '모든 수출 컨테이너에 대한 선적 전 검사 보고서(SGS/Bureau Veritas).' : language === 'ja' ? '全輸出コンテナに対する出荷前検査レポート（SGS/Bureau Veritas連携）。' : 'Pre-shipment inspection reports (SGS/Bureau Veritas coordination) for every export container.'
         ]
       },
       image: '/images/export_quality.png',
       linkPath: '/contact',
-      linkText: t('language') === 'vi' ? 'Liên Hệ Ngay' : t('language') === 'zh' ? '立即联系我们' : 'Contact Us'
+      linkText: language === 'vi' ? 'Liên Hệ Ngay' : language === 'zh' ? '立即联系我们' : language === 'ko' ? '문의하기 →' : language === 'ja' ? 'お問い合わせ →' : 'CONTACT US →'
     },
     {
       id: 5,
@@ -185,17 +185,17 @@ export const Services: React.FC = () => {
         t('services.logisticsBullet3'),
       ],
       details: {
-        specTitle: t('language') === 'vi' ? 'Đóng Gói Xuất Khẩu & Logistics Chuỗi Lạnh' : t('language') === 'zh' ? '出口标准包装与全球冷链物流' : 'Global Packaging & Cold-Chain Logistics',
+        specTitle: language === 'vi' ? 'Đóng Gói Xuất Khẩu & Logistics Chuỗi Lạnh' : language === 'zh' ? '出口标准包装与全球冷链物流' : language === 'ko' ? '글로벌 패키징 & 콜드체인 물류' : language === 'ja' ? 'グローバル包装・コールドチェーン物流' : 'Global Packaging & Cold-Chain Logistics',
         specs: [
-          t('language') === 'vi' ? 'Túi nhôm nhiều lớp bảo vệ chống ẩm chuyên dụng cho bột nông sản (10kg-25kg).' : t('language') === 'zh' ? '高规格多层铝箔风琴袋 (10kg-25kg)，专为大宗农产粉体防潮设计。' : 'Advanced multi-layer aluminum gusseted bags (10kg-25kg) designed for moisture barrier protection of bulk powders.',
-          t('language') === 'vi' ? 'Quản lý chuỗi lạnh kiểm soát nhiệt độ từ cảng TP.HCM đến các cảng toàn cầu.' : t('language') === 'zh' ? '鲜果出口全程温控冷链管理（从胡志明港至全球各大目的港）。' : 'Temperature-controlled cold-chain management for fresh produce exports (HCMC port to global ports).',
-          t('language') === 'vi' ? 'Thực hiện đầy đủ chứng thư xuất khẩu: Kiểm dịch thực vật, C/O (Form A/D/EUR.1), Thông quan.' : t('language') === 'zh' ? '全套出口通关单证办理：植物检疫证书、原产地证 (Form A/D/EUR.1) 及海关申报。' : 'Export documentation execution: Phytosanitary certificates, Certificates of Origin (Form A/D/EUR.1), Customs Clearances.',
-          t('language') === 'vi' ? 'Điều phối vận tải biển LCL/FCL với các hãng tàu hàng đầu.' : t('language') === 'zh' ? '对接一线船公司，专业协调 LCL 拼箱与 FCL 整柜海运。' : 'LCL/FCL ocean freight coordination with tier-1 shipping lines.'
+          language === 'vi' ? 'Túi nhôm nhiều lớp bảo vệ chống ẩm chuyên dụng cho bột nông sản (10kg-25kg).' : language === 'zh' ? '高规格多层铝箔风琴袋 (10kg-25kg)，专为大宗农产粉体防潮设计。' : language === 'ko' ? '농산물 분말 방습을 위한 고급 다층 알루미늄 백 (10kg-25kg).' : language === 'ja' ? '農産物パウダーの防湿用高機能多層アルミ袋（10kg-25kg）。' : 'Advanced multi-layer aluminum gusseted bags (10kg-25kg) designed for moisture barrier protection of bulk powders.',
+          language === 'vi' ? 'Quản lý chuỗi lạnh kiểm soát nhiệt độ từ cảng TP.HCM đến các cảng toàn cầu.' : language === 'zh' ? '鲜果出口全程温控冷链管理（从胡志明港至全球各大目的港）。' : language === 'ko' ? '호치민 항구에서 글로벌 주요 항구까지 온도 제어 콜드체인 운영.' : language === 'ja' ? 'ホーチミン港から世界各港までの温度管理コールドチェーン。' : 'Temperature-controlled cold-chain management for fresh produce exports (HCMC port to global ports).',
+          language === 'vi' ? 'Thực hiện đầy đủ chứng thư xuất khẩu: Kiểm dịch thực vật, C/O (Form A/D/EUR.1), Thông quan.' : language === 'zh' ? '全套出口通关单证办理：植物检疫证书、原产地证 (Form A/D/EUR.1) 及海关申报。' : language === 'ko' ? '식물검역증명서, 원산지증명서(Form A/D/EUR.1), 통관 서류 완비.' : language === 'ja' ? '植物検疫証明書、原産地証明書（Form A/D/EUR.1）、通关書類の完備。' : 'Export documentation execution: Phytosanitary certificates, Certificates of Origin (Form A/D/EUR.1), Customs Clearances.',
+          language === 'vi' ? 'Điều phối vận tải biển LCL/FCL với các hãng tàu hàng đầu.' : language === 'zh' ? '对接一线船公司，专业协调 LCL 拼箱与 FCL 整柜海运。' : language === 'ko' ? '주요 해운사와의 협력을 통한 LCL/FCL 해상 운송 조율.' : language === 'ja' ? '大手海運会社との連携によるLCL/FCL海上輸送の手配。' : 'LCL/FCL ocean freight coordination with tier-1 shipping lines.'
         ]
       },
       image: '/images/global_logistics.png',
       linkPath: '/contact',
-      linkText: t('language') === 'vi' ? 'Liên Hệ Ngay' : t('language') === 'zh' ? '立即联系我们' : 'Contact Us'
+      linkText: language === 'vi' ? 'Liên Hệ Ngay' : language === 'zh' ? '立即联系我们' : language === 'ko' ? '문의하기 →' : language === 'ja' ? 'お問い合わせ →' : 'CONTACT US →'
     }
   ];
 
