@@ -241,13 +241,25 @@ export const CropsPlantBasedPage: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-16">
           <div className="text-center max-w-3xl mx-auto flex flex-col gap-4">
             <span className="text-xs font-bold uppercase tracking-widest text-forest">
-              {language === 'vi' ? 'HỆ SINH THÁI 5 ĐỊNH DẠNG SẢN PHẨM' : language === 'zh' ? '5大核心产品规格生态' : '5 CORE PRODUCT FORMATS'}
+              {language === 'vi'
+                ? 'HỆ SINH THÁI 5 ĐỊNH DẠNG SẢN PHẨM'
+                : language === 'zh'
+                ? '5大核心产品规格生态'
+                : language === 'ko'
+                ? '5가지 핵심 제품 포맷'
+                : language === 'ja'
+                ? '5つのコア製品フォーマット'
+                : '5 CORE PRODUCT FORMATS'}
             </span>
             <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-carbon">
               {language === 'vi'
                 ? 'Đáp Ứng Mọi Nhu Cầu Cung Ứng Nông Sản B2B'
                 : language === 'zh'
                 ? '满足全球 B2B 农产品采购全方位需求'
+                : language === 'ko'
+                ? '글로벌 B2B 농산물 조달의 모든 니즈 충족'
+                : language === 'ja'
+                ? 'あらゆる国際B2B調達ニーズに対応'
                 : 'Meeting Every International B2B Sourcing Need'}
             </h2>
             <p className="text-base text-carbon/75 font-light leading-relaxed">
@@ -255,6 +267,10 @@ export const CropsPlantBasedPage: React.FC = () => {
                 ? 'Từ nông sản tươi nguyên bản đến các định dạng chế biến sâu giá trị gia tăng, VAC cung cấp giải pháp toàn diện cho nhà nhập khẩu, chuỗi bán lẻ và nhà máy sản xuất công nghiệp.'
                 : language === 'zh'
                 ? '从原产地新鲜农产品到高附加值深加工规格，VAC 为进口商、零售连锁及食品工业化工厂提供全链条采购解决方案。'
+                : language === 'ko'
+                ? '신선한 원물부터 고부가가치 가공 제품까지, VAC는 수입업체, 유통업체, 식품 제조업체를 위한 원스톱 조달 솔루션을 제공합니다.'
+                : language === 'ja'
+                ? '青果から高付加価値の深加工品まで、VACは輸入業者、小売業者、食品メーカー向けにエンドツーエンドの調達ソリューションを提供します。'
                 : 'From fresh produce to value-added processed formats, VAC provides end-to-end sourcing solutions for importers, retailers, and food manufacturers.'}
             </p>
           </div>
@@ -266,6 +282,8 @@ export const CropsPlantBasedPage: React.FC = () => {
                 num: '01',
                 titleVi: 'Trái Cây & Rau Củ Tươi',
                 titleZh: '新鲜水果与蔬菜',
+                titleKo: '신선 과일 및 채소',
+                titleJa: '新鮮な果物＆野菜',
                 titleEn: 'Fresh Fruits & Vegetables',
                 link: '/products/fresh-fruits-vegetables',
                 img: '/images/products/categories/cat_fresh.png',
@@ -273,20 +291,26 @@ export const CropsPlantBasedPage: React.FC = () => {
                 count: 22,
                 descVi: 'Nông sản tươi đạt chuẩn VietGAP/GlobalG.A.P, xử lý VHT & chuỗi lạnh liên tục',
                 descZh: '符合 VietGAP/GlobalG.A.P 认证，VHT蒸汽热处理与全程冷链保障',
+                descKo: 'VietGAP/GlobalG.A.P 신선 농산물, VHT 증기열 처리 및 콜드체인',
+                descJa: 'VietGAP/GlobalG.A.P規格の生鮮農産物、VHT熱蒸気処理＆コールドチェーン',
                 descEn: 'VietGAP/GlobalG.A.P fresh produce, VHT hot water treatment & continuous cold chain'
               },
               {
                 id: 'powders',
                 num: '02',
                 titleVi: 'Bột Trái Cây & Rau Củ',
-                titleEn: 'Fruit & Veg Powders',
                 titleZh: '果蔬纯粉系列',
+                titleKo: '과채 순수 분말',
+                titleJa: '果菜パウダー',
+                titleEn: 'Fruit & Veg Powders',
                 link: '/products/fruit-vegetable-powders',
                 img: '/images/products/powders/powders_fruit.png',
                 icon: Layers,
                 count: 16,
                 descVi: 'Bột sấy thăng hoa & chiết xuất hòa tan 100% độ mịn 80-100 mesh cho F&B',
                 descZh: '冻干粉与100%速溶萃取粉，细度 80-100 mesh，专供食品饮料工业',
+                descKo: '동결건조 분말 & 100% 수용성 추출물, F&B용 80-100 mesh',
+                descJa: 'フリーズドライパウダー＆100%水溶性エキス、F&B向け80-100メッシュ',
                 descEn: 'Freeze-dried powders & 100% soluble extracts, 80-100 mesh fineness for F&B'
               },
               {
@@ -294,6 +318,8 @@ export const CropsPlantBasedPage: React.FC = () => {
                 num: '03',
                 titleVi: 'Puree, Nước Ép & Đậm Đặc',
                 titleZh: '果浆、浓缩汁与原汁',
+                titleKo: '과일 퓨레, 원액 및 농축액',
+                titleJa: 'フルーツピューレ・濃縮液・果汁',
                 titleEn: 'Fruit Purees, Juices & Concentrates',
                 link: '/products/fruit-purees',
                 img: '/images/products/categories/cat_purees.png',
@@ -301,6 +327,8 @@ export const CropsPlantBasedPage: React.FC = () => {
                 count: 16,
                 descVi: 'Puree xay nhuyễn vô trùng Aseptic & nước ép đậm đặc Brix chuẩn hóa',
                 descZh: '无菌袋装果浆 (Aseptic Puree) 与标准 Brix 糖度浓缩汁',
+                descKo: '무균 bag-in-box 퓨레 및 표준 Brix 糖度 농축 과즙',
+                descJa: 'アセプティック無菌ピューレ＆標準Brix濃縮果汁',
                 descEn: 'Aseptic purees & standardized Brix concentrated juices'
               },
               {
@@ -308,6 +336,8 @@ export const CropsPlantBasedPage: React.FC = () => {
                 num: '04',
                 titleVi: 'Sấy Thăng Hoa',
                 titleZh: '冻干水果产品',
+                titleKo: '동결건조 과일',
+                titleJa: 'フリーズドライフルーツ',
                 titleEn: 'Freeze-Dried Fruits',
                 link: '/products/freeze-dried-fruits',
                 img: '/images/products/categories/cat_freeze_dried.png',
@@ -315,6 +345,8 @@ export const CropsPlantBasedPage: React.FC = () => {
                 count: 6,
                 descVi: 'Bảo tồn 98% dinh dưỡng, giòn xốp tự nhiên, độ ẩm < 5% bảo quản nhiệt độ phòng',
                 descZh: '保留98%营养与原味，天然酥脆，水分 < 5%，常温长期保存',
+                descKo: '영양소 98% 보존, 자연스러운 바삭함, 수분 < 5%',
+                descJa: '栄養素を98%保持、天然のサクサク食感、水分率<5%',
                 descEn: 'Preserves 98% nutrients, natural crispy texture, moisture < 5%'
               },
               {
@@ -322,6 +354,8 @@ export const CropsPlantBasedPage: React.FC = () => {
                 num: '05',
                 titleVi: 'Nông Sản Cấp Đông IQF',
                 titleZh: 'IQF 速冻果蔬',
+                titleKo: 'IQF 급속 냉동 과채',
+                titleJa: 'IQF 急速冷凍果菜',
                 titleEn: 'IQF Fruits & Vegetables',
                 link: '/products/iqf-fruits-vegetables',
                 img: '/images/products/iqf/iqf_mango_dice.png',
@@ -329,6 +363,8 @@ export const CropsPlantBasedPage: React.FC = () => {
                 count: 6,
                 descVi: 'Cấp đông rời siêu tốc -35°C, tơi rời 100% định lượng tự động dễ dàng',
                 descZh: '-35°C 单体快速冻结，100% 颗粒独立，便于工业定量添加',
+                descKo: '-35°C 초고속 개별 급속 냉동, 자동 투입용 100% 분리 낱개',
+                descJa: '超高速-35℃個体急速冷凍、自動計量用100%パラパラ凍結',
                 descEn: 'Ultra-fast -35°C individual quick freezing, 100% free-flowing for auto dosing'
               }
             ].map((cat) => {
@@ -355,10 +391,10 @@ export const CropsPlantBasedPage: React.FC = () => {
                         <Icon size={18} />
                       </div>
                       <h3 className="font-serif text-base font-bold text-carbon group-hover:text-forest transition-colors leading-snug">
-                        {language === 'vi' ? cat.titleVi : language === 'zh' ? cat.titleZh : cat.titleEn}
+                        {language === 'vi' ? cat.titleVi : language === 'zh' ? cat.titleZh : language === 'ko' ? cat.titleKo : language === 'ja' ? cat.titleJa : cat.titleEn}
                       </h3>
                       <p className="text-xs text-carbon/70 font-light mt-2 leading-relaxed">
-                        {language === 'vi' ? cat.descVi : language === 'zh' ? cat.descZh : cat.descEn}
+                        {language === 'vi' ? cat.descVi : language === 'zh' ? cat.descZh : language === 'ko' ? cat.descKo : language === 'ja' ? cat.descJa : cat.descEn}
                       </p>
                     </div>
 
@@ -367,7 +403,7 @@ export const CropsPlantBasedPage: React.FC = () => {
                         to={cat.link}
                         className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-forest hover:text-forest-leaf transition-colors"
                       >
-                        <span>{language === 'vi' ? 'Xem Danh Mục Chi Tiết' : language === 'zh' ? '查看子类目详情' : 'Explore Sub-Category'}</span>
+                        <span>{language === 'vi' ? 'Xem Danh Mục Chi Tiết' : language === 'zh' ? '查看子类目详情' : language === 'ko' ? '세부 카테고리 보기' : language === 'ja' ? '詳細カテゴリーを見る' : 'Explore Sub-Category'}</span>
                         <ArrowRight size={14} />
                       </Link>
                     </div>
@@ -385,10 +421,10 @@ export const CropsPlantBasedPage: React.FC = () => {
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-10">
             <div>
               <span className="text-xs font-bold uppercase tracking-widest text-forest">
-                {language === 'vi' ? 'TOÀN BỘ SẢN PHẨM (66 SKUs)' : language === 'zh' ? '完整产品系列 (66 SKUs)' : 'COMPLETE PORTFOLIO (66 SKUs)'}
+                {language === 'vi' ? 'TOÀN BỘ SẢN PHẨM (66 SKUs)' : language === 'zh' ? '完整产品系列 (66 SKUs)' : language === 'ko' ? '전체 제품 포트폴리오 (66 SKUs)' : language === 'ja' ? '全製品ポートフォリオ (66 SKUs)' : 'COMPLETE PORTFOLIO (66 SKUs)'}
               </span>
               <h2 className="font-serif text-2xl md:text-3xl font-bold text-forest uppercase mt-1">
-                {language === 'vi' ? `Danh Mục Nông Sản & Thực Vật (${filteredProducts.length})` : language === 'zh' ? `农产品与植物原料目录 (${filteredProducts.length})` : `Plant-Based Product Catalogue (${filteredProducts.length})`}
+                {language === 'vi' ? `Danh Mục Nông Sản & Thực Vật (${filteredProducts.length})` : language === 'zh' ? `农产品与植物原料目录 (${filteredProducts.length})` : language === 'ko' ? `농산물 및 식물성 제품 카탈로그 (${filteredProducts.length})` : language === 'ja' ? `農産物＆植物性製品カタログ (${filteredProducts.length})` : `Plant-Based Product Catalogue (${filteredProducts.length})`}
               </h2>
 
             </div>
@@ -398,7 +434,7 @@ export const CropsPlantBasedPage: React.FC = () => {
               <Search size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-carbon/40" />
               <input
                 type="text"
-                placeholder={language === 'vi' ? 'Tìm sản phẩm...' : language === 'zh' ? '搜索产品...' : 'Search product...'}
+                placeholder={language === 'vi' ? 'Tìm sản phẩm...' : language === 'zh' ? '搜索产品...' : language === 'ko' ? '제품 검색...' : language === 'ja' ? '製品を検索...' : 'Search product...'}
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="w-full pl-9 pr-4 py-2.5 bg-white border border-gold-warm/30 rounded text-xs md:text-sm text-carbon focus:outline-none focus:border-gold-warm shadow-sm"
@@ -544,28 +580,28 @@ export const CropsPlantBasedPage: React.FC = () => {
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs bg-ivory p-4 rounded-xl border border-gold-warm/15">
                   <div>
-                    <span className="text-xs text-gold-warm font-bold uppercase block">{language === 'vi' ? 'Điều kiện lưu trữ:' : language === 'zh' ? '储存条件:' : 'Storage:'}</span>
+                    <span className="text-xs text-gold-warm font-bold uppercase block">{language === 'vi' ? 'Điều kiện lưu trữ:' : language === 'zh' ? '储存条件:' : language === 'ko' ? '보관 조건:' : language === 'ja' ? '保管条件：' : 'Storage:'}</span>
                     <span className="font-medium text-carbon">{selectedProduct.specifications.storage}</span>
                   </div>
                   <div className="sm:col-span-2">
-                    <span className="text-xs text-gold-warm font-bold uppercase block">{language === 'vi' ? 'Đóng gói tiêu chuẩn:' : language === 'zh' ? '标准包装:' : 'Packaging:'}</span>
+                    <span className="text-xs text-gold-warm font-bold uppercase block">{language === 'vi' ? 'Đóng gói tiêu chuẩn:' : language === 'zh' ? '标准包装:' : language === 'ko' ? '표준 포장:' : language === 'ja' ? '標準包装：' : 'Packaging:'}</span>
                     <span className="font-medium text-carbon">{selectedProduct.specifications.packaging}</span>
                   </div>
                 </div>
 
                 <div>
-                  <h4 className="font-bold text-forest mb-2 uppercase text-xs tracking-wider">{language === 'vi' ? 'Dạng cắt & Quy cách sẵn có:' : language === 'zh' ? '切割规格与形态:' : 'Available Formats & Cuts:'}</h4>
+                  <h4 className="font-bold text-forest mb-2 uppercase text-xs tracking-wider">{language === 'vi' ? 'Dạng cắt & Quy cách sẵn có:' : language === 'zh' ? '切割规格与形态:' : language === 'ko' ? '사용 가능한 절단 규격 및 포맷:' : language === 'ja' ? '対応可能なカット形状・フォーマット：' : 'Available Formats & Cuts:'}</h4>
                   <div className="flex flex-wrap gap-2">
                     {selectedProduct.formats.map((f, i) => (
                       <span key={i} className="bg-cream border border-gold-warm/30 text-carbon font-semibold text-xs px-3 py-1 rounded">
-                        {f}
+                        {translateFormat(f, language)}
                       </span>
                     ))}
                   </div>
                 </div>
 
                 <div>
-                  <h4 className="font-bold text-forest mb-2 uppercase text-xs tracking-wider">{language === 'vi' ? 'Ứng dụng thương mại:' : language === 'zh' ? '商业应用领域:' : 'Commercial Applications:'}</h4>
+                  <h4 className="font-bold text-forest mb-2 uppercase text-xs tracking-wider">{language === 'vi' ? 'Ứng dụng thương mại:' : language === 'zh' ? '商业应用领域:' : language === 'ko' ? '상업적 용도:' : language === 'ja' ? '商用用途：' : 'Commercial Applications:'}</h4>
                   <div className="flex flex-wrap gap-2">
                     {selectedProduct.applications.map((app, i) => (
                       <span key={i} className="bg-forest/10 text-forest font-medium text-xs px-2.5 py-1 rounded">
@@ -580,14 +616,14 @@ export const CropsPlantBasedPage: React.FC = () => {
                     onClick={() => setSelectedProduct(null)}
                     className="px-4 py-2 border border-carbon/20 rounded text-xs font-bold text-carbon hover:bg-carbon/5 cursor-pointer"
                   >
-                    {language === 'vi' ? 'Đóng' : language === 'zh' ? '关闭' : 'Close'}
+                    {language === 'vi' ? 'Đóng' : language === 'zh' ? '关闭' : language === 'ko' ? '닫기' : language === 'ja' ? '閉じる' : 'Close'}
                   </button>
                   <a
                     href="#inquiry"
                     onClick={() => setSelectedProduct(null)}
                     className="px-6 py-2 bg-gold-warm hover:bg-gold-champagne text-brown-soil font-bold text-xs uppercase tracking-wider rounded shadow transition-all cursor-pointer"
                   >
-                    {language === 'vi' ? 'Gửi Yêu Cầu Báo Giá' : language === 'zh' ? '提交询价单' : 'Request Quote'}
+                    {language === 'vi' ? 'Gửi Yêu Cầu Báo Giá' : language === 'zh' ? '提交询价单' : language === 'ko' ? '견적 요청' : language === 'ja' ? '見積もり依頼' : 'Request Quote'}
                   </a>
                 </div>
               </div>
