@@ -8,6 +8,7 @@ import { AdminLogin } from './pages/Login';
 import { LeadDetailPage, LeadsPage } from './pages/Leads';
 import { PageEditor, PagesIndex } from './pages/PageEditors';
 import { DocumentsPage, MediaPage, SecurityPage, SeoPage, SettingsPage, UsersPage } from './pages/ManagementPages';
+import { ProductsPage } from './pages/ProductsPage';
 import { AdminLanguageProvider } from './adminI18n';
 
 export function AdminRoutes() {
@@ -23,6 +24,7 @@ export function AdminRoutes() {
               <Route path="ai-agent" element={<AIAgentPage />} />
               <Route path="pages" element={<PagesIndex />} />
               <Route path="pages/:slug" element={<PageEditor />} />
+              <Route path="products" element={<ProductsPage />} />
               <Route path="leads" element={<LeadsPage />} />
               <Route path="leads/:id" element={<LeadDetailPage />} />
               <Route path="media" element={<MediaPage />} />

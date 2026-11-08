@@ -106,6 +106,25 @@ export function AdminLogin() {
           <Button type="submit" className="w-full">
             {isSubmitting ? 'Signing in...' : 'Login'}
           </Button>
+
+          {mode === 'demo' && (
+            <Button
+              type="button"
+              variant="utility"
+              className="w-full"
+              onClick={async () => {
+                setIsSubmitting(true);
+                await login('owner@vietagri.co', 'demo');
+                navigate(redirectTo, { replace: true });
+              }}
+            >
+              {language === 'vi' ? 'Truy Cập Nhanh Bản Demo (1-Click)' : 'Quick Demo Access (1-Click)'}
+            </Button>
+          )}
+
+          <Link to="/" className="mt-2 block text-center text-xs font-semibold text-[#104D2E] hover:underline">
+            ← {language === 'vi' ? 'Quay lại Website chính' : 'Back to Main Website'}
+          </Link>
         </form>
       </div>
     </div>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from '../i18n';
-import { Mail, MapPin, Phone } from 'lucide-react';
+import { Mail, MapPin, Phone, Lock } from 'lucide-react';
 import vacLogo from '../assets/vac-logo-7.png';
 
 export const Footer: React.FC = () => {
@@ -162,10 +162,13 @@ export const Footer: React.FC = () => {
 
       <div className="max-w-7xl mx-auto px-4 md:px-8 pt-8 border-t border-gold-warm/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-cream/50">
         <p>{t('common.copyright')}</p>
-        <div className="flex flex-wrap justify-center gap-6">
+        <div className="flex flex-wrap justify-center items-center gap-6">
           <Link to="/contact" className="hover:text-gold-warm transition-colors">{t('footer.privacyPolicy')}</Link>
           <Link to="/contact" className="hover:text-gold-warm transition-colors">{t('footer.termsOfService')}</Link>
           <Link to="/about" className="hover:text-gold-warm transition-colors">{t('footer.esgDisclosures')}</Link>
+          <Link to="/admin" className="hover:text-gold-champagne text-gold-warm/80 transition-colors flex items-center gap-1.5 font-medium">
+            <Lock size={12} /> {language === 'vi' ? 'Quản Trị' : 'Admin'}
+          </Link>
         </div>
       </div>
     </footer>

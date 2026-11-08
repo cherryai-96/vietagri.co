@@ -12,6 +12,8 @@ import {
   Image,
   Lock,
   Menu,
+  Package,
+  LogOut,
   Search,
   Settings,
   ShieldCheck,
@@ -22,6 +24,7 @@ import {
 import vacLogo from '../../assets/vac-logo-6.png';
 import type { SidebarItem } from '../types';
 import { useAdminLanguage } from '../adminI18n';
+import { useAdminAuth } from '../adminAuth';
 
 const sidebarItems: SidebarItem[] = [
   { label: 'Dashboard', href: '/admin/dashboard', icon: Gauge },
@@ -50,6 +53,11 @@ const sidebarItems: SidebarItem[] = [
       { label: 'Footer', href: '/admin/settings' },
       { label: 'Navigation Menu', href: '/admin/settings' },
     ],
+  },
+  {
+    label: 'Products & Catalogues',
+    href: '/admin/products',
+    icon: Package,
   },
   {
     label: 'Leads & Inquiries',
@@ -125,6 +133,7 @@ const sidebarItems: SidebarItem[] = [
 function SidebarContent({ onNavigate }: { onNavigate?: () => void }) {
   const { pathname } = useLocation();
   const { t } = useAdminLanguage();
+  const { logout } = useAdminAuth();
 
   return (
     <div className="flex h-full flex-col bg-[#0B120C] text-white">
@@ -173,9 +182,25 @@ function SidebarContent({ onNavigate }: { onNavigate?: () => void }) {
         })}
       </nav>
 
-      <div className="border-t border-white/10 p-4">
-        <p className="text-xs leading-5 text-white/62">{t('Role')}: {t('Super Admin')}</p>
-        <p className="text-sm font-semibold">Vietnam Agriculture Center</p>
+      <div className="border-t border-white/10 p-4 space-y-2.5">
+        <Link
+          to="/"
+          className="flex items-center justify-center gap-2 rounded-md border border-white/20 bg-white/5 py-2 text-xs font-semibold text-white/80 hover:bg-white/15 hover:text-white transition"
+        >
+          <Globe size={14} />
+          {t('View Live Website')}
+        </Link>
+        <button
+          onClick={logout}
+          className="w-full flex items-center justify-center gap-2 rounded-md border border-red-500/30 bg-red-500/10 py-1.5 text-xs font-semibold text-red-300 hover:bg-red-500/20 hover:text-red-200 transition"
+        >
+          <LogOut size={13} />
+          {t('Logout')}
+        </button>
+        <div className="pt-1">
+          <p className="text-xs leading-5 text-white/62">{t('Role')}: {t('Super Admin')}</p>
+          <p className="text-sm font-semibold">Vietnam Agriculture Center</p>
+        </div>
       </div>
     </div>
   );
@@ -185,6 +210,7 @@ export function AdminLayout() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const location = useLocation();
   const { language, toggleLanguage, t } = useAdminLanguage();
+  const { logout } = useAdminAuth();
   const title = location.pathname
     .replace('/admin/', '')
     .replace('/admin', 'dashboard')
@@ -240,6 +266,13 @@ export function AdminLayout() {
               <Globe size={16} />
               {language === 'en' ? 'VI' : 'EN'}
             </button>
+            <Link
+              to="/"
+              className="hidden lg:inline-flex items-center gap-1.5 rounded-md border border-[#E5E0D5] bg-white px-3 py-2 text-xs font-semibold text-[#104D2E] hover:border-[#D8AA6D] transition"
+            >
+              <Globe size={14} />
+              {t('View Website')}
+            </Link>
             <div className="hidden items-center gap-3 rounded-md border border-[#E5E0D5] bg-[#F8F2E6] px-3 py-2 sm:flex">
               <div className="grid h-8 w-8 place-items-center rounded-full bg-[#104D2E] text-xs font-bold text-white">VA</div>
               <div>
@@ -247,6 +280,14 @@ export function AdminLayout() {
                 <p className="text-[11px] text-[#6B7280]">{t('Super Admin')}</p>
               </div>
             </div>
+            <button
+              onClick={logout}
+              title={t('Logout')}
+              className="rounded-md border border-[#E5E0D5] p-2 text-red-600 hover:bg-red-50 transition"
+              aria-label="Logout"
+            >
+              <LogOut size={16} />
+            </button>
           </div>
         </header>
 
