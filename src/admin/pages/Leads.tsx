@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react';
 import { Link, Navigate, useParams } from 'react-router-dom';
-import { Download, Mail, MessageCircle, Save, Trash2 } from 'lucide-react';
+import { Download, FileSpreadsheet, Mail, MessageCircle, Save, Table, Trash2 } from 'lucide-react';
 import type { LeadStatus } from '../types';
 import { useAdminUsersData, useLeadsData } from '../data/useAdminData';
 import {
@@ -17,12 +17,100 @@ import {
   cardClass,
 } from '../components/ui';
 import { updateLead } from '../../lib/dataSync';
+import { downloadExcelCsv, copyForGoogleSheets } from '../utils/exportUtils';
 
 const leadStatuses: LeadStatus[] = ['New', 'Contacted', 'Qualified', 'Proposal Sent', 'In Negotiation', 'Won', 'Lost', 'Spam'];
 
 export function LeadsPage() {
   const { leads, loading } = useLeadsData();
-  const { users } = useAdminUsersData();
+  const [statusFilter, setStatusFilter] = useState('All statuses');
+  const [toastMessage, setToastMessage] = useState('');
+
+  const filteredLeads = useMemo(() => {
+    if (statusFilter === 'All statuses') return leads;
+    return leads.filter((item) => item.status === statusFilter);
+  }, [leads, statusFilter]);
+
+  const handleExportExcel = () => {
+    if (filteredLeads.length === 0) {
+      setToastMessage('Không có dữ liệu yêu cầu để xuất file.');
+      return;
+    }
+    const headers = [
+      'Ngày nhận',
+      'Họ và tên',
+      'Công ty',
+      'Email',
+      'Số điện thoại / WhatsApp',
+      'Quốc gia / Thị trường',
+      'Lĩnh vực / Sản phẩm quan tâm',
+      'Nội dung yêu cầu / Báo giá',
+      'Nguồn trang website',
+      'Trạng thái',
+      'Người phụ trách',
+      'Cập nhật cuối',
+      'Ghi chú nội bộ',
+    ];
+    const rows = filteredLeads.map((item) => [
+      item.date,
+      item.name,
+      item.company,
+      item.email,
+      item.phone,
+      item.country,
+      item.area,
+      item.message,
+      item.sourcePage,
+      item.status,
+      item.assignedTo,
+      item.lastUpdated,
+      (item.notes || []).join('; '),
+    ]);
+    const today = new Date().toISOString().slice(0, 10);
+    downloadExcelCsv(`VAC_Leads_Inquiries_${today}.csv`, headers, rows);
+    setToastMessage('Đã tải xuống file Excel (.csv UTF-8 chuẩn).');
+  };
+
+  const handleCopyGoogleSheets = async () => {
+    if (filteredLeads.length === 0) {
+      setToastMessage('Không có dữ liệu yêu cầu để sao chép.');
+      return;
+    }
+    const headers = [
+      'Ngày nhận',
+      'Họ và tên',
+      'Công ty',
+      'Email',
+      'Số điện thoại / WhatsApp',
+      'Quốc gia / Thị trường',
+      'Lĩnh vực / Sản phẩm quan tâm',
+      'Nội dung yêu cầu / Báo giá',
+      'Nguồn trang website',
+      'Trạng thái',
+      'Người phụ trách',
+      'Cập nhật cuối',
+      'Ghi chú nội bộ',
+    ];
+    const rows = filteredLeads.map((item) => [
+      item.date,
+      item.name,
+      item.company,
+      item.email,
+      item.phone,
+      item.country,
+      item.area,
+      item.message,
+      item.sourcePage,
+      item.status,
+      item.assignedTo,
+      item.lastUpdated,
+      (item.notes || []).join('; '),
+    ]);
+    const ok = await copyForGoogleSheets(headers, rows);
+    if (ok) {
+      setToastMessage('Đã sao chép dữ liệu! Hãy mở Google Sheets và nhấn Ctrl+V (hoặc Cmd+V) để dán.');
+    }
+  };
 
   if (loading) return <LoadingState />;
 
@@ -31,35 +119,45 @@ export function LeadsPage() {
       <PageHeader
         eyebrow="Sales pipeline"
         title="Leads & Inquiries"
-        description="Track international B2B inquiries from contact forms, sample requests, corporate profile downloads, and consultation requests."
+        description="Quản lý toàn bộ yêu cầu báo giá B2B, đăng ký đào tạo và thông tin liên hệ từ khách hàng quốc tế trên website."
         action={
-          <Button variant="utility">
-            <Download size={16} /> Export CSV
-          </Button>
+          <div className="flex flex-wrap items-center gap-2">
+            <Button variant="secondary" onClick={handleExportExcel}>
+              <FileSpreadsheet size={16} /> Xuất Excel (.csv)
+            </Button>
+            <Button variant="utility" onClick={handleCopyGoogleSheets}>
+              <Table size={16} /> Copy cho Google Sheets
+            </Button>
+          </div>
         }
       />
-      <div className="mb-4 grid gap-3 rounded-lg border border-[#E5E0D5] bg-white p-4 md:grid-cols-5">
-        <SelectField label="Date range" value="Last 30 days" options={['Last 7 days', 'Last 30 days', 'This quarter', 'All time']} />
-        <SelectField label="Status" value="All statuses" options={['All statuses', ...leadStatuses]} />
-        <SelectField label="Area of interest" value="All interests" options={['All interests', 'Wolffia', 'Sourcing', 'Contract Farming', 'Certification', 'Logistics']} />
-        <SelectField label="Country" value="All countries" options={['All countries', 'South Korea', 'Japan', 'Germany', 'United States', 'Singapore']} />
-        <SelectField label="Assigned user" value="All team members" options={['All team members', ...users.map((user) => user.name)]} />
+      <div className="mb-4 grid gap-3 rounded-lg border border-[#E5E0D5] bg-white p-4 md:grid-cols-3">
+        <SelectField
+          label="Lọc theo trạng thái"
+          value={statusFilter}
+          options={['All statuses', ...leadStatuses]}
+          onChange={setStatusFilter}
+        />
+        <div className="flex items-center text-xs text-[#6B7280] pt-6">
+          <span>Tổng số yêu cầu: <strong className="text-[#0B120C] font-semibold">{filteredLeads.length}</strong></span>
+        </div>
       </div>
       <DataTable
-        data={leads}
+        data={filteredLeads}
         columns={[
           { key: 'date', label: 'Date' },
           {
             key: 'name',
             label: 'Name',
             render: (row) => (
-              <Link className="font-semibold text-[#104D2E]" to={`/admin/leads/${row.id}`}>
+              <Link className="font-semibold text-[#104D2E] hover:underline" to={`/admin/leads/${row.id}`}>
                 {row.name}
               </Link>
             ),
           },
           { key: 'company', label: 'Company' },
           { key: 'email', label: 'Email' },
+          { key: 'phone', label: 'Phone / WhatsApp' },
           { key: 'country', label: 'Country' },
           { key: 'area', label: 'Area of Interest' },
           { key: 'sourcePage', label: 'Source Page' },
@@ -68,6 +166,9 @@ export function LeadsPage() {
           { key: 'lastUpdated', label: 'Last Updated' },
         ]}
       />
+      {toastMessage && (
+        <ToastNotification message={toastMessage} onClose={() => setToastMessage('')} />
+      )}
     </div>
   );
 }
@@ -109,6 +210,28 @@ function LeadDetailEditor({ lead }: { lead: NonNullable<ReturnType<typeof useLea
     setNewNote('');
     setToast(true);
   }
+
+  const handleExportLead = () => {
+    const headers = ['Trường thông tin', 'Dữ liệu'];
+    const rows = [
+      ['Mã Lead', lead.id],
+      ['Ngày nhận', lead.date],
+      ['Họ và tên', lead.name],
+      ['Công ty', lead.company],
+      ['Email', lead.email],
+      ['Số điện thoại / WhatsApp', lead.phone],
+      ['Quốc gia / Thị trường', lead.country],
+      ['Lĩnh vực / Sản phẩm quan tâm', lead.area],
+      ['Nguồn trang gửi', lead.sourcePage],
+      ['Nội dung yêu cầu / Báo giá', lead.message],
+      ['Trạng thái hiện tại', status],
+      ['Người phụ trách', assignedTo],
+      ['Ngày cập nhật', lead.lastUpdated],
+      ['Ghi chú nội bộ', notes.join('; ')],
+    ];
+    downloadExcelCsv(`VAC_Lead_${(lead.company || 'Inquiry').replace(/[^\w]/g, '_')}_${lead.date}.csv`, headers, rows);
+    setToast(true);
+  };
 
   return (
     <div>
@@ -180,8 +303,8 @@ function LeadDetailEditor({ lead }: { lead: NonNullable<ReturnType<typeof useLea
               <Button onClick={handleSave}>
                 <Save size={16} /> Save Changes
               </Button>
-              <Button variant="secondary">
-                <Download size={16} /> Export Lead
+              <Button variant="secondary" onClick={handleExportLead}>
+                <Download size={16} /> Xuất Excel Lead
               </Button>
               <Button variant="danger" onClick={() => setConfirmOpen(true)}>
                 <Trash2 size={16} /> Delete Lead

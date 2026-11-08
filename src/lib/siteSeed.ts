@@ -4,14 +4,15 @@ import type { TranslationResources } from '../i18n';
 
 export interface ContactLeadInput {
   fullName: string;
-  jobTitle: string;
+  jobTitle?: string;
   companyName: string;
   email: string;
-  phone: string;
-  destination: string;
-  interests: string[];
-  department: string;
-  projectDetails: string;
+  phone?: string;
+  destination?: string;
+  interests?: string[];
+  department?: string;
+  projectDetails?: string;
+  sourcePage?: string;
 }
 
 function stripHtml(value: string) {
@@ -292,21 +293,25 @@ export function buildSiteSettingsRow(settings: SiteSettings) {
 
 export function buildLeadInsertPayload(input: ContactLeadInput): Omit<Lead, 'id'> {
   const today = new Date().toISOString().slice(0, 10);
+  const interestList =
+    input.interests && input.interests.length > 0
+      ? input.interests.filter(Boolean).join(', ')
+      : (input.department || 'Báo giá nông sản');
 
   return {
     date: today,
-    name: input.fullName.trim(),
-    company: input.companyName.trim(),
+    name: input.fullName?.trim() || input.companyName?.trim() || 'Khách hàng B2B',
+    company: input.companyName?.trim() || 'Doanh nghiệp nhập khẩu',
     email: input.email.trim(),
-    phone: input.phone.trim(),
-    country: input.destination.trim() || 'Unknown',
-    area: input.interests.length > 0 ? input.interests.join(', ') : input.department,
-    message: input.projectDetails.trim(),
-    sourcePage: 'Contact Us',
+    phone: (input.phone || '').trim(),
+    country: (input.destination || '').trim() || 'Quốc tế',
+    area: interestList,
+    message: (input.projectDetails || '').trim(),
+    sourcePage: input.sourcePage?.trim() || 'Trang liên hệ',
     status: 'New',
     assignedTo: 'Sales Manager',
     lastUpdated: today,
-    notes: input.jobTitle ? [`Job title: ${input.jobTitle}`] : [],
+    notes: input.jobTitle ? [`Chức vụ: ${input.jobTitle}`] : [],
   };
 }
 

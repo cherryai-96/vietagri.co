@@ -9,9 +9,11 @@ import {
   Sparkles,
   ExternalLink,
   X,
-  CheckCircle2
+  CheckCircle2,
+  FileSpreadsheet,
+  Table,
 } from 'lucide-react';
-import { PageHeader, Button, cardClass, inputClass } from '../components/ui';
+import { PageHeader, Button, cardClass, inputClass, ToastNotification } from '../components/ui';
 import { useAdminLanguage } from '../adminI18n';
 import {
   PRODUCTS_LIST,
@@ -20,6 +22,7 @@ import {
   type ProductItem,
   type CatalogueInfo
 } from '../../data/products';
+import { downloadExcelCsv, copyForGoogleSheets } from '../utils/exportUtils';
 
 export function ProductsPage() {
   const { language } = useAdminLanguage();
@@ -27,6 +30,7 @@ export function ProductsPage() {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [inspectProduct, setInspectProduct] = useState<ProductItem | null>(null);
+  const [toastMessage, setToastMessage] = useState('');
 
   const categories = useMemo(() => {
     return Object.entries(CATEGORIES_DATA).map(([id, info]) => ({
@@ -64,6 +68,79 @@ export function ProductsPage() {
     });
   }, [selectedCategory, searchQuery]);
 
+  const handleExportProductsExcel = () => {
+    const headers = [
+      'Mã ID',
+      'Tên tiếng Anh (Name EN)',
+      'Tên tiếng Việt (Name VI)',
+      'Tên khoa học (Scientific Name)',
+      'Danh mục (Category)',
+      'Phân nhóm (Subcategory)',
+      'Dạng chế biến (Formats)',
+      'Quy cách đóng gói (Packaging)',
+      'Bảo quản (Storage)',
+      'Hạn sử dụng (Shelf life)',
+      'Xuất xứ / Cảng (Origin)',
+      'Ứng dụng (Applications)',
+      'Mùa vụ (Seasonality)',
+    ];
+    const rows = filteredProducts.map((p) => [
+      p.id,
+      p.nameEn,
+      p.nameVi,
+      p.scientificName || '',
+      p.category,
+      p.subCategory || '',
+      (p.formats || []).join(', '),
+      p.specifications.packaging || '',
+      p.specifications.storage || '',
+      p.specifications.shelfLife || '',
+      p.specifications.origin || 'Vietnam',
+      (p.applications || []).join(', '),
+      p.seasonality || 'Quanh năm / Year-round',
+    ]);
+    const today = new Date().toISOString().slice(0, 10);
+    downloadExcelCsv(`VAC_Export_Products_${today}.csv`, headers, rows);
+    setToastMessage('Đã tải xuống file Excel (.csv UTF-8) danh mục sản phẩm.');
+  };
+
+  const handleCopyProductsSheets = async () => {
+    const headers = [
+      'Mã ID',
+      'Tên tiếng Anh',
+      'Tên tiếng Việt',
+      'Tên khoa học',
+      'Danh mục',
+      'Phân nhóm',
+      'Dạng chế biến',
+      'Quy cách đóng gói',
+      'Bảo quản',
+      'Hạn sử dụng',
+      'Xuất xứ / Cảng',
+      'Ứng dụng',
+      'Mùa vụ',
+    ];
+    const rows = filteredProducts.map((p) => [
+      p.id,
+      p.nameEn,
+      p.nameVi,
+      p.scientificName || '',
+      p.category,
+      p.subCategory || '',
+      (p.formats || []).join(', '),
+      p.specifications.packaging || '',
+      p.specifications.storage || '',
+      p.specifications.shelfLife || '',
+      p.specifications.origin || 'Vietnam',
+      (p.applications || []).join(', '),
+      p.seasonality || 'Quanh năm / Year-round',
+    ]);
+    const ok = await copyForGoogleSheets(headers, rows);
+    if (ok) {
+      setToastMessage('Đã sao chép danh mục sản phẩm! Mở Google Sheets và bấm Ctrl+V để dán.');
+    }
+  };
+
   return (
     <div className="space-y-6">
       <PageHeader
@@ -75,7 +152,7 @@ export function ProductsPage() {
             : 'Track 178 export-grade agricultural products, inputs, and 13 digital technical catalogues.'
         }
         action={
-          <div className="flex gap-2">
+          <div className="flex flex-wrap gap-2">
             <Button
               variant={activeTab === 'products' ? 'primary' : 'secondary'}
               onClick={() => setActiveTab('products')}
@@ -89,6 +166,14 @@ export function ProductsPage() {
             >
               <FileText size={16} />
               {language === 'vi' ? 'Catalogue (13)' : 'Catalogues (13)'}
+            </Button>
+            <Button variant="secondary" onClick={handleExportProductsExcel}>
+              <FileSpreadsheet size={16} />
+              {language === 'vi' ? 'Xuất Excel' : 'Export Excel'}
+            </Button>
+            <Button variant="utility" onClick={handleCopyProductsSheets}>
+              <Table size={16} />
+              {language === 'vi' ? 'Copy Sheets' : 'Copy Sheets'}
             </Button>
           </div>
         }
@@ -424,6 +509,9 @@ export function ProductsPage() {
             </div>
           </div>
         </div>
+      )}
+      {toastMessage && (
+        <ToastNotification message={toastMessage} onClose={() => setToastMessage('')} />
       )}
     </div>
   );

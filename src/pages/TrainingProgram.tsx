@@ -43,9 +43,10 @@ export const TrainingProgram: React.FC = () => {
       email: trainingForm.email,
       phone: trainingForm.phone,
       destination: 'Vietnam Training Program',
-      interests: ['Training Program', modalMode === 'apply' ? 'Direct Application' : 'Information Request'],
+      interests: ['Chương trình đào tạo', modalMode === 'apply' ? 'Đăng ký trực tiếp' : 'Yêu cầu tư vấn'],
       department: 'training',
-      projectDetails: trainingForm.message || `Applicant for Vietnam Agri Traders Training Program (${modalMode})`,
+      projectDetails: trainingForm.message || `Đăng ký chương trình đào tạo nông nghiệp xuất khẩu (${modalMode === 'apply' ? 'Trực tiếp' : 'Tư vấn'})`,
+      sourcePage: 'Chương trình đào tạo (Training Program)',
     });
     setIsSubmitting(false);
     setSubmitSuccess(true);

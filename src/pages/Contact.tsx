@@ -84,7 +84,10 @@ export const Contact: React.FC = () => {
     setSubmitStatus('idle');
 
     try {
-      const { error } = await submitLead(formData);
+      const { error } = await submitLead({
+        ...formData,
+        sourcePage: 'Trang liên hệ (Contact Us)',
+      });
       if (error) throw error;
       setSubmitStatus('success');
       setFormData({

@@ -612,15 +612,16 @@ export const Home: React.FC = () => {
                   e.preventDefault();
                   setQuickSubmitting(true);
                   await submitLead({
-                    fullName: 'Quick Inquiry Buyer',
+                    fullName: quickInquiry.company ? `${quickInquiry.company} Buyer` : 'Khách hàng trang chủ',
                     jobTitle: 'Corporate Buyer',
                     companyName: quickInquiry.company,
                     email: quickInquiry.email,
                     phone: '',
-                    destination: '',
+                    destination: 'Quốc tế',
                     interests: [quickInquiry.area],
                     department: quickInquiry.area,
-                    projectDetails: `Quick inquiry for ${quickInquiry.area} from VAC Home page`,
+                    projectDetails: `Yêu cầu nhanh về ${quickInquiry.area} từ trang chủ VAC`,
+                    sourcePage: 'Trang chủ (Quick Inquiry)',
                   });
                   setQuickSubmitting(false);
                   setQuickSuccess(true);

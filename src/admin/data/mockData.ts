@@ -32,7 +32,7 @@ export const documents: DocumentItem[] = [
     status: 'Published',
     requireEmail: true,
     trackDownloads: true,
-    downloads: 342,
+    downloads: 0,
     updatedAt: '2026-11-08',
   },
   {
@@ -44,7 +44,7 @@ export const documents: DocumentItem[] = [
     status: 'Published',
     requireEmail: false,
     trackDownloads: true,
-    downloads: 185,
+    downloads: 0,
     updatedAt: '2026-11-08',
   },
   {
@@ -56,7 +56,7 @@ export const documents: DocumentItem[] = [
     status: 'Published',
     requireEmail: true,
     trackDownloads: true,
-    downloads: 276,
+    downloads: 0,
     updatedAt: '2026-11-08',
   },
   {
@@ -68,7 +68,7 @@ export const documents: DocumentItem[] = [
     status: 'Published',
     requireEmail: false,
     trackDownloads: true,
-    downloads: 214,
+    downloads: 0,
     updatedAt: '2026-11-08',
   },
   {
@@ -80,7 +80,7 @@ export const documents: DocumentItem[] = [
     status: 'Published',
     requireEmail: true,
     trackDownloads: true,
-    downloads: 168,
+    downloads: 0,
     updatedAt: '2026-11-08',
   },
   {
@@ -92,7 +92,7 @@ export const documents: DocumentItem[] = [
     status: 'Published',
     requireEmail: false,
     trackDownloads: true,
-    downloads: 198,
+    downloads: 0,
     updatedAt: '2026-11-08',
   },
   {
@@ -104,7 +104,7 @@ export const documents: DocumentItem[] = [
     status: 'Published',
     requireEmail: true,
     trackDownloads: true,
-    downloads: 220,
+    downloads: 0,
     updatedAt: '2026-11-08',
   },
   {
@@ -116,7 +116,7 @@ export const documents: DocumentItem[] = [
     status: 'Published',
     requireEmail: true,
     trackDownloads: true,
-    downloads: 153,
+    downloads: 0,
     updatedAt: '2026-11-08',
   },
   {
@@ -128,7 +128,7 @@ export const documents: DocumentItem[] = [
     status: 'Published',
     requireEmail: false,
     trackDownloads: true,
-    downloads: 289,
+    downloads: 0,
     updatedAt: '2026-11-08',
   },
   {
@@ -140,7 +140,7 @@ export const documents: DocumentItem[] = [
     status: 'Published',
     requireEmail: true,
     trackDownloads: true,
-    downloads: 247,
+    downloads: 0,
     updatedAt: '2026-11-08',
   },
   {
@@ -152,7 +152,7 @@ export const documents: DocumentItem[] = [
     status: 'Published',
     requireEmail: false,
     trackDownloads: true,
-    downloads: 138,
+    downloads: 0,
     updatedAt: '2026-11-08',
   },
   {
@@ -164,7 +164,7 @@ export const documents: DocumentItem[] = [
     status: 'Published',
     requireEmail: true,
     trackDownloads: true,
-    downloads: 172,
+    downloads: 0,
     updatedAt: '2026-11-08',
   },
   {
@@ -176,7 +176,7 @@ export const documents: DocumentItem[] = [
     status: 'Published',
     requireEmail: false,
     trackDownloads: true,
-    downloads: 119,
+    downloads: 0,
     updatedAt: '2026-11-08',
   },
   {
@@ -188,7 +188,7 @@ export const documents: DocumentItem[] = [
     status: 'Published',
     requireEmail: false,
     trackDownloads: true,
-    downloads: 145,
+    downloads: 0,
     updatedAt: '2026-11-08',
   },
   {
@@ -200,7 +200,7 @@ export const documents: DocumentItem[] = [
     status: 'Published',
     requireEmail: true,
     trackDownloads: true,
-    downloads: 412,
+    downloads: 0,
     updatedAt: '2026-11-08',
   },
 ];

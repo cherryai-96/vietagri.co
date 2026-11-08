@@ -41,11 +41,19 @@ export const ProductInquiryForm: React.FC<ProductInquiryFormProps> = ({
 
     try {
       const interests = [
-        formData.category || initialCategory || 'Product Inquiry',
+        formData.category || initialCategory || 'Báo giá sản phẩm',
         ...(initialProduct ? [initialProduct] : []),
-        ...(formData.format ? [`Format: ${formData.format}`] : []),
-        ...(formData.volume ? [`Volume: ${formData.volume}`] : []),
+        ...(formData.format ? [`Quy cách: ${formData.format}`] : []),
+        ...(formData.volume ? [`Sản lượng: ${formData.volume}`] : []),
       ];
+
+      const fullMessage = [
+        formData.message,
+        formData.format ? `Quy cách đóng gói: ${formData.format}` : '',
+        formData.volume ? `Sản lượng dự kiến: ${formData.volume}` : '',
+      ]
+        .filter(Boolean)
+        .join('\n');
 
       const { error } = await submitLead({
         fullName: formData.fullName,
@@ -56,7 +64,10 @@ export const ProductInquiryForm: React.FC<ProductInquiryFormProps> = ({
         destination: formData.country || '',
         interests,
         department: 'sourcing',
-        projectDetails: formData.message || `Request quote and spec sheet for ${initialProduct || formData.category || 'Agricultural products'}`,
+        projectDetails: fullMessage || `Yêu cầu báo giá và tài liệu kỹ thuật cho ${initialProduct || formData.category || 'Nông sản'}`,
+        sourcePage: initialProduct
+          ? `Báo giá sản phẩm: ${initialProduct}`
+          : `Báo giá danh mục: ${formData.category || initialCategory || 'Sản phẩm'}`,
       });
 
       if (error) {
