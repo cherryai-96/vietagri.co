@@ -17,14 +17,14 @@ export const Catalogues: React.FC = () => {
           name="description"
           content={
             language === 'vi'
-              ? 'Tải miễn phí 5 Catalogue Nông sản Việt Nam 2026 chính thức: Trái cây tươi, Bột nông sản, Trái cây sấy thăng hoa, Nông sản cấp đông IQF và Tổng tập Harvest Edition.'
+              ? 'Tải miễn phí trọn bộ Catalogue Nông sản và Thủy hải sản Việt Nam 2026 chính thức: Trái cây tươi, Bột nông sản, Sấy thăng hoa, Cấp đông IQF, Puree, Thủy hải sản và Tổng tập Master Edition.'
               : language === 'zh'
-              ? '免费下载2026年越南农业中心5大官方产品目录：鲜果农产品、农产品果粉、冻干水果、IQF速冻农产品及 Harvest Edition 综合目录。'
+              ? '免费下载2026年越南农业中心官方产品目录全集：鲜果农产品、果蔬粉、冻干水果、IQF速冻农产品、水产海鲜及 Master Edition 综合目录。'
               : language === 'ko'
-              ? '2026년 베트남 농업 센터 공식 5대 카탈로그 무료 다운로드: 신선 농산물, 과채 분말, 동결건조 과일, IQF 급속 냉동 및 Harvest Edition 종합 카탈로그.'
+              ? '2026년 베트남 농업 센터 공식 농수산물 제품 카탈로그 전편 무료 다운로드: 신선 농산물, 과채 분말, 동결건조 과일, IQF 급속 냉동, 수산물 및 Master Edition 종합 카탈로그.'
               : language === 'ja'
-              ? '2026年ベトナム農業センター公式5大製品カタログ無料ダウンロード：新鮮農産物、果菜パウダー、FDフルーツ、IQF急速冷凍およびHarvest Edition総合カタログ。'
-              : 'Download official 2026 Vietnamese Agricultural Product Catalogues: Fresh Produce, Fruit Powders, Freeze-Dried Fruits, IQF Frozen Produce, and Complete Harvest Edition.'
+              ? '2026年ベトナム農業センター公式農水産物製品カタログ全編無料ダウンロード：新鮮農産物、果菜パウダー、FDフルーツ、IQF急速冷凍、水産物およびMaster Edition総合カタログ。'
+              : 'Download official 2026 Vietnamese Agricultural & Seafood Product Catalogues: Fresh Produce, Fruit Powders, Freeze-Dried Fruits, IQF Frozen Produce, Seafood, and Complete Master Edition.'
           }
         />
       </Helmet>

@@ -23,7 +23,7 @@ import {
   Snowflake
 } from 'lucide-react';
 
-const getProductName = (p: any, lang: string) => {
+const getProductName = (p: ProductItem, lang: string) => {
   if (lang === 'vi') return p.nameVi;
   if (lang === 'zh') return p.nameZh || p.nameEn;
   if (lang === 'ko') return p.nameKo || p.nameEn;
@@ -41,6 +41,7 @@ export const CropsPlantBasedPage: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedSubCategory, setSelectedSubCategory] = useState<string>('all');
   const [selectedProduct, setSelectedProduct] = useState<ProductItem | null>(null);
+  const [inquiryProduct, setInquiryProduct] = useState<string>('');
 
   // Sub-category tab mapping
   const subCategoryTabs = [
@@ -535,7 +536,7 @@ export const CropsPlantBasedPage: React.FC = () => {
       {/* === 5. BUYER INQUIRY FORM SECTION === */}
       <section id="inquiry" className="py-20 md:py-28 bg-carbon text-cream border-t border-gold-warm/15">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <ProductInquiryForm />
+          <ProductInquiryForm initialCategory="crops-plant-based" initialProduct={inquiryProduct} />
         </div>
       </section>
 
@@ -620,7 +621,12 @@ export const CropsPlantBasedPage: React.FC = () => {
                   </button>
                   <a
                     href="#inquiry"
-                    onClick={() => setSelectedProduct(null)}
+                    onClick={() => {
+                      if (selectedProduct) {
+                        setInquiryProduct(getProductName(selectedProduct, language));
+                      }
+                      setSelectedProduct(null);
+                    }}
                     className="px-6 py-2 bg-gold-warm hover:bg-gold-champagne text-brown-soil font-bold text-xs uppercase tracking-wider rounded shadow transition-all cursor-pointer"
                   >
                     {language === 'vi' ? 'Gửi Yêu Cầu Báo Giá' : language === 'zh' ? '提交询价单' : language === 'ko' ? '견적 요청' : language === 'ja' ? '見積もり依頼' : 'Request Quote'}

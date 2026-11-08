@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useParams, Link } from 'react-router-dom';
 import { useTranslation } from '../../i18n';
-import { getCategoryInfo, getProductsByCategory, type ProductItem } from '../../data/products';
+import { getCategoryInfo, getProductsByCategory, type CategoryInfo, type ProductItem } from '../../data/products';
 import { translateSubCategory, translateFormat, translateShelfLife } from '../../utils/i18nHelpers';
 import { ProductInquiryForm } from '../../components/products/ProductInquiryForm';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -18,7 +18,7 @@ import {
   Info
 } from 'lucide-react';
 
-const getCatTitle = (c: any, lang: string) => {
+const getCatTitle = (c: CategoryInfo, lang: string) => {
   if (lang === 'vi') return c.titleVi;
   if (lang === 'zh') return c.titleZh || c.titleEn;
   if (lang === 'ko') return c.titleKo || c.titleEn;
@@ -26,7 +26,7 @@ const getCatTitle = (c: any, lang: string) => {
   return c.titleEn;
 };
 
-const getCatSubtitle = (c: any, lang: string) => {
+const getCatSubtitle = (c: CategoryInfo, lang: string) => {
   if (lang === 'vi') return c.subtitleVi;
   if (lang === 'zh') return c.subtitleZh || c.subtitleEn;
   if (lang === 'ko') return c.subtitleKo || c.subtitleEn;
@@ -34,7 +34,7 @@ const getCatSubtitle = (c: any, lang: string) => {
   return c.subtitleEn;
 };
 
-const getCatDesc = (c: any, lang: string) => {
+const getCatDesc = (c: CategoryInfo, lang: string) => {
   if (lang === 'vi') return c.descriptionVi;
   if (lang === 'zh') return c.descriptionZh || c.descriptionEn;
   if (lang === 'ko') return c.descriptionKo || c.descriptionEn;
@@ -42,7 +42,7 @@ const getCatDesc = (c: any, lang: string) => {
   return c.descriptionEn;
 };
 
-const getCatHighlights = (c: any, lang: string): string[] => {
+const getCatHighlights = (c: CategoryInfo, lang: string): string[] => {
   if (lang === 'vi') return c.highlightsVi;
   if (lang === 'zh') return c.highlightsZh || c.highlightsEn;
   if (lang === 'ko') return c.highlightsKo || c.highlightsEn;
@@ -50,7 +50,7 @@ const getCatHighlights = (c: any, lang: string): string[] => {
   return c.highlightsEn;
 };
 
-const getCatCuts = (c: any, lang: string): string[] => {
+const getCatCuts = (c: CategoryInfo, lang: string): string[] => {
   if (lang === 'vi') return c.availableCutsVi;
   if (lang === 'zh') return c.availableCutsZh || c.availableCutsEn;
   if (lang === 'ko') return c.availableCutsKo || c.availableCutsEn;
@@ -58,7 +58,7 @@ const getCatCuts = (c: any, lang: string): string[] => {
   return c.availableCutsEn;
 };
 
-const getCatPkg = (c: any, lang: string) => {
+const getCatPkg = (c: CategoryInfo, lang: string) => {
   if (lang === 'vi') return c.defaultPackagingVi;
   if (lang === 'zh') return c.defaultPackagingZh || c.defaultPackagingEn;
   if (lang === 'ko') return c.defaultPackagingKo || c.defaultPackagingEn;
@@ -66,7 +66,7 @@ const getCatPkg = (c: any, lang: string) => {
   return c.defaultPackagingEn;
 };
 
-const getCatStorage = (c: any, lang: string) => {
+const getCatStorage = (c: CategoryInfo, lang: string) => {
   if (lang === 'vi') return c.storageVi;
   if (lang === 'zh') return c.storageZh || c.storageEn;
   if (lang === 'ko') return c.storageKo || c.storageEn;
@@ -74,7 +74,7 @@ const getCatStorage = (c: any, lang: string) => {
   return c.storageEn;
 };
 
-const getProductName = (p: any, lang: string) => {
+const getProductName = (p: ProductItem, lang: string) => {
   if (lang === 'vi') return p.nameVi;
   if (lang === 'zh') return p.nameZh || p.nameEn;
   if (lang === 'ko') return p.nameKo || p.nameEn;
@@ -97,6 +97,7 @@ export const CategoryPage: React.FC<CategoryPageProps> = ({ categoryKey: propCat
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedSubCategory, setSelectedSubCategory] = useState<string>('all');
   const [selectedProduct, setSelectedProduct] = useState<ProductItem | null>(null);
+  const [inquiryProduct, setInquiryProduct] = useState<string>('');
 
   // Subcategories for filtering (excluding any value-added tabs)
   const subCategories = Array.from(new Set(products.map(p => p.subCategory).filter((s): s is string => Boolean(s) && typeof s === 'string' && !s.toLowerCase().includes('value-added'))));
@@ -400,7 +401,7 @@ export const CategoryPage: React.FC<CategoryPageProps> = ({ categoryKey: propCat
             </p>
           </div>
           <div className="bg-white rounded-2xl p-6 md:p-8 shadow-xl border border-gold-warm/20">
-            <ProductInquiryForm />
+            <ProductInquiryForm initialCategory={catInfo.id} initialProduct={inquiryProduct} />
           </div>
         </div>
       </section>
@@ -485,7 +486,12 @@ export const CategoryPage: React.FC<CategoryPageProps> = ({ categoryKey: propCat
                   </button>
                   <a
                     href="#inquiry"
-                    onClick={() => setSelectedProduct(null)}
+                    onClick={() => {
+                      if (selectedProduct) {
+                        setInquiryProduct(getProductName(selectedProduct, language));
+                      }
+                      setSelectedProduct(null);
+                    }}
                     className="px-6 py-2 bg-gold-warm hover:bg-gold-champagne text-brown-soil font-bold text-xs uppercase tracking-wider rounded shadow transition-all"
                   >
                     {language === 'vi' ? 'Gửi Yêu Cầu Báo Giá' : language === 'zh' ? '发送报价申请' : 'Request Quote'}

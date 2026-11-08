@@ -159,14 +159,14 @@ export function buildEditablePagesFromResources(resources: TranslationResources)
 
 function updateText(resources: TranslationResources, language: 'en' | 'vi', path: string, newValue: string) {
   const keys = path.split('.');
-  let current: any = resources[language];
+  let current: Record<string, unknown> = resources[language] as unknown as Record<string, unknown>;
 
   for (let i = 0; i < keys.length - 1; i++) {
     const key = keys[i];
     if (!current[key] || typeof current[key] !== 'object') {
       current[key] = {};
     }
-    current = current[key];
+    current = current[key] as Record<string, unknown>;
   }
   
   if (current) {
@@ -195,7 +195,7 @@ export function updateResourcesFromEditablePage(resources: TranslationResources,
         if (Array.isArray(images)) {
           updated[lang].home.introImages = images;
         }
-      } catch (e) {
+      } catch {
         // ignore invalid JSON for images
       }
     } else if (section.id === 'about-hero') {

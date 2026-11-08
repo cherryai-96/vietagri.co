@@ -18,23 +18,20 @@ import { SEO } from '../components/SEO';
 
 export const Services: React.FC = () => {
   const { t, language } = useTranslation();
-  const [activeTab, setActiveTab] = useState<number>(0);
-  const [expandedTabs, setExpandedTabs] = useState<number[]>([0]);
   const location = useLocation();
+  
+  const tabParam = new URLSearchParams(location.search).get('tab');
+  const targetTab = tabParam !== null && !isNaN(parseInt(tabParam, 10)) ? parseInt(tabParam, 10) : 0;
 
-  React.useEffect(() => {
-    const params = new URLSearchParams(location.search);
-    const tabParam = params.get('tab');
-    if (tabParam !== null) {
-      const tabId = parseInt(tabParam, 10);
-      if (!isNaN(tabId)) {
-        setActiveTab(tabId);
-        setExpandedTabs(prev => prev.includes(tabId) ? prev : [...prev, tabId]);
-      }
-    } else {
-      window.scrollTo(0, 0);
-    }
-  }, [location.search]);
+  const [prevTargetTab, setPrevTargetTab] = useState(targetTab);
+  const [activeTab, setActiveTab] = useState(targetTab);
+  const [expandedTabs, setExpandedTabs] = useState<number[]>([targetTab]);
+
+  if (prevTargetTab !== targetTab) {
+    setPrevTargetTab(targetTab);
+    setActiveTab(targetTab);
+    setExpandedTabs(prev => prev.includes(targetTab) ? prev : [...prev, targetTab]);
+  }
 
   const isTabActive = (id: number) => {
     if (typeof window !== 'undefined' && window.innerWidth < 1024) {

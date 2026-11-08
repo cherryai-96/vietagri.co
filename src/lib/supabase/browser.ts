@@ -12,7 +12,7 @@ export function getSupabaseBrowserClient() {
   if (!browserClient) {
     browserClient = createClient(import.meta.env.VITE_SUPABASE_URL, import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY, {
       auth: {
-        persistSession: false,
+        persistSession: true,
       },
     });
   }

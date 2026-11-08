@@ -16,7 +16,7 @@ export const SEO: React.FC<SEOProps> = ({
   description,
   keywords = 'Vietnam Agriculture Center, VAC, agricultural export, Việt Wolffia, contract farming Vietnam, global sourcing Vietnam',
   url = 'https://vietagri.co',
-  image = 'https://vietagri.co/Logo/Vietgari/VAC%20logo4.png',
+  image = 'https://vietagri.co/Logo/Vietgari/VAC_logo_og.jpg',
   schema,
   preloadImage,
 }) => {
@@ -35,10 +35,17 @@ export const SEO: React.FC<SEOProps> = ({
 
       {/* Open Graph / Social Media Meta Tags */}
       <meta property="og:type" content="website" />
+      <meta property="og:site_name" content="Vietnam Agriculture Center" />
       <meta property="og:url" content={url} />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:image" content={image} />
+
+      {/* Twitter Card Meta Tags */}
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content={title} />
+      <meta name="twitter:description" content={description} />
+      <meta name="twitter:image" content={image} />
 
       {/* Canonical URL */}
       <link rel="canonical" href={url} />

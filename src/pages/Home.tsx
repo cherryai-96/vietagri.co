@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { SEO } from '../components/SEO';
 import { DualBuyerPathways } from '../components/DualBuyerPathways';
+import { submitLead } from '../lib/dataSync';
 import {
   Globe,
   TrendingUp,
@@ -24,14 +25,19 @@ export const Home: React.FC = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
 
   const [introSlide, setIntroSlide] = useState(0);
-  const introImages: { src: string; alt: string }[] = (t('home.introImages') as any) || [];
+  const introImages: { src: string; alt: string }[] = (t('home.introImages') as unknown as { src: string; alt: string }[]) || [];
+
+  const [quickInquiry, setQuickInquiry] = useState({ company: '', email: '', area: 'sourcing' });
+  const [quickSubmitting, setQuickSubmitting] = useState(false);
+  const [quickSuccess, setQuickSuccess] = useState(false);
 
   useEffect(() => {
+    if (!introImages.length) return;
     const timer = setInterval(() => {
       setIntroSlide((prev) => (prev + 1) % introImages.length);
     }, 5000);
     return () => clearInterval(timer);
-  }, []);
+  }, [introImages.length]);
 
   const scrollBy = (direction: 1 | -1) => {
     if (scrollRef.current) {
@@ -434,7 +440,7 @@ export const Home: React.FC = () => {
             
             {/* 01: Fresh Fruits & Vegetables */}
             <Link
-              to="/products/fresh"
+              to="/products/fresh-fruits-vegetables"
               className="group bg-carbon-light border border-white/10 hover:border-gold-warm/60 rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between shadow-lg hover:shadow-gold-warm/10"
             >
               <div>
@@ -467,7 +473,7 @@ export const Home: React.FC = () => {
 
             {/* 02: Fruit & Vegetable Powders */}
             <Link
-              to="/products/powders"
+              to="/products/fruit-vegetable-powders"
               className="group bg-carbon-light border border-white/10 hover:border-gold-warm/60 rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between shadow-lg hover:shadow-gold-warm/10"
             >
               <div>
@@ -500,7 +506,7 @@ export const Home: React.FC = () => {
 
             {/* 03: Freeze-Dried (FD) Fruits */}
             <Link
-              to="/products/freeze-dried"
+              to="/products/freeze-dried-fruits"
               className="group bg-carbon-light border border-white/10 hover:border-gold-warm/60 rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between shadow-lg hover:shadow-gold-warm/10"
             >
               <div>
@@ -533,7 +539,7 @@ export const Home: React.FC = () => {
 
             {/* 04: IQF Quick Frozen */}
             <Link
-              to="/products/iqf"
+              to="/products/iqf-fruits-vegetables"
               className="group bg-carbon-light border border-white/10 hover:border-gold-warm/60 rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between shadow-lg hover:shadow-gold-warm/10"
             >
               <div>
@@ -595,47 +601,78 @@ export const Home: React.FC = () => {
             <h3 className="font-serif font-bold text-xl text-gold-champagne">
               Quick Inquiry
             </h3>
-            <form
-              onSubmit={(e) => {
-                e.preventDefault();
-                alert(t('common.success'));
-              }}
-              className="flex flex-col gap-4 text-xs font-light text-cream/80"
-            >
-              <div className="flex flex-col gap-1.5">
-                <label className="font-semibold uppercase tracking-wider text-gold-warm">Company Name *</label>
-                <input
-                  type="text"
-                  required
-                  placeholder="e.g. AgriTrade Corp"
-                  className="bg-carbon/50 border border-gold-warm/25 rounded px-3 py-2 text-cream placeholder-cream/35 focus:outline-none focus:border-gold-warm/75"
-                />
+            {quickSuccess ? (
+              <div className="bg-forest/20 border border-forest-fresh/40 rounded-lg p-6 text-center flex flex-col items-center gap-3">
+                <CheckCircle className="text-forest-fresh" size={32} />
+                <p className="text-sm font-medium text-cream">{t('common.success')}</p>
               </div>
-              <div className="flex flex-col gap-1.5">
-                <label className="font-semibold uppercase tracking-wider text-gold-warm">Corporate Email *</label>
-                <input
-                  type="email"
-                  required
-                  placeholder="purchasing@agritrade.com"
-                  className="bg-carbon/50 border border-gold-warm/25 rounded px-3 py-2 text-cream placeholder-cream/35 focus:outline-none focus:border-gold-warm/75"
-                />
-              </div>
-              <div className="flex flex-col gap-1.5">
-                <label className="font-semibold uppercase tracking-wider text-gold-warm">Area of Interest</label>
-                <select className="bg-carbon/50 border border-gold-warm/25 rounded px-3 py-2 text-cream focus:outline-none focus:border-gold-warm/75">
-                  <option value="sourcing" className="bg-brown-soil">Global Sourcing Services</option>
-                  <option value="farming" className="bg-brown-soil">Contract Farming</option>
-                  <option value="wolffia" className="bg-brown-soil">Việt Wolffia Supply</option>
-                  <option value="logistics" className="bg-brown-soil">Export Logistics & QC</option>
-                </select>
-              </div>
-              <button
-                type="submit"
-                className="bg-gold-warm hover:bg-gold-champagne text-brown-soil py-3 rounded font-bold uppercase tracking-wider transition-colors cursor-pointer mt-2"
+            ) : (
+              <form
+                onSubmit={async (e) => {
+                  e.preventDefault();
+                  setQuickSubmitting(true);
+                  await submitLead({
+                    fullName: 'Quick Inquiry Buyer',
+                    jobTitle: 'Corporate Buyer',
+                    companyName: quickInquiry.company,
+                    email: quickInquiry.email,
+                    phone: '',
+                    destination: '',
+                    interests: [quickInquiry.area],
+                    department: quickInquiry.area,
+                    projectDetails: `Quick inquiry for ${quickInquiry.area} from VAC Home page`,
+                  });
+                  setQuickSubmitting(false);
+                  setQuickSuccess(true);
+                  setQuickInquiry({ company: '', email: '', area: 'sourcing' });
+                  setTimeout(() => setQuickSuccess(false), 6000);
+                }}
+                className="flex flex-col gap-4 text-xs font-light text-cream/80"
               >
-                {t('common.submitBtn')}
-              </button>
-            </form>
+                <div className="flex flex-col gap-1.5">
+                  <label className="font-semibold uppercase tracking-wider text-gold-warm">Company Name *</label>
+                  <input
+                    type="text"
+                    required
+                    value={quickInquiry.company}
+                    onChange={(e) => setQuickInquiry(prev => ({ ...prev, company: e.target.value }))}
+                    placeholder="e.g. AgriTrade Corp"
+                    className="bg-carbon/50 border border-gold-warm/25 rounded px-3 py-2 text-cream placeholder-cream/35 focus:outline-none focus:border-gold-warm/75"
+                  />
+                </div>
+                <div className="flex flex-col gap-1.5">
+                  <label className="font-semibold uppercase tracking-wider text-gold-warm">Corporate Email *</label>
+                  <input
+                    type="email"
+                    required
+                    value={quickInquiry.email}
+                    onChange={(e) => setQuickInquiry(prev => ({ ...prev, email: e.target.value }))}
+                    placeholder="purchasing@agritrade.com"
+                    className="bg-carbon/50 border border-gold-warm/25 rounded px-3 py-2 text-cream placeholder-cream/35 focus:outline-none focus:border-gold-warm/75"
+                  />
+                </div>
+                <div className="flex flex-col gap-1.5">
+                  <label className="font-semibold uppercase tracking-wider text-gold-warm">Area of Interest</label>
+                  <select
+                    value={quickInquiry.area}
+                    onChange={(e) => setQuickInquiry(prev => ({ ...prev, area: e.target.value }))}
+                    className="bg-carbon/50 border border-gold-warm/25 rounded px-3 py-2 text-cream focus:outline-none focus:border-gold-warm/75"
+                  >
+                    <option value="sourcing" className="bg-brown-soil">Global Sourcing Services</option>
+                    <option value="farming" className="bg-brown-soil">Contract Farming</option>
+                    <option value="wolffia" className="bg-brown-soil">Việt Wolffia Supply</option>
+                    <option value="logistics" className="bg-brown-soil">Export Logistics & QC</option>
+                  </select>
+                </div>
+                <button
+                  type="submit"
+                  disabled={quickSubmitting}
+                  className="bg-gold-warm hover:bg-gold-champagne text-brown-soil py-3 rounded font-bold uppercase tracking-wider transition-colors cursor-pointer mt-2 disabled:opacity-50"
+                >
+                  {quickSubmitting ? t('common.loading') : t('common.submitBtn')}
+                </button>
+              </form>
+            )}
           </div>
         </div>
       </section>

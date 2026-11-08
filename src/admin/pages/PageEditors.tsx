@@ -50,7 +50,8 @@ function SectionEditor({ section, onChange }: { section: PageSection; onChange: 
   );
 }
 
-function PageSpecificPanel(_props: { slug: PageSlug }) {
+function PageSpecificPanel({ slug }: { slug?: PageSlug }) {
+  if (!slug) return null;
   return null;
 }
 

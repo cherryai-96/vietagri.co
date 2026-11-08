@@ -28,13 +28,17 @@ export const Header: React.FC = () => {
   const [isLangDropdownOpen, setIsLangDropdownOpen] = useState(false);
   const langDropdownRef = useRef<HTMLDivElement>(null);
   const location = useLocation();
+  const prevPathRef = useRef(location.pathname);
 
   useEffect(() => {
-    setIsMobileMenuOpen(false);
-    setMobileServicesOpen(false);
-    setMobileProductsOpen(false);
-    setOpenMobileSubCategories({});
-    setIsLangDropdownOpen(false);
+    if (prevPathRef.current !== location.pathname) {
+      prevPathRef.current = location.pathname;
+      setIsMobileMenuOpen(false);
+      setMobileServicesOpen(false);
+      setMobileProductsOpen(false);
+      setOpenMobileSubCategories({});
+      setIsLangDropdownOpen(false);
+    }
   }, [location.pathname]);
 
   // Track scroll position to change background opacity

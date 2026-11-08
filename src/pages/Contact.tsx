@@ -210,7 +210,7 @@ export const Contact: React.FC = () => {
               <span className="text-xs uppercase tracking-widest text-carbon/60 font-semibold">{t('contact.followUs')}</span>
               <div className="flex items-center gap-4">
                 <a
-                  href="#"
+                  href="https://zalo.me/84858741968"
                   target="_blank"
                   rel="noreferrer"
                   className="p-3 bg-ivory hover:bg-gold-warm/15 rounded-full border border-gold-warm/20 text-forest hover:text-gold-antique transition-all duration-300 flex items-center justify-center shadow-sm"
@@ -219,7 +219,7 @@ export const Contact: React.FC = () => {
                   <span className="font-bold text-[12px] leading-none tracking-wide h-[18px] flex items-center">Zalo</span>
                 </a>
                 <a
-                  href="#"
+                  href="https://facebook.com/vietagri.co"
                   target="_blank"
                   rel="noreferrer"
                   className="p-3 bg-ivory hover:bg-gold-warm/15 rounded-full border border-gold-warm/20 text-forest hover:text-gold-antique transition-all duration-300 flex items-center justify-center shadow-sm"
@@ -230,7 +230,7 @@ export const Contact: React.FC = () => {
                   </svg>
                 </a>
                 <a
-                  href="#"
+                  href="https://wa.me/84858741968"
                   target="_blank"
                   rel="noreferrer"
                   className="p-3 bg-ivory hover:bg-gold-warm/15 rounded-full border border-gold-warm/20 text-forest hover:text-gold-antique transition-all duration-300 flex items-center justify-center shadow-sm"
@@ -241,7 +241,7 @@ export const Contact: React.FC = () => {
                   </svg>
                 </a>
                 <a
-                  href="#"
+                  href="https://t.me/vietagrico"
                   target="_blank"
                   rel="noreferrer"
                   className="p-3 bg-ivory hover:bg-gold-warm/15 rounded-full border border-gold-warm/20 text-forest hover:text-gold-antique transition-all duration-300 flex items-center justify-center shadow-sm"

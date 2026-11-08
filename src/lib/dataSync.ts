@@ -89,7 +89,7 @@ export async function saveEditablePage(page: EditablePage) {
       if (resourcesData) {
         const { defaultResources } = await import('../i18n');
         const { updateResourcesFromEditablePage, buildSiteResourceRows } = await import('./siteSeed');
-        let currentResources = JSON.parse(JSON.stringify(defaultResources));
+        const currentResources = JSON.parse(JSON.stringify(defaultResources));
         for (const row of resourcesData) {
           if (row.language === 'en' || row.language === 'vi' || row.language === 'zh') {
             currentResources[row.language] = row.content || {};
@@ -130,16 +130,26 @@ export async function saveEditablePage(page: EditablePage) {
 
 export async function loadLeads(): Promise<Lead[]> {
   const supabase = getSupabaseBrowserClient();
-  if (!supabase) return fallbackLeads;
+  let localLeads: Lead[] = [];
+  try {
+    if (typeof window !== 'undefined') {
+      const stored = window.localStorage.getItem('vac_stored_leads');
+      if (stored) localLeads = JSON.parse(stored);
+    }
+  } catch {
+    // Ignore
+  }
+
+  if (!supabase) return [...localLeads, ...fallbackLeads];
 
   const { data, error } = await supabase
     .from('leads')
     .select('id, date, name, company, email, phone, country, area, message, source_page, status, assigned_to, last_updated, notes')
     .order('date', { ascending: false });
 
-  if (error || !data?.length) return fallbackLeads;
+  if (error || !data?.length) return [...localLeads, ...fallbackLeads];
 
-  return data.map((row) => ({
+  const remoteLeads = data.map((row) => ({
     id: row.id,
     date: row.date,
     name: row.name,
@@ -155,6 +165,8 @@ export async function loadLeads(): Promise<Lead[]> {
     lastUpdated: row.last_updated,
     notes: Array.isArray(row.notes) ? row.notes : [],
   })) as Lead[];
+
+  return [...localLeads, ...remoteLeads];
 }
 
 export async function updateLead(id: string, input: Pick<Lead, 'status' | 'assignedTo' | 'notes'>) {
@@ -181,6 +193,35 @@ export async function submitLead(input: ContactLeadInput) {
   const supabase = getSupabaseBrowserClient();
   const payload = buildLeadInsertPayload(input);
 
+  // Safety net: Always persist lead to local storage backup so no inquiry is ever lost
+  try {
+    if (typeof window !== 'undefined') {
+      const stored = window.localStorage.getItem('vac_stored_leads');
+      const leadsList = stored ? JSON.parse(stored) : [];
+      leadsList.unshift({
+        id: `lead-local-${Date.now()}`,
+        name: payload.name,
+        company: payload.company,
+        email: payload.email,
+        phone: payload.phone,
+        country: payload.country,
+        area: payload.area,
+        date: payload.date,
+        sourcePage: payload.sourcePage,
+        status: payload.status,
+        assignedTo: payload.assignedTo,
+        lastUpdated: payload.lastUpdated,
+        notes: payload.notes,
+        unread: true,
+        priority: 'high',
+        history: [{ date: payload.date, note: 'Lead submitted via website form' }],
+      });
+      window.localStorage.setItem('vac_stored_leads', JSON.stringify(leadsList.slice(0, 100)));
+    }
+  } catch {
+    // Non-blocking local storage write
+  }
+
   if (!supabase) {
     return { data: payload, error: null };
   }
@@ -201,7 +242,7 @@ export async function submitLead(input: ContactLeadInput) {
     notes: payload.notes,
   }).select().single();
 
-  return { data, error };
+  return { data: data ?? payload, error };
 }
 
 export async function loadDocuments(): Promise<DocumentItem[]> {

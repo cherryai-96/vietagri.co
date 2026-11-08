@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useTranslation } from '../i18n';
 import { motion, AnimatePresence } from 'framer-motion';
 import { SEO } from '../components/SEO';
+import { submitLead } from '../lib/dataSync';
 import { 
   GraduationCap, 
   Globe2, 
@@ -24,18 +25,35 @@ export const TrainingProgram: React.FC = () => {
   const [modalMode, setModalMode] = useState<'apply' | 'info' | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
+  const [trainingForm, setTrainingForm] = useState({
+    fullName: '',
+    email: '',
+    phone: '',
+    background: '',
+    message: '',
+  });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    await submitLead({
+      fullName: trainingForm.fullName,
+      jobTitle: trainingForm.background || 'Training Applicant',
+      companyName: trainingForm.background || 'Individual Applicant',
+      email: trainingForm.email,
+      phone: trainingForm.phone,
+      destination: 'Vietnam Training Program',
+      interests: ['Training Program', modalMode === 'apply' ? 'Direct Application' : 'Information Request'],
+      department: 'training',
+      projectDetails: trainingForm.message || `Applicant for Vietnam Agri Traders Training Program (${modalMode})`,
+    });
+    setIsSubmitting(false);
+    setSubmitSuccess(true);
+    setTrainingForm({ fullName: '', email: '', phone: '', background: '', message: '' });
     setTimeout(() => {
-      setIsSubmitting(false);
-      setSubmitSuccess(true);
-      setTimeout(() => {
-        setSubmitSuccess(false);
-        setModalMode(null);
-      }, 3000);
-    }, 1200);
+      setSubmitSuccess(false);
+      setModalMode(null);
+    }, 3000);
   };
 
   const targetBuyerCategories = [
@@ -483,7 +501,7 @@ export const TrainingProgram: React.FC = () => {
                       </div>
                       <div className="flex flex-col gap-0.5">
                         <span className="text-xs md:text-sm text-cream/95 font-medium leading-snug group-hover/item:text-gold-champagne transition-colors">
-                          {t(`training.collabItem${itemNum}` as any)}
+                          {t(`training.collabItem${itemNum}`)}
                         </span>
                       </div>
                     </motion.div>
@@ -602,6 +620,8 @@ export const TrainingProgram: React.FC = () => {
                       <input
                         type="text"
                         required
+                        value={trainingForm.fullName}
+                        onChange={(e) => setTrainingForm(prev => ({ ...prev, fullName: e.target.value }))}
                         placeholder="Nguyen Van A"
                         className="bg-ivory border border-gold-warm/30 rounded px-4 py-2.5 text-xs md:text-sm text-carbon focus:outline-none focus:border-gold-warm"
                       />
@@ -615,6 +635,8 @@ export const TrainingProgram: React.FC = () => {
                         <input
                           type="email"
                           required
+                          value={trainingForm.email}
+                          onChange={(e) => setTrainingForm(prev => ({ ...prev, email: e.target.value }))}
                           placeholder="email@example.com"
                           className="bg-ivory border border-gold-warm/30 rounded px-4 py-2.5 text-xs md:text-sm text-carbon focus:outline-none focus:border-gold-warm"
                         />
@@ -626,6 +648,8 @@ export const TrainingProgram: React.FC = () => {
                         <input
                           type="tel"
                           required
+                          value={trainingForm.phone}
+                          onChange={(e) => setTrainingForm(prev => ({ ...prev, phone: e.target.value }))}
                           placeholder="+84 901 234 567"
                           className="bg-ivory border border-gold-warm/30 rounded px-4 py-2.5 text-xs md:text-sm text-carbon focus:outline-none focus:border-gold-warm"
                         />
@@ -638,6 +662,8 @@ export const TrainingProgram: React.FC = () => {
                       </label>
                       <input
                         type="text"
+                        value={trainingForm.background}
+                        onChange={(e) => setTrainingForm(prev => ({ ...prev, background: e.target.value }))}
                         placeholder="Export Executive / Farm Owner / Senior Consultant..."
                         className="bg-[#fffdf9] border border-gold-warm/30 rounded px-4 py-2.5 text-xs md:text-sm text-carbon focus:outline-none focus:border-gold-warm"
                       />
@@ -649,6 +675,8 @@ export const TrainingProgram: React.FC = () => {
                       </label>
                       <textarea
                         rows={3}
+                        value={trainingForm.message}
+                        onChange={(e) => setTrainingForm(prev => ({ ...prev, message: e.target.value }))}
                         placeholder={language === 'vi' ? 'Nêu ngắn gọn định hướng hoặc mong muốn hợp tác...' : language === 'zh' ? '简要说明您的合作意向或市场网络...' : language === 'ko' ? '협력 의향이나 시장 네트워크를 간략히 기술해 주세요...' : language === 'ja' ? 'コラボレーションの意向や市場ネットワークを簡潔にご記述ください...' : 'Briefly describe your interest or market network...'}
                         className="bg-[#fffdf9] border border-gold-warm/30 rounded px-4 py-2.5 text-xs md:text-sm text-carbon focus:outline-none focus:border-gold-warm"
                       />

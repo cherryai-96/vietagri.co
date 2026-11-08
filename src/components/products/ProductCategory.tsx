@@ -76,7 +76,7 @@ export const ProductCategory: React.FC<ProductCategoryProps> = ({
   useEffect(() => {
     if (displayImages.length <= 1) return;
     const timer = setInterval(() => {
-      nextSlide();
+      setCurrentSlide((prev) => (prev + 1) % displayImages.length);
     }, 4500);
     return () => clearInterval(timer);
   }, [displayImages.length]);

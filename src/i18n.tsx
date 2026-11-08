@@ -2720,9 +2720,32 @@ const LanguageContext = createContext<{
  t: () => '',
 });
 
+const getInitialLanguage = (): Language => {
+  if (typeof window === 'undefined') return 'en';
+  const saved = window.localStorage.getItem('vac_lang');
+  if (saved === 'en' || saved === 'vi' || saved === 'zh' || saved === 'ko' || saved === 'ja') {
+    return saved;
+  }
+  return 'en';
+};
+
 export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
- const [language, setLanguage] = useState<Language>('en');
- const [resources, setResources] = useState<TranslationResources>(defaultResources);
+  const [language, setLanguageState] = useState<Language>(getInitialLanguage);
+  const [resources, setResources] = useState<TranslationResources>(defaultResources);
+
+  const setLanguage = (lang: Language) => {
+    setLanguageState(lang);
+    if (typeof window !== 'undefined') {
+      window.localStorage.setItem('vac_lang', lang);
+      document.documentElement.lang = lang;
+    }
+  };
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      document.documentElement.lang = language;
+    }
+  }, [language]);
 
  useEffect(() => {
   let active = true;
