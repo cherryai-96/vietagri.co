@@ -1,7 +1,7 @@
 import { createClient } from '@supabase/supabase-js';
 import { loadEnv } from 'vite';
 import { defaultResources } from '../src/i18n';
-import { documents, mediaItems, seoSettings, users, leads } from '../src/admin/data/mockData';
+import { documents, mediaItems, seoSettings, users } from '../src/admin/data/mockData';
 import { buildEditablePagesFromResources, buildCmsPageRow, buildSeoSettingRow, buildSiteResourceRows } from '../src/lib/siteSeed';
 
 const env = { ...process.env, ...loadEnv('production', process.cwd(), '') };
@@ -52,23 +52,6 @@ async function main() {
     last_login: user.lastLogin,
     created_at: user.createdAt,
   }));
-  const leadRows = leads.map((lead) => ({
-    id: lead.id,
-    date: lead.date,
-    name: lead.name,
-    company: lead.company,
-    email: lead.email,
-    phone: lead.phone,
-    country: lead.country,
-    area: lead.area,
-    message: lead.message,
-    source_page: lead.sourcePage,
-    status: lead.status,
-    assigned_to: lead.assignedTo,
-    last_updated: lead.lastUpdated,
-    notes: lead.notes,
-  }));
-
   for (const [table, rows] of [
     ['site_resources', siteRows],
     ['cms_pages', cmsRows],
@@ -76,11 +59,12 @@ async function main() {
     ['media_assets', mediaRows],
     ['seo_settings', seoRows],
     ['admin_users', userRows],
-    ['leads', leadRows],
   ] as const) {
-    const { error } = await supabase.from(table).upsert(rows);
-    if (error) throw error;
-    console.log(`Synced ${rows.length} rows into ${table}`);
+    if (rows.length > 0) {
+      const { error } = await supabase.from(table).upsert(rows);
+      if (error) throw error;
+      console.log(`Synced ${rows.length} rows into ${table}`);
+    }
   }
 }
 

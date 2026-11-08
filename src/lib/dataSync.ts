@@ -226,7 +226,7 @@ export async function submitLead(input: ContactLeadInput) {
     return { data: payload, error: null };
   }
 
-  const { data, error } = await supabase.from('leads').insert({
+  const { error } = await supabase.from('leads').insert({
     date: payload.date,
     name: payload.name,
     company: payload.company,
@@ -240,9 +240,9 @@ export async function submitLead(input: ContactLeadInput) {
     assigned_to: payload.assignedTo,
     last_updated: payload.lastUpdated,
     notes: payload.notes,
-  }).select().single();
+  });
 
-  return { data: data ?? payload, error };
+  return { data: payload, error };
 }
 
 export async function loadDocuments(): Promise<DocumentItem[]> {

@@ -10,114 +10,17 @@ import type {
 } from '../types';
 
 export const dashboardMetrics: DashboardMetric[] = [
-  { label: 'Total Inquiries', value: '248', change: '+18 this month', tone: 'green' },
-  { label: 'New Leads', value: '32', change: '12 unread', tone: 'blue' },
-  { label: 'Consultation Requests', value: '17', change: '+6 from last month', tone: 'gold' },
-  { label: 'Wolffia Sample Requests', value: '21', change: '8 need follow-up', tone: 'green' },
-  { label: 'Corporate Profile Downloads', value: '143', change: '+24%', tone: 'gray' },
-  { label: 'Unread Messages', value: '9', change: 'Review today', tone: 'blue' },
-  { label: 'This Month Website Visits', value: '12.8k', change: '+14%', tone: 'green' },
-  { label: 'Conversion Rate', value: '4.7%', change: '+0.8%', tone: 'gold' },
+  { label: 'Total Inquiries', value: '0', change: 'Chờ yêu cầu mới', tone: 'green' },
+  { label: 'New Leads', value: '0', change: 'Chờ yêu cầu mới', tone: 'blue' },
+  { label: 'Consultation Requests', value: '0', change: 'Chờ yêu cầu mới', tone: 'gold' },
+  { label: 'Wolffia Sample Requests', value: '0', change: 'Chờ yêu cầu mới', tone: 'green' },
+  { label: 'Corporate Profile Downloads', value: '0', change: 'Chờ lượt tải', tone: 'gray' },
+  { label: 'Unread Messages', value: '0', change: 'Không có tin mới', tone: 'blue' },
+  { label: 'This Month Website Visits', value: '0', change: 'Đang theo dõi', tone: 'green' },
+  { label: 'Conversion Rate', value: '0.0%', change: 'Đang cập nhật', tone: 'gold' },
 ];
 
-export const leads: Lead[] = [
-  {
-    id: 'b1ce181b-817c-4e7c-94d4-539a072d8d01',
-    date: '2026-11-08',
-    name: 'Min-Jae Park',
-    company: 'Seoul Natural Foods',
-    email: 'mj.park@seoulnaturalfoods.kr',
-    phone: '+82 10 4822 1901',
-    country: 'South Korea',
-    area: 'Wolffia Globosa superfood specs & sample request',
-    message: 'We are developing a high-protein plant-based nutrition bar and require 1kg freeze-dried Wolffia sample, COA, and MOQ for 500kg monthly orders.',
-    sourcePage: 'Việt Wolffia',
-    status: 'New',
-    assignedTo: 'Sales Manager',
-    lastUpdated: '2026-11-08',
-    notes: ['High priority: Wolffia sample dispatch required. COA sent via email.'],
-  },
-  {
-    id: 'b1ce181b-817c-4e7c-94d4-539a072d8d02',
-    date: '2026-11-07',
-    name: 'Aya Nakamura',
-    company: 'Kansai Wellness Distribution',
-    email: 'aya@kansaiwellness.jp',
-    phone: '+81 80 3321 7701',
-    country: 'Japan',
-    area: 'Freeze-Dried Dragon Fruit & Lotus Seed Powder',
-    message: 'Looking for organic lotus seed powder and freeze-dried pink dragon fruit with export certification for Japanese retail chains.',
-    sourcePage: 'Core Services',
-    status: 'Contacted',
-    assignedTo: 'Commercial Director',
-    lastUpdated: '2026-11-08',
-    notes: ['Confirmed JAS certification pathway. Sent specification sheet.'],
-  },
-  {
-    id: 'b1ce181b-817c-4e7c-94d4-539a072d8d03',
-    date: '2026-11-06',
-    name: 'Elena Fischer',
-    company: 'EuroAgri Ingredients GmbH',
-    email: 'elena.fischer@euroagri.de',
-    phone: '+49 30 8201 4002',
-    country: 'Germany',
-    area: 'Passion Fruit Concentrate 65 Brix',
-    message: 'Requesting FCL quotation for frozen passion fruit puree with seeds and concentrate 65 Brix. Delivery CIF Hamburg.',
-    sourcePage: 'Products Overview',
-    status: 'Qualified',
-    assignedTo: 'Super Admin',
-    lastUpdated: '2026-11-07',
-    notes: ['Quote sent CIF Hamburg. Awaiting lab test verification.'],
-  },
-  {
-    id: 'b1ce181b-817c-4e7c-94d4-539a072d8d04',
-    date: '2026-11-05',
-    name: 'Tariq Al-Mansoor',
-    company: 'Al-Noor Halal Foods LLC',
-    email: 'tariq@alnoorhalal.ae',
-    phone: '+971 4 398 2211',
-    country: 'United Arab Emirates',
-    area: 'Halal Poultry & Pangasius Basa Fillets',
-    message: 'Seeking certified Halal whole chicken (1000g-1200g) and well-trimmed Basa fillets for supermarket distribution across UAE and Qatar.',
-    sourcePage: 'Poultry Products',
-    status: 'Proposal Sent',
-    assignedTo: 'Commercial Director',
-    lastUpdated: '2026-11-06',
-    notes: ['Halal certification and veterinary export permits provided.'],
-  },
-  {
-    id: 'b1ce181b-817c-4e7c-94d4-539a072d8d05',
-    date: '2026-11-04',
-    name: 'Daniel Tan',
-    company: 'Merlion Food Importers',
-    email: 'daniel.tan@merlionfood.sg',
-    phone: '+65 8123 4488',
-    country: 'Singapore',
-    area: 'Fresh Cavendish Banana Export',
-    message: 'Regular import schedule for fresh Cavendish bananas (Class A, 4-5-6 hands, vacuum pack). Requirement: 2 x 40ft reefer containers monthly.',
-    sourcePage: 'Fresh Cavendish Banana',
-    status: 'In Negotiation',
-    assignedTo: 'Sales Manager',
-    lastUpdated: '2026-11-05',
-    notes: ['Contract drafted. Finalizing reefer container schedule from Cat Lai.'],
-  },
-  {
-    id: 'b1ce181b-817c-4e7c-94d4-539a072d8d06',
-    date: '2026-11-02',
-    name: 'Jonathan Miller',
-    company: 'Pacific Harvest Organics',
-    email: 'jmiller@pacificharvest.com',
-    phone: '+1 415 552 0198',
-    country: 'United States',
-    area: 'Gac Fruit Puree & Hibiscus Extract',
-    message: 'We formulate functional botanical beverages and need frozen Gac puree and dried Hibiscus flower calyx for US FDA clearance.',
-    sourcePage: 'Contact Us',
-    status: 'Won',
-    assignedTo: 'Commercial Director',
-    lastUpdated: '2026-11-04',
-    notes: ['Sample order paid. Air shipment dispatched via DHL Express.'],
-  },
-];
+export const leads: Lead[] = [];
 
 export const documents: DocumentItem[] = [
   {
@@ -791,25 +694,11 @@ export const siteSettings: SiteSettings = {
 };
 
 export const activityItems = [
-  'New sample request for Wolffia Globosa from Seoul Natural Foods (South Korea)',
-  'Quotation sent for 2 x 40ft RF Cavendish Bananas to Merlion Food Importers (Singapore)',
-  'Halal Poultry & Basa Fillet specifications dispatched to Al-Noor Halal Foods (UAE)',
-  'FCL Passion Fruit Concentrate 65 Brix inquiry received from EuroAgri Ingredients (Germany)',
-  'All 13 official technical catalogues compressed and synced to production CDN',
+  'Hệ thống website và danh mục 178 sản phẩm đã sẵn sàng',
+  'Đã đồng bộ 13 tài liệu kỹ thuật & catalogue PDF lên hệ thống',
+  'Cổng tiếp nhận báo giá B2B xuất khẩu quốc tế đang hoạt động',
 ];
 
-export const countryLeadData = [
-  { label: 'South Korea', value: 26 },
-  { label: 'Japan', value: 24 },
-  { label: 'European Union', value: 20 },
-  { label: 'United States', value: 16 },
-  { label: 'Singapore & ASEAN', value: 14 },
-];
+export const countryLeadData: Array<{ label: string; value: number }> = [];
 
-export const interestLeadData = [
-  { label: 'Fresh Produce (Cavendish Banana)', value: 30 },
-  { label: 'Việt Wolffia Superfood', value: 25 },
-  { label: 'Pangasius & Seafood', value: 18 },
-  { label: 'Puree & Concentrate', value: 15 },
-  { label: 'Freeze Dried & Powders', value: 12 },
-];
+export const interestLeadData: Array<{ label: string; value: number }> = [];

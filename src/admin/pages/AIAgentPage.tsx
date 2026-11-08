@@ -42,7 +42,7 @@ const automationRules = [
 const approvalQueue = [
   {
     id: 'approval-001',
-    request: 'Draft reply to Seoul Natural Foods about Wolffia samples',
+    request: 'Draft reply to international buyer about product specifications',
     type: 'Lead response',
     risk: 'Needs review',
     created: 'Today, 09:20',

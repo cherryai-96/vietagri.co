@@ -7,7 +7,10 @@ import { LoadingState } from '../components/ui';
 
 function MiniBarChart({ data }: { data: Array<{ label: string; value: number }> }) {
   const { t } = useAdminLanguage();
-  const max = Math.max(...data.map((item) => item.value));
+  if (!data.length) {
+    return <p className="py-2 text-xs text-[#6B7280]">Chưa có dữ liệu yêu cầu</p>;
+  }
+  const max = Math.max(...data.map((item) => item.value), 1);
   return (
     <div className="grid gap-3">
       {data.map((item) => (
