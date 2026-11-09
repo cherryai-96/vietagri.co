@@ -19,6 +19,7 @@ const ContractFarming = lazy(() => import('./pages/ContractFarming').then(m => (
 const Infrastructure = lazy(() => import('./pages/Infrastructure').then(m => ({ default: m.Infrastructure })));
 const OrganicConsulting = lazy(() => import('./pages/OrganicConsulting').then(m => ({ default: m.OrganicConsulting })));
 const AgricultureInputs = lazy(() => import('./pages/AgricultureInputs').then(m => ({ default: m.AgricultureInputs })));
+const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy').then(m => ({ default: m.PrivacyPolicy })));
 const NotFound = lazy(() => import('./pages/NotFound').then(m => ({ default: m.NotFound })));
 const AdminRoutes = lazy(() => import('./admin/AdminRoutes').then(m => ({ default: m.AdminRoutes })));
 
@@ -80,6 +81,7 @@ function App() {
                         <Route path="/infrastructure-rd" element={<Infrastructure />} />
                         <Route path="/organic-consulting-certification" element={<OrganicConsulting />} />
                         <Route path="/contact" element={<Contact />} />
+                        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
                         <Route path="*" element={<NotFound />} />
                       </Routes>
                     </Suspense>

@@ -13,6 +13,7 @@ export interface ContactLeadInput {
   department?: string;
   projectDetails?: string;
   sourcePage?: string;
+  consentedAt?: string;
 }
 
 function stripHtml(value: string) {
@@ -311,7 +312,10 @@ export function buildLeadInsertPayload(input: ContactLeadInput): Omit<Lead, 'id'
     status: 'New',
     assignedTo: 'Sales Manager',
     lastUpdated: today,
-    notes: input.jobTitle ? [`Chức vụ: ${input.jobTitle}`] : [],
+    notes: [
+      ...(input.jobTitle ? [`Chức vụ: ${input.jobTitle}`] : []),
+      ...(input.consentedAt ? [`Đồng ý xử lý dữ liệu cá nhân (NĐ 356/2025): ${input.consentedAt}`] : []),
+    ],
   };
 }
 

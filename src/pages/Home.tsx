@@ -21,13 +21,24 @@ import {
 } from 'lucide-react';
 
 export const Home: React.FC = () => {
-  const { t } = useTranslation();
+  const { t, language } = useTranslation();
   const scrollRef = useRef<HTMLDivElement>(null);
 
+  const rawIntroImages = t('home.introImages') as unknown;
+  const defaultIntroImages = [
+    { src: '/images/a-hero.jpg', alt: 'Vietnam Agriculture Center' },
+    { src: '/images/ai-about-ss1.png', alt: 'High-tech agricultural processing' },
+  ];
+  const introImages: { src: string; alt: string }[] =
+    Array.isArray(rawIntroImages) && rawIntroImages.length > 0
+      ? (rawIntroImages as { src: string; alt: string }[])
+      : defaultIntroImages;
+
   const [introSlide, setIntroSlide] = useState(0);
-  const introImages: { src: string; alt: string }[] = (t('home.introImages') as unknown as { src: string; alt: string }[]) || [];
+  const currentIntroImage = introImages[introSlide] || introImages[0] || defaultIntroImages[0];
 
   const [quickInquiry, setQuickInquiry] = useState({ company: '', email: '', area: 'sourcing' });
+  const [quickConsent, setQuickConsent] = useState(false);
   const [quickSubmitting, setQuickSubmitting] = useState(false);
   const [quickSuccess, setQuickSuccess] = useState(false);
 
@@ -241,8 +252,8 @@ export const Home: React.FC = () => {
             <AnimatePresence mode="wait">
               <motion.img
                 key={introSlide}
-                src={introImages[introSlide].src}
-                alt={introImages[introSlide].alt}
+                src={currentIntroImage.src}
+                alt={currentIntroImage.alt}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
@@ -622,9 +633,11 @@ export const Home: React.FC = () => {
                     department: quickInquiry.area,
                     projectDetails: `Yêu cầu nhanh về ${quickInquiry.area} từ trang chủ VAC`,
                     sourcePage: 'Trang chủ (Quick Inquiry)',
+                    consentedAt: new Date().toISOString(),
                   });
                   setQuickSubmitting(false);
                   setQuickSuccess(true);
+                  setQuickConsent(false);
                   setQuickInquiry({ company: '', email: '', area: 'sourcing' });
                   setTimeout(() => setQuickSuccess(false), 6000);
                 }}
@@ -665,9 +678,40 @@ export const Home: React.FC = () => {
                     <option value="logistics" className="bg-brown-soil">Export Logistics & QC</option>
                   </select>
                 </div>
+
+                <div className="flex items-start gap-2.5 p-2.5 bg-black/20 rounded border border-gold-warm/20 text-[11px] text-cream/70 leading-snug">
+                  <input
+                    type="checkbox"
+                    id="quickConsent"
+                    required
+                    checked={quickConsent}
+                    onChange={(e) => setQuickConsent(e.target.checked)}
+                    className="mt-0.5 h-3.5 w-3.5 rounded border-gold-warm/30 text-gold-warm focus:ring-gold-warm cursor-pointer shrink-0"
+                  />
+                  <label htmlFor="quickConsent" className="cursor-pointer select-none">
+                    {language === 'vi' ? (
+                      <>
+                        Tôi đồng ý với{' '}
+                        <a href="/privacy-policy" target="_blank" rel="noopener noreferrer" className="text-gold-warm underline hover:text-gold-champagne">
+                          Chính sách bảo vệ dữ liệu cá nhân
+                        </a>{' '}
+                        (NĐ 356/2025/NĐ-CP). *
+                      </>
+                    ) : (
+                      <>
+                        I accept the{' '}
+                        <a href="/privacy-policy" target="_blank" rel="noopener noreferrer" className="text-gold-warm underline hover:text-gold-champagne">
+                          Personal Data Protection Policy
+                        </a>{' '}
+                        (Decree 356/2025/ND-CP). *
+                      </>
+                    )}
+                  </label>
+                </div>
+
                 <button
                   type="submit"
-                  disabled={quickSubmitting}
+                  disabled={quickSubmitting || !quickConsent}
                   className="bg-gold-warm hover:bg-gold-champagne text-brown-soil py-3 rounded font-bold uppercase tracking-wider transition-colors cursor-pointer mt-2 disabled:opacity-50"
                 >
                   {quickSubmitting ? t('common.loading') : t('common.submitBtn')}

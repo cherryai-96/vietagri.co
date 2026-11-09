@@ -42,6 +42,7 @@ export const Contact: React.FC = () => {
   });
 
   const [errors, setErrors] = useState<Partial<Record<keyof FormData, string>>>({});
+  const [consent, setConsent] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
@@ -87,9 +88,11 @@ export const Contact: React.FC = () => {
       const { error } = await submitLead({
         ...formData,
         sourcePage: 'Trang liên hệ (Contact Us)',
+        consentedAt: new Date().toISOString(),
       });
       if (error) throw error;
       setSubmitStatus('success');
+      setConsent(false);
       setFormData({
         fullName: '',
         jobTitle: '',
@@ -440,10 +443,41 @@ export const Contact: React.FC = () => {
                 />
               </div>
 
+              {/* PDP Consent Checkbox */}
+              <div className="flex items-start gap-3 p-3 bg-white/70 rounded border border-gold-warm/25 text-xs text-carbon/80 leading-relaxed">
+                <input
+                  type="checkbox"
+                  id="contactConsent"
+                  required
+                  checked={consent}
+                  onChange={(e) => setConsent(e.target.checked)}
+                  className="mt-0.5 h-4 w-4 rounded border-carbon/20 text-forest focus:ring-forest cursor-pointer shrink-0"
+                />
+                <label htmlFor="contactConsent" className="cursor-pointer select-none">
+                  {language === 'vi' ? (
+                    <>
+                      Tôi đồng ý để Vietnam Agriculture Center (VAC) xử lý thông tin liên hệ trên theo{' '}
+                      <a href="/privacy-policy" target="_blank" rel="noopener noreferrer" className="text-forest underline font-medium hover:text-forest-leaf">
+                        Chính sách bảo vệ dữ liệu cá nhân
+                      </a>{' '}
+                      (Luật 91/2025/QH15 & NĐ 356/2025/NĐ-CP). *
+                    </>
+                  ) : (
+                    <>
+                      I consent to Vietnam Agriculture Center (VAC) processing my contact details according to the{' '}
+                      <a href="/privacy-policy" target="_blank" rel="noopener noreferrer" className="text-forest underline font-medium hover:text-forest-leaf">
+                        Personal Data Protection Policy
+                      </a>{' '}
+                      (Law 91/2025/QH15). *
+                    </>
+                  )}
+                </label>
+              </div>
+
               {/* Submit Button */}
               <button
                 type="submit"
-                disabled={isSubmitting}
+                disabled={isSubmitting || !consent}
                 className="w-full bg-forest hover:bg-forest-leaf disabled:bg-forest/50 text-cream font-semibold py-4 rounded transition-all duration-300 flex items-center justify-center gap-2 group cursor-pointer text-xs uppercase tracking-widest shadow-sm mt-2"
               >
                 <span>{isSubmitting ? t('common.loading') : t('common.sendInquiry')}</span>

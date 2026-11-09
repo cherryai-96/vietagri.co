@@ -28,6 +28,7 @@ export const ProductInquiryForm: React.FC<ProductInquiryFormProps> = ({
     format: '',
     message: initialProduct ? `Inquiry regarding: ${initialProduct}` : '',
   });
+  const [consent, setConsent] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     const { id, value } = e.target;
@@ -68,6 +69,7 @@ export const ProductInquiryForm: React.FC<ProductInquiryFormProps> = ({
         sourcePage: initialProduct
           ? `Báo giá sản phẩm: ${initialProduct}`
           : `Báo giá danh mục: ${formData.category || initialCategory || 'Sản phẩm'}`,
+        consentedAt: new Date().toISOString(),
       });
 
       if (error) {
@@ -273,10 +275,40 @@ export const ProductInquiryForm: React.FC<ProductInquiryFormProps> = ({
             </div>
           )}
 
+          <div className="flex items-start gap-3 p-3 bg-cream/70 rounded-lg border border-black/5 text-xs text-carbon/80 leading-relaxed">
+            <input
+              type="checkbox"
+              id="consent"
+              required
+              checked={consent}
+              onChange={(e) => setConsent(e.target.checked)}
+              className="mt-1 h-4 w-4 rounded border-carbon/20 text-forest focus:ring-forest cursor-pointer shrink-0"
+            />
+            <label htmlFor="consent" className="cursor-pointer select-none">
+              {language === 'vi' ? (
+                <>
+                  Tôi đồng ý để Vietnam Agriculture Center (VAC) thu thập và xử lý thông tin liên hệ theo{' '}
+                  <a href="/privacy-policy" target="_blank" rel="noopener noreferrer" className="text-forest underline font-medium hover:text-forest-leaf">
+                    Chính sách bảo vệ dữ liệu cá nhân
+                  </a>{' '}
+                  (Luật 91/2025/QH15 & NĐ 356/2025/NĐ-CP) cho mục đích phản hồi báo giá B2B. *
+                </>
+              ) : (
+                <>
+                  I consent to VAC processing my contact details in accordance with the{' '}
+                  <a href="/privacy-policy" target="_blank" rel="noopener noreferrer" className="text-forest underline font-medium hover:text-forest-leaf">
+                    Personal Data Protection Policy
+                  </a>{' '}
+                  (Vietnam Law 91/2025/QH15) for B2B commercial inquiries. *
+                </>
+              )}
+            </label>
+          </div>
+
           <div className="pt-4 border-t border-black/5 mt-2">
             <button
               type="submit"
-              disabled={isSubmitting}
+              disabled={isSubmitting || !consent}
               className="w-full md:w-auto bg-forest hover:bg-forest-leaf text-cream font-bold uppercase tracking-wider text-sm px-8 py-4 rounded-full transition-all duration-300 flex items-center justify-center gap-3 disabled:opacity-70 disabled:cursor-not-allowed hover:shadow-lg hover:shadow-forest/20"
             >
               {isSubmitting ? (

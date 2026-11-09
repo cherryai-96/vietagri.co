@@ -70,3 +70,4 @@ export async function copyForGoogleSheets(
     return success;
   }
 }
+

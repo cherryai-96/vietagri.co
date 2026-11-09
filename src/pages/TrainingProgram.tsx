@@ -24,6 +24,7 @@ export const TrainingProgram: React.FC = () => {
   const { t, language } = useTranslation();
   const [modalMode, setModalMode] = useState<'apply' | 'info' | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [consent, setConsent] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
   const [trainingForm, setTrainingForm] = useState({
     fullName: '',
@@ -47,9 +48,11 @@ export const TrainingProgram: React.FC = () => {
       department: 'training',
       projectDetails: trainingForm.message || `Đăng ký chương trình đào tạo nông nghiệp xuất khẩu (${modalMode === 'apply' ? 'Trực tiếp' : 'Tư vấn'})`,
       sourcePage: 'Chương trình đào tạo (Training Program)',
+      consentedAt: new Date().toISOString(),
     });
     setIsSubmitting(false);
     setSubmitSuccess(true);
+    setConsent(false);
     setTrainingForm({ fullName: '', email: '', phone: '', background: '', message: '' });
     setTimeout(() => {
       setSubmitSuccess(false);
@@ -683,6 +686,37 @@ export const TrainingProgram: React.FC = () => {
                       />
                     </div>
 
+                    {/* PDP Consent Checkbox */}
+                    <div className="flex items-start gap-2.5 p-2.5 bg-forest/5 rounded border border-gold-warm/20 text-[11px] text-carbon/80 leading-snug">
+                      <input
+                        type="checkbox"
+                        id="trainingConsent"
+                        required
+                        checked={consent}
+                        onChange={(e) => setConsent(e.target.checked)}
+                        className="mt-0.5 h-3.5 w-3.5 rounded border-carbon/20 text-forest focus:ring-forest cursor-pointer shrink-0"
+                      />
+                      <label htmlFor="trainingConsent" className="cursor-pointer select-none">
+                        {language === 'vi' ? (
+                          <>
+                            Tôi đồng ý để VAC xử lý thông tin trên theo{' '}
+                            <a href="/privacy-policy" target="_blank" rel="noopener noreferrer" className="text-forest underline font-semibold hover:text-forest-leaf">
+                              Chính sách bảo vệ dữ liệu cá nhân
+                            </a>{' '}
+                            (NĐ 356/2025/NĐ-CP). *
+                          </>
+                        ) : (
+                          <>
+                            I consent to VAC processing my details according to the{' '}
+                            <a href="/privacy-policy" target="_blank" rel="noopener noreferrer" className="text-forest underline font-semibold hover:text-forest-leaf">
+                              Personal Data Protection Policy
+                            </a>{' '}
+                            (Decree 356/2025/ND-CP). *
+                          </>
+                        )}
+                      </label>
+                    </div>
+
                     <div className="pt-4 flex justify-end gap-3">
                       <button
                         type="button"
@@ -693,8 +727,8 @@ export const TrainingProgram: React.FC = () => {
                       </button>
                       <button
                         type="submit"
-                        disabled={isSubmitting}
-                        className="px-6 py-2.5 bg-gold-warm hover:bg-gold-champagne text-brown-soil font-bold text-xs uppercase tracking-wider rounded shadow transition-all flex items-center gap-2"
+                        disabled={isSubmitting || !consent}
+                        className="px-6 py-2.5 bg-gold-warm hover:bg-gold-champagne text-brown-soil font-bold text-xs uppercase tracking-wider rounded shadow transition-all flex items-center gap-2 disabled:opacity-50"
                       >
                         {isSubmitting ? (
                           <span>{t('common.loading')}</span>
