@@ -244,6 +244,23 @@ export const PrivacyPolicy: React.FC = () => {
             </div>
           </section>
 
+          {/* Section 7 */}
+          <section className="space-y-3">
+            <h2 className="font-serif text-xl font-bold text-forest flex items-center gap-2">
+              <CheckCircle2 size={18} />
+              {isVi ? '7. Tiếp Nhận & Giải Quyết Khiếu Nại Thương Mại' : '7. Dispute & Commercial Complaints'}
+            </h2>
+            <p>
+              {isVi
+                ? 'Căn cứ Điều 31 Luật Bảo vệ quyền lợi người tiêu dùng số 19/2023/QH15 và Luật Thương mại điện tử số 122/2025/QH15, mọi phản ánh về chất lượng hàng hóa, thông số kỹ thuật (TDS) hoặc tiến độ cung ứng nông sản xuất khẩu đều được giải quyết theo quy trình minh bạch:'
+                : 'Pursuant to Article 31 of Consumer Protection Law 19/2023/QH15 and E-Commerce Law 122/2025/QH15, commercial complaints regarding specifications (TDS), shipment schedules, or quality are resolved transparently:'}
+            </p>
+            <ul className="list-disc pl-5 space-y-1 text-xs text-carbon/80">
+              <li>{isVi ? 'Thời hạn xác nhận tiếp nhận khiếu nại: Trong vòng 03 ngày làm việc kể từ thời điểm nhận văn bản.' : 'Receipt acknowledgment: within 3 business days of formal notice.'}</li>
+              <li>{isVi ? 'Biện pháp giải quyết: Ưu tiên thương lượng, giám định độc lập bên thứ ba (SGS / Bureau Veritas) theo điều khoản hợp đồng ngoại thương.' : 'Dispute mechanism: Direct commercial negotiation or third-party accredited inspection (SGS / Bureau Veritas).'}</li>
+            </ul>
+          </section>
+
         </div>
       </div>
     </div>

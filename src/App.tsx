@@ -4,6 +4,7 @@ import { HelmetProvider } from 'react-helmet-async';
 import { LanguageProvider } from './i18n';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
+import { CookieConsentBanner } from './components/CookieConsentBanner';
 import { Home } from './pages/Home';
 
 const About = lazy(() => import('./pages/About').then(m => ({ default: m.About })));
@@ -87,6 +88,7 @@ function App() {
                     </Suspense>
                   </main>
                   <Footer />
+                  <CookieConsentBanner />
                 </div>
               }
             />
